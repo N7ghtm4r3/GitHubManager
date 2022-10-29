@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.GitHubManager.GitHubResponse;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -12,25 +12,96 @@ import java.text.SimpleDateFormat;
 
 import static java.util.Locale.getDefault;
 
-public class Artifact extends GitHubManager.GitHubResponse {
+/**
+ * The {@code Artifact} class is useful to format a GitHub's artifact
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
+ * About the Artifacts API</a>
+ * @see GitHubResponse
+ **/
+public class Artifact extends GitHubResponse {
 
     /**
      * {@code dateFormatter} is instance that help to format date
      **/
     private static final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", getDefault());
+
+    /**
+     * {@code id} identifier of the artifact
+     **/
     private final long id;
+
+    /**
+     * {@code nodeId} identifier of the node
+     **/
     private final String nodeId;
+
+    /**
+     * {@code name} the name of the artifact
+     **/
     private final String name;
+
+    /**
+     * {@code sizeInBytes} the size in bytes of the artifact
+     **/
     private final int sizeInBytes;
+
+    /**
+     * {@code url} of the artifact
+     **/
     private final String url;
+
+    /**
+     * {@code archiveDownloadUrl} url to archive the download
+     **/
     private final String archiveDownloadUrl;
+
+    /**
+     * {@code expired} whether or not the artifact has expired
+     **/
     private final boolean expired;
+
+    /**
+     * {@code createdAt} date when artifact has been created
+     **/
     private final String createdAt;
+
+    /**
+     * {@code expiresAt} date when artifact expires
+     **/
     private final String expiresAt;
+
+    /**
+     * {@code updatedAt} date when artifact has been updated
+     **/
     private final String updatedAt;
+
+    /**
+     * {@code workflowRun} workflow run details
+     **/
     private final WorkflowRun workflowRun;
+
+    /**
+     * {@code archiveDownloadUrlFile} file created from {@link #archiveDownloadUrl}
+     **/
     private File archiveDownloadUrlFile;
 
+    /**
+     * Constructor to init an {@link Artifact}
+     *
+     * @param id:                 identifier of the artifact
+     * @param nodeId:             identifier of the node
+     * @param name:               the name of the artifact
+     * @param sizeInBytes:        the size in bytes of the artifact
+     * @param url:                url of the artifact
+     * @param archiveDownloadUrl: url to archive the download
+     * @param expired:            whether the artifact has expired
+     * @param createdAt:          date when artifact expires
+     * @param expiresAt:          date when artifact expires
+     * @param updatedAt:          date when artifact has been updated
+     * @param workflowRun:        workflow run details
+     **/
     public Artifact(long id, String nodeId, String name, int sizeInBytes, String url, String archiveDownloadUrl,
                     boolean expired, String createdAt, String expiresAt, String updatedAt, WorkflowRun workflowRun) {
         super(null);
@@ -47,6 +118,11 @@ public class Artifact extends GitHubManager.GitHubResponse {
         this.workflowRun = workflowRun;
     }
 
+    /**
+     * Constructor to init an {@link Artifact}
+     *
+     * @param jArtifact: artifact details as {@link JSONObject}
+     **/
     public Artifact(JSONObject jArtifact) {
         super(jArtifact);
         id = hResponse.getLong("id", 0);
@@ -62,44 +138,104 @@ public class Artifact extends GitHubManager.GitHubResponse {
         workflowRun = new WorkflowRun(hResponse.getJSONObject("workflow_run", new JSONObject()));
     }
 
+    /**
+     * Method to get {@link #id} instance <br>
+     * Any params required
+     *
+     * @return {@link #id} instance as long
+     **/
     public long getId() {
         return id;
     }
 
+    /**
+     * Method to get {@link #nodeId} instance <br>
+     * Any params required
+     *
+     * @return {@link #nodeId} instance as {@link String}
+     **/
     public String getNodeId() {
         return nodeId;
     }
 
+    /**
+     * Method to get {@link #name} instance <br>
+     * Any params required
+     *
+     * @return {@link #name} instance as {@link String}
+     **/
     public String getName() {
         return name;
     }
 
+    /**
+     * Method to get {@link #sizeInBytes} instance <br>
+     * Any params required
+     *
+     * @return {@link #sizeInBytes} instance as int
+     **/
     public int getSizeInBytes() {
         return sizeInBytes;
     }
 
+    /**
+     * Method to get {@link #url} instance <br>
+     * Any params required
+     *
+     * @return {@link #url} instance as {@link String}
+     **/
     public String getUrl() {
         return url;
     }
 
+    /**
+     * Method to get {@link #archiveDownloadUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #archiveDownloadUrl} instance as {@link String}
+     **/
     public String getArchiveDownloadUrl() {
         return archiveDownloadUrl;
     }
 
+    /**
+     * Method to get {@link #archiveDownloadUrlFile} instance <br>
+     * Any params required
+     *
+     * @return {@link #archiveDownloadUrlFile} instance as {@link File}
+     **/
     public File getFileFromArchiveDownloadUrl() throws MalformedURLException {
         if (archiveDownloadUrlFile == null)
             return archiveDownloadUrlFile = new File(new URL(archiveDownloadUrl).getFile());
         return archiveDownloadUrlFile;
     }
 
+    /**
+     * Method to get {@link #expired} instance <br>
+     * Any params required
+     *
+     * @return {@link #expired} instance as boolean
+     **/
     public boolean isExpired() {
         return expired;
     }
 
+    /**
+     * Method to get {@link #createdAt} instance <br>
+     * Any params required
+     *
+     * @return {@link #createdAt} instance as {@link String}
+     **/
     public String getCreatedAt() {
         return createdAt;
     }
 
+    /**
+     * Method to get {@link #createdAt} timestamp <br>
+     * Any params required
+     *
+     * @return {@link #createdAt} timestamp as long
+     **/
     public long getCreatedAtTimestamp() {
         try {
             return dateFormatter.parse(createdAt).getTime();
@@ -108,10 +244,22 @@ public class Artifact extends GitHubManager.GitHubResponse {
         }
     }
 
+    /**
+     * Method to get {@link #expiresAt} instance <br>
+     * Any params required
+     *
+     * @return {@link #expiresAt} instance as {@link String}
+     **/
     public String getExpiresAt() {
         return expiresAt;
     }
 
+    /**
+     * Method to get {@link #expiresAt} timestamp <br>
+     * Any params required
+     *
+     * @return {@link #expiresAt} timestamp as long
+     **/
     public long getExpiresAtTimestamp() {
         try {
             return dateFormatter.parse(expiresAt).getTime();
@@ -120,10 +268,22 @@ public class Artifact extends GitHubManager.GitHubResponse {
         }
     }
 
+    /**
+     * Method to get {@link #updatedAt} instance <br>
+     * Any params required
+     *
+     * @return {@link #updatedAt} instance as {@link String}
+     **/
     public String getUpdatedAt() {
         return updatedAt;
     }
 
+    /**
+     * Method to get {@link #updatedAt} timestamp <br>
+     * Any params required
+     *
+     * @return {@link #updatedAt} timestamp as long
+     **/
     public long getUpdatedAtTimestamp() {
         try {
             return dateFormatter.parse(updatedAt).getTime();
@@ -132,18 +292,59 @@ public class Artifact extends GitHubManager.GitHubResponse {
         }
     }
 
+    /**
+     * Method to get {@link #workflowRun} instance <br>
+     * Any params required
+     *
+     * @return {@link #workflowRun} instance as {@link WorkflowRun}
+     **/
     public WorkflowRun getWorkflowRun() {
         return workflowRun;
     }
 
+    /**
+     * The {@code WorkflowRun} class is useful to format a GitHub's workflow run
+     *
+     * @author N7ghtm4r3 - Tecknobit
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
+     * About the Artifacts API</a>
+     **/
     public static class WorkflowRun {
 
+        /**
+         * {@code id} identifier of the workflow run
+         **/
         private final long id;
+
+        /**
+         * {@code repositoryId} identifier of the repository
+         **/
         private final long repositoryId;
+
+        /**
+         * {@code headRepositoryId} identifier of the head repository
+         **/
         private final long headRepositoryId;
+
+        /**
+         * {@code headBranch} head branch value
+         **/
         private final String headBranch;
+
+        /**
+         * {@code headSha} head sha value es. -> 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+         **/
         private final String headSha;
 
+        /**
+         * Constructor to init a {@link WorkflowRun}
+         *
+         * @param id:               identifier of the workflow run
+         * @param repositoryId:     identifier of the repository
+         * @param headRepositoryId: identifier of the head repository
+         * @param headBranch:       head branch value
+         * @param headSha:          head sha value es. -> 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+         **/
         public WorkflowRun(long id, long repositoryId, long headRepositoryId, String headBranch, String headSha) {
             this.id = id;
             this.repositoryId = repositoryId;
@@ -152,6 +353,11 @@ public class Artifact extends GitHubManager.GitHubResponse {
             this.headSha = headSha;
         }
 
+        /**
+         * Constructor to init an {@link WorkflowRun}
+         *
+         * @param jWorkflowRun: workflow run details as {@link JSONObject}
+         **/
         public WorkflowRun(JSONObject jWorkflowRun) {
             JsonHelper hWorkflowRun = new JsonHelper(jWorkflowRun);
             id = hWorkflowRun.getLong("id", 0);
@@ -161,26 +367,62 @@ public class Artifact extends GitHubManager.GitHubResponse {
             headSha = hWorkflowRun.getString("head_sha");
         }
 
+        /**
+         * Method to get {@link #id} instance <br>
+         * Any params required
+         *
+         * @return {@link #id} instance as long
+         **/
         public long getId() {
             return id;
         }
 
+        /**
+         * Method to get {@link #repositoryId} instance <br>
+         * Any params required
+         *
+         * @return {@link #repositoryId} instance as long
+         **/
         public long getRepositoryId() {
             return repositoryId;
         }
 
+        /**
+         * Method to get {@link #headRepositoryId} instance <br>
+         * Any params required
+         *
+         * @return {@link #headRepositoryId} instance as long
+         **/
         public long getHeadRepositoryId() {
             return headRepositoryId;
         }
 
+        /**
+         * Method to get {@link #headBranch} instance <br>
+         * Any params required
+         *
+         * @return {@link #headBranch} instance as {@link String}
+         **/
         public String getHeadBranch() {
             return headBranch;
         }
 
+        /**
+         * Method to get {@link #headSha} instance <br>
+         * Any params required
+         *
+         * @return {@link #headSha} instance as {@link String}
+         **/
         public String getHeadSha() {
             return headSha;
         }
 
+        /**
+         * Returns a string representation of the object <br>
+         * Any params required
+         *
+         * @return a string representation of the object as {@link String}
+         */
         @Override
         public String toString() {
             return new JSONObject(this).toString();

@@ -1,22 +1,49 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.GitHubManager.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
-public class ArtifactsList extends GitHubManager.GitHubResponse {
+/**
+ * The {@code ArtifactsList} class is useful to format a list of GitHub's artifact
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
+ * About the Artifacts API</a>
+ * @see GitHubResponse
+ **/
+public class ArtifactsList extends GitHubResponse {
 
+    /**
+     * {@code totalCount} total count of artifacts
+     **/
     private final int totalCount;
+
+    /**
+     * {@code artifacts} artifacts list
+     **/
     private final ArrayList<Artifact> artifacts;
 
+    /**
+     * Constructor to init an {@link Artifact}
+     *
+     * @param totalCount: total count of artifacts
+     * @param artifacts:  artifacts list
+     **/
     public ArtifactsList(int totalCount, ArrayList<Artifact> artifacts) {
         super(null);
         this.totalCount = totalCount;
         this.artifacts = artifacts;
     }
 
+    /**
+     * Constructor to init an {@link ArtifactsList}
+     *
+     * @param jArtifactsList: artifact list details as {@link JSONObject}
+     **/
     public ArtifactsList(JSONObject jArtifactsList) {
         super(jArtifactsList);
         totalCount = hResponse.getInt("total_count", 0);
@@ -26,11 +53,23 @@ public class ArtifactsList extends GitHubManager.GitHubResponse {
             artifacts.add(new Artifact(list.getJSONObject(j)));
     }
 
+    /**
+     * Method to get {@link #totalCount} instance <br>
+     * Any params required
+     *
+     * @return {@link #totalCount} instance as int
+     **/
     public int getTotalCount() {
         return totalCount;
     }
 
-    public ArrayList<Artifact> getArtifacts() {
+    /**
+     * Method to get {@link #artifacts} instance <br>
+     * Any params required
+     *
+     * @return {@link #artifacts} instance as {@link Collection} of {@link Artifact}
+     **/
+    public Collection<Artifact> getArtifacts() {
         return artifacts;
     }
 
