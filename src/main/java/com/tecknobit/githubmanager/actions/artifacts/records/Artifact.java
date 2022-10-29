@@ -16,8 +16,25 @@ import static java.util.Locale.getDefault;
  * The {@code Artifact} class is useful to format a GitHub's artifact
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
- * About the Artifacts API</a>
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
+ *             Get an artifact</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
+ *             Delete an artifact</a>
+ *     </li>
+ *     <li>
+ *          <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+ *              List artifacts for a repository</a>
+ *     </li>
+ *     <li>
+ *          <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+ *              List workflow run artifacts</a>
+ *     </li>
+ * </ul>
  * @see GitHubResponse
  **/
 public class Artifact extends GitHubResponse {
@@ -25,7 +42,7 @@ public class Artifact extends GitHubResponse {
     /**
      * {@code dateFormatter} is instance that help to format date
      **/
-    private static final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", getDefault());
+    public static final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", getDefault());
 
     /**
      * {@code id} identifier of the artifact

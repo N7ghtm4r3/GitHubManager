@@ -1,0 +1,319 @@
+package com.tecknobit.githubmanager.actions.cache.records;
+
+import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.GitHubManager.GitHubResponse;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+
+/**
+ * The {@code RepositoryCachesList} class is useful to format a GitHub's repository caches list
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+ *             List GitHub Actions caches for a repository</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+ *             Delete GitHub Actions caches for a repository (using a cache key)</a>
+ *     </li>
+ * </ul>
+ * @see GitHubResponse
+ **/
+public class RepositoryCachesList extends GitHubResponse {
+
+    /**
+     * {@code CREATED_AT_SORTER} is the constant for created at sorter
+     **/
+    public static final String CREATED_AT_SORTER = "created_at";
+
+    /**
+     * {@code LAST_ACCESSED_SORTER} is the constant for last accessed at sorter
+     **/
+    public static final String LAST_ACCESSED_SORTER = "last_accessed_at";
+
+    /**
+     * {@code SIZE_IN_BYTES_SORTER} is the constant for size in bytes sorter
+     **/
+    public static final String SIZE_IN_BYTES_SORTER = "size_in_bytes";
+
+    /**
+     * {@code ASC_DIRECTION} is the constant for asc direction
+     **/
+    public static final String ASC_DIRECTION = "asc";
+
+    /**
+     * {@code DESC_DIRECTION} is the constant for desc direction
+     **/
+    public static final String DESC_DIRECTION = "desc";
+
+    /**
+     * {@code totalCount} total number of caches
+     **/
+    private final int totalCount;
+
+    /**
+     * {@code actionCaches} list of caches
+     **/
+    private final ArrayList<ActionCache> actionCaches;
+
+    /**
+     * Constructor to init an {@link RepositoryCachesList}
+     *
+     * @param totalCount:       total number of caches
+     * @param actionCaches:list of caches
+     **/
+    public RepositoryCachesList(int totalCount, ArrayList<ActionCache> actionCaches) {
+        super(null);
+        this.totalCount = totalCount;
+        this.actionCaches = actionCaches;
+    }
+
+    /**
+     * Constructor to init a {@link RepositoryCachesList}
+     *
+     * @param jRepositoryCachesList : repository caches list details as {@link JSONObject}
+     **/
+    public RepositoryCachesList(JSONObject jRepositoryCachesList) {
+        super(jRepositoryCachesList);
+        totalCount = hResponse.getInt("total_count");
+        actionCaches = new ArrayList<>();
+        JSONArray jActionCaches = hResponse.getJSONArray("actions_caches", new JSONArray());
+        for (int j = 0; j < jActionCaches.length(); j++)
+            actionCaches.add(new ActionCache(jActionCaches.getJSONObject(j)));
+    }
+
+    /**
+     * Method to get {@link #totalCount} instance <br>
+     * Any params required
+     *
+     * @return {@link #totalCount} instance as int
+     **/
+    public int getTotalCount() {
+        return totalCount;
+    }
+
+    /**
+     * Method to get {@link #actionCaches} instance <br>
+     * Any params required
+     *
+     * @return {@link #actionCaches} instance as {@link Collection} of {@link ActionCache}
+     **/
+    public Collection<ActionCache> getActionCaches() {
+        return actionCaches;
+    }
+
+    /**
+     * The {@code ActionCache} class is useful to format a GitHub's cache
+     *
+     * @author N7ghtm4r3 - Tecknobit
+     * @apiNote see the official documentation at:
+     * <ul>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     *             List GitHub Actions caches for a repository</a>
+     *     </li>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     *             Delete GitHub Actions caches for a repository (using a cache key)</a>
+     *     </li>
+     * </ul>
+     * @see GitHubResponse
+     **/
+    public static class ActionCache {
+
+        /**
+         * {@code id} identifier of the cache
+         **/
+        private final long id;
+
+        /**
+         * {@code key} the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
+         * {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
+         **/
+        private final String ref;
+
+        /**
+         * {@code ref} the key for identifying the cache
+         **/
+        private final String key;
+
+        /**
+         * {@code version} version of the cache
+         **/
+        private final String version;
+
+        /**
+         * {@code lastAccessedAt} last accessed value
+         **/
+        private final String lastAccessedAt;
+
+        /**
+         * {@code createdAt} creation date of the cache
+         **/
+        private final String createdAt;
+
+        /**
+         * {@code sizeInBytes} size in bytes of the cache
+         **/
+        private final int sizeInBytes;
+
+        /**
+         * Constructor to init an {@link ActionCache}
+         *
+         * @param id:              identifier of the cache
+         * @param ref:             the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
+         *                         {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
+         * @param key:             the key for identifying the cache
+         * @param version:         version of the cache
+         * @param lastAccessedAt:  last accessed value
+         * @param createdAt:       creation date of the cache
+         * @param sizeInBytes:size in bytes of the cache
+         **/
+        public ActionCache(long id, String ref, String key, String version, String lastAccessedAt, String createdAt,
+                           int sizeInBytes) {
+            this.id = id;
+            this.ref = ref;
+            this.key = key;
+            this.version = version;
+            this.lastAccessedAt = lastAccessedAt;
+            this.createdAt = createdAt;
+            this.sizeInBytes = sizeInBytes;
+        }
+
+        /**
+         * Constructor to init an {@link ActionCache}
+         *
+         * @param jActionCache: action cache details as {@link JSONObject}
+         **/
+        public ActionCache(JSONObject jActionCache) {
+            JsonHelper hActionCache = new JsonHelper(jActionCache);
+            id = hActionCache.getLong("id");
+            ref = hActionCache.getString("ref");
+            key = hActionCache.getString("key");
+            version = hActionCache.getString("version");
+            lastAccessedAt = hActionCache.getString("last_accessed_at");
+            createdAt = hActionCache.getString("created_at");
+            sizeInBytes = hActionCache.getInt("size_in_bytes");
+        }
+
+        /**
+         * Method to get {@link #id} instance <br>
+         * Any params required
+         *
+         * @return {@link #id} instance as long
+         **/
+        public long getId() {
+            return id;
+        }
+
+        /**
+         * Method to get {@link #ref} instance <br>
+         * Any params required
+         *
+         * @return {@link #ref} instance as {@link String}
+         **/
+        public String getRef() {
+            return ref;
+        }
+
+        /**
+         * Method to get {@link #key} instance <br>
+         * Any params required
+         *
+         * @return {@link #key} instance as {@link String}
+         **/
+        public String getKey() {
+            return key;
+        }
+
+        /**
+         * Method to get {@link #version} instance <br>
+         * Any params required
+         *
+         * @return {@link #version} instance as {@link String}
+         **/
+        public String getVersion() {
+            return version;
+        }
+
+        /**
+         * Method to get {@link #lastAccessedAt} instance <br>
+         * Any params required
+         *
+         * @return {@link #lastAccessedAt} instance as {@link String}
+         **/
+        public String getLastAccessedAt() {
+            return lastAccessedAt;
+        }
+
+        /**
+         * Method to get {@link #lastAccessedAt} timestamp <br>
+         * Any params required
+         *
+         * @return {@link #lastAccessedAt} timestamp as long
+         **/
+        public long getLastAccessedAtTimestamp() {
+            try {
+                return dateFormatter.parse(lastAccessedAt).getTime();
+            } catch (ParseException e) {
+                return -1;
+            }
+        }
+
+        /**
+         * Method to get {@link #createdAt} instance <br>
+         * Any params required
+         *
+         * @return {@link #createdAt} instance as {@link String}
+         **/
+        public String getCreatedAt() {
+            return createdAt;
+        }
+
+        /**
+         * Method to get {@link #createdAt} timestamp <br>
+         * Any params required
+         *
+         * @return {@link #createdAt} timestamp as long
+         **/
+        public long getCreatedAtTimestamp() {
+            try {
+                return dateFormatter.parse(createdAt).getTime();
+            } catch (ParseException e) {
+                return -1;
+            }
+        }
+
+        /**
+         * Method to get {@link #sizeInBytes} instance <br>
+         * Any params required
+         *
+         * @return {@link #sizeInBytes} instance as int
+         **/
+        public int getSizeInBytes() {
+            return sizeInBytes;
+        }
+
+        /**
+         * Returns a string representation of the object <br>
+         * Any params required
+         *
+         * @return a string representation of the object as {@link String}
+         */
+        @Override
+        public String toString() {
+            return new JSONObject(this).toString();
+        }
+
+    }
+
+}

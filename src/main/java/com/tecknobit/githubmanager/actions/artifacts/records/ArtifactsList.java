@@ -11,8 +11,17 @@ import java.util.Collection;
  * The {@code ArtifactsList} class is useful to format a list of GitHub's artifact
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
- * About the Artifacts API</a>
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *          <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+ *              List artifacts for a repository</a>
+ *     </li>
+ *     <li>
+ *          <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+ *              List workflow run artifacts</a>
+ *     </li>
+ * </ul>
  * @see GitHubResponse
  **/
 public class ArtifactsList extends GitHubResponse {

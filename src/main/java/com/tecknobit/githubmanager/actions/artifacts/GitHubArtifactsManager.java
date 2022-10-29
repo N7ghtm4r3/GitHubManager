@@ -22,6 +22,31 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 public class GitHubArtifactsManager extends GitHubManager {
 
     /**
+     * {@code REPOS_PATH} constant for {@code "repos/"} path
+     **/
+    public static final String REPOS_PATH = "repos/";
+
+    /**
+     * {@code ARTIFACTS_PATH} constant for {@code "artifacts/"} path
+     **/
+    public static final String ARTIFACTS_PATH = "artifacts/";
+
+    /**
+     * {@code QUERY_ARTIFACTS_PATH} constant for {@code "/artifacts"} path
+     **/
+    public static final String QUERY_ARTIFACTS_PATH = "/artifacts";
+
+    /**
+     * {@code ACTIONS_PATH} constant for {@code "/actions/"} path
+     **/
+    public static final String ACTIONS_PATH = "/actions/";
+
+    /**
+     * {@code RUNS_PATH} constant for {@code "/runs/"} path
+     **/
+    public static final String RUNS_PATH = "/runs/";
+
+    /**
      * Constructor to init a {@link GitHubManager}
      *
      * @param accessToken : personal access token for authentication to {@code "GitHub"}
@@ -85,7 +110,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Method to get a list of all artifacts for a repository. Anyone with read access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
      * by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
@@ -94,14 +119,14 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List artifacts for a repository</a>
      **/
     public ArtifactsList getArtifactsList(String owner, String repo) throws IOException {
-        return returnArtifactsList(sendGetRequest(owner, repo, "artifacts"), LIBRARY_OBJECT);
+        return returnArtifactsList(sendGetRequest(owner, repo, ARTIFACTS_PATH), LIBRARY_OBJECT);
     }
 
     /**
      * Method to get a list of all artifacts for a repository. Anyone with read access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
      * by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
@@ -111,14 +136,14 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List artifacts for a repository</a>
      **/
     public <T> T getArtifactsList(String owner, String repo, ReturnFormat format) throws IOException {
-        return returnArtifactsList(sendGetRequest(owner, repo, "artifacts"), format);
+        return returnArtifactsList(sendGetRequest(owner, repo, ARTIFACTS_PATH), format);
     }
 
     /**
      * Method to get a list of all artifacts for a repository. Anyone with read access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
      * by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
@@ -146,7 +171,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Method to get a list of all artifacts for a repository. Anyone with read access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
      * by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
@@ -168,7 +193,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List artifacts for a repository</a>
      **/
     public <T> T getArtifactsList(String owner, String repo, Params queryParams, ReturnFormat format) throws IOException {
-        return returnArtifactsList(sendGetRequest(owner, repo, "artifacts" + queryParams.createQueryString()),
+        return returnArtifactsList(sendGetRequest(owner, repo, ARTIFACTS_PATH + queryParams.createQueryString()),
                 format);
     }
 
@@ -176,7 +201,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Method to get a specific artifact for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
      * by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner:      the account owner of the repository. The name is not case-sensitive
      * @param repo:       the name of the repository. The name is not case-sensitive
@@ -193,7 +218,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Method to get a specific artifact for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
      * by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner:      the account owner of the repository. The name is not case-sensitive
      * @param repo:       the name of the repository. The name is not case-sensitive
@@ -204,7 +229,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Get an artifact</a>
      **/
     public <T> T getArtifact(String owner, String repo, long artifactId, ReturnFormat format) throws IOException {
-        String artifactResponse = sendGetRequest(owner, repo, "artifacts/" + artifactId);
+        String artifactResponse = sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId);
         switch (format) {
             case JSON:
                 return (T) new JSONObject(artifactResponse);
@@ -218,7 +243,7 @@ public class GitHubArtifactsManager extends GitHubManager {
     /**
      * Method to delete an artifact for a workflow run. You must authenticate using an access token with the repo scope
      * to use this endpoint -> <b> this step is automatically made by this library, </b> <br>
-     * GitHub Apps must have the {@code "actions:write"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
      *
      * @param owner:            the account owner of the repository. The name is not case-sensitive
      * @param repo:             the name of the repository. The name is not case-sensitive
@@ -235,7 +260,7 @@ public class GitHubArtifactsManager extends GitHubManager {
     /**
      * Method to delete an artifact for a workflow run. You must authenticate using an access token with the repo scope
      * to use this endpoint -> <b> this step is automatically made by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:write"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
      *
      * @param owner:      the account owner of the repository. The name is not case-sensitive
      * @param repo:       the name of the repository. The name is not case-sensitive
@@ -245,7 +270,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Delete an artifact</a>
      **/
     public boolean deleteArtifact(String owner, String repo, long artifactId) throws IOException {
-        sendGetRequest(owner, repo, "artifacts/" + artifactId);
+        sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId);
         return apiRequest.getResponseStatusCode() == 204;
     }
 
@@ -255,7 +280,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
      * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
      * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param owner:      the account owner of the repository. The name is not case-sensitive
      * @param repo:       the name of the repository. The name is not case-sensitive
@@ -269,14 +294,14 @@ public class GitHubArtifactsManager extends GitHubManager {
      **/
     @WrappedRequest
     public String downloadArtifact(String owner, String repo, long artifactId) throws IOException {
-        sendGetRequest(owner, repo, "artifacts/" + artifactId + "/zip");
+        sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId + "/zip");
         return new JsonHelper((JSONObject) apiRequest.getJSONResponse()).getString("Location");
     }
 
     /**
      * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint.
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
@@ -286,13 +311,14 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, long runId) throws IOException {
-        return returnArtifactsList(sendGetRequest(owner, repo, "runs/" + runId + "/artifacts"), LIBRARY_OBJECT);
+        return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH),
+                LIBRARY_OBJECT);
     }
 
     /**
      * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint.
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
      *
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
@@ -303,13 +329,13 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, long runId, ReturnFormat format) throws IOException {
-        return returnArtifactsList(sendGetRequest(owner, repo, "runs/" + runId + "/artifacts"), format);
+        return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH), format);
     }
 
     /**
      * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint.
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
      *
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
@@ -335,7 +361,7 @@ public class GitHubArtifactsManager extends GitHubManager {
     /**
      * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
      * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
-     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint.
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
      *
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
@@ -356,7 +382,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      **/
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, long runId, Params queryParams,
                                              ReturnFormat format) throws IOException {
-        return returnArtifactsList(sendGetRequest(owner, repo, "runs/" + runId + "/artifacts" +
+        return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH +
                 queryParams.createQueryString()), format);
     }
 
@@ -372,7 +398,6 @@ public class GitHubArtifactsManager extends GitHubManager {
             case JSON:
                 return (T) new JSONObject(artifactsListResponse);
             case LIBRARY_OBJECT:
-                System.out.println(artifactsListResponse);
                 return (T) new ArtifactsList(new JSONObject(artifactsListResponse));
             default:
                 return (T) artifactsListResponse;
@@ -388,7 +413,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @apiNote is adapted to {@link GitHubArtifactsManager}
      **/
     public String sendGetRequest(String owner, String repo, String endpoint) throws IOException {
-        return super.sendGetRequest("repos/" + owner + "/" + repo + "/actions/" + endpoint);
+        return super.sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_PATH + endpoint);
     }
 
 }

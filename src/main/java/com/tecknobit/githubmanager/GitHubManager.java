@@ -253,6 +253,8 @@ public class GitHubManager {
          * @param jResponse: response by {@code "GitHub"} as {@link JSONObject}
          **/
         public GitHubResponse(JSONObject jResponse) {
+            if (jResponse == null)
+                jResponse = new JSONObject();
             hResponse = new JsonHelper(jResponse);
             message = hResponse.getString("message");
             documentationUrl = hResponse.getString("documentation_url");
