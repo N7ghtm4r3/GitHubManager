@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.actions.cache.records;
 
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.records.GitHubList;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -13,14 +14,10 @@ import java.util.Collection;
  * @author N7ghtm4r3 - Tecknobit
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
  * List repositories with GitHub Actions cache usage for an organization</a>
- * @see GitHubManager.GitHubResponse
+ * @see GitHubResponse
+ * @see GitHubList
  **/
-public class RepositoriesCacheUsagesList extends GitHubManager.GitHubResponse {
-
-    /**
-     * {@code totalCount} the count of active caches across all repositories of an enterprise or an organization
-     **/
-    private final int totalCount;
+public class RepositoriesCacheUsagesList extends GitHubList {
 
     /**
      * {@code repositoryCacheUsages} the count of active caches across all repositories of an enterprise or an organization
@@ -34,8 +31,7 @@ public class RepositoriesCacheUsagesList extends GitHubManager.GitHubResponse {
      * @param repositoryCacheUsages: the count of active caches across all repositories of an enterprise or an organization
      **/
     public RepositoriesCacheUsagesList(int totalCount, ArrayList<RepositoryCacheUsage> repositoryCacheUsages) {
-        super(null);
-        this.totalCount = totalCount;
+        super(totalCount);
         this.repositoryCacheUsages = repositoryCacheUsages;
     }
 
@@ -46,21 +42,10 @@ public class RepositoriesCacheUsagesList extends GitHubManager.GitHubResponse {
      **/
     public RepositoriesCacheUsagesList(JSONObject jRepositoriesCacheUsageList) {
         super(jRepositoriesCacheUsageList);
-        totalCount = hResponse.getInt("total_count");
         repositoryCacheUsages = new ArrayList<>();
         JSONArray jCacheUsagesList = hResponse.getJSONArray("repository_cache_usages", new JSONArray());
         for (int j = 0; j < jCacheUsagesList.length(); j++)
             repositoryCacheUsages.add(new RepositoryCacheUsage(jCacheUsagesList.getJSONObject(j)));
-    }
-
-    /**
-     * Method to get {@link #totalCount} instance <br>
-     * Any params required
-     *
-     * @return {@link #totalCount} instance as int
-     **/
-    public int getTotalCount() {
-        return totalCount;
     }
 
     /**

@@ -1,17 +1,17 @@
-package com.tecknobit.githubmanager.actions.permissions.records;
+package com.tecknobit.githubmanager.actions.permissions.records.types;
 
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;
 
-public class Permissions extends GitHubManager.GitHubResponse {
+import static com.tecknobit.githubmanager.actions.permissions.records.types.Permissions.AllowedActions.all;
 
-    private final String enabledOrganizations;
-    private final String allowedActions;
+public class Permissions extends GitHubResponse {
+
+    private final AllowedActions allowedActions;
     private final String selectedActionsUrl;
 
-    public Permissions(String enabledOrganizations, String allowedActions, String selectedActionsUrl) {
+    public Permissions(AllowedActions allowedActions, String selectedActionsUrl) {
         super(null);
-        this.enabledOrganizations = enabledOrganizations;
         this.allowedActions = allowedActions;
         this.selectedActionsUrl = selectedActionsUrl;
     }
@@ -23,16 +23,11 @@ public class Permissions extends GitHubManager.GitHubResponse {
      **/
     public Permissions(JSONObject jPermissions) {
         super(jPermissions);
-        enabledOrganizations = hResponse.getString("enabled_organizations");
-        allowedActions = hResponse.getString("allowed_actions");
+        allowedActions = AllowedActions.valueOf(hResponse.getString("allowed_actions", all.name()));
         selectedActionsUrl = hResponse.getString("selected_actions_url");
     }
 
-    public String getEnabledOrganizations() {
-        return enabledOrganizations;
-    }
-
-    public String getAllowedActions() {
+    public AllowedActions getAllowedActions() {
         return allowedActions;
     }
 
@@ -40,20 +35,20 @@ public class Permissions extends GitHubManager.GitHubResponse {
         return selectedActionsUrl;
     }
 
-    public enum EnabledOrganizations {
+    public enum EnabledItems {
 
         /**
-         * {@code all} is the constant for all type for enabled organizations
+         * {@code all} is the constant for all type for enabled organizations or repositories
          **/
         all,
 
         /**
-         * {@code none} is the constant for all type for enabled organizations
+         * {@code none} is the constant for all type for enabled organizations or repositories
          **/
         none,
 
         /**
-         * {@code selected} is the constant for all type for enabled organizations
+         * {@code selected} is the constant for all type for enabled organizations or repositories
          **/
         selected
 

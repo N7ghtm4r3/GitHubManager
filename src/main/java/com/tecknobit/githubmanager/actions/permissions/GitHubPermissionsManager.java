@@ -5,8 +5,9 @@ import com.tecknobit.githubmanager.actions.permissions.records.DefaultWorkflowPe
 import com.tecknobit.githubmanager.actions.permissions.records.EnterpriseAARW;
 import com.tecknobit.githubmanager.actions.permissions.records.EnterpriseEnabledOrganizations;
 import com.tecknobit.githubmanager.actions.permissions.records.EnterpriseEnabledOrganizations.Organization;
-import com.tecknobit.githubmanager.actions.permissions.records.Permissions;
-import com.tecknobit.githubmanager.actions.permissions.records.Permissions.EnabledOrganizations;
+import com.tecknobit.githubmanager.actions.permissions.records.types.EnterprisePermissions;
+import com.tecknobit.githubmanager.actions.permissions.records.types.OrganizationPermissions;
+import com.tecknobit.githubmanager.actions.permissions.records.types.Permissions.EnabledItems;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -16,6 +17,9 @@ import java.util.Collection;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.ACTIONS_PATH;
 import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ENTERPRISES_PATH;
+import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ORGS_PATH;
+import static com.tecknobit.githubmanager.actions.permissions.records.types.Permissions.AllowedActions;
+import static com.tecknobit.githubmanager.records.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
 
 /**
  * The {@code GitHubPermissionsManager} class is useful to manage all GitHub's permissions endpoints
@@ -109,7 +113,7 @@ public class GitHubPermissionsManager extends GitHubManager {
         super();
     }
 
-    public Permissions getEnterprisePermissions(String enterprise) throws IOException {
+    public EnterprisePermissions getEnterprisePermissions(String enterprise) throws IOException {
         return getEnterprisePermissions(enterprise, LIBRARY_OBJECT);
     }
 
@@ -120,18 +124,23 @@ public class GitHubPermissionsManager extends GitHubManager {
             case JSON:
                 return (T) new JSONObject(enterprisePermissionsResponse);
             case LIBRARY_OBJECT:
-                return (T) new Permissions(new JSONObject(enterprisePermissionsResponse));
+                return (T) new EnterprisePermissions(new JSONObject(enterprisePermissionsResponse));
             default:
                 return (T) enterprisePermissionsResponse;
         }
     }
 
-    public boolean setEnterprisePermissions(String enterprise, EnabledOrganizations enabledOrganizations) {
+    public boolean setEnterprisePermissions(String enterprise, EnabledItems enabledOrganizations) {
         return setEnterprisePermissions(enterprise, enabledOrganizations, null);
     }
 
-    public boolean setEnterprisePermissions(String enterprise, EnabledOrganizations enabledOrganizations,
-                                            Permissions.AllowedActions allowedActions) {
+    public boolean setEnterprisePermissions(String enterprise, EnterprisePermissions enterprisePermissions) {
+        return setEnterprisePermissions(enterprise, enterprisePermissions.getEnabledOrganizations(),
+                enterprisePermissions.getAllowedActions());
+    }
+
+    public boolean setEnterprisePermissions(String enterprise, EnabledItems enabledOrganizations,
+                                            AllowedActions allowedActions) {
         Params params = new Params();
         params.addParam("enabled_organizations", enabledOrganizations);
         if (allowedActions != null)
@@ -252,7 +261,7 @@ public class GitHubPermissionsManager extends GitHubManager {
     public boolean setEnterpriseAllowedActionsAndReusableWorkflows(String enterprise, EnterpriseAARW aarw) {
         Params params = new Params();
         JSONObject aarwSource = new JSONObject(aarw);
-        aarwSource.remove("instantiatedWithError");
+        aarwSource.remove(INSTANTIATED_WITH_ERROR_KEY);
         for (String key : aarwSource.keySet())
             params.addParam(key, aarwSource.get(key));
         return setEnterpriseAllowedActionsAndReusableWorkflows(enterprise, params);
@@ -298,7 +307,7 @@ public class GitHubPermissionsManager extends GitHubManager {
             defaultWorkflowPermissions) {
         Params params = new Params();
         JSONObject defWorkflowPermissionsSource = new JSONObject(defaultWorkflowPermissions);
-        defWorkflowPermissionsSource.remove("instantiatedWithError");
+        defWorkflowPermissionsSource.remove(INSTANTIATED_WITH_ERROR_KEY);
         for (String key : defWorkflowPermissionsSource.keySet())
             params.addParam(key, defWorkflowPermissionsSource.get(key));
         return setDefaultEnterpriseWorkflowPermissions(enterprise, params);
@@ -308,6 +317,49 @@ public class GitHubPermissionsManager extends GitHubManager {
         try {
             sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                     defaultEnterpriseWorkflowPermissions);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public OrganizationPermissions getOrganizationPermissions(String org) throws IOException {
+        return getOrganizationPermissions(org, LIBRARY_OBJECT);
+    }
+
+    public <T> T getOrganizationPermissions(String org, ReturnFormat format) throws IOException {
+        String orgPermissionsResponse = sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(orgPermissionsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new OrganizationPermissions(new JSONObject(orgPermissionsResponse));
+            default:
+                return (T) orgPermissionsResponse;
+        }
+    }
+
+    public boolean setOrganizationPermissions(String org, EnabledItems enabledRepositories) {
+        return setEnterprisePermissions(org, enabledRepositories, null);
+    }
+
+    public boolean setOrganizationPermissions(String org, OrganizationPermissions organizationPermissions) {
+        return setEnterprisePermissions(org, organizationPermissions.getEnabledRepositories(),
+                organizationPermissions.getAllowedActions());
+    }
+
+    public boolean setOrganizationPermissions(String org, EnabledItems enabledRepositories, AllowedActions allowedActions) {
+        Params params = new Params();
+        params.addParam("enabled_repositories", enabledRepositories);
+        if (allowedActions != null)
+            params.addParam("allowed_actions", allowedActions);
+        try {
+            sendPutRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH, params);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;

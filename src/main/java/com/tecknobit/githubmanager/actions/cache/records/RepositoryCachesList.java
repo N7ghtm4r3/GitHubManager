@@ -1,7 +1,8 @@
 package com.tecknobit.githubmanager.actions.cache.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.GitHubManager.GitHubResponse;
+import com.tecknobit.githubmanager.records.GitHubList;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,8 +28,9 @@ import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dat
  *     </li>
  * </ul>
  * @see GitHubResponse
+ * @see GitHubList
  **/
-public class RepositoryCachesList extends GitHubResponse {
+public class RepositoryCachesList extends GitHubList {
 
     /**
      * {@code Sorters} is a list for the sorters available
@@ -70,11 +72,6 @@ public class RepositoryCachesList extends GitHubResponse {
     }
 
     /**
-     * {@code totalCount} total number of caches
-     **/
-    private final int totalCount;
-
-    /**
      * {@code actionCaches} list of caches
      **/
     private final ArrayList<ActionCache> actionCaches;
@@ -86,8 +83,7 @@ public class RepositoryCachesList extends GitHubResponse {
      * @param actionCaches:list of caches
      **/
     public RepositoryCachesList(int totalCount, ArrayList<ActionCache> actionCaches) {
-        super(null);
-        this.totalCount = totalCount;
+        super(totalCount);
         this.actionCaches = actionCaches;
     }
 
@@ -98,21 +94,10 @@ public class RepositoryCachesList extends GitHubResponse {
      **/
     public RepositoryCachesList(JSONObject jRepositoryCachesList) {
         super(jRepositoryCachesList);
-        totalCount = hResponse.getInt("total_count");
         actionCaches = new ArrayList<>();
         JSONArray jActionCaches = hResponse.getJSONArray("actions_caches", new JSONArray());
         for (int j = 0; j < jActionCaches.length(); j++)
             actionCaches.add(new ActionCache(jActionCaches.getJSONObject(j)));
-    }
-
-    /**
-     * Method to get {@link #totalCount} instance <br>
-     * Any params required
-     *
-     * @return {@link #totalCount} instance as int
-     **/
-    public int getTotalCount() {
-        return totalCount;
     }
 
     /**

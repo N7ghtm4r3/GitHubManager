@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
-import com.tecknobit.githubmanager.GitHubManager.GitHubResponse;
+import com.tecknobit.githubmanager.records.GitHubList;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,13 +24,9 @@ import java.util.Collection;
  *     </li>
  * </ul>
  * @see GitHubResponse
+ * @see GitHubList
  **/
-public class ArtifactsList extends GitHubResponse {
-
-    /**
-     * {@code totalCount} total count of artifacts
-     **/
-    private final int totalCount;
+public class ArtifactsList extends GitHubList {
 
     /**
      * {@code artifacts} artifacts list
@@ -43,8 +40,7 @@ public class ArtifactsList extends GitHubResponse {
      * @param artifacts:  artifacts list
      **/
     public ArtifactsList(int totalCount, ArrayList<Artifact> artifacts) {
-        super(null);
-        this.totalCount = totalCount;
+        super(totalCount);
         this.artifacts = artifacts;
     }
 
@@ -55,21 +51,10 @@ public class ArtifactsList extends GitHubResponse {
      **/
     public ArtifactsList(JSONObject jArtifactsList) {
         super(jArtifactsList);
-        totalCount = hResponse.getInt("total_count", 0);
         artifacts = new ArrayList<>();
         JSONArray list = hResponse.getJSONArray("artifacts", new JSONArray());
         for (int j = 0; j < list.length(); j++)
             artifacts.add(new Artifact(list.getJSONObject(j)));
-    }
-
-    /**
-     * Method to get {@link #totalCount} instance <br>
-     * Any params required
-     *
-     * @return {@link #totalCount} instance as int
-     **/
-    public int getTotalCount() {
-        return totalCount;
     }
 
     /**

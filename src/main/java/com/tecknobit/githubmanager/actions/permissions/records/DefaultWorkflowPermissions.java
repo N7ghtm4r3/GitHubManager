@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.actions.permissions.records;
 
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;
 
-public class DefaultWorkflowPermissions extends GitHubManager.GitHubResponse {
+public class DefaultWorkflowPermissions extends GitHubResponse {
 
     private final String defaultWorkflowPermissions;
     private final boolean canApprovePullRequestReviews;

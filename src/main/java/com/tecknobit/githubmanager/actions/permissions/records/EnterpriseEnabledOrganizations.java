@@ -1,21 +1,19 @@
 package com.tecknobit.githubmanager.actions.permissions.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.records.GitHubList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class EnterpriseEnabledOrganizations extends GitHubManager.GitHubResponse {
+public class EnterpriseEnabledOrganizations extends GitHubList {
 
-    private final int totalCount;
     private final ArrayList<Organization> organizations;
 
     public EnterpriseEnabledOrganizations(int totalCount, ArrayList<Organization> organizations) {
-        super(null);
-        this.totalCount = totalCount;
+        super(totalCount);
         this.organizations = organizations;
     }
 
@@ -26,15 +24,10 @@ public class EnterpriseEnabledOrganizations extends GitHubManager.GitHubResponse
      **/
     public EnterpriseEnabledOrganizations(JSONObject jEnabledOrganizations) {
         super(jEnabledOrganizations);
-        totalCount = hResponse.getInt("total_count");
         organizations = new ArrayList<>();
         JSONArray jOrganizations = hResponse.getJSONArray("organizations", new JSONArray());
         for (int j = 0; j < jOrganizations.length(); j++)
             organizations.add(new Organization(jOrganizations.getJSONObject(j)));
-    }
-
-    public int getTotalCount() {
-        return totalCount;
     }
 
     public Collection<Organization> getOrganizations() {
