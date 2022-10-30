@@ -640,7 +640,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
     @WrappedRequest
-    public boolean deleteRepositoryCacheById(String owner, String repo, ActionCache actionCacheToDelete) throws IOException {
+    public boolean deleteRepositoryCacheById(String owner, String repo, ActionCache actionCacheToDelete) {
         return deleteRepositoryCache(owner, repo, actionCacheToDelete.getId());
     }
 
@@ -658,9 +658,18 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
-    public boolean deleteRepositoryCache(String owner, String repo, long cacheId) throws IOException {
-        sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH + "/" + cacheId);
-        return apiRequest.getResponseStatusCode() == 204;
+    public boolean deleteRepositoryCache(String owner, String repo, long cacheId) {
+        try {
+            sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH + "/" + cacheId);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
     }
 
 }

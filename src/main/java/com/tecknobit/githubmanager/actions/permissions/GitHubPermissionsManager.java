@@ -1,6 +1,21 @@
 package com.tecknobit.githubmanager.actions.permissions;
 
 import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.actions.permissions.records.DefaultWorkflowPermissions;
+import com.tecknobit.githubmanager.actions.permissions.records.EnterpriseAARW;
+import com.tecknobit.githubmanager.actions.permissions.records.EnterpriseEnabledOrganizations;
+import com.tecknobit.githubmanager.actions.permissions.records.EnterpriseEnabledOrganizations.Organization;
+import com.tecknobit.githubmanager.actions.permissions.records.Permissions;
+import com.tecknobit.githubmanager.actions.permissions.records.Permissions.EnabledOrganizations;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
+
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.ACTIONS_PATH;
+import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ENTERPRISES_PATH;
 
 /**
  * The {@code GitHubPermissionsManager} class is useful to manage all GitHub's permissions endpoints
@@ -11,6 +26,28 @@ import com.tecknobit.githubmanager.GitHubManager;
  * @see GitHubManager
  **/
 public class GitHubPermissionsManager extends GitHubManager {
+
+    /**
+     * {@code ACTIONS_PERMISSIONS_PATH} constant for {@code "/actions/permissions"} path
+     **/
+    public static final String ACTIONS_PERMISSIONS_PATH = ACTIONS_PATH + "permissions";
+
+    /**
+     * {@code ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH} constant for {@code "/actions/permissions/organizations"} path
+     **/
+    public static final String ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH = ACTIONS_PATH + "permissions/organizations";
+
+    /**
+     * {@code ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH} constant for {@code "/actions/permissions/organizations/selected-actions"}
+     * path
+     **/
+    public static final String ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH = ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH +
+            "/selected-actions";
+
+    /**
+     * {@code ACTIONS_PERMISSIONS_WORKFLOW_PATH} constant for {@code "/actions/permissions/workflow"} path
+     **/
+    public static final String ACTIONS_PERMISSIONS_WORKFLOW_PATH = ACTIONS_PERMISSIONS_PATH + "/workflow";
 
     /**
      * Constructor to init a {@link GitHubPermissionsManager}
@@ -70,6 +107,216 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     public GitHubPermissionsManager() {
         super();
+    }
+
+    public Permissions getEnterprisePermissions(String enterprise) throws IOException {
+        return getEnterprisePermissions(enterprise, LIBRARY_OBJECT);
+    }
+
+    public <T> T getEnterprisePermissions(String enterprise, ReturnFormat format) throws IOException {
+        String enterprisePermissionsResponse = sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_PATH);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(enterprisePermissionsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Permissions(new JSONObject(enterprisePermissionsResponse));
+            default:
+                return (T) enterprisePermissionsResponse;
+        }
+    }
+
+    public boolean setEnterprisePermissions(String enterprise, EnabledOrganizations enabledOrganizations) {
+        return setEnterprisePermissions(enterprise, enabledOrganizations, null);
+    }
+
+    public boolean setEnterprisePermissions(String enterprise, EnabledOrganizations enabledOrganizations,
+                                            Permissions.AllowedActions allowedActions) {
+        Params params = new Params();
+        params.addParam("enabled_organizations", enabledOrganizations);
+        if (allowedActions != null)
+            params.addParam("allowed_actions", allowedActions);
+        try {
+            sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH, params);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public EnterpriseEnabledOrganizations getEnabledEnterpriseOrganizations(String enterprise) throws IOException {
+        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), LIBRARY_OBJECT);
+    }
+
+    public <T> T getEnabledEnterpriseOrganizations(String enterprise, ReturnFormat format) throws IOException {
+        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), format);
+    }
+
+    private <T> T returnEnterpriseEnabledOrganizations(String enabledOrganizationsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(enabledOrganizationsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new EnterpriseEnabledOrganizations(new JSONObject(enabledOrganizationsResponse));
+            default:
+                return (T) enabledOrganizationsResponse;
+        }
+    }
+
+    public boolean enableSelectedEnterpriseOrganizations(String enterprise, Collection<Long> selectedOrganizationsIds) {
+        return enableSelectedEnterpriseOrganizations(enterprise, selectedOrganizationsIds.toArray(new Long[0]));
+    }
+
+    public boolean enableSelectedEnterpriseOrganizations(String enterprise, Long[] selectedOrganizationsIds) {
+        Params params = new Params();
+        params.addParam("selected_organization_ids", Arrays.stream(selectedOrganizationsIds).toList());
+        try {
+            sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH, params);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public boolean enableSelectedEnterpriseOrganization(String enterprise, Organization organizationToEnable) {
+        return enableSelectedEnterpriseOrganization(enterprise, organizationToEnable.getId());
+    }
+
+    public boolean enableSelectedEnterpriseOrganization(String enterprise, long orgId) {
+        try {
+            sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + "/org_id=" +
+                    orgId, null);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public boolean disableSelectedEnterpriseOrganization(String enterprise, Organization organizationToDisable) {
+        return disableSelectedEnterpriseOrganization(enterprise, organizationToDisable.getId());
+    }
+
+    public boolean disableSelectedEnterpriseOrganization(String enterprise, long orgId) {
+        try {
+            sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + "/org_id="
+                    + orgId);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public EnterpriseAARW getEnterpriseAllowedActionsAndReusableWorkflows(String enterprise) throws IOException {
+        return getEnterpriseAllowedActionsAndReusableWorkflows(enterprise, LIBRARY_OBJECT);
+    }
+
+    public <T> T getEnterpriseAllowedActionsAndReusableWorkflows(String enterprise, ReturnFormat format) throws IOException {
+        String aarwResponse = sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(aarwResponse);
+            case LIBRARY_OBJECT:
+                return (T) new EnterpriseAARW(new JSONObject(aarwResponse));
+            default:
+                return (T) aarwResponse;
+        }
+    }
+
+    public boolean setEnterpriseAllowedActionsAndReusableWorkflows(String enterprise) {
+        return setEnterpriseAllowedActionsAndReusableWorkflows(enterprise, (Params) null);
+    }
+
+    public boolean setEnterpriseAllowedActionsAndReusableWorkflows(String enterprise, EnterpriseAARW aarw) {
+        Params params = new Params();
+        JSONObject aarwSource = new JSONObject(aarw);
+        aarwSource.remove("instantiatedWithError");
+        for (String key : aarwSource.keySet())
+            params.addParam(key, aarwSource.get(key));
+        return setEnterpriseAllowedActionsAndReusableWorkflows(enterprise, params);
+    }
+
+    public boolean setEnterpriseAllowedActionsAndReusableWorkflows(String enterprise, Params aarw) {
+        try {
+            sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH,
+                    aarw);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public DefaultWorkflowPermissions getDefaultEnterpriseWorkflowPermissions(String enterprise) throws IOException {
+        return getDefaultEnterpriseWorkflowPermissions(enterprise, LIBRARY_OBJECT);
+    }
+
+    public <T> T getDefaultEnterpriseWorkflowPermissions(String enterprise, ReturnFormat format) throws IOException {
+        String defaultWorkflowPermissionsResponse = sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_WORKFLOW_PATH);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(defaultWorkflowPermissionsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new DefaultWorkflowPermissions(new JSONObject(defaultWorkflowPermissionsResponse));
+            default:
+                return (T) defaultWorkflowPermissionsResponse;
+        }
+    }
+
+    public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise) {
+        return setDefaultEnterpriseWorkflowPermissions(enterprise, (Params) null);
+    }
+
+    public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise, DefaultWorkflowPermissions
+            defaultWorkflowPermissions) {
+        Params params = new Params();
+        JSONObject defWorkflowPermissionsSource = new JSONObject(defaultWorkflowPermissions);
+        defWorkflowPermissionsSource.remove("instantiatedWithError");
+        for (String key : defWorkflowPermissionsSource.keySet())
+            params.addParam(key, defWorkflowPermissionsSource.get(key));
+        return setDefaultEnterpriseWorkflowPermissions(enterprise, params);
+    }
+
+    public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise, Params defaultEnterpriseWorkflowPermissions) {
+        try {
+            sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
+                    defaultEnterpriseWorkflowPermissions);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
     }
 
 }

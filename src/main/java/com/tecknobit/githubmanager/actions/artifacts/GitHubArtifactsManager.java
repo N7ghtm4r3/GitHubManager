@@ -253,7 +253,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Delete an artifact</a>
      **/
     @WrappedRequest
-    public boolean deleteArtifact(String owner, String repo, Artifact artifactToDelete) throws IOException {
+    public boolean deleteArtifact(String owner, String repo, Artifact artifactToDelete) {
         return deleteArtifact(owner, repo, artifactToDelete.getId());
     }
 
@@ -269,9 +269,18 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
-    public boolean deleteArtifact(String owner, String repo, long artifactId) throws IOException {
-        sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId);
-        return apiRequest.getResponseStatusCode() == 204;
+    public boolean deleteArtifact(String owner, String repo, long artifactId) {
+        try {
+            sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
     }
 
     /**

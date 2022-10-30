@@ -31,29 +31,43 @@ import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dat
 public class RepositoryCachesList extends GitHubResponse {
 
     /**
-     * {@code CREATED_AT_SORTER} is the constant for created at sorter
+     * {@code Sorters} is a list for the sorters available
      **/
-    public static final String CREATED_AT_SORTER = "created_at";
+    public enum Sorters {
+
+        /**
+         * {@code created_at} is the constant for created at sorter
+         **/
+        created_at,
+
+        /**
+         * {@code last_accessed_at} is the constant for last accessed at sorter
+         **/
+        last_accessed_at,
+
+        /**
+         * {@code size_in_bytes} is the constant for size in bytes sorter
+         **/
+        size_in_bytes
+
+    }
 
     /**
-     * {@code LAST_ACCESSED_SORTER} is the constant for last accessed at sorter
+     * {@code Directions} is a list for the directions available
      **/
-    public static final String LAST_ACCESSED_SORTER = "last_accessed_at";
+    public enum Directions {
 
-    /**
-     * {@code SIZE_IN_BYTES_SORTER} is the constant for size in bytes sorter
-     **/
-    public static final String SIZE_IN_BYTES_SORTER = "size_in_bytes";
+        /**
+         * {@code ASC_DIRECTION} is the constant for asc direction
+         **/
+        asc,
 
-    /**
-     * {@code ASC_DIRECTION} is the constant for asc direction
-     **/
-    public static final String ASC_DIRECTION = "asc";
+        /**
+         * {@code DESC_DIRECTION} is the constant for desc direction
+         **/
+        desc
 
-    /**
-     * {@code DESC_DIRECTION} is the constant for desc direction
-     **/
-    public static final String DESC_DIRECTION = "desc";
+    }
 
     /**
      * {@code totalCount} total number of caches

@@ -8,7 +8,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Properties;
 
-import static com.tecknobit.apimanager.apis.APIRequest.GET_METHOD;
+import static com.tecknobit.apimanager.apis.APIRequest.*;
 
 /**
  * The {@code GitHubManager} class is useful to manage all GitHubManager's endpoints
@@ -18,6 +18,7 @@ import static com.tecknobit.apimanager.apis.APIRequest.GET_METHOD;
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/overview/resources-in-the-rest-api">
  * Overview</a>
  **/
+// TODO: 30/10/2022 DELETE TEST PRINT IN REQUESTS
 public class GitHubManager {
 
     /**
@@ -139,6 +140,11 @@ public class GitHubManager {
         if (defaultErrorMessage != null)
             properties.setProperty("defaultErrorMessage", defaultErrorMessage);
         properties.setProperty("requestTimeout", String.valueOf(requestTimeout));
+        if (mainHeaders == null) {
+            mainHeaders = new APIRequest.Headers();
+            mainHeaders.addHeader("authorization", " token " + accessToken);
+            mainHeaders.addHeader("accept", "application/vnd.github+json");
+        }
     }
 
     /**
@@ -147,12 +153,59 @@ public class GitHubManager {
      * @param endpoint: endpoint of the request {@code "GitHub"}
      **/
     public String sendGetRequest(String endpoint) throws IOException {
-        if (mainHeaders == null) {
-            mainHeaders = new APIRequest.Headers();
-            mainHeaders.addHeader("authorization", " token " + accessToken);
-            mainHeaders.addHeader("accept", "application/vnd.github+json");
-        }
-        apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, GET_METHOD, mainHeaders);
+        return sendRequest(endpoint, GET_METHOD);
+    }
+
+    /**
+     * Method to send a {@code "DELETE"} request to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     **/
+    public String sendDeleteRequest(String endpoint) throws IOException {
+        return sendRequest(endpoint, DELETE_METHOD);
+    }
+
+    /**
+     * Method to send a request to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     **/
+    private String sendRequest(String endpoint, String method) throws IOException {
+        apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
+        System.out.println(endpoint);
+        return apiRequest.getResponse();
+    }
+
+    /**
+     * Method to send a {@code "POST"} request to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     **/
+    public String sendPostRequest(String endpoint, Params bodyParams) throws IOException {
+        return sendRequestWithBody(endpoint, POST_METHOD, bodyParams);
+    }
+
+    /**
+     * Method to send a {@code "PUT"} request to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     **/
+    public String sendPutRequest(String endpoint, Params bodyParams) throws IOException {
+        return sendRequestWithBody(endpoint, PUT_METHOD, bodyParams);
+    }
+
+    /**
+     * Method to send a request with a body payload to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     **/
+    private String sendRequestWithBody(String endpoint, String method, Params bodyPayload) throws IOException {
+        if (bodyPayload == null)
+            bodyPayload = new Params();
+        apiRequest.sendBodyAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
+        System.out.println(endpoint);
+        System.out.println(bodyPayload.createPayload());
+        System.out.println(bodyPayload.createJSONPayload());
         return apiRequest.getResponse();
     }
 
