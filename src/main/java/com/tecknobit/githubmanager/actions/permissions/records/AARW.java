@@ -7,13 +7,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 // TODO: 30/10/2022 SET WHAT Acronym MEANS
-public class EnterpriseAARW extends GitHubResponse {
+public class AARW extends GitHubResponse {
 
     private final boolean githubOwnedAllowed;
     private final boolean verifiedAllowed;
     private final ArrayList<String> patternsAllowed;
 
-    public EnterpriseAARW(boolean githubOwnedAllowed, boolean verifiedAllowed, ArrayList<String> patternsAllowed) {
+    public AARW(boolean githubOwnedAllowed, boolean verifiedAllowed, ArrayList<String> patternsAllowed) {
         super(null);
         this.githubOwnedAllowed = githubOwnedAllowed;
         this.verifiedAllowed = verifiedAllowed;
@@ -21,11 +21,11 @@ public class EnterpriseAARW extends GitHubResponse {
     }
 
     /**
-     * Constructor to init a {@link EnterpriseAARW}
+     * Constructor to init a {@link AARW}
      *
      * @param jEnterpriseAARW : allowed actions and reusable workflows for an enterprise details as {@link JSONObject}
      **/
-    public EnterpriseAARW(JSONObject jEnterpriseAARW) {
+    public AARW(JSONObject jEnterpriseAARW) {
         super(jEnterpriseAARW);
         githubOwnedAllowed = hResponse.getBoolean("github_owned_allowed");
         verifiedAllowed = hResponse.getBoolean("verified_allowed");

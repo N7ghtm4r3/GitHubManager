@@ -203,7 +203,6 @@ public class GitHubManager {
             bodyPayload = new Params();
         apiRequest.sendBodyAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
         System.out.println(endpoint);
-        System.out.println(bodyPayload.createPayload());
         System.out.println(bodyPayload.createJSONPayload());
         return apiRequest.getResponse();
     }

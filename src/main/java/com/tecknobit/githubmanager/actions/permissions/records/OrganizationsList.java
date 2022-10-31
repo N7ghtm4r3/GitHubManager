@@ -8,21 +8,21 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class EnterpriseEnabledOrganizations extends GitHubList {
+public class OrganizationsList extends GitHubList {
 
     private final ArrayList<Organization> organizations;
 
-    public EnterpriseEnabledOrganizations(int totalCount, ArrayList<Organization> organizations) {
+    public OrganizationsList(int totalCount, ArrayList<Organization> organizations) {
         super(totalCount);
         this.organizations = organizations;
     }
 
     /**
-     * Constructor to init a {@link EnterpriseEnabledOrganizations}
+     * Constructor to init a {@link OrganizationsList}
      *
      * @param jEnabledOrganizations : enabled organizations details as {@link JSONObject}
      **/
-    public EnterpriseEnabledOrganizations(JSONObject jEnabledOrganizations) {
+    public OrganizationsList(JSONObject jEnabledOrganizations) {
         super(jEnabledOrganizations);
         organizations = new ArrayList<>();
         JSONArray jOrganizations = hResponse.getJSONArray("organizations", new JSONArray());

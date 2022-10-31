@@ -3,25 +3,25 @@ package com.tecknobit.githubmanager.actions.permissions.records.types;
 import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.githubmanager.actions.permissions.records.types.Permissions.AllowedActions.all;
+import static com.tecknobit.githubmanager.actions.permissions.records.types.ActionsPermissions.AllowedActions.all;
 
-public class Permissions extends GitHubResponse {
+public class ActionsPermissions extends GitHubResponse {
 
     private final AllowedActions allowedActions;
     private final String selectedActionsUrl;
 
-    public Permissions(AllowedActions allowedActions, String selectedActionsUrl) {
+    public ActionsPermissions(AllowedActions allowedActions, String selectedActionsUrl) {
         super(null);
         this.allowedActions = allowedActions;
         this.selectedActionsUrl = selectedActionsUrl;
     }
 
     /**
-     * Constructor to init a {@link Permissions}
+     * Constructor to init a {@link ActionsPermissions}
      *
      * @param jPermissions : permissions details as {@link JSONObject}
      **/
-    public Permissions(JSONObject jPermissions) {
+    public ActionsPermissions(JSONObject jPermissions) {
         super(jPermissions);
         allowedActions = AllowedActions.valueOf(hResponse.getString("allowed_actions", all.name()));
         selectedActionsUrl = hResponse.getString("selected_actions_url");
