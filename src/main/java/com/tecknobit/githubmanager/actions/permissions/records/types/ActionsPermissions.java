@@ -5,11 +5,45 @@ import org.json.JSONObject;
 
 import static com.tecknobit.githubmanager.actions.permissions.records.types.ActionsPermissions.AllowedActions.all;
 
+/**
+ * The {@code ActionsPermissions} class is useful to format a GitHub's actions permissions
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+ *             Get GitHub Actions permissions for an enterprise</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+ *             Get GitHub Actions permissions for an organization</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+ *             Get GitHub Actions permissions for a repository</a>
+ *     </li>
+ * </ul>
+ * @see GitHubResponse
+ **/
 public class ActionsPermissions extends GitHubResponse {
 
+    /**
+     * {@code allowedActions} the permissions policy that controls the actions and reusable workflows that are allowed to run
+     **/
     private final AllowedActions allowedActions;
+
+    /**
+     * {@code selectedActionsUrl} selected actions url
+     **/
     private final String selectedActionsUrl;
 
+    /**
+     * Constructor to init a {@link ActionsPermissions}
+     *
+     * @param allowedActions:     the permissions policy that controls the actions and reusable workflows that are allowed to run
+     * @param selectedActionsUrl: selected actions url
+     **/
     public ActionsPermissions(AllowedActions allowedActions, String selectedActionsUrl) {
         super(null);
         this.allowedActions = allowedActions;
@@ -27,14 +61,45 @@ public class ActionsPermissions extends GitHubResponse {
         selectedActionsUrl = hResponse.getString("selected_actions_url");
     }
 
+    /**
+     * Method to get {@link #allowedActions} instance <br>
+     * Any params required
+     *
+     * @return {@link #allowedActions} instance as {@link AllowedActions}
+     **/
     public AllowedActions getAllowedActions() {
         return allowedActions;
     }
 
+    /**
+     * Method to get {@link #selectedActionsUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #selectedActionsUrl} instance as {@link String}
+     **/
     public String getSelectedActionsUrl() {
         return selectedActionsUrl;
     }
 
+    /**
+     * {@code EnabledItems} the policies that controls if some items are allowed to run GitHub Actions
+     *
+     * @apiNote see the official documentation at:
+     * <ul>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+     *             Get GitHub Actions permissions for an enterprise</a>
+     *     </li>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     *             Get GitHub Actions permissions for an organization</a>
+     *     </li>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+     *             Get GitHub Actions permissions for a repository</a>
+     *     </li>
+     * </ul>
+     **/
     public enum EnabledItems {
 
         /**
@@ -54,6 +119,25 @@ public class ActionsPermissions extends GitHubResponse {
 
     }
 
+    /**
+     * {@code AllowedActions} the permissions policy that controls the actions and reusable workflows that are allowed to run
+     *
+     * @apiNote see the official documentation at:
+     * <ul>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+     *             Get GitHub Actions permissions for an enterprise</a>
+     *     </li>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     *             Get GitHub Actions permissions for an organization</a>
+     *     </li>
+     *     <li>
+     *         <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+     *             Get GitHub Actions permissions for a repository</a>
+     *     </li>
+     * </ul>
+     **/
     public enum AllowedActions {
 
         /**

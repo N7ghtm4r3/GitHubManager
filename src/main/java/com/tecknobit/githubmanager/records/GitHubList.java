@@ -1,8 +1,14 @@
 package com.tecknobit.githubmanager.records;
 
+import com.tecknobit.githubmanager.GitHubManager;
 import org.json.JSONObject;
 
-// TODO: 30/10/2022 DOCU STRING OF THE CLASS
+/**
+ * The {@code GitHubList} class is useful to format all GitHub's list responses giving basics methods
+ * for others {@link GitHubManager.ReturnFormat#LIBRARY_OBJECT}
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ **/
 public abstract class GitHubList extends GitHubResponse {
 
     /**

@@ -33,6 +33,7 @@ import static com.tecknobit.githubmanager.records.GitHubResponse.INSTANTIATED_WI
  * About the ActionsPermissions API</a>
  * @see GitHubManager
  **/
+// TODO: 31/10/2022 TEST JSON BODY PAYLOAD 
 public class GitHubPermissionsManager extends GitHubManager {
 
     /**
@@ -67,6 +68,16 @@ public class GitHubPermissionsManager extends GitHubManager {
      * path
      **/
     public static final String ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH = ACTIONS_PERMISSIONS_PATH + "/selected-actions";
+
+    /**
+     * {@code ACTIONS_PERMISSIONS_ACCESS_PATH} constant for {@code "/actions/permissions/access"}
+     * path
+     **/
+    public static final String ACTIONS_PERMISSIONS_ACCESS_PATH = ACTIONS_PERMISSIONS_PATH + "/access";
+
+    public String getAccessLevelOutsideRepository(String owner, String repo) {
+        return getAccessLevelOutsideRepository(owner, repo, LIBRARY_OBJECT);
+    }
 
     /**
      * Constructor to init a {@link GitHubPermissionsManager}
@@ -399,46 +410,12 @@ public class GitHubPermissionsManager extends GitHubManager {
         return returnAARW(sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
     }
 
-    private <T> T returnAARW(String aarwResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(aarwResponse);
-            case LIBRARY_OBJECT:
-                return (T) new AARW(new JSONObject(aarwResponse));
-            default:
-                return (T) aarwResponse;
-        }
-    }
-
     public boolean setOrganizationAARW(String org, AARW aarw) {
         return setAARW(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
 
     public boolean setOrganizationAARW(String org, Params aarw) {
         return setAARW(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
-    }
-
-    private boolean setAARW(String endpoint, AARW aarw) {
-        Params params = new Params();
-        JSONObject aarwSource = new JSONObject(aarw);
-        aarwSource.remove(INSTANTIATED_WITH_ERROR_KEY);
-        for (String key : aarwSource.keySet())
-            params.addParam(key, aarwSource.get(key));
-        return setAARW(endpoint, params);
-    }
-
-    private boolean setAARW(String endpoint, Params aarw) {
-        try {
-            sendPutRequest(endpoint, aarw);
-            if (apiRequest.getResponseStatusCode() != 204) {
-                printErrorResponse();
-                return false;
-            }
-            return true;
-        } catch (IOException e) {
-            printErrorResponse();
-            return false;
-        }
     }
 
     public DefaultWorkflowPermissions getDefaultOrganizationWorkflowPermissions(String org) throws IOException {
@@ -451,17 +428,6 @@ public class GitHubPermissionsManager extends GitHubManager {
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
     }
 
-    private <T> T returnDefaultWorkflowPermissions(String defWorkflowPermissionsResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(defWorkflowPermissionsResponse);
-            case LIBRARY_OBJECT:
-                return (T) new DefaultWorkflowPermissions(new JSONObject(defWorkflowPermissionsResponse));
-            default:
-                return (T) defWorkflowPermissionsResponse;
-        }
-    }
-
     public boolean setDefaultOrganizationWorkflowPermissions(String org, DefaultWorkflowPermissions defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
@@ -470,29 +436,6 @@ public class GitHubPermissionsManager extends GitHubManager {
     public boolean setDefaultOrganizationWorkflowPermissions(String org, Params defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
-    }
-
-    private boolean setDefaultWorkflowPermissions(String endpoint, DefaultWorkflowPermissions defaultWorkflowPermissions) {
-        Params params = new Params();
-        JSONObject defWorkflowPermissionsSource = new JSONObject(defaultWorkflowPermissions);
-        defWorkflowPermissionsSource.remove(INSTANTIATED_WITH_ERROR_KEY);
-        for (String key : defWorkflowPermissionsSource.keySet())
-            params.addParam(key, defWorkflowPermissionsSource.get(key));
-        return setDefaultWorkflowPermissions(endpoint, params);
-    }
-
-    private boolean setDefaultWorkflowPermissions(String endpoint, Params defaultWorkflowPermissions) {
-        try {
-            sendPutRequest(endpoint, defaultWorkflowPermissions);
-            if (apiRequest.getResponseStatusCode() != 204) {
-                printErrorResponse();
-                return false;
-            }
-            return true;
-        } catch (IOException e) {
-            printErrorResponse();
-            return false;
-        }
     }
 
     public RepositoryActionsPermissions getRepositoryActionsPermissions(String owner, String repo) throws IOException {
@@ -551,21 +494,153 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
-    public String getLevelAccessOutsideRepository(String owner, String repo) throws IOException {
-        return getLevelAccessOutsideRepository(owner, repo, LIBRARY_OBJECT);
+    public <T> T getAccessLevelOutsideRepository(String owner, String repo, ReturnFormat format) {
+        try {
+            JSONObject levelAccessResponse = new JSONObject(sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                    ACTIONS_PERMISSIONS_ACCESS_PATH));
+            switch (format) {
+                case JSON:
+                    return (T) levelAccessResponse;
+                case LIBRARY_OBJECT:
+                    return (T) levelAccessResponse.getString("access_level");
+                default:
+                    return (T) levelAccessResponse.toString();
+            }
+        } catch (Exception e) {
+            printErrorResponse();
+            return null;
+        }
     }
 
-    public <T> T getLevelAccessOutsideRepository(String owner, String repo, ReturnFormat format) throws IOException {
-        JSONObject levelAccessResponse = new JSONObject(sendGetRequest(REPOS_PATH + owner + "/" + repo +
-                ACTIONS_PERMISSIONS_PATH + "/access"));
+    public boolean setAccessLevelOutsideRepository(String owner, String repo, AccessLevel accessLevel) {
+        Params params = new Params();
+        params.addParam("access_level", accessLevel);
+        try {
+            sendPutRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_ACCESS_PATH, params);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public AARW getRepositoryAARW(String owner, String repo) throws IOException {
+        return returnAARW(sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), LIBRARY_OBJECT);
+    }
+
+    public <T> T getRepositoryAARW(String owner, String repo, ReturnFormat format) throws IOException {
+        return returnAARW(sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
+    }
+
+    private <T> T returnAARW(String aarwResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
-                return (T) levelAccessResponse;
+                return (T) new JSONObject(aarwResponse);
             case LIBRARY_OBJECT:
-                return (T) levelAccessResponse.getString("access_level");
+                return (T) new AARW(new JSONObject(aarwResponse));
             default:
-                return (T) levelAccessResponse.toString();
+                return (T) aarwResponse;
         }
+    }
+
+    public boolean setRepositoryAARW(String owner, String repo, AARW aarw) {
+        return setAARW(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
+    }
+
+    public boolean setRepositoryAARW(String owner, String repo, Params aarw) {
+        return setAARW(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
+    }
+
+    private boolean setAARW(String endpoint, AARW aarw) {
+        Params params = new Params();
+        JSONObject aarwSource = new JSONObject(aarw);
+        aarwSource.remove(INSTANTIATED_WITH_ERROR_KEY);
+        for (String key : aarwSource.keySet())
+            params.addParam(key, aarwSource.get(key));
+        return setAARW(endpoint, params);
+    }
+
+    private boolean setAARW(String endpoint, Params aarw) {
+        try {
+            sendPutRequest(endpoint, aarw);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public DefaultWorkflowPermissions getDefaultRepositoryWorkflowPermissions(String owner, String repo) throws IOException {
+        return returnDefaultWorkflowPermissions(sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
+    }
+
+    public <T> T getDefaultRepositoryWorkflowPermissions(String owner, String repo, ReturnFormat format) throws IOException {
+        return returnDefaultWorkflowPermissions(sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
+    }
+
+    private <T> T returnDefaultWorkflowPermissions(String defWorkflowPermissionsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(defWorkflowPermissionsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new DefaultWorkflowPermissions(new JSONObject(defWorkflowPermissionsResponse));
+            default:
+                return (T) defWorkflowPermissionsResponse;
+        }
+    }
+
+    public boolean setDefaultRepositoryWorkflowPermissions(String owner, String repo,
+                                                           DefaultWorkflowPermissions defaultWorkflowPermissions) {
+        return setDefaultWorkflowPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
+                defaultWorkflowPermissions);
+    }
+
+    public boolean setDefaultRepositoryWorkflowPermissions(String owner, String repo, Params defaultWorkflowPermissions) {
+        return setDefaultWorkflowPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
+                defaultWorkflowPermissions);
+    }
+
+    private boolean setDefaultWorkflowPermissions(String endpoint, DefaultWorkflowPermissions defaultWorkflowPermissions) {
+        Params params = new Params();
+        JSONObject defWorkflowPermissionsSource = new JSONObject(defaultWorkflowPermissions);
+        defWorkflowPermissionsSource.remove(INSTANTIATED_WITH_ERROR_KEY);
+        for (String key : defWorkflowPermissionsSource.keySet())
+            params.addParam(key, defWorkflowPermissionsSource.get(key));
+        return setDefaultWorkflowPermissions(endpoint, params);
+    }
+
+    private boolean setDefaultWorkflowPermissions(String endpoint, Params defaultWorkflowPermissions) {
+        try {
+            sendPutRequest(endpoint, defaultWorkflowPermissions);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    public enum AccessLevel {
+
+        none,
+        organization,
+        enterprise
+
     }
 
 }

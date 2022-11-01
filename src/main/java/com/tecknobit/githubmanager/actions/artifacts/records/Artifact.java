@@ -65,7 +65,7 @@ public class Artifact extends GitHubResponse {
     private final int sizeInBytes;
 
     /**
-     * {@code url} of the artifact
+     * {@code "url"} of the artifact
      **/
     private final String url;
 
