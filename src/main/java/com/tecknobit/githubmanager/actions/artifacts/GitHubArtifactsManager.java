@@ -108,7 +108,7 @@ public class GitHubArtifactsManager extends GitHubManager {
 
     /**
      * Method to get a list of all artifacts for a repository. Anyone with read access to the repository can use this endpoint.
-     * If the repository is private you must use an access token with the repo scope. -> <b> this step is automatically made
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *

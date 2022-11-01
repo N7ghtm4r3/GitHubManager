@@ -1,5 +1,6 @@
 package com.tecknobit.githubmanager.actions.permissions;
 
+import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.permissions.records.AARW;
 import com.tecknobit.githubmanager.actions.permissions.records.DefaultWorkflowPermissions;
@@ -75,10 +76,6 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     public static final String ACTIONS_PERMISSIONS_ACCESS_PATH = ACTIONS_PERMISSIONS_PATH + "/access";
 
-    public String getAccessLevelOutsideRepository(String owner, String repo) {
-        return getAccessLevelOutsideRepository(owner, repo, LIBRARY_OBJECT);
-    }
-
     /**
      * Constructor to init a {@link GitHubPermissionsManager}
      *
@@ -139,10 +136,33 @@ public class GitHubPermissionsManager extends GitHubManager {
         super();
     }
 
+    /**
+     * Method to get the {@code "GitHub Actions"} permissions policy for organizations and allowed actions and reusable
+     * workflows in an enterprise.
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @return enterprise actions permissions as {@link EnterpriseActionsPermissions} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+     * Get GitHub Actions permissions for an enterprise</a>
+     **/
     public EnterpriseActionsPermissions getEnterpriseActionsPermissions(String enterprise) throws IOException {
         return getEnterpriseActionsPermissions(enterprise, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the {@code "GitHub Actions"} permissions policy for organizations and allowed actions and reusable
+     * workflows in an enterprise.
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return enterprise actions permissions as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+     * Get GitHub Actions permissions for an enterprise</a>
+     **/
     public <T> T getEnterpriseActionsPermissions(String enterprise, ReturnFormat format) throws IOException {
         String enterprisePermissionsResponse = sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_PATH);
@@ -156,32 +176,159 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to set the {@code "GitHub Actions"} permissions policy for organizations and allowed actions and reusable
+     * workflows in an enterprise.
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise:           the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param enabledOrganizations: the policy that controls the organizations in the enterprise that are allowed to run {@code "GitHub Actions"}
+     *                              Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
+     * Set GitHub Actions permissions for an enterprise</a>
+     **/
     public boolean setEnterpriseActionsPermissions(String enterprise, EnabledItems enabledOrganizations) {
         return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH, enabledOrganizations,
                 null);
     }
 
+    /**
+     * Method to set the {@code "GitHub Actions"} permissions policy for organizations and allowed actions and reusable
+     * workflows in an enterprise.
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise:            the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param enterprisePermissions: enterprise actions permissions to set
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
+     * Set GitHub Actions permissions for an enterprise</a>
+     **/
     public boolean setEnterpriseActionsPermissions(String enterprise, EnterpriseActionsPermissions enterprisePermissions) {
         return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH,
                 enterprisePermissions.getEnabledOrganizations(), enterprisePermissions.getAllowedActions());
     }
 
+    /**
+     * Method to set the {@code "GitHub Actions"} permissions policy for organizations and allowed actions and reusable
+     * workflows in an enterprise.
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise:           the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param enabledOrganizations: the policy that controls the organizations in the enterprise that are allowed to run {@code "GitHub Actions"}
+     *                              Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
+     * @param allowedActions:       the permissions policy that controls the actions and reusable workflows that are allowed to run.
+     *                              Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
+     * Set GitHub Actions permissions for an enterprise</a>
+     **/
+    @WrappedRequest
     public boolean setEnterpriseActionsPermissions(String enterprise, EnabledItems enabledOrganizations,
                                                    AllowedActions allowedActions) {
-        return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH, enabledOrganizations,
-                allowedActions);
+        return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH,
+                enabledOrganizations, allowedActions);
     }
 
+    /**
+     * Method to get a list of the organizations that are selected to have {@code "GitHub Actions"} enabled in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @return enabled organizations list for an enterprise as {@link OrganizationsList} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * List selected organizations enabled for GitHub Actions in an enterprise</a>
+     **/
     public OrganizationsList getEnabledEnterpriseOrganizations(String enterprise) throws IOException {
         return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get a list of the organizations that are selected to have {@code "GitHub Actions"} enabled in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return enabled organizations list for an enterprise as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * List selected organizations enabled for GitHub Actions in an enterprise</a>
+     **/
     public <T> T getEnabledEnterpriseOrganizations(String enterprise, ReturnFormat format) throws IOException {
         return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), format);
     }
 
+    /**
+     * Method to get a list of the organizations that are selected to have {@code "GitHub Actions"} enabled in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     *
+     * @param enterprise:  the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return enabled organizations list for an enterprise as {@link OrganizationsList} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * List selected organizations enabled for GitHub Actions in an enterprise</a>
+     **/
+    public OrganizationsList getEnabledEnterpriseOrganizations(String enterprise, Params queryParams) throws IOException {
+        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + queryParams), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the organizations that are selected to have {@code "GitHub Actions"} enabled in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise:  the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return enabled organizations list for an enterprise as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * List selected organizations enabled for GitHub Actions in an enterprise</a>
+     **/
+    public <T> T getEnabledEnterpriseOrganizations(String enterprise, Params queryParams,
+                                                   ReturnFormat format) throws IOException {
+        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+                ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + queryParams.createQueryString()), format);
+    }
+
+    /**
+     * Method to create an enabled organizations list for an enterprise
+     *
+     * @param enabledOrganizationsResponse: obtained from GitHub's response
+     * @param format:                       return type formatter -> {@link ReturnFormat}
+     * @return enabled organizations list for an enterprise as {@code "format"} defines
+     **/
     private <T> T returnEnterpriseEnabledOrganizations(String enabledOrganizationsResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -193,19 +340,72 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to replace the list of selected organizations that are enabled for {@code "GitHub Actions"} in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise:               the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param selectedOrganizationsIds: list of organization IDs to enable for {@code "GitHub Actions"} in {@link Collection} of {@link Long} format
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * Set selected organizations enabled for GitHub Actions in an enterprise</a>
+     **/
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, Collection<Long> selectedOrganizationsIds) {
         return enableSelectedEnterpriseOrganizations(enterprise, selectedOrganizationsIds.toArray(new Long[0]));
     }
 
+    /**
+     * Method to replace the list of selected organizations that are enabled for {@code "GitHub Actions"} in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise:               the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param selectedOrganizationsIds: list of organization IDs to enable for {@code "GitHub Actions"} in array of {@link Long} format
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * Set selected organizations enabled for GitHub Actions in an enterprise</a>
+     **/
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, Long[] selectedOrganizationsIds) {
         return enableSelectedItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
                 "selected_organization_ids", selectedOrganizationsIds);
     }
 
+    /**
+     * Method to adds an organization to the list of selected organizations that are enabled for {@code "GitHub Actions"} in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise:           the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param organizationToEnable: organization to enable
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * Enable a selected organization for GitHub Actions in an enterprise</a>
+     **/
+    @WrappedRequest
     public boolean enableSelectedEnterpriseOrganization(String enterprise, Organization organizationToEnable) {
         return enableSelectedEnterpriseOrganization(enterprise, organizationToEnable.getId());
     }
 
+    /**
+     * Method to adds an organization to the list of selected organizations that are enabled for {@code "GitHub Actions"} in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param orgId:      the unique identifier of the organization
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * Enable a selected organization for GitHub Actions in an enterprise</a>
+     **/
     public boolean enableSelectedEnterpriseOrganization(String enterprise, long orgId) {
         try {
             sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + orgId,
@@ -221,10 +421,37 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to remove an organization to the list of selected organizations that are enabled for {@code "GitHub Actions"} in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise:            the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param organizationToDisable: organization to disable
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * Disable a selected organization for GitHub Actions in an enterprise</a>
+     **/
+    @WrappedRequest
     public boolean disableSelectedEnterpriseOrganization(String enterprise, Organization organizationToDisable) {
         return disableSelectedEnterpriseOrganization(enterprise, organizationToDisable.getId());
     }
 
+    /**
+     * Method to remove an organization to the list of selected organizations that are enabled for {@code "GitHub Actions"} in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "enabled_organizations"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param orgId:      the unique identifier of the organization
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * Disable a selected organization for GitHub Actions in an enterprise</a>
+     **/
     public boolean disableSelectedEnterpriseOrganization(String enterprise, long orgId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + orgId);
@@ -239,51 +466,206 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to get the selected actions and reusable workflows that are allowed in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "allowed_actions"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @return allowed actions and reusable workflows for an enterprise as {@link AARW} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * Get allowed actions and reusable workflows for an enterprise</a>
+     **/
     public AARW getEnterpriseAARW(String enterprise) throws IOException {
         return returnAARW(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the selected actions and reusable workflows that are allowed in an enterprise.
+     * To use this endpoint, the enterprise permission policy for {@code "allowed_actions"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return allowed actions and reusable workflows for an enterprise as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * Get allowed actions and reusable workflows for an enterprise</a>
+     **/
     public <T> T getEnterpriseAARW(String enterprise, ReturnFormat format) throws IOException {
         return returnAARW(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH), format);
     }
 
+    /**
+     * Method to set the actions and reusable workflows that are allowed in an enterprise.
+     * To use this endpoint, the enterprise permission policy for allowed_actions must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param aarw:       allowed actions and reusable workflows for an organization
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * Set allowed actions and reusable workflows for an enterprise</a>
+     **/
+    @WrappedRequest
     public boolean setEnterpriseAARW(String enterprise, AARW aarw) {
         return setAARW(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH,
                 aarw);
     }
 
+    /**
+     * Method to set the actions and reusable workflows that are allowed in an enterprise.
+     * To use this endpoint, the enterprise permission policy for allowed_actions must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param aarw:       allowed actions and reusable workflows params not mandatory, keys accepted are:
+     *                    <ul>
+     *                       <li>
+     *                           {@code "github_owned_allowed"} -> whether {@code "GitHub-owned"} actions are allowed. For example,
+     *                           this includes the actions in the actions organization - [boolean]
+     *                       </li>
+     *                       <li>
+     *                           {@code "verified_allowed"} -> whether actions from {@code "GitHub Marketplace"} verified
+     *                           creators are allowed. Set to {@code "true"} to allow all actions by {@code "GitHub Marketplace"}
+     *                           verified creators - [boolean]
+     *                       </li>
+     *                       <li>
+     *                           {@code "patterns_allowed"} -> specifies a list of string-matching patterns to allow specific action(s)
+     *                           and reusable workflow(s). Wildcards, tags, and SHAs are allowed.
+     *                           For example, monalisa/octocat@*, monalisa/octocat@v2, monalisa/*. - [array of {@link String}]
+     *                       </li>
+     *                    </ul>
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * Set allowed actions and reusable workflows for an enterprise</a>
+     **/
     public boolean setEnterpriseAARW(String enterprise, Params aarw) {
         return setAARW(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH,
                 aarw);
     }
 
+    /**
+     * Method to get the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows in an enterprise,
+     * as well as whether {@code "GitHub Actions"} can submit approving pull request reviews. For more information,
+     * see "Enforcing a policy for workflow permissions in your enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "enterprise_administration:write"} permission to use this endpoint
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @return default workflow permissions for an enterprise as {@link DefaultWorkflowPermissions} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
+     * Get default workflow permissions for an enterprise</a>
+     **/
     public DefaultWorkflowPermissions getDefaultEnterpriseWorkflowPermissions(String enterprise) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows in an enterprise,
+     * as well as whether {@code "GitHub Actions"} can submit approving pull request reviews. For more information,
+     * see "Enforcing a policy for workflow permissions in your enterprise."
+     * You must authenticate using an access token with the {@code "admin:enterprise"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "enterprise_administration:write"} permission to use this endpoint
+     *
+     * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return default workflow permissions for an enterprise as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
+     * Get default workflow permissions for an enterprise</a>
+     **/
     public <T> T getDefaultEnterpriseWorkflowPermissions(String enterprise, ReturnFormat format) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
     }
 
+    /**
+     * Method to set the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows in an enterprise,
+     * and sets whether {@code "GitHub Actions"} can submit approving pull request reviews. For more information,
+     * see "Enforcing a policy for workflow permissions in your enterprise."
+     * You must authenticate using an access token with the admin:enterprise scope to use this endpoint.
+     * {@code "GitHub Apps"} must have the {@code "enterprise_administration:write"} permission to use this endpoint
+     *
+     * @param enterprise:                 the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param defaultWorkflowPermissions: the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
+     * Set default workflow permissions for an enterprise</a>
+     **/
+    @WrappedRequest
     public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise, DefaultWorkflowPermissions
             defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
     }
 
+    /**
+     * Method to set the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows in an enterprise,
+     * and sets whether {@code "GitHub Actions"} can submit approving pull request reviews. For more information,
+     * see "Enforcing a policy for workflow permissions in your enterprise."
+     * You must authenticate using an access token with the admin:enterprise scope to use this endpoint.
+     * {@code "GitHub Apps"} must have the {@code "enterprise_administration:write"} permission to use this endpoint
+     *
+     * @param enterprise:                 the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param defaultWorkflowPermissions: default workflow permissions params not mandatory, keys accepted are:
+     *                                    <ul>
+     *                                       <li>
+     *                                           {@code "default_workflow_permissions"} -> the default workflow permissions granted to
+     *                                                 the {@code "GITHUB_TOKEN"} when running workflows - [string]
+     *                                       </li>
+     *                                       <li>
+     *                                           {@code "can_approve_pull_request_reviews"} -> whether {@code "GitHub Actions"} can approve
+     *                                                 pull requests. Enabling this can be a security risk - [boolean]
+     *                                       </li>
+     *                                    </ul>
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
+     * Set default workflow permissions for an enterprise</a>
+     **/
     public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise, Params defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
     }
 
+    /**
+     * Method to the {@code "GitHub Actions"} permissions policy for repositories and allowed actions and reusable workflows in an organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org: the organization name. The name is not case-sensitive
+     * @return organization actions permissions as {@link OrganizationActionsPermissions} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     * Get GitHub Actions permissions for an organization</a>
+     **/
     public OrganizationActionsPermissions getOrganizationActionsPermissions(String org) throws IOException {
         return getOrganizationActionsPermissions(org, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to the {@code "GitHub Actions"} permissions policy for repositories and allowed actions and reusable workflows in an organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:    the organization name. The name is not case-sensitive
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return organization actions permissions as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     * Get GitHub Actions permissions for an organization</a>
+     **/
     public <T> T getOrganizationActionsPermissions(String org, ReturnFormat format) throws IOException {
         String orgPermissionsResponse = sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH);
         switch (format) {
@@ -296,40 +678,167 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to set the {@code "GitHub Actions"} permissions policy for repositories and allowed actions and reusable workflows in an organization.
+     * If the organization belongs to an enterprise that has set restrictive permissions at the enterprise level, such as
+     * {@code "allowed_actions"} to selected actions and reusable workflows, then you cannot override them for the organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:                 the organization name. The name is not case-sensitive
+     * @param enabledRepositories: the policy that controls the repositories in the organization that are allowed to run {@code "GitHub Actions"} ->
+     *                             Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * Set GitHub Actions permissions for an organization</a>
+     **/
     public boolean setOrganizationActionsPermissions(String org, EnabledItems enabledRepositories) {
         return setActionsPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH, enabledRepositories, null);
     }
 
+    /**
+     * Method to set the {@code "GitHub Actions"} permissions policy for repositories and allowed actions and reusable workflows in an organization.
+     * If the organization belongs to an enterprise that has set restrictive permissions at the enterprise level, such as
+     * {@code "allowed_actions"} to selected actions and reusable workflows, then you cannot override them for the organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:                     the organization name. The name is not case-sensitive
+     * @param organizationPermissions: organization actions permissions to set
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * Set GitHub Actions permissions for an organization</a>
+     **/
+    @WrappedRequest
     public boolean setOrganizationActionsPermissions(String org, OrganizationActionsPermissions organizationPermissions) {
         return setActionsPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH,
                 organizationPermissions.getEnabledRepositories(), organizationPermissions.getAllowedActions());
     }
 
+    /**
+     * Method to set the {@code "GitHub Actions"} permissions policy for repositories and allowed actions and reusable workflows in an organization.
+     * If the organization belongs to an enterprise that has set restrictive permissions at the enterprise level, such as
+     * {@code "allowed_actions"} to selected actions and reusable workflows, then you cannot override them for the organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:                 the organization name. The name is not case-sensitive
+     * @param enabledRepositories: the policy that controls the repositories in the organization that are allowed to run {@code "GitHub Actions"} ->
+     *                             Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
+     * @param allowedActions:      the permissions policy that controls the actions and reusable workflows that are allowed to run ->
+     *                             Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * Set GitHub Actions permissions for an organization</a>
+     **/
+    @WrappedRequest
     public boolean setOrganizationActionsPermissions(String org, EnabledItems enabledRepositories,
                                                      AllowedActions allowedActions) {
         return setActionsPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH, enabledRepositories, allowedActions);
     }
 
+    /**
+     * Method to get a list of the selected repositories that are enabled for {@code "GitHub Actions"} in an organization.
+     * To use this endpoint, the organization permission policy for {@code "enabled_repositories"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an organization."
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org: the organization name. The name is not case-sensitive
+     * @return enabled repositories list as {@link RepositoriesList} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * List selected repositories enabled for GitHub Actions in an organization</a>
+     **/
     public RepositoriesList getEnabledOrganizationRepositories(String org) throws IOException {
         return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get a list of the selected repositories that are enabled for {@code "GitHub Actions"} in an organization.
+     * To use this endpoint, the organization permission policy for {@code "enabled_repositories"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an organization."
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:    the organization name. The name is not case-sensitive
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return enabled repositories list as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * List selected repositories enabled for GitHub Actions in an organization</a>
+     **/
     public <T> T getEnabledOrganizationRepositories(String org, ReturnFormat format) throws IOException {
         return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), format);
     }
 
+    /**
+     * Method to get a list of the selected repositories that are enabled for {@code "GitHub Actions"} in an organization.
+     * To use this endpoint, the organization permission policy for {@code "enabled_repositories"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an organization."
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:         the organization name. The name is not case-sensitive
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return enabled repositories list as {@link RepositoriesList} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * List selected repositories enabled for GitHub Actions in an organization</a>
+     **/
     public RepositoriesList getEnabledOrganizationRepositories(String org, Params queryParams) throws IOException {
         return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get a list of the selected repositories that are enabled for {@code "GitHub Actions"} in an organization.
+     * To use this endpoint, the organization permission policy for {@code "enabled_repositories"} must be configured to selected.
+     * For more information, see "Set GitHub Actions permissions for an organization."
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:         the organization name. The name is not case-sensitive
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return enabled repositories list as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * List selected repositories enabled for GitHub Actions in an organization</a>
+     **/
     public <T> T getEnabledOrganizationRepositories(String org, Params queryParams, ReturnFormat format) throws IOException {
         return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), format);
     }
 
+    /**
+     * Method to create an enabled repositories list for an organization
+     *
+     * @param repositoriesResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return enabled repositories list for an organization as {@code "format"} defines
+     **/
     private <T> T returnEnabledOrganizationRepositories(String repositoriesResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -350,6 +859,14 @@ public class GitHubPermissionsManager extends GitHubManager {
                 "selected_repository_ids", selectedRepositoriesIds);
     }
 
+    /**
+     * Method to enable selected items for a list
+     *
+     * @param endpoint: endpoint to do the request
+     * @param key: key to add
+     * @param ids: list of ids to enable
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     **/
     private boolean enableSelectedItems(String endpoint, String key, Long[] ids) {
         Params params = new Params();
         params.addParam(key, Arrays.stream(ids).toList());
@@ -410,24 +927,124 @@ public class GitHubPermissionsManager extends GitHubManager {
         return returnAARW(sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
     }
 
+    /**
+     * Method to set the actions and reusable workflows that are allowed in an organization. To use this endpoint,
+     * the organization permission policy for allowed_actions must be configured to selected. For more information,
+     * see "Set GitHub Actions permissions for an organization."
+     * If the organization belongs to an enterprise that has selected actions and reusable workflows set at the enterprise
+     * level, then you cannot override any of the enterprise's allowed actions and reusable workflows settings.
+     * To use the patterns_allowed setting for private repositories, the organization must belong to an enterprise.
+     * If the organization does not belong to an enterprise, then the {@code "patterns_allowed"} setting only applies to
+     * public repositories in the organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:  the organization name. The name is not case-sensitive
+     * @param aarw: allowed actions and reusable workflows for an organization
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
+     * Set allowed actions and reusable workflows for an organization</a>
+     **/
     public boolean setOrganizationAARW(String org, AARW aarw) {
         return setAARW(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
 
+    /**
+     * Method to set the actions and reusable workflows that are allowed in an organization. To use this endpoint,
+     * the organization permission policy for allowed_actions must be configured to selected. For more information,
+     * see "Set GitHub Actions permissions for an organization."
+     * If the organization belongs to an enterprise that has selected actions and reusable workflows set at the enterprise
+     * level, then you cannot override any of the enterprise's allowed actions and reusable workflows settings.
+     * To use the patterns_allowed setting for private repositories, the organization must belong to an enterprise.
+     * If the organization does not belong to an enterprise, then the {@code "patterns_allowed"} setting only applies to
+     * public repositories in the organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:  the organization name. The name is not case-sensitive
+     * @param aarw: allowed actions and reusable workflows params not mandatory, keys accepted are:
+     *              <ul>
+     *                 <li>
+     *                     {@code "github_owned_allowed"} -> whether {@code "GitHub-owned"} actions are allowed. For example,
+     *                     this includes the actions in the actions organization - [boolean]
+     *                 </li>
+     *                 <li>
+     *                     {@code "verified_allowed"} -> whether actions from {@code "GitHub Marketplace"} verified
+     *                     creators are allowed. Set to {@code "true"} to allow all actions by {@code "GitHub Marketplace"}
+     *                     verified creators - [boolean]
+     *                 </li>
+     *                 <li>
+     *                     {@code "patterns_allowed"} -> specifies a list of string-matching patterns to allow specific action(s)
+     *                     and reusable workflow(s). Wildcards, tags, and SHAs are allowed.
+     *                     For example, monalisa/octocat@*, monalisa/octocat@v2, monalisa/*. - [array of {@link String}]
+     *                 </li>
+     *              </ul>
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
+     * Set allowed actions and reusable workflows for an organization</a>
+     **/
     public boolean setOrganizationAARW(String org, Params aarw) {
         return setAARW(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
 
+    /**
+     * Method to get the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows in an organization,
+     * as well as whether {@code "GitHub Actions"} can submit approving pull request reviews. For more information, see
+     * "Setting the permissions of the {@code "GITHUB_TOKEN"} for your organization."
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org: the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @return default workflow permissions for an organization as {@link DefaultWorkflowPermissions} custom object
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
+     * Get default workflow permissions for an organization</a>
+     **/
     public DefaultWorkflowPermissions getDefaultOrganizationWorkflowPermissions(String org) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows in an organization,
+     * as well as whether {@code "GitHub Actions"} can submit approving pull request reviews. For more information, see
+     * "Setting the permissions of the {@code "GITHUB_TOKEN"} for your organization."
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:    the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return default workflow permissions for an enterprise as {@code "format"} defines
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
+     * Get default workflow permissions for an organization</a>
+     **/
     public <T> T getDefaultOrganizationWorkflowPermissions(String org, ReturnFormat format) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
     }
 
+    /**
+     * Method to set the actions and reusable workflows that are allowed in an organization. To use this endpoint,
+     * the organization permission policy for allowed_actions must be configured to selected. For more information,
+     * see "Set GitHub Actions permissions for an organization."
+     * If the organization belongs to an enterprise that has selected actions and reusable workflows set at the enterprise
+     * level, then you cannot override any of the enterprise's allowed actions and reusable workflows settings.
+     * To use the patterns_allowed setting for private repositories, the organization must belong to an enterprise.
+     * If the organization does not belong to an enterprise, then the {@code "patterns_allowed"} setting only applies to
+     * public repositories in the organization.
+     * You must authenticate using an access token with the {@code "admin:org"} scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the administration organization permission to use this API
+     *
+     * @param org:                        the slug version of the enterprise name. You can also substitute this value with the enterprise id
+     * @param defaultWorkflowPermissions: the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
+     * Set default workflow permissions for an organization</a>
+     **/
     public boolean setDefaultOrganizationWorkflowPermissions(String org, DefaultWorkflowPermissions defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
@@ -471,6 +1088,15 @@ public class GitHubPermissionsManager extends GitHubManager {
                 allowedActions);
     }
 
+    /**
+     * Method to set the actions permissions
+     *
+     * @param endpoint:       endpoint to do the request
+     * @param enabledItem:    item to enable
+     * @param allowedActions: the permissions policy that controls the actions and reusable workflows that are allowed to run.
+     *                        Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     **/
     private <T> boolean setActionsPermissions(String endpoint, T enabledItem, AllowedActions allowedActions) {
         String key = "enabled_organizations";
         if (endpoint.contains(ORGS_PATH))
@@ -492,6 +1118,10 @@ public class GitHubPermissionsManager extends GitHubManager {
             printErrorResponse();
             return false;
         }
+    }
+
+    public String getAccessLevelOutsideRepository(String owner, String repo) {
+        return getAccessLevelOutsideRepository(owner, repo, LIBRARY_OBJECT);
     }
 
     public <T> T getAccessLevelOutsideRepository(String owner, String repo, ReturnFormat format) {
@@ -538,6 +1168,13 @@ public class GitHubPermissionsManager extends GitHubManager {
                 ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
     }
 
+    /**
+     * Method to create an actions and reusable workflows object
+     *
+     * @param aarwResponse: obtained from GitHub's response
+     * @param format:       return type formatter -> {@link ReturnFormat}
+     * @return actions and reusable workflows object as {@code "format"} defines
+     **/
     private <T> T returnAARW(String aarwResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -557,6 +1194,13 @@ public class GitHubPermissionsManager extends GitHubManager {
         return setAARW(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
 
+    /**
+     * Method to set the allowed actions and reusable workflows
+     *
+     * @param endpoint: endpoint to do the request
+     * @param aarw:     allowed actions and reusable workflows
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     **/
     private boolean setAARW(String endpoint, AARW aarw) {
         Params params = new Params();
         JSONObject aarwSource = new JSONObject(aarw);
@@ -566,6 +1210,29 @@ public class GitHubPermissionsManager extends GitHubManager {
         return setAARW(endpoint, params);
     }
 
+    /**
+     * Method to set the allowed actions and reusable workflows
+     *
+     * @param endpoint: endpoint to do the request
+     * @param aarw: allowed actions and reusable workflows params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "github_owned_allowed"} -> whether {@code "GitHub-owned"} actions are allowed. For example,
+     *                            this includes the actions in the actions organization - [boolean]
+     *                        </li>
+     *                        <li>
+     *                            {@code "verified_allowed"} -> whether actions from {@code "GitHub Marketplace"} verified
+     *                            creators are allowed. Set to {@code "true"} to allow all actions by {@code "GitHub Marketplace"}
+     *                            verified creators - [boolean]
+     *                        </li>
+     *                        <li>
+     *                            {@code "patterns_allowed"} -> specifies a list of string-matching patterns to allow specific action(s)
+     *                            and reusable workflow(s). Wildcards, tags, and SHAs are allowed.
+     *                            For example, monalisa/octocat@*, monalisa/octocat@v2, monalisa/*. - [array of {@link String}]
+     *                        </li>
+     *                     </ul>
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     **/
     private boolean setAARW(String endpoint, Params aarw) {
         try {
             sendPutRequest(endpoint, aarw);
@@ -590,6 +1257,13 @@ public class GitHubPermissionsManager extends GitHubManager {
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
     }
 
+    /**
+     * Method to create a default workflow permissions object
+     *
+     * @param defWorkflowPermissionsResponse: obtained from GitHub's response
+     * @param format:                         return type formatter -> {@link ReturnFormat}
+     * @return default workflow permissions object as {@code "format"} defines
+     **/
     private <T> T returnDefaultWorkflowPermissions(String defWorkflowPermissionsResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -612,6 +1286,13 @@ public class GitHubPermissionsManager extends GitHubManager {
                 defaultWorkflowPermissions);
     }
 
+    /**
+     * Method to set the default workflow permissions
+     *
+     * @param endpoint:                   endpoint to do the request
+     * @param defaultWorkflowPermissions: default workflow permissions
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     **/
     private boolean setDefaultWorkflowPermissions(String endpoint, DefaultWorkflowPermissions defaultWorkflowPermissions) {
         Params params = new Params();
         JSONObject defWorkflowPermissionsSource = new JSONObject(defaultWorkflowPermissions);
@@ -621,6 +1302,13 @@ public class GitHubPermissionsManager extends GitHubManager {
         return setDefaultWorkflowPermissions(endpoint, params);
     }
 
+    /**
+     * Method to set the default workflow permissions
+     *
+     * @param endpoint:                   endpoint to do the request
+     * @param defaultWorkflowPermissions: the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} if not successful
+     **/
     private boolean setDefaultWorkflowPermissions(String endpoint, Params defaultWorkflowPermissions) {
         try {
             sendPutRequest(endpoint, defaultWorkflowPermissions);
@@ -635,10 +1323,25 @@ public class GitHubPermissionsManager extends GitHubManager {
         }
     }
 
+    /**
+     * {@code AccessLevel} defines the level of access that workflows outside the repository have to actions and reusable
+     * workflows within the repository. none means access is only possible from workflows in this repository
+     **/
     public enum AccessLevel {
 
+        /**
+         * {@code none} is the constant for none access level
+         **/
         none,
+
+        /**
+         * {@code organization} is the constant for organization access level
+         **/
         organization,
+
+        /**
+         * {@code enterprise} is the constant for enterprise access level
+         **/
         enterprise
 
     }
