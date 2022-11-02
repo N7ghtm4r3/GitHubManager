@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.actions.permissions.records.types;
+package com.tecknobit.githubmanager.actions.permissions.records.actions;
 
 import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;

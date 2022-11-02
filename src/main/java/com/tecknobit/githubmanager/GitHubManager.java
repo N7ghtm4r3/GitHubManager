@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Properties;
 
 import static com.tecknobit.apimanager.apis.APIRequest.*;
@@ -150,6 +151,19 @@ public class GitHubManager {
      * Method to send a {@code "GET"} request to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendGetRequest(String endpoint) throws IOException {
         return sendRequest(endpoint, GET_METHOD);
@@ -159,6 +173,19 @@ public class GitHubManager {
      * Method to send a {@code "DELETE"} request to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendDeleteRequest(String endpoint) throws IOException {
         return sendRequest(endpoint, DELETE_METHOD);
@@ -168,6 +195,19 @@ public class GitHubManager {
      * Method to send a request to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequest(String endpoint, String method) throws IOException {
         apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
@@ -179,6 +219,19 @@ public class GitHubManager {
      * Method to send a {@code "POST"} request to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendPostRequest(String endpoint, Params bodyParams) throws IOException {
         return sendRequestWithBody(endpoint, POST_METHOD, bodyParams);
@@ -188,6 +241,19 @@ public class GitHubManager {
      * Method to send a {@code "PUT"} request to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendPutRequest(String endpoint, Params bodyParams) throws IOException {
         return sendRequestWithBody(endpoint, PUT_METHOD, bodyParams);
@@ -197,6 +263,19 @@ public class GitHubManager {
      * Method to send a request with a body payload to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequestWithBody(String endpoint, String method, Params bodyPayload) throws IOException {
         if (bodyPayload == null)
@@ -205,6 +284,30 @@ public class GitHubManager {
         System.out.println(endpoint);
         System.out.println(bodyPayload.createJSONPayload());
         return apiRequest.getResponse();
+    }
+
+    /**
+     * Method to enable selected items for a list
+     *
+     * @param endpoint: endpoint to do the request
+     * @param key:      key to add
+     * @param ids:      list of ids to enable
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     **/
+    protected boolean enableSelectedItems(String endpoint, String key, Long[] ids) {
+        Params params = new Params();
+        params.addParam(key, Arrays.stream(ids).toList());
+        try {
+            sendPutRequest(endpoint, params);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
     }
 
     /**

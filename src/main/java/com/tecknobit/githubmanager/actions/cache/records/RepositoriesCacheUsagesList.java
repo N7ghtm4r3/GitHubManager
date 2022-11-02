@@ -27,6 +27,16 @@ public class RepositoriesCacheUsagesList extends GitHubList {
     /**
      * Constructor to init an {@link RepositoriesCacheUsagesList}
      *
+     * @param repositoryCacheUsages: the count of active caches across all repositories of an enterprise or an organization
+     **/
+    public RepositoriesCacheUsagesList(ArrayList<RepositoryCacheUsage> repositoryCacheUsages) {
+        super(repositoryCacheUsages.size());
+        this.repositoryCacheUsages = repositoryCacheUsages;
+    }
+
+    /**
+     * Constructor to init an {@link RepositoriesCacheUsagesList}
+     *
      * @param totalCount:            the count of active caches across all repositories of an enterprise or an organization
      * @param repositoryCacheUsages: the count of active caches across all repositories of an enterprise or an organization
      **/

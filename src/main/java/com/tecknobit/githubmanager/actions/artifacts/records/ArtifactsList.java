@@ -36,6 +36,16 @@ public class ArtifactsList extends GitHubList {
     /**
      * Constructor to init an {@link Artifact}
      *
+     * @param artifacts: artifacts list
+     **/
+    public ArtifactsList(ArrayList<Artifact> artifacts) {
+        super(artifacts.size());
+        this.artifacts = artifacts;
+    }
+
+    /**
+     * Constructor to init an {@link Artifact}
+     *
      * @param totalCount: total count of artifacts
      * @param artifacts:  artifacts list
      **/

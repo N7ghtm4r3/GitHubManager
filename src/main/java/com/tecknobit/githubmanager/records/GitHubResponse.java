@@ -25,19 +25,19 @@ public abstract class GitHubResponse {
     /**
      * {@code message} the message of the error if exists
      **/
-    private final String message;
+    protected final String message;
 
     /**
      * {@code documentationUrl} the documentation url to see more details if the error exists
      **/
-    private final String documentationUrl;
+    protected final String documentationUrl;
 
     /**
      * {@code instantiatedWithError} this flag shows if the object has been instantiated with a normal workflow,
      * so with successful response by {@code "GitHub"}, or if this object has been instantiated with an unsuccessful
      * workflow if the response by {@code "GitHub"} has been unsuccessful
      **/
-    private final boolean instantiatedWithError;
+    protected final boolean instantiatedWithError;
 
     /**
      * Constructor to init a {@link GitHubResponse}

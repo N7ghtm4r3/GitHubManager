@@ -7,6 +7,8 @@ import com.tecknobit.githubmanager.actions.cache.records.RepositoriesCacheUsages
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCacheUsage;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList.ActionCache;
+import com.tecknobit.githubmanager.actions.permissions.records.OrganizationsList.Organization;
+import com.tecknobit.githubmanager.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -117,6 +119,18 @@ public class GitHubCacheManager extends GitHubManager {
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @return cache usage as {@link CacheUsage} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
      * Get GitHub Actions cache usage for an enterprise</a>
      **/
@@ -133,6 +147,18 @@ public class GitHubCacheManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return cache usage as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
      * Get GitHub Actions cache usage for an enterprise</a>
      **/
@@ -147,8 +173,81 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
      *
+     * @param org: the organization from fetch the cache usage
+     * @return cache usage as {@link CacheUsage} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
+     * Get GitHub Actions cache usage for an organization</a>
+     **/
+    @WrappedRequest
+    public CacheUsage getOrganizationCacheUsage(Organization org) throws IOException {
+        return returnCacheUsage(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_CACHE_USAGE_PATH),
+                LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the total {@code "GitHub Actions"} cache usage for an organization. The data fetched using this API
+     * is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+     * You must authenticate using an access token with the {@code "read:org"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
+     *
+     * @param org:    the organization from fetch the cache usage
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return cache usage as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
+     * Get GitHub Actions cache usage for an organization</a>
+     **/
+    @WrappedRequest
+    public <T> T getOrganizationCacheUsage(Organization org, ReturnFormat format) throws IOException {
+        return returnCacheUsage(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_CACHE_USAGE_PATH), format);
+    }
+
+
+    /**
+     * Method to get the total {@code "GitHub Actions"} cache usage for an organization. The data fetched using this API
+     * is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+     * You must authenticate using an access token with the {@code "read:org"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
+     *
      * @param org: the organization name. The name is not case-sensitive
      * @return cache usage as {@link CacheUsage} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
@@ -167,6 +266,18 @@ public class GitHubCacheManager extends GitHubManager {
      * @param org:    the organization name. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return cache usage as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
@@ -199,8 +310,81 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
      *
+     * @param org: the organization from fetch the cache usages list
+     * @return repositories cache usages list as {@link RepositoriesCacheUsagesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * List repositories with GitHub Actions cache usage for an organization</a>
+     **/
+    @WrappedRequest
+    public RepositoriesCacheUsagesList getRepositoriesCacheUsagesList(Organization org) throws IOException {
+        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
+                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of repositories and their {@code "GitHub Actions"} cache usage for an organization. The data fetched using this
+     * API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+     * You must authenticate using an access token with the {@code "read:org"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
+     *
+     * @param org:    the organization from fetch the cache usages list
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return repositories cache usages list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * List repositories with GitHub Actions cache usage for an organization</a>
+     **/
+    @WrappedRequest
+    public <T> T getRepositoriesCacheUsagesList(Organization org, ReturnFormat format) throws IOException {
+        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
+                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), format);
+    }
+
+    /**
+     * Method to get the list of repositories and their {@code "GitHub Actions"} cache usage for an organization. The data fetched using this
+     * API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+     * You must authenticate using an access token with the {@code "read:org"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
+     *
      * @param org: the organization name. The name is not case-sensitive
      * @return repositories cache usages list as {@link RepositoriesCacheUsagesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
@@ -219,12 +403,103 @@ public class GitHubCacheManager extends GitHubManager {
      * @param org:    the organization name. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repositories cache usages list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     public <T> T getRepositoriesCacheUsagesList(String org, ReturnFormat format) throws IOException {
         return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), format);
+    }
+
+    /**
+     * Method to get the list of repositories and their {@code "GitHub Actions"} cache usage for an organization. The data fetched using this
+     * API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+     * You must authenticate using an access token with the {@code "read:org"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
+     *
+     * @param org:         the organization from fetch the cache usages list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return repositories cache usages list as {@link RepositoriesCacheUsagesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * List repositories with GitHub Actions cache usage for an organization</a>
+     **/
+    @WrappedRequest
+    public RepositoriesCacheUsagesList getRepositoriesCacheUsagesList(Organization org, Params queryParams) throws IOException {
+        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
+                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of repositories and their {@code "GitHub Actions"} cache usage for an organization. The data fetched using this
+     * API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+     * You must authenticate using an access token with the {@code "read:org"} scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "organization_administration:read"} permission to use this endpoint
+     *
+     * @param org:         the organization from fetch the cache usages list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return repositories cache usages list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * List repositories with GitHub Actions cache usage for an organization</a>
+     **/
+    @WrappedRequest
+    public <T> T getRepositoriesCacheUsagesList(Organization org, Params queryParams, ReturnFormat format) throws IOException {
+        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
+                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -245,6 +520,18 @@ public class GitHubCacheManager extends GitHubManager {
      *                        </li>
      *                     </ul>
      * @return repositories cache usages list as {@link RepositoriesCacheUsagesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
@@ -272,6 +559,18 @@ public class GitHubCacheManager extends GitHubManager {
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return repositories cache usages list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
@@ -306,9 +605,81 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
+     * @param repository: the repository from fetch cache usage
+     * @return repository cache usage as {@link RepositoryCacheUsage} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
+     * Get GitHub Actions cache usage for a repository</a>
+     **/
+    @WrappedRequest
+    public RepositoryCacheUsage getRepositoryCacheUsage(Repository repository) throws IOException {
+        return getRepositoryCacheUsage(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get {@code "GitHub Actions"} cache usage for a repository. The data fetched using this API is refreshed approximately every 5 minutes,
+     * so values returned from this endpoint may take at least 5 minutes to get updated.
+     * Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private, you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param repository: the repository from fetch cache usage
+     * @return repository cache usage as {@link RepositoryCacheUsage} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
+     * Get GitHub Actions cache usage for a repository</a>
+     **/
+    @WrappedRequest
+    public <T> T getRepositoryCacheUsage(Repository repository, ReturnFormat format) throws IOException {
+        return getRepositoryCacheUsage(repository.getOwner().getLogin(), repository.getName(), format);
+    }
+
+    /**
+     * Method to get {@code "GitHub Actions"} cache usage for a repository. The data fetched using this API is refreshed approximately every 5 minutes,
+     * so values returned from this endpoint may take at least 5 minutes to get updated.
+     * Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private, you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return repository cache usage as {@link RepositoryCacheUsage} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
@@ -328,6 +699,18 @@ public class GitHubCacheManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repository cache usage list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
@@ -350,9 +733,80 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the actions:read permission to use this endpoint
      *
+     * @param repository: the repository from fetch the cache usages list
+     * @return repository caches list as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * List GitHub Actions caches for a repository</a>
+     **/
+    @WrappedRequest
+    public RepositoryCachesList getRepositoryCachesList(Repository repository) throws IOException {
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getOwner().getLogin() + ACTIONS_CACHES_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the {@code "GitHub Actions"} caches for a repository.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the actions:read permission to use this endpoint
+     *
+     * @param repository: the repository from fetch the cache usages list
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return repository caches list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * List GitHub Actions caches for a repository</a>
+     **/
+    @WrappedRequest
+    public <T> T getRepositoryCachesList(Repository repository, ReturnFormat format) throws IOException {
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_CACHES_PATH), format);
+    }
+
+    /**
+     * Method to get a list of the {@code "GitHub Actions"} caches for a repository.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the actions:read permission to use this endpoint
+     *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return repository caches list as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
@@ -371,12 +825,139 @@ public class GitHubCacheManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repository caches list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     public <T> T getRepositoryCachesList(String owner, String repo, ReturnFormat format) throws IOException {
         return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH),
                 format);
+    }
+
+    /**
+     * Method to get a list of the {@code "GitHub Actions"} caches for a repository.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the actions:read permission to use this endpoint
+     *
+     * @param repository:  the repository from fetch the cache usages list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                        <li>
+     *                            {@code "ref"} -> the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
+     *                            {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}.
+     *                            To reference a pull request use {@code "refs/pull/<number>/merge"} - [string]
+     *                        </li>
+     *                        <li>
+     *                            {@code "key"} -> an explicit key or prefix for identifying the cache - [string]
+     *                        </li>
+     *                        <li>
+     *                            {@code "sort"} -> the property to sort the results by.
+     *                            {@code "created_at"} means when the cache was created.
+     *                            {@code "last_accessed_at"} means when the cache was last accessed.
+     *                            {@code "size_in_bytes"} is the size of the cache in bytes -
+     *                            [string, default "last_accessed_at", constants available at {@link RepositoryCachesList}]
+     *                        </li>
+     *                        <li>
+     *                            {@code "direction"} -> the direction to sort the results by
+     *                            - [string, default "desc", constants available at {@link RepositoryCachesList}]
+     *                        </li>
+     *                     </ul>
+     * @return repository caches list as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * List GitHub Actions caches for a repository</a>
+     **/
+    @WrappedRequest
+    public RepositoryCachesList getRepositoryCachesList(Repository repository, Params queryParams) throws IOException {
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
+                + repository.getName() + ACTIONS_CACHES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the {@code "GitHub Actions"} caches for a repository.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the actions:read permission to use this endpoint
+     *
+     * @param repository:  the repository from fetch the cache usages list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                        <li>
+     *                            {@code "ref"} -> the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
+     *                            {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}.
+     *                            To reference a pull request use {@code "refs/pull/<number>/merge"} - [string]
+     *                        </li>
+     *                        <li>
+     *                            {@code "key"} -> an explicit key or prefix for identifying the cache - [string]
+     *                        </li>
+     *                        <li>
+     *                            {@code "sort"} -> the property to sort the results by.
+     *                            {@code "created_at"} means when the cache was created.
+     *                            {@code "last_accessed_at"} means when the cache was last accessed.
+     *                            {@code "size_in_bytes"} is the size of the cache in bytes -
+     *                            [string, default "last_accessed_at", constants available at {@link RepositoryCachesList}]
+     *                        </li>
+     *                        <li>
+     *                            {@code "direction"} -> the direction to sort the results by
+     *                            - [string, default "desc", constants available at {@link RepositoryCachesList}]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return repository caches list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * List GitHub Actions caches for a repository</a>
+     **/
+    @WrappedRequest
+    public <T> T getRepositoryCachesList(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
+                + repository.getOwner() + ACTIONS_CACHES_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -416,6 +997,18 @@ public class GitHubCacheManager extends GitHubManager {
      *                        </li>
      *                     </ul>
      * @return repository caches list as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
@@ -462,6 +1055,18 @@ public class GitHubCacheManager extends GitHubManager {
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return repository caches list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
@@ -479,10 +1084,86 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
      *
+     * @param repository: repository from delete cache
+     * @param key:        a key for identifying the cache
+     * @return repository caches list deleted as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * Delete GitHub Actions caches for a repository (using a cache key)</a>
+     **/
+    @WrappedRequest
+    public RepositoryCachesList deleteRepositoryCache(Repository repository, String key) throws IOException {
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
+                + repository.getName() + ACTIONS_CACHES_PATH + "?key=" + key), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to delete one or more {@code "GitHub Actions"} caches for a repository, using a complete cache key.
+     * By default, all caches that match the provided key are deleted, but you can optionally provide a
+     * {@code "Git ref"} to restrict deletions to caches that match both the provided key and the {@code "Git ref"}.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
+     * @param repository: repository from delete cache
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return repository caches list deleted as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * Delete GitHub Actions caches for a repository (using a cache key)</a>
+     **/
+    @WrappedRequest
+    public <T> T deleteRepositoryCache(Repository repository, String key, ReturnFormat format) throws IOException {
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
+                + repository.getName() + ACTIONS_CACHES_PATH + "?key=" + key), format);
+    }
+
+    /**
+     * Method to delete one or more {@code "GitHub Actions"} caches for a repository, using a complete cache key.
+     * By default, all caches that match the provided key are deleted, but you can optionally provide a
+     * {@code "Git ref"} to restrict deletions to caches that match both the provided key and the {@code "Git ref"}.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param key:   a key for identifying the cache
      * @return repository caches list deleted as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
@@ -504,6 +1185,18 @@ public class GitHubCacheManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repository caches list deleted as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
@@ -521,10 +1214,88 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
      *
+     * @param repository:    repository from delete cache
+     * @param cacheToDelete: cache to delete
+     * @return repository caches list deleted as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * Delete GitHub Actions caches for a repository (using a cache key)</a>
+     **/
+    @WrappedRequest
+    public RepositoryCachesList deleteRepositoryCacheByKey(Repository repository, ActionCache cacheToDelete) throws IOException {
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), cacheToDelete.getKey(),
+                cacheToDelete.getRef(), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to delete one or more {@code "GitHub Actions"} caches for a repository, using a complete cache key.
+     * By default, all caches that match the provided key are deleted, but you can optionally provide a
+     * {@code "Git ref"} to restrict deletions to caches that match both the provided key and the {@code "Git ref"}.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
+     * @param repository:    repository from delete cache
+     * @param cacheToDelete: cache to delete
+     * @param format:        return type formatter -> {@link ReturnFormat}
+     * @return repository caches list deleted as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * Delete GitHub Actions caches for a repository (using a cache key)</a>
+     **/
+    @WrappedRequest
+    public <T> T deleteRepositoryCacheByKey(Repository repository, ActionCache cacheToDelete,
+                                            ReturnFormat format) throws IOException {
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), cacheToDelete.getKey(),
+                cacheToDelete.getRef(), format);
+    }
+
+    /**
+     * Method to delete one or more {@code "GitHub Actions"} caches for a repository, using a complete cache key.
+     * By default, all caches that match the provided key are deleted, but you can optionally provide a
+     * {@code "Git ref"} to restrict deletions to caches that match both the provided key and the {@code "Git ref"}.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
      * @param owner:         the account owner of the repository. The name is not case-sensitive
      * @param repo:          the name of the repository. The name is not case-sensitive
      * @param cacheToDelete: cache to delete
      * @return repository caches list deleted as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
@@ -547,6 +1318,18 @@ public class GitHubCacheManager extends GitHubManager {
      * @param cacheToDelete: cache to delete
      * @param format:        return type formatter -> {@link ReturnFormat}
      * @return repository caches list deleted as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
@@ -564,12 +1347,95 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
      *
+     * @param repository: repository from delete cache
+     * @param key:        a key for identifying the cache
+     * @param ref:        the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
+     *                    {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
+     * @return repository caches list deleted as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * Delete GitHub Actions caches for a repository (using a cache key)</a>
+     **/
+    @WrappedRequest
+    public RepositoryCachesList deleteRepositoryCache(Repository repository, String key, String ref) throws IOException {
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), key, ref, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to delete one or more {@code "GitHub Actions"} caches for a repository, using a complete cache key.
+     * By default, all caches that match the provided key are deleted, but you can optionally provide a
+     * {@code "Git ref"} to restrict deletions to caches that match both the provided key and the {@code "Git ref"}.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
+     * @param repository: repository from delete cache
+     * @param key:        a key for identifying the cache
+     * @param ref:        the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
+     *                    {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return repository caches list deleted as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * Delete GitHub Actions caches for a repository (using a cache key)</a>
+     **/
+    @WrappedRequest
+    public <T> T deleteRepositoryCache(Repository repository, String key, String ref, ReturnFormat format) throws IOException {
+        Params params = new Params();
+        params.addParam("key", key);
+        params.addParam("ref", ref);
+        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_CACHES_PATH + params.createQueryString()), format);
+    }
+
+    /**
+     * Method to delete one or more {@code "GitHub Actions"} caches for a repository, using a complete cache key.
+     * By default, all caches that match the provided key are deleted, but you can optionally provide a
+     * {@code "Git ref"} to restrict deletions to caches that match both the provided key and the {@code "Git ref"}.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param key:   a key for identifying the cache
      * @param ref:   the {@code "Git reference"} for the results you want to list. The ref for a branch can be formatted either as
      *               {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
      * @return repository caches list deleted as {@link RepositoryCachesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
@@ -594,6 +1460,18 @@ public class GitHubCacheManager extends GitHubManager {
      *                {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repository caches list deleted as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * <ul>
+     *     <li>
+     *         {@link #getErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #getJSONErrorResponse()}
+     *     </li>
+     *     <li>
+     *         {@link #printErrorResponse()}
+     *     </li>
+     * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
@@ -631,11 +1509,47 @@ public class GitHubCacheManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
      *
+     * @param repository:          repository from delete cache
+     * @param actionCacheToDelete: cache to delete
+     *                             {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
+     * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
+     **/
+    @WrappedRequest
+    public boolean deleteRepositoryCacheById(Repository repository, ActionCache actionCacheToDelete) {
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), actionCacheToDelete.getId());
+    }
+
+    /**
+     * Method to deletes a {@code "GitHub Actions"} cache for a repository, using a cache ID.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
+     * @param repository: repository from delete cache
+     * @param cacheId:    the unique identifier of the GitHub Actions cache
+     *                    {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
+     * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
+     **/
+    @WrappedRequest
+    public boolean deleteRepositoryCacheById(Repository repository, long cacheId) {
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), cacheId);
+    }
+
+    /**
+     * Method to deletes a {@code "GitHub Actions"} cache for a repository, using a cache ID.
+     * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
+     *
      * @param owner:               the account owner of the repository. The name is not case-sensitive
      * @param repo:                the name of the repository. The name is not case-sensitive
      * @param actionCacheToDelete: cache to delete
      *                             {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
-     * @return result of the deletion -> {@code "true"} is successful, {@code "false"} if not successful
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
@@ -654,7 +1568,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @param repo:    the name of the repository. The name is not case-sensitive
      * @param cacheId: the unique identifier of the GitHub Actions cache
      *                 {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
-     * @return result of the deletion -> {@code "true"} is successful, {@code "false"} if not successful
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/

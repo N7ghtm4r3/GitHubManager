@@ -1,9 +1,9 @@
-package com.tecknobit.githubmanager.actions.permissions.records.types;
+package com.tecknobit.githubmanager.actions.permissions.records.actions;
 
 import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.githubmanager.actions.permissions.records.types.ActionsPermissions.AllowedActions.all;
+import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions.all;
 
 /**
  * The {@code ActionsPermissions} class is useful to format a GitHub's actions permissions
@@ -31,12 +31,12 @@ public class ActionsPermissions extends GitHubResponse {
     /**
      * {@code allowedActions} the permissions policy that controls the actions and reusable workflows that are allowed to run
      **/
-    private final AllowedActions allowedActions;
+    protected final AllowedActions allowedActions;
 
     /**
      * {@code selectedActionsUrl} selected actions url
      **/
-    private final String selectedActionsUrl;
+    protected final String selectedActionsUrl;
 
     /**
      * Constructor to init a {@link ActionsPermissions}

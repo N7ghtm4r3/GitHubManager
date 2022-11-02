@@ -15,6 +15,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
     implementation 'com.github.N7ghtm4r3:APIManager:2.0.0'
+    implementation 'com.goterl:lazysodium-java:5.1.1'
+    implementation 'net.java.dev.jna:jna:5.12.1'
     implementation 'org.json:json:20220924'
 }
 

@@ -1,10 +1,10 @@
-package com.tecknobit.githubmanager.actions.permissions.records.types;
+package com.tecknobit.githubmanager.actions.permissions.records.actions;
 
 import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.githubmanager.actions.permissions.records.types.ActionsPermissions.EnabledItems.none;
-import static com.tecknobit.githubmanager.actions.permissions.records.types.ActionsPermissions.EnabledItems.valueOf;
+import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.EnabledItems.none;
+import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.EnabledItems.valueOf;
 
 /**
  * The {@code EnterpriseActionsPermissions} class is useful to format a GitHub's enterprise actions permissions

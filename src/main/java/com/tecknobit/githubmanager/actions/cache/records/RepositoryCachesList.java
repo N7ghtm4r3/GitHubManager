@@ -79,6 +79,16 @@ public class RepositoryCachesList extends GitHubList {
     /**
      * Constructor to init an {@link RepositoryCachesList}
      *
+     * @param actionCaches:list of caches
+     **/
+    public RepositoryCachesList(ArrayList<ActionCache> actionCaches) {
+        super(actionCaches.size());
+        this.actionCaches = actionCaches;
+    }
+
+    /**
+     * Constructor to init an {@link RepositoryCachesList}
+     *
      * @param totalCount:       total number of caches
      * @param actionCaches:list of caches
      **/

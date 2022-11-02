@@ -28,6 +28,16 @@ public class OrganizationsList extends GitHubList {
     /**
      * Constructor to init a {@link OrganizationsList}
      *
+     * @param organizations: organizations list
+     **/
+    public OrganizationsList(ArrayList<Organization> organizations) {
+        super(organizations.size());
+        this.organizations = organizations;
+    }
+
+    /**
+     * Constructor to init a {@link OrganizationsList}
+     *
      * @param totalCount:    total number of organizations
      * @param organizations: organizations list
      **/
