@@ -1,15 +1,50 @@
 package com.tecknobit.githubmanager.actions.secrets.records.secrets;
 
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret.SecretVisibility.vPrivate;
 import static com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret.SecretVisibility.valueOf;
 
+/**
+ * The {@code OrganizationSecret} class is useful to format a GitHub's organization secret
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote you can see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
+ *             Get an organization secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
+ *             Delete an organization secret</a>
+ *     </li>
+ * </ul>
+ * @see Secret
+ * @see GitHubResponse
+ **/
 public class OrganizationSecret extends Secret {
 
+    /**
+     * {@code visibility} visibility of a secret
+     **/
     private final SecretVisibility visibility;
+
+    /**
+     * {@code selectedRepositoriesUrl} selected repositories url value
+     **/
     private final String selectedRepositoriesUrl;
 
+    /**
+     * Constructor to init a {@link OrganizationSecret}
+     *
+     * @param name:                    the name of the secret
+     * @param createdAt:               created at value
+     * @param updatedAt:               update at value
+     * @param visibility:              visibility of a secret
+     * @param selectedRepositoriesUrl: selected repositories url value
+     **/
     public OrganizationSecret(String name, String createdAt, String updatedAt, SecretVisibility visibility,
                               String selectedRepositoriesUrl) {
         super(name, createdAt, updatedAt);
@@ -17,16 +52,33 @@ public class OrganizationSecret extends Secret {
         this.selectedRepositoriesUrl = selectedRepositoriesUrl;
     }
 
-    public OrganizationSecret(JSONObject jSecret) {
-        super(jSecret);
+    /**
+     * Constructor to init a {@link OrganizationSecret}
+     *
+     * @param jOrganizationSecret: organization secret details as {@link JSONObject}
+     **/
+    public OrganizationSecret(JSONObject jOrganizationSecret) {
+        super(jOrganizationSecret);
         visibility = valueOf(hResponse.getString("visibility", vPrivate.name()));
         selectedRepositoriesUrl = hResponse.getString("selected_repositories_url");
     }
 
+    /**
+     * Method to get {@link #visibility} instance <br>
+     * Any params required
+     *
+     * @return {@link #visibility} instance as {@link SecretVisibility}
+     **/
     public SecretVisibility getVisibility() {
         return visibility;
     }
 
+    /**
+     * Method to get {@link #selectedRepositoriesUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #selectedRepositoriesUrl} instance as {@link String}
+     **/
     public String getSelectedRepositoriesUrl() {
         return selectedRepositoriesUrl;
     }

@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.actions.secrets.records;
 
 import com.tecknobit.githubmanager.records.GitHubList;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import com.tecknobit.githubmanager.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -8,8 +9,20 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote you can see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+ * List selected repositories for an organization secret</a>
+ * @see GitHubResponse
+ * @see GitHubList
+ **/
 public class RepositoriesList extends GitHubList {
 
+    /**
+     * {@code repositories} repositories list
+     **/
     private final ArrayList<Repository> repositories;
 
     /**
@@ -25,7 +38,7 @@ public class RepositoriesList extends GitHubList {
     /**
      * Constructor to init an {@link GitHubList}
      *
-     * @param totalCount    : total number of the items in the list
+     * @param totalCount    : total number of the repositories in the list
      * @param repositories: repositories list
      **/
     public RepositoriesList(int totalCount, ArrayList<Repository> repositories) {
@@ -46,6 +59,12 @@ public class RepositoriesList extends GitHubList {
             repositories.add(new Repository(jRepositories.getJSONObject(j)));
     }
 
+    /**
+     * Method to get {@link #repositories} instance <br>
+     * Any params required
+     *
+     * @return {@link #repositories} instance as {@link Collection} of {@link Repository}
+     **/
     public Collection<Repository> getRepositories() {
         return repositories;
     }

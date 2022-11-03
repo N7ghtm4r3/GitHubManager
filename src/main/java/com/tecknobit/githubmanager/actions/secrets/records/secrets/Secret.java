@@ -7,12 +7,55 @@ import java.text.ParseException;
 
 import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
 
+/**
+ * The {@code Secret} class is useful to format a GitHub's secret
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote you can see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
+ *             Get a repository secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
+ *             Delete a repository secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
+ *             Get an environment secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-environment-secret">
+ *             Delete an environment secret</a>
+ *     </li>
+ * </ul>
+ * @see GitHubResponse
+ **/
 public class Secret extends GitHubResponse {
 
+    /**
+     * {@code name} the name of the secret
+     **/
     protected final String name;
+
+    /**
+     * {@code createdAt} created at value
+     **/
     protected final String createdAt;
+
+    /**
+     * {@code updatedAt} update at value
+     **/
     protected final String updatedAt;
 
+    /**
+     * Constructor to init a {@link Secret}
+     *
+     * @param name:      the name of the secret
+     * @param createdAt: created at value
+     * @param updatedAt: update at value
+     **/
     public Secret(String name, String createdAt, String updatedAt) {
         super(null);
         this.name = name;
@@ -20,6 +63,11 @@ public class Secret extends GitHubResponse {
         this.updatedAt = updatedAt;
     }
 
+    /**
+     * Constructor to init a {@link Secret}
+     *
+     * @param jSecret: secret details as {@link JSONObject}
+     **/
     public Secret(JSONObject jSecret) {
         super(jSecret);
         name = hResponse.getString("name");
@@ -27,6 +75,12 @@ public class Secret extends GitHubResponse {
         updatedAt = hResponse.getString("updated_at");
     }
 
+    /**
+     * Method to get {@link #name} instance <br>
+     * Any params required
+     *
+     * @return {@link #name} instance as {@link String}
+     **/
     public String getName() {
         return name;
     }

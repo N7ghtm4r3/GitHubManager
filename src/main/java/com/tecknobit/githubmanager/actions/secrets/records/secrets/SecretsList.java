@@ -1,14 +1,40 @@
 package com.tecknobit.githubmanager.actions.secrets.records.secrets;
 
 import com.tecknobit.githubmanager.records.GitHubList;
+import com.tecknobit.githubmanager.records.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * The {@code SecretsList} class is useful to format a GitHub's secrets list
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote you can see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+ *             List organization secrets</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+ *             List repository secrets</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+ *             List environment secrets</a>
+ *     </li>
+ * </ul>
+ * @see GitHubResponse
+ * @see GitHubList
+ **/
 public class SecretsList extends GitHubList {
 
+    /**
+     * {@code secrets} secrets list
+     **/
     private final ArrayList<Secret> secrets;
 
     /**
@@ -24,7 +50,7 @@ public class SecretsList extends GitHubList {
     /**
      * Constructor to init an {@link SecretsList}
      *
-     * @param totalCount : total number of the items in the list
+     * @param totalCount : total number of the secrets in the list
      * @param secrets:   secrets list
      **/
     public SecretsList(int totalCount, ArrayList<Secret> secrets) {
@@ -50,12 +76,26 @@ public class SecretsList extends GitHubList {
         }
     }
 
-    // TODO: 02/11/2022 WARNER USE WITH DIFFERENT SECRETS TYPE
+    /**
+     * Method to get {@link #secrets} instance <br>
+     * Any params required
+     *
+     * @return {@link #secrets} instance as {@link Collection} of {@link Secret}
+     * @apiNote this method will return a {@link Collection} that could include also {@link OrganizationSecret}
+     * objects if exist
+     **/
     public Collection<Secret> getSecrets() {
         return secrets;
     }
 
-    // TODO: 02/11/2022 WARNER USE EVANTUALLU SOME SECRETS METHODS
+    /**
+     * Method to get a secrets collection <br>
+     * Any params required
+     *
+     * @return secrets collection as {@link Collection} of {@link Secret}
+     * @apiNote this method will return a {@link Collection} that could include only {@link Secret}
+     * objects if exist
+     **/
     public Collection<Secret> extractSimpleSecrets() {
         ArrayList<Secret> secrets = new ArrayList<>();
         for (Secret secret : this.secrets)
@@ -64,7 +104,14 @@ public class SecretsList extends GitHubList {
         return secrets;
     }
 
-    // TODO: 02/11/2022 WARNER USE EVANTUALLU SOME SECRETS METHODS
+    /**
+     * Method to get an organization secrets collection <br>
+     * Any params required
+     *
+     * @return organization secrets collection as {@link Collection} of {@link OrganizationSecret}
+     * @apiNote this method will return a {@link Collection} that could include only {@link OrganizationSecret}
+     * objects if exist
+     **/
     public Collection<OrganizationSecret> extractOrganizationSecrets() {
         ArrayList<OrganizationSecret> organizationSecrets = new ArrayList<>();
         for (Secret secret : secrets)

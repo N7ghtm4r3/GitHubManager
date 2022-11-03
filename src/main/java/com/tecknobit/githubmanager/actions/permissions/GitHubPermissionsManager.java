@@ -3126,6 +3126,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param defaultWorkflowPermissions: default workflow permissions
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      **/
+    @WrappedRequest
     private boolean setDefaultWorkflowPermissions(String endpoint, DefaultWorkflowPermissions defaultWorkflowPermissions) {
         Params params = new Params();
         JSONObject defWorkflowPermissionsSource = new JSONObject(defaultWorkflowPermissions);
