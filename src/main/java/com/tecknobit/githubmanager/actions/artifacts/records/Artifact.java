@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.records.GitHubResponse;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
 import java.io.File;

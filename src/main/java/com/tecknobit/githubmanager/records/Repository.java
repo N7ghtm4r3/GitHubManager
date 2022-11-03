@@ -2,6 +2,7 @@ package com.tecknobit.githubmanager.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
 /**

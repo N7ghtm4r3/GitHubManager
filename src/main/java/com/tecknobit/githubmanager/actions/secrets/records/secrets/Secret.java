@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.actions.secrets.records.secrets;
 
-import com.tecknobit.githubmanager.records.GitHubResponse;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
 import java.text.ParseException;
@@ -131,53 +131,6 @@ public class Secret extends GitHubResponse {
         } catch (ParseException e) {
             return -1;
         }
-    }
-
-    /**
-     * {@code SecretVisibility} list of available visibilities for a secret
-     **/
-    public enum SecretVisibility {
-
-        /**
-         * {@code "public"} visibility
-         **/
-        all("all"),
-
-        /**
-         * {@code "private"} visibility
-         **/
-        vPrivate("private"),
-
-        /**
-         * {@code "selected"} visibility
-         **/
-        selected("selected");
-
-        /**
-         * {@code "visibility"} value
-         **/
-        private final String visibility;
-
-        /**
-         * Constructor to init a {@link SecretVisibility}
-         *
-         * @param visibility : {@code "visibility"} value
-         **/
-        SecretVisibility(String visibility) {
-            this.visibility = visibility;
-        }
-
-        /**
-         * Method to get {@link #visibility} instance <br>
-         * Any params required
-         *
-         * @return {@link #visibility} instance as {@link String}
-         **/
-        @Override
-        public String toString() {
-            return visibility;
-        }
-
     }
 
 }

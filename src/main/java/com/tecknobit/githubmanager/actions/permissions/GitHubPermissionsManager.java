@@ -6,13 +6,13 @@ import com.tecknobit.githubmanager.actions.permissions.records.AARW;
 import com.tecknobit.githubmanager.actions.permissions.records.DefaultWorkflowPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList;
 import com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList.CompletedRepository;
-import com.tecknobit.githubmanager.actions.permissions.records.OrganizationsList;
-import com.tecknobit.githubmanager.actions.permissions.records.OrganizationsList.Organization;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.EnabledItems;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.EnterpriseActionsPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.OrganizationActionsPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.RepositoryActionsPermissions;
 import com.tecknobit.githubmanager.records.Repository;
+import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.records.organization.OrganizationsList;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManag
 import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ENTERPRISES_PATH;
 import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ORGS_PATH;
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
-import static com.tecknobit.githubmanager.records.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
+import static com.tecknobit.githubmanager.records.basics.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
 
 /**
  * The {@code GitHubPermissionsManager} class is useful to manage all GitHub's permissions endpoints

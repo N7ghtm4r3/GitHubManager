@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.actions.permissions.records.actions;
 
-import com.tecknobit.githubmanager.records.GitHubResponse;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.EnabledItems.none;

@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.actions.cache.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.records.GitHubList;
-import com.tecknobit.githubmanager.records.GitHubResponse;
+import com.tecknobit.githubmanager.records.basics.GitHubList;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

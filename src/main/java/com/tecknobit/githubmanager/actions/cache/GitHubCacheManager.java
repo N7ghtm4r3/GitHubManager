@@ -7,8 +7,8 @@ import com.tecknobit.githubmanager.actions.cache.records.RepositoriesCacheUsages
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCacheUsage;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList.ActionCache;
-import com.tecknobit.githubmanager.actions.permissions.records.OrganizationsList.Organization;
 import com.tecknobit.githubmanager.records.Repository;
+import com.tecknobit.githubmanager.records.organization.Organization;
 import org.json.JSONObject;
 
 import java.io.IOException;

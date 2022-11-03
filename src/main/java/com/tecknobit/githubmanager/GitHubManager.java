@@ -260,6 +260,28 @@ public class GitHubManager {
     }
 
     /**
+     * Method to send a {@code "PATCH"} request to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @return response of the request as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     **/
+    public String sendPatchRequest(String endpoint, Params bodyParams) throws IOException {
+        return sendRequestWithBody(endpoint, PATCH_METHOD, bodyParams);
+    }
+
+    /**
      * Method to send a request with a body payload to {@code "GitHub"}
      *
      * @param endpoint: endpoint of the request {@code "GitHub"}
@@ -348,6 +370,53 @@ public class GitHubManager {
      **/
     public void printJSONErrorResponse() {
         apiRequest.printJSONErrorResponse();
+    }
+
+    /**
+     * {@code Visibility} list of available visibilities
+     **/
+    public enum Visibility {
+
+        /**
+         * {@code "public"} visibility
+         **/
+        all("all"),
+
+        /**
+         * {@code "private"} visibility
+         **/
+        vPrivate("private"),
+
+        /**
+         * {@code "selected"} visibility
+         **/
+        selected("selected");
+
+        /**
+         * {@code "visibility"} value
+         **/
+        private final String visibility;
+
+        /**
+         * Constructor to init a {@link Visibility}
+         *
+         * @param visibility : {@code "visibility"} value
+         **/
+        Visibility(String visibility) {
+            this.visibility = visibility;
+        }
+
+        /**
+         * Method to get {@link #visibility} instance <br>
+         * Any params required
+         *
+         * @return {@link #visibility} instance as {@link String}
+         **/
+        @Override
+        public String toString() {
+            return visibility;
+        }
+
     }
 
     /**

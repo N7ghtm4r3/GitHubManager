@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
-import com.tecknobit.githubmanager.records.GitHubList;
-import com.tecknobit.githubmanager.records.GitHubResponse;
+import com.tecknobit.githubmanager.records.basics.GitHubList;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -4,13 +4,13 @@ import com.goterl.lazysodium.LazySodiumJava;
 import com.goterl.lazysodium.SodiumJava;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
-import com.tecknobit.githubmanager.actions.permissions.records.OrganizationsList.Organization;
 import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
 import com.tecknobit.githubmanager.actions.secrets.records.RepositoriesList;
 import com.tecknobit.githubmanager.actions.secrets.records.secrets.OrganizationSecret;
 import com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret;
 import com.tecknobit.githubmanager.actions.secrets.records.secrets.SecretsList;
 import com.tecknobit.githubmanager.records.Repository;
+import com.tecknobit.githubmanager.records.organization.Organization;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -23,7 +23,6 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.ACTIONS_PATH;
 import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.REPOS_PATH;
 import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ORGS_PATH;
-import static com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret.SecretVisibility;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Base64.getEncoder;
 
@@ -665,7 +664,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean createOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, null, secretValue,
                 publicKey);
@@ -707,7 +706,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean createOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, Long[] repositoriesIds,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, repositoriesIds, secretValue, publicKey);
@@ -749,7 +748,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean createOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, repositoriesIds.toArray(new Long[0]),
@@ -786,7 +785,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean createOrganizationSecret(String org, String secretName, SecretVisibility visibility, String secretValue,
+    public boolean createOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue, publicKey);
     }
@@ -826,7 +825,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean createOrganizationSecret(String org, String secretName, SecretVisibility visibility, String secretValue,
+    public boolean createOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             Long[] repositoriesIds, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds, secretValue, publicKey);
     }
@@ -866,7 +865,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean createOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]), secretValue,
@@ -904,7 +903,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean createOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, null, secretValue,
@@ -947,7 +946,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean createOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, repositoriesIds,
@@ -990,7 +989,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean createOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, repositoriesIds.toArray(new Long[0]),
@@ -1027,7 +1026,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean createOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue,
                 getOrganizationPublicKey(org));
@@ -1068,7 +1067,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean createOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds,
                 secretValue, getOrganizationPublicKey(org));
@@ -1109,7 +1108,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean createOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, getOrganizationPublicKey(org));
@@ -1146,7 +1145,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean updateOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, null, secretValue,
                 publicKey);
@@ -1188,7 +1187,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean updateOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, Long[] repositoriesIds,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, repositoriesIds, secretValue, publicKey);
@@ -1230,7 +1229,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean updateOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, repositoriesIds.toArray(new Long[0]),
@@ -1267,7 +1266,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean updateOrganizationSecret(String org, String secretName, SecretVisibility visibility, String secretValue,
+    public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue, publicKey);
     }
@@ -1307,7 +1306,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean updateOrganizationSecret(String org, String secretName, SecretVisibility visibility, String secretValue,
+    public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             Long[] repositoriesIds, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds, secretValue, publicKey);
     }
@@ -1347,7 +1346,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean updateOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]), secretValue,
@@ -1385,7 +1384,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean updateOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, null, secretValue,
@@ -1428,7 +1427,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean updateOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, repositoriesIds,
@@ -1471,7 +1470,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
-    public boolean updateOrganizationSecret(Organization org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, repositoriesIds.toArray(new Long[0]),
@@ -1508,7 +1507,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean updateOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue,
                 getOrganizationPublicKey(org));
@@ -1549,7 +1548,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean updateOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds,
                 secretValue, getOrganizationPublicKey(org));
@@ -1590,7 +1589,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
-    public boolean updateOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, getOrganizationPublicKey(org));
@@ -1626,7 +1625,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     // TODO: 02/11/2022 TEST WHEN PAYLOAD IN JSON HAS BEEN FIXED
-    private boolean workWithOrganizationSecret(String org, String secretName, SecretVisibility visibility,
+    private boolean workWithOrganizationSecret(String org, String secretName, Visibility visibility,
                                                Long[] repositoriesIds, String secretValue,
                                                GitHubPublicKey publicKey) throws Exception {
         LazySodiumJava lazySodium = new LazySodiumJava(new SodiumJava(), UTF_8);

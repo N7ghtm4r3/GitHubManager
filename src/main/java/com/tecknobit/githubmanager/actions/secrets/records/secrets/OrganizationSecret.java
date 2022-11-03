@@ -1,10 +1,11 @@
 package com.tecknobit.githubmanager.actions.secrets.records.secrets;
 
-import com.tecknobit.githubmanager.records.GitHubResponse;
+import com.tecknobit.githubmanager.GitHubManager.Visibility;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret.SecretVisibility.vPrivate;
-import static com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret.SecretVisibility.valueOf;
+import static com.tecknobit.githubmanager.GitHubManager.Visibility.vPrivate;
+import static com.tecknobit.githubmanager.GitHubManager.Visibility.valueOf;
 
 /**
  * The {@code OrganizationSecret} class is useful to format a GitHub's organization secret
@@ -29,7 +30,7 @@ public class OrganizationSecret extends Secret {
     /**
      * {@code visibility} visibility of a secret
      **/
-    private final SecretVisibility visibility;
+    private final Visibility visibility;
 
     /**
      * {@code selectedRepositoriesUrl} selected repositories url value
@@ -45,7 +46,7 @@ public class OrganizationSecret extends Secret {
      * @param visibility:              visibility of a secret
      * @param selectedRepositoriesUrl: selected repositories url value
      **/
-    public OrganizationSecret(String name, String createdAt, String updatedAt, SecretVisibility visibility,
+    public OrganizationSecret(String name, String createdAt, String updatedAt, Visibility visibility,
                               String selectedRepositoriesUrl) {
         super(name, createdAt, updatedAt);
         this.visibility = visibility;
@@ -59,7 +60,11 @@ public class OrganizationSecret extends Secret {
      **/
     public OrganizationSecret(JSONObject jOrganizationSecret) {
         super(jOrganizationSecret);
-        visibility = valueOf(hResponse.getString("visibility", vPrivate.name()));
+        String visibilityKey = hResponse.getString("visibility", vPrivate.name());
+        if (visibilityKey.equals(vPrivate.toString()))
+            visibility = vPrivate;
+        else
+            visibility = valueOf(visibilityKey);
         selectedRepositoriesUrl = hResponse.getString("selected_repositories_url");
     }
 
@@ -67,9 +72,9 @@ public class OrganizationSecret extends Secret {
      * Method to get {@link #visibility} instance <br>
      * Any params required
      *
-     * @return {@link #visibility} instance as {@link SecretVisibility}
+     * @return {@link #visibility} instance as {@link Visibility}
      **/
-    public SecretVisibility getVisibility() {
+    public Visibility getVisibility() {
         return visibility;
     }
 

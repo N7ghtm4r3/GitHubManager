@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.records;
+package com.tecknobit.githubmanager.records.basics;
 
 import com.tecknobit.githubmanager.GitHubManager;
 import org.json.JSONObject;

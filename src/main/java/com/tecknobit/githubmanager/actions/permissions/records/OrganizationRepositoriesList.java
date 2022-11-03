@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.actions.permissions.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.records.GitHubList;
-import com.tecknobit.githubmanager.records.GitHubResponse;
 import com.tecknobit.githubmanager.records.Repository;
+import com.tecknobit.githubmanager.records.basics.GitHubList;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -13,6 +13,7 @@ import java.util.Collection;
 
 import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
 import static com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList.CompletedRepository.RepoVisibility.vPrivate;
+import static com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList.CompletedRepository.RepoVisibility.valueOf;
 
 /**
  * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
@@ -442,7 +443,11 @@ public class OrganizationRepositoriesList extends GitHubList {
             hasDownloads = hResponse.getBoolean("has_downloads");
             archived = hResponse.getBoolean("archived");
             disabled = hResponse.getBoolean("disabled");
-            visibility = RepoVisibility.valueOf(hResponse.getString("visibility", vPrivate.name()));
+            String visibilityKey = hResponse.getString("visibility", vPrivate.name());
+            if (visibilityKey.equals(vPrivate.toString()))
+                visibility = vPrivate;
+            else
+                visibility = valueOf(visibilityKey);
             pushedAt = hResponse.getString("pushed_at");
             createdAt = hResponse.getString("created_at");
             updatedAt = hResponse.getString("updated_at");
