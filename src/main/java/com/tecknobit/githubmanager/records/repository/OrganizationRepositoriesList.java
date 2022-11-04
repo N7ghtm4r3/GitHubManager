@@ -1,7 +1,6 @@
-package com.tecknobit.githubmanager.actions.permissions.records;
+package com.tecknobit.githubmanager.records.repository;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.records.Repository;
 import com.tecknobit.githubmanager.records.basics.GitHubList;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
@@ -12,8 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
-import static com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList.CompletedRepository.RepoVisibility.vPrivate;
-import static com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList.CompletedRepository.RepoVisibility.valueOf;
+import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.CompletedRepository.RepoVisibility.*;
 
 /**
  * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
@@ -24,6 +22,7 @@ import static com.tecknobit.githubmanager.actions.permissions.records.Organizati
  * @see GitHubResponse
  * @see GitHubList
  **/
+// TODO: 04/11/2022 FIX DOCU STRING WITH ALL REFERENCES
 public class OrganizationRepositoriesList extends GitHubList {
 
     /**
@@ -141,6 +140,11 @@ public class OrganizationRepositoriesList extends GitHubList {
          * {@code isTemplate} whether this repository acts as a template that can be used to generate new repositories
          **/
         private final boolean isTemplate;
+
+        /**
+         * {@code template} template that can be used to generate new repositories
+         **/
+        private final CompletedRepository template;
 
         /**
          * {@code topics} topics list
@@ -271,91 +275,92 @@ public class OrganizationRepositoriesList extends GitHubList {
         /**
          * Constructor to init a {@link CompletedRepository}
          *
-         * @param id:                         identifier value
-         * @param nodeId:                     identifier of the node value
-         * @param name:                       the name of the repository
-         * @param fullName:                   fullname value
-         * @param owner:                      owner value
-         * @param privateRepo:                whether the repository is private or public
-         * @param htmlUrl:                    html url value
-         * @param description:                description value
-         * @param fork:                       fork value
-         * @param url:                        url value
-         * @param archiveUrl:                 archive url value
-         * @param assigneesUrl:               assignees url value
-         * @param blobsUrl:                   blobs url value
-         * @param branchesUrl:                branches url value
-         * @param collaboratorsUrl:           collaborators url value
-         * @param commentsUrl:                comments url value
-         * @param commitsUrl:                 commits url value
-         * @param compareUrl:                 compare url value
-         * @param contentsUrl:                contents url value
-         * @param contributorsUrl:            contributors url value
-         * @param deploymentsUrl:             deployments url value
-         * @param downloadUrl:                download url value
-         * @param eventsUrl:events            url value
-         * @param forksUrl:                   forks url value
-         * @param gitCommitsUrl:              git commits url value
-         * @param gitRefsUrl:                 git refs url value
-         * @param gitTagsUrl:                 git tags url value
-         * @param gitUrl:                     git url value
-         * @param issueCommentUrl:            issues comments url value
-         * @param issueEventsUrl:             issues events url value
-         * @param issuesUrl:                  issues url value
-         * @param keysUrl:                    keys url value
-         * @param labelsUrl:                  labels url value
-         * @param languagesUrl:languages      url value
-         * @param mergesUrl:                  merges url value
-         * @param milestonesUrl:              milestones url value
-         * @param notificationsUrl:           notifications url value
-         * @param pullsUrl:                   pulls url value
-         * @param releasesUrl:                releases url value
-         * @param sshUrl:                     ssh url value
-         * @param stargazersUrl:              stargazers url value
-         * @param statutesUrl:                statuses url value
-         * @param subscribersUrl:             subscribers url value
-         * @param subscriptionUrl:            subscription url value
-         * @param tagsUrl:                    tags url value
-         * @param teamsUrl:                   teams url value
-         * @param treesUrl:                   trees url value
-         * @param cloneUrl:                   clone url value
-         * @param mirrorUrl:                  mirror url value
-         * @param hooksUrl:                   hooks url value
-         * @param svnUrl:                     svn url value
-         * @param homePage:                   homepage value
-         * @param forksCount:                 forks count value
-         * @param stargazersCount:            stargazers count value
-         * @param watchersCount:              watchers count value
-         * @param size:                       the size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0
-         * @param defaultBranch:              the default branch of the repository
-         * @param openIssuesCount:            open issues count value
-         * @param isTemplate:                 whether this repository acts as a template that can be used to generate new repositories
-         * @param topics:                     topics list
-         * @param hasIssues:                  whether issues are enabled
-         * @param hasProjects:                whether projects are enabled
-         * @param hasWiki:                    whether the wiki is enabled
-         * @param hasPages:                   whether the repository has pages
-         * @param hasDownloads:               whether downloads are enabled
-         * @param archived:                   whether the repository is archived
-         * @param disabled:                   returns whether this repository disabled
-         * @param visibility:                 the repository visibility: public, private, or internal
-         * @param pushedAt:                   pushed at value
-         * @param createdAt:                  created at value
-         * @param updatedAt:                  updated at value
-         * @param permissions:                repository permissions
-         * @param allowRebaseMerge:           whether to allow rebase merges for pull requests
-         * @param tempCloneToken:             temp clone token value
-         * @param allowSquashMerge:           whether to allow squash merges for pull requests
-         * @param allowAutoMerge:             whether to allow {@code "Auto-merge"} to be used on pull requests
-         * @param deleteBranchOnMerge:whether to delete head branches when pull requests are merged
-         * @param allowMergeCommit:           whether a pull request head branch that is behind its base branch can always
-         *                                    be updated even if it is not required to be up-to-date before merging
-         * @param subscribersCount:           subscribers count value
-         * @param networkCount:               network count value
-         * @param license:                    license value
-         * @param forks:                      forks value
-         * @param openIssues:                 open issues value
-         * @param watchers:                   watchers value
+         * @param id                  :                         identifier value
+         * @param nodeId              :                     identifier of the node value
+         * @param name                :                       the name of the repository
+         * @param fullName            :                   fullname value
+         * @param owner               :                      owner value
+         * @param privateRepo         :                whether the repository is private or public
+         * @param htmlUrl             :                    html url value
+         * @param description         :                description value
+         * @param fork                :                       fork value
+         * @param url                 :                        url value
+         * @param archiveUrl          :                 archive url value
+         * @param assigneesUrl        :               assignees url value
+         * @param blobsUrl            :                   blobs url value
+         * @param branchesUrl         :                branches url value
+         * @param collaboratorsUrl    :           collaborators url value
+         * @param commentsUrl         :                comments url value
+         * @param commitsUrl          :                 commits url value
+         * @param compareUrl          :                 compare url value
+         * @param contentsUrl         :                contents url value
+         * @param contributorsUrl     :            contributors url value
+         * @param deploymentsUrl      :             deployments url value
+         * @param downloadUrl         :                download url value
+         * @param eventsUrl           :events            url value
+         * @param forksUrl            :                   forks url value
+         * @param gitCommitsUrl       :              git commits url value
+         * @param gitRefsUrl          :                 git refs url value
+         * @param gitTagsUrl          :                 git tags url value
+         * @param gitUrl              :                     git url value
+         * @param issueCommentUrl     :            issues comments url value
+         * @param issueEventsUrl      :             issues events url value
+         * @param issuesUrl           :                  issues url value
+         * @param keysUrl             :                    keys url value
+         * @param labelsUrl           :                  labels url value
+         * @param languagesUrl        :languages      url value
+         * @param mergesUrl           :                  merges url value
+         * @param milestonesUrl       :              milestones url value
+         * @param notificationsUrl    :           notifications url value
+         * @param pullsUrl            :                   pulls url value
+         * @param releasesUrl         :                releases url value
+         * @param sshUrl              :                     ssh url value
+         * @param stargazersUrl       :              stargazers url value
+         * @param statutesUrl         :                statuses url value
+         * @param subscribersUrl      :             subscribers url value
+         * @param subscriptionUrl     :            subscription url value
+         * @param tagsUrl             :                    tags url value
+         * @param teamsUrl            :                   teams url value
+         * @param treesUrl            :                   trees url value
+         * @param cloneUrl            :                   clone url value
+         * @param mirrorUrl           :                  mirror url value
+         * @param hooksUrl            :                   hooks url value
+         * @param svnUrl              :                     svn url value
+         * @param homePage            :                   homepage value
+         * @param forksCount          :                 forks count value
+         * @param stargazersCount     :            stargazers count value
+         * @param watchersCount       :              watchers count value
+         * @param size                :                       the size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0
+         * @param defaultBranch       :              the default branch of the repository
+         * @param openIssuesCount     :            open issues count value
+         * @param isTemplate          :                 whether this repository acts as a template that can be used to generate new repositories
+         * @param template:           template that can be used to generate new repositories
+         * @param topics              :                     topics list
+         * @param hasIssues           :                  whether issues are enabled
+         * @param hasProjects         :                whether projects are enabled
+         * @param hasWiki             :                    whether the wiki is enabled
+         * @param hasPages            :                   whether the repository has pages
+         * @param hasDownloads        :               whether downloads are enabled
+         * @param archived            :                   whether the repository is archived
+         * @param disabled            :                   returns whether this repository disabled
+         * @param visibility          :                 the repository visibility: public, private, or internal
+         * @param pushedAt            :                   pushed at value
+         * @param createdAt           :                  created at value
+         * @param updatedAt           :                  updated at value
+         * @param permissions         :                repository permissions
+         * @param allowRebaseMerge    :           whether to allow rebase merges for pull requests
+         * @param tempCloneToken      :             temp clone token value
+         * @param allowSquashMerge    :           whether to allow squash merges for pull requests
+         * @param allowAutoMerge      :             whether to allow {@code "Auto-merge"} to be used on pull requests
+         * @param deleteBranchOnMerge :whether to delete head branches when pull requests are merged
+         * @param allowMergeCommit    :           whether a pull request head branch that is behind its base branch can always
+         *                            be updated even if it is not required to be up-to-date before merging
+         * @param subscribersCount    :           subscribers count value
+         * @param networkCount        :               network count value
+         * @param license             :                    license value
+         * @param forks               :                      forks value
+         * @param openIssues          :                 open issues value
+         * @param watchers            :                   watchers value
          **/
         public CompletedRepository(long id, String nodeId, String name, String fullName, Owner owner, boolean privateRepo,
                                    String htmlUrl, String description, boolean fork, String url, String archiveUrl, String assigneesUrl,
@@ -368,7 +373,7 @@ public class OrganizationRepositoriesList extends GitHubList {
                                    String statutesUrl, String subscribersUrl, String subscriptionUrl, String tagsUrl, String teamsUrl,
                                    String treesUrl, String cloneUrl, String mirrorUrl, String hooksUrl, String svnUrl, String homePage,
                                    int forksCount, int stargazersCount, int watchersCount, int size, String defaultBranch,
-                                   int openIssuesCount, boolean isTemplate, ArrayList<String> topics, boolean hasIssues,
+                                   int openIssuesCount, boolean isTemplate, CompletedRepository template, ArrayList<String> topics, boolean hasIssues,
                                    boolean hasProjects, boolean hasWiki, boolean hasPages, boolean hasDownloads, boolean archived,
                                    boolean disabled, RepoVisibility visibility, String pushedAt, String createdAt, String updatedAt,
                                    Permissions permissions, boolean allowRebaseMerge, String tempCloneToken, boolean allowSquashMerge,
@@ -389,6 +394,7 @@ public class OrganizationRepositoriesList extends GitHubList {
             this.defaultBranch = defaultBranch;
             this.openIssuesCount = openIssuesCount;
             this.isTemplate = isTemplate;
+            this.template = template;
             this.topics = topics;
             this.hasIssues = hasIssues;
             this.hasProjects = hasProjects;
@@ -425,14 +431,22 @@ public class OrganizationRepositoriesList extends GitHubList {
             super(jCompletedRepository);
             svnUrl = hResponse.getString("svn_url");
             homePage = hResponse.getString("homepage");
-            forksCount = hResponse.getInt("forks_count");
-            stargazersCount = hResponse.getInt("stargazers_count");
-            watchersCount = hResponse.getInt("watchers_count");
-            size = hResponse.getInt("size");
+            forksCount = hResponse.getInt("forks_count", 0);
+            stargazersCount = hResponse.getInt("stargazers_count", 0);
+            watchersCount = hResponse.getInt("watchers_count", 0);
+            size = hResponse.getInt("size", 0);
             defaultBranch = hResponse.getString("default_branch");
-            openIssuesCount = hResponse.getInt("open_issues_count");
+            openIssuesCount = hResponse.getInt("open_issues_count", 0);
             isTemplate = hResponse.getBoolean("is_template");
-            JSONArray jTopics = hResponse.getJSONArray("topics");
+            if (isTemplate) {
+                JSONObject jTemplate = hResponse.getJSONObject("template_repository");
+                if (jTemplate != null)
+                    template = new CompletedRepository(jTemplate);
+                else
+                    template = null;
+            } else
+                template = null;
+            JSONArray jTopics = hResponse.getJSONArray("topics", new JSONArray());
             topics = new ArrayList<>();
             for (int j = 0; j < jTopics.length(); j++)
                 topics.add(jTopics.getString(j));
@@ -446,6 +460,8 @@ public class OrganizationRepositoriesList extends GitHubList {
             String visibilityKey = hResponse.getString("visibility", vPrivate.name());
             if (visibilityKey.equals(vPrivate.toString()))
                 visibility = vPrivate;
+            else if (visibilityKey.equals(vPublic.toString()))
+                visibility = vPublic;
             else
                 visibility = valueOf(visibilityKey);
             pushedAt = hResponse.getString("pushed_at");
@@ -458,12 +474,12 @@ public class OrganizationRepositoriesList extends GitHubList {
             allowAutoMerge = hResponse.getBoolean("allow_auto_merge");
             deleteBranchOnMerge = hResponse.getBoolean("delete_branch_on_merge");
             allowMergeCommit = hResponse.getBoolean("allow_merge_commit");
-            subscribersCount = hResponse.getInt("subscribers_count");
-            networkCount = hResponse.getInt("network_count");
+            subscribersCount = hResponse.getInt("subscribers_count", 0);
+            networkCount = hResponse.getInt("network_count", 0);
             license = new License(hResponse.getJSONObject("license", new JSONObject()));
-            forks = hResponse.getInt("forks");
-            openIssues = hResponse.getInt("open_issues");
-            watchers = hResponse.getInt("watchers");
+            forks = hResponse.getInt("forks", 0);
+            openIssues = hResponse.getInt("open_issues", 0);
+            watchers = hResponse.getInt("watchers", 0);
         }
 
         /**
@@ -554,6 +570,16 @@ public class OrganizationRepositoriesList extends GitHubList {
          **/
         public boolean isTemplate() {
             return isTemplate;
+        }
+
+        /**
+         * Method to get {@link #template} instance <br>
+         * Any params required
+         *
+         * @return {@link #template} instance as {@link CompletedRepository}
+         **/
+        public CompletedRepository getTemplate() {
+            return template;
         }
 
         /**
@@ -866,7 +892,7 @@ public class OrganizationRepositoriesList extends GitHubList {
             /**
              * {@code "internal"} visibility
              **/
-            vInternal("internal");
+            internal("internal");
 
             /**
              * {@code "visibility"} value

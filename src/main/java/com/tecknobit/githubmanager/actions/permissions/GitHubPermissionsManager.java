@@ -4,15 +4,15 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.permissions.records.AARW;
 import com.tecknobit.githubmanager.actions.permissions.records.DefaultWorkflowPermissions;
-import com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList;
-import com.tecknobit.githubmanager.actions.permissions.records.OrganizationRepositoriesList.CompletedRepository;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.EnabledItems;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.EnterpriseActionsPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.OrganizationActionsPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.RepositoryActionsPermissions;
-import com.tecknobit.githubmanager.records.Repository;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.organization.OrganizationsList;
+import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
+import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.CompletedRepository;
+import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -20,10 +20,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.ACTIONS_PATH;
-import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.REPOS_PATH;
-import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ENTERPRISES_PATH;
-import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ORGS_PATH;
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
 import static com.tecknobit.githubmanager.records.basics.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
 
@@ -283,7 +279,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     public OrganizationsList getEnabledEnterpriseOrganizations(String enterprise) throws IOException {
-        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), LIBRARY_OBJECT);
     }
 
@@ -313,7 +309,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     public <T> T getEnabledEnterpriseOrganizations(String enterprise, ReturnFormat format) throws IOException {
-        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), format);
     }
 
@@ -351,7 +347,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     public OrganizationsList getEnabledEnterpriseOrganizations(String enterprise, Params queryParams) throws IOException {
-        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + queryParams), LIBRARY_OBJECT);
     }
 
@@ -391,26 +387,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     public <T> T getEnabledEnterpriseOrganizations(String enterprise, Params queryParams,
                                                    ReturnFormat format) throws IOException {
-        return returnEnterpriseEnabledOrganizations(sendGetRequest(ENTERPRISES_PATH + enterprise +
+        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create an enabled organizations list for an enterprise
-     *
-     * @param enabledOrganizationsResponse: obtained from GitHub's response
-     * @param format:                       return type formatter -> {@link ReturnFormat}
-     * @return enabled organizations list for an enterprise as {@code "format"} defines
-     **/
-    private <T> T returnEnterpriseEnabledOrganizations(String enabledOrganizationsResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(enabledOrganizationsResponse);
-            case LIBRARY_OBJECT:
-                return (T) new OrganizationsList(new JSONObject(enabledOrganizationsResponse));
-            default:
-                return (T) enabledOrganizationsResponse;
-        }
     }
 
     /**
@@ -427,7 +405,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, Collection<Long> selectedOrganizationsIds) {
-        return enableSelectedItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
+        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
                 "selected_organization_ids", selectedOrganizationsIds.toArray(new Long[0]));
     }
 
@@ -449,7 +427,7 @@ public class GitHubPermissionsManager extends GitHubManager {
         ArrayList<Long> ids = new ArrayList<>();
         for (Organization organization : selectedOrganizations.getOrganizations())
             ids.add(organization.getId());
-        return enableSelectedItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
+        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
                 "selected_organization_ids", ids.toArray(new Long[0]));
     }
 
@@ -467,7 +445,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, Long[] selectedOrganizationsIds) {
-        return enableSelectedItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
+        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
                 "selected_organization_ids", selectedOrganizationsIds);
     }
 
@@ -1057,7 +1035,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(Organization org) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), LIBRARY_OBJECT);
     }
 
@@ -1089,7 +1067,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     public <T> T getEnabledOrganizationRepositories(Organization org, ReturnFormat format) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), format);
     }
 
@@ -1119,7 +1097,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(String org) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), LIBRARY_OBJECT);
     }
 
@@ -1150,7 +1128,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     public <T> T getEnabledOrganizationRepositories(String org, ReturnFormat format) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), format);
     }
 
@@ -1191,7 +1169,7 @@ public class GitHubPermissionsManager extends GitHubManager {
     @WrappedRequest
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(Organization org,
                                                                            Params queryParams) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
     }
 
@@ -1233,7 +1211,7 @@ public class GitHubPermissionsManager extends GitHubManager {
     @WrappedRequest
     public <T> T getEnabledOrganizationRepositories(Organization org, Params queryParams,
                                                     ReturnFormat format) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), format);
     }
 
@@ -1272,7 +1250,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(String org, Params queryParams) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
     }
 
@@ -1312,26 +1290,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     public <T> T getEnabledOrganizationRepositories(String org, Params queryParams, ReturnFormat format) throws IOException {
-        return returnEnabledOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
+        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create an enabled repositories list for an organization
-     *
-     * @param repositoriesResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return enabled repositories list for an organization as {@code "format"} defines
-     **/
-    private <T> T returnEnabledOrganizationRepositories(String repositoriesResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(repositoriesResponse);
-            case LIBRARY_OBJECT:
-                return (T) new OrganizationRepositoriesList(new JSONObject(repositoriesResponse));
-            default:
-                return (T) repositoriesResponse;
-        }
     }
 
     /**
@@ -1351,7 +1311,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     public boolean enableSelectedOrganizationRepositories(Organization org, Collection<Long> selectedRepositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
+        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", selectedRepositoriesIds.toArray(new Long[0]));
     }
 
@@ -1371,7 +1331,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     public boolean enableSelectedOrganizationRepositories(String org, Collection<Long> selectedRepositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
+        return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", selectedRepositoriesIds.toArray(new Long[0]));
     }
 
@@ -1413,7 +1373,7 @@ public class GitHubPermissionsManager extends GitHubManager {
         ArrayList<Long> ids = new ArrayList<>();
         for (CompletedRepository completedRepository : selectedRepositories.getRepositories())
             ids.add(completedRepository.getId());
-        return enableSelectedItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
+        return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", ids.toArray(new Long[0]));
     }
 
@@ -1433,7 +1393,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     public boolean enableSelectedOrganizationRepositories(Organization org, Long[] selectedRepositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
+        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", selectedRepositoriesIds);
     }
 
@@ -1452,7 +1412,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     public boolean enableSelectedOrganizationRepositories(String org, Long[] selectedRepositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
+        return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", selectedRepositoriesIds);
     }
 

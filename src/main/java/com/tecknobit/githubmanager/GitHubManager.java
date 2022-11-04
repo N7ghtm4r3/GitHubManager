@@ -1,6 +1,8 @@
 package com.tecknobit.githubmanager;
 
 import com.tecknobit.apimanager.apis.APIRequest;
+import com.tecknobit.githubmanager.records.organization.OrganizationsList;
+import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,6 +27,36 @@ public class GitHubManager {
      * {@code BASE_ENDPOINT} is instance for GitHub's base endpoint to work on
      **/
     public static final String BASE_ENDPOINT = "https://api.github.com/";
+
+    /**
+     * {@code ACTIONS_PATH} constant for {@code "/actions/"} path
+     **/
+    public static final String ACTIONS_PATH = "/actions/";
+
+    /**
+     * {@code REPOS_PATH} constant for {@code "repos/"} path
+     **/
+    public static final String REPOS_PATH = "repos/";
+
+    /**
+     * {@code ENTERPRISES_PATH} constant for {@code "enterprises/"} path
+     **/
+    public static final String ENTERPRISES_PATH = "enterprises/";
+
+    /**
+     * {@code ORGS_PATH} constant for {@code "orgs/"} path
+     **/
+    public static final String ORGS_PATH = "orgs/";
+
+    /**
+     * {@code ORGANIZATIONS_PATH} constant for {@code "/organizations"} path
+     **/
+    public static final String ORGANIZATIONS_PATH = "/organizations";
+
+    /**
+     * {@code REPOSITORIES_PATH} constant for {@code "repositories"} path
+     **/
+    public static final String REPOSITORIES_PATH = "/repositories";
 
     /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
@@ -309,30 +341,6 @@ public class GitHubManager {
     }
 
     /**
-     * Method to enable selected items for a list
-     *
-     * @param endpoint: endpoint to do the request
-     * @param key:      key to add
-     * @param ids:      list of ids to enable
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     **/
-    protected boolean enableSelectedItems(String endpoint, String key, Long[] ids) {
-        Params params = new Params();
-        params.addParam(key, Arrays.stream(ids).toList());
-        try {
-            sendPutRequest(endpoint, params);
-            if (apiRequest.getResponseStatusCode() != 204) {
-                printErrorResponse();
-                return false;
-            }
-            return true;
-        } catch (IOException e) {
-            printErrorResponse();
-            return false;
-        }
-    }
-
-    /**
      * Method to get error response of the request <br>
      * Any params required
      *
@@ -370,6 +378,66 @@ public class GitHubManager {
      **/
     public void printJSONErrorResponse() {
         apiRequest.printJSONErrorResponse();
+    }
+
+    /**
+     * Method to enable selected items for a list
+     *
+     * @param endpoint: endpoint to do the request
+     * @param key:      key to add
+     * @param ids:      list of ids to enable
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     **/
+    protected boolean setItems(String endpoint, String key, Long[] ids) {
+        Params params = new Params();
+        params.addParam(key, Arrays.stream(ids).toList());
+        try {
+            sendPutRequest(endpoint, params);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
+    }
+
+    /**
+     * Method to create an organizations list for an enterprise
+     *
+     * @param organizationsResponse: obtained from GitHub's response
+     * @param format:                return type formatter -> {@link ReturnFormat}
+     * @return enabled organizations list for an enterprise as {@code "format"} defines
+     **/
+    protected <T> T returnOrganizationsList(String organizationsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(organizationsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new OrganizationsList(new JSONObject(organizationsResponse));
+            default:
+                return (T) organizationsResponse;
+        }
+    }
+
+    /**
+     * Method to create a repositories list for an organization
+     *
+     * @param repositoriesResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return enabled repositories list for an organization as {@code "format"} defines
+     **/
+    protected <T> T returnOrganizationRepositories(String repositoriesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(repositoriesResponse);
+            case LIBRARY_OBJECT:
+                return (T) new OrganizationRepositoriesList(new JSONObject(repositoriesResponse));
+            default:
+                return (T) repositoriesResponse;
+        }
     }
 
     /**

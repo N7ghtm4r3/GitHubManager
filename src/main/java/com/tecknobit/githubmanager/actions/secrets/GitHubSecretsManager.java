@@ -5,12 +5,12 @@ import com.goterl.lazysodium.SodiumJava;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
-import com.tecknobit.githubmanager.actions.secrets.records.RepositoriesList;
 import com.tecknobit.githubmanager.actions.secrets.records.secrets.OrganizationSecret;
 import com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret;
 import com.tecknobit.githubmanager.actions.secrets.records.secrets.SecretsList;
-import com.tecknobit.githubmanager.records.Repository;
 import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.records.repository.RepositoriesList;
+import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -20,9 +20,6 @@ import java.util.Collection;
 
 import static com.goterl.lazysodium.utils.Key.fromBase64String;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.ACTIONS_PATH;
-import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.REPOS_PATH;
-import static com.tecknobit.githubmanager.actions.cache.GitHubCacheManager.ORGS_PATH;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Base64.getEncoder;
 
@@ -1947,7 +1944,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
                                                              Collection<Long> repositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH + secretName +
+        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds.toArray(new Long[0]));
     }
 
@@ -1971,7 +1968,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     public boolean setSelectedOrganizationSecretRepositories(String org, String secretName,
                                                              Collection<Long> repositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
+        return setItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds.toArray(new Long[0]));
     }
 
@@ -2014,7 +2011,7 @@ public class GitHubSecretsManager extends GitHubManager {
         ArrayList<Long> ids = new ArrayList<>();
         for (Repository repository : repositories.getRepositories())
             ids.add(repository.getId());
-        return enableSelectedItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
+        return setItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH, "selected_repository_ids", ids.toArray(new Long[0]));
     }
 
@@ -2039,7 +2036,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
                                                              Long[] repositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH + secretName +
+        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
     }
 
@@ -2062,7 +2059,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Set selected repositories for an organization secret</a>
      **/
     public boolean setSelectedOrganizationSecretRepositories(String org, String secretName, Long[] repositoriesIds) {
-        return enableSelectedItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
+        return setItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
     }
 

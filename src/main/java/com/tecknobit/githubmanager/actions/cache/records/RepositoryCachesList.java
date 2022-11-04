@@ -205,7 +205,7 @@ public class RepositoryCachesList extends GitHubList {
          **/
         public ActionCache(JSONObject jActionCache) {
             JsonHelper hActionCache = new JsonHelper(jActionCache);
-            id = hActionCache.getLong("id");
+            id = hActionCache.getLong("id", 0);
             ref = hActionCache.getString("ref");
             key = hActionCache.getString("key");
             version = hActionCache.getString("version");

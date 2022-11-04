@@ -7,15 +7,13 @@ import com.tecknobit.githubmanager.actions.cache.records.RepositoriesCacheUsages
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCacheUsage;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList.ActionCache;
-import com.tecknobit.githubmanager.records.Repository;
 import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.ACTIONS_PATH;
-import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManager.REPOS_PATH;
 
 /**
  * The {@code GitHubCacheManager} class is useful to manage all GitHub's cache endpoints
@@ -26,16 +24,6 @@ import static com.tecknobit.githubmanager.actions.artifacts.GitHubArtifactsManag
  * @see GitHubManager
  **/
 public class GitHubCacheManager extends GitHubManager {
-
-    /**
-     * {@code ENTERPRISES_PATH} constant for {@code "enterprises/"} path
-     **/
-    public static final String ENTERPRISES_PATH = "enterprises/";
-
-    /**
-     * {@code ORGS_PATH} constant for {@code "orgs/"} path
-     **/
-    public static final String ORGS_PATH = "orgs/";
 
     /**
      * {@code ACTIONS_CACHE_USAGE_PATH} constant for {@code "/actions/cache/usage"} path

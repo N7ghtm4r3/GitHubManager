@@ -5,7 +5,7 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.artifacts.records.Artifact;
 import com.tecknobit.githubmanager.actions.artifacts.records.ArtifactsList;
-import com.tecknobit.githubmanager.records.Repository;
+import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -23,11 +23,6 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 public class GitHubArtifactsManager extends GitHubManager {
 
     /**
-     * {@code REPOS_PATH} constant for {@code "repos/"} path
-     **/
-    public static final String REPOS_PATH = "repos/";
-
-    /**
      * {@code ARTIFACTS_PATH} constant for {@code "artifacts/"} path
      **/
     public static final String ARTIFACTS_PATH = "artifacts/";
@@ -36,11 +31,6 @@ public class GitHubArtifactsManager extends GitHubManager {
      * {@code QUERY_ARTIFACTS_PATH} constant for {@code "/artifacts"} path
      **/
     public static final String QUERY_ARTIFACTS_PATH = "/artifacts";
-
-    /**
-     * {@code ACTIONS_PATH} constant for {@code "/actions/"} path
-     **/
-    public static final String ACTIONS_PATH = "/actions/";
 
     /**
      * {@code RUNS_PATH} constant for {@code "/runs/"} path
