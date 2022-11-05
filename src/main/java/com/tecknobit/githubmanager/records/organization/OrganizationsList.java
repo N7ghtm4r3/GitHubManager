@@ -12,12 +12,20 @@ import java.util.Collection;
  * The {@code OrganizationsList} class is useful to format a GitHub's organizations list
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
- * List selected organizations enabled for GitHub Actions in an enterprise</a>
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+ *             List selected organizations enabled for GitHub Actions in an enterprise</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+ *             List organization access to a self-hosted runner group in an enterprise</a>
+ *     </li>
+ * </ul>
  * @see GitHubResponse
  * @see GitHubList
  **/
-// TODO: 04/11/2022 FIX DOCU STRING WITH ALL REFERENCES
 public class OrganizationsList extends GitHubList {
 
     /**

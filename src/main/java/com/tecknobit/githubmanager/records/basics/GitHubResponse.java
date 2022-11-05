@@ -87,7 +87,7 @@ public abstract class GitHubResponse {
      * Returns a string representation of the object <br>
      * Any params required
      *
-     * @return a string representation of the object as {@link String} with two different ways:
+     * @return a string representation of the object as {@link String} in two different ways:
      * <ul>
      *     <li>
      *         If {@link #instantiatedWithError} is set on {@code "true"} the message will be something like:

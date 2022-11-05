@@ -17,7 +17,6 @@ import java.util.Collection;
  * @see GitHubResponse
  * @see GitHubList
  **/
-// TODO: 04/11/2022 FIX DOCU STRING WITH ALL REFERENCES
 public class RepositoriesList extends GitHubList {
 
     /**

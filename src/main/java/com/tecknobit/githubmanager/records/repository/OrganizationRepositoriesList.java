@@ -17,12 +17,23 @@ import static com.tecknobit.githubmanager.records.repository.OrganizationReposit
  * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
- * List selected repositories enabled for GitHub Actions in an organization</a>
+ * /**
+ * The {@code OrganizationsList} class is useful to format a GitHub's organizations list
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+ *             List selected repositories enabled for GitHub Actions in an organization</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+ *             List repository access to a self-hosted runner group in an organization</a>
+ *     </li>
+ * </ul>
  * @see GitHubResponse
  * @see GitHubList
  **/
-// TODO: 04/11/2022 FIX DOCU STRING WITH ALL REFERENCES
 public class OrganizationRepositoriesList extends GitHubList {
 
     /**
