@@ -1,6 +1,6 @@
-package com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records;
+package com.tecknobit.githubmanager.actions.selfhosted.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.GitHubLabel;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,6 +25,7 @@ import java.util.Collection;
  * </ul>
  * @see GitHubResponse
  **/
+// TODO: 05/11/2022 FIX DOCUSTRING
 public class Runner extends GitHubResponse {
 
     /**
@@ -55,7 +56,7 @@ public class Runner extends GitHubResponse {
     /**
      * {@code labels} labels list
      **/
-    private final ArrayList<Label> labels;
+    private final ArrayList<GitHubLabel> labels;
 
     /**
      * Constructor to init a {@link Runner}
@@ -67,7 +68,7 @@ public class Runner extends GitHubResponse {
      * @param busy:flag for busy value
      * @param labels:   labels list
      **/
-    public Runner(long id, String name, String os, String status, boolean busy, ArrayList<Label> labels) {
+    public Runner(long id, String name, String os, String status, boolean busy, ArrayList<GitHubLabel> labels) {
         super(null);
         this.id = id;
         this.name = name;
@@ -92,7 +93,7 @@ public class Runner extends GitHubResponse {
         labels = new ArrayList<>();
         JSONArray jLabels = hResponse.getJSONArray("labels", new JSONArray());
         for (int j = 0; j < jLabels.length(); j++)
-            labels.add(new Label(jLabels.getJSONObject(j)));
+            labels.add(new GitHubLabel(jLabels.getJSONObject(j)));
     }
 
     /**
@@ -149,100 +150,10 @@ public class Runner extends GitHubResponse {
      * Method to get {@link #labels} instance <br>
      * Any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link Label}
+     * @return {@link #labels} instance as {@link Collection} of {@link GitHubLabel}
      **/
-    public Collection<Label> getLabels() {
+    public Collection<GitHubLabel> getLabels() {
         return labels;
-    }
-
-    /**
-     * The {@code Label} class is useful to format a GitHub's label
-     *
-     * @author N7ghtm4r3 - Tecknobit
-     **/
-    public static class Label {
-
-        /**
-         * {@code id} identifier of the label
-         **/
-        private final long id;
-
-        /**
-         * {@code name} identifier of the label
-         **/
-        private final String name;
-
-        /**
-         * {@code type} type of the label
-         **/
-        private final String type;
-
-        /**
-         * Constructor to init a {@link Label}
-         *
-         * @param id:   identifier of the label
-         * @param name: the name of the label
-         * @param type: type of the label
-         **/
-        public Label(long id, String name, String type) {
-            this.id = id;
-            this.name = name;
-            this.type = type;
-        }
-
-        /**
-         * Constructor to init a {@link Label}
-         *
-         * @param jLabel :          * @param type: type of the label details as {@link JSONObject}
-         **/
-        public Label(JSONObject jLabel) {
-            JsonHelper hLabel = new JsonHelper(jLabel);
-            id = hLabel.getLong("id", 0);
-            name = hLabel.getString("name");
-            type = hLabel.getString("type");
-        }
-
-        /**
-         * Method to get {@link #id} instance <br>
-         * Any params required
-         *
-         * @return {@link #id} instance as long
-         **/
-        public long getId() {
-            return id;
-        }
-
-        /**
-         * Method to get {@link #name} instance <br>
-         * Any params required
-         *
-         * @return {@link #name} instance as {@link String}
-         **/
-        public String getName() {
-            return name;
-        }
-
-        /**
-         * Method to get {@link #type} instance <br>
-         * Any params required
-         *
-         * @return {@link #type} instance as {@link String}
-         **/
-        public String getType() {
-            return type;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         **/
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
 }

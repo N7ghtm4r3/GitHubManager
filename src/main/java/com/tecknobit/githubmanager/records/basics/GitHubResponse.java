@@ -104,7 +104,7 @@ public abstract class GitHubResponse {
      *         <pre {@code {
      * "instantiatedWithError": false,
      * // rest of the LIBRARY_OBJECT details formatted as JSON
-     * }
+     *}
      *             }
      *         </pre>
      *     </li>

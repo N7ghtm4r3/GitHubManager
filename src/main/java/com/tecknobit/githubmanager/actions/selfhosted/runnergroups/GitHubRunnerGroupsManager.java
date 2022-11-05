@@ -2,10 +2,10 @@ package com.tecknobit.githubmanager.actions.selfhosted.runnergroups;
 
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
-import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.Runner;
+import com.tecknobit.githubmanager.actions.selfhosted.records.Runner;
+import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroup;
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroupsList;
-import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnersList;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.organization.OrganizationsList;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
@@ -34,11 +34,6 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * {@code ACTIONS_RUNNER_GROUPS_PATH} constant for {@code "/actions/runner-groups"} path
      **/
     public static final String ACTIONS_RUNNER_GROUPS_PATH = ACTIONS_PATH + "runner-groups";
-
-    /**
-     * {@code RUNNERS_PATH} constant for {@code "/runners"} path
-     **/
-    public static final String RUNNERS_PATH = "/runners";
 
     /**
      * Constructor to init a {@link GitHubRunnerGroupsManager}
@@ -4781,24 +4776,6 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
                                                  ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
                 runnerGroupId + RUNNERS_PATH + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a runners list
-     *
-     * @param runnersGroupResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return runners list as {@code "format"} defines
-     **/
-    private <T> T returnRunnersList(String runnersGroupResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(runnersGroupResponse);
-            case LIBRARY_OBJECT:
-                return (T) new RunnersList(new JSONObject(runnersGroupResponse));
-            default:
-                return (T) runnersGroupResponse;
-        }
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager;
 
 import com.tecknobit.apimanager.apis.APIRequest;
+import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
 import com.tecknobit.githubmanager.records.organization.OrganizationsList;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
 import org.json.JSONArray;
@@ -47,6 +48,11 @@ public class GitHubManager {
      * {@code ORGS_PATH} constant for {@code "orgs/"} path
      **/
     public static final String ORGS_PATH = "orgs/";
+
+    /**
+     * {@code RUNNERS_PATH} constant for {@code "/runners"} path
+     **/
+    public static final String RUNNERS_PATH = "/runners";
 
     /**
      * {@code ORGANIZATIONS_PATH} constant for {@code "/organizations"} path
@@ -437,6 +443,24 @@ public class GitHubManager {
                 return (T) new OrganizationRepositoriesList(new JSONObject(repositoriesResponse));
             default:
                 return (T) repositoriesResponse;
+        }
+    }
+
+    /**
+     * Method to create a runners list
+     *
+     * @param runnersGroupResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return runners list as {@code "format"} defines
+     **/
+    protected <T> T returnRunnersList(String runnersGroupResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(runnersGroupResponse);
+            case LIBRARY_OBJECT:
+                return (T) new RunnersList(new JSONObject(runnersGroupResponse));
+            default:
+                return (T) runnersGroupResponse;
         }
     }
 

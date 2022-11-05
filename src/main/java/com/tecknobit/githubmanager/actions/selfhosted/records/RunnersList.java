@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records;
+package com.tecknobit.githubmanager.actions.selfhosted.records;
 
 import com.tecknobit.githubmanager.records.basics.GitHubList;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
@@ -26,6 +26,7 @@ import java.util.Collection;
  * @see GitHubResponse
  * @see GitHubList
  **/
+// TODO: 05/11/2022 FIX DOCU STRING
 public class RunnersList extends GitHubList {
 
     /**
