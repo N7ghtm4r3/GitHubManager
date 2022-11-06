@@ -91,6 +91,93 @@ public class Organization extends GitHubResponse {
      *
      * @param login:                  login value
      * @param id:                     identifier of the organization
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(String login, long id, String description) {
+        this(login, id, null, null, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param url:                    url value
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(String login, String url, String description) {
+        this(login, 0, null, url, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param id:                     identifier of the organization
+     * @param url:                    url value
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(String login, long id, String url, String description) {
+        this(login, id, null, url, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(String login, String description) {
+        this(login, 0, null, null, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param id:                     identifier of the organization
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(long id, String login, String description) {
+        this(login, id, null, null, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param nodeId:                 identifier of the node
+     * @param url:                    url value
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(String login, String nodeId, String url, String description) {
+        this(login, 0, nodeId, url, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param id:                     identifier of the organization
+     * @param nodeId:                 identifier of the node
+     * @param url:                    url value
+     * @param description:description value
+     * @apiNote this constructor is useful to contains only the basics details about an {@link Organization}
+     **/
+    public Organization(String login, long id, String nodeId, String url, String description) {
+        this(login, id, nodeId, url, null, null, null, null, null, null, null, description);
+    }
+
+    /**
+     * Constructor to init a {@link Organization}
+     *
+     * @param login:                  login value
+     * @param id:                     identifier of the organization
      * @param nodeId:                 identifier of the node
      * @param url:                    url value
      * @param reposUrl:               repos url value

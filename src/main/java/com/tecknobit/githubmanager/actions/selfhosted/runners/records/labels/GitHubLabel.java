@@ -8,7 +8,6 @@ import org.json.JSONObject;
  *
  * @author N7ghtm4r3 - Tecknobit
  **/
-// TODO: 05/11/2022 FIX DOCU STRING
 public class GitHubLabel extends GitHubResponse {
 
     /**

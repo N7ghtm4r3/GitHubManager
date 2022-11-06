@@ -281,7 +281,180 @@ public class Repository extends GitHubResponse {
     protected final String hooksUrl;
 
     /**
-     * Constructor to init a {@link OrganizationRepositoriesList.CompletedRepository}
+     * Constructor to init a {@link Repository}
+     *
+     * @param name:        the name of the repository
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(String name, Owner owner, boolean privateRepo, boolean fork) {
+        this(0, null, name, null, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param id:          identifier value
+     * @param name:        the name of the repository
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(long id, String name, Owner owner, boolean privateRepo, boolean fork) {
+        this(id, null, name, null, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param name:        the name of the repository
+     * @param fullName:    fullname value
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(String name, String fullName, Owner owner, boolean privateRepo, boolean fork) {
+        this(0, null, name, fullName, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param id:          identifier value
+     * @param name:        the name of the repository
+     * @param fullName:    fullname value
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(long id, String name, String fullName, Owner owner, boolean privateRepo, boolean fork) {
+        this(id, null, name, fullName, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param name:        the name of the repository
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @param description: description value
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(String name, Owner owner, boolean privateRepo, String description, boolean fork) {
+        this(0, null, name, null, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param id:          identifier value
+     * @param name:        the name of the repository
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @param description: description value
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(long id, String name, Owner owner, boolean privateRepo, String description, boolean fork) {
+        this(id, null, name, null, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param name:        the name of the repository
+     * @param fullName:    fullname value
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @param description: description value
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(String name, String fullName, Owner owner, boolean privateRepo, String description,
+                      boolean fork) {
+        this(0, null, name, fullName, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param id:          identifier value
+     * @param name:        the name of the repository
+     * @param fullName:    fullname value
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @param description: description value
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(long id, String name, String fullName, Owner owner, boolean privateRepo, String description,
+                      boolean fork) {
+        this(id, null, name, fullName, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param nodeId:      identifier of the node value
+     * @param name:        the name of the repository
+     * @param fullName:    fullname value
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @param description: description value
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(String nodeId, String name, String fullName, Owner owner, boolean privateRepo,
+                      String description, boolean fork, String url) {
+        this(0, nodeId, name, fullName, owner, privateRepo, null, description, fork, url, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
+     *
+     * @param id:          identifier value
+     * @param nodeId:      identifier of the node value
+     * @param name:        the name of the repository
+     * @param fullName:    fullname value
+     * @param owner:       owner value
+     * @param privateRepo: whether the repository is private or public
+     * @param description: description value
+     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
+     */
+    public Repository(long id, String nodeId, String name, String fullName, Owner owner, boolean privateRepo,
+                      String description, boolean fork, String url) {
+        this(id, nodeId, name, fullName, owner, privateRepo, null, description, fork, url, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null);
+    }
+
+    /**
+     * Constructor to init a {@link Repository}
      *
      * @param id:                    identifier value
      * @param nodeId:                identifier of the node value
@@ -398,7 +571,7 @@ public class Repository extends GitHubResponse {
     }
 
     /**
-     * Constructor to init a {@link OrganizationRepositoriesList.CompletedRepository}
+     * Constructor to init a {@link Repository}
      *
      * @param jRepository: repository details as {@link JSONObject}
      **/
@@ -1071,6 +1244,88 @@ public class Repository extends GitHubResponse {
          * {@code siteAdmin} site admin value
          **/
         private final boolean siteAdmin;
+
+        /**
+         * Constructor to init a {@link Owner}
+         *
+         * @param login:             login value
+         * @param siteAdmin:         site admin value
+         * @apiNote this constructor is useful to contains only the basics details about an {@link Owner}
+         **/
+        public Owner(String login, boolean siteAdmin) {
+            this(login, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                    siteAdmin);
+        }
+
+
+        /**
+         * Constructor to init a {@link Owner}
+         *
+         * @param login:     login value
+         * @param id:        identifier value
+         * @param siteAdmin: site admin value
+         * @apiNote this constructor is useful to contains only the basics details about an {@link Owner}
+         **/
+        public Owner(String login, long id, boolean siteAdmin) {
+            this(login, id, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                    siteAdmin);
+        }
+
+        /**
+         * Constructor to init a {@link Owner}
+         *
+         * @param login:     login value
+         * @param url:       url value
+         * @param siteAdmin: site admin value
+         * @apiNote this constructor is useful to contains only the basics details about an {@link Owner}
+         **/
+        public Owner(String login, String url, boolean siteAdmin) {
+            this(login, 0, null, null, null, url, null, null, null, null, null, null, null, null, null, null, null,
+                    siteAdmin);
+        }
+
+        /**
+         * Constructor to init a {@link Owner}
+         *
+         * @param login:     login value
+         * @param id:        identifier value
+         * @param url:       url value
+         * @param siteAdmin: site admin value
+         * @apiNote this constructor is useful to contains only the basics details about an {@link Owner}
+         **/
+        public Owner(String login, long id, String url, boolean siteAdmin) {
+            this(login, id, null, null, null, url, null, null, null, null, null, null, null, null, null, null, null,
+                    siteAdmin);
+        }
+
+        /**
+         * Constructor to init a {@link Owner}
+         *
+         * @param login:     login value
+         * @param nodeId:    identifier of the node value
+         * @param url:       url value
+         * @param siteAdmin: site admin value
+         * @apiNote this constructor is useful to contains only the basics details about an {@link Owner}
+         **/
+        public Owner(String login, String nodeId, String url, boolean siteAdmin) {
+            this(login, 0, nodeId, null, null, url, null, null, null, null, null, null, null, null, null, null, null,
+                    siteAdmin);
+        }
+
+        /**
+         * Constructor to init a {@link Owner}
+         *
+         * @param login:     login value
+         * @param id:        identifier value
+         * @param nodeId:    identifier of the node value
+         * @param url:       url value
+         * @param siteAdmin: site admin value
+         * @apiNote this constructor is useful to contains only the basics details about an {@link Owner}
+         **/
+        public Owner(String login, long id, String nodeId, String url, boolean siteAdmin) {
+            this(login, id, nodeId, null, null, url, null, null, null, null, null, null, null, null, null, null, null,
+                    siteAdmin);
+        }
 
         /**
          * Constructor to init a {@link Owner}
