@@ -7,11 +7,18 @@ import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesLi
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
 import java.util.Arrays;
 import java.util.Properties;
 
 import static com.tecknobit.apimanager.apis.APIRequest.*;
+import static java.lang.Long.MAX_VALUE;
 
 /**
  * The {@code GitHubManager} class is useful to manage all GitHubManager's endpoints
@@ -461,6 +468,23 @@ public class GitHubManager {
                 return (T) new RunnersList(new JSONObject(runnersGroupResponse));
             default:
                 return (T) runnersGroupResponse;
+        }
+    }
+
+    protected File downloadFile(String url, String pathName, boolean save) throws IOException {
+        ReadableByteChannel byteChannel = Channels.newChannel(new URL(url).openStream());
+        if (!pathName.contains("."))
+            throw new IOException("Path name must also contains the suffix for the file");
+        try (FileOutputStream fileOutputStream = new FileOutputStream(pathName)) {
+            FileChannel fileChannel = fileOutputStream.getChannel();
+            fileChannel.transferFrom(byteChannel, 0, MAX_VALUE);
+            if (!save) {
+                String suffix = "." + pathName.split("\\.")[1];
+                File runtimeFile = File.createTempFile(pathName.replace(suffix, ""), suffix);
+                runtimeFile.deleteOnExit();
+                return runtimeFile;
+            } else
+                return new File(pathName);
         }
     }
 

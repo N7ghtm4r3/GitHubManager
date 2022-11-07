@@ -7,7 +7,7 @@ import com.tecknobit.githubmanager.GitHubManager;
  *
  * @author N7ghtm4r3 - Tecknobit
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-runs">
- * About the Workflow runs API</a>
+ * About the Job runs API</a>
  * @see GitHubManager
  **/
 // TODO: 03/11/2022 TEST JSON PAYLOAD WHEN FIXED

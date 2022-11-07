@@ -8,6 +8,7 @@ import com.tecknobit.githubmanager.actions.artifacts.records.ArtifactsList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -575,6 +576,82 @@ public class GitHubArtifactsManager extends GitHubManager {
             printErrorResponse();
             return false;
         }
+    }
+
+    /**
+     * Method to download an archive for a repository. This URL expires after 1 minute. Look for
+     * {@code "Location:"} in the response header to find the URL for the download -> <b> this step is automatically made by this library. </b> <br>
+     * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
+     * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param repository: repository from download the artifact
+     * @param artifactId: the unique identifier of the artifact
+     * @param pathName:   path name for the file, this must include also the .zip suffix es. -> download.zip
+     * @param save:       flag whether save the file, if is set to {@code "false"} will be created a temporary file
+     *                    that will be deleted on exit
+     * @return archive for a repository downloaded as {@link File}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * Download an artifact</a>
+     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
+     * with GitHub's API response and write about error that has been thrown. Thank you for help!
+     **/
+    @WrappedRequest
+    public File downloadArtifact(Repository repository, long artifactId, String pathName, boolean save) throws IOException {
+        return downloadFile(downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId), pathName,
+                save);
+    }
+
+    /**
+     * Method to download an archive for a repository. This URL expires after 1 minute. Look for
+     * {@code "Location:"} in the response header to find the URL for the download -> <b> this step is automatically made by this library. </b> <br>
+     * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
+     * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param owner:      the account owner of the repository. The name is not case-sensitive
+     * @param repo:       the name of the repository. The name is not case-sensitive
+     * @param artifactId: the unique identifier of the artifact
+     * @param pathName:   path name for the file, this must include also the .zip suffix es. -> download.zip
+     * @param save:       flag whether save the file, if is set to {@code "false"} will be created a temporary file
+     *                    that will be deleted on exit
+     * @return archive for a repository downloaded as {@link File}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * Download an artifact</a>
+     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
+     * with GitHub's API response and write about error that has been thrown. Thank you for help!
+     **/
+    @WrappedRequest
+    public File downloadArtifact(String owner, String repo, long artifactId, String pathName, boolean save) throws IOException {
+        return downloadFile(downloadArtifact(owner, repo, artifactId), pathName, save);
     }
 
     /**
