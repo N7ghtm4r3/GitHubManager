@@ -25,7 +25,6 @@ import java.util.Collection;
  * </ul>
  * @see GitHubResponse
  **/
-// TODO: 05/11/2022 FIX DOCUSTRING
 public class Runner extends GitHubResponse {
 
     /**

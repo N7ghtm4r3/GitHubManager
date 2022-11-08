@@ -11,30 +11,118 @@ import java.util.Collection;
 
 import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
 
+/**
+ * The {@code Job} class is useful to format a GitHub's job
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote you can see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+ * Get a job for a workflow run</a>
+ * @see GitHubResponse
+ **/
 public class Job extends GitHubResponse {
 
+    /**
+     * {@code id} the id of the job
+     **/
     private final long id;
+    /**
+     * {@code name} the id of the associated workflow run
+     **/
     private final long runId;
+    /**
+     * {@code runUrl} run url value
+     **/
     private final String runUrl;
+    /**
+     * {@code nodeId} the id of the node
+     **/
     private final String nodeId;
+    /**
+     * {@code headSha} the {@code "SHA"} of the commit that is being run
+     **/
     private final String headSha;
+    /**
+     * {@code "url"} value
+     **/
     private final String url;
+    /**
+     * {@code htmlUrl} html url value
+     **/
     private final String htmlUrl;
-    private final String status;
-    private final String conclusion;
+    /**
+     * {@code status} the phase of the lifecycle that the job is currently in
+     **/
+    private final Status status;
+    /**
+     * {@code conclusion} the outcome of the job
+     **/
+    private final Conclusion conclusion;
+    /**
+     * {@code startedAt} the time that the job started, in ISO 8601 format
+     **/
     private final String startedAt;
+    /**
+     * {@code completedAt} the time that the job finished, in ISO 8601 format
+     **/
     private final String completedAt;
+    /**
+     * {@code name} the name of the job
+     **/
     private final String name;
+    /**
+     * {@code steps} steps in this job
+     **/
     private final ArrayList<Step> steps;
+    /**
+     * {@code checkRunUrl} check run url value
+     **/
     private final String checkRunUrl;
+    /**
+     * {@code labels} labels for the workflow job. Specified by the {@code "runs_on"} attribute in the action's workflow file
+     **/
     private final ArrayList<String> labels;
+    /**
+     * {@code runnerId} the ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     **/
     private final long runnerId;
+    /**
+     * {@code runnerName} the name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     **/
     private final String runnerName;
+    /**
+     * {@code runnerGroupId} the ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     **/
     private final long runnerGroupId;
+    /**
+     * {@code runnerGroupName} the name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     **/
     private final String runnerGroupName;
 
+    /**
+     * Constructor to init a {@link Job}
+     *
+     * @param id :the id of the job
+     * @param runId : the id of the associated workflow run
+     * @param runUrl : run url value
+     * @param nodeId : the id of the node
+     * @param headSha : the {@code "SHA"} of the commit that is being run
+     * @param url: url value
+     * @param htmlUrl : html url value
+     * @param status :the phase of the lifecycle that the job is currently in
+     * @param conclusion : the outcome of the job
+     * @param startedAt : the time that the job started, in ISO 8601 format
+     * @param completedAt : the time that the job finished, in ISO 8601 format
+     * @param name :the name of the job
+     * @param steps :steps in this job
+     * @param checkRunUrl : check run url value
+     * @param labels : labels for the workflow job. Specified by the {@code "runs_on"} attribute in the action's workflow file
+     * @param runnerId : the ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * @param runnerName : the name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * @param runnerGroupId : the ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * @param runnerGroupName : the name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     **/
     public Job(long id, long runId, String runUrl, String nodeId, String headSha, String url, String htmlUrl,
-               String status, String conclusion, String startedAt, String completedAt, String name,
+               Status status, Conclusion conclusion, String startedAt, String completedAt, String name,
                ArrayList<Step> steps, String checkRunUrl, ArrayList<String> labels, long runnerId, String runnerName,
                long runnerGroupId, String runnerGroupName) {
         super(null);
@@ -73,8 +161,8 @@ public class Job extends GitHubResponse {
         headSha = hResponse.getString("head_sha");
         url = hResponse.getString("url");
         htmlUrl = hResponse.getString("html_url");
-        status = hResponse.getString("status");
-        conclusion = hResponse.getString("conclusion");
+        status = Status.valueOf(hResponse.getString("status", Status.in_progress.toString()));
+        conclusion = Conclusion.valueOf(hResponse.getString("conclusion"));
         startedAt = hResponse.getString("started_at");
         completedAt = hResponse.getString("completed_at");
         name = hResponse.getString("name");
@@ -93,44 +181,124 @@ public class Job extends GitHubResponse {
         runnerGroupName = hResponse.getString("runner_group_name");
     }
 
+    /**
+     * Method to get {@link #id} instance <br>
+     * Any params required
+     *
+     * @return {@link #id} instance as long
+     **/
     public long getId() {
         return id;
     }
 
+    /**
+     * Method to get {@link #runId} instance <br>
+     * Any params required
+     *
+     * @return {@link #runId} instance as long
+     **/
     public long getRunId() {
         return runId;
     }
 
+    /**
+     * Method to get {@link #runUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #runUrl} instance as {@link String}
+     **/
     public String getRunUrl() {
         return runUrl;
     }
 
+    /**
+     * Method to get {@link #nodeId} instance <br>
+     * Any params required
+     *
+     * @return {@link #nodeId} instance as {@link String}
+     **/
     public String getNodeId() {
         return nodeId;
     }
 
+    /**
+     * Method to get {@link #headSha} instance <br>
+     * Any params required
+     *
+     * @return {@link #headSha} instance as {@link String}
+     **/
     public String getHeadSha() {
         return headSha;
     }
 
+    /**
+     * Method to get {@link #url} instance <br>
+     * Any params required
+     *
+     * @return {@link #url} instance as {@link String}
+     **/
     public String getUrl() {
         return url;
     }
 
+    /**
+     * Method to get {@link #htmlUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #htmlUrl} instance as {@link String}
+     **/
     public String getHtmlUrl() {
         return htmlUrl;
     }
 
-    public String getStatus() {
+    /**
+     * Method to get {@link #status} instance <br>
+     * Any params required
+     *
+     * @return {@link #status} instance as {@link Status}
+     **/
+    public Status getStatus() {
         return status;
     }
 
-    public String getConclusion() {
+    /**
+     * Method to get {@link #conclusion} instance <br>
+     * Any params required
+     *
+     * @return {@link #conclusion} instance as {@link Conclusion}
+     **/
+    public Conclusion getConclusion() {
         return conclusion;
     }
 
+    /**
+     * Method to get {@link #startedAt} instance <br>
+     * Any params required
+     *
+     * @return {@link #startedAt} instance as {@link String}
+     **/
     public String getStartedAt() {
         return startedAt;
+    }
+
+    /**
+     * Method to get {@link #name} instance <br>
+     * Any params required
+     *
+     * @return {@link #name} instance as {@link String}
+     **/
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Method to get {@link #steps} instance <br>
+     * Any params required
+     *
+     * @return {@link #steps} instance as {@link Collection} of {@link Step}
+     **/
+    public Collection<Step> getSteps() {
+        return steps;
     }
 
     /**
@@ -165,48 +333,181 @@ public class Job extends GitHubResponse {
         }
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Collection<Step> getSteps() {
-        return steps;
-    }
-
+    /**
+     * Method to get {@link #checkRunUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #checkRunUrl} instance as {@link String}
+     **/
     public String getCheckRunUrl() {
         return checkRunUrl;
     }
 
+    /**
+     * Method to get {@link #labels} instance <br>
+     * Any params required
+     *
+     * @return {@link #labels} instance as {@link Collection} of {@link String}
+     **/
     public Collection<String> getLabels() {
         return labels;
     }
 
+    /**
+     * Method to get {@link #runnerId} instance <br>
+     * Any params required
+     *
+     * @return {@link #runnerId} instance as long
+     **/
     public long getRunnerId() {
         return runnerId;
     }
 
+    /**
+     * Method to get {@link #runnerName} instance <br>
+     * Any params required
+     *
+     * @return {@link #runnerName} instance as {@link String}
+     **/
     public String getRunnerName() {
         return runnerName;
     }
 
+    /**
+     * Method to get {@link #runnerGroupId} instance <br>
+     * Any params required
+     *
+     * @return {@link #runnerGroupId} instance as long
+     **/
     public long getRunnerGroupId() {
         return runnerGroupId;
     }
 
+    /**
+     * Method to get {@link #runnerGroupName} instance <br>
+     * Any params required
+     *
+     * @return {@link #runnerGroupName} instance as {@link String}
+     **/
     public String getRunnerGroupName() {
         return runnerGroupName;
     }
 
+    /**
+     * {@code Status} list of statuses for a job
+     **/
+    public enum Status {
+
+        /**
+         * {@code queued} queued status
+         **/
+        queued,
+
+        /**
+         * {@code in_progress} in progress status
+         **/
+        in_progress,
+
+        /**
+         * {@code completed} completed status
+         **/
+        completed
+
+    }
+
+    /**
+     * {@code Conclusion} list of conclusions for a job
+     **/
+    public enum Conclusion {
+
+        /**
+         * {@code success} success conclusion
+         **/
+        success,
+
+        /**
+         * {@code failure} failure conclusion
+         **/
+        failure,
+
+        /**
+         * {@code neutral} neutral conclusion
+         **/
+        neutral,
+
+        /**
+         * {@code cancelled} cancelled conclusion
+         **/
+        cancelled,
+
+        /**
+         * {@code skipped} skipped conclusion
+         **/
+        skipped,
+
+        /**
+         * {@code timed_out} timed out conclusion
+         **/
+        timed_out,
+
+        /**
+         * {@code action_required} action required conclusion
+         **/
+        action_required,
+
+    }
+
+    /**
+     * The {@code Step} class is useful to format a GitHub's step
+     *
+     * @author N7ghtm4r3 - Tecknobit
+     * @apiNote you can see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+     * Get a job for a workflow run</a>
+     * @see GitHubResponse
+     **/
     public static class Step {
 
+        /**
+         * {@code name} the name of the job
+         **/
         private final String name;
-        private final String status;
-        private final String conclusion;
+
+        /**
+         * {@code status} the phase of the lifecycle that the job is currently in
+         **/
+        private final Status status;
+
+        /**
+         * {@code conclusion} the outcome of the job
+         **/
+        private final Conclusion conclusion;
+
+        /**
+         * {@code number} number value for the step
+         **/
         private final int number;
+
+        /**
+         * {@code startedAt} the time that the job started, in ISO 8601 format
+         **/
         private final String startedAt;
+
+        /**
+         * {@code completedAt} the time that the job finished, in ISO 8601 format
+         **/
         private final String completedAt;
 
-        public Step(String name, String status, String conclusion, int number, String startedAt, String completedAt) {
+        /**
+         * Constructor to init a {@link Step}
+         *
+         * @param name        :the name of the job
+         * @param status      :the phase of the lifecycle that the job is currently in
+         * @param conclusion  : the outcome of the job
+         * @param number:     number value for the step
+         * @param startedAt   : the time that the job started, in ISO 8601 format
+         * @param completedAt : the time that the job finished, in ISO 8601 format
+         **/
+        public Step(String name, Status status, Conclusion conclusion, int number, String startedAt, String completedAt) {
             this.name = name;
             this.status = status;
             this.conclusion = conclusion;
@@ -215,32 +516,67 @@ public class Job extends GitHubResponse {
             this.completedAt = completedAt;
         }
 
+        /**
+         * Constructor to init a {@link Step}
+         *
+         * @param jStep : step details as {@link JSONObject}
+         **/
         public Step(JSONObject jStep) {
             JsonHelper hStep = new JsonHelper(jStep);
             name = hStep.getString("name");
-            status = hStep.getString("status");
-            conclusion = hStep.getString("conclusion");
+            status = Status.valueOf(hStep.getString("status", Status.in_progress.toString()));
+            conclusion = Conclusion.valueOf(hStep.getString("conclusion"));
             number = hStep.getInt("number", 0);
             startedAt = hStep.getString("started_at");
             completedAt = hStep.getString("completed_at");
         }
 
+        /**
+         * Method to get {@link #name} instance <br>
+         * Any params required
+         *
+         * @return {@link #name} instance as {@link String}
+         **/
         public String getName() {
             return name;
         }
 
-        public String getStatus() {
+        /**
+         * Method to get {@link #status} instance <br>
+         * Any params required
+         *
+         * @return {@link #status} instance as {@link Status}
+         **/
+        public Status getStatus() {
             return status;
         }
 
-        public String getConclusion() {
+        /**
+         * Method to get {@link #conclusion} instance <br>
+         * Any params required
+         *
+         * @return {@link #conclusion} instance as {@link Conclusion}
+         **/
+        public Conclusion getConclusion() {
             return conclusion;
         }
 
+        /**
+         * Method to get {@link #number} instance <br>
+         * Any params required
+         *
+         * @return {@link #number} instance as int
+         **/
         public int getNumber() {
             return number;
         }
 
+        /**
+         * Method to get {@link #startedAt} instance <br>
+         * Any params required
+         *
+         * @return {@link #startedAt} instance as {@link String}
+         **/
         public String getStartedAt() {
             return startedAt;
         }
@@ -259,6 +595,12 @@ public class Job extends GitHubResponse {
             }
         }
 
+        /**
+         * Method to get {@link #completedAt} instance <br>
+         * Any params required
+         *
+         * @return {@link #completedAt} instance as {@link String}
+         **/
         public String getCompletedAt() {
             return completedAt;
         }
@@ -277,6 +619,12 @@ public class Job extends GitHubResponse {
             }
         }
 
+        /**
+         * Returns a string representation of the object <br>
+         * Any params required
+         *
+         * @return a string representation of the object as {@link String}
+         */
         @Override
         public String toString() {
             return new JSONObject(this).toString();

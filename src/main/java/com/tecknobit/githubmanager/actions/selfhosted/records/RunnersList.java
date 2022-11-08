@@ -26,7 +26,6 @@ import java.util.Collection;
  * @see GitHubResponse
  * @see GitHubList
  **/
-// TODO: 05/11/2022 FIX DOCU STRING
 public class RunnersList extends GitHubList {
 
     /**
