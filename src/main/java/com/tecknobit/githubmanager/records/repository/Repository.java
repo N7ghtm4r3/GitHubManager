@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.records.repository;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
@@ -27,23 +28,15 @@ import org.json.JSONObject;
  *             List selected repositories for an organization secret</a>
  *     </li>
  * </ul>
+ * @see GitHubResponse
+ * @see BaseResponseDetails
  **/
-public class Repository extends GitHubResponse {
-
-    /**
-     * {@code id} identifier value
-     **/
-    protected final long id;
+public class Repository extends BaseResponseDetails {
 
     /**
      * {@code nodeId} identifier of the node value
      **/
     protected final String nodeId;
-
-    /**
-     * {@code name} the name of the repository
-     **/
-    protected final String name;
 
     /**
      * {@code fullName} fullname value
@@ -74,11 +67,6 @@ public class Repository extends GitHubResponse {
      * {@code fork} fork value
      **/
     protected final boolean fork;
-
-    /**
-     * {@code "url"} value
-     **/
-    protected final String url;
 
     /**
      * {@code archiveUrl} archive url value
@@ -517,17 +505,14 @@ public class Repository extends GitHubResponse {
                       String notificationsUrl, String pullsUrl, String releasesUrl, String sshUrl, String stargazersUrl,
                       String statutesUrl, String subscribersUrl, String subscriptionUrl, String tagsUrl, String teamsUrl,
                       String treesUrl, String cloneUrl, String mirrorUrl, String hooksUrl) {
-        super(null);
-        this.id = id;
+        super(id, name, url);
         this.nodeId = nodeId;
-        this.name = name;
         this.fullName = fullName;
         this.owner = owner;
         this.privateRepo = privateRepo;
         this.htmlUrl = htmlUrl;
         this.description = description;
         this.fork = fork;
-        this.url = url;
         this.archiveUrl = archiveUrl;
         this.assigneesUrl = assigneesUrl;
         this.blobsUrl = blobsUrl;
@@ -577,16 +562,13 @@ public class Repository extends GitHubResponse {
      **/
     public Repository(JSONObject jRepository) {
         super(jRepository);
-        id = hResponse.getLong("id", 0);
         nodeId = hResponse.getString("node_id");
-        name = hResponse.getString("name");
         fullName = hResponse.getString("full_name");
         owner = new Owner(hResponse.getJSONObject("owner", new JSONObject()));
         privateRepo = hResponse.getBoolean("private");
         htmlUrl = hResponse.getString("html_url");
         description = hResponse.getString("description");
         fork = hResponse.getBoolean("fork");
-        url = hResponse.getString("url");
         archiveUrl = hResponse.getString("archive_url");
         assigneesUrl = hResponse.getString("assignees_url");
         blobsUrl = hResponse.getString("blobs_url");
@@ -630,16 +612,6 @@ public class Repository extends GitHubResponse {
     }
 
     /**
-     * Method to get {@link #id} instance <br>
-     * Any params required
-     *
-     * @return {@link #id} instance as long
-     **/
-    public long getId() {
-        return id;
-    }
-
-    /**
      * Method to get {@link #nodeId} instance <br>
      * Any params required
      *
@@ -647,16 +619,6 @@ public class Repository extends GitHubResponse {
      **/
     public String getNodeId() {
         return nodeId;
-    }
-
-    /**
-     * Method to get {@link #name} instance <br>
-     * Any params required
-     *
-     * @return {@link #name} instance as {@link String}
-     **/
-    public String getName() {
-        return name;
     }
 
     /**
@@ -717,16 +679,6 @@ public class Repository extends GitHubResponse {
      **/
     public boolean isFork() {
         return fork;
-    }
-
-    /**
-     * Method to get {@link #url} instance <br>
-     * Any params required
-     *
-     * @return {@link #url} instance as {@link String}
-     **/
-    public String getUrl() {
-        return url;
     }
 
     /**
@@ -1176,9 +1128,9 @@ public class Repository extends GitHubResponse {
         private final String avatarUrl;
 
         /**
-         * {@code gravatarUrl} gravatar url value
+         * {@code gravatarId} gravatar url value
          **/
-        private final String gravatarUrl;
+        private final String gravatarId;
 
         /**
          * {@code "url"} value
@@ -1334,7 +1286,7 @@ public class Repository extends GitHubResponse {
          * @param id:                identifier value
          * @param nodeId:            identifier of the node value
          * @param avatarUrl:         avatar url value
-         * @param gravatarUrl:       gravatar url value
+         * @param gravatarId:        gravatar url value
          * @param url:               url value
          * @param htmlUrl:           html url value
          * @param followersUrl:      followers url value
@@ -1349,7 +1301,7 @@ public class Repository extends GitHubResponse {
          * @param type:              type value
          * @param siteAdmin:         site admin value
          **/
-        public Owner(String login, long id, String nodeId, String avatarUrl, String gravatarUrl, String url,
+        public Owner(String login, long id, String nodeId, String avatarUrl, String gravatarId, String url,
                      String htmlUrl, String followersUrl, String followingUrl, String gistsUrl, String starredUrl,
                      String subscriptionsUrl, String organizationsUrl, String reposUrl, String eventsUrl,
                      String receivedEventsUrl, String type, boolean siteAdmin) {
@@ -1357,7 +1309,7 @@ public class Repository extends GitHubResponse {
             this.id = id;
             this.nodeId = nodeId;
             this.avatarUrl = avatarUrl;
-            this.gravatarUrl = gravatarUrl;
+            this.gravatarId = gravatarId;
             this.url = url;
             this.htmlUrl = htmlUrl;
             this.followersUrl = followersUrl;
@@ -1384,7 +1336,7 @@ public class Repository extends GitHubResponse {
             id = hOwner.getLong("id", 0);
             nodeId = hOwner.getString("node_id");
             avatarUrl = hOwner.getString("avatar_url");
-            gravatarUrl = hOwner.getString("gravatar_id");
+            gravatarId = hOwner.getString("gravatar_id");
             url = hOwner.getString("url");
             htmlUrl = hOwner.getString("html_url");
             followersUrl = hOwner.getString("followers_url");
@@ -1441,13 +1393,13 @@ public class Repository extends GitHubResponse {
         }
 
         /**
-         * Method to get {@link #gravatarUrl} instance <br>
+         * Method to get {@link #gravatarId} instance <br>
          * Any params required
          *
-         * @return {@link #gravatarUrl} instance as {@link String}
+         * @return {@link #gravatarId} instance as {@link String}
          **/
-        public String getGravatarUrl() {
-            return gravatarUrl;
+        public String getGravatarId() {
+            return gravatarId;
         }
 
         /**

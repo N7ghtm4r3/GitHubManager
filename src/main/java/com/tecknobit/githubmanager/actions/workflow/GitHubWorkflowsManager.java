@@ -14,6 +14,11 @@ import com.tecknobit.githubmanager.GitHubManager;
 public class GitHubWorkflowsManager extends GitHubManager {
 
     /**
+     * {@code ACTIONS_JOBS_PATH} constant for {@code "/actions/jobs"} path
+     **/
+    public static final String ACTIONS_JOBS_PATH = "/actions/jobs";
+
+    /**
      * Constructor to init a {@link GitHubManager}
      *
      * @param accessToken : personal access token for authentication to {@code "GitHub"}

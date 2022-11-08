@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.records.repository;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.basics.GitHubList;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
@@ -104,6 +105,9 @@ public class OrganizationRepositoriesList extends GitHubList {
      *             Disable a selected repository for GitHub Actions in an organization</a>
      *     </li>
      * </ul>
+     * @see GitHubResponse
+     * @see BaseResponseDetails
+     * @see Repository
      **/
     public static class CompletedRepository extends Repository {
 

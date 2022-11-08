@@ -50,7 +50,7 @@ public abstract class GitHubResponse {
         hResponse = new JsonHelper(jResponse);
         message = hResponse.getString("message");
         documentationUrl = hResponse.getString("documentation_url");
-        instantiatedWithError = message != null;
+        instantiatedWithError = documentationUrl != null;
     }
 
     /**

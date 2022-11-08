@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
@@ -37,7 +38,7 @@ import static java.util.Locale.getDefault;
  * </ul>
  * @see GitHubResponse
  **/
-public class Artifact extends GitHubResponse {
+public class Artifact extends BaseResponseDetails {
 
     /**
      * {@code dateFormatter} is instance that help to format date
@@ -45,29 +46,14 @@ public class Artifact extends GitHubResponse {
     public static final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", getDefault());
 
     /**
-     * {@code id} identifier of the artifact
-     **/
-    private final long id;
-
-    /**
      * {@code nodeId} identifier of the node
      **/
     private final String nodeId;
 
     /**
-     * {@code name} the name of the artifact
-     **/
-    private final String name;
-
-    /**
      * {@code sizeInBytes} the size in bytes of the artifact
      **/
     private final int sizeInBytes;
-
-    /**
-     * {@code "url"} of the artifact
-     **/
-    private final String url;
 
     /**
      * {@code archiveDownloadUrl} url to archive the download
@@ -95,9 +81,9 @@ public class Artifact extends GitHubResponse {
     private final String updatedAt;
 
     /**
-     * {@code workflowRun} workflow run details
+     * {@code artifactWorkflowRun} workflow run details
      **/
-    private final WorkflowRun workflowRun;
+    private final ArtifactWorkflowRun artifactWorkflowRun;
 
     /**
      * {@code archiveDownloadUrlFile} file created from {@link #archiveDownloadUrl}
@@ -117,22 +103,20 @@ public class Artifact extends GitHubResponse {
      * @param createdAt:          date when artifact expires
      * @param expiresAt:          date when artifact expires
      * @param updatedAt:          date when artifact has been updated
-     * @param workflowRun:        workflow run details
+     * @param artifactWorkflowRun:        workflow run details
      **/
     public Artifact(long id, String nodeId, String name, int sizeInBytes, String url, String archiveDownloadUrl,
-                    boolean expired, String createdAt, String expiresAt, String updatedAt, WorkflowRun workflowRun) {
-        super(null);
-        this.id = id;
+                    boolean expired, String createdAt, String expiresAt, String updatedAt,
+                    ArtifactWorkflowRun artifactWorkflowRun) {
+        super(id, name, url);
         this.nodeId = nodeId;
-        this.name = name;
         this.sizeInBytes = sizeInBytes;
-        this.url = url;
         this.archiveDownloadUrl = archiveDownloadUrl;
         this.expired = expired;
         this.createdAt = createdAt;
         this.expiresAt = expiresAt;
         this.updatedAt = updatedAt;
-        this.workflowRun = workflowRun;
+        this.artifactWorkflowRun = artifactWorkflowRun;
     }
 
     /**
@@ -142,27 +126,14 @@ public class Artifact extends GitHubResponse {
      **/
     public Artifact(JSONObject jArtifact) {
         super(jArtifact);
-        id = hResponse.getLong("id", 0);
         nodeId = hResponse.getString("node_id");
-        name = hResponse.getString("name");
         sizeInBytes = hResponse.getInt("size_in_bytes", 0);
-        url = hResponse.getString("url");
         archiveDownloadUrl = hResponse.getString("archive_download_url");
         expired = hResponse.getBoolean("expired");
         createdAt = hResponse.getString("created_at");
         expiresAt = hResponse.getString("expires_at");
         updatedAt = hResponse.getString("updated_at");
-        workflowRun = new WorkflowRun(hResponse.getJSONObject("workflow_run", new JSONObject()));
-    }
-
-    /**
-     * Method to get {@link #id} instance <br>
-     * Any params required
-     *
-     * @return {@link #id} instance as long
-     **/
-    public long getId() {
-        return id;
+        artifactWorkflowRun = new ArtifactWorkflowRun(hResponse.getJSONObject("workflow_run", new JSONObject()));
     }
 
     /**
@@ -176,16 +147,6 @@ public class Artifact extends GitHubResponse {
     }
 
     /**
-     * Method to get {@link #name} instance <br>
-     * Any params required
-     *
-     * @return {@link #name} instance as {@link String}
-     **/
-    public String getName() {
-        return name;
-    }
-
-    /**
      * Method to get {@link #sizeInBytes} instance <br>
      * Any params required
      *
@@ -193,16 +154,6 @@ public class Artifact extends GitHubResponse {
      **/
     public int getSizeInBytes() {
         return sizeInBytes;
-    }
-
-    /**
-     * Method to get {@link #url} instance <br>
-     * Any params required
-     *
-     * @return {@link #url} instance as {@link String}
-     **/
-    public String getUrl() {
-        return url;
     }
 
     /**
@@ -310,23 +261,23 @@ public class Artifact extends GitHubResponse {
     }
 
     /**
-     * Method to get {@link #workflowRun} instance <br>
+     * Method to get {@link #artifactWorkflowRun} instance <br>
      * Any params required
      *
-     * @return {@link #workflowRun} instance as {@link WorkflowRun}
+     * @return {@link #artifactWorkflowRun} instance as {@link ArtifactWorkflowRun}
      **/
-    public WorkflowRun getWorkflowRun() {
-        return workflowRun;
+    public ArtifactWorkflowRun getWorkflowRun() {
+        return artifactWorkflowRun;
     }
 
     /**
-     * The {@code WorkflowRun} class is useful to format a GitHub's workflow run
+     * The {@code ArtifactWorkflowRun} class is useful to format a GitHub's artifact workflow run
      *
      * @author N7ghtm4r3 - Tecknobit
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
      * About the Artifacts API</a>
      **/
-    public static class WorkflowRun {
+    public static class ArtifactWorkflowRun {
 
         /**
          * {@code id} identifier of the workflow run
@@ -354,7 +305,7 @@ public class Artifact extends GitHubResponse {
         private final String headSha;
 
         /**
-         * Constructor to init a {@link WorkflowRun}
+         * Constructor to init a {@link ArtifactWorkflowRun}
          *
          * @param id:               identifier of the workflow run
          * @param repositoryId:     identifier of the repository
@@ -362,7 +313,7 @@ public class Artifact extends GitHubResponse {
          * @param headBranch:       head branch value
          * @param headSha:          head sha value es. -> 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
          **/
-        public WorkflowRun(long id, long repositoryId, long headRepositoryId, String headBranch, String headSha) {
+        public ArtifactWorkflowRun(long id, long repositoryId, long headRepositoryId, String headBranch, String headSha) {
             this.id = id;
             this.repositoryId = repositoryId;
             this.headRepositoryId = headRepositoryId;
@@ -371,11 +322,11 @@ public class Artifact extends GitHubResponse {
         }
 
         /**
-         * Constructor to init an {@link WorkflowRun}
+         * Constructor to init an {@link ArtifactWorkflowRun}
          *
          * @param jWorkflowRun: workflow run details as {@link JSONObject}
          **/
-        public WorkflowRun(JSONObject jWorkflowRun) {
+        public ArtifactWorkflowRun(JSONObject jWorkflowRun) {
             JsonHelper hWorkflowRun = new JsonHelper(jWorkflowRun);
             id = hWorkflowRun.getLong("id", 0);
             repositoryId = hWorkflowRun.getLong("repository_id", 0);
