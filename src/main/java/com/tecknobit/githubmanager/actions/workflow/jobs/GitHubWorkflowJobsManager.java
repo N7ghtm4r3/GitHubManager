@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ACTIONS_JOBS_PATH;
+import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.*;
 
 /**
  * The {@code GitHubWorkflowJobsManager} class is useful to manage all GitHub's workflows-jobs endpoints
@@ -25,19 +25,9 @@ import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManage
 public class GitHubWorkflowJobsManager extends GitHubManager {
 
     /**
-     * {@code ACTIONS_RUNS_PATH} constant for {@code "/actions/runs"} path
-     **/
-    public static final String ACTIONS_RUNS_PATH = "/actions/runs";
-
-    /**
      * {@code LOGS_PATH} constant for {@code "/logs"} path
      **/
     public static final String LOGS_PATH = "/logs";
-
-    /**
-     * {@code ATTEMPTS_PATH} constant for {@code "/actions/runs"} path
-     **/
-    public static final String ATTEMPTS_PATH = "/attempts/";
 
     /**
      * {@code JOBS_PATH} constant for {@code "/jobs"} path

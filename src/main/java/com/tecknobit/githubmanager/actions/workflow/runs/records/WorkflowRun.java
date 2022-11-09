@@ -3,8 +3,8 @@ package com.tecknobit.githubmanager.actions.workflow.runs.records;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status;
 import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
+import com.tecknobit.githubmanager.records.basics.User;
 import com.tecknobit.githubmanager.records.repository.Repository;
-import com.tecknobit.githubmanager.records.repository.Repository.Owner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -30,11 +30,11 @@ public class WorkflowRun extends BaseResponseDetails {
     private final ArrayList<PullRequest> pullRequests;
     private final String createdAt;
     private final String updatedAt;
-    private final Owner actor;
+    private final User actor;
     private final int runAttempt;
     private final ArrayList<ReferencedWorkflow> referencedWorkflows;
     private final String runStartedAt;
-    private final Owner triggeringActor;
+    private final User triggeringActor;
     private final String jobsUrl;
     private final String logsUrl;
     private final String checkSuiteUrl;
@@ -50,8 +50,8 @@ public class WorkflowRun extends BaseResponseDetails {
     public WorkflowRun(long id, String name, String nodeId, long checkSuiteId, String checkSuiteNodeId, String headBranch,
                        String headSha, String path, int runNumber, String event, String displayTitle, Status status,
                        long workflowId, String url, String htmlUrl, ArrayList<PullRequest> pullRequests, String createdAt,
-                       String updatedAt, Owner actor, int runAttempt, ArrayList<ReferencedWorkflow> referencedWorkflows,
-                       String runStartedAt, Owner triggeringActor, String jobsUrl, String logsUrl, String checkSuiteUrl,
+                       String updatedAt, User actor, int runAttempt, ArrayList<ReferencedWorkflow> referencedWorkflows,
+                       String runStartedAt, User triggeringActor, String jobsUrl, String logsUrl, String checkSuiteUrl,
                        String artifactsUrl, String cancelUrl, String rerunUrl, String previousAttemptUrl, String workflowUrl,
                        Commit headCommit, Repository repository, Repository headRepository) {
         super(id, name, url);
@@ -113,14 +113,14 @@ public class WorkflowRun extends BaseResponseDetails {
             pullRequests.add(new PullRequest(jPullRequests.getJSONObject(j)));
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");
-        actor = new Owner(hResponse.getJSONObject("actor", new JSONObject()));
+        actor = new User(hResponse.getJSONObject("actor", new JSONObject()));
         runAttempt = hResponse.getInt("run_attempt", 0);
         referencedWorkflows = new ArrayList<>();
         JSONArray jReferencedWorkflows = hResponse.getJSONArray("referenced_workflows", new JSONArray());
         for (int j = 0; j < jReferencedWorkflows.length(); j++)
             referencedWorkflows.add(new ReferencedWorkflow(jReferencedWorkflows.getJSONObject(j)));
         runStartedAt = hResponse.getString("run_started_at");
-        triggeringActor = new Owner(hResponse.getJSONObject("triggering_actor", new JSONObject()));
+        triggeringActor = new User(hResponse.getJSONObject("triggering_actor", new JSONObject()));
         jobsUrl = hResponse.getString("jobs_url");
         logsUrl = hResponse.getString("logs_url");
         checkSuiteUrl = hResponse.getString("check_suite_url");
@@ -194,7 +194,7 @@ public class WorkflowRun extends BaseResponseDetails {
         return updatedAt;
     }
 
-    public Owner getActor() {
+    public User getActor() {
         return actor;
     }
 
@@ -210,7 +210,7 @@ public class WorkflowRun extends BaseResponseDetails {
         return runStartedAt;
     }
 
-    public Owner getTriggeringActor() {
+    public User getTriggeringActor() {
         return triggeringActor;
     }
 

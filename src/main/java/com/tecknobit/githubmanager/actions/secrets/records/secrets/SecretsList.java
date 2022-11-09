@@ -89,35 +89,17 @@ public class SecretsList extends GitHubList {
     }
 
     /**
-     * Method to get a secrets collection <br>
-     * Any params required
+     * Method to get a list of filtered secrets
      *
-     * @return secrets collection as {@link Collection} of {@link Secret}
-     * @apiNote this method will return a {@link Collection} that could include only {@link Secret}
-     * objects if exist
+     * @param filter: filter to fetch a list made only by {@link Secret} or {@link OrganizationSecret}
+     * @return {@link #secrets} instance as {@link Collection} of {@link Secret} or {@link OrganizationSecret}
      **/
-    public Collection<Secret> extractSimpleSecrets() {
-        ArrayList<Secret> secrets = new ArrayList<>();
+    public <T extends Secret> Collection<T> getSecrets(Class<T> filter) {
+        ArrayList<T> secrets = new ArrayList<>();
         for (Secret secret : this.secrets)
-            if (secret.getClass() == Secret.class)
-                secrets.add(secret);
+            if (secret.getClass() == filter)
+                secrets.add((T) secret);
         return secrets;
-    }
-
-    /**
-     * Method to get an organization secrets collection <br>
-     * Any params required
-     *
-     * @return organization secrets collection as {@link Collection} of {@link OrganizationSecret}
-     * @apiNote this method will return a {@link Collection} that could include only {@link OrganizationSecret}
-     * objects if exist
-     **/
-    public Collection<OrganizationSecret> extractOrganizationSecrets() {
-        ArrayList<OrganizationSecret> organizationSecrets = new ArrayList<>();
-        for (Secret secret : secrets)
-            if (secret instanceof OrganizationSecret)
-                organizationSecrets.add((OrganizationSecret) secret);
-        return organizationSecrets;
     }
 
 }

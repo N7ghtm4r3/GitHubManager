@@ -4,6 +4,7 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.basics.GitHubList;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.basics.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -377,23 +378,27 @@ public class OrganizationRepositoriesList extends GitHubList {
          * @param openIssues          :                 open issues value
          * @param watchers            :                   watchers value
          **/
-        public CompletedRepository(long id, String nodeId, String name, String fullName, Owner owner, boolean privateRepo,
-                                   String htmlUrl, String description, boolean fork, String url, String archiveUrl, String assigneesUrl,
-                                   String blobsUrl, String branchesUrl, String collaboratorsUrl, String commentsUrl, String commitsUrl,
-                                   String compareUrl, String contentsUrl, String contributorsUrl, String deploymentsUrl,
-                                   String downloadUrl, String eventsUrl, String forksUrl, String gitCommitsUrl, String gitRefsUrl,
-                                   String gitTagsUrl, String gitUrl, String issueCommentUrl, String issueEventsUrl, String issuesUrl,
-                                   String keysUrl, String labelsUrl, String languagesUrl, String mergesUrl, String milestonesUrl,
-                                   String notificationsUrl, String pullsUrl, String releasesUrl, String sshUrl, String stargazersUrl,
-                                   String statutesUrl, String subscribersUrl, String subscriptionUrl, String tagsUrl, String teamsUrl,
-                                   String treesUrl, String cloneUrl, String mirrorUrl, String hooksUrl, String svnUrl, String homePage,
+        public CompletedRepository(long id, String nodeId, String name, String fullName, User owner, boolean privateRepo,
+                                   String htmlUrl, String description, boolean fork, String url, String archiveUrl,
+                                   String assigneesUrl, String blobsUrl, String branchesUrl, String collaboratorsUrl,
+                                   String commentsUrl, String commitsUrl, String compareUrl, String contentsUrl,
+                                   String contributorsUrl, String deploymentsUrl, String downloadUrl, String eventsUrl,
+                                   String forksUrl, String gitCommitsUrl, String gitRefsUrl, String gitTagsUrl,
+                                   String gitUrl, String issueCommentUrl, String issueEventsUrl, String issuesUrl,
+                                   String keysUrl, String labelsUrl, String languagesUrl, String mergesUrl,
+                                   String milestonesUrl, String notificationsUrl, String pullsUrl, String releasesUrl,
+                                   String sshUrl, String stargazersUrl, String statutesUrl, String subscribersUrl,
+                                   String subscriptionUrl, String tagsUrl, String teamsUrl, String treesUrl,
+                                   String cloneUrl, String mirrorUrl, String hooksUrl, String svnUrl, String homePage,
                                    int forksCount, int stargazersCount, int watchersCount, int size, String defaultBranch,
-                                   int openIssuesCount, boolean isTemplate, CompletedRepository template, ArrayList<String> topics, boolean hasIssues,
-                                   boolean hasProjects, boolean hasWiki, boolean hasPages, boolean hasDownloads, boolean archived,
-                                   boolean disabled, RepoVisibility visibility, String pushedAt, String createdAt, String updatedAt,
-                                   Permissions permissions, boolean allowRebaseMerge, String tempCloneToken, boolean allowSquashMerge,
-                                   boolean allowAutoMerge, boolean deleteBranchOnMerge, boolean allowMergeCommit, int subscribersCount,
-                                   int networkCount, License license, int forks, int openIssues, int watchers) {
+                                   int openIssuesCount, boolean isTemplate, CompletedRepository template,
+                                   ArrayList<String> topics, boolean hasIssues, boolean hasProjects, boolean hasWiki,
+                                   boolean hasPages, boolean hasDownloads, boolean archived, boolean disabled,
+                                   RepoVisibility visibility, String pushedAt, String createdAt, String updatedAt,
+                                   Permissions permissions, boolean allowRebaseMerge, String tempCloneToken,
+                                   boolean allowSquashMerge, boolean allowAutoMerge, boolean deleteBranchOnMerge,
+                                   boolean allowMergeCommit, int subscribersCount, int networkCount, License license,
+                                   int forks, int openIssues, int watchers) {
             super(id, nodeId, name, fullName, owner, privateRepo, htmlUrl, description, fork, url, archiveUrl,
                     assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl,
                     contributorsUrl, deploymentsUrl, downloadUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl,

@@ -3,12 +3,19 @@ package com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
+import static com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.GitHubLabel.LabelType.read_only;
+
 /**
  * The {@code Label} class is useful to format a GitHub's label
  *
  * @author N7ghtm4r3 - Tecknobit
  **/
 public class GitHubLabel extends GitHubResponse {
+
+    /**
+     * {@code type} type of the label
+     **/
+    private final LabelType type;
 
     /**
      * {@code id} identifier of the label
@@ -21,18 +28,13 @@ public class GitHubLabel extends GitHubResponse {
     private final String name;
 
     /**
-     * {@code type} type of the label
-     **/
-    private final String type;
-
-    /**
      * Constructor to init a {@link GitHubLabel}
      *
      * @param id:   identifier of the label
      * @param name: the name of the label
      * @param type: type of the label
      **/
-    public GitHubLabel(long id, String name, String type) {
+    public GitHubLabel(long id, String name, LabelType type) {
         super(null);
         this.id = id;
         this.name = name;
@@ -48,7 +50,17 @@ public class GitHubLabel extends GitHubResponse {
         super(jGitHubLabel);
         id = hResponse.getLong("id", 0);
         name = hResponse.getString("name");
-        type = hResponse.getString("type");
+        type = LabelType.valueOf(hResponse.getString("type", read_only.name()));
+    }
+
+    /**
+     * Method to get {@link #type} instance <br>
+     * Any params required
+     *
+     * @return {@link #type} instance as {@link String}
+     **/
+    public LabelType getType() {
+        return type;
     }
 
     /**
@@ -71,14 +83,22 @@ public class GitHubLabel extends GitHubResponse {
         return name;
     }
 
-    /**
-     * Method to get {@link #type} instance <br>
-     * Any params required
-     *
-     * @return {@link #type} instance as {@link String}
-     **/
-    public String getType() {
-        return type;
+    public enum LabelType {
+
+        read_only("read-only"),
+        custom("custom");
+
+        private final String labelType;
+
+        LabelType(String labelType) {
+            this.labelType = labelType;
+        }
+
+        @Override
+        public String toString() {
+            return labelType;
+        }
+
     }
 
 }

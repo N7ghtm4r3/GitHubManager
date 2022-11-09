@@ -72,6 +72,11 @@ public class GitHubManager {
     public static final String REPOSITORIES_PATH = "/repositories";
 
     /**
+     * {@code RUNS_PATH} constant for {@code "runs"} path
+     **/
+    public static final String RUNS_PATH = "/runs";
+
+    /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
      * re-insert credentials
      **/

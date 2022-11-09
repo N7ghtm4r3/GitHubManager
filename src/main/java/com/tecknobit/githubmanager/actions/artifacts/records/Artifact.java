@@ -172,6 +172,7 @@ public class Artifact extends BaseResponseDetails {
      *
      * @return {@link #archiveDownloadUrlFile} instance as {@link File}
      **/
+    // TODO: 09/11/2022 FIX WITH LIBRARY METHOD
     public File getFileFromArchiveDownloadUrl() throws MalformedURLException {
         if (archiveDownloadUrlFile == null)
             return archiveDownloadUrlFile = new File(new URL(archiveDownloadUrl).getFile());
