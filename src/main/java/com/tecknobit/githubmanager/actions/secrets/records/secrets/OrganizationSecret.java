@@ -11,7 +11,7 @@ import static com.tecknobit.githubmanager.GitHubManager.Visibility.valueOf;
  * The {@code OrganizationSecret} class is useful to format a GitHub's organization secret
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote you can see the official documentation at:
+ * @apiNote see the official documentation at:
  * <ul>
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
@@ -42,7 +42,7 @@ public class OrganizationSecret extends Secret {
      *
      * @param name:                    the name of the secret
      * @param createdAt:               created at value
-     * @param updatedAt:               update at value
+     * @param updatedAt:               updated at value
      * @param visibility:              visibility of a secret
      * @param selectedRepositoriesUrl: selected repositories url value
      **/

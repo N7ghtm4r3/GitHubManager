@@ -16,7 +16,7 @@ import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dat
  * The {@code Job} class is useful to format a GitHub's job
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote you can see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+ * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
  * Get a job for a workflow run</a>
  * @see GitHubResponse
  * @see BaseResponseDetails
@@ -84,7 +84,7 @@ public class Job extends BaseResponseDetails {
     private final ArrayList<String> labels;
 
     /**
-     * {@code runnerId} the ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * {@code runnerId} the {@code "ID"} of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
      **/
     private final long runnerId;
 
@@ -94,7 +94,7 @@ public class Job extends BaseResponseDetails {
     private final String runnerName;
 
     /**
-     * {@code runnerGroupId} the ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * {@code runnerGroupId} the {@code "ID"} of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
      **/
     private final long runnerGroupId;
 
@@ -121,9 +121,9 @@ public class Job extends BaseResponseDetails {
      * @param steps :steps in this job
      * @param checkRunUrl : check run url value
      * @param labels : labels for the workflow job. Specified by the {@code "runs_on"} attribute in the action's workflow file
-     * @param runnerId : the ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * @param runnerId : the {@code "ID"} of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
      * @param runnerName : the name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
-     * @param runnerGroupId : the ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
+     * @param runnerGroupId : the {@code "ID"} of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
      * @param runnerGroupName : the name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null)
      **/
     public Job(long id, long runId, String runUrl, String nodeId, String headSha, String url, String htmlUrl,
@@ -430,7 +430,7 @@ public class Job extends BaseResponseDetails {
      * The {@code Step} class is useful to format a GitHub's step
      *
      * @author N7ghtm4r3 - Tecknobit
-     * @apiNote you can see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      * @see GitHubResponse
      **/

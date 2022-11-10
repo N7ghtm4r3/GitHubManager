@@ -5,6 +5,7 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.JobsList;
+import com.tecknobit.githubmanager.actions.workflow.runs.records.WorkflowRun;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
@@ -392,6 +393,76 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
      *
      * @param repository:    the repository from fetch the list
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getWorkflowId() + ATTEMPTS_PATH + attemptNumber
+                + JOBS_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param repository:    the repository from fetch the list
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @param format:        return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber,
+                                             ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                        repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + ATTEMPTS_PATH + attemptNumber + JOBS_PATH),
+                format);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param repository:    the repository from fetch the list
      * @param runId:         the unique identifier of the workflow run
      * @param attemptNumber: the attempt number of the workflow run
      * @return jobs list as {@link JobsList} custom object
@@ -451,6 +522,95 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                         repository.getName() + ACTIONS_RUNS_PATH + "/" + runId + ATTEMPTS_PATH + attemptNumber + JOBS_PATH),
                 format);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param repository:    the repository from fetch the list
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @param queryParams:   extra query params not mandatory, keys accepted are:
+     *                       <ul>
+     *                          <li>
+     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                          </li>
+     *                          <li>
+     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                          </li>
+     *                       </ul>
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber,
+                                                Params queryParams) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + ATTEMPTS_PATH + attemptNumber +
+                JOBS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param repository:    the repository from fetch the list
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @param queryParams:   extra query params not mandatory, keys accepted are:
+     *                       <ul>
+     *                          <li>
+     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                          </li>
+     *                          <li>
+     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                          </li>
+     *                       </ul>
+     * @param format:        return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber, Params queryParams,
+                                             ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + ATTEMPTS_PATH + attemptNumber +
+                JOBS_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -552,6 +712,77 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *
      * @param owner:         the account owner of the repository. The name is not case-sensitive
      * @param repo:          the name of the repository. The name is not case-sensitive
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run,
+                                                int attemptNumber) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + ATTEMPTS_PATH + attemptNumber + JOBS_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:         the account owner of the repository. The name is not case-sensitive
+     * @param repo:          the name of the repository. The name is not case-sensitive
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @param format:        return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run, int attemptNumber,
+                                             ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + ATTEMPTS_PATH + attemptNumber + JOBS_PATH), format);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:         the account owner of the repository. The name is not case-sensitive
+     * @param repo:          the name of the repository. The name is not case-sensitive
      * @param runId:         the unique identifier of the workflow run
      * @param attemptNumber: the attempt number of the workflow run
      * @return jobs list as {@link JobsList} custom object
@@ -609,6 +840,95 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
                 ATTEMPTS_PATH + attemptNumber + JOBS_PATH), format);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:         the account owner of the repository. The name is not case-sensitive
+     * @param repo:          the name of the repository. The name is not case-sensitive
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @param queryParams:   extra query params not mandatory, keys accepted are:
+     *                       <ul>
+     *                          <li>
+     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                          </li>
+     *                          <li>
+     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                          </li>
+     *                       </ul>
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run,
+                                                int attemptNumber, Params queryParams) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + ATTEMPTS_PATH + attemptNumber + JOBS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a specific workflow run attempt.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:         the account owner of the repository. The name is not case-sensitive
+     * @param repo:          the name of the repository. The name is not case-sensitive
+     * @param run:           the workflow run from fetch the list
+     * @param attemptNumber: the attempt number of the workflow run
+     * @param queryParams:   extra query params not mandatory, keys accepted are:
+     *                       <ul>
+     *                          <li>
+     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                          </li>
+     *                          <li>
+     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                          </li>
+     *                       </ul>
+     * @param format:        return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * List jobs for a workflow run attempt</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run, int attemptNumber,
+                                             Params queryParams, ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + ATTEMPTS_PATH + attemptNumber + JOBS_PATH + queryParams), format);
     }
 
     /**
@@ -696,6 +1016,71 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
                                              Params queryParams, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
                 ATTEMPTS_PATH + attemptNumber + JOBS_PATH + queryParams), format);
+    }
+
+    /**
+     * Method to get a jobs list for a workflow run.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param repository: the repository from fetch the list
+     * @param run:        the workflow run from fetch the list
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * List jobs for a workflow run</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowJobsList(Repository repository, WorkflowRun run) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + JOBS_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a workflow run.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param repository: the repository from fetch the list
+     * @param run:        the workflow run from fetch the list
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * List jobs for a workflow run</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowJobsList(Repository repository, WorkflowRun run, ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
+                repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + JOBS_PATH), format);
     }
 
     /**
@@ -859,6 +1244,73 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
+     * @param run:   the workflow run from fetch the list
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * List jobs for a workflow run</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowJobsList(String owner, String repo, WorkflowRun run) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + JOBS_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a workflow run.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param run:    the workflow run from fetch the list
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * List jobs for a workflow run</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowJobsList(String owner, String repo, WorkflowRun run, ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + JOBS_PATH), format);
+    }
+
+    /**
+     * Method to get a jobs list for a workflow run.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param repo:  the name of the repository. The name is not case-sensitive
      * @param runId: the unique identifier of the workflow run
      * @return jobs list as {@link JobsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -912,6 +1364,92 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
     public <T> T getWorkflowJobsList(String owner, String repo, long runId, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
                 JOBS_PATH), format);
+    }
+
+    /**
+     * Method to get a jobs list for a workflow run.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param run:         the workflow run from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return jobs list as {@link JobsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * List jobs for a workflow run</a>
+     **/
+    @WrappedRequest
+    public JobsList getWorkflowJobsList(String owner, String repo, WorkflowRun run, Params queryParams) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + JOBS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a jobs list for a workflow run.
+     * Anyone with read access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made
+     * by this library. </b> <br>
+     * GitHub Apps must have the {@code "actions:read"} permission to use this endpoint <br>
+     * You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param run:         the workflow run from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return jobs list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * List jobs for a workflow run</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowJobsList(String owner, String repo, WorkflowRun run, Params queryParams,
+                                     ReturnFormat format) throws IOException {
+        return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
+                run.getId() + JOBS_PATH + queryParams.createQueryString()), format);
     }
 
     /**

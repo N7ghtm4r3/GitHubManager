@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ApprovalState;
+import com.tecknobit.githubmanager.actions.workflow.records.Workflow;
 import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import com.tecknobit.githubmanager.records.basics.User;
@@ -9,21 +10,53 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ApprovalState.approved;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ApprovalState.valueOf;
 
+/**
+ * The {@code Review} class is useful to format a GitHub's review
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/actions/workflow-runs#get-the-review-history-for-a-workflow-run>
+ * Get the review history for a workflow run</a>
+ * @see GitHubResponse
+ **/
 public class Review extends GitHubResponse {
 
+    /**
+     * {@code state} whether deployment to the environment(s) was approved or rejected
+     **/
     private final ApprovalState state;
+
+    /**
+     * {@code "comment"} value
+     **/
     private final String comment;
+
+    /**
+     * {@code environments} environments list
+     **/
     private final ArrayList<Environment> environments;
+
+    /**
+     * {@code "user"} value
+     **/
     private final User user;
 
-    public Review(JSONObject jResponse, ApprovalState state, String comment, ArrayList<Environment> environments,
+    /**
+     * Constructor to init a {@link Review}
+     *
+     * @param state:        whether deployment to the environment(s) was approved or rejected
+     * @param comment:      comment value
+     * @param environments: environments list
+     * @param user:         user value
+     **/
+    public Review(ApprovalState state, String comment, ArrayList<Environment> environments,
                   User user) {
-        super(jResponse);
+        super(null);
         this.state = state;
         this.comment = comment;
         this.environments = environments;
@@ -46,29 +79,86 @@ public class Review extends GitHubResponse {
         user = new User(hResponse.getJSONObject("user", new JSONObject()));
     }
 
+    /**
+     * Method to get {@link #state} instance <br>
+     * Any params required
+     *
+     * @return {@link #state} instance as {@link ApprovalState}
+     **/
     public ApprovalState getState() {
         return state;
     }
 
+    /**
+     * Method to get {@link #comment} instance <br>
+     * Any params required
+     *
+     * @return {@link #comment} instance as {@link String}
+     **/
     public String getComment() {
         return comment;
     }
 
-    public ArrayList<Environment> getEnvironments() {
+    /**
+     * Method to get {@link #environments} instance <br>
+     * Any params required
+     *
+     * @return {@link #environments} instance as {@link Collection} of {@link Environment}
+     **/
+    public Collection<Environment> getEnvironments() {
         return environments;
     }
 
+    /**
+     * Method to get {@link #user} instance <br>
+     * Any params required
+     *
+     * @return {@link #user} instance as {@link User}
+     **/
     public User getUser() {
         return user;
     }
 
+    /**
+     * The {@code Environment} class is useful to format a GitHub's environment
+     *
+     * @author N7ghtm4r3 - Tecknobit
+     * @see GitHubResponse
+     * @see BaseResponseDetails
+     **/
     public static class Environment extends BaseResponseDetails {
 
+        /**
+         * {@code nodeId} identifier of the node value
+         **/
         protected final String nodeId;
+
+        /**
+         * {@code htmlUrl} html url value
+         **/
         protected final String htmlUrl;
+
+        /**
+         * {@code createdAt} created at value
+         **/
         protected final String createdAt;
+
+        /**
+         * {@code updatedAt} updated at value
+         **/
         protected final String updatedAt;
 
+        /**
+         * Constructor to init a {@link Workflow}
+         *
+         * @param id:        identifier of the workflow
+         * @param name:      the name of the workflow
+         * @param url:       url value
+         * @param nodeId:    identifier of the node value
+         * @param htmlUrl:   html url value
+         * @param createdAt: created at value
+         * @param updatedAt: updated at value
+         **/
         public Environment(long id, String name, String url, String nodeId, String htmlUrl, String createdAt,
                            String updatedAt) {
             super(id, name, url);
@@ -91,10 +181,22 @@ public class Review extends GitHubResponse {
             updatedAt = hResponse.getString("updated_at");
         }
 
+        /**
+         * Method to get {@link #nodeId} instance <br>
+         * Any params required
+         *
+         * @return {@link #nodeId} instance as {@link String}
+         **/
         public String getNodeId() {
             return nodeId;
         }
 
+        /**
+         * Method to get {@link #htmlUrl} instance <br>
+         * Any params required
+         *
+         * @return {@link #htmlUrl} instance as {@link String}
+         **/
         public String getHtmlUrl() {
             return htmlUrl;
         }
@@ -147,6 +249,12 @@ public class Review extends GitHubResponse {
             }
         }
 
+        /**
+         * Returns a string representation of the object <br>
+         * Any params required
+         *
+         * @return a string representation of the object as {@link String}
+         */
         @Override
         public String toString() {
             return new JSONObject(this).toString();

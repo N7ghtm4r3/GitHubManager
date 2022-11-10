@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import com.tecknobit.githubmanager.records.basics.User;
 import org.json.JSONObject;
 
@@ -8,30 +9,127 @@ import java.text.ParseException;
 
 import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
 
+/**
+ * The {@code DeploymentReview} class is useful to format a GitHub's deployment review
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run">
+ * Review pending deployments for a workflow run</a>
+ * @see GitHubResponse
+ * @see Review.Environment
+ **/
 public class DeploymentReview {
 
+    /**
+     * {@code "url"} value
+     **/
     private final String url;
+
+    /**
+     * {@code id} unique identifier of the deployment
+     **/
     private final long id;
+
+    /**
+     * {@code nodeId} identifier of the node value
+     **/
     private final String nodeId;
+
+    /**
+     * {@code "sha"} value
+     **/
     private final String sha;
+
+    /**
+     * {@code ref} the ref to deploy. This can be a branch, tag, or sha
+     **/
     private final String ref;
+
+    /**
+     * {@code task} parameter to specify a task to execute
+     **/
     private final String task;
+
+    /**
+     * {@code "payload"} value
+     **/
     private final Object payload;
+
+    /**
+     * {@code originalEnvironment} original environment value
+     **/
     private final String originalEnvironment;
+
+    /**
+     * {@code environment} name for the target deployment environment
+     **/
     private final String environment;
+
+    /**
+     * {@code "description"} value
+     **/
     private final String description;
+
+    /**
+     * {@code "creator"} value
+     **/
     private final User creator;
+
+    /**
+     * {@code "createdAt"} value
+     **/
     private final String createdAt;
+
+    /**
+     * {@code "updatedAt"} value
+     **/
     private final String updatedAt;
+
+    /**
+     * {@code statusesUrl} statuses url value
+     **/
     private final String statusesUrl;
+
+    /**
+     * {@code repositoryUrl} repository url value
+     **/
     private final String repositoryUrl;
+
+    /**
+     * {@code transientEnvironment} specifies if the given environment is will no longer exist at some point in the future. Default: {@code "false"}
+     **/
     private final boolean transientEnvironment;
+
+    /**
+     * {@code productionEnvironment} specifies if the given environment is one that end-users directly interact with. Default: {@code "false"}
+     **/
     private final boolean productionEnvironment;
 
+    /**
+     * Constructor to init a {@link DeploymentReview}
+     *
+     * @param url:                   url value
+     * @param id:                    unique identifier of the deployment
+     * @param nodeId:                identifier of the node value
+     * @param sha:                   sha value
+     * @param ref:                   the ref to deploy. This can be a branch, tag, or sha
+     * @param task:                  parameter to specify a task to execute
+     * @param payload:               payload value
+     * @param originalEnvironment:   original environment value
+     * @param environment:           name for the target deployment environment
+     * @param description:           description value
+     * @param creator:               creator value
+     * @param createdAt:             created at value
+     * @param updatedAt:             updated at value
+     * @param statusesUrl:           statuses url value
+     * @param repositoryUrl:         repository url value
+     * @param transientEnvironment:  specifies if the given environment is will no longer exist at some point in the future. Default: {@code "false"}
+     * @param productionEnvironment: specifies if the given environment is one that end-users directly interact with. Default: {@code "false"}
+     **/
     public DeploymentReview(String url, long id, String nodeId, String sha, String ref, String task, Object payload,
-                            String originalEnvironment, String environment, String description, User creator, String createdAt,
-                            String updatedAt, String statusesUrl, String repositoryUrl, boolean transientEnvironment,
-                            boolean productionEnvironment) {
+                            String originalEnvironment, String environment, String description, User creator,
+                            String createdAt, String updatedAt, String statusesUrl, String repositoryUrl,
+                            boolean transientEnvironment, boolean productionEnvironment) {
         this.url = url;
         this.id = id;
         this.nodeId = nodeId;
@@ -51,6 +149,11 @@ public class DeploymentReview {
         this.productionEnvironment = productionEnvironment;
     }
 
+    /**
+     * Constructor to init a {@link DeploymentReview}
+     *
+     * @param jDeploymentReview: deployment review details as {@link JSONObject}
+     **/
     public DeploymentReview(JSONObject jDeploymentReview) {
         JsonHelper hDeploymentReview = new JsonHelper(jDeploymentReview);
         url = hDeploymentReview.getString("url");
@@ -72,42 +175,102 @@ public class DeploymentReview {
         productionEnvironment = hDeploymentReview.getBoolean("production_environment");
     }
 
+    /**
+     * Method to get {@link #url} instance <br>
+     * Any params required
+     *
+     * @return {@link #url} instance as {@link String}
+     **/
     public String getUrl() {
         return url;
     }
 
+    /**
+     * Method to get {@link #id} instance <br>
+     * Any params required
+     *
+     * @return {@link #id} instance as long
+     **/
     public long getId() {
         return id;
     }
 
+    /**
+     * Method to get {@link #nodeId} instance <br>
+     * Any params required
+     *
+     * @return {@link #nodeId} instance as {@link String}
+     **/
     public String getNodeId() {
         return nodeId;
     }
 
+    /**
+     * Method to get {@link #sha} instance <br>
+     * Any params required
+     *
+     * @return {@link #sha} instance as {@link String}
+     **/
     public String getSha() {
         return sha;
     }
 
+    /**
+     * Method to get {@link #ref} instance <br>
+     * Any params required
+     *
+     * @return {@link #ref} instance as {@link String}
+     **/
     public String getRef() {
         return ref;
     }
 
+    /**
+     * Method to get {@link #task} instance <br>
+     * Any params required
+     *
+     * @return {@link #task} instance as {@link String}
+     **/
     public String getTask() {
         return task;
     }
 
+    /**
+     * Method to get {@link #payload} instance <br>
+     * Any params required
+     *
+     * @return {@link #payload} instance as {@link T}
+     **/
     public <T> T getPayload() {
         return (T) payload;
     }
 
+    /**
+     * Method to get {@link #originalEnvironment} instance <br>
+     * Any params required
+     *
+     * @return {@link #originalEnvironment} instance as {@link String}
+     **/
     public String getOriginalEnvironment() {
         return originalEnvironment;
     }
 
+    /**
+     * Method to get {@link #description} instance <br>
+     * Any params required
+     *
+     * @return {@link #description} instance as {@link String}
+     **/
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Method to get {@link #creator} instance <br>
+     * Any params required
+     *
+     * @return {@link #creator} instance as {@link User}
+     **/
     public User getCreator() {
         return creator;
     }
@@ -160,22 +323,52 @@ public class DeploymentReview {
         }
     }
 
+    /**
+     * Method to get {@link #statusesUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #statusesUrl} instance as {@link String}
+     **/
     public String getStatusesUrl() {
         return statusesUrl;
     }
 
+    /**
+     * Method to get {@link #repositoryUrl} instance <br>
+     * Any params required
+     *
+     * @return {@link #repositoryUrl} instance as {@link String}
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
 
+    /**
+     * Method to get {@link #transientEnvironment} instance <br>
+     * Any params required
+     *
+     * @return {@link #transientEnvironment} instance as boolean
+     **/
     public boolean isTransientEnvironment() {
         return transientEnvironment;
     }
 
+    /**
+     * Method to get {@link #productionEnvironment} instance <br>
+     * Any params required
+     *
+     * @return {@link #productionEnvironment} instance as boolean
+     **/
     public boolean isProductionEnvironment() {
         return productionEnvironment;
     }
 
+    /**
+     * Returns a string representation of the object <br>
+     * Any params required
+     *
+     * @return a string representation of the object as {@link String}
+     */
     @Override
     public String toString() {
         return new JSONObject(this).toString();

@@ -12,7 +12,7 @@ import java.util.Collection;
  * The {@code SecretsList} class is useful to format a GitHub's secrets list
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote you can see the official documentation at:
+ * @apiNote see the official documentation at:
  * <ul>
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">

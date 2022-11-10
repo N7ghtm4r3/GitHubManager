@@ -1079,7 +1079,7 @@ public class OrganizationRepositoriesList extends GitHubList {
              * @param name:    name value
              * @param url:     url value
              * @param spdxId:  spdx identifier value
-             * @param nodeId:  node identifier value
+             * @param nodeId:  identifier of the node value
              * @param htmlUrl: html url value
              **/
             public License(String key, String name, String url, String spdxId, String nodeId, String htmlUrl) {

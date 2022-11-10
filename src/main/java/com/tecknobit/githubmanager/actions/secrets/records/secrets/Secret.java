@@ -11,7 +11,7 @@ import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dat
  * The {@code Secret} class is useful to format a GitHub's secret
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote you can see the official documentation at:
+ * @apiNote see the official documentation at:
  * <ul>
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
@@ -45,7 +45,7 @@ public class Secret extends GitHubResponse {
     protected final String createdAt;
 
     /**
-     * {@code updatedAt} update at value
+     * {@code updatedAt} updated at value
      **/
     protected final String updatedAt;
 
@@ -54,7 +54,7 @@ public class Secret extends GitHubResponse {
      *
      * @param name:      the name of the secret
      * @param createdAt: created at value
-     * @param updatedAt: update at value
+     * @param updatedAt: updated at value
      **/
     public Secret(String name, String createdAt, String updatedAt) {
         super(null);
@@ -109,12 +109,6 @@ public class Secret extends GitHubResponse {
         }
     }
 
-    /**
-     * Method to get {@link #updatedAt} instance <br>
-     * Any params required
-     *
-     * @return {@link #updatedAt} instance as {@link String}
-     **/
     public String getUpdatedAt() {
         return updatedAt;
     }

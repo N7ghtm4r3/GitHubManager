@@ -1,16 +1,34 @@
 package com.tecknobit.githubmanager.actions.workflow.records;
 
 import com.tecknobit.githubmanager.records.basics.GitHubList;
+import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * The {@code WorkflowsList} class is useful to format a GitHub's workflows list
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+ * List repository workflows</a>
+ * @see GitHubResponse
+ * @see GitHubList
+ **/
 public class WorkflowsList extends GitHubList {
 
+    /**
+     * {@code workflows} workflow list
+     **/
     private final ArrayList<Workflow> workflows;
 
+    /**
+     * Constructor to init a {@link WorkflowsList}
+     *
+     * @param workflows: workflow list
+     **/
     public WorkflowsList(ArrayList<Workflow> workflows) {
         super(workflows.size());
         this.workflows = workflows;
@@ -20,6 +38,7 @@ public class WorkflowsList extends GitHubList {
      * Constructor to init an {@link WorkflowsList}
      *
      * @param totalCount : total number of the workflows in the list
+     * @param workflows: workflow list
      **/
     public WorkflowsList(int totalCount, ArrayList<Workflow> workflows) {
         super(totalCount);
@@ -39,6 +58,12 @@ public class WorkflowsList extends GitHubList {
             workflows.add(new Workflow(jWorkflows.getJSONObject(j)));
     }
 
+    /**
+     * Method to get {@link #workflows} instance <br>
+     * Any params required
+     *
+     * @return {@link #workflows} instance as {@link Collection} of {@link Workflow}
+     **/
     public Collection<Workflow> getWorkflows() {
         return workflows;
     }

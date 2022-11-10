@@ -12,7 +12,7 @@ import java.util.Collection;
  * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote you can see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+ * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
  * List selected repositories for an organization secret</a>
  * @see GitHubResponse
  * @see GitHubList

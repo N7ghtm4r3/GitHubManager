@@ -7,7 +7,7 @@ import org.json.JSONObject;
  * The {@code GitHubPublicKey} class is useful to format a GitHub's public key
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote you can see the official documentation at:
+ * @apiNote see the official documentation at:
  * <ul>
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">

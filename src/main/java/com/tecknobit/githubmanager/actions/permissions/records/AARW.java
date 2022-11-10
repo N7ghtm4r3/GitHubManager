@@ -11,7 +11,7 @@ import java.util.Collection;
  * The {@code AARW} class is useful to format a GitHub's allowed actions and reusable workflows
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote AARW means Allowed Actions and Reusable Workflows, you can see the official documentation at:
+ * @apiNote AARW means Allowed Actions and Reusable Workflows, see the official documentation at:
  * <ul>
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">

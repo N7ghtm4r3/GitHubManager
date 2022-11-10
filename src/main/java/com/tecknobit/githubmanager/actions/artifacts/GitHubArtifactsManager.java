@@ -4,6 +4,7 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.artifacts.records.Artifact;
+import com.tecknobit.githubmanager.actions.artifacts.records.Artifact.ArtifactWorkflowRun;
 import com.tecknobit.githubmanager.actions.artifacts.records.ArtifactsList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
@@ -587,6 +588,44 @@ public class GitHubArtifactsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
      * @param repository: repository from download the artifact
+     * @param artifact:   artifact to download
+     * @param pathName:   path name for the file, this must include also the .zip suffix es. -> download.zip
+     * @param save:       flag whether save the file, if is set to {@code "false"} will be created a temporary file
+     *                    that will be deleted on exit
+     * @return archive for a repository downloaded as {@link File}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * Download an artifact</a>
+     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
+     * with GitHub's API response and write about error that has been thrown. Thank you for help!
+     **/
+    @WrappedRequest
+    public File downloadArtifact(Repository repository, Artifact artifact, String pathName, boolean save) throws IOException {
+        return downloadFile(downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifact.getId()),
+                pathName, save);
+    }
+
+    /**
+     * Method to download an archive for a repository. This URL expires after 1 minute. Look for
+     * {@code "Location:"} in the response header to find the URL for the download -> <b> this step is automatically made by this library. </b> <br>
+     * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
+     * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param repository: repository from download the artifact
      * @param artifactId: the unique identifier of the artifact
      * @param pathName:   path name for the file, this must include also the .zip suffix es. -> download.zip
      * @param save:       flag whether save the file, if is set to {@code "false"} will be created a temporary file
@@ -614,6 +653,45 @@ public class GitHubArtifactsManager extends GitHubManager {
     public File downloadArtifact(Repository repository, long artifactId, String pathName, boolean save) throws IOException {
         return downloadFile(downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId), pathName,
                 save);
+    }
+
+    /**
+     * Method to download an archive for a repository. This URL expires after 1 minute. Look for
+     * {@code "Location:"} in the response header to find the URL for the download -> <b> this step is automatically made by this library. </b> <br>
+     * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
+     * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param owner:    the account owner of the repository. The name is not case-sensitive
+     * @param repo:     the name of the repository. The name is not case-sensitive
+     * @param artifact: artifact to download
+     * @param pathName: path name for the file, this must include also the .zip suffix es. -> download.zip
+     * @param save:     flag whether save the file, if is set to {@code "false"} will be created a temporary file
+     *                  that will be deleted on exit
+     * @return archive for a repository downloaded as {@link File}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * Download an artifact</a>
+     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
+     * with GitHub's API response and write about error that has been thrown. Thank you for help!
+     **/
+    @WrappedRequest
+    public File downloadArtifact(String owner, String repo, Artifact artifact, String pathName,
+                                 boolean save) throws IOException {
+        return downloadFile(downloadArtifact(owner, repo, artifact.getId()), pathName, save);
     }
 
     /**
@@ -652,6 +730,76 @@ public class GitHubArtifactsManager extends GitHubManager {
     @WrappedRequest
     public File downloadArtifact(String owner, String repo, long artifactId, String pathName, boolean save) throws IOException {
         return downloadFile(downloadArtifact(owner, repo, artifactId), pathName, save);
+    }
+
+    /**
+     * Method to get a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for
+     * {@code "Location:"} in the response header to find the URL for the download -> <b> this step is automatically made by this library. </b> <br>
+     * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
+     * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param repository: repository from download the artifact
+     * @param artifact:   artifact to download
+     * @return redirect URL to download an archive for a repository as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * Download an artifact</a>
+     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
+     * with GitHub's API response and write about error that has been thrown. Thank you for help!
+     **/
+    @WrappedRequest
+    public String downloadArtifact(Repository repository, Artifact artifact) throws IOException {
+        return downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifact.getId());
+    }
+
+    /**
+     * Method to get a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for
+     * {@code "Location:"} in the response header to find the URL for the download -> <b> this step is automatically made by this library. </b> <br>
+     * The {@code ":archive_format"} must be zip -> <b> this step is automatically made by this library. </b> <br>
+     * Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access
+     * token with the repo scope. -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
+     *
+     * @param owner:    the account owner of the repository. The name is not case-sensitive
+     * @param repo:     the name of the repository. The name is not case-sensitive
+     * @param artifact: artifact to download
+     * @return redirect URL to download an archive for a repository as {@link String}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * Download an artifact</a>
+     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
+     * with GitHub's API response and write about error that has been thrown. Thank you for help!
+     **/
+    @WrappedRequest
+    public String downloadArtifact(String owner, String repo, Artifact artifact) throws IOException {
+        sendGetRequest(owner, repo, ARTIFACTS_PATH + artifact.getId() + "/zip");
+        return new JsonHelper((JSONObject) apiRequest.getJSONResponse()).getString("Location");
     }
 
     /**
@@ -730,6 +878,66 @@ public class GitHubArtifactsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
      *
      * @param repository: the repository from fetch the workflow run artifacts list
+     * @param run:        the workflow run from fetch the list
+     * @return list of the artifacts as {@link ArtifactsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    @WrappedRequest
+    public ArtifactsList getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run) throws IOException {
+        return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
+                RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param repository: the repository from fetch the workflow run artifacts list
+     * @param run:        the workflow run from fetch the list
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return artifacts list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run,
+                                             ReturnFormat format) throws IOException {
+        return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
+                RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH), format);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param repository: the repository from fetch the workflow run artifacts list
      * @param runId:      the unique identifier of the workflow run
      * @return list of the artifacts as {@link ArtifactsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -790,6 +998,68 @@ public class GitHubArtifactsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
+     * @param run:   the workflow run from fetch the list
+     * @return list of the artifacts as {@link ArtifactsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    @WrappedRequest
+    public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run) throws IOException {
+        return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH),
+                LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param run:    the workflow run from fetch the list
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return artifacts list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run,
+                                             ReturnFormat format) throws IOException {
+        return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH),
+                format);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param repo:  the name of the repository. The name is not case-sensitive
      * @param runId: the unique identifier of the workflow run
      * @return list of the artifacts as {@link ArtifactsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -839,6 +1109,85 @@ public class GitHubArtifactsManager extends GitHubManager {
      **/
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, long runId, ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH), format);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param repository:  the repository from fetch the workflow run artifacts list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param run:         the workflow run from fetch the list
+     * @return list of the artifacts as {@link ArtifactsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    @WrappedRequest
+    public ArtifactsList getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run,
+                                                     Params queryParams) throws IOException {
+        return getWorkflowRunArtifactsList(repository.getOwner().getLogin(), repository.getName(), run.getId(),
+                queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param repository:  the repository from fetch the workflow run artifacts list
+     * @param run:         the workflow run from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return artifacts list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    @WrappedRequest
+    public <T> T getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run, Params queryParams,
+                                             ReturnFormat format) throws IOException {
+        return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
+                RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -918,6 +1267,84 @@ public class GitHubArtifactsManager extends GitHubManager {
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
                 RUNS_PATH + runId + QUERY_ARTIFACTS_PATH + queryParams.createQueryString()), format);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param run:         the workflow run from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return list of the artifacts as {@link ArtifactsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run,
+                                                     Params queryParams) throws IOException {
+        return getWorkflowRunArtifactsList(owner, repo, run.getId(), queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a list of the artifacts for a workflow run. Anyone with {@code "read"} access to the repository can use this endpoint.
+     * If the repository is private you must use an access token with the repo scope -> <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint.
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param run:         the workflow run from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return artifacts list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * List workflow run artifacts</a>
+     **/
+    public <T> T getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run, Params queryParams,
+                                             ReturnFormat format) throws IOException {
+        return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH +
+                queryParams.createQueryString()), format);
     }
 
     /**
