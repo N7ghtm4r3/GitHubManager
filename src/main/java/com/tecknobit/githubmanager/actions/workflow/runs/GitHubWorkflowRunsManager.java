@@ -30,7 +30,6 @@ import static com.tecknobit.githubmanager.actions.workflow.jobs.GitHubWorkflowJo
  * About the Job runs API</a>
  * @see GitHubManager
  **/
-// TODO: 03/11/2022 TEST JSON PAYLOAD WHEN FIXED
 public class GitHubWorkflowRunsManager extends GitHubManager {
 
     /**

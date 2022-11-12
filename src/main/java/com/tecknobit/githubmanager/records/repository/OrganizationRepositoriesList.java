@@ -8,11 +8,10 @@ import com.tecknobit.githubmanager.records.basics.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.CompletedRepository.RepoVisibility.*;
 
 /**
@@ -703,6 +702,16 @@ public class OrganizationRepositoriesList extends GitHubList {
         }
 
         /**
+         * Method to get {@link #pushedAt} timestamp <br>
+         * Any params required
+         *
+         * @return {@link #pushedAt} timestamp as long
+         **/
+        public long getPushedAtTimestamp() {
+            return getDateTimestamp(pushedAt);
+        }
+
+        /**
          * Method to get {@link #createdAt} instance <br>
          * Any params required
          *
@@ -710,20 +719,6 @@ public class OrganizationRepositoriesList extends GitHubList {
          **/
         public String getCreatedAt() {
             return createdAt;
-        }
-
-        /**
-         * Method to get {@link #pushedAt} timestamp <br>
-         * Any params required
-         *
-         * @return {@link #pushedAt} timestamp as long
-         **/
-        public long getPushedAtTimestamp() {
-            try {
-                return dateFormatter.parse(pushedAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
         }
 
         /**
@@ -743,11 +738,7 @@ public class OrganizationRepositoriesList extends GitHubList {
          * @return {@link #createdAt} timestamp as long
          **/
         public long getCreatedAtTimestamp() {
-            try {
-                return dateFormatter.parse(createdAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(createdAt);
         }
 
         /**
@@ -767,11 +758,7 @@ public class OrganizationRepositoriesList extends GitHubList {
          * @return {@link #updatedAt} timestamp as long
          **/
         public long getUpdatedAtTimestamp() {
-            try {
-                return dateFormatter.parse(updatedAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(updatedAt);
         }
 
         /**

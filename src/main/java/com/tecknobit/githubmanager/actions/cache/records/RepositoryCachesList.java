@@ -6,11 +6,10 @@ import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code RepositoryCachesList} class is useful to format a GitHub's repository caches list
@@ -271,11 +270,7 @@ public class RepositoryCachesList extends GitHubList {
          * @return {@link #lastAccessedAt} timestamp as long
          **/
         public long getLastAccessedAtTimestamp() {
-            try {
-                return dateFormatter.parse(lastAccessedAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(lastAccessedAt);
         }
 
         /**
@@ -295,11 +290,7 @@ public class RepositoryCachesList extends GitHubList {
          * @return {@link #createdAt} timestamp as long
          **/
         public long getCreatedAtTimestamp() {
-            try {
-                return dateFormatter.parse(createdAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(createdAt);
         }
 
         /**

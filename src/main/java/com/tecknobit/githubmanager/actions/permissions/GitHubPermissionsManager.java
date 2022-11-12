@@ -31,7 +31,6 @@ import static com.tecknobit.githubmanager.records.basics.GitHubResponse.INSTANTI
  * About the ActionsPermissions API</a>
  * @see GitHubManager
  **/
-// TODO: 31/10/2022 TEST JSON BODY PAYLOAD 
 public class GitHubPermissionsManager extends GitHubManager {
 
     /**

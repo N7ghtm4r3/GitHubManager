@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager;
 
 import com.tecknobit.apimanager.apis.APIRequest;
+import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
 import com.tecknobit.githubmanager.records.organization.OrganizationsList;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
@@ -96,6 +97,10 @@ public class GitHubManager {
      * {@code apiRequest} is instance to make the API requests
      **/
     protected final APIRequest apiRequest;
+
+    static {
+        TimeFormatter.changeDefaultPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    }
 
     /**
      * Constructor to init a {@link GitHubManager}
@@ -352,7 +357,7 @@ public class GitHubManager {
     private String sendRequestWithBody(String endpoint, String method, Params bodyPayload) throws IOException {
         if (bodyPayload == null)
             bodyPayload = new Params();
-        apiRequest.sendBodyAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
+        apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
         System.out.println(endpoint);
         System.out.println(bodyPayload.createJSONPayload());
         return apiRequest.getResponse();

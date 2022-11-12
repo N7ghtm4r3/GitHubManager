@@ -1,17 +1,15 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
+import com.tecknobit.apimanager.apis.APIRequest;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.io.IOException;
 
-import static java.util.Locale.getDefault;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code Artifact} class is useful to format a GitHub's artifact
@@ -39,11 +37,6 @@ import static java.util.Locale.getDefault;
  * @see GitHubResponse
  **/
 public class Artifact extends BaseResponseDetails {
-
-    /**
-     * {@code dateFormatter} is instance that help to format date
-     **/
-    public static final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", getDefault());
 
     /**
      * {@code nodeId} identifier of the node
@@ -172,10 +165,11 @@ public class Artifact extends BaseResponseDetails {
      *
      * @return {@link #archiveDownloadUrlFile} instance as {@link File}
      **/
-    // TODO: 09/11/2022 FIX WITH LIBRARY METHOD
-    public File getFileFromArchiveDownloadUrl() throws MalformedURLException {
-        if (archiveDownloadUrlFile == null)
-            return archiveDownloadUrlFile = new File(new URL(archiveDownloadUrl).getFile());
+    public File getFileFromArchiveDownloadUrl() throws IOException {
+        if (archiveDownloadUrlFile == null) {
+            return archiveDownloadUrlFile = APIRequest.downloadFile(archiveDownloadUrl, System.currentTimeMillis()
+                    + ".zip", false);
+        }
         return archiveDownloadUrlFile;
     }
 
@@ -206,11 +200,7 @@ public class Artifact extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(createdAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(createdAt);
     }
 
     /**
@@ -230,11 +220,7 @@ public class Artifact extends BaseResponseDetails {
      * @return {@link #expiresAt} timestamp as long
      **/
     public long getExpiresAtTimestamp() {
-        try {
-            return dateFormatter.parse(expiresAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(expiresAt);
     }
 
     /**
@@ -254,11 +240,7 @@ public class Artifact extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(updatedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(updatedAt);
     }
 
     /**

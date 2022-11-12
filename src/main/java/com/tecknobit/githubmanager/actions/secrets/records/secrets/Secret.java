@@ -3,9 +3,7 @@ package com.tecknobit.githubmanager.actions.secrets.records.secrets;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
-import java.text.ParseException;
-
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code Secret} class is useful to format a GitHub's secret
@@ -102,11 +100,7 @@ public class Secret extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(createdAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(createdAt);
     }
 
     public String getUpdatedAt() {
@@ -120,11 +114,7 @@ public class Secret extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(updatedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(updatedAt);
     }
 
 }

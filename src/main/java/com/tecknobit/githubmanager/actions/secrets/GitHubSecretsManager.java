@@ -31,7 +31,6 @@ import static java.util.Base64.getEncoder;
  * About the Secrets API</a>
  * @see GitHubManager
  **/
-// TODO: 02/11/2022 SET JSON BODY PAYLOAD
 public class GitHubSecretsManager extends GitHubManager {
 
     /**
@@ -1621,7 +1620,6 @@ public class GitHubSecretsManager extends GitHubManager {
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
-    // TODO: 02/11/2022 TEST WHEN PAYLOAD IN JSON HAS BEEN FIXED
     private boolean workWithOrganizationSecret(String org, String secretName, Visibility visibility,
                                                Long[] repositoriesIds, String secretValue,
                                                GitHubPublicKey publicKey) throws Exception {
@@ -1630,7 +1628,7 @@ public class GitHubSecretsManager extends GitHubManager {
         Params params = new Params();
         params.addParam("visibility", visibility.toString());
         params.addParam("encrypted_value", getEncoder().encodeToString(ciphertext.getBytes(UTF_8)));
-        params.addParam("key_id", publicKey.getKeyId());
+        params.addParam("key_id", "" + publicKey.getKeyId());
         if (repositoriesIds != null)
             params.addParam("selected_repository_ids", Arrays.stream(repositoriesIds).toList());
         try {
@@ -3040,7 +3038,6 @@ public class GitHubSecretsManager extends GitHubManager {
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
-    // TODO: 02/11/2022 TEST WHEN PAYLOAD IN JSON HAS BEEN FIXED
     private boolean workWithSecret(String owner, String repo, String secretName, String secretValue,
                                    GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH + "/" + secretName,
@@ -4028,13 +4025,12 @@ public class GitHubSecretsManager extends GitHubManager {
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
-    // TODO: 03/11/2022 TEST WITH JSON PAYLOAD FIXED
     private boolean workWithSecret(String endpoint, String secretValue, GitHubPublicKey publicKey) throws Exception {
         LazySodiumJava lazySodium = new LazySodiumJava(new SodiumJava(), UTF_8);
         String ciphertext = lazySodium.cryptoBoxSealEasy(secretValue, fromBase64String(publicKey.getKey()));
         Params params = new Params();
         params.addParam("encrypted_value", getEncoder().encodeToString(ciphertext.getBytes(UTF_8)));
-        params.addParam("key_id", publicKey.getKeyId());
+        params.addParam("key_id", "" + publicKey.getKeyId());
         try {
             sendPutRequest(endpoint, params);
             int statusCode = apiRequest.getResponseStatusCode();

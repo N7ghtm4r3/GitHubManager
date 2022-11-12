@@ -8,11 +8,10 @@ import com.tecknobit.githubmanager.records.organization.Team;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code Deployment} class is useful to format a GitHub's deployment
@@ -128,11 +127,7 @@ public class Deployment extends GitHubResponse {
      * @return {@link #waitTimerStartedAt} timestamp as long
      **/
     public long getWaitTimerStartedAtTimestamp() {
-        try {
-            return dateFormatter.parse(waitTimerStartedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(waitTimerStartedAt);
     }
 
     /**

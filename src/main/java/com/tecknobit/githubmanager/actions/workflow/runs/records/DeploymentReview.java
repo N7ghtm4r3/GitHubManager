@@ -5,9 +5,7 @@ import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import com.tecknobit.githubmanager.records.basics.User;
 import org.json.JSONObject;
 
-import java.text.ParseException;
-
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code DeploymentReview} class is useful to format a GitHub's deployment review
@@ -292,11 +290,7 @@ public class DeploymentReview {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(createdAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(createdAt);
     }
 
     /**
@@ -316,11 +310,7 @@ public class DeploymentReview {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(updatedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(updatedAt);
     }
 
     /**

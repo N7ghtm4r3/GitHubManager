@@ -6,11 +6,10 @@ import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code Job} class is useful to format a GitHub's job
@@ -277,11 +276,7 @@ public class Job extends BaseResponseDetails {
      * @return {@link #startedAt} timestamp as long
      **/
     public long getStartedAtTimestamp() {
-        try {
-            return dateFormatter.parse(startedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(startedAt);
     }
 
     public String getCompletedAt() {
@@ -295,11 +290,7 @@ public class Job extends BaseResponseDetails {
      * @return {@link #completedAt} timestamp as long
      **/
     public long getCompletedAtTimestamp() {
-        try {
-            return dateFormatter.parse(completedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(completedAt);
     }
 
     /**
@@ -557,11 +548,7 @@ public class Job extends BaseResponseDetails {
          * @return {@link #startedAt} timestamp as long
          **/
         public long getStartedAtTimestamp() {
-            try {
-                return dateFormatter.parse(startedAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(startedAt);
         }
 
         /**
@@ -581,11 +568,7 @@ public class Job extends BaseResponseDetails {
          * @return {@link #completedAt} timestamp as long
          **/
         public long getCompletedAtTimestamp() {
-            try {
-                return dateFormatter.parse(completedAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(completedAt);
         }
 
         /**

@@ -8,11 +8,10 @@ import com.tecknobit.githubmanager.records.basics.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ApprovalState.approved;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ApprovalState.valueOf;
 
@@ -218,11 +217,7 @@ public class Review extends GitHubResponse {
          * @return {@link #createdAt} timestamp as long
          **/
         public long getCreatedAtTimestamp() {
-            try {
-                return dateFormatter.parse(createdAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(createdAt);
         }
 
         /**
@@ -242,11 +237,7 @@ public class Review extends GitHubResponse {
          * @return {@link #updatedAt} timestamp as long
          **/
         public long getUpdatedAtTimestamp() {
-            try {
-                return dateFormatter.parse(updatedAt).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(updatedAt);
         }
 
         /**

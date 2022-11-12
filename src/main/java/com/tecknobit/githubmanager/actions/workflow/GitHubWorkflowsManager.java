@@ -20,7 +20,6 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
  * About the Workflows API</a>
  * @see GitHubManager
  **/
-// TODO: 03/11/2022 TEST JSON PAYLOAD WHEN FIXED
 public class GitHubWorkflowsManager extends GitHubManager {
 
     /**

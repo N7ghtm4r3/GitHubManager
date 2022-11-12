@@ -9,11 +9,10 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.tecknobit.githubmanager.actions.artifacts.records.Artifact.dateFormatter;
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status.valueOf;
 
 /**
@@ -463,11 +462,7 @@ public class WorkflowRun extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(createdAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(createdAt);
     }
 
     /**
@@ -487,11 +482,7 @@ public class WorkflowRun extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        try {
-            return dateFormatter.parse(updatedAt).getTime();
-        } catch (ParseException e) {
-            return -1;
-        }
+        return getDateTimestamp(updatedAt);
     }
 
     /**
@@ -1150,11 +1141,7 @@ public class WorkflowRun extends BaseResponseDetails {
          * @return {@link #timestamp} timestamp as long
          **/
         public long getLongTimestamp() {
-            try {
-                return dateFormatter.parse(timestamp).getTime();
-            } catch (ParseException e) {
-                return -1;
-            }
+            return getDateTimestamp(timestamp);
         }
 
         /**
