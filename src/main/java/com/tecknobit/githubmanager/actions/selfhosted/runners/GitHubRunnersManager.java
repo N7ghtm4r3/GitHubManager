@@ -1,5 +1,7 @@
 package com.tecknobit.githubmanager.actions.selfhosted.runners;
 
+import com.tecknobit.apimanager.annotations.RequestPath;
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.selfhosted.records.Runner;
@@ -138,6 +140,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners")
     public RunnersList getEnterpriseRunnersList(String enterprise) throws IOException {
         return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH),
                 LIBRARY_OBJECT);
@@ -166,6 +169,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners")
     public <T> T getEnterpriseRunnersList(String enterprise, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH),
                 format);
@@ -202,6 +206,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners")
     public RunnersList getEnterpriseRunnersList(String enterprise, Params queryParams) throws IOException {
         return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -239,6 +244,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners")
     public <T> T getEnterpriseRunnersList(String enterprise, Params queryParams, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), format);
@@ -266,6 +272,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-enterprise">
      * List runner applications for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/downloads")
     public Collection<Application> getEnterpriseApplicationsList(String enterprise) throws IOException {
         return returnApplicationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), LIBRARY_OBJECT);
@@ -294,6 +301,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-enterprise">
      * List runner applications for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/downloads")
     public <T> T getEnterpriseApplicationsList(String enterprise, ReturnFormat format) throws IOException {
         return returnApplicationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), format);
@@ -321,6 +329,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-enterprise">
      * Create a registration token for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/registration-token")
     public GitHubToken createEnterpriseRegistrationToken(String enterprise) throws IOException {
         return returnGitHubToken(sendPostRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -349,6 +358,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-enterprise">
      * Create a registration token for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/registration-token")
     public <T> T createEnterpriseRegistrationToken(String enterprise, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), format);
@@ -376,6 +386,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-enterprise">
      * Create a remove token for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/remove-token")
     public GitHubToken createEnterpriseRemoveToken(String enterprise) throws IOException {
         return returnGitHubToken(sendPostRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -404,6 +415,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-enterprise">
      * Create a remove token for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/remove-token")
     public <T> T createEnterpriseRemoveToken(String enterprise, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), format);
@@ -432,6 +444,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-enterprise">
      * Get a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}")
     public Runner getEnterpriseRunner(String enterprise, long runnerId) throws IOException {
         return returnRunner(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), LIBRARY_OBJECT);
@@ -461,6 +474,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-enterprise">
      * Get a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}")
     public <T> T getEnterpriseRunner(String enterprise, long runnerId, ReturnFormat format) throws IOException {
         return returnRunner(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), format);
@@ -479,6 +493,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}")
     public boolean deleteEnterpriseRunner(String enterprise, Runner runner) {
         return deleteEnterpriseRunner(enterprise, runner.getId());
     }
@@ -495,6 +510,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-enterprise">
      * Delete a self-hosted runner from an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}")
     public boolean deleteEnterpriseRunner(String enterprise, long runnerId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" + runnerId);
@@ -533,6 +549,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList getEnterpriseLabelsList(String enterprise, Runner runner) throws IOException {
         return returnLabelsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -563,6 +580,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T getEnterpriseLabelsList(String enterprise, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -591,6 +609,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
      * List labels for a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList getEnterpriseLabelsList(String enterprise, long runnerId) throws IOException {
         return returnLabelsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -620,6 +639,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
      * List labels for a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T getEnterpriseLabelsList(String enterprise, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -650,6 +670,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList addEnterpriseCustomLabels(String enterprise, Runner runner, LabelsList labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -680,6 +701,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T addEnterpriseCustomLabels(String enterprise, Runner runner, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
@@ -710,6 +732,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList addEnterpriseCustomLabels(String enterprise, long runnerId, LabelsList labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -740,6 +763,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T addEnterpriseCustomLabels(String enterprise, long runnerId, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         ArrayList<String> customLabels = new ArrayList<>();
@@ -773,6 +797,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList addEnterpriseCustomLabels(String enterprise, Runner runner,
                                                 Collection<String> labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
@@ -804,6 +829,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T addEnterpriseCustomLabels(String enterprise, Runner runner, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
@@ -833,6 +859,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList addEnterpriseCustomLabels(String enterprise, long runnerId,
                                                 Collection<String> labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
@@ -863,6 +890,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T addEnterpriseCustomLabels(String enterprise, long runnerId, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -896,6 +924,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList addEnterpriseCustomLabels(String enterprise, Runner runner, String[] labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -926,6 +955,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T addEnterpriseCustomLabels(String enterprise, Runner runner, String[] labels,
                                            ReturnFormat format) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
@@ -955,6 +985,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList addEnterpriseCustomLabels(String enterprise, long runnerId, String[] labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -984,6 +1015,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T addEnterpriseCustomLabels(String enterprise, long runnerId, String[] labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -1018,6 +1050,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList setEnterpriseCustomLabels(String enterprise, Runner runner, LabelsList labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -1049,6 +1082,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T setEnterpriseCustomLabels(String enterprise, Runner runner, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
@@ -1080,6 +1114,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList setEnterpriseCustomLabels(String enterprise, long runnerId, LabelsList labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -1111,6 +1146,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T setEnterpriseCustomLabels(String enterprise, long runnerId, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         ArrayList<String> customLabels = new ArrayList<>();
@@ -1145,6 +1181,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList setEnterpriseCustomLabels(String enterprise, Runner runner,
                                                 Collection<String> labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
@@ -1177,6 +1214,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T setEnterpriseCustomLabels(String enterprise, Runner runner, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
@@ -1207,6 +1245,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList setEnterpriseCustomLabels(String enterprise, long runnerId,
                                                 Collection<String> labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
@@ -1238,6 +1277,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T setEnterpriseCustomLabels(String enterprise, long runnerId, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -1272,6 +1312,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList setEnterpriseCustomLabels(String enterprise, Runner runner, String[] labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -1303,6 +1344,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T setEnterpriseCustomLabels(String enterprise, Runner runner, String[] labels,
                                            ReturnFormat format) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
@@ -1333,6 +1375,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList setEnterpriseCustomLabels(String enterprise, long runnerId, String[] labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -1363,6 +1406,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T setEnterpriseCustomLabels(String enterprise, long runnerId, String[] labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -1395,6 +1439,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllEnterpriseCustomLabels(String enterprise, Runner runner) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -1425,6 +1470,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T removeAllEnterpriseCustomLabels(String enterprise, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -1453,6 +1499,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllEnterpriseCustomLabels(String enterprise, long runnerId) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -1482,6 +1529,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T removeAllEnterpriseCustomLabels(String enterprise, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -1513,6 +1561,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public LabelsList removeEnterpriseCustomLabel(String enterprise, Runner runner, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + label.getName()), LIBRARY_OBJECT);
@@ -1545,6 +1594,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public <T> T removeEnterpriseCustomLabel(String enterprise, Runner runner, GitHubLabel label,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
@@ -1577,6 +1627,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeEnterpriseCustomLabel(String enterprise, Runner runner, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -1609,6 +1660,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeEnterpriseCustomLabel(String enterprise, Runner runner, String name,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
@@ -1641,6 +1693,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeEnterpriseCustomLabel(String enterprise, long runnerId, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + label.getName()), LIBRARY_OBJECT);
@@ -1673,6 +1726,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeEnterpriseCustomLabel(String enterprise, long runnerId, GitHubLabel label,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
@@ -1704,6 +1758,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeEnterpriseCustomLabel(String enterprise, long runnerId, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -1735,6 +1790,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
+    @RequestPath(path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeEnterpriseCustomLabel(String enterprise, long runnerId, String name,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNERS_PATH + "/" +
@@ -1764,6 +1820,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public RunnersList getOrganizationRunnersList(Organization org) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH),
                 LIBRARY_OBJECT);
@@ -1793,6 +1850,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public <T> T getOrganizationRunnersList(Organization org, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH),
                 format);
@@ -1820,6 +1878,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public RunnersList getOrganizationRunnersList(String org) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH),
                 LIBRARY_OBJECT);
@@ -1848,6 +1907,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public <T> T getOrganizationRunnersList(String org, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH),
                 format);
@@ -1885,6 +1945,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public RunnersList getOrganizationRunnersList(Organization org, Params queryParams) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -1923,6 +1984,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public <T> T getOrganizationRunnersList(Organization org, Params queryParams, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), format);
@@ -1959,6 +2021,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public RunnersList getOrganizationRunnersList(String org, Params queryParams) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -1996,6 +2059,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners")
     public <T> T getOrganizationRunnersList(String org, Params queryParams, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), format);
@@ -2024,6 +2088,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List runner applications for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/downloads")
     public Collection<Application> getOrganizationApplicationsList(Organization org) throws IOException {
         return returnApplicationsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), LIBRARY_OBJECT);
@@ -2053,6 +2118,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List runner applications for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/downloads")
     public <T> T getOrganizationApplicationsList(Organization org, ReturnFormat format) throws IOException {
         return returnApplicationsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), format);
@@ -2080,6 +2146,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
      * List runner applications for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/downloads")
     public Collection<Application> getOrganizationApplicationsList(String org) throws IOException {
         return returnApplicationsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), LIBRARY_OBJECT);
@@ -2108,6 +2175,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
      * List runner applications for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/downloads")
     public <T> T getOrganizationApplicationsList(String org, ReturnFormat format) throws IOException {
         return returnApplicationsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), format);
@@ -2136,6 +2204,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a registration token for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/registration-token")
     public GitHubToken createOrganizationRegistrationToken(Organization org) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -2165,6 +2234,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a registration token for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/registration-token")
     public <T> T createOrganizationRegistrationToken(Organization org, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), format);
@@ -2192,6 +2262,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
      * Create a registration token for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/registration-token")
     public GitHubToken createOrganizationRegistrationToken(String org) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -2220,6 +2291,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
      * Create a registration token for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/registration-token")
     public <T> T createOrganizationRegistrationToken(String org, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), format);
@@ -2248,6 +2320,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a remove token for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/remove-token")
     public GitHubToken createOrganizationRemoveToken(Organization org) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -2277,6 +2350,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a remove token for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/remove-token")
     public <T> T createOrganizationRemoveToken(Organization org, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), format);
@@ -2304,6 +2378,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
      * Create a remove token for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/remove-token")
     public GitHubToken createOrganizationRemoveToken(String org) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -2332,6 +2407,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
      * Create a remove token for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/remove-token")
     public <T> T createOrganizationRemoveToken(String org, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), format);
@@ -2361,6 +2437,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Get a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public Runner getOrganizationRunner(Organization org, long runnerId) throws IOException {
         return returnRunner(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), LIBRARY_OBJECT);
@@ -2391,6 +2468,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Get a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public <T> T getOrganizationRunner(Organization org, long runnerId, ReturnFormat format) throws IOException {
         return returnRunner(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), format);
@@ -2419,6 +2497,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
      * Get a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public Runner getOrganizationRunner(String org, long runnerId) throws IOException {
         return returnRunner(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), LIBRARY_OBJECT);
@@ -2448,6 +2527,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
      * Get a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public <T> T getOrganizationRunner(String org, long runnerId, ReturnFormat format) throws IOException {
         return returnRunner(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), format);
@@ -2460,6 +2540,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param format:         return type formatter -> {@link ReturnFormat}
      * @return runner object as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnRunner(String runnerResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -2484,6 +2565,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public boolean deleteOrganizationRunner(Organization org, Runner runner) {
         return deleteOrganizationRunner(org.getLogin(), runner.getId());
     }
@@ -2501,6 +2583,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public boolean deleteOrganizationRunner(Organization org, long runnerId) {
         return deleteOrganizationRunner(org.getLogin(), runnerId);
     }
@@ -2518,6 +2601,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public boolean deleteOrganizationRunner(String org, Runner runner) {
         return deleteOrganizationRunner(org, runner.getId());
     }
@@ -2534,6 +2618,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
      * Delete a self-hosted runner from an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}")
     public boolean deleteOrganizationRunner(String org, long runnerId) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" + runnerId);
@@ -2572,6 +2657,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList getOrganizationLabelsList(Organization org, Runner runner) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -2602,6 +2688,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T getOrganizationLabelsList(Organization org, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -2631,6 +2718,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList getOrganizationLabelsList(String org, Runner runner) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -2661,6 +2749,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T getOrganizationLabelsList(String org, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -2690,6 +2779,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList getOrganizationLabelsList(Organization org, long runnerId) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -2720,6 +2810,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T getOrganizationLabelsList(Organization org, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -2748,6 +2839,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList getOrganizationLabelsList(String org, long runnerId) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -2777,6 +2869,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T getOrganizationLabelsList(String org, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -2807,6 +2900,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(Organization org, Runner runner, LabelsList labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -2837,6 +2931,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(Organization org, Runner runner, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
@@ -2867,6 +2962,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(String org, Runner runner, LabelsList labels) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -2897,6 +2993,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(String org, Runner runner, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, format);
@@ -2927,6 +3024,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(Organization org, long runnerId, LabelsList labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
     }
@@ -2957,6 +3055,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(Organization org, long runnerId, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
@@ -2987,6 +3086,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(String org, long runnerId, LabelsList labels) throws IOException {
         return addOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -3017,6 +3117,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(String org, long runnerId, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         ArrayList<String> customLabels = new ArrayList<>();
@@ -3050,6 +3151,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(Organization org, Runner runner,
                                                   Collection<String> labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
@@ -3081,6 +3183,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(Organization org, Runner runner, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
@@ -3111,6 +3214,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(String org, Runner runner,
                                                   Collection<String> labels) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
@@ -3142,6 +3246,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(String org, Runner runner, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, format);
@@ -3172,6 +3277,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(Organization org, long runnerId,
                                                   Collection<String> labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
@@ -3203,6 +3309,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(Organization org, long runnerId, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
@@ -3233,6 +3340,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(String org, long runnerId,
                                                   Collection<String> labels) throws IOException {
         return addOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
@@ -3264,6 +3372,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(String org, long runnerId, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -3297,6 +3406,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(Organization org, Runner runner, String[] labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -3327,6 +3437,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(Organization org, Runner runner, String[] labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
@@ -3357,6 +3468,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(String org, Runner runner, String[] labels) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -3387,6 +3499,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(String org, Runner runner, String[] labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, format);
@@ -3417,6 +3530,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(Organization org, long runnerId, String[] labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
     }
@@ -3447,6 +3561,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(Organization org, long runnerId, String[] labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
@@ -3476,6 +3591,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList addOrganizationCustomLabels(String org, long runnerId, String[] labels) throws IOException {
         return addOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -3505,6 +3621,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T addOrganizationCustomLabels(String org, long runnerId, String[] labels,
                                              ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -3538,6 +3655,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(Organization org, Runner runner, LabelsList labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -3568,6 +3686,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(Organization org, Runner runner, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
@@ -3598,6 +3717,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(String org, Runner runner, LabelsList labels) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -3628,6 +3748,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(String org, Runner runner, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, format);
@@ -3658,6 +3779,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(Organization org, long runnerId, LabelsList labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
     }
@@ -3688,6 +3810,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(Organization org, long runnerId, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
@@ -3718,6 +3841,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(String org, long runnerId, LabelsList labels) throws IOException {
         return setOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -3748,6 +3872,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(String org, long runnerId, LabelsList labels,
                                              ReturnFormat format) throws IOException {
         ArrayList<String> customLabels = new ArrayList<>();
@@ -3781,6 +3906,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(Organization org, Runner runner,
                                                   Collection<String> labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
@@ -3812,6 +3938,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(Organization org, Runner runner, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
@@ -3842,6 +3969,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(String org, Runner runner,
                                                   Collection<String> labels) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
@@ -3873,6 +4001,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(String org, Runner runner, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, format);
@@ -3903,6 +4032,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(Organization org, long runnerId,
                                                   Collection<String> labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
@@ -3934,6 +4064,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(Organization org, long runnerId, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
@@ -3964,6 +4095,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(String org, long runnerId,
                                                   Collection<String> labels) throws IOException {
         return setOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
@@ -3995,6 +4127,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(String org, long runnerId, Collection<String> labels,
                                              ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -4028,6 +4161,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(Organization org, Runner runner, String[] labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -4058,6 +4192,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(Organization org, Runner runner, String[] labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
@@ -4088,6 +4223,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(String org, Runner runner, String[] labels) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -4118,6 +4254,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(String org, Runner runner, String[] labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, format);
@@ -4148,6 +4285,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(Organization org, long runnerId, String[] labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
     }
@@ -4178,6 +4316,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(Organization org, long runnerId, String[] labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
@@ -4207,6 +4346,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList setOrganizationCustomLabels(String org, long runnerId, String[] labels) throws IOException {
         return setOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -4236,6 +4376,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T setOrganizationCustomLabels(String org, long runnerId, String[] labels,
                                              ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -4268,6 +4409,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllOrganizationCustomLabels(Organization org, Runner runner) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -4298,6 +4440,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T removeAllOrganizationCustomLabels(Organization org, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -4327,6 +4470,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllOrganizationCustomLabels(String org, Runner runner) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -4357,6 +4501,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T removeAllOrganizationCustomLabels(String org, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -4386,6 +4531,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllOrganizationCustomLabels(Organization org, long runnerId) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -4416,6 +4562,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T removeAllOrganizationCustomLabels(Organization org, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -4444,6 +4591,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllOrganizationCustomLabels(String org, long runnerId) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -4473,6 +4621,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public <T> T removeAllOrganizationCustomLabels(String org, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -4504,6 +4653,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(Organization org, Runner runner, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + label.getName()), LIBRARY_OBJECT);
@@ -4536,6 +4686,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(Organization org, Runner runner, GitHubLabel label,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
@@ -4568,6 +4719,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(String org, Runner runner, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + label.getName()), LIBRARY_OBJECT);
@@ -4600,6 +4752,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(String org, Runner runner, GitHubLabel label,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
@@ -4632,6 +4785,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(Organization org, Runner runner, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -4664,6 +4818,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(Organization org, Runner runner, String name,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
@@ -4696,6 +4851,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(String org, Runner runner, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -4728,6 +4884,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(String org, Runner runner, String name,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
@@ -4760,6 +4917,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(Organization org, long runnerId, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + label.getName()), LIBRARY_OBJECT);
@@ -4792,6 +4950,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(Organization org, long runnerId, GitHubLabel label,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
@@ -4824,6 +4983,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(String org, long runnerId, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + label.getName()), LIBRARY_OBJECT);
@@ -4856,6 +5016,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(String org, long runnerId, GitHubLabel label,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
@@ -4888,6 +5049,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(Organization org, long runnerId, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -4920,6 +5082,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(Organization org, long runnerId, String name,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNERS_PATH + "/" +
@@ -4951,6 +5114,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeOrganizationCustomLabel(String org, long runnerId, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -4982,6 +5146,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeOrganizationCustomLabel(String org, long runnerId, String name,
                                                ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNERS_PATH + "/" +
@@ -5011,6 +5176,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public RunnersList getRepositoryRunnersList(Repository repository) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH), LIBRARY_OBJECT);
@@ -5040,6 +5206,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public <T> T getRepositoryRunnersList(Repository repository, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH), format);
@@ -5068,6 +5235,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public RunnersList getRepositoryRunnersList(String owner, String repo) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH),
                 LIBRARY_OBJECT);
@@ -5097,6 +5265,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public <T> T getRepositoryRunnersList(String owner, String repo, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH),
                 format);
@@ -5134,6 +5303,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public RunnersList getRepositoryRunnersList(Repository repository, Params queryParams) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -5172,6 +5342,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List self-hosted runners for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public <T> T getRepositoryRunnersList(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + queryParams.createQueryString()), format);
@@ -5209,6 +5380,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public RunnersList getRepositoryRunnersList(String owner, String repo, Params queryParams) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -5247,6 +5419,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners")
     public <T> T getRepositoryRunnersList(String owner, String repo, Params queryParams,
                                           ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH +
@@ -5276,6 +5449,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List runner applications for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/downloads")
     public Collection<Application> getRepositoryApplicationsList(Repository repository) throws IOException {
         return returnApplicationsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + DOWNLOADS_PATH), LIBRARY_OBJECT);
@@ -5305,6 +5479,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List runner applications for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/downloads")
     public <T> T getRepositoryApplicationsList(Repository repository, ReturnFormat format) throws IOException {
         return returnApplicationsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + DOWNLOADS_PATH), LIBRARY_OBJECT);
@@ -5333,6 +5508,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
      * List runner applications for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/downloads")
     public Collection<Application> getRepositoryApplicationsList(String owner, String repo) throws IOException {
         return returnApplicationsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), LIBRARY_OBJECT);
@@ -5362,6 +5538,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
      * List runner applications for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/downloads")
     public <T> T getRepositoryApplicationsList(String owner, String repo, ReturnFormat format) throws IOException {
         return returnApplicationsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH +
                 DOWNLOADS_PATH), format);
@@ -5374,6 +5551,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param format:               return type formatter -> {@link ReturnFormat}
      * @return an applications list as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnApplicationsList(String applicationsResponse, ReturnFormat format) {
         try {
             switch (format) {
@@ -5417,6 +5595,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a registration token for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/registration-token")
     public GitHubToken createRepositoryRegistrationToken(Repository repository) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + REGISTRATION_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -5446,6 +5625,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a registration token for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/registration-token")
     public <T> T createRepositoryRegistrationToken(Repository repository, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + REGISTRATION_TOKEN_PATH, null), format);
@@ -5474,6 +5654,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
      * Create a registration token for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/registration-token")
     public GitHubToken createRepositoryRegistrationToken(String owner, String repo) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -5503,6 +5684,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
      * Create a registration token for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/registration-token")
     public <T> T createRepositoryRegistrationToken(String owner, String repo, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/"
                 + REGISTRATION_TOKEN_PATH, null), format);
@@ -5531,6 +5713,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a remove token for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/remove-token")
     public GitHubToken createRepositoryRemoveToken(Repository repository) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + REMOVE_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -5560,6 +5743,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Create a remove token for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/remove-token")
     public <T> T createRepositoryRemoveToken(Repository repository, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + REMOVE_TOKEN_PATH, null), format);
@@ -5588,6 +5772,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
      * Create a remove token for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/remove-token")
     public GitHubToken createRepositoryRemoveToken(String owner, String repo) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), LIBRARY_OBJECT);
@@ -5617,6 +5802,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
      * Create a remove token for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/remove-token")
     public <T> T createRepositoryRemoveToken(String owner, String repo, ReturnFormat format) throws IOException {
         return returnGitHubToken(sendPostRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/"
                 + REMOVE_TOKEN_PATH, null), format);
@@ -5629,6 +5815,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param format:        return type formatter -> {@link ReturnFormat}
      * @return a token as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnGitHubToken(String tokenResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -5664,6 +5851,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Get a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public Runner getRepositoryRunner(Repository repository, long runnerId) throws IOException {
         return returnRunner(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId), LIBRARY_OBJECT);
@@ -5694,6 +5882,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Get a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public <T> T getRepositoryRunner(Repository repository, long runnerId, ReturnFormat format) throws IOException {
         return returnRunner(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId), format);
@@ -5723,6 +5912,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
      * Get a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public Runner getRepositoryRunner(String owner, String repo, long runnerId) throws IOException {
         return returnRunner(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), LIBRARY_OBJECT);
@@ -5753,6 +5943,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
      * Get a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public <T> T getRepositoryRunner(String owner, String repo, long runnerId, ReturnFormat format) throws IOException {
         return returnRunner(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId), format);
@@ -5771,6 +5962,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public boolean deleteRepositoryRunner(Repository repository, Runner runner) {
         return deleteRepositoryRunner(repository.getOwner().getLogin(), repository.getName(), runner.getId());
     }
@@ -5789,6 +5981,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public boolean deleteRepositoryRunner(String owner, String repo, Runner runner) {
         return deleteRepositoryRunner(owner, repo, runner.getId());
     }
@@ -5806,6 +5999,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public boolean deleteRepositoryRunner(Repository repository, long runnerId) {
         return deleteRepositoryRunner(repository.getOwner().getLogin(), repository.getName(), runnerId);
     }
@@ -5824,6 +6018,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
     public boolean deleteRepositoryRunner(String owner, String repo, long runnerId) {
         try {
             sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" + runnerId);
@@ -5862,6 +6057,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList getRepositoryLabelsList(Repository repository, Runner runner) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -5892,6 +6088,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T getRepositoryLabelsList(Repository repository, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runner.getId() + LABELS_PATH), format);
@@ -5922,6 +6119,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList getRepositoryLabelsList(String owner, String repo, Runner runner) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -5953,6 +6151,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T getRepositoryLabelsList(String owner, String repo, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), format);
@@ -5982,6 +6181,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList getRepositoryLabelsList(Repository repository, long runnerId) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -6012,6 +6212,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T getRepositoryLabelsList(Repository repository, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId + LABELS_PATH), format);
@@ -6041,6 +6242,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList getRepositoryLabelsList(String owner, String repo, long runnerId) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -6071,6 +6273,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T getRepositoryLabelsList(String owner, String repo, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), format);
@@ -6101,6 +6304,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(Repository repository, Runner runner, LabelsList labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 LIBRARY_OBJECT);
@@ -6132,6 +6336,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(Repository repository, Runner runner, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -6164,6 +6369,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(String owner, String repo, Runner runner, LabelsList labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -6195,6 +6401,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(String owner, String repo, Runner runner, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
@@ -6225,6 +6432,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(Repository repository, long runnerId, LabelsList labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
                 LIBRARY_OBJECT);
@@ -6256,6 +6464,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(Repository repository, long runnerId, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
@@ -6288,6 +6497,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(String owner, String repo, long runnerId, LabelsList labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -6319,6 +6529,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(String owner, String repo, long runnerId, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         ArrayList<String> customLabels = new ArrayList<>();
@@ -6352,6 +6563,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(Repository repository, Runner runner,
                                                 Collection<String> labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -6384,6 +6596,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(Repository repository, Runner runner, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -6416,6 +6629,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(String owner, String repo, Runner runner,
                                                 Collection<String> labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
@@ -6448,6 +6662,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(String owner, String repo, Runner runner, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
@@ -6478,6 +6693,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(Repository repository, long runnerId,
                                                 Collection<String> labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
@@ -6510,6 +6726,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(Repository repository, long runnerId, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels, format);
@@ -6540,6 +6757,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(String owner, String repo, long runnerId,
                                                 Collection<String> labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
@@ -6571,6 +6789,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(String owner, String repo, long runnerId, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -6603,6 +6822,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     @WrappedRequest
     public LabelsList addRepositoryCustomLabels(Repository repository, Runner runner, String[] labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -6635,6 +6855,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(Repository repository, Runner runner, String[] labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -6667,6 +6888,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(String owner, String repo, Runner runner, String[] labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
     }
@@ -6698,6 +6920,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(String owner, String repo, Runner runner, String[] labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
@@ -6728,6 +6951,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(Repository repository, long runnerId, String[] labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
                 LIBRARY_OBJECT);
@@ -6759,6 +6983,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(Repository repository, long runnerId, String[] labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels, format);
@@ -6789,6 +7014,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList addRepositoryCustomLabels(String owner, String repo, long runnerId, String[] labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
     }
@@ -6819,6 +7045,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T addRepositoryCustomLabels(String owner, String repo, long runnerId, String[] labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -6853,6 +7080,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(Repository repository, Runner runner, LabelsList labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 LIBRARY_OBJECT);
@@ -6885,6 +7113,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(Repository repository, Runner runner, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -6918,6 +7147,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(String owner, String repo, Runner runner,
                                                 LabelsList labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
@@ -6951,6 +7181,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(String owner, String repo, Runner runner, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
@@ -6982,6 +7213,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(Repository repository, long runnerId, LabelsList labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
                 LIBRARY_OBJECT);
@@ -7014,6 +7246,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(Repository repository, long runnerId, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
@@ -7047,6 +7280,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(String owner, String repo, long runnerId,
                                                 LabelsList labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
@@ -7080,6 +7314,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(String owner, String repo, long runnerId, LabelsList labels,
                                            ReturnFormat format) throws IOException {
         ArrayList<String> customLabels = new ArrayList<>();
@@ -7114,6 +7349,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(Repository repository, Runner runner,
                                                 Collection<String> labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -7147,6 +7383,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(Repository repository, Runner runner, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -7180,6 +7417,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(String owner, String repo, Runner runner,
                                                 Collection<String> labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
@@ -7213,6 +7451,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(String owner, String repo, Runner runner, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
@@ -7244,6 +7483,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(Repository repository, long runnerId,
                                                 Collection<String> labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
@@ -7277,6 +7517,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(Repository repository, long runnerId, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels, format);
@@ -7308,6 +7549,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(String owner, String repo, long runnerId,
                                                 Collection<String> labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
@@ -7340,6 +7582,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(String owner, String repo, long runnerId, Collection<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -7374,6 +7617,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(Repository repository, Runner runner, String[] labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 LIBRARY_OBJECT);
@@ -7406,6 +7650,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(Repository repository, Runner runner, String[] labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
@@ -7439,6 +7684,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(String owner, String repo, Runner runner,
                                                 String[] labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
@@ -7472,6 +7718,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(String owner, String repo, Runner runner, String[] labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
@@ -7503,6 +7750,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(Repository repository, long runnerId, String[] labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
                 LIBRARY_OBJECT);
@@ -7535,6 +7783,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(Repository repository, long runnerId, String[] labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
@@ -7568,6 +7817,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList setRepositoryCustomLabels(String owner, String repo, long runnerId,
                                                 String[] labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
@@ -7601,6 +7851,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T setRepositoryCustomLabels(String owner, String repo, long runnerId, String[] labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -7634,6 +7885,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllRepositoryCustomLabels(Repository repository, Runner runner) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -7665,6 +7917,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T removeAllRepositoryCustomLabels(Repository repository, Runner runner, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runner.getId() + LABELS_PATH), format);
@@ -7696,6 +7949,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllRepositoryCustomLabels(String owner, String repo, Runner runner) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH), LIBRARY_OBJECT);
@@ -7728,6 +7982,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T removeAllRepositoryCustomLabels(String owner, String repo, Runner runner,
                                                  ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -7759,6 +8014,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllRepositoryCustomLabels(Repository repository, long runnerId) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -7790,6 +8046,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T removeAllRepositoryCustomLabels(Repository repository, long runnerId, ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId + LABELS_PATH), format);
@@ -7820,6 +8077,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public LabelsList removeAllRepositoryCustomLabels(String owner, String repo, long runnerId) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH), LIBRARY_OBJECT);
@@ -7851,6 +8109,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public <T> T removeAllRepositoryCustomLabels(String owner, String repo, long runnerId,
                                                  ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -7883,6 +8142,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(Repository repository, Runner runner, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                         repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runner.getId() + LABELS_PATH + "/" + label.getName()),
@@ -7916,6 +8176,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(Repository repository, Runner runner, GitHubLabel label,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -7950,6 +8211,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(String owner, String repo, Runner runner,
                                                   GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -7984,6 +8246,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(String owner, String repo, Runner runner, GitHubLabel label,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -8016,6 +8279,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(Repository repository, Runner runner, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                         repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runner.getId() + LABELS_PATH + "/" + name),
@@ -8049,6 +8313,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(Repository repository, Runner runner, String name,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -8083,6 +8348,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(String owner, String repo, Runner runner, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runner.getId() + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -8116,6 +8382,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(String owner, String repo, Runner runner, String name,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -8148,6 +8415,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(Repository repository, long runnerId, GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                         repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId + LABELS_PATH + "/" + label.getName()),
@@ -8181,6 +8449,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(Repository repository, long runnerId, GitHubLabel label,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -8214,6 +8483,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(String owner, String repo, long runnerId,
                                                   GitHubLabel label) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -8247,6 +8517,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(String owner, String repo, long runnerId, GitHubLabel label,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -8279,6 +8550,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(Repository repository, long runnerId, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNNERS_PATH + "/" + runnerId + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -8311,6 +8583,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(Repository repository, long runnerId, String name,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -8343,6 +8616,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public LabelsList removeRepositoryCustomLabel(String owner, String repo, long runnerId, String name) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
                 runnerId + LABELS_PATH + "/" + name), LIBRARY_OBJECT);
@@ -8375,6 +8649,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")
     public <T> T removeRepositoryCustomLabel(String owner, String repo, long runnerId, String name,
                                              ReturnFormat format) throws IOException {
         return returnLabelsList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNNERS_PATH + "/" +
@@ -8388,6 +8663,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param format:         return type formatter -> {@link ReturnFormat}
      * @return labels list as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnLabelsList(String labelsResponse, ReturnFormat format) {
         switch (format) {
             case JSON:

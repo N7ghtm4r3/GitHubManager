@@ -1,5 +1,6 @@
 package com.tecknobit.githubmanager;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.apis.APIRequest;
 import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
@@ -8,18 +9,11 @@ import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesLi
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.channels.Channels;
-import java.nio.channels.FileChannel;
-import java.nio.channels.ReadableByteChannel;
 import java.util.Arrays;
 import java.util.Properties;
 
 import static com.tecknobit.apimanager.apis.APIRequest.*;
-import static java.lang.Long.MAX_VALUE;
 
 /**
  * The {@code GitHubManager} class is useful to manage all GitHubManager's endpoints
@@ -434,6 +428,7 @@ public class GitHubManager {
      * @param format:                return type formatter -> {@link ReturnFormat}
      * @return enabled organizations list for an enterprise as {@code "format"} defines
      **/
+    @Returner
     protected <T> T returnOrganizationsList(String organizationsResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -452,6 +447,7 @@ public class GitHubManager {
      * @param format:               return type formatter -> {@link ReturnFormat}
      * @return enabled repositories list for an organization as {@code "format"} defines
      **/
+    @Returner
     protected <T> T returnOrganizationRepositories(String repositoriesResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -470,6 +466,7 @@ public class GitHubManager {
      * @param format:               return type formatter -> {@link ReturnFormat}
      * @return runners list as {@code "format"} defines
      **/
+    @Returner
     protected <T> T returnRunnersList(String runnersGroupResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -478,23 +475,6 @@ public class GitHubManager {
                 return (T) new RunnersList(new JSONObject(runnersGroupResponse));
             default:
                 return (T) runnersGroupResponse;
-        }
-    }
-
-    protected File downloadFile(String url, String pathName, boolean save) throws IOException {
-        ReadableByteChannel byteChannel = Channels.newChannel(new URL(url).openStream());
-        if (!pathName.contains("."))
-            throw new IOException("Path name must also contains the suffix for the file");
-        try (FileOutputStream fileOutputStream = new FileOutputStream(pathName)) {
-            FileChannel fileChannel = fileOutputStream.getChannel();
-            fileChannel.transferFrom(byteChannel, 0, MAX_VALUE);
-            if (!save) {
-                String suffix = "." + pathName.split("\\.")[1];
-                File runtimeFile = File.createTempFile(pathName.replace(suffix, ""), suffix);
-                runtimeFile.deleteOnExit();
-                return runtimeFile;
-            } else
-                return new File(pathName);
         }
     }
 
@@ -546,17 +526,19 @@ public class GitHubManager {
     }
 
     /**
-     * BaseList of return format types offered by library to format the responses as user wants
+     * {@code ReturnFormat} is the instance to pass in {@link Returner} methods to format as you want the response by
+     * {@code "Binance"}
      *
-     * @apiNote <ul>
+     * @apiNote you can choose between:
+     * <ul>
      * <li>
-     * STRING -> return response formatted as {@link String}
+     * {@link Returner.ReturnFormat#STRING} -> returns the response formatted as {@link String}
      * </li>
      * <li>
-     * JSON -> return response formatted as JSON ({@link org.json.JSONObject} or {@link org.json.JSONArray}}
+     * {@link Returner.ReturnFormat#JSON} -> returns the response formatted as {@code "JSON"}
      * </li>
      * <li>
-     * LIBRARY_OBJECT -> return response formatted as custom object offered by {@code GoogleManager}'s library
+     * {@link Returner.ReturnFormat#LIBRARY_OBJECT} -> returns the response formatted as custom object offered by library that uses this list
      * </li>
      * </ul>
      **/

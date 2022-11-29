@@ -1,5 +1,7 @@
 package com.tecknobit.githubmanager.actions.workflow.jobs;
 
+import com.tecknobit.apimanager.annotations.RequestPath;
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
@@ -12,6 +14,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 
+import static com.tecknobit.apimanager.apis.APIRequest.downloadFile;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.*;
 
@@ -120,6 +123,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * Get a job for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}")
     public Job getWorkflowRunJob(Repository repository, long jobId) throws IOException {
         return returnJob(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName()
                 + ACTIONS_JOBS_PATH + "/" + jobId), LIBRARY_OBJECT);
@@ -151,6 +155,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * Get a job for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}")
     public <T> T getWorkflowRunJob(Repository repository, long jobId, ReturnFormat format) throws IOException {
         return returnJob(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName()
                 + ACTIONS_JOBS_PATH + "/" + jobId), format);
@@ -181,6 +186,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}")
     public Job getWorkflowRunJob(String owner, String repo, long jobId) throws IOException {
         return returnJob(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_JOBS_PATH + "/" + jobId),
                 LIBRARY_OBJECT);
@@ -212,6 +218,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}")
     public <T> T getWorkflowRunJob(String owner, String repo, long jobId, ReturnFormat format) throws IOException {
         return returnJob(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_JOBS_PATH + "/" + jobId),
                 format);
@@ -224,6 +231,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return job object as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnJob(String jobResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -269,6 +277,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs")
     public File downloadJobLogs(Repository repository, long jobId, String pathName, boolean save) throws IOException {
         return downloadFile(downloadJobLogs(repository.getOwner().getLogin(), repository.getName(), jobId), pathName, save);
     }
@@ -308,6 +317,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs")
     public File downloadJobLogs(String owner, String repo, long jobId, String pathName, boolean save) throws IOException {
         return downloadFile(downloadJobLogs(owner, repo, jobId), pathName, save);
     }
@@ -343,6 +353,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs")
     public String downloadJobLogs(Repository repository, long jobId) throws IOException {
         return downloadJobLogs(repository.getOwner().getLogin(), repository.getName(), jobId);
     }
@@ -379,6 +390,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs")
     public String downloadJobLogs(String owner, String repo, long jobId) throws IOException {
         sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_JOBS_PATH + "/" + jobId + LOGS_PATH);
         return new JsonHelper((JSONObject) apiRequest.getJSONResponse()).getString("Location");
@@ -412,6 +424,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getWorkflowId() + ATTEMPTS_PATH + attemptNumber
@@ -447,6 +460,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber,
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -482,6 +496,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(Repository repository, long runId, int attemptNumber) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                         repository.getName() + ACTIONS_RUNS_PATH + "/" + runId + ATTEMPTS_PATH + attemptNumber + JOBS_PATH),
@@ -517,6 +532,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(Repository repository, long runId, int attemptNumber,
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -561,6 +577,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber,
                                                 Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -606,6 +623,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(Repository repository, WorkflowRun run, int attemptNumber, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -650,6 +668,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(Repository repository, long runId, int attemptNumber,
                                                 Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -695,6 +714,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(Repository repository, long runId, int attemptNumber, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -731,6 +751,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run,
                                                 int attemptNumber) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
@@ -767,6 +788,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run, int attemptNumber,
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
@@ -801,6 +823,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(String owner, String repo, long runId,
                                                 int attemptNumber) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
@@ -836,6 +859,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(String owner, String repo, long runId, int attemptNumber,
                                              ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
@@ -880,6 +904,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run,
                                                 int attemptNumber, Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
@@ -925,6 +950,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(String owner, String repo, WorkflowRun run, int attemptNumber,
                                              Params queryParams, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
@@ -968,6 +994,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public JobsList getWorkflowAttemptsJobsList(String owner, String repo, long runId,
                                                 int attemptNumber, Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
@@ -1012,6 +1039,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
     public <T> T getWorkflowAttemptsJobsList(String owner, String repo, long runId, int attemptNumber,
                                              Params queryParams, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
@@ -1045,6 +1073,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(Repository repository, WorkflowRun run) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + JOBS_PATH), LIBRARY_OBJECT);
@@ -1078,6 +1107,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(Repository repository, WorkflowRun run, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNS_PATH + "/" + run.getId() + JOBS_PATH), format);
@@ -1110,6 +1140,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(Repository repository, long runId) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNS_PATH + "/" + runId + JOBS_PATH), LIBRARY_OBJECT);
@@ -1143,6 +1174,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(Repository repository, long runId, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNS_PATH + "/" + runId + JOBS_PATH), format);
@@ -1184,6 +1216,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(Repository repository, long runId, Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
                 repository.getName() + ACTIONS_RUNS_PATH + "/" + runId + JOBS_PATH +
@@ -1227,6 +1260,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(Repository repository, long runId, Params queryParams,
                                      ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
@@ -1262,6 +1296,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(String owner, String repo, WorkflowRun run) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
                 run.getId() + JOBS_PATH), LIBRARY_OBJECT);
@@ -1296,6 +1331,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(String owner, String repo, WorkflowRun run, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
                 run.getId() + JOBS_PATH), format);
@@ -1328,6 +1364,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(String owner, String repo, long runId) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
                 JOBS_PATH), LIBRARY_OBJECT);
@@ -1361,6 +1398,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(String owner, String repo, long runId, ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
                 JOBS_PATH), format);
@@ -1403,6 +1441,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(String owner, String repo, WorkflowRun run, Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
                 run.getId() + JOBS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -1446,6 +1485,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(String owner, String repo, WorkflowRun run, Params queryParams,
                                      ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" +
@@ -1488,6 +1528,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public JobsList getWorkflowJobsList(String owner, String repo, long runId, Params queryParams) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
                 JOBS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -1530,6 +1571,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
     public <T> T getWorkflowJobsList(String owner, String repo, long runId, Params queryParams,
                                      ReturnFormat format) throws IOException {
         return returnJobsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_RUNS_PATH + "/" + runId +
@@ -1543,6 +1585,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      * @param format:           return type formatter -> {@link ReturnFormat}
      * @return jobs list as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnJobsList(String jobsListResponse, ReturnFormat format) {
         switch (format) {
             case JSON:

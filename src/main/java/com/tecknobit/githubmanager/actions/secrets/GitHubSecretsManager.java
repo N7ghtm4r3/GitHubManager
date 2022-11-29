@@ -2,6 +2,8 @@ package com.tecknobit.githubmanager.actions.secrets;
 
 import com.goterl.lazysodium.LazySodiumJava;
 import com.goterl.lazysodium.SodiumJava;
+import com.tecknobit.apimanager.annotations.RequestPath;
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
@@ -147,6 +149,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List organization secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public SecretsList getOrganizationSecretsList(Organization org) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH), LIBRARY_OBJECT);
     }
@@ -176,6 +179,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List organization secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public <T> T getOrganizationSecretsList(Organization org, ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH), format);
     }
@@ -203,6 +207,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public SecretsList getOrganizationSecretsList(String org) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH), LIBRARY_OBJECT);
     }
@@ -231,6 +236,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public <T> T getOrganizationSecretsList(String org, ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH), format);
     }
@@ -268,6 +274,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List organization secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public SecretsList getOrganizationSecretsList(Organization org, Params queryParams) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -307,6 +314,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List organization secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public <T> T getOrganizationSecretsList(Organization org, Params queryParams, ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH +
                 queryParams.createQueryString()), format);
@@ -344,6 +352,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public SecretsList getOrganizationSecretsList(String org, Params queryParams) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -382,6 +391,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets")
     public <T> T getOrganizationSecretsList(String org, Params queryParams, ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH +
                 queryParams.createQueryString()), format);
@@ -412,6 +422,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an organization public key</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/public-key")
     public GitHubPublicKey getOrganizationPublicKey(Organization org) throws IOException {
         return returnPublicKey(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PUBLIC_KEY_PATH),
                 LIBRARY_OBJECT);
@@ -443,6 +454,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an organization public key</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/public-key")
     public <T> T getOrganizationPublicKey(Organization org, ReturnFormat format) throws IOException {
         return returnPublicKey(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PUBLIC_KEY_PATH),
                 format);
@@ -472,6 +484,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
      * Get an organization public key</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/public-key")
     public GitHubPublicKey getOrganizationPublicKey(String org) throws IOException {
         return returnPublicKey(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PUBLIC_KEY_PATH), LIBRARY_OBJECT);
     }
@@ -501,6 +514,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
      * Get an organization public key</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/public-key")
     public <T> T getOrganizationPublicKey(String org, ReturnFormat format) throws IOException {
         return returnPublicKey(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PUBLIC_KEY_PATH), format);
     }
@@ -530,6 +544,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public OrganizationSecret getOrganizationSecret(Organization org, String secretName) throws IOException {
         return getOrganizationSecret(org.getLogin(), secretName, LIBRARY_OBJECT);
     }
@@ -560,6 +575,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public <T> T getOrganizationSecret(Organization org, String secretName, ReturnFormat format) throws IOException {
         return getOrganizationSecret(org.getLogin(), secretName, format);
     }
@@ -588,6 +604,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public OrganizationSecret getOrganizationSecret(String org, String secretName) throws IOException {
         return getOrganizationSecret(org, secretName, LIBRARY_OBJECT);
     }
@@ -617,6 +634,8 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
+    @Returner
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public <T> T getOrganizationSecret(String org, String secretName, ReturnFormat format) throws IOException {
         String secretResponse = sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + "/" + secretName);
         switch (format) {
@@ -660,6 +679,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, null, secretValue,
@@ -702,6 +722,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, Long[] repositoriesIds,
                                             GitHubPublicKey publicKey) throws Exception {
@@ -744,6 +765,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
@@ -781,6 +803,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue, publicKey);
@@ -821,6 +844,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             Long[] repositoriesIds, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds, secretValue, publicKey);
@@ -861,6 +885,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
@@ -899,6 +924,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         String name = org.getLogin();
@@ -942,6 +968,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
@@ -985,6 +1012,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
@@ -1022,6 +1050,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue,
@@ -1063,6 +1092,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds,
@@ -1104,6 +1134,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]),
@@ -1141,6 +1172,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, null, secretValue,
@@ -1183,6 +1215,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue, Long[] repositoriesIds,
                                             GitHubPublicKey publicKey) throws Exception {
@@ -1225,6 +1258,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
@@ -1262,6 +1296,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue, publicKey);
@@ -1302,6 +1337,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
                                             Long[] repositoriesIds, GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds, secretValue, publicKey);
@@ -1342,6 +1378,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
@@ -1380,6 +1417,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         String name = org.getLogin();
@@ -1423,6 +1461,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
@@ -1466,6 +1505,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
@@ -1503,6 +1543,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, null, secretValue,
@@ -1544,6 +1585,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Long[] repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds,
@@ -1585,6 +1627,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
                                             Collection<Long> repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]),
@@ -1658,6 +1701,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete an organization secrete</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean deleteOrganizationSecret(Organization org, OrganizationSecret secretToDelete) {
         return deleteOrganizationSecret(org.getLogin(), secretToDelete.getName());
     }
@@ -1675,6 +1719,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete an organization secrete</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean deleteOrganizationSecret(String org, OrganizationSecret secretToDelete) {
         return deleteOrganizationSecret(org, secretToDelete.getName());
     }
@@ -1692,6 +1737,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete an organization secrete</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean deleteOrganizationSecret(Organization org, String secretName) {
         return deleteOrganizationSecret(org.getLogin(), secretName);
     }
@@ -1708,6 +1754,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
      * Delete an organization secrete</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean deleteOrganizationSecret(String org, String secretName) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + "/" + secretName);
@@ -1735,6 +1782,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public RepositoriesList getOrganizationSecretRepositoriesList(Organization org, String secretName) throws IOException {
         return getOrganizationSecretRepositoriesList(org.getLogin(), secretName, LIBRARY_OBJECT);
     }
@@ -1753,6 +1801,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public <T> T getOrganizationSecretRepositoriesList(Organization org, String secretName,
                                                        ReturnFormat format) throws IOException {
         return getOrganizationSecretRepositoriesList(org.getLogin(), secretName, format);
@@ -1770,6 +1819,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public RepositoriesList getOrganizationSecretRepositoriesList(String org, String secretName) throws IOException {
         return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH), LIBRARY_OBJECT);
@@ -1788,6 +1838,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public <T> T getOrganizationSecretRepositoriesList(String org, String secretName, ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH), format);
@@ -1815,6 +1866,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public RepositoriesList getOrganizationSecretRepositoriesList(Organization org, String secretName,
                                                                   Params queryParams) throws IOException {
         return getOrganizationSecretRepositoriesList(org.getLogin(), secretName, queryParams, LIBRARY_OBJECT);
@@ -1843,6 +1895,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public <T> T getOrganizationSecretRepositoriesList(Organization org, String secretName, Params queryParams,
                                                        ReturnFormat format) throws IOException {
         return getOrganizationSecretRepositoriesList(org.getLogin(), secretName, queryParams, format);
@@ -1869,6 +1922,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public RepositoriesList getOrganizationSecretRepositoriesList(String org, String secretName,
                                                                   Params queryParams) throws IOException {
         return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
@@ -1897,6 +1951,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public <T> T getOrganizationSecretRepositoriesList(String org, String secretName, Params queryParams,
                                                        ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
@@ -1910,6 +1965,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param format:               return type formatter -> {@link ReturnFormat}
      * @return selected repositories for an organization secret list as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnRepositoriesList(String repositoriesResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -1940,6 +1996,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
                                                              Collection<Long> repositoriesIds) {
         return setItems(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH + secretName +
@@ -1964,6 +2021,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(String org, String secretName,
                                                              Collection<Long> repositoriesIds) {
         return setItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
@@ -1985,6 +2043,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
                                                              RepositoriesList repositories) {
         return setSelectedOrganizationSecretRepositories(org.getLogin(), secretName, repositories);
@@ -2004,6 +2063,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(String org, String secretName,
                                                              RepositoriesList repositories) {
         ArrayList<Long> ids = new ArrayList<>();
@@ -2032,6 +2092,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
                                                              Long[] repositoriesIds) {
         return setItems(ORGS_PATH + org.getLogin() + ACTIONS_SECRETS_PATH + secretName +
@@ -2056,6 +2117,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(String org, String secretName, Long[] repositoriesIds) {
         return setItems(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
@@ -2076,6 +2138,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Add selected repository to an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean addSelectedOrganizationSecretRepository(Organization org, String secretName,
                                                            Repository repositoryToAdd) {
         return addSelectedOrganizationSecretRepository(org.getLogin(), secretName, repositoryToAdd.getId());
@@ -2096,6 +2159,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Add selected repository to an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean addSelectedOrganizationSecretRepository(Organization org, String secretName, long repositoryId) {
         return addSelectedOrganizationSecretRepository(org.getLogin(), secretName, repositoryId);
     }
@@ -2115,6 +2179,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Add selected repository to an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean addSelectedOrganizationSecretRepository(String org, String secretName, Repository repositoryToAdd) {
         return addSelectedOrganizationSecretRepository(org, secretName, repositoryToAdd.getId());
     }
@@ -2133,6 +2198,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
      * Add selected repository to an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean addSelectedOrganizationSecretRepository(String org, String secretName, long repositoryId) {
         try {
             sendPutRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName + REPOSITORIES_PATH + "/" +
@@ -2163,6 +2229,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Remove selected repository from an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean removeSelectedOrganizationSecretRepository(Organization org, String secretName,
                                                               Repository repositoryToRemove) {
         return removeSelectedOrganizationSecretRepository(org.getLogin(), secretName, repositoryToRemove.getId());
@@ -2183,6 +2250,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Remove selected repository from an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean removeSelectedOrganizationSecretRepository(Organization org, String secretName, long repositoryId) {
         return removeSelectedOrganizationSecretRepository(org.getLogin(), secretName, repositoryId);
     }
@@ -2202,6 +2270,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Remove selected repository from an organization secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean removeSelectedOrganizationSecretRepository(String org, String secretName, Repository repositoryToRemove) {
         return removeSelectedOrganizationSecretRepository(org, secretName, repositoryToRemove.getId());
     }
@@ -2220,6 +2289,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
      * Remove selected repository from an organization secret</a>
      **/
+    @RequestPath(path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
     public boolean removeSelectedOrganizationSecretRepository(String org, String secretName, long repositoryId) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName + REPOSITORIES_PATH + "/" +
@@ -2259,6 +2329,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List repository secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public SecretsList getRepositorySecretsList(Repository repository) throws IOException {
         return getRepositorySecretsList(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -2288,6 +2359,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List repository secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public <T> T getRepositorySecretsList(Repository repository, ReturnFormat format) throws IOException {
         return getRepositorySecretsList(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -2316,6 +2388,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public SecretsList getRepositorySecretsList(String owner, String repo) throws IOException {
         return returnSecretsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH),
                 LIBRARY_OBJECT);
@@ -2346,6 +2419,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public <T> T getRepositorySecretsList(String owner, String repo, ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH),
                 format);
@@ -2384,6 +2458,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List repository secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public SecretsList getRepositorySecretsList(Repository repository, Params queryParams) throws IOException {
         return getRepositorySecretsList(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
@@ -2423,6 +2498,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List repository secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public <T> T getRepositorySecretsList(Repository repository, Params queryParams,
                                           ReturnFormat format) throws IOException {
         return getRepositorySecretsList(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
@@ -2461,6 +2537,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public SecretsList getRepositorySecretsList(String owner, String repo, Params queryParams) throws IOException {
         return returnSecretsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH +
                 queryParams.createQueryString()), LIBRARY_OBJECT);
@@ -2500,6 +2577,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets")
     public <T> T getRepositorySecretsList(String owner, String repo, Params queryParams,
                                           ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH +
@@ -2532,6 +2610,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get a repository public key</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/public-key")
     public GitHubPublicKey getRepositoryPublicKey(Repository repository) throws IOException {
         return getRepositoryPublicKey(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -2563,6 +2642,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get a repository public key</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/public-key")
     public <T> T getRepositoryPublicKey(Repository repository, ReturnFormat format) throws IOException {
         return getRepositoryPublicKey(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -2593,6 +2673,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
      * Get a repository public key</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/public-key")
     public GitHubPublicKey getRepositoryPublicKey(String owner, String repo) throws IOException {
         return returnPublicKey(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PUBLIC_KEY_PATH),
                 LIBRARY_OBJECT);
@@ -2625,6 +2706,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
      * Get a repository public key</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/public-key")
     public <T> T getRepositoryPublicKey(String owner, String repo, ReturnFormat format) throws IOException {
         return returnPublicKey(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PUBLIC_KEY_PATH),
                 format);
@@ -2655,6 +2737,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public Secret getRepositorySecret(Repository repository, String secretName) throws IOException {
         return getRepositorySecret(repository.getOwner().getLogin(), repository.getName(), secretName, LIBRARY_OBJECT);
     }
@@ -2685,6 +2768,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public <T> T getRepositorySecret(Repository repository, String secretName, ReturnFormat format) throws IOException {
         return getRepositorySecret(repository.getOwner().getLogin(), repository.getName(), secretName, format);
     }
@@ -2714,6 +2798,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
      * Get a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public Secret getRepositorySecret(String owner, String repo, String secretName) throws IOException {
         return returnSecret(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH + "/" +
                 secretName), LIBRARY_OBJECT);
@@ -2745,6 +2830,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
      * Get a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public <T> T getRepositorySecret(String owner, String repo, String secretName, ReturnFormat format) throws IOException {
         return returnSecret(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH + "/" +
                 secretName), format);
@@ -2778,6 +2864,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean createRepositorySecret(Repository repository, String secretName, String secretValue,
                                           GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repository.getOwner().getLogin(), repository.getName(), secretName, secretValue, publicKey);
@@ -2811,6 +2898,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean createRepositorySecret(String owner, String repo, String secretName, String secretValue,
                                           GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(owner, repo, secretName, secretValue, publicKey);
@@ -2844,6 +2932,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean createRepositorySecret(Repository repository, String secretName, String secretValue) throws Exception {
         String owner = repository.getOwner().getLogin();
         String name = repository.getName();
@@ -2878,6 +2967,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean createRepositorySecret(String owner, String repo, String secretName,
                                           String secretValue) throws Exception {
         return workWithSecret(owner, repo, secretName, secretValue, getRepositoryPublicKey(owner, repo));
@@ -2911,6 +3001,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean updateRepositorySecret(Repository repository, String secretName, String secretValue,
                                           GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repository.getOwner().getLogin(), repository.getName(), secretName, secretValue, publicKey);
@@ -2944,6 +3035,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean updateRepositorySecret(String owner, String repo, String secretName, String secretValue,
                                           GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(owner, repo, secretName, secretValue, publicKey);
@@ -2977,6 +3069,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean updateRepositorySecret(Repository repository, String secretName, String secretValue) throws Exception {
         String owner = repository.getOwner().getLogin();
         String name = repository.getName();
@@ -3011,6 +3104,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean updateRepositorySecret(String owner, String repo, String secretName,
                                           String secretValue) throws Exception {
         return workWithSecret(owner, repo, secretName, secretValue, getRepositoryPublicKey(owner, repo));
@@ -3057,6 +3151,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean deleteRepositorySecret(Repository repository, Secret secretToDelete) {
         return deleteRepositorySecret(repository.getOwner().getLogin(), repository.getName(), secretToDelete.getName());
     }
@@ -3075,6 +3170,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean deleteRepositorySecret(String owner, String repo, Secret secretToDelete) {
         return deleteRepositorySecret(owner, repo, secretToDelete.getName());
     }
@@ -3092,6 +3188,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete a repository secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean deleteRepositorySecret(Repository repository, String secretName) {
         return deleteRepositorySecret(repository.getOwner().getLogin(), repository.getName(), secretName);
     }
@@ -3109,6 +3206,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
      * Delete a repository secret</a>
      **/
+    @RequestPath(path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
     public boolean deleteRepositorySecret(String owner, String repo, String secretName) {
         try {
             sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_SECRETS_PATH + "/" + secretName);
@@ -3148,6 +3246,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List environment secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public SecretsList getEnvironmentsSecretsList(Repository repository, String environmentName) throws IOException {
         return getEnvironmentsSecretsList(repository.getId(), environmentName, LIBRARY_OBJECT);
     }
@@ -3178,6 +3277,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List environment secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public <T> T getEnvironmentsSecretsList(Repository repository, String environmentName,
                                             ReturnFormat format) throws IOException {
         return getEnvironmentsSecretsList(repository.getId(), environmentName, format);
@@ -3207,6 +3307,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public SecretsList getEnvironmentsSecretsList(long repositoryId, String environmentName) throws IOException {
         return returnSecretsList(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
                 environmentName + SECRETS_PATH), LIBRARY_OBJECT);
@@ -3237,6 +3338,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public <T> T getEnvironmentsSecretsList(long repositoryId, String environmentName,
                                             ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
@@ -3277,6 +3379,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List environment secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public SecretsList getEnvironmentsSecretsList(Repository repository, String environmentName,
                                                   Params queryParams) throws IOException {
         return getEnvironmentsSecretsList(repository.getId(), environmentName, queryParams, LIBRARY_OBJECT);
@@ -3317,6 +3420,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * List environment secrets</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public <T> T getEnvironmentsSecretsList(Repository repository, String environmentName, Params queryParams,
                                             ReturnFormat format) throws IOException {
         return getEnvironmentsSecretsList(repository.getId(), environmentName, queryParams, format);
@@ -3355,6 +3459,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public SecretsList getEnvironmentsSecretsList(long repositoryId, String environmentName,
                                                   Params queryParams) throws IOException {
         return returnSecretsList(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
@@ -3395,6 +3500,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
     public <T> T getEnvironmentsSecretsList(long repositoryId, String environmentName, Params queryParams,
                                             ReturnFormat format) throws IOException {
         return returnSecretsList(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
@@ -3408,6 +3514,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param format:              return type formatter -> {@link ReturnFormat}
      * @return all the secrets available list as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnSecretsList(String secretsListResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -3446,6 +3553,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an environment public key</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key")
     public GitHubPublicKey getEnvironmentPublicKey(Repository repository, String environmentName) throws IOException {
         return getEnvironmentPublicKey(repository.getId(), environmentName, LIBRARY_OBJECT);
     }
@@ -3478,6 +3586,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an environment public key</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key")
     public <T> T getEnvironmentPublicKey(Repository repository, String environmentName,
                                          ReturnFormat format) throws IOException {
         return getEnvironmentPublicKey(repository.getId(), environmentName, format);
@@ -3509,6 +3618,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
      * Get an environment public key</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key")
     public GitHubPublicKey getEnvironmentPublicKey(long repositoryId, String environmentName) throws IOException {
         return returnPublicKey(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
                 environmentName + ACTIONS_SECRETS_PUBLIC_KEY_PATH), LIBRARY_OBJECT);
@@ -3541,6 +3651,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
      * Get an environment public key</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key")
     public <T> T getEnvironmentPublicKey(long repositoryId, String environmentName, ReturnFormat format) throws IOException {
         return returnPublicKey(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
                 environmentName + ACTIONS_SECRETS_PUBLIC_KEY_PATH), format);
@@ -3553,6 +3664,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param format:            return type formatter -> {@link ReturnFormat}
      * @return public key as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnPublicKey(String publicKeyResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -3590,6 +3702,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public Secret getEnvironmentSecret(Repository repository, String environmentName, String secretName) throws IOException {
         return getEnvironmentSecret(repository.getId(), environmentName, secretName, LIBRARY_OBJECT);
     }
@@ -3621,6 +3734,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Get an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public <T> T getEnvironmentSecret(Repository repository, String environmentName, String secretName,
                                       ReturnFormat format) throws IOException {
         return getEnvironmentSecret(repository.getId(), environmentName, secretName, format);
@@ -3651,6 +3765,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
      * Get an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public Secret getEnvironmentSecret(long repositoryId, String environmentName, String secretName) throws IOException {
         return returnSecret(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
                 environmentName + SECRETS_PATH + "/" + secretName), LIBRARY_OBJECT);
@@ -3682,6 +3797,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
      * Get an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public <T> T getEnvironmentSecret(long repositoryId, String environmentName, String secretName,
                                       ReturnFormat format) throws IOException {
         return returnSecret(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
@@ -3695,6 +3811,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param format:         return type formatter -> {@link ReturnFormat}
      * @return secret as {@code "format"} defines
      **/
+    @Returner
     private <T> T returnSecret(String secretResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -3735,6 +3852,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean createEnvironmentSecret(Repository repository, String environmentName, String secretName,
                                            String secretValue, GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repository.getId(), environmentName, secretName, secretValue, publicKey);
@@ -3768,6 +3886,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean createEnvironmentSecret(long repositoryId, String environmentName, String secretName, String secretValue,
                                            GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repositoryId, environmentName, secretName, secretValue, publicKey);
@@ -3802,6 +3921,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean createEnvironmentSecret(Repository repository, String environmentName, String secretName,
                                            String secretValue) throws Exception {
         long id = repository.getId();
@@ -3836,6 +3956,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean createEnvironmentSecret(long repositoryId, String environmentName, String secretName,
                                            String secretValue) throws Exception {
         return workWithSecret(repositoryId, environmentName, secretName, secretValue, getEnvironmentPublicKey(repositoryId,
@@ -3871,6 +3992,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean updateEnvironmentSecret(Repository repository, String environmentName, String secretName,
                                            String secretValue, GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repository.getId(), environmentName, secretName, secretValue, publicKey);
@@ -3904,6 +4026,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean updateEnvironmentSecret(long repositoryId, String environmentName, String secretName, String secretValue,
                                            GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repositoryId, environmentName, secretName, secretValue, publicKey);
@@ -3938,6 +4061,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean updateEnvironmentSecret(Repository repository, String environmentName, String secretName,
                                            String secretValue) throws Exception {
         long id = repository.getId();
@@ -3972,6 +4096,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean updateEnvironmentSecret(long repositoryId, String environmentName, String secretName,
                                            String secretValue) throws Exception {
         return workWithSecret(repositoryId, environmentName, secretName, secretValue, getEnvironmentPublicKey(repositoryId,
@@ -4059,6 +4184,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * Delete an environment secret</a>
      **/
     @WrappedRequest
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean deleteEnvironmentSecret(Repository repository, String environmentName, String secretName) {
         return deleteEnvironmentSecret(repository.getId(), environmentName, secretName);
     }
@@ -4076,6 +4202,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-environment-secret">
      * Delete an environment secret</a>
      **/
+    @RequestPath(path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}")
     public boolean deleteEnvironmentSecret(long repositoryId, String environmentName, String secretName) {
         try {
             sendDeleteRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH + environmentName +
