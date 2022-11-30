@@ -259,8 +259,8 @@ public class GitHubManager {
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequest(String endpoint, String method) throws IOException {
-        apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
         System.out.println(endpoint);
+        apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
         return apiRequest.getResponse();
     }
 
