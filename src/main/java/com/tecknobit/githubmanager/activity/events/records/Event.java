@@ -63,30 +63,37 @@ public class Event extends GitHubResponse {
      * {@code id} identifier value
      **/
     private final long id;
+
     /**
      * {@code type} type of the event
      **/
     private final EventType type;
+
     /**
      * {@code actor} actor value
      **/
     private final EventEntity actor;
+
     /**
      * {@code repo} repo value
      **/
     private final BaseResponseDetails repo;
+
     /**
      * {@code payload} payload of the event
      **/
     private final Payload payload;
+
     /**
      * {@code isPublic} whether this event is public
      **/
     private final boolean isPublic;
+
     /**
      * {@code createdAt} creation time of the event
      **/
     private final String createdAt;
+
     /**
      * {@code org} organization value
      **/

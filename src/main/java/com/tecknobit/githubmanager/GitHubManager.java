@@ -351,9 +351,8 @@ public class GitHubManager {
     private String sendRequestWithBody(String endpoint, String method, Params bodyPayload) throws IOException {
         if (bodyPayload == null)
             bodyPayload = new Params();
-        apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
         System.out.println(endpoint);
-        System.out.println(bodyPayload.createJSONPayload());
+        apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
         return apiRequest.getResponse();
     }
 
@@ -395,6 +394,16 @@ public class GitHubManager {
      **/
     public void printJSONErrorResponse() {
         apiRequest.printJSONErrorResponse();
+    }
+
+    /**
+     * Method to get status response code of the request <br>
+     * Any params required
+     *
+     * @return response code of the request as int
+     **/
+    public int getStatusCode() {
+        return apiRequest.getResponseStatusCode();
     }
 
     /**
