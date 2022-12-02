@@ -355,7 +355,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Method to get a repository subscription
      *
      * @param repository: repository from fetch the subscription
-     * @return subscription as {@link RepositorySubscription} custom object
+     * @return repository subscription as {@link RepositorySubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -381,8 +381,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * Method to get a repository subscription
      *
      * @param repository: repository from fetch the subscription
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return subscription as {@code "format"} defines
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return repository subscription as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -409,7 +409,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return subscription as {@link RepositorySubscription} custom object
+     * @return repository subscription as {@link RepositorySubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -435,8 +435,8 @@ public class GitHubWatchingManager extends GitHubManager {
      *
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
-     * @param format: return type formatter -> {@link ReturnFormat}
-     * @return subscription as {@code "format"} defines
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return repository subscription as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -465,7 +465,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * If you would like to stop watching a repository, delete the repository's subscription completely
      *
      * @param repository: repository to set the subscription
-     * @return subscription as {@link RepositorySubscription} custom object
+     * @return repository subscription as {@link RepositorySubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -494,8 +494,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * If you would like to stop watching a repository, delete the repository's subscription completely
      *
      * @param repository: repository to set the subscription
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return subscription as {@code "format"} defines
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return repository subscription as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -525,7 +525,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return subscription as {@link RepositorySubscription} custom object
+     * @return repository subscription as {@link RepositorySubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -554,8 +554,8 @@ public class GitHubWatchingManager extends GitHubManager {
      *
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
-     * @param format: return type formatter -> {@link ReturnFormat}
-     * @return subscription as {@code "format"} defines
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return repository subscription as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -584,8 +584,18 @@ public class GitHubWatchingManager extends GitHubManager {
      * If you would like to stop watching a repository, delete the repository's subscription completely
      *
      * @param repository: repository to set the subscription
-     * @param bodyParams:
-     * @return subscription as {@link RepositorySubscription} custom object
+     * @param bodyParams: extra body params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "subscribed"} -> determines if notifications should be received
+     *                            from this repository - [boolean]
+     *                        </li>
+     *                        <li>
+     *                            {@code "ignored"} -> determines if all notifications should be blocked 
+     *                            from this repository - [boolean]
+     *                        </li>
+     *                     </ul>
+     * @return repository subscription as {@link RepositorySubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -608,14 +618,124 @@ public class GitHubWatchingManager extends GitHubManager {
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to set a repository subscription <br>
+     * If you would like to watch a repository, set subscribed to true. <br>
+     * If you would like to ignore notifications made within a repository, set ignored to true. <br>
+     * If you would like to stop watching a repository, delete the repository's subscription completely
+     *
+     * @param repository: repository to set the subscription
+     * @param bodyParams: extra body params not mandatory, keys accepted are:
+     *                    <ul>
+     *                       <li>
+     *                           {@code "subscribed"} -> determines if notifications should be received
+     *                           from this repository - [boolean]
+     *                       </li>
+     *                       <li>
+     *                           {@code "ignored"} -> determines if all notifications should be blocked
+     *                           from this repository - [boolean]
+     *                       </li>
+     *                    </ul>
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return repository subscription as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * Set a repository subscription</a>
+     **/
+    @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
     public <T> T setRepositorySubscription(Repository repository, Params bodyParams, ReturnFormat format) throws IOException {
         return setRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), bodyParams, format);
     }
 
+    /**
+     * Method to set a repository subscription <br>
+     * If you would like to watch a repository, set subscribed to true. <br>
+     * If you would like to ignore notifications made within a repository, set ignored to true. <br>
+     * If you would like to stop watching a repository, delete the repository's subscription completely
+     *
+     * @param owner:      the account owner of the repository. The name is not case-sensitive
+     * @param repo:       the name of the repository. The name is not case-sensitive
+     * @param bodyParams: extra body params not mandatory, keys accepted are:
+     *                    <ul>
+     *                       <li>
+     *                           {@code "subscribed"} -> determines if notifications should be received
+     *                           from this repository - [boolean]
+     *                       </li>
+     *                       <li>
+     *                           {@code "ignored"} -> determines if all notifications should be blocked
+     *                           from this repository - [boolean]
+     *                       </li>
+     *                    </ul>
+     * @return repository subscription as {@link RepositorySubscription} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * Set a repository subscription</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription setRepositorySubscription(String owner, String repo, Params bodyParams) throws IOException {
         return setRepositorySubscription(owner, repo, bodyParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to set a repository subscription <br>
+     * If you would like to watch a repository, set subscribed to true. <br>
+     * If you would like to ignore notifications made within a repository, set ignored to true. <br>
+     * If you would like to stop watching a repository, delete the repository's subscription completely
+     *
+     * @param owner:      the account owner of the repository. The name is not case-sensitive
+     * @param repo:       the name of the repository. The name is not case-sensitive
+     * @param bodyParams: extra body params not mandatory, keys accepted are:
+     *                    <ul>
+     *                       <li>
+     *                           {@code "subscribed"} -> determines if notifications should be received
+     *                           from this repository - [boolean]
+     *                       </li>
+     *                       <li>
+     *                           {@code "ignored"} -> determines if all notifications should be blocked
+     *                           from this repository - [boolean]
+     *                       </li>
+     *                    </ul>
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return repository subscription as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * Set a repository subscription</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
     public <T> T setRepositorySubscription(String owner, String repo, Params bodyParams,
                                            ReturnFormat format) throws IOException {
         return returnRepositorySubscription(sendPutRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIPTION_PATH,
@@ -641,10 +761,36 @@ public class GitHubWatchingManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to delete a repository subscription <br>
+     * This endpoint should only be used to stop watching a repository. To control whether you wish to receive notifications
+     * from a repository, set the repository's subscription manually with {@link #setRepositorySubscription(String, String)}
+     * method
+     *
+     * @param repository: repository from delete the subscription
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
+     * Delete a repository subscription</a>
+     **/
+    @WrappedRequest
+    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
     public boolean deleteRepositorySubscription(Repository repository) {
         return deleteRepositorySubscription(repository.getOwner().getLogin(), repository.getName());
     }
 
+    /**
+     * Method to delete a repository subscription <br>
+     * This endpoint should only be used to stop watching a repository. To control whether you wish to receive notifications
+     * from a repository, set the repository's subscription manually with {@link #setRepositorySubscription(String, String)}
+     * method
+     *
+     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param repo:  the name of the repository. The name is not case-sensitive
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
+     * Delete a repository subscription</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
     public boolean deleteRepositorySubscription(String owner, String repo) {
         try {
             sendDeleteRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIPTION_PATH);
@@ -659,35 +805,240 @@ public class GitHubWatchingManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to get the list of the repositories watched by the authenticated user <br>
+     * Any params required
+     *
+     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * List repositories watched by the authenticated user</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
     public Collection<CompleteRepository> getAuthenticatedUserRepositoriesWatched() throws IOException {
         return getAuthenticatedUserRepositoriesWatched(LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the repositories watched by the authenticated user
+     *
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * List repositories watched by the authenticated user</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
     public <T> T getAuthenticatedUserRepositoriesWatched(ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USER_SUBSCRIPTIONS_PATH), format);
     }
 
+    /**
+     * Method to get the list of the repositories watched by the authenticated user
+     *
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * List repositories watched by the authenticated user</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
     public Collection<CompleteRepository> getAuthenticatedUserRepositoriesWatched(Params queryParams) throws IOException {
         return getAuthenticatedUserRepositoriesWatched(queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the repositories watched by the authenticated user
+     *
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * List repositories watched by the authenticated user</a>
+     **/
+    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
     public <T> T getAuthenticatedUserRepositoriesWatched(Params queryParams, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USER_SUBSCRIPTIONS_PATH + queryParams.createQueryString()),
                 format);
     }
 
+    /**
+     * Method to get the list of the repositories a user is watching
+     *
+     * @param username: the handle for the GitHub user account
+     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * List repositories watched by a user</a>
+     **/
+    @RequestPath(path = "/users/{username}/subscriptions")
     public Collection<CompleteRepository> getUserRepositoriesWatched(String username) throws IOException {
         return getUserRepositoriesWatched(username, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the repositories a user is watching
+     *
+     * @param username: the handle for the GitHub user account
+     * @param format:   return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * List repositories watched by a user</a>
+     **/
+    @RequestPath(path = "/users/{username}/subscriptions")
     public <T> T getUserRepositoriesWatched(String username, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + SUBSCRIPTIONS_PATH), format);
     }
 
+    /**
+     * Method to get the list of the repositories a user is watching
+     *
+     * @param username:    the handle for the GitHub user account
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * List repositories watched by a user</a>
+     **/
+    @RequestPath(path = "/users/{username}/subscriptions")
     public Collection<CompleteRepository> getUserRepositoriesWatched(String username, Params queryParams) throws IOException {
         return getUserRepositoriesWatched(username, queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the repositories a user is watching
+     *
+     * @param username:    the handle for the GitHub user account
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * List repositories watched by a user</a>
+     **/
+    @RequestPath(path = "/users/{username}/subscriptions")
     public <T> T getUserRepositoriesWatched(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + SUBSCRIPTIONS_PATH +
                 queryParams.createQueryString()), format);
