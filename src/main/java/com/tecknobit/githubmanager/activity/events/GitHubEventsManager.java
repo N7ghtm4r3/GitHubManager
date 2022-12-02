@@ -36,11 +36,6 @@ public class GitHubEventsManager extends GitHubManager {
     public static final String NETWORKS_PATH = "networks/";
 
     /**
-     * {@code USERS_PATH} constant for {@code "users/"} path
-     **/
-    public static final String USERS_PATH = "users/";
-
-    /**
      * {@code PUBLIC_PATH} constant for {@code "/public"} path
      **/
     public static final String PUBLIC_PATH = "/public";

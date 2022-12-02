@@ -5,7 +5,7 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.activity.notifications.records.Notification;
-import com.tecknobit.githubmanager.activity.notifications.records.Subscription;
+import com.tecknobit.githubmanager.activity.notifications.records.ThreadSubscription;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,11 +35,6 @@ public class GitHubNotificationsManager extends GitHubManager {
      * {@code NOTIFICATIONS_THREADS_PATH} constant for {@code "notifications/threads/"} path
      **/
     public static final String NOTIFICATIONS_THREADS_PATH = NOTIFICATIONS_PATH + "/threads/";
-
-    /**
-     * {@code SUBSCRIPTION_PATH} constant for {@code "/subscription"} path
-     **/
-    public static final String SUBSCRIPTION_PATH = "/subscription";
 
     /**
      * Constructor to init a {@link GitHubNotificationsManager}
@@ -492,7 +487,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * they've replied to the thread, were @mentioned, or manually subscribe to a thread
      *
      * @param thread: thread from fetch the subscription
-     * @return subscription as {@link Subscription} custom object
+     * @return subscription as {@link ThreadSubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -510,7 +505,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
-    public Subscription getAuthenticatedUserThreadSubscription(Notification thread) throws IOException {
+    public ThreadSubscription getAuthenticatedUserThreadSubscription(Notification thread) throws IOException {
         return getAuthenticatedUserThreadSubscription(thread.getId(), LIBRARY_OBJECT);
     }
 
@@ -549,7 +544,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * they've replied to the thread, were @mentioned, or manually subscribe to a thread
      *
      * @param threadId: the unique identifier of the notification thread
-     * @return subscription as {@link Subscription} custom object
+     * @return subscription as {@link ThreadSubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -566,7 +561,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Get a thread subscription for the authenticated user</a>
      **/
     @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
-    public Subscription getAuthenticatedUserThreadSubscription(long threadId) throws IOException {
+    public ThreadSubscription getAuthenticatedUserThreadSubscription(long threadId) throws IOException {
         return getAuthenticatedUserThreadSubscription(threadId, LIBRARY_OBJECT);
     }
 
@@ -595,7 +590,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
     public <T> T getAuthenticatedUserThreadSubscription(long threadId, ReturnFormat format) throws IOException {
-        return returnSubscription(sendGetRequest(NOTIFICATIONS_THREADS_PATH + threadId + SUBSCRIPTION_PATH),
+        return returnThreadSubscription(sendGetRequest(NOTIFICATIONS_THREADS_PATH + threadId + SUBSCRIPTION_PATH),
                 format);
     }
 
@@ -609,7 +604,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param thread:  thread to set the subscription
      * @param ignored: whether to block all notifications from a thread
-     * @return subscription as {@link Subscription} custom object
+     * @return subscription as {@link ThreadSubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -627,7 +622,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
-    public Subscription setThreadSubscription(Notification thread, boolean ignored) throws IOException {
+    public ThreadSubscription setThreadSubscription(Notification thread, boolean ignored) throws IOException {
         return setThreadSubscription(thread.getId(), ignored, LIBRARY_OBJECT);
     }
 
@@ -674,7 +669,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param threadId: the unique identifier of the notification thread
      * @param ignored:  whether to block all notifications from a thread
-     * @return subscription as {@link Subscription} custom object
+     * @return subscription as {@link ThreadSubscription} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -691,7 +686,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Set a thread subscription</a>
      **/
     @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
-    public Subscription setThreadSubscription(long threadId, boolean ignored) throws IOException {
+    public ThreadSubscription setThreadSubscription(long threadId, boolean ignored) throws IOException {
         return setThreadSubscription(threadId, ignored, LIBRARY_OBJECT);
     }
 
@@ -726,24 +721,24 @@ public class GitHubNotificationsManager extends GitHubManager {
     public <T> T setThreadSubscription(long threadId, boolean ignored, ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("ignored", ignored);
-        return returnSubscription(sendPutRequest(NOTIFICATIONS_THREADS_PATH + threadId + SUBSCRIPTION_PATH,
+        return returnThreadSubscription(sendPutRequest(NOTIFICATIONS_THREADS_PATH + threadId + SUBSCRIPTION_PATH,
                 payload), format);
     }
 
     /**
-     * Method to create a subscription object
+     * Method to create a thread subscription object
      *
      * @param subscriptionResponse: obtained from GitHub's response
      * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return subscription as {@code "format"} defines
+     * @return thread subscription as {@code "format"} defines
      **/
     @Returner
-    private <T> T returnSubscription(String subscriptionResponse, ReturnFormat format) {
+    private <T> T returnThreadSubscription(String subscriptionResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
                 return (T) new JSONObject(subscriptionResponse);
             case LIBRARY_OBJECT:
-                return (T) new Subscription(new JSONObject(subscriptionResponse));
+                return (T) new ThreadSubscription(new JSONObject(subscriptionResponse));
             default:
                 return (T) subscriptionResponse;
         }
@@ -1130,7 +1125,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1160,7 +1155,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1190,7 +1185,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1220,7 +1215,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1252,7 +1247,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1286,7 +1281,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1322,7 +1317,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for
@@ -1355,7 +1350,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     }
 
     /**
-     * Method to arks all notifications in a repository as "read" for the current user.
+     * Method to mark all notifications in a repository as "read" for the current user.
      * If the number of notifications is too large to complete in one request, you will receive a 202 Accepted status
      * and GitHub will run an asynchronous process to mark notifications as "read."
      * To check whether any "unread" notifications remain, you can use the List repository notifications for

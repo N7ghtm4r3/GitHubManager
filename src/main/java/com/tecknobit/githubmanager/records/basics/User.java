@@ -1,7 +1,12 @@
 package com.tecknobit.githubmanager.records.basics;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.GitHubManager;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * The {@code User} class is useful to format a GitHub's user
@@ -444,6 +449,29 @@ public class User {
     @Override
     public String toString() {
         return new JSONObject(this).toString();
+    }
+
+    /**
+     * Method to create a users list
+     *
+     * @param usersResponse: obtained from GitHub's response
+     * @param format:        return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @return users list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnUsersList(String usersResponse, GitHubManager.ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(usersResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<User> users = new ArrayList<>();
+                JSONArray jUsers = new JSONArray(usersResponse);
+                for (int j = 0; j < jUsers.length(); j++)
+                    users.add(new User(jUsers.getJSONObject(j)));
+                return (T) users;
+            default:
+                return (T) usersResponse;
+        }
     }
 
 }

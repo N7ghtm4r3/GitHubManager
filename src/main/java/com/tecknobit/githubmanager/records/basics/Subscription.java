@@ -1,6 +1,5 @@
-package com.tecknobit.githubmanager.activity.notifications.records;
+package com.tecknobit.githubmanager.records.basics;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
@@ -19,6 +18,14 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  *         <a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
  *             Set a thread subscription</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
+ *             Get a repository subscription</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+ *             Set a repository subscription</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/
@@ -27,27 +34,22 @@ public class Subscription extends GitHubResponse {
     /**
      * {@code subscribed} whether is subscribed
      **/
-    private final boolean subscribed;
+    protected final boolean subscribed;
 
     /**
      * {@code ignored} whether is to ignore
      **/
-    private final boolean ignored;
+    protected final boolean ignored;
 
     /**
      * {@code createdAt} created at value
      **/
-    private final String createdAt;
+    protected final String createdAt;
 
     /**
      * {@code url} value
      **/
-    private final String url;
-
-    /**
-     * {@code threadUrl} thread url value
-     **/
-    private final String threadUrl;
+    protected final String url;
 
     /**
      * Constructor to init a {@link Subscription}
@@ -56,15 +58,13 @@ public class Subscription extends GitHubResponse {
      * @param ignored:    whether is to ignore
      * @param createdAt:  created at value
      * @param url:        url value
-     * @param threadUrl:  thread url value
      **/
-    public Subscription(boolean subscribed, boolean ignored, String createdAt, String url, String threadUrl) {
+    public Subscription(boolean subscribed, boolean ignored, String createdAt, String url) {
         super(null);
         this.subscribed = subscribed;
         this.ignored = ignored;
         this.createdAt = createdAt;
         this.url = url;
-        this.threadUrl = threadUrl;
     }
 
     /**
@@ -78,7 +78,6 @@ public class Subscription extends GitHubResponse {
         ignored = hResponse.getBoolean("ignored");
         createdAt = hResponse.getString("created_at");
         url = hResponse.getString("url");
-        threadUrl = hResponse.getString("thread_url");
     }
 
     /**
@@ -129,16 +128,6 @@ public class Subscription extends GitHubResponse {
      **/
     public String getUrl() {
         return url;
-    }
-
-    /**
-     * Method to get {@link #threadUrl} instance <br>
-     * Any params required
-     *
-     * @return {@link #threadUrl} instance as {@link String}
-     **/
-    public String getThreadUrl() {
-        return threadUrl;
     }
 
 }

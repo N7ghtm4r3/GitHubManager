@@ -6,7 +6,7 @@ import com.tecknobit.githubmanager.records.basics.User;
 import org.json.JSONObject;
 
 /**
- * The {@code CompletedRepository} class is useful to format a GitHub's repository
+ * The {@code Repository} class is useful to format a GitHub's repository
  *
  * @author N7ghtm4r3 - Tecknobit
  * @apiNote see the official documentation at:

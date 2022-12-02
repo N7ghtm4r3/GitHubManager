@@ -72,6 +72,16 @@ public class GitHubManager {
     public static final String RUNS_PATH = "/runs";
 
     /**
+     * {@code USERS_PATH} constant for {@code "users/"} path
+     **/
+    public static final String USERS_PATH = "users/";
+
+    /**
+     * {@code SUBSCRIPTION_PATH} constant for {@code "/subscription"} path
+     **/
+    public static final String SUBSCRIPTION_PATH = "/subscription";
+
+    /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
      * re-insert credentials
      **/
@@ -259,7 +269,7 @@ public class GitHubManager {
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequest(String endpoint, String method) throws IOException {
-        System.out.println(endpoint);
+        System.out.println(BASE_ENDPOINT + endpoint);
         apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
         return apiRequest.getResponse();
     }
@@ -349,6 +359,7 @@ public class GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequestWithBody(String endpoint, String method, Params bodyPayload) throws IOException {
+        // TODO: 02/12/2022 CHECK TO REMOVE CHECK ON NULL
         if (bodyPayload == null)
             bodyPayload = new Params();
         System.out.println(endpoint);
@@ -558,12 +569,30 @@ public class GitHubManager {
     }
 
     /**
+     * {@code Directions} is a list for the directions available
+     **/
+    public enum Directions {
+
+        /**
+         * {@code "asc"} direction
+         **/
+        asc,
+
+        /**
+         * {@code "desc"} direction
+         **/
+        desc
+
+    }
+
+    /**
      * The {@code Params} class is useful to assemble params values for the request
      *
      * @implNote this class can be used to assemble body payload or query request params
      * @implSpec look this library <a href="https://github.com/N7ghtm4r3/APIManager">here</a>
      * @see com.tecknobit.apimanager.apis.APIRequest.Params
      **/
-    public static class Params extends APIRequest.Params {}
+    public static class Params extends APIRequest.Params {
+    }
 
 }

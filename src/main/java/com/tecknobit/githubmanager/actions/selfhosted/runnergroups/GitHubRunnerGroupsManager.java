@@ -10,8 +10,8 @@ import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.Runne
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroupsList;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.organization.OrganizationsList;
+import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
-import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.CompletedRepository;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
@@ -4000,7 +4000,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, long runnerGroupId, OrganizationRepositoriesList repositoriesIds) {
         ArrayList<Long> ids = new ArrayList<>();
-        for (CompletedRepository repository : repositoriesIds.getRepositories())
+        for (CompleteRepository repository : repositoriesIds.getRepositories())
             ids.add(repository.getId());
         return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId + REPOSITORIES_PATH,
                 "selected_repository_ids", ids.toArray(new Long[0]));

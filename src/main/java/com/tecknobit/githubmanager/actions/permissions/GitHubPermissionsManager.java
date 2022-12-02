@@ -12,8 +12,8 @@ import com.tecknobit.githubmanager.actions.permissions.records.actions.Organizat
 import com.tecknobit.githubmanager.actions.permissions.records.actions.RepositoryActionsPermissions;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.organization.OrganizationsList;
+import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
-import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.CompletedRepository;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
@@ -1420,8 +1420,8 @@ public class GitHubPermissionsManager extends GitHubManager {
     @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(String org, OrganizationRepositoriesList selectedRepositories) {
         ArrayList<Long> ids = new ArrayList<>();
-        for (CompletedRepository completedRepository : selectedRepositories.getRepositories())
-            ids.add(completedRepository.getId());
+        for (CompleteRepository completeRepository : selectedRepositories.getRepositories())
+            ids.add(completeRepository.getId());
         return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", ids.toArray(new Long[0]));
     }
@@ -1483,7 +1483,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepository(Organization org, CompletedRepository repositoryToEnable) {
+    public boolean enableSelectedOrganizationRepository(Organization org, CompleteRepository repositoryToEnable) {
         return enableSelectedOrganizationRepository(org.getLogin(), repositoryToEnable.getId());
     }
 
@@ -1503,7 +1503,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepository(String org, CompletedRepository repositoryToEnable) {
+    public boolean enableSelectedOrganizationRepository(String org, CompleteRepository repositoryToEnable) {
         return enableSelectedOrganizationRepository(org, repositoryToEnable.getId());
     }
 
@@ -1572,7 +1572,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
-    public boolean disableSelectedOrganizationRepositories(Organization org, CompletedRepository repositoryToDisable) {
+    public boolean disableSelectedOrganizationRepositories(Organization org, CompleteRepository repositoryToDisable) {
         return disableSelectedOrganizationRepositories(org.getLogin(), repositoryToDisable.getId());
     }
 
@@ -1592,7 +1592,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
-    public boolean disableSelectedOrganizationRepositories(String org, CompletedRepository repositoryToDisable) {
+    public boolean disableSelectedOrganizationRepositories(String org, CompleteRepository repositoryToDisable) {
         return disableSelectedOrganizationRepositories(org, repositoryToDisable.getId());
     }
 

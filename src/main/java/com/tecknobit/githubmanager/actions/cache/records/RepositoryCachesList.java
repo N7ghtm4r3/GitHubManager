@@ -54,23 +54,6 @@ public class RepositoryCachesList extends GitHubList {
     }
 
     /**
-     * {@code Directions} is a list for the directions available
-     **/
-    public enum Directions {
-
-        /**
-         * {@code ASC_DIRECTION} is the constant for asc direction
-         **/
-        asc,
-
-        /**
-         * {@code DESC_DIRECTION} is the constant for desc direction
-         **/
-        desc
-
-    }
-
-    /**
      * {@code actionCaches} list of caches
      **/
     private final ArrayList<ActionCache> actionCaches;
