@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.actions.artifacts;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.artifacts.records.Artifact;
@@ -14,6 +15,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.DELETE;
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.apimanager.apis.APIRequest.downloadFile;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
@@ -125,8 +128,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public ArtifactsList getArtifactsList(Repository repository) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(), ARTIFACTS_PATH),
                 LIBRARY_OBJECT);
@@ -157,7 +161,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List artifacts for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public <T> T getArtifactsList(Repository repository, ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(), ARTIFACTS_PATH),
                 format);
@@ -187,7 +191,8 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public ArtifactsList getArtifactsList(String owner, String repo) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, ARTIFACTS_PATH), LIBRARY_OBJECT);
     }
@@ -217,7 +222,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public <T> T getArtifactsList(String owner, String repo, ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, ARTIFACTS_PATH), format);
     }
@@ -257,8 +262,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public ArtifactsList getArtifactsList(Repository repository, Params queryParams) throws IOException {
         return getArtifactsList(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
@@ -300,7 +306,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List artifacts for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public <T> T getArtifactsList(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
         return getArtifactsList(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
@@ -341,7 +347,8 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public ArtifactsList getArtifactsList(String owner, String repo, Params queryParams) throws IOException {
         return getArtifactsList(owner, repo, queryParams, LIBRARY_OBJECT);
     }
@@ -383,7 +390,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
     public <T> T getArtifactsList(String owner, String repo, Params queryParams, ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, ARTIFACTS_PATH + queryParams.createQueryString()),
                 format);
@@ -413,8 +420,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
      * Get an artifact</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public Artifact getArtifact(Repository repository, long artifactId) throws IOException {
         return getArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId, LIBRARY_OBJECT);
     }
@@ -445,7 +453,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Get an artifact</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public <T> T getArtifact(Repository repository, long artifactId, ReturnFormat format) throws IOException {
         return getArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId, format);
     }
@@ -475,7 +483,8 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
      * Get an artifact</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public Artifact getArtifact(String owner, String repo, long artifactId) throws IOException {
         return getArtifact(owner, repo, artifactId, LIBRARY_OBJECT);
     }
@@ -507,7 +516,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * Get an artifact</a>
      **/
     @Returner
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public <T> T getArtifact(String owner, String repo, long artifactId, ReturnFormat format) throws IOException {
         String artifactResponse = sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId);
         switch (format) {
@@ -531,8 +540,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public boolean deleteArtifact(Repository repository, Artifact artifactToDelete) {
         return deleteArtifact(repository.getOwner().getLogin(), repository.getName(), artifactToDelete.getId());
     }
@@ -548,8 +558,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public boolean deleteArtifact(Repository repository, long artifactId) {
         return deleteArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId);
     }
@@ -566,8 +577,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public boolean deleteArtifact(String owner, String repo, Artifact artifactToDelete) {
         return deleteArtifact(owner, repo, artifactToDelete.getId());
     }
@@ -584,10 +596,10 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
     public boolean deleteArtifact(String owner, String repo, long artifactId) {
         try {
-            sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId);
+            sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_PATH + ARTIFACTS_PATH + artifactId);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;
@@ -631,8 +643,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public File downloadArtifact(Repository repository, Artifact artifact, String pathName, boolean save) throws IOException {
         return downloadFile(downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifact.getId()),
                 pathName, save);
@@ -670,8 +683,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public File downloadArtifact(Repository repository, long artifactId, String pathName, boolean save) throws IOException {
         return downloadFile(downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId), pathName,
                 save);
@@ -710,8 +724,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public File downloadArtifact(String owner, String repo, Artifact artifact, String pathName,
                                  boolean save) throws IOException {
         return downloadFile(downloadArtifact(owner, repo, artifact.getId()), pathName, save);
@@ -750,8 +765,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public File downloadArtifact(String owner, String repo, long artifactId, String pathName, boolean save) throws IOException {
         return downloadFile(downloadArtifact(owner, repo, artifactId), pathName, save);
     }
@@ -785,8 +801,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public String downloadArtifact(Repository repository, Artifact artifact) throws IOException {
         return downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifact.getId());
     }
@@ -821,8 +838,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public String downloadArtifact(String owner, String repo, Artifact artifact) throws IOException {
         sendGetRequest(owner, repo, ARTIFACTS_PATH + artifact.getId() + "/zip");
         return new JsonHelper((JSONObject) apiRequest.getJSONResponse()).getString("Location");
@@ -857,8 +875,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public String downloadArtifact(Repository repository, long artifactId) throws IOException {
         return downloadArtifact(repository.getOwner().getLogin(), repository.getName(), artifactId);
     }
@@ -894,7 +913,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
     public String downloadArtifact(String owner, String repo, long artifactId) throws IOException {
         sendGetRequest(owner, repo, ARTIFACTS_PATH + artifactId + "/zip");
         return new JsonHelper((JSONObject) apiRequest.getJSONResponse()).getString("Location");
@@ -923,8 +942,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
                 RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH), LIBRARY_OBJECT);
@@ -955,7 +975,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run,
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
@@ -985,8 +1005,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(Repository repository, long runId) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
                 RUNS_PATH + runId + QUERY_ARTIFACTS_PATH), LIBRARY_OBJECT);
@@ -1017,7 +1038,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(Repository repository, long runId, ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
                 RUNS_PATH + runId + QUERY_ARTIFACTS_PATH), format);
@@ -1047,8 +1068,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH),
                 LIBRARY_OBJECT);
@@ -1080,7 +1102,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run,
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH),
@@ -1111,7 +1133,8 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, long runId) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH),
                 LIBRARY_OBJECT);
@@ -1142,7 +1165,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, long runId, ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH), format);
     }
@@ -1179,8 +1202,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run,
                                                      Params queryParams) throws IOException {
         return getWorkflowRunArtifactsList(repository.getOwner().getLogin(), repository.getName(), run.getId(),
@@ -1221,7 +1245,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(Repository repository, ArtifactWorkflowRun run, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
@@ -1260,8 +1284,9 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(Repository repository, long runId,
                                                      Params queryParams) throws IOException {
         return getWorkflowRunArtifactsList(repository.getOwner().getLogin(), repository.getName(), runId, queryParams,
@@ -1302,7 +1327,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(Repository repository, long runId, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(repository.getOwner().getLogin(), repository.getName(),
@@ -1342,7 +1367,8 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run,
                                                      Params queryParams) throws IOException {
         return getWorkflowRunArtifactsList(owner, repo, run.getId(), queryParams, LIBRARY_OBJECT);
@@ -1382,7 +1408,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, ArtifactWorkflowRun run, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + run.getId() + QUERY_ARTIFACTS_PATH +
@@ -1422,7 +1448,8 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public ArtifactsList getWorkflowRunArtifactsList(String owner, String repo, long runId,
                                                      Params queryParams) throws IOException {
         return getWorkflowRunArtifactsList(owner, repo, runId, queryParams, LIBRARY_OBJECT);
@@ -1462,7 +1489,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
     public <T> T getWorkflowRunArtifactsList(String owner, String repo, long runId, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnArtifactsList(sendGetRequest(owner, repo, RUNS_PATH + runId + QUERY_ARTIFACTS_PATH +

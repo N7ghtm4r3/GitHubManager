@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.actions.cache;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.cache.records.CacheUsage;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoriesCacheUsagesList;
@@ -15,6 +16,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.DELETE;
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
@@ -124,10 +127,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
      * Get GitHub Actions cache usage for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/cache/usage")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/cache/usage")
     public CacheUsage getEnterpriseCacheUsage(String enterprise) throws IOException {
-        return returnCacheUsage(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_CACHE_USAGE_PATH),
-                LIBRARY_OBJECT);
+        return getEnterpriseCacheUsage(enterprise, LIBRARY_OBJECT);
     }
 
     /**
@@ -153,7 +156,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
      * Get GitHub Actions cache usage for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/cache/usage")
     public <T> T getEnterpriseCacheUsage(String enterprise, ReturnFormat format) throws IOException {
         return returnCacheUsage(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_CACHE_USAGE_PATH), format);
     }
@@ -182,11 +185,11 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage")
     public CacheUsage getOrganizationCacheUsage(Organization org) throws IOException {
-        return returnCacheUsage(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_CACHE_USAGE_PATH),
-                LIBRARY_OBJECT);
+        return getOrganizationCacheUsage(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
@@ -215,7 +218,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Get GitHub Actions cache usage for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage")
     public <T> T getOrganizationCacheUsage(Organization org, ReturnFormat format) throws IOException {
         return returnCacheUsage(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_CACHE_USAGE_PATH), format);
     }
@@ -245,10 +248,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage")
     public CacheUsage getOrganizationCacheUsage(String org) throws IOException {
-        return returnCacheUsage(sendGetRequest(ORGS_PATH + org + ACTIONS_CACHE_USAGE_PATH),
-                LIBRARY_OBJECT);
+        return getOrganizationCacheUsage(org, LIBRARY_OBJECT);
     }
 
     /**
@@ -276,7 +279,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage")
     public <T> T getOrganizationCacheUsage(String org, ReturnFormat format) throws IOException {
         return returnCacheUsage(sendGetRequest(ORGS_PATH + org + ACTIONS_CACHE_USAGE_PATH), format);
     }
@@ -324,11 +327,11 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public RepositoriesCacheUsagesList getRepositoriesCacheUsagesList(Organization org) throws IOException {
-        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), LIBRARY_OBJECT);
+        return getRepositoriesCacheUsagesList(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
@@ -357,10 +360,9 @@ public class GitHubCacheManager extends GitHubManager {
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public <T> T getRepositoriesCacheUsagesList(Organization org, ReturnFormat format) throws IOException {
-        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), format);
+        return getRepositoriesCacheUsagesList(org.getLogin(), format);
     }
 
     /**
@@ -387,10 +389,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public RepositoriesCacheUsagesList getRepositoriesCacheUsagesList(String org) throws IOException {
-        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org +
-                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), LIBRARY_OBJECT);
+        return getRepositoriesCacheUsagesList(org, LIBRARY_OBJECT);
     }
 
     /**
@@ -418,7 +420,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public <T> T getRepositoriesCacheUsagesList(String org, ReturnFormat format) throws IOException {
         return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH), format);
@@ -457,11 +459,11 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public RepositoriesCacheUsagesList getRepositoriesCacheUsagesList(Organization org, Params queryParams) throws IOException {
-        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getRepositoriesCacheUsagesList(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -499,10 +501,9 @@ public class GitHubCacheManager extends GitHubManager {
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public <T> T getRepositoriesCacheUsagesList(Organization org, Params queryParams, ReturnFormat format) throws IOException {
-        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH + queryParams.createQueryString()), format);
+        return getRepositoriesCacheUsagesList(org.getLogin(), queryParams, format);
     }
 
     /**
@@ -538,10 +539,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public RepositoriesCacheUsagesList getRepositoriesCacheUsagesList(String org, Params queryParams) throws IOException {
-        return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org +
-                ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getRepositoriesCacheUsagesList(org, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -578,7 +579,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/cache/usage-by-repository")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
     public <T> T getRepositoriesCacheUsagesList(String org, Params queryParams, ReturnFormat format) throws IOException {
         return returnRepositoriesCacheUsagesList(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_CACHE_USAGE_BY_REPOSITORY_PATH + queryParams.createQueryString()), format);
@@ -628,8 +629,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/cache/usage")
     public RepositoryCacheUsage getRepositoryCacheUsage(Repository repository) throws IOException {
         return getRepositoryCacheUsage(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -660,7 +662,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Get GitHub Actions cache usage for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/cache/usage")
     public <T> T getRepositoryCacheUsage(Repository repository, ReturnFormat format) throws IOException {
         return getRepositoryCacheUsage(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -691,7 +693,8 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/cache/usage")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/cache/usage")
     public RepositoryCacheUsage getRepositoryCacheUsage(String owner, String repo) throws IOException {
         return getRepositoryCacheUsage(owner, repo, LIBRARY_OBJECT);
     }
@@ -724,7 +727,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Get GitHub Actions cache usage for a repository</a>
      **/
     @Returner
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/cache/usage")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/cache/usage")
     public <T> T getRepositoryCacheUsage(String owner, String repo, ReturnFormat format) throws IOException {
         String repositoryCacheUsageResponse = sendGetRequest(REPOS_PATH + owner + "/" + repo +
                 ACTIONS_CACHE_USAGE_PATH);
@@ -761,11 +764,11 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList getRepositoryCachesList(Repository repository) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getOwner().getLogin() + ACTIONS_CACHES_PATH), LIBRARY_OBJECT);
+        return getRepositoryCachesList(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
     /**
@@ -793,10 +796,9 @@ public class GitHubCacheManager extends GitHubManager {
      * List GitHub Actions caches for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T getRepositoryCachesList(Repository repository, ReturnFormat format) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_CACHES_PATH), format);
+        return getRepositoryCachesList(repository.getOwner().getLogin(), repository.getName(), format);
     }
 
     /**
@@ -823,10 +825,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList getRepositoryCachesList(String owner, String repo) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH),
-                LIBRARY_OBJECT);
+        return getRepositoryCachesList(owner, repo, LIBRARY_OBJECT);
     }
 
     /**
@@ -854,7 +856,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T getRepositoryCachesList(String owner, String repo, ReturnFormat format) throws IOException {
         return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH),
                 format);
@@ -911,11 +913,12 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList getRepositoryCachesList(Repository repository, Params queryParams) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_CACHES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getRepositoryCachesList(repository.getOwner().getLogin(), repository.getName(), queryParams,
+                LIBRARY_OBJECT);
     }
 
     /**
@@ -971,10 +974,9 @@ public class GitHubCacheManager extends GitHubManager {
      * List GitHub Actions caches for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T getRepositoryCachesList(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getOwner() + ACTIONS_CACHES_PATH + queryParams.createQueryString()), format);
+        return getRepositoryCachesList(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
 
     /**
@@ -1029,10 +1031,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList getRepositoryCachesList(String owner, String repo, Params queryParams) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH +
-                queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getRepositoryCachesList(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1088,7 +1090,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T getRepositoryCachesList(String owner, String repo, Params queryParams,
                                          ReturnFormat format) throws IOException {
         return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH +
@@ -1121,11 +1123,11 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList deleteRepositoryCache(Repository repository, String key) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_CACHES_PATH + "?key=" + key), LIBRARY_OBJECT);
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), key, LIBRARY_OBJECT);
     }
 
     /**
@@ -1155,10 +1157,9 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T deleteRepositoryCache(Repository repository, String key, ReturnFormat format) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_CACHES_PATH + "?key=" + key), format);
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), key, format);
     }
 
     /**
@@ -1188,11 +1189,11 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList deleteRepositoryCache(String owner, String repo, String key) throws IOException {
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH +
-                "?key=" + key), LIBRARY_OBJECT);
+        return deleteRepositoryCache(owner, repo, key, LIBRARY_OBJECT);
     }
 
     /**
@@ -1223,7 +1224,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T deleteRepositoryCache(String owner, String repo, String key, ReturnFormat format) throws IOException {
         return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH +
                 "?key=" + key), format);
@@ -1255,8 +1256,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList deleteRepositoryCacheByKey(Repository repository, ActionCache cacheToDelete) throws IOException {
         return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), cacheToDelete.getKey(),
                 cacheToDelete.getRef(), LIBRARY_OBJECT);
@@ -1290,7 +1292,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T deleteRepositoryCacheByKey(Repository repository, ActionCache cacheToDelete,
                                             ReturnFormat format) throws IOException {
         return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), cacheToDelete.getKey(),
@@ -1324,8 +1326,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList deleteRepositoryCacheByKey(String owner, String repo,
                                                            ActionCache cacheToDelete) throws IOException {
         return deleteRepositoryCache(owner, repo, cacheToDelete.getKey(), cacheToDelete.getRef(), LIBRARY_OBJECT);
@@ -1360,7 +1363,7 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T deleteRepositoryCacheByKey(String owner, String repo, ActionCache cacheToDelete,
                                             ReturnFormat format) throws IOException {
         return deleteRepositoryCache(owner, repo, cacheToDelete.getKey(), cacheToDelete.getRef(), format);
@@ -1394,8 +1397,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList deleteRepositoryCache(Repository repository, String key, String ref) throws IOException {
         return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), key, ref, LIBRARY_OBJECT);
     }
@@ -1430,13 +1434,9 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T deleteRepositoryCache(Repository repository, String key, String ref, ReturnFormat format) throws IOException {
-        Params params = new Params();
-        params.addParam("key", key);
-        params.addParam("ref", ref);
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_CACHES_PATH + params.createQueryString()), format);
+        return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), key, ref, format);
     }
 
     /**
@@ -1468,8 +1468,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public RepositoryCachesList deleteRepositoryCache(String owner, String repo, String key,
                                                       String ref) throws IOException {
         return deleteRepositoryCache(owner, repo, key, ref, LIBRARY_OBJECT);
@@ -1506,13 +1507,13 @@ public class GitHubCacheManager extends GitHubManager {
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches")
     public <T> T deleteRepositoryCache(String owner, String repo, String key, String ref,
                                        ReturnFormat format) throws IOException {
         Params params = new Params();
         params.addParam("key", key);
         params.addParam("ref", ref);
-        return returnRepositoryCachesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH +
+        return returnRepositoryCachesList(sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH +
                 params.createQueryString()), format);
     }
 
@@ -1523,7 +1524,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @param format:                   return type formatter -> {@link ReturnFormat}
      * @return repository caches list as {@code "format"} defines
      **/
-    @RequestPath
+    @Returner
     private <T> T returnRepositoryCachesList(String repositoryCachesResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
@@ -1548,8 +1549,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCacheById(Repository repository, ActionCache actionCacheToDelete) {
         return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), actionCacheToDelete.getId());
     }
@@ -1567,8 +1569,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCacheById(Repository repository, long cacheId) {
         return deleteRepositoryCache(repository.getOwner().getLogin(), repository.getName(), cacheId);
     }
@@ -1587,8 +1590,9 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCacheById(String owner, String repo, ActionCache actionCacheToDelete) {
         return deleteRepositoryCache(owner, repo, actionCacheToDelete.getId());
     }
@@ -1607,10 +1611,10 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCache(String owner, String repo, long cacheId) {
         try {
-            sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH + "/" + cacheId);
+            sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_CACHES_PATH + "/" + cacheId);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;

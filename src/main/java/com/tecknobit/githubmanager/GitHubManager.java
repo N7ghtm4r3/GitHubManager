@@ -13,7 +13,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Properties;
 
-import static com.tecknobit.apimanager.apis.APIRequest.*;
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod;
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 
 /**
  * The {@code GitHubManager} class is useful to manage all GitHubManager's endpoints
@@ -225,7 +226,7 @@ public class GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendGetRequest(String endpoint) throws IOException {
-        return sendRequest(endpoint, GET_METHOD);
+        return sendRequest(endpoint, GET);
     }
 
     /**
@@ -247,7 +248,7 @@ public class GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendDeleteRequest(String endpoint) throws IOException {
-        return sendRequest(endpoint, DELETE_METHOD);
+        return sendRequest(endpoint, DELETE);
     }
 
     /**
@@ -268,7 +269,7 @@ public class GitHubManager {
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
-    private String sendRequest(String endpoint, String method) throws IOException {
+    private String sendRequest(String endpoint, RequestMethod method) throws IOException {
         System.out.println(BASE_ENDPOINT + endpoint);
         apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
         return apiRequest.getResponse();
@@ -293,7 +294,7 @@ public class GitHubManager {
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendPostRequest(String endpoint, Params bodyParams) throws IOException {
-        return sendRequestWithBody(endpoint, POST_METHOD, bodyParams);
+        return sendRequestWithBody(endpoint, POST, bodyParams);
     }
 
     /**
@@ -315,7 +316,7 @@ public class GitHubManager {
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendPutRequest(String endpoint, Params bodyParams) throws IOException {
-        return sendRequestWithBody(endpoint, PUT_METHOD, bodyParams);
+        return sendRequestWithBody(endpoint, PUT, bodyParams);
     }
 
     /**
@@ -337,7 +338,7 @@ public class GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     public String sendPatchRequest(String endpoint, Params bodyParams) throws IOException {
-        return sendRequestWithBody(endpoint, PATCH_METHOD, bodyParams);
+        return sendRequestWithBody(endpoint, PATCH, bodyParams);
     }
 
     /**
@@ -358,7 +359,7 @@ public class GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
-    private String sendRequestWithBody(String endpoint, String method, Params bodyPayload) throws IOException {
+    private String sendRequestWithBody(String endpoint, RequestMethod method, Params bodyPayload) throws IOException {
         // TODO: 02/12/2022 CHECK TO REMOVE CHECK ON NULL
         if (bodyPayload == null)
             bodyPayload = new Params();
