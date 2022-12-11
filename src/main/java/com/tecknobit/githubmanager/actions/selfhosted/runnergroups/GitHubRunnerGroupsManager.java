@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.actions.selfhosted.runnergroups;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.selfhosted.records.Runner;
 import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
@@ -118,10 +120,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups")
     public RunnerGroupsList getEnterpriseRunnerGroupsList(String enterprise) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH),
-                LIBRARY_OBJECT);
+        return getEnterpriseRunnerGroupsList(enterprise, LIBRARY_OBJECT);
     }
 
     /**
@@ -147,7 +149,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups")
     public <T> T getEnterpriseRunnerGroupsList(String enterprise, ReturnFormat format) throws IOException {
         return returnRunnerGroupsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH),
                 format);
@@ -187,10 +189,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups")
     public RunnerGroupsList getEnterpriseRunnerGroupsList(String enterprise, Params queryParams) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
-                queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getEnterpriseRunnerGroupsList(enterprise, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -228,7 +230,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups")
     public <T> T getEnterpriseRunnerGroupsList(String enterprise, Params queryParams,
                                                ReturnFormat format) throws IOException {
         return returnRunnerGroupsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
@@ -258,7 +260,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runner-groups")
     public RunnerGroup createEnterpriseRunnerGroup(String enterprise, String name) throws IOException {
         return createEnterpriseRunnerGroup(enterprise, name, LIBRARY_OBJECT);
     }
@@ -287,7 +290,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runner-groups")
     public <T> T createEnterpriseRunnerGroup(String enterprise, String name, ReturnFormat format) throws IOException {
         Params bodyParams = new Params();
         bodyParams.addParam("name", name);
@@ -345,7 +348,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runner-groups")
     public RunnerGroup createEnterpriseRunnerGroup(String enterprise, String name,
                                                    Params runnerGroupDetails) throws IOException {
         return createEnterpriseRunnerGroup(enterprise, name, runnerGroupDetails, LIBRARY_OBJECT);
@@ -402,7 +406,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runner-groups")
     public <T> T createEnterpriseRunnerGroup(String enterprise, String name, Params runnerGroupDetails,
                                              ReturnFormat format) throws IOException {
         runnerGroupDetails.addParam("name", name);
@@ -433,10 +437,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-enterprise">
      * Get a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup getEnterpriseRunnerGroup(String enterprise, long runnerGroupId) throws IOException {
-        return returnRunnerGroup(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
-                "/" + runnerGroupId), LIBRARY_OBJECT);
+        return getEnterpriseRunnerGroup(enterprise, runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -463,7 +467,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-enterprise">
      * Get a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public <T> T getEnterpriseRunnerGroup(String enterprise, long runnerGroupId, ReturnFormat format) throws IOException {
         return returnRunnerGroup(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
                 "/" + runnerGroupId), format);
@@ -522,12 +526,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup updateEnterpriseRunnerGroup(String enterprise, RunnerGroup runnerGroup,
                                                    Params runnerGroupDetails) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
-                "/" + runnerGroup.getId(), runnerGroupDetails), LIBRARY_OBJECT);
+        return updateEnterpriseRunnerGroup(enterprise, runnerGroup.getId(), runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -585,11 +589,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Update a self-hosted runner group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public <T> T updateEnterpriseRunnerGroup(String enterprise, RunnerGroup runnerGroup, Params runnerGroupDetails,
                                              ReturnFormat format) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
-                "/" + runnerGroup.getId(), runnerGroupDetails), format);
+        return updateEnterpriseRunnerGroup(enterprise, runnerGroup.getId(), runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -645,11 +648,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup updateEnterpriseRunnerGroup(String enterprise, long runnerGroupId,
                                                    Params runnerGroupDetails) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
-                "/" + runnerGroupId, runnerGroupDetails), LIBRARY_OBJECT);
+        return updateEnterpriseRunnerGroup(enterprise, runnerGroupId, runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -706,7 +708,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public <T> T updateEnterpriseRunnerGroup(String enterprise, long runnerGroupId, Params runnerGroupDetails,
                                              ReturnFormat format) throws IOException {
         return returnRunnerGroup(sendPatchRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH +
@@ -725,7 +727,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Delete a self-hosted runner group from an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public boolean deleteEnterpriseRunnerGroup(String enterprise, RunnerGroup runnerGroup) {
         return deleteEnterpriseRunnerGroup(enterprise, runnerGroup.getId());
     }
@@ -741,7 +743,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-enterprise">
      * Delete a self-hosted runner group from an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
     public boolean deleteEnterpriseRunnerGroup(String enterprise, long runnerGroupId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId);
@@ -779,11 +781,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public OrganizationsList getAuthorizedOrganizationsList(String enterprise, RunnerGroup runnerGroup) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + ORGANIZATIONS_PATH), LIBRARY_OBJECT);
+        return getAuthorizedOrganizationsList(enterprise, runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -811,11 +813,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public <T> T getAuthorizedOrganizationsList(String enterprise, RunnerGroup runnerGroup,
                                                 ReturnFormat format) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + ORGANIZATIONS_PATH), format);
+        return getAuthorizedOrganizationsList(enterprise, runnerGroup.getId(), format);
     }
 
     /**
@@ -841,10 +842,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public OrganizationsList getAuthorizedOrganizationsList(String enterprise, long runnerGroupId) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + ORGANIZATIONS_PATH), LIBRARY_OBJECT);
+        return getAuthorizedOrganizationsList(enterprise, runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -871,7 +872,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public <T> T getAuthorizedOrganizationsList(String enterprise, long runnerGroupId,
                                                 ReturnFormat format) throws IOException {
         return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
@@ -910,12 +911,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public OrganizationsList getAuthorizedOrganizationsList(String enterprise, RunnerGroup runnerGroup,
                                                             Params queryParams) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + ORGANIZATIONS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getAuthorizedOrganizationsList(enterprise, runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -952,11 +953,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public <T> T getAuthorizedOrganizationsList(String enterprise, RunnerGroup runnerGroup, Params queryParams,
                                                 ReturnFormat format) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + ORGANIZATIONS_PATH + queryParams.createQueryString()), format);
+        return getAuthorizedOrganizationsList(enterprise, runnerGroup.getId(), queryParams, format);
     }
 
     /**
@@ -991,11 +991,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public OrganizationsList getAuthorizedOrganizationsList(String enterprise, long runnerGroupId,
                                                             Params queryParams) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + ORGANIZATIONS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getAuthorizedOrganizationsList(enterprise, runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1031,7 +1031,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public <T> T getAuthorizedOrganizationsList(String enterprise, long runnerGroupId, Params queryParams,
                                                 ReturnFormat format) throws IOException {
         return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
@@ -1051,7 +1051,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, RunnerGroup runnerGroup, OrganizationsList organizationsList) {
         return authorizeOrganizationsList(enterprise, runnerGroup.getId(), organizationsList);
     }
@@ -1069,13 +1069,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, long runnerGroupId, OrganizationsList organizationsList) {
         ArrayList<Long> ids = new ArrayList<>();
         for (Organization organization : organizationsList.getOrganizations())
             ids.add(organization.getId());
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                ORGANIZATIONS_PATH, "selected_organization_ids", ids.toArray(new Long[0]));
+        return authorizeOrganizationsList(enterprise, runnerGroupId, ids.toArray(new Long[0]));
     }
 
     /**
@@ -1091,10 +1090,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, RunnerGroup runnerGroup, Collection<Long> organizationsIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                ORGANIZATIONS_PATH, "selected_organization_ids", organizationsIds.toArray(new Long[0]));
+        return authorizeOrganizationsList(enterprise, runnerGroup.getId(), organizationsIds.toArray(new Long[0]));
     }
 
     /**
@@ -1110,10 +1108,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, RunnerGroup runnerGroup, Long[] organizationsIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + ORGANIZATIONS_PATH, "selected_organization_ids", organizationsIds);
+        return authorizeOrganizationsList(enterprise, runnerGroup.getId(), organizationsIds);
     }
 
     /**
@@ -1128,10 +1125,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, long runnerGroupId, Collection<Long> organizationsIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                ORGANIZATIONS_PATH, "selected_organization_ids", organizationsIds.toArray(new Long[0]));
+        return authorizeOrganizationsList(enterprise, runnerGroupId, organizationsIds.toArray(new Long[0]));
     }
 
     /**
@@ -1146,7 +1142,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, long runnerGroupId, Long[] organizationsIds) {
         return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
                 ORGANIZATIONS_PATH, "selected_organization_ids", organizationsIds);
@@ -1166,7 +1162,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean authorizeOrganization(String enterprise, RunnerGroup runnerGroup, Organization org) {
         return authorizeOrganization(enterprise, runnerGroup.getId(), org.getId());
     }
@@ -1185,7 +1181,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean authorizeOrganization(String enterprise, RunnerGroup runnerGroup, long orgId) {
         return authorizeOrganization(enterprise, runnerGroup.getId(), orgId);
     }
@@ -1204,7 +1200,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean authorizeOrganization(String enterprise, long runnerGroupId, Organization org) {
         return authorizeOrganization(enterprise, runnerGroupId, org.getId());
     }
@@ -1222,7 +1218,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean authorizeOrganization(String enterprise, long runnerGroupId, long orgId) {
         try {
             sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
@@ -1252,7 +1248,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean removeAuthorizedOrganization(String enterprise, RunnerGroup runnerGroup, Organization org) {
         return authorizeOrganization(enterprise, runnerGroup.getId(), org.getId());
     }
@@ -1271,7 +1267,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean removeAuthorizedOrganization(String enterprise, RunnerGroup runnerGroup, long orgId) {
         return authorizeOrganization(enterprise, runnerGroup.getId(), orgId);
     }
@@ -1290,7 +1286,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean removeAuthorizedOrganization(String enterprise, long runnerGroupId, Organization org) {
         return authorizeOrganization(enterprise, runnerGroupId, org.getId());
     }
@@ -1308,7 +1304,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
     public boolean removeAuthorizedOrganization(String enterprise, long runnerGroupId, long orgId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
@@ -1347,11 +1343,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getEnterpriseRunnersGroupList(String enterprise, RunnerGroup runnerGroup) throws IOException {
-        return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroup.getId() + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getEnterpriseRunnersGroupList(enterprise, runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1379,11 +1375,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getEnterpriseRunnersGroupList(String enterprise, RunnerGroup runnerGroup,
                                                ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroup.getId() + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getEnterpriseRunnersGroupList(enterprise, runnerGroup.getId(), format);
     }
 
     /**
@@ -1409,10 +1404,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getEnterpriseRunnersGroupList(String enterprise, long runnerGroupId) throws IOException {
-        return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroupId + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getEnterpriseRunnersGroupList(enterprise, runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -1439,7 +1434,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getEnterpriseRunnersGroupList(String enterprise, long runnerGroupId,
                                                ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
@@ -1478,12 +1473,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getEnterpriseRunnersGroupList(String enterprise, RunnerGroup runnerGroup,
                                                      Params queryParams) throws IOException {
-        return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroup.getId() + RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getEnterpriseRunnersGroupList(enterprise, runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1520,11 +1515,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getEnterpriseRunnersGroupList(String enterprise, RunnerGroup runnerGroup, Params queryParams,
                                                ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroup.getId() + RUNNERS_PATH + queryParams.createQueryString()), format);
+        return getEnterpriseRunnersGroupList(enterprise, runnerGroup.getId(), queryParams, format);
     }
 
     /**
@@ -1559,11 +1553,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getEnterpriseRunnersGroupList(String enterprise, long runnerGroupId,
                                                      Params queryParams) throws IOException {
-        return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroupId + RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getEnterpriseRunnersGroupList(enterprise, runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1599,7 +1593,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getEnterpriseRunnersGroupList(String enterprise, long runnerGroupId, Params queryParams,
                                                ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/"
@@ -1619,7 +1613,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setEnterpriseRunnersList(String enterprise, RunnerGroup runnerGroup, RunnersList runners) {
         return setEnterpriseRunnersList(enterprise, runnerGroup.getId(), runners);
     }
@@ -1637,13 +1631,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setEnterpriseRunnersList(String enterprise, long runnerGroupId, RunnersList runners) {
         ArrayList<Long> ids = new ArrayList<>();
         for (Runner runner : runners.getRunners())
             ids.add(runner.getId());
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                RUNNERS_PATH, "runners", ids.toArray(new Long[0]));
+        return setEnterpriseRunnersList(enterprise, runnerGroupId, ids.toArray(new Long[0]));
     }
 
     /**
@@ -1659,10 +1652,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setEnterpriseRunnersList(String enterprise, RunnerGroup runnerGroup, Collection<Long> runnersIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                RUNNERS_PATH, "runners", runnersIds.toArray(new Long[0]));
+        return setEnterpriseRunnersList(enterprise, runnerGroup.getId(), runnersIds.toArray(new Long[0]));
     }
 
     /**
@@ -1678,10 +1670,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setEnterpriseRunnersList(String enterprise, RunnerGroup runnerGroup, Long[] runnersIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                RUNNERS_PATH, "runners", runnersIds);
+        return setEnterpriseRunnersList(enterprise, runnerGroup.getId(), runnersIds);
     }
 
     /**
@@ -1696,10 +1687,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setEnterpriseRunnersList(String enterprise, long runnerGroupId, Collection<Long> runnersIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                RUNNERS_PATH, "runners", runnersIds.toArray(new Long[0]));
+        return setEnterpriseRunnersList(enterprise, runnerGroupId, runnersIds.toArray(new Long[0]));
     }
 
     /**
@@ -1714,7 +1704,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setEnterpriseRunnersList(String enterprise, long runnerGroupId, Long[] runnersIds) {
         return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
                 RUNNERS_PATH, "runners", runnersIds);
@@ -1733,7 +1723,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addEnterpriseRunnerToGroup(String enterprise, RunnerGroup runnerGroup, Runner runner) {
         return addEnterpriseRunnerToGroup(enterprise, runnerGroup.getId(), runner.getId());
     }
@@ -1751,7 +1741,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addEnterpriseRunnerToGroup(String enterprise, long runnerGroupId, Runner runner) {
         return addEnterpriseRunnerToGroup(enterprise, runnerGroupId, runner.getId());
     }
@@ -1769,7 +1759,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addEnterpriseRunnerToGroup(String enterprise, RunnerGroup runnerGroup, long runnerId) {
         return addEnterpriseRunnerToGroup(enterprise, runnerGroup.getId(), runnerId);
     }
@@ -1786,7 +1776,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addEnterpriseRunnerToGroup(String enterprise, long runnerGroupId, long runnerId) {
         try {
             sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
@@ -1815,7 +1805,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeEnterpriseRunnerFromGroup(String enterprise, RunnerGroup runnerGroup, Runner runner) {
         return removeEnterpriseRunnerFromGroup(enterprise, runnerGroup.getId(), runner.getId());
     }
@@ -1833,7 +1823,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeEnterpriseRunnerFromGroup(String enterprise, long runnerGroupId, Runner runner) {
         return removeEnterpriseRunnerFromGroup(enterprise, runnerGroupId, runner.getId());
     }
@@ -1851,7 +1841,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeEnterpriseRunnerFromGroup(String enterprise, RunnerGroup runnerGroup, long runnerId) {
         return removeEnterpriseRunnerFromGroup(enterprise, runnerGroup.getId(), runnerId);
     }
@@ -1868,7 +1858,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeEnterpriseRunnerFromGroup(String enterprise, long runnerGroupId, long runnerId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
@@ -1908,11 +1898,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroupsList getOrganizationRunnerGroupsList(Organization org) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH),
-                LIBRARY_OBJECT);
+        return getOrganizationRunnerGroupsList(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1941,10 +1931,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runner groups for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public <T> T getOrganizationRunnerGroupsList(Organization org, ReturnFormat format) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH),
-                format);
+        return getOrganizationRunnerGroupsList(org.getLogin(), format);
     }
 
     /**
@@ -1971,10 +1960,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroupsList getOrganizationRunnerGroupsList(String org) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH),
-                LIBRARY_OBJECT);
+        return getOrganizationRunnerGroupsList(org, LIBRARY_OBJECT);
     }
 
     /**
@@ -2002,7 +1991,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public <T> T getOrganizationRunnerGroupsList(String org, ReturnFormat format) throws IOException {
         return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH),
                 format);
@@ -2045,11 +2034,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroupsList getOrganizationRunnerGroupsList(Organization org, Params queryParams) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH +
-                queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getOrganizationRunnerGroupsList(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -2091,11 +2080,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runner groups for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public <T> T getOrganizationRunnerGroupsList(Organization org, Params queryParams,
                                                  ReturnFormat format) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH +
-                queryParams.createQueryString()), format);
+        return getOrganizationRunnerGroupsList(org.getLogin(), queryParams, format);
     }
 
     /**
@@ -2134,10 +2122,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroupsList getOrganizationRunnerGroupsList(String org, Params queryParams) throws IOException {
-        return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH +
-                queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getOrganizationRunnerGroupsList(org, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -2178,7 +2165,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public <T> T getOrganizationRunnerGroupsList(String org, Params queryParams,
                                                  ReturnFormat format) throws IOException {
         return returnRunnerGroupsList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH +
@@ -2229,8 +2216,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroup createOrganizationRunnerGroup(Organization org, String name) throws IOException {
         return createOrganizationRunnerGroup(org.getLogin(), name, LIBRARY_OBJECT);
     }
@@ -2262,7 +2250,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Create a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public <T> T createOrganizationRunnerGroup(Organization org, String name, ReturnFormat format) throws IOException {
         return createOrganizationRunnerGroup(org.getLogin(), name, format);
     }
@@ -2292,7 +2280,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroup createOrganizationRunnerGroup(String org, String name) throws IOException {
         return createOrganizationRunnerGroup(org, name, LIBRARY_OBJECT);
     }
@@ -2323,7 +2312,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public <T> T createOrganizationRunnerGroup(String org, String name, ReturnFormat format) throws IOException {
         Params bodyParams = new Params();
         bodyParams.addParam("name", name);
@@ -2386,8 +2375,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroup createOrganizationRunnerGroup(Organization org, String name,
                                                      Params runnerGroupDetails) throws IOException {
         return createOrganizationRunnerGroup(org.getLogin(), name, runnerGroupDetails, LIBRARY_OBJECT);
@@ -2450,7 +2440,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Create a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public <T> T createOrganizationRunnerGroup(Organization org, String name, Params runnerGroupDetails,
                                                ReturnFormat format) throws IOException {
         return createOrganizationRunnerGroup(org.getLogin(), name, runnerGroupDetails, format);
@@ -2511,7 +2501,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @Wrapper
+    @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
     public RunnerGroup createOrganizationRunnerGroup(String org, String name,
                                                      Params runnerGroupDetails) throws IOException {
         return createOrganizationRunnerGroup(org, name, runnerGroupDetails, LIBRARY_OBJECT);
@@ -2573,7 +2564,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
     public <T> T createOrganizationRunnerGroup(String org, String name, Params runnerGroupDetails,
                                                ReturnFormat format) throws IOException {
         runnerGroupDetails.addParam("name", name);
@@ -2605,11 +2596,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup getOrganizationRunnerGroup(Organization org, long runnerGroupId) throws IOException {
-        return returnRunnerGroup(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH +
-                "/" + runnerGroupId), LIBRARY_OBJECT);
+        return getOrganizationRunnerGroup(org.getLogin(), runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -2638,10 +2629,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Get a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public <T> T getOrganizationRunnerGroup(Organization org, long runnerGroupId, ReturnFormat format) throws IOException {
-        return returnRunnerGroup(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH +
-                "/" + runnerGroupId), format);
+        return getOrganizationRunnerGroup(org.getLogin(), runnerGroupId, format);
     }
 
     /**
@@ -2668,10 +2658,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup getOrganizationRunnerGroup(String org, long runnerGroupId) throws IOException {
-        return returnRunnerGroup(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId),
-                LIBRARY_OBJECT);
+        return getOrganizationRunnerGroup(org, runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -2699,7 +2689,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public <T> T getOrganizationRunnerGroup(String org, long runnerGroupId, ReturnFormat format) throws IOException {
         return returnRunnerGroup(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId),
                 format);
@@ -2759,12 +2749,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup updateOrganizationRunnerGroup(Organization org, RunnerGroup runnerGroup,
                                                      Params runnerGroupDetails) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroup.getId(), runnerGroupDetails), LIBRARY_OBJECT);
+        return updateOrganizationRunnerGroup(org.getLogin(), runnerGroup.getId(), runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -2823,11 +2813,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public <T> T updateOrganizationRunnerGroup(Organization org, RunnerGroup runnerGroup, Params runnerGroupDetails,
                                                ReturnFormat format) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroup.getId(), runnerGroupDetails), format);
+        return updateOrganizationRunnerGroup(org.getLogin(), runnerGroup.getId(), runnerGroupDetails, format);
     }
 
     /**
@@ -2884,12 +2873,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup updateOrganizationRunnerGroup(Organization org, long runnerGroupId,
                                                      Params runnerGroupDetails) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroupId, runnerGroupDetails), LIBRARY_OBJECT);
+        return updateOrganizationRunnerGroup(org.getLogin(), runnerGroupId, runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -2948,11 +2937,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public <T> T updateOrganizationRunnerGroup(Organization org, long runnerGroupId, Params runnerGroupDetails,
                                                ReturnFormat format) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/"
-                + runnerGroupId, runnerGroupDetails), format);
+        return updateOrganizationRunnerGroup(org.getLogin(), runnerGroupId, runnerGroupDetails, format);
     }
 
     /**
@@ -3009,12 +2997,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup updateOrganizationRunnerGroup(String org, RunnerGroup runnerGroup,
                                                      Params runnerGroupDetails) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId(), runnerGroupDetails), LIBRARY_OBJECT);
+        return updateOrganizationRunnerGroup(org, runnerGroup.getId(), runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -3073,11 +3061,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public <T> T updateOrganizationRunnerGroup(String org, RunnerGroup runnerGroup, Params runnerGroupDetails,
                                                ReturnFormat format) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId(), runnerGroupDetails), format);
+        return updateOrganizationRunnerGroup(org, runnerGroup.getId(), runnerGroupDetails, format);
     }
 
     /**
@@ -3134,12 +3121,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public RunnerGroup updateOrganizationRunnerGroup(String org, long runnerGroupId,
                                                      Params runnerGroupDetails) throws IOException {
-        return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId, runnerGroupDetails), LIBRARY_OBJECT);
+        return updateOrganizationRunnerGroup(org, runnerGroupId, runnerGroupDetails, LIBRARY_OBJECT);
     }
 
     /**
@@ -3198,7 +3185,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = PATCH, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public <T> T updateOrganizationRunnerGroup(String org, long runnerGroupId, Params runnerGroupDetails,
                                                ReturnFormat format) throws IOException {
         return returnRunnerGroup(sendPatchRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
@@ -3237,7 +3224,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Delete a self-hosted runner group from an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public boolean deleteOrganizationRunnerGroup(Organization org, RunnerGroup runnerGroup) {
         return deleteEnterpriseRunnerGroup(org.getLogin(), runnerGroup.getId());
     }
@@ -3255,7 +3242,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Delete a self-hosted runner group from an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public boolean deleteOrganizationRunnerGroup(Organization org, long runnerGroupId) {
         return deleteEnterpriseRunnerGroup(org.getLogin(), runnerGroupId);
     }
@@ -3273,7 +3260,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Delete a self-hosted runner group from an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public boolean deleteOrganizationRunnerGroup(String org, RunnerGroup runnerGroup) {
         return deleteEnterpriseRunnerGroup(org, runnerGroup.getId());
     }
@@ -3290,7 +3277,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
      * Delete a self-hosted runner group from an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
     public boolean deleteOrganizationRunnerGroup(String org, long runnerGroupId) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId);
@@ -3329,12 +3316,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org,
                                                                       RunnerGroup runnerGroup) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -3363,11 +3350,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(Organization org, RunnerGroup runnerGroup,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH), format);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroup.getId(), format);
     }
 
     /**
@@ -3394,11 +3380,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org, runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -3427,11 +3413,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH), format);
+        return getAuthorizedRepositoriesList(org, runnerGroup.getId(), format);
     }
 
     /**
@@ -3458,12 +3443,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org,
                                                                       long runnerGroupId) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -3492,11 +3477,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(Organization org, long runnerGroupId,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH), format);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, format);
     }
 
     /**
@@ -3523,10 +3507,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, long runnerGroupId) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org, runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -3554,7 +3538,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(String org, long runnerGroupId,
                                                ReturnFormat format) throws IOException {
         return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
@@ -3598,12 +3582,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org, RunnerGroup runnerGroup,
                                                                       Params queryParams) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -3645,11 +3629,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(Organization org, RunnerGroup runnerGroup, Params queryParams,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH + queryParams.createQueryString()), format);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroup.getId(), queryParams, format);
     }
 
     /**
@@ -3689,12 +3672,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup,
                                                                       Params queryParams) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org, runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -3736,11 +3719,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup, Params queryParams,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroup.getId() + REPOSITORIES_PATH + queryParams.createQueryString()), format);
+        return getAuthorizedRepositoriesList(org, runnerGroup.getId(), queryParams, format);
     }
 
     /**
@@ -3780,12 +3762,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org, long runnerGroupId,
                                                                       Params queryParams) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -3827,11 +3809,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(Organization org, long runnerGroupId, Params queryParams,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH + queryParams.createQueryString()), format);
+        return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, queryParams, format);
     }
 
     /**
@@ -3871,11 +3852,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, long runnerGroupId,
                                                                       Params queryParams) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getAuthorizedRepositoriesList(org, runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -3916,7 +3897,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(String org, long runnerGroupId, Params queryParams,
                                                ReturnFormat format) throws IOException {
         return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
@@ -3937,7 +3918,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, RunnerGroup runnerGroup,
                                              OrganizationRepositoriesList repositoriesIds) {
         return authorizeRepositoriesList(org.getLogin(), runnerGroup.getId(), repositoriesIds);
@@ -3957,7 +3938,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, RunnerGroup runnerGroup,
                                              OrganizationRepositoriesList repositoriesIds) {
         return authorizeRepositoriesList(org, runnerGroup.getId(), repositoriesIds);
@@ -3977,7 +3958,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, long runnerGroupId,
                                              OrganizationRepositoriesList repositoriesIds) {
         return authorizeRepositoriesList(org.getLogin(), runnerGroupId, repositoriesIds);
@@ -3997,13 +3978,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, long runnerGroupId, OrganizationRepositoriesList repositoriesIds) {
         ArrayList<Long> ids = new ArrayList<>();
         for (CompleteRepository repository : repositoriesIds.getRepositories())
             ids.add(repository.getId());
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId + REPOSITORIES_PATH,
-                "selected_repository_ids", ids.toArray(new Long[0]));
+        return authorizeRepositoriesList(org, runnerGroupId, ids.toArray(new Long[0]));
     }
 
     /**
@@ -4020,10 +4000,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, RunnerGroup runnerGroup, Collection<Long> repositoriesIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds.toArray(new Long[0]));
+        return authorizeRepositoriesList(org.getLogin(), runnerGroup.getId(), repositoriesIds.toArray(new Long[0]));
     }
 
     /**
@@ -4040,10 +4019,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, RunnerGroup runnerGroup, Collection<Long> repositoriesIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds.toArray(new Long[0]));
+        return authorizeRepositoriesList(org, runnerGroup.getId(), repositoriesIds.toArray(new Long[0]));
     }
 
     /**
@@ -4060,10 +4038,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, RunnerGroup runnerGroup, Long[] repositoriesIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
+        return authorizeRepositoriesList(org.getLogin(), runnerGroup.getId(), repositoriesIds);
     }
 
     /**
@@ -4080,10 +4057,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, RunnerGroup runnerGroup, Long[] repositoriesIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
+        return authorizeRepositoriesList(org, runnerGroup.getId(), repositoriesIds);
     }
 
     /**
@@ -4100,10 +4076,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, long runnerGroupId, Collection<Long> repositoriesIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds.toArray(new Long[0]));
+        return authorizeRepositoriesList(org.getLogin(), runnerGroupId, repositoriesIds.toArray(new Long[0]));
     }
 
     /**
@@ -4120,10 +4095,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, long runnerGroupId, Long[] repositoriesIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
+        return authorizeRepositoriesList(org.getLogin(), runnerGroupId, repositoriesIds);
     }
 
     /**
@@ -4139,10 +4113,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, long runnerGroupId, Collection<Long> repositoriesIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds.toArray(new Long[0]));
+        return authorizeRepositoriesList(org, runnerGroupId, repositoriesIds.toArray(new Long[0]));
     }
 
     /**
@@ -4158,7 +4131,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, long runnerGroupId, Long[] repositoriesIds) {
         return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
                 REPOSITORIES_PATH, "selected_repository_ids", repositoriesIds);
@@ -4180,7 +4153,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(Organization org, RunnerGroup runnerGroup, Repository repository) {
         return authorizeOrganization(org.getLogin(), runnerGroup.getId(), repository.getId());
     }
@@ -4201,7 +4174,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(String org, RunnerGroup runnerGroup, Repository repository) {
         return authorizeOrganization(org, runnerGroup.getId(), repository.getId());
     }
@@ -4222,7 +4195,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(Organization org, RunnerGroup runnerGroup, long repositoryId) {
         return authorizeOrganization(org.getLogin(), runnerGroup.getId(), repositoryId);
     }
@@ -4243,7 +4216,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(String org, RunnerGroup runnerGroup, long repositoryId) {
         return authorizeOrganization(org, runnerGroup.getId(), repositoryId);
     }
@@ -4264,7 +4237,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(Organization org, long runnerGroupId, Repository repository) {
         return authorizeOrganization(org.getLogin(), runnerGroupId, repository.getId());
     }
@@ -4285,7 +4258,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(String org, long runnerGroupId, Repository repository) {
         return authorizeOrganization(org, runnerGroupId, repository.getId());
     }
@@ -4306,7 +4279,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(Organization org, long runnerGroupId, long repositoryId) {
         return removeAuthorizedRepository(org.getLogin(), runnerGroupId, repositoryId);
     }
@@ -4326,7 +4299,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
     public boolean removeAuthorizedRepository(String org, long runnerGroupId, long repositoryId) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
@@ -4366,11 +4339,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(Organization org, RunnerGroup runnerGroup) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -4399,11 +4372,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(Organization org, RunnerGroup runnerGroup,
                                                  ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroup.getId(), format);
     }
 
     /**
@@ -4430,11 +4402,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(String org, RunnerGroup runnerGroup) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org, runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -4463,11 +4435,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(String org, RunnerGroup runnerGroup,
                                                  ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org, runnerGroup.getId(), format);
     }
 
     /**
@@ -4494,11 +4465,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(Organization org, long runnerGroupId) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -4527,10 +4498,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(Organization org, long runnerGroupId, ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId + RUNNERS_PATH), format);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroupId, format);
     }
 
     /**
@@ -4557,10 +4527,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(String org, long runnerGroupId) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId + RUNNERS_PATH), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org, runnerGroupId, LIBRARY_OBJECT);
     }
 
     /**
@@ -4588,7 +4558,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(String org, long runnerGroupId, ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
                 runnerGroupId + RUNNERS_PATH), format);
@@ -4627,12 +4597,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(Organization org, RunnerGroup runnerGroup,
                                                        Params queryParams) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -4670,11 +4640,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(Organization org, RunnerGroup runnerGroup, Params queryParams,
                                                  ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH + queryParams.createQueryString()), format);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroup.getId(), queryParams, format);
     }
 
     /**
@@ -4710,12 +4679,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(String org, RunnerGroup runnerGroup,
                                                        Params queryParams) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org, runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -4753,11 +4722,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(String org, RunnerGroup runnerGroup, Params queryParams,
                                                  ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroup.getId() + RUNNERS_PATH + queryParams.createQueryString()), format);
+        return getOrganizationRunnersGroupList(org, runnerGroup.getId(), queryParams, format);
     }
 
     /**
@@ -4793,12 +4761,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(Organization org, long runnerGroupId,
                                                        Params queryParams) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId + RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -4836,11 +4804,10 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(Organization org, long runnerGroupId, Params queryParams,
                                                  ReturnFormat format) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId + RUNNERS_PATH + queryParams.createQueryString()), format);
+        return getOrganizationRunnersGroupList(org.getLogin(), runnerGroupId, queryParams, format);
     }
 
     /**
@@ -4876,11 +4843,11 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public RunnersList getOrganizationRunnersGroupList(String org, long runnerGroupId,
                                                        Params queryParams) throws IOException {
-        return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
-                runnerGroupId + RUNNERS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getOrganizationRunnersGroupList(org, runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -4917,7 +4884,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public <T> T getOrganizationRunnersGroupList(String org, long runnerGroupId, Params queryParams,
                                                  ReturnFormat format) throws IOException {
         return returnRunnersList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" +
@@ -4940,7 +4907,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(Organization org, RunnerGroup runnerGroup, RunnersList runners) {
         return setOrganizationRunnersList(org.getLogin(), runnerGroup.getId(), runners);
     }
@@ -4961,7 +4928,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(String org, RunnerGroup runnerGroup, RunnersList runners) {
         return setOrganizationRunnersList(org, runnerGroup.getId(), runners);
     }
@@ -4982,7 +4949,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(Organization org, long runnerGroupId, RunnersList runners) {
         return setOrganizationRunnersList(org.getLogin(), runnerGroupId, runners);
     }
@@ -5003,13 +4970,12 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(String org, long runnerGroupId, RunnersList runners) {
         ArrayList<Long> ids = new ArrayList<>();
         for (Runner runner : runners.getRunners())
             ids.add(runner.getId());
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                RUNNERS_PATH, "runners", ids.toArray(new Long[0]));
+        return setOrganizationRunnersList(org, runnerGroupId, ids.toArray(new Long[0]));
     }
 
     /**
@@ -5028,10 +4994,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(Organization org, RunnerGroup runnerGroup, Collection<Long> runnersIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                RUNNERS_PATH, "runners", runnersIds.toArray(new Long[0]));
+        return setOrganizationRunnersList(org.getLogin(), runnerGroup.getId(), runnersIds.toArray(new Long[0]));
     }
 
     /**
@@ -5050,10 +5015,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(String org, RunnerGroup runnerGroup, Collection<Long> runnersIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                RUNNERS_PATH, "runners", runnersIds.toArray(new Long[0]));
+        return setOrganizationRunnersList(org, runnerGroup.getId(), runnersIds.toArray(new Long[0]));
     }
 
     /**
@@ -5072,10 +5036,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(Organization org, RunnerGroup runnerGroup, Long[] runnersIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                RUNNERS_PATH, "runners", runnersIds);
+        return setOrganizationRunnersList(org.getLogin(), runnerGroup.getId(), runnersIds);
     }
 
     /**
@@ -5094,10 +5057,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(String org, RunnerGroup runnerGroup, Long[] runnersIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroup.getId() +
-                RUNNERS_PATH, "runners", runnersIds);
+        return setOrganizationRunnersList(org, runnerGroup.getId(), runnersIds);
     }
 
     /**
@@ -5116,10 +5078,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(Organization org, long runnerGroupId, Collection<Long> runnersIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                RUNNERS_PATH, "runners", runnersIds.toArray(new Long[0]));
+        return setOrganizationRunnersList(org.getLogin(), runnerGroupId, runnersIds.toArray(new Long[0]));
     }
 
     /**
@@ -5138,10 +5099,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(Organization org, long runnerGroupId, Long[] runnersIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                RUNNERS_PATH, "runners", runnersIds);
+        return setOrganizationRunnersList(org.getLogin(), runnerGroupId, runnersIds);
     }
 
     /**
@@ -5159,10 +5119,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(String org, long runnerGroupId, Collection<Long> runnersIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                RUNNERS_PATH, "runners", runnersIds.toArray(new Long[0]));
+        return setOrganizationRunnersList(org, runnerGroupId, runnersIds.toArray(new Long[0]));
     }
 
     /**
@@ -5180,7 +5139,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
     public boolean setOrganizationRunnersList(String org, long runnerGroupId, Long[] runnersIds) {
         return setItems(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
                 RUNNERS_PATH, "runners", runnersIds);
@@ -5202,7 +5161,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(Organization org, RunnerGroup runnerGroup, Runner runner) {
         return addOrganizationRunnerToGroup(org.getLogin(), runnerGroup.getId(), runner.getId());
     }
@@ -5223,7 +5182,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(String org, RunnerGroup runnerGroup, Runner runner) {
         return addOrganizationRunnerToGroup(org, runnerGroup.getId(), runner.getId());
     }
@@ -5244,7 +5203,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(Organization org, long runnerGroupId, Runner runner) {
         return addOrganizationRunnerToGroup(org.getLogin(), runnerGroupId, runner.getId());
     }
@@ -5265,7 +5224,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(String org, long runnerGroupId, Runner runner) {
         return addOrganizationRunnerToGroup(org, runnerGroupId, runner.getId());
     }
@@ -5286,7 +5245,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(Organization org, RunnerGroup runnerGroup, long runnerId) {
         return addOrganizationRunnerToGroup(org.getLogin(), runnerGroup.getId(), runnerId);
     }
@@ -5307,7 +5266,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(String org, RunnerGroup runnerGroup, long runnerId) {
         return addOrganizationRunnerToGroup(org, runnerGroup.getId(), runnerId);
     }
@@ -5328,7 +5287,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(Organization org, long runnerGroupId, long runnerId) {
         return addOrganizationRunnerToGroup(org.getLogin(), runnerGroupId, runnerId);
     }
@@ -5348,7 +5307,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean addOrganizationRunnerToGroup(String org, long runnerGroupId, long runnerId) {
         try {
             sendPutRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
@@ -5380,7 +5339,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(Organization org, RunnerGroup runnerGroup, Runner runner) {
         return removeOrganizationRunnerFromGroup(org.getLogin(), runnerGroup.getId(), runner.getId());
     }
@@ -5401,7 +5360,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(String org, RunnerGroup runnerGroup, Runner runner) {
         return removeOrganizationRunnerFromGroup(org, runnerGroup.getId(), runner.getId());
     }
@@ -5422,7 +5381,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(Organization org, long runnerGroupId, Runner runner) {
         return removeOrganizationRunnerFromGroup(org.getLogin(), runnerGroupId, runner.getId());
     }
@@ -5443,7 +5402,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(String org, long runnerGroupId, Runner runner) {
         return removeOrganizationRunnerFromGroup(org, runnerGroupId, runner.getId());
     }
@@ -5464,7 +5423,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(Organization org, RunnerGroup runnerGroup, long runnerId) {
         return removeOrganizationRunnerFromGroup(org.getLogin(), runnerGroup.getId(), runnerId);
     }
@@ -5485,7 +5444,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(String org, RunnerGroup runnerGroup, long runnerId) {
         return removeOrganizationRunnerFromGroup(org, runnerGroup.getId(), runnerId);
     }
@@ -5506,7 +5465,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(Organization org, long runnerGroupId, long runnerId) {
         return removeOrganizationRunnerFromGroup(org.getLogin(), runnerGroupId, runnerId);
     }
@@ -5526,7 +5485,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
     public boolean removeOrganizationRunnerFromGroup(String org, long runnerGroupId, long runnerId) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +

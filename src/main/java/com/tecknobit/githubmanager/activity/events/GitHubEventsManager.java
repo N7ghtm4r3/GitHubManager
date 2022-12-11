@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.activity.events;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.activity.events.records.Event;
 import com.tecknobit.githubmanager.records.organization.Organization;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
@@ -128,7 +130,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
-    @RequestPath(path = "/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/events")
     public Collection<Event> getPublicEvents() throws IOException {
         return getPublicEvents(LIBRARY_OBJECT);
     }
@@ -157,7 +160,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
-    @RequestPath(path = "/events")
+    @RequestPath(method = GET, path = "/events")
     public <T> T getPublicEvents(ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(EVENTS_PATH), format);
     }
@@ -192,7 +195,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
-    @RequestPath(path = "/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/events")
     public Collection<Event> getPublicEvents(Params queryParams) throws IOException {
         return getPublicEvents(queryParams, LIBRARY_OBJECT);
     }
@@ -228,7 +232,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
-    @RequestPath(path = "/events")
+    @RequestPath(method = GET, path = "/events")
     public <T> T getPublicEvents(Params queryParams, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(EVENTS_PATH + queryParams.createQueryString()), format);
     }
@@ -253,8 +257,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public Collection<Event> getRepositoriesPublicEvents(Repository repository) throws IOException {
         return getRepositoriesPublicEvents(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -281,7 +286,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List public events for a network of repositories</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public <T> T getRepositoriesPublicEvents(Repository repository, ReturnFormat format) throws IOException {
         return getRepositoriesPublicEvents(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -307,7 +312,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public Collection<Event> getRepositoriesPublicEvents(String owner, String repo) throws IOException {
         return getRepositoriesPublicEvents(owner, repo, LIBRARY_OBJECT);
     }
@@ -334,7 +340,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public <T> T getRepositoriesPublicEvents(String owner, String repo, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(NETWORKS_PATH + owner + "/" + repo + "/" + EVENTS_PATH), format);
     }
@@ -368,8 +374,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public Collection<Event> getRepositoriesPublicEvents(Repository repository, Params queryParams) throws IOException {
         return getRepositoriesPublicEvents(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
@@ -406,7 +413,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List public events for a network of repositories</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public <T> T getRepositoriesPublicEvents(Repository repository, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return getRepositoriesPublicEvents(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
@@ -442,7 +449,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public Collection<Event> getRepositoriesPublicEvents(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoriesPublicEvents(owner, repo, queryParams, LIBRARY_OBJECT);
     }
@@ -478,7 +486,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
-    @RequestPath(path = "/networks/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
     public <T> T getRepositoriesPublicEvents(String owner, String repo, Params queryParams,
                                              ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(NETWORKS_PATH + owner + "/" + repo + "/" + EVENTS_PATH +
@@ -505,8 +513,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/events")
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public Collection<Event> getOrganizationPublicEvents(Organization org) throws IOException {
         return getOrganizationPublicEvents(org.getLogin(), LIBRARY_OBJECT);
     }
@@ -533,7 +542,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List public organization events</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/events")
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public <T> T getOrganizationPublicEvents(Organization org, ReturnFormat format) throws IOException {
         return getOrganizationPublicEvents(org.getLogin(), format);
     }
@@ -558,7 +567,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
-    @RequestPath(path = "/orgs/{org}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public Collection<Event> getOrganizationPublicEvents(String org) throws IOException {
         return getOrganizationPublicEvents(org, LIBRARY_OBJECT);
     }
@@ -584,7 +594,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
-    @RequestPath(path = "/orgs/{org}/events")
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public <T> T getOrganizationPublicEvents(String org, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(ORGS_PATH + org + "/" + EVENTS_PATH), format);
     }
@@ -618,8 +628,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/events")
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public Collection<Event> getOrganizationPublicEvents(Organization org, Params queryParams) throws IOException {
         return getOrganizationPublicEvents(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
@@ -655,9 +666,8 @@ public class GitHubEventsManager extends GitHubManager {
      * List public organization events</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/events")
-    public <T> T getOrganizationPublicEvents(Organization org, Params queryParams,
-                                             ReturnFormat format) throws IOException {
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
+    public <T> T getOrganizationPublicEvents(Organization org, Params queryParams, ReturnFormat format) throws IOException {
         return getOrganizationPublicEvents(org.getLogin(), queryParams, format);
     }
 
@@ -690,7 +700,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
-    @RequestPath(path = "/orgs/{org}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public Collection<Event> getOrganizationPublicEvents(String org, Params queryParams) throws IOException {
         return getOrganizationPublicEvents(org, queryParams, LIBRARY_OBJECT);
     }
@@ -725,7 +736,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
-    @RequestPath(path = "/orgs/{org}/events")
+    @RequestPath(method = GET, path = "/orgs/{org}/events")
     public <T> T getOrganizationPublicEvents(String org, Params queryParams, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(ORGS_PATH + org + "/" + EVENTS_PATH +
                 queryParams.createQueryString()), format);
@@ -751,8 +762,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public Collection<Event> getRepositoryEvents(Repository repository) throws IOException {
         return getRepositoryEvents(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -779,7 +791,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List repository events</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public <T> T getRepositoryEvents(Repository repository, ReturnFormat format) throws IOException {
         return getRepositoryEvents(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -805,7 +817,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public Collection<Event> getRepositoryEvents(String owner, String repo) throws IOException {
         return getRepositoryEvents(owner, repo, LIBRARY_OBJECT);
     }
@@ -832,7 +845,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public <T> T getRepositoryEvents(String owner, String repo, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + "/" + EVENTS_PATH), format);
     }
@@ -866,8 +879,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public Collection<Event> getRepositoryEvents(Repository repository, Params queryParams) throws IOException {
         return getRepositoryEvents(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
@@ -903,7 +917,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List repository events</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public <T> T getRepositoryEvents(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
         return getRepositoryEvents(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
@@ -938,7 +952,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public Collection<Event> getRepositoryEvents(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoryEvents(owner, repo, queryParams, LIBRARY_OBJECT);
     }
@@ -974,7 +989,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/events")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
     public <T> T getRepositoryEvents(String owner, String repo, Params queryParams,
                                      ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + "/" + EVENTS_PATH +
@@ -1002,7 +1017,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/events")
     public Collection<Event> getAuthenticatedUserEvents(String username) throws IOException {
         return getAuthenticatedUserEvents(username, LIBRARY_OBJECT);
     }
@@ -1029,7 +1045,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events")
+    @RequestPath(method = GET, path = "/users/{username}/events")
     public <T> T getAuthenticatedUserEvents(String username, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + "/" + EVENTS_PATH), format);
     }
@@ -1064,7 +1080,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/events")
     public Collection<Event> getAuthenticatedUserEvents(String username, Params queryParams) throws IOException {
         return getAuthenticatedUserEvents(username, queryParams, LIBRARY_OBJECT);
     }
@@ -1100,7 +1117,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events")
+    @RequestPath(method = GET, path = "/users/{username}/events")
     public <T> T getAuthenticatedUserEvents(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + "/" + EVENTS_PATH +
                 queryParams.createQueryString()), format);
@@ -1128,8 +1145,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public Collection<Event> getAuthenticatedUserOrganizationEvents(Organization org, String username) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org.getLogin(), username, LIBRARY_OBJECT);
     }
@@ -1158,7 +1176,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List organization events for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public <T> T getAuthenticatedUserOrganizationEvents(Organization org, String username,
                                                         ReturnFormat format) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org.getLogin(), username, format);
@@ -1186,7 +1204,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public Collection<Event> getAuthenticatedUserOrganizationEvents(String org, String username) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org, username, LIBRARY_OBJECT);
     }
@@ -1214,7 +1233,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public <T> T getAuthenticatedUserOrganizationEvents(String org, String username,
                                                         ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + "/" + EVENTS_PATH + "/" + ORGS_PATH + org),
@@ -1252,8 +1271,9 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public Collection<Event> getAuthenticatedUserOrganizationEvents(Organization org, String username,
                                                                     Params queryParams) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org.getLogin(), username, queryParams, LIBRARY_OBJECT);
@@ -1292,7 +1312,7 @@ public class GitHubEventsManager extends GitHubManager {
      * List organization events for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public <T> T getAuthenticatedUserOrganizationEvents(Organization org, String username, Params queryParams,
                                                         ReturnFormat format) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org.getLogin(), username, queryParams, format);
@@ -1329,7 +1349,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public Collection<Event> getAuthenticatedUserOrganizationEvents(String org, String username,
                                                                     Params queryParams) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org, username, queryParams, LIBRARY_OBJECT);
@@ -1367,7 +1388,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/orgs/{org}")
+    @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
     public <T> T getAuthenticatedUserOrganizationEvents(String org, String username, Params queryParams,
                                                         ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + "/" + EVENTS_PATH + "/" + ORGS_PATH + org
@@ -1394,7 +1415,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/public")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/events/public")
     public Collection<Event> getUserPublicEvents(String username) throws IOException {
         return getUserPublicEvents(username, LIBRARY_OBJECT);
     }
@@ -1420,7 +1442,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/public")
+    @RequestPath(method = GET, path = "/users/{username}/events/public")
     public <T> T getUserPublicEvents(String username, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + "/" + EVENTS_PATH + PUBLIC_PATH), format);
     }
@@ -1454,7 +1476,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/public")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/events/public")
     public Collection<Event> getUserPublicEvents(String username, Params queryParams) throws IOException {
         return getUserPublicEvents(username, queryParams, LIBRARY_OBJECT);
     }
@@ -1489,7 +1512,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
-    @RequestPath(path = "/users/{username}/events/public")
+    @RequestPath(method = GET, path = "/users/{username}/events/public")
     public <T> T getUserPublicEvents(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + "/" + EVENTS_PATH + PUBLIC_PATH +
                 queryParams.createQueryString()), format);
@@ -1517,7 +1540,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/received_events")
     public Collection<Event> getAuthenticatedUserReceivedEvents(String username) throws IOException {
         return getAuthenticatedUserReceivedEvents(username, LIBRARY_OBJECT);
     }
@@ -1545,7 +1569,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events")
+    @RequestPath(method = GET, path = "/users/{username}/received_events")
     public <T> T getAuthenticatedUserReceivedEvents(String username, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + RECEIVED_EVENTS_PATH), format);
     }
@@ -1581,7 +1605,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/received_events")
     public Collection<Event> getAuthenticatedUserReceivedEvents(String username, Params queryParams) throws IOException {
         return getAuthenticatedUserReceivedEvents(username, queryParams, LIBRARY_OBJECT);
     }
@@ -1618,7 +1643,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events")
+    @RequestPath(method = GET, path = "/users/{username}/received_events")
     public <T> T getAuthenticatedUserReceivedEvents(String username, Params queryParams,
                                                     ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + RECEIVED_EVENTS_PATH +
@@ -1645,7 +1670,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events/public")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/received_events/public")
     public Collection<Event> getUserReceivedPublicEvents(String username) throws IOException {
         return getUserReceivedPublicEvents(username, LIBRARY_OBJECT);
     }
@@ -1671,7 +1697,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events/public")
+    @RequestPath(method = GET, path = "/users/{username}/received_events/public")
     public <T> T getUserReceivedPublicEvents(String username, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + RECEIVED_EVENTS_PATH + PUBLIC_PATH),
                 format);
@@ -1706,7 +1732,8 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events/public")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/received_events/public")
     public Collection<Event> getUserReceivedPublicEvents(String username, Params queryParams) throws IOException {
         return getUserReceivedPublicEvents(username, queryParams, LIBRARY_OBJECT);
     }
@@ -1741,7 +1768,7 @@ public class GitHubEventsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/received_events/public")
+    @RequestPath(method = GET, path = "/users/{username}/received_events/public")
     public <T> T getUserReceivedPublicEvents(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnEventsList(sendGetRequest(USERS_PATH + username + RECEIVED_EVENTS_PATH + PUBLIC_PATH +
                 queryParams.createQueryString()), format);

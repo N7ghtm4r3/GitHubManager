@@ -24,7 +24,7 @@ import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/overview/resources-in-the-rest-api">
  * Overview</a>
  **/
-// TODO: 30/10/2022 DELETE TEST PRINT IN REQUESTS
+// TODO: 30/10/2022 DELETE TEST URL PRINT IN REQUESTS
 public class GitHubManager {
 
     /**
@@ -360,9 +360,6 @@ public class GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequestWithBody(String endpoint, RequestMethod method, Params bodyPayload) throws IOException {
-        // TODO: 02/12/2022 CHECK TO REMOVE CHECK ON NULL
-        if (bodyPayload == null)
-            bodyPayload = new Params();
         System.out.println(endpoint);
         apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
         return apiRequest.getResponse();

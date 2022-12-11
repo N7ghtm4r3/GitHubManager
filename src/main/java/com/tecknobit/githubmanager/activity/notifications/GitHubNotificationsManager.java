@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.activity.notifications;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.activity.notifications.records.Notification;
 import com.tecknobit.githubmanager.activity.notifications.records.ThreadSubscription;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
@@ -116,7 +118,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/notifications")
+    @Wrapper
+    @RequestPath(method = GET, path = "/notifications")
     public Collection<Notification> getAuthenticatedUserNotifications() throws IOException {
         return getAuthenticatedUserNotifications(LIBRARY_OBJECT);
     }
@@ -141,7 +144,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/notifications")
+    @RequestPath(method = GET, path = "/notifications")
     public <T> T getAuthenticatedUserNotifications(ReturnFormat format) throws IOException {
         return returnNotificationsList(sendGetRequest(NOTIFICATIONS_PATH), format);
     }
@@ -189,7 +192,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/notifications")
+    @Wrapper
+    @RequestPath(method = GET, path = "/notifications")
     public Collection<Notification> getAuthenticatedUserNotifications(Params queryParams) throws IOException {
         return getAuthenticatedUserNotifications(queryParams, LIBRARY_OBJECT);
     }
@@ -238,7 +242,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/notifications")
+    @RequestPath(method = GET, path = "/notifications")
     public <T> T getAuthenticatedUserNotifications(Params queryParams, ReturnFormat format) throws IOException {
         return returnNotificationsList(sendGetRequest(NOTIFICATIONS_PATH + queryParams.createQueryString()), format);
     }
@@ -266,7 +270,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
-    @RequestPath(path = "/notifications")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/notifications")
     public String markNotificationsAsRead() throws IOException {
         return markNotificationsAsRead(LIBRARY_OBJECT);
     }
@@ -294,7 +299,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
-    @RequestPath(path = "/notifications")
+    @RequestPath(method = PUT, path = "/notifications")
     public <T> T markNotificationsAsRead(ReturnFormat format) throws IOException {
         return returnMessage(sendPutRequest(NOTIFICATIONS_PATH, null), format);
     }
@@ -334,7 +339,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
-    @RequestPath(path = "/notifications")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/notifications")
     public String markNotificationsAsRead(Params bodyParams) throws IOException {
         return markNotificationsAsRead(bodyParams, LIBRARY_OBJECT);
     }
@@ -375,7 +381,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
-    @RequestPath(path = "/notifications")
+    @RequestPath(method = PUT, path = "/notifications")
     public <T> T markNotificationsAsRead(Params bodyParams, ReturnFormat format) throws IOException {
         return returnMessage(sendPutRequest(NOTIFICATIONS_PATH, bodyParams), format);
     }
@@ -400,7 +406,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread">
      * Get a thread</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/notifications/threads/{thread_id")
     public Notification getThread(long threadId) throws IOException {
         return getThread(threadId, LIBRARY_OBJECT);
     }
@@ -427,7 +434,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Get a thread</a>
      **/
     @Returner
-    @RequestPath(path = "/notifications/threads/{thread_id}")
+    @RequestPath(method = GET, path = "/notifications/threads/{thread_id")
     public <T> T getThread(long threadId, ReturnFormat format) throws IOException {
         String threadResponse = sendGetRequest(NOTIFICATIONS_THREADS_PATH + threadId);
         switch (format) {
@@ -450,8 +457,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-a-thread-as-read">
      * Mark a thread as read</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/notifications/threads/{thread_id}")
+    @RequestPath(method = PATCH, path = "/notifications/threads/{thread_id")
     public boolean markThreadAsRead(Notification thread) {
         return markThreadAsRead(thread.getId());
     }
@@ -466,7 +474,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-a-thread-as-read">
      * Mark a thread as read</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}")
+    @RequestPath(method = PATCH, path = "/notifications/threads/{thread_id")
     public boolean markThreadAsRead(long threadId) {
         try {
             sendPatchRequest(NOTIFICATIONS_THREADS_PATH + threadId, null);
@@ -503,8 +511,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = GET, path = "/notifications/threads/{thread_id}/subscription")
     public ThreadSubscription getAuthenticatedUserThreadSubscription(Notification thread) throws IOException {
         return getAuthenticatedUserThreadSubscription(thread.getId(), LIBRARY_OBJECT);
     }
@@ -533,7 +542,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Get a thread subscription for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = GET, path = "/notifications/threads/{thread_id}/subscription")
     public <T> T getAuthenticatedUserThreadSubscription(Notification thread, ReturnFormat format) throws IOException {
         return getAuthenticatedUserThreadSubscription(thread.getId(), format);
     }
@@ -560,7 +569,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @Wrapper
+    @RequestPath(method = GET, path = "/notifications/threads/{thread_id}/subscription")
     public ThreadSubscription getAuthenticatedUserThreadSubscription(long threadId) throws IOException {
         return getAuthenticatedUserThreadSubscription(threadId, LIBRARY_OBJECT);
     }
@@ -588,7 +598,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = GET, path = "/notifications/threads/{thread_id}/subscription")
     public <T> T getAuthenticatedUserThreadSubscription(long threadId, ReturnFormat format) throws IOException {
         return returnThreadSubscription(sendGetRequest(NOTIFICATIONS_THREADS_PATH + threadId + SUBSCRIPTION_PATH),
                 format);
@@ -620,8 +630,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = PUT, path = "/notifications/threads/{thread_id}/subscription")
     public ThreadSubscription setThreadSubscription(Notification thread, boolean ignored) throws IOException {
         return setThreadSubscription(thread.getId(), ignored, LIBRARY_OBJECT);
     }
@@ -654,7 +665,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Set a thread subscription</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = PUT, path = "/notifications/threads/{thread_id}/subscription")
     public <T> T setThreadSubscription(Notification thread, boolean ignored, ReturnFormat format) throws IOException {
         return setThreadSubscription(thread.getId(), ignored, format);
     }
@@ -685,7 +696,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/notifications/threads/{thread_id}/subscription")
     public ThreadSubscription setThreadSubscription(long threadId, boolean ignored) throws IOException {
         return setThreadSubscription(threadId, ignored, LIBRARY_OBJECT);
     }
@@ -717,7 +729,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = PUT, path = "/notifications/threads/{thread_id}/subscription")
     public <T> T setThreadSubscription(long threadId, boolean ignored, ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("ignored", ignored);
@@ -756,7 +768,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Delete a thread subscription</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = DELETE, path = "/notifications/threads/{thread_id}/subscription")
     public boolean deleteThreadSubscription(Notification thread) {
         return deleteThreadSubscription(thread.getId());
     }
@@ -772,7 +784,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#delete-a-thread-subscription">
      * Delete a thread subscription</a>
      **/
-    @RequestPath(path = "/notifications/threads/{thread_id}/subscription")
+    @RequestPath(method = DELETE, path = "/notifications/threads/{thread_id}/subscription")
     public boolean deleteThreadSubscription(long threadId) {
         try {
             sendDeleteRequest(NOTIFICATIONS_THREADS_PATH + threadId + SUBSCRIPTION_PATH);
@@ -807,8 +819,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public Collection<Notification> getRepositoryNotifications(Repository repository) throws IOException {
         return getRepositoryNotifications(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -835,7 +848,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * List repository notifications for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public <T> T getRepositoryNotifications(Repository repository, ReturnFormat format) throws IOException {
         return getRepositoryNotifications(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -861,7 +874,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public Collection<Notification> getRepositoryNotifications(String owner, String repo) throws IOException {
         return getRepositoryNotifications(owner, repo, LIBRARY_OBJECT);
     }
@@ -888,7 +902,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public <T> T getRepositoryNotifications(String owner, String repo, ReturnFormat format) throws IOException {
         return returnNotificationsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + "/" + NOTIFICATIONS_PATH),
                 format);
@@ -938,8 +952,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public Collection<Notification> getRepositoryNotifications(Repository repository, Params queryParams) throws IOException {
         return getRepositoryNotifications(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
@@ -991,7 +1006,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * List repository notifications for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public <T> T getRepositoryNotifications(Repository repository, Params queryParams,
                                             ReturnFormat format) throws IOException {
         return getRepositoryNotifications(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
@@ -1042,7 +1057,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public Collection<Notification> getRepositoryNotifications(String owner, String repo,
                                                                Params queryParams) throws IOException {
         return getRepositoryNotifications(owner, repo, queryParams, LIBRARY_OBJECT);
@@ -1094,7 +1110,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
     public <T> T getRepositoryNotifications(String owner, String repo, Params queryParams,
                                             ReturnFormat format) throws IOException {
         return returnNotificationsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + "/" + NOTIFICATIONS_PATH
@@ -1148,8 +1164,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public String markRepositoryNotificationsAsRead(Repository repository) throws IOException {
         return markRepositoryNotificationsAsRead(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -1179,7 +1196,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Mark repository notifications as read</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public <T> T markRepositoryNotificationsAsRead(Repository repository, ReturnFormat format) throws IOException {
         return markRepositoryNotificationsAsRead(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -1209,7 +1226,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public String markRepositoryNotificationsAsRead(String owner, String repo) throws IOException {
         return markRepositoryNotificationsAsRead(owner, repo, LIBRARY_OBJECT);
     }
@@ -1240,7 +1258,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public <T> T markRepositoryNotificationsAsRead(String owner, String repo, ReturnFormat format) throws IOException {
         return returnMessage(sendPutRequest(REPOS_PATH + owner + "/" + repo + "/" + NOTIFICATIONS_PATH,
                 null), format);
@@ -1273,8 +1291,9 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public String markRepositoryNotificationsAsRead(Repository repository, String lastReadAt) throws IOException {
         return markRepositoryNotificationsAsRead(repository.getOwner().getLogin(), repository.getName(), lastReadAt,
                 LIBRARY_OBJECT);
@@ -1309,7 +1328,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Mark repository notifications as read</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public <T> T markRepositoryNotificationsAsRead(Repository repository, String lastReadAt,
                                                    ReturnFormat format) throws IOException {
         return markRepositoryNotificationsAsRead(repository.getOwner().getLogin(), repository.getName(), lastReadAt,
@@ -1344,7 +1363,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public String markRepositoryNotificationsAsRead(String owner, String repo, String lastReadAt) throws IOException {
         return markRepositoryNotificationsAsRead(owner, repo, lastReadAt, LIBRARY_OBJECT);
     }
@@ -1378,7 +1398,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/notifications")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
     public <T> T markRepositoryNotificationsAsRead(String owner, String repo, String lastReadAt,
                                                    ReturnFormat format) throws IOException {
         Params payload = new Params();

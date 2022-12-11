@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.actions.workflow;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.workflow.records.Workflow;
 import com.tecknobit.githubmanager.actions.workflow.records.WorkflowUsage;
@@ -12,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
@@ -148,11 +150,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public WorkflowsList getRepositoryWorkflows(Repository repository) throws IOException {
-        return returnWorkflowsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH), LIBRARY_OBJECT);
+        return getRepositoryWorkflows(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
     /**
@@ -181,10 +183,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * List repository workflows</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public <T> T getRepositoryWorkflows(Repository repository, ReturnFormat format) throws IOException {
-        return returnWorkflowsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH), format);
+        return getRepositoryWorkflows(repository.getOwner().getLogin(), repository.getName(), format);
     }
 
     /**
@@ -212,10 +213,10 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public WorkflowsList getRepositoryWorkflows(String owner, String repo) throws IOException {
-        return returnWorkflowsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH),
-                LIBRARY_OBJECT);
+        return getRepositoryWorkflows(owner, repo, LIBRARY_OBJECT);
     }
 
     /**
@@ -244,7 +245,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public <T> T getRepositoryWorkflows(String owner, String repo, ReturnFormat format) throws IOException {
         return returnWorkflowsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH),
                 format);
@@ -283,11 +284,12 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public WorkflowsList getRepositoryWorkflows(Repository repository, Params queryParams) throws IOException {
-        return returnWorkflowsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getRepositoryWorkflows(repository.getOwner().getLogin(), repository.getName(), queryParams,
+                LIBRARY_OBJECT);
     }
 
     /**
@@ -325,10 +327,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * List repository workflows</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public <T> T getRepositoryWorkflows(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
-        return returnWorkflowsList(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH + queryParams.createQueryString()), format);
+        return getRepositoryWorkflows(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
 
     /**
@@ -365,10 +366,10 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public WorkflowsList getRepositoryWorkflows(String owner, String repo, Params queryParams) throws IOException {
-        return returnWorkflowsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH +
-                queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getRepositoryWorkflows(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -406,7 +407,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
     public <T> T getRepositoryWorkflows(String owner, String repo, Params queryParams,
                                         ReturnFormat format) throws IOException {
         return returnWorkflowsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH +
@@ -458,11 +459,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public Workflow getWorkflow(Repository repository, long workflowId) throws IOException {
-        return returnWorkflow(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowId), LIBRARY_OBJECT);
+        return getWorkflow(repository.getOwner().getLogin(), repository.getName(), workflowId, LIBRARY_OBJECT);
     }
 
     /**
@@ -493,10 +494,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Get a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public <T> T getWorkflow(Repository repository, long workflowId, ReturnFormat format) throws IOException {
-        return returnWorkflow(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowId), format);
+        return getWorkflow(repository.getOwner().getLogin(), repository.getName(), workflowId, format);
     }
 
     /**
@@ -526,10 +526,10 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public Workflow getWorkflow(String owner, String repo, long workflowId) throws IOException {
-        return returnWorkflow(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH
-                + "/" + workflowId), LIBRARY_OBJECT);
+        return getWorkflow(owner, repo, workflowId, LIBRARY_OBJECT);
     }
 
     /**
@@ -560,7 +560,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public <T> T getWorkflow(String owner, String repo, long workflowId, ReturnFormat format) throws IOException {
         return returnWorkflow(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH
                 + "/" + workflowId), format);
@@ -592,11 +592,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public Workflow getWorkflow(Repository repository, String workflowName) throws IOException {
-        return returnWorkflow(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowName), LIBRARY_OBJECT);
+        return getWorkflow(repository.getOwner().getLogin(), repository.getName(), workflowName, LIBRARY_OBJECT);
     }
 
     /**
@@ -627,10 +627,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Get a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public <T> T getWorkflow(Repository repository, String workflowName, ReturnFormat format) throws IOException {
-        return returnWorkflow(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowName), format);
+        return getWorkflow(repository.getOwner().getLogin(), repository.getName(), workflowName, format);
     }
 
     /**
@@ -660,10 +659,10 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public Workflow getWorkflow(String owner, String repo, String workflowName) throws IOException {
-        return returnWorkflow(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH
-                + "/" + workflowName), LIBRARY_OBJECT);
+        return getWorkflow(owner, repo, workflowName, LIBRARY_OBJECT);
     }
 
     /**
@@ -694,7 +693,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
     public <T> T getWorkflow(String owner, String repo, String workflowName, ReturnFormat format) throws IOException {
         return returnWorkflow(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH
                 + "/" + workflowName), format);
@@ -734,7 +733,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Disable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
     public boolean disableWorkflow(Repository repository, Workflow workflow) {
         return performWorkflowDeactivation(repository.getOwner().getLogin(), repository.getName(), workflow.getId());
     }
@@ -755,7 +754,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Disable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
     public boolean disableWorkflow(String owner, String repo, Workflow workflow) {
         return performWorkflowDeactivation(owner, repo, workflow.getId());
     }
@@ -775,7 +774,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Disable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
     public boolean disableWorkflow(Repository repository, long workflowId) {
         return performWorkflowDeactivation(repository.getOwner().getLogin(), repository.getName(), workflowId);
     }
@@ -795,7 +794,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
     public boolean disableWorkflow(String owner, String repo, long workflowId) {
         return performWorkflowDeactivation(owner, repo, workflowId);
     }
@@ -815,7 +814,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Disable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
     public boolean disableWorkflow(Repository repository, String workflowName) {
         return performWorkflowDeactivation(repository.getOwner().getLogin(), repository.getName(), workflowName);
     }
@@ -835,7 +834,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
     public boolean disableWorkflow(String owner, String repo, String workflowName) {
         return performWorkflowDeactivation(owner, repo, workflowName);
     }
@@ -857,8 +856,8 @@ public class GitHubWorkflowsManager extends GitHubManager {
      **/
     private <T> boolean performWorkflowDeactivation(String owner, String repo, T workflow) {
         try {
-            sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/" + workflow +
-                    DISABLE_PATH);
+            sendPutRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/" + workflow +
+                    DISABLE_PATH, null);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;
@@ -887,7 +886,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(Repository repository, Workflow workflow, String ref) {
         return performWorkflowDispatchEventCreation(repository.getOwner().getLogin(), repository.getName(),
                 workflow.getId(), ref, null);
@@ -911,7 +910,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(String owner, String repo, Workflow workflow, String ref) {
         return performWorkflowDispatchEventCreation(owner, repo, workflow.getId(), ref, null);
     }
@@ -933,7 +932,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(Repository repository, long workflowId, String ref) {
         return performWorkflowDispatchEventCreation(repository.getOwner().getLogin(), repository.getName(), workflowId,
                 ref, null);
@@ -956,7 +955,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(String owner, String repo, long workflowId, String ref) {
         return performWorkflowDispatchEventCreation(owner, repo, workflowId, ref, null);
     }
@@ -978,7 +977,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(Repository repository, String workflowName, String ref) {
         return performWorkflowDispatchEventCreation(repository.getOwner().getLogin(), repository.getName(), workflowName,
                 ref, null);
@@ -1001,7 +1000,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(String owner, String repo, String workflowName, String ref) {
         return performWorkflowDispatchEventCreation(owner, repo, workflowName, ref, null);
     }
@@ -1026,7 +1025,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(Repository repository, Workflow workflow, String ref, Params inputs) {
         return performWorkflowDispatchEventCreation(repository.getOwner().getLogin(), repository.getName(),
                 workflow.getId(), ref, inputs);
@@ -1053,7 +1052,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(String owner, String repo, Workflow workflow, String ref, Params inputs) {
         return performWorkflowDispatchEventCreation(owner, repo, workflow.getId(), ref, inputs);
     }
@@ -1078,7 +1077,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(Repository repository, long workflowId, String ref, Params inputs) {
         return performWorkflowDispatchEventCreation(repository.getOwner().getLogin(), repository.getName(), workflowId,
                 ref, inputs);
@@ -1104,7 +1103,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(String owner, String repo, long workflowId, String ref, Params inputs) {
         return performWorkflowDispatchEventCreation(owner, repo, workflowId, ref, inputs);
     }
@@ -1129,7 +1128,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(Repository repository, String workflowName, String ref, Params inputs) {
         return performWorkflowDispatchEventCreation(repository.getOwner().getLogin(), repository.getName(), workflowName,
                 ref, inputs);
@@ -1155,7 +1154,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
     public boolean createWorkflowDispatchEvent(String owner, String repo, String workflowName, String ref, Params inputs) {
         return performWorkflowDispatchEventCreation(owner, repo, workflowName, ref, inputs);
     }
@@ -1212,7 +1211,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Enable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
     public boolean enableWorkflow(Repository repository, Workflow workflow) {
         return performWorkflowActivation(repository.getOwner().getLogin(), repository.getName(), workflow.getId());
     }
@@ -1231,7 +1230,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Enable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
     public boolean enableWorkflow(String owner, String repo, Workflow workflow) {
         return performWorkflowActivation(owner, repo, workflow.getId());
     }
@@ -1249,7 +1248,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Enable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
     public boolean enableWorkflow(Repository repository, long workflowId) {
         return performWorkflowActivation(repository.getOwner().getLogin(), repository.getName(), workflowId);
     }
@@ -1268,7 +1267,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Enable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
     public boolean enableWorkflow(String owner, String repo, long workflowId) {
         return performWorkflowActivation(owner, repo, workflowId);
     }
@@ -1286,7 +1285,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Enable a workflow</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
     public boolean enableWorkflow(Repository repository, String workflowName) {
         return performWorkflowActivation(repository.getOwner().getLogin(), repository.getName(), workflowName);
     }
@@ -1304,7 +1303,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
     public boolean enableWorkflow(String owner, String repo, String workflowName) {
         return performWorkflowActivation(owner, repo, workflowName);
     }
@@ -1325,8 +1324,8 @@ public class GitHubWorkflowsManager extends GitHubManager {
      **/
     private <T> boolean performWorkflowActivation(String owner, String repo, T workflow) {
         try {
-            sendDeleteRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/" + workflow +
-                    ENABLE_PATH);
+            sendPutRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/" + workflow +
+                    ENABLE_PATH, null);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;
@@ -1368,11 +1367,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public WorkflowUsage getWorkflowUsage(Repository repository, Workflow workflow) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflow.getId() + TIMING_PATH), LIBRARY_OBJECT);
+        return getWorkflowUsage(repository.getOwner().getLogin(), repository.getName(), workflow.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1407,10 +1406,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Get workflow usage</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public <T> T getWorkflowUsage(Repository repository, Workflow workflow, ReturnFormat format) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflow.getId() + TIMING_PATH), format);
+        return getWorkflowUsage(repository.getOwner().getLogin(), repository.getName(), workflow.getId(), format);
     }
 
     /**
@@ -1444,11 +1442,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public WorkflowUsage getWorkflowUsage(String owner, String repo, Workflow workflow) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/"
-                + workflow.getId() + TIMING_PATH), LIBRARY_OBJECT);
+        return getWorkflowUsage(owner, repo, workflow.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1484,10 +1482,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Get workflow usage</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public <T> T getWorkflowUsage(String owner, String repo, Workflow workflow, ReturnFormat format) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/"
-                + workflow.getId() + TIMING_PATH), format);
+        return getWorkflowUsage(owner, repo, workflow.getId(), format);
     }
 
     /**
@@ -1520,11 +1517,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public WorkflowUsage getWorkflowUsage(Repository repository, long workflowId) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowId + TIMING_PATH), LIBRARY_OBJECT);
+        return getWorkflowUsage(repository.getOwner().getLogin(), repository.getName(), workflowId, LIBRARY_OBJECT);
     }
 
     /**
@@ -1559,10 +1556,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Get workflow usage</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public <T> T getWorkflowUsage(Repository repository, long workflowId, ReturnFormat format) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowId + TIMING_PATH), format);
+        return getWorkflowUsage(repository.getOwner().getLogin(), repository.getName(), workflowId, format);
     }
 
     /**
@@ -1596,10 +1592,10 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public WorkflowUsage getWorkflowUsage(String owner, String repo, long workflowId) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/"
-                + workflowId + TIMING_PATH), LIBRARY_OBJECT);
+        return getWorkflowUsage(owner, repo, workflowId, LIBRARY_OBJECT);
     }
 
     /**
@@ -1634,7 +1630,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public <T> T getWorkflowUsage(String owner, String repo, long workflowId, ReturnFormat format) throws IOException {
         return returnWorkflowUsage(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/"
                 + workflowId + TIMING_PATH), format);
@@ -1670,11 +1666,11 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public WorkflowUsage getWorkflowUsage(Repository repository, String workflowName) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowName + TIMING_PATH), LIBRARY_OBJECT);
+        return getWorkflowUsage(repository.getOwner().getLogin(), repository.getName(), workflowName, LIBRARY_OBJECT);
     }
 
     /**
@@ -1709,10 +1705,9 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * Get workflow usage</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public <T> T getWorkflowUsage(Repository repository, String workflowName, ReturnFormat format) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/"
-                + repository.getName() + ACTIONS_WORKFLOWS_PATH + "/" + workflowName + TIMING_PATH), format);
+        return getWorkflowUsage(repository.getOwner().getLogin(), repository.getName(), workflowName, format);
     }
 
     /**
@@ -1746,10 +1741,10 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public WorkflowUsage getWorkflowUsage(String owner, String repo, String workflowName) throws IOException {
-        return returnWorkflowUsage(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/"
-                + workflowName + TIMING_PATH), LIBRARY_OBJECT);
+        return getWorkflowUsage(owner, repo, workflowName, LIBRARY_OBJECT);
     }
 
     /**
@@ -1784,7 +1779,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
     public <T> T getWorkflowUsage(String owner, String repo, String workflowName, ReturnFormat format) throws IOException {
         return returnWorkflowUsage(sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_WORKFLOWS_PATH + "/"
                 + workflowName + TIMING_PATH), format);

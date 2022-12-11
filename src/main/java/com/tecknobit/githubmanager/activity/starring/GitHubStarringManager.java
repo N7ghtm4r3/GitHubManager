@@ -2,6 +2,7 @@ package com.tecknobit.githubmanager.activity.starring;
 
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.basics.User;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
@@ -10,6 +11,7 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import java.io.IOException;
 import java.util.Collection;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.records.basics.User.returnUsersList;
 import static com.tecknobit.githubmanager.records.repository.CompleteRepository.returnCompleteRepositoriesList;
@@ -119,8 +121,9 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public Collection<User> getStargazers(Repository repository) throws IOException {
         return getStargazers(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -147,7 +150,7 @@ public class GitHubStarringManager extends GitHubManager {
      * List stargazers</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public <T> T getStargazers(Repository repository, ReturnFormat format) throws IOException {
         return getStargazers(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -173,7 +176,8 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public Collection<User> getStargazers(String owner, String repo) throws IOException {
         return getStargazers(owner, repo, LIBRARY_OBJECT);
     }
@@ -200,7 +204,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public <T> T getStargazers(String owner, String repo, ReturnFormat format) throws IOException {
         return returnUsersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + STARGAZERS_PATH), format);
     }
@@ -234,8 +238,9 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public Collection<User> getStargazers(Repository repository, Params queryParams) throws IOException {
         return getStargazers(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
@@ -271,7 +276,7 @@ public class GitHubStarringManager extends GitHubManager {
      * List stargazers</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public <T> T getStargazers(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
         return getStargazers(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
@@ -306,7 +311,8 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public Collection<User> getStargazers(String owner, String repo, Params queryParams) throws IOException {
         return getStargazers(owner, repo, queryParams, LIBRARY_OBJECT);
     }
@@ -342,7 +348,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/stargazers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
     public <T> T getStargazers(String owner, String repo, Params queryParams, ReturnFormat format) throws IOException {
         return returnUsersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + STARGAZERS_PATH
                 + queryParams.createQueryString()), format);
@@ -368,7 +374,8 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred")
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/starred")
     public Collection<CompleteRepository> getAuthenticatedUserStarredRepositories() throws IOException {
         return getAuthenticatedUserStarredRepositories(LIBRARY_OBJECT);
     }
@@ -394,7 +401,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred")
+    @RequestPath(method = GET, path = "/user/starred")
     public <T> T getAuthenticatedUserStarredRepositories(ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USER_STARRED_PATH), format);
     }
@@ -436,7 +443,8 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred")
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/starred")
     public Collection<CompleteRepository> getAuthenticatedUserStarredRepositories(Params queryParams) throws IOException {
         return getAuthenticatedUserStarredRepositories(queryParams, LIBRARY_OBJECT);
     }
@@ -479,7 +487,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred")
+    @RequestPath(method = GET, path = "/user/starred")
     public <T> T getAuthenticatedUserStarredRepositories(Params queryParams, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USER_STARRED_PATH + queryParams.createQueryString()), format);
     }
@@ -493,7 +501,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Check if a repository is starred by the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/user/starred/{owner}/{repo}")
+    @RequestPath(method = GET, path = "/user/starred/{owner}/{repo}")
     public boolean checkStarredRepository(Repository repository) {
         return checkStarredRepository(repository.getOwner().getLogin(), repository.getName());
     }
@@ -507,7 +515,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user">
      * Check if a repository is starred by the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred/{owner}/{repo}")
+    @RequestPath(method = GET, path = "/user/starred/{owner}/{repo}")
     public boolean checkStarredRepository(String owner, String repo) {
         try {
             sendGetRequest(USER_STARRED_PATH + "/" + owner + "/" + repo);
@@ -531,7 +539,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Star a repository for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/user/starred/{owner}/{repo}")
+    @RequestPath(method = PUT, path = "/user/starred/{owner}/{repo}")
     public boolean starRepository(Repository repository) {
         return starRepository(repository.getOwner().getLogin(), repository.getName());
     }
@@ -545,7 +553,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#star-a-repository-for-the-authenticated-user">
      * Star a repository for the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred/{owner}/{repo}")
+    @RequestPath(method = PUT, path = "/user/starred/{owner}/{repo}")
     public boolean starRepository(String owner, String repo) {
         try {
             sendPutRequest(USER_STARRED_PATH + "/" + owner + "/" + repo, null);
@@ -569,7 +577,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Unstar a repository for the authenticated user</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/user/starred/{owner}/{repo}")
+    @RequestPath(method = DELETE, path = "/user/starred/{owner}/{repo}")
     public boolean unstarRepository(Repository repository) {
         return starRepository(repository.getOwner().getLogin(), repository.getName());
     }
@@ -583,7 +591,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#unstar-a-repository-for-the-authenticated-user">
      * Unstar a repository for the authenticated user</a>
      **/
-    @RequestPath(path = "/user/starred/{owner}/{repo}")
+    @RequestPath(method = DELETE, path = "/user/starred/{owner}/{repo}")
     public boolean unstarRepository(String owner, String repo) {
         try {
             sendDeleteRequest(USER_STARRED_PATH + "/" + owner + "/" + repo);
@@ -618,7 +626,8 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/starred")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/starred")
     public Collection<CompleteRepository> getStarredRepositories(String username) throws IOException {
         return getStarredRepositories(username, LIBRARY_OBJECT);
     }
@@ -644,7 +653,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/starred")
+    @RequestPath(method = GET, path = "/users/{username}/starred")
     public <T> T getStarredRepositories(String username, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + STARRED_PATH), format);
     }
@@ -687,7 +696,8 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/starred")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/starred")
     public Collection<CompleteRepository> getStarredRepositories(String username, Params queryParams) throws IOException {
         return getStarredRepositories(username, queryParams, LIBRARY_OBJECT);
     }
@@ -731,7 +741,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/starred")
+    @RequestPath(method = GET, path = "/users/{username}/starred")
     public <T> T getStarredRepositories(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + STARRED_PATH +
                 queryParams.createQueryString()), format);

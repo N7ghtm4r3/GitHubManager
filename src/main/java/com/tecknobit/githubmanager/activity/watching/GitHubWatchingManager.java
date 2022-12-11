@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.activity.watching;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.activity.watching.records.RepositorySubscription;
 import com.tecknobit.githubmanager.records.basics.User;
@@ -13,6 +14,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Collection;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.records.basics.User.returnUsersList;
 import static com.tecknobit.githubmanager.records.repository.CompleteRepository.returnCompleteRepositoriesList;
@@ -122,8 +124,9 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public Collection<User> getWatchers(Repository repository) throws IOException {
         return getWatchers(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -150,7 +153,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * List watchers</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public <T> T getWatchers(Repository repository, ReturnFormat format) throws IOException {
         return getWatchers(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -176,7 +179,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public Collection<User> getWatchers(String owner, String repo) throws IOException {
         return getWatchers(owner, repo, LIBRARY_OBJECT);
     }
@@ -203,7 +207,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public <T> T getWatchers(String owner, String repo, ReturnFormat format) throws IOException {
         return returnUsersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIBERS_PATH), format);
     }
@@ -237,8 +241,9 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public Collection<User> getWatchers(Repository repository, Params queryParams) throws IOException {
         return getWatchers(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
@@ -274,7 +279,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * List watchers</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public <T> T getWatchers(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
         return getWatchers(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
@@ -309,7 +314,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public Collection<User> getWatchers(String owner, String repo, Params queryParams) throws IOException {
         return getWatchers(owner, repo, queryParams, LIBRARY_OBJECT);
     }
@@ -345,7 +351,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
     public <T> T getWatchers(String owner, String repo, Params queryParams, ReturnFormat format) throws IOException {
         return returnUsersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIBERS_PATH
                 + queryParams.createQueryString()), format);
@@ -371,8 +377,9 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription getRepositorySubscription(Repository repository) throws IOException {
         return getRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -399,7 +406,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Get a repository subscription</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscription")
     public <T> T getRepositorySubscription(Repository repository, ReturnFormat format) throws IOException {
         return getRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -425,7 +432,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription getRepositorySubscription(String owner, String repo) throws IOException {
         return getRepositorySubscription(owner, repo, LIBRARY_OBJECT);
     }
@@ -452,7 +460,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscription")
     public <T> T getRepositorySubscription(String owner, String repo, ReturnFormat format) throws IOException {
         return returnRepositorySubscription(sendGetRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIPTION_PATH),
                 format);
@@ -481,8 +489,9 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription setRepositorySubscription(Repository repository) throws IOException {
         return setRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -512,7 +521,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Set a repository subscription</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public <T> T setRepositorySubscription(Repository repository, ReturnFormat format) throws IOException {
         return setRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -541,7 +550,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription setRepositorySubscription(String owner, String repo) throws IOException {
         return setRepositorySubscription(owner, repo, LIBRARY_OBJECT);
     }
@@ -571,7 +581,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public <T> T setRepositorySubscription(String owner, String repo, ReturnFormat format) throws IOException {
         return returnRepositorySubscription(sendPutRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIPTION_PATH,
                 null), format);
@@ -611,8 +621,9 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription setRepositorySubscription(Repository repository, Params bodyParams) throws IOException {
         return setRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), bodyParams,
                 LIBRARY_OBJECT);
@@ -654,7 +665,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Set a repository subscription</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public <T> T setRepositorySubscription(Repository repository, Params bodyParams, ReturnFormat format) throws IOException {
         return setRepositorySubscription(repository.getOwner().getLogin(), repository.getName(), bodyParams, format);
     }
@@ -694,7 +705,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public RepositorySubscription setRepositorySubscription(String owner, String repo, Params bodyParams) throws IOException {
         return setRepositorySubscription(owner, repo, bodyParams, LIBRARY_OBJECT);
     }
@@ -735,7 +747,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
     public <T> T setRepositorySubscription(String owner, String repo, Params bodyParams,
                                            ReturnFormat format) throws IOException {
         return returnRepositorySubscription(sendPutRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIPTION_PATH,
@@ -773,7 +785,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Delete a repository subscription</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/subscription")
     public boolean deleteRepositorySubscription(Repository repository) {
         return deleteRepositorySubscription(repository.getOwner().getLogin(), repository.getName());
     }
@@ -790,7 +802,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
      * Delete a repository subscription</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscription")
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/subscription")
     public boolean deleteRepositorySubscription(String owner, String repo) {
         try {
             sendDeleteRequest(REPOS_PATH + owner + "/" + repo + SUBSCRIPTION_PATH);
@@ -825,7 +837,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/subscriptions")
     public Collection<CompleteRepository> getAuthenticatedUserRepositoriesWatched() throws IOException {
         return getAuthenticatedUserRepositoriesWatched(LIBRARY_OBJECT);
     }
@@ -850,7 +863,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/user/subscriptions")
     public <T> T getAuthenticatedUserRepositoriesWatched(ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USER_SUBSCRIPTIONS_PATH), format);
     }
@@ -883,7 +896,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/subscriptions")
     public Collection<CompleteRepository> getAuthenticatedUserRepositoriesWatched(Params queryParams) throws IOException {
         return getAuthenticatedUserRepositoriesWatched(queryParams, LIBRARY_OBJECT);
     }
@@ -917,7 +931,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/subscribers")
+    @RequestPath(method = GET, path = "/user/subscriptions")
     public <T> T getAuthenticatedUserRepositoriesWatched(Params queryParams, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USER_SUBSCRIPTIONS_PATH + queryParams.createQueryString()),
                 format);
@@ -943,7 +957,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/subscriptions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/subscriptions")
     public Collection<CompleteRepository> getUserRepositoriesWatched(String username) throws IOException {
         return getUserRepositoriesWatched(username, LIBRARY_OBJECT);
     }
@@ -969,7 +984,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/subscriptions")
+    @RequestPath(method = GET, path = "/users/{username}/subscriptions")
     public <T> T getUserRepositoriesWatched(String username, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + SUBSCRIPTIONS_PATH), format);
     }
@@ -1003,7 +1018,8 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/subscriptions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/users/{username}/subscriptions")
     public Collection<CompleteRepository> getUserRepositoriesWatched(String username, Params queryParams) throws IOException {
         return getUserRepositoriesWatched(username, queryParams, LIBRARY_OBJECT);
     }
@@ -1038,7 +1054,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
-    @RequestPath(path = "/users/{username}/subscriptions")
+    @RequestPath(method = GET, path = "/users/{username}/subscriptions")
     public <T> T getUserRepositoriesWatched(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + SUBSCRIPTIONS_PATH +
                 queryParams.createQueryString()), format);

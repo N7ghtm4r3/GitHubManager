@@ -2,12 +2,14 @@ package com.tecknobit.githubmanager.activity.feeds;
 
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.activity.feeds.records.Feed;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
@@ -132,7 +134,8 @@ public class GitHubFeedsManager extends GitHubManager {
      * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/feeds#get-feeds">
      * Get feeds</a>
      **/
-    @RequestPath(path = "/feeds")
+    @Wrapper
+    @RequestPath(method = GET, path = "/feeds")
     public Feed getFeeds() throws IOException {
         return getFeeds(LIBRARY_OBJECT);
     }
@@ -185,7 +188,7 @@ public class GitHubFeedsManager extends GitHubManager {
      * Get feeds</a>
      **/
     @Returner
-    @RequestPath(path = "/feeds")
+    @RequestPath(method = GET, path = "/feeds")
     public <T> T getFeeds(ReturnFormat format) throws IOException {
         String feedsResponse = sendGetRequest(FEEDS_PATH);
         switch (format) {

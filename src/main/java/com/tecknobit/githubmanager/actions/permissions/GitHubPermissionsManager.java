@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.actions.permissions;
 import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.permissions.records.AARW;
 import com.tecknobit.githubmanager.actions.permissions.records.DefaultWorkflowPermissions;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
 import static com.tecknobit.githubmanager.records.basics.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
@@ -157,7 +159,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
      * Get GitHub Actions permissions for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions")
     public EnterpriseActionsPermissions getEnterpriseActionsPermissions(String enterprise) throws IOException {
         return getEnterpriseActionsPermissions(enterprise, LIBRARY_OBJECT);
     }
@@ -187,7 +190,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get GitHub Actions permissions for an enterprise</a>
      **/
     @Returner
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions")
     public <T> T getEnterpriseActionsPermissions(String enterprise, ReturnFormat format) throws IOException {
         String enterprisePermissionsResponse = sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_PATH);
@@ -214,7 +217,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
      * Set GitHub Actions permissions for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions")
     public boolean setEnterpriseActionsPermissions(String enterprise, EnabledItems enabledOrganizations) {
         return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH, enabledOrganizations,
                 null);
@@ -232,7 +236,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
      * Set GitHub Actions permissions for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions")
     public boolean setEnterpriseActionsPermissions(String enterprise, EnterpriseActionsPermissions enterprisePermissions) {
         return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH,
                 enterprisePermissions.getEnabledOrganizations(), enterprisePermissions.getAllowedActions());
@@ -254,7 +259,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions")
     public boolean setEnterpriseActionsPermissions(String enterprise, EnabledItems enabledOrganizations,
                                                    AllowedActions allowedActions) {
         return setActionsPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_PATH,
@@ -285,10 +290,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public OrganizationsList getEnabledEnterpriseOrganizations(String enterprise) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
-                ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), LIBRARY_OBJECT);
+        return getEnabledEnterpriseOrganizations(enterprise, LIBRARY_OBJECT);
     }
 
     /**
@@ -316,7 +321,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public <T> T getEnabledEnterpriseOrganizations(String enterprise, ReturnFormat format) throws IOException {
         return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH), format);
@@ -355,10 +360,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public OrganizationsList getEnabledEnterpriseOrganizations(String enterprise, Params queryParams) throws IOException {
-        return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
-                ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + queryParams), LIBRARY_OBJECT);
+        return getEnabledEnterpriseOrganizations(enterprise, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -395,7 +400,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public <T> T getEnabledEnterpriseOrganizations(String enterprise, Params queryParams,
                                                    ReturnFormat format) throws IOException {
         return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise +
@@ -415,10 +420,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @Wrapper
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, Collection<Long> selectedOrganizationsIds) {
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
-                "selected_organization_ids", selectedOrganizationsIds.toArray(new Long[0]));
+        return enableSelectedEnterpriseOrganizations(enterprise, selectedOrganizationsIds.toArray(new Long[0]));
     }
 
     /**
@@ -434,14 +439,14 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, OrganizationsList selectedOrganizations) {
         ArrayList<Long> ids = new ArrayList<>();
         for (Organization organization : selectedOrganizations.getOrganizations())
             ids.add(organization.getId());
-        return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
-                "selected_organization_ids", ids.toArray(new Long[0]));
+        return enableSelectedEnterpriseOrganizations(enterprise, ids.toArray(new Long[0]));
     }
 
     /**
@@ -457,7 +462,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public boolean enableSelectedEnterpriseOrganizations(String enterprise, Long[] selectedOrganizationsIds) {
         return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH,
                 "selected_organization_ids", selectedOrganizationsIds);
@@ -476,8 +481,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Enable a selected organization for GitHub Actions in an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public boolean enableSelectedEnterpriseOrganization(String enterprise, Organization organizationToEnable) {
         return enableSelectedEnterpriseOrganization(enterprise, organizationToEnable.getId());
     }
@@ -495,7 +501,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Enable a selected organization for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
     public boolean enableSelectedEnterpriseOrganization(String enterprise, long orgId) {
         try {
             sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + orgId,
@@ -524,8 +530,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Disable a selected organization for GitHub Actions in an enterprise</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}")
     public boolean disableSelectedEnterpriseOrganization(String enterprise, Organization organizationToDisable) {
         return disableSelectedEnterpriseOrganization(enterprise, organizationToDisable.getId());
     }
@@ -543,7 +550,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Disable a selected organization for GitHub Actions in an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}")
+    @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}")
     public boolean disableSelectedEnterpriseOrganization(String enterprise, long orgId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + orgId);
@@ -582,10 +589,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Get allowed actions and reusable workflows for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
     public AARW getEnterpriseAARW(String enterprise) throws IOException {
-        return returnAARW(sendGetRequest(ENTERPRISES_PATH + enterprise +
-                ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH), LIBRARY_OBJECT);
+        return getEnterpriseAARW(enterprise, LIBRARY_OBJECT);
     }
 
     /**
@@ -613,7 +620,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Get allowed actions and reusable workflows for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
     public <T> T getEnterpriseAARW(String enterprise, ReturnFormat format) throws IOException {
         return returnAARW(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH), format);
@@ -633,7 +640,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set allowed actions and reusable workflows for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
     public boolean setEnterpriseAARW(String enterprise, AARW aarw) {
         return setAARW(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH,
                 aarw);
@@ -668,7 +675,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Set allowed actions and reusable workflows for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
     public boolean setEnterpriseAARW(String enterprise, Params aarw) {
         return setAARW(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_ORGANIZATIONS_SELECTED_ACTIONS_PATH,
                 aarw);
@@ -699,10 +706,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
      * Get default workflow permissions for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/workflow")
+    @Wrapper
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/workflow")
     public DefaultWorkflowPermissions getDefaultEnterpriseWorkflowPermissions(String enterprise) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(ENTERPRISES_PATH + enterprise +
-                ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
+        return getDefaultEnterpriseWorkflowPermissions(enterprise, LIBRARY_OBJECT);
     }
 
     /**
@@ -731,7 +738,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
      * Get default workflow permissions for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/workflow")
     public <T> T getDefaultEnterpriseWorkflowPermissions(String enterprise, ReturnFormat format) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(ENTERPRISES_PATH + enterprise +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
@@ -751,7 +758,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for an enterprise</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/workflow")
     public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise, DefaultWorkflowPermissions
             defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
@@ -781,7 +788,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
      * Set default workflow permissions for an enterprise</a>
      **/
-    @RequestPath(path = "/enterprises/{enterprise}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/workflow")
     public boolean setDefaultEnterpriseWorkflowPermissions(String enterprise, Params defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ENTERPRISES_PATH + enterprise + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
@@ -810,8 +817,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
      * Get GitHub Actions permissions for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions")
     public OrganizationActionsPermissions getOrganizationActionsPermissions(Organization org) throws IOException {
         return getOrganizationActionsPermissions(org.getLogin(), LIBRARY_OBJECT);
     }
@@ -841,7 +849,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get GitHub Actions permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions")
     public <T> T getOrganizationActionsPermissions(Organization org, ReturnFormat format) throws IOException {
         return getOrganizationActionsPermissions(org.getLogin(), format);
     }
@@ -869,7 +877,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
      * Get GitHub Actions permissions for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions")
     public OrganizationActionsPermissions getOrganizationActionsPermissions(String org) throws IOException {
         return getOrganizationActionsPermissions(org, LIBRARY_OBJECT);
     }
@@ -899,7 +908,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get GitHub Actions permissions for an organization</a>
      **/
     @Returner
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions")
     public <T> T getOrganizationActionsPermissions(String org, ReturnFormat format) throws IOException {
         String orgPermissionsResponse = sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH);
         switch (format) {
@@ -927,11 +936,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
     public boolean setOrganizationActionsPermissions(Organization org, EnabledItems enabledRepositories) {
-        return setActionsPermissions(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_PATH, enabledRepositories,
-                null);
+        return setOrganizationActionsPermissions(org.getLogin(), enabledRepositories);
     }
 
     /**
@@ -949,7 +958,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
     public boolean setOrganizationActionsPermissions(String org, EnabledItems enabledRepositories) {
         return setActionsPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH, enabledRepositories, null);
     }
@@ -968,11 +977,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
     public boolean setOrganizationActionsPermissions(Organization org, OrganizationActionsPermissions organizationPermissions) {
-        return setActionsPermissions(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_PATH,
-                organizationPermissions.getEnabledRepositories(), organizationPermissions.getAllowedActions());
+        return setOrganizationActionsPermissions(org.getLogin(), organizationPermissions);
     }
 
     /**
@@ -990,7 +999,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
     public boolean setOrganizationActionsPermissions(String org, OrganizationActionsPermissions organizationPermissions) {
         return setActionsPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH,
                 organizationPermissions.getEnabledRepositories(), organizationPermissions.getAllowedActions());
@@ -1013,12 +1022,12 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
     public boolean setOrganizationActionsPermissions(Organization org, EnabledItems enabledRepositories,
                                                      AllowedActions allowedActions) {
-        return setActionsPermissions(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_PATH, enabledRepositories,
-                allowedActions);
+        return setOrganizationActionsPermissions(org.getLogin(), enabledRepositories, allowedActions);
     }
 
     /**
@@ -1039,7 +1048,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
     public boolean setOrganizationActionsPermissions(String org, EnabledItems enabledRepositories,
                                                      AllowedActions allowedActions) {
         return setActionsPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_PATH, enabledRepositories, allowedActions);
@@ -1070,11 +1079,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(Organization org) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH), LIBRARY_OBJECT);
+        return getEnabledOrganizationRepositories(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1104,10 +1113,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public <T> T getEnabledOrganizationRepositories(Organization org, ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH), format);
+        return getEnabledOrganizationRepositories(org.getLogin(), format);
     }
 
     /**
@@ -1135,10 +1143,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(String org) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH), LIBRARY_OBJECT);
+        return getEnabledOrganizationRepositories(org, LIBRARY_OBJECT);
     }
 
     /**
@@ -1167,7 +1175,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public <T> T getEnabledOrganizationRepositories(String org, ReturnFormat format) throws IOException {
         return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), format);
@@ -1207,12 +1215,12 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(Organization org,
                                                                            Params queryParams) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getEnabledOrganizationRepositories(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1251,11 +1259,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public <T> T getEnabledOrganizationRepositories(Organization org, Params queryParams,
                                                     ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), format);
+        return getEnabledOrganizationRepositories(org.getLogin(), queryParams, format);
     }
 
     /**
@@ -1292,10 +1299,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public OrganizationRepositoriesList getEnabledOrganizationRepositories(String org, Params queryParams) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), LIBRARY_OBJECT);
+        return getEnabledOrganizationRepositories(org, queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1333,7 +1340,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public <T> T getEnabledOrganizationRepositories(String org, Params queryParams, ReturnFormat format) throws IOException {
         return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), format);
@@ -1355,10 +1362,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(Organization org, Collection<Long> selectedRepositoriesIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
-                "selected_repository_ids", selectedRepositoriesIds.toArray(new Long[0]));
+        return enableSelectedOrganizationRepositories(org.getLogin(), selectedRepositoriesIds.toArray(new Long[0]));
     }
 
     /**
@@ -1376,10 +1382,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(String org, Collection<Long> selectedRepositoriesIds) {
-        return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
-                "selected_repository_ids", selectedRepositoriesIds.toArray(new Long[0]));
+        return enableSelectedOrganizationRepositories(org, selectedRepositoriesIds.toArray(new Long[0]));
     }
 
     /**
@@ -1397,7 +1402,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(Organization org, OrganizationRepositoriesList selectedRepositories) {
         return enableSelectedOrganizationRepositories(org.getLogin(), selectedRepositories);
     }
@@ -1417,13 +1422,12 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(String org, OrganizationRepositoriesList selectedRepositories) {
         ArrayList<Long> ids = new ArrayList<>();
         for (CompleteRepository completeRepository : selectedRepositories.getRepositories())
             ids.add(completeRepository.getId());
-        return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
-                "selected_repository_ids", ids.toArray(new Long[0]));
+        return enableSelectedOrganizationRepositories(org, ids.toArray(new Long[0]));
     }
 
     /**
@@ -1441,10 +1445,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(Organization org, Long[] selectedRepositoriesIds) {
-        return setItems(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
-                "selected_repository_ids", selectedRepositoriesIds);
+        return enableSelectedOrganizationRepositories(org.getLogin(), selectedRepositoriesIds);
     }
 
     /**
@@ -1461,7 +1464,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepositories(String org, Long[] selectedRepositoriesIds) {
         return setItems(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH,
                 "selected_repository_ids", selectedRepositoriesIds);
@@ -1482,7 +1485,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepository(Organization org, CompleteRepository repositoryToEnable) {
         return enableSelectedOrganizationRepository(org.getLogin(), repositoryToEnable.getId());
     }
@@ -1502,7 +1505,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepository(String org, CompleteRepository repositoryToEnable) {
         return enableSelectedOrganizationRepository(org, repositoryToEnable.getId());
     }
@@ -1522,7 +1525,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepository(Organization org, long repositoryId) {
         return enableSelectedOrganizationRepository(org.getLogin(), repositoryId);
     }
@@ -1541,7 +1544,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
     public boolean enableSelectedOrganizationRepository(String org, long repositoryId) {
         try {
             sendPutRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_ORGANIZATIONS_PATH + repositoryId, null);
@@ -1571,7 +1574,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
     public boolean disableSelectedOrganizationRepositories(Organization org, CompleteRepository repositoryToDisable) {
         return disableSelectedOrganizationRepositories(org.getLogin(), repositoryToDisable.getId());
     }
@@ -1591,7 +1594,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
     public boolean disableSelectedOrganizationRepositories(String org, CompleteRepository repositoryToDisable) {
         return disableSelectedOrganizationRepositories(org, repositoryToDisable.getId());
     }
@@ -1611,7 +1614,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
     public boolean disableSelectedOrganizationRepositories(Organization org, long repositoryId) {
         return disableSelectedOrganizationRepositories(org.getLogin(), repositoryId);
     }
@@ -1630,7 +1633,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
+    @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
     public boolean disableSelectedOrganizationRepositories(String org, long repositoryId) {
         try {
             sendDeleteRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH + repositoryId);
@@ -1670,11 +1673,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/selected-actions")
     public AARW getOrganizationAARW(Organization org) throws IOException {
-        return returnAARW(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH),
-                LIBRARY_OBJECT);
+        return getOrganizationAARW(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1704,10 +1707,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get allowed actions and reusable workflows for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/selected-actions")
     public <T> T getOrganizationAARW(Organization org, ReturnFormat format) throws IOException {
-        return returnAARW(sendGetRequest(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH),
-                format);
+        return getOrganizationAARW(org.getLogin(), format);
     }
 
     /**
@@ -1735,9 +1737,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/selected-actions")
     public AARW getOrganizationAARW(String org) throws IOException {
-        return returnAARW(sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), LIBRARY_OBJECT);
+        return getOrganizationAARW(org, LIBRARY_OBJECT);
     }
 
     /**
@@ -1766,7 +1769,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/selected-actions")
     public <T> T getOrganizationAARW(String org, ReturnFormat format) throws IOException {
         return returnAARW(sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
     }
@@ -1791,7 +1794,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set allowed actions and reusable workflows for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/selected-actions")
     public boolean setOrganizationAARW(Organization org, AARW aarw) {
         return setAARW(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
@@ -1816,7 +1819,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set allowed actions and reusable workflows for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/selected-actions")
     public boolean setOrganizationAARW(String org, AARW aarw) {
         return setAARW(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
@@ -1856,7 +1859,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
      * Set allowed actions and reusable workflows for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/selected-actions")
     public boolean setOrganizationAARW(Organization org, Params aarw) {
         return setAARW(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
@@ -1896,7 +1899,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
      * Set allowed actions and reusable workflows for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/selected-actions")
     public boolean setOrganizationAARW(String org, Params aarw) {
         return setAARW(ORGS_PATH + org + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
@@ -1926,11 +1929,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/workflow")
     public DefaultWorkflowPermissions getDefaultOrganizationWorkflowPermissions(Organization org) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
+        return getDefaultOrganizationWorkflowPermissions(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1960,10 +1963,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get default workflow permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/workflow")
     public <T> T getDefaultOrganizationWorkflowPermissions(Organization org, ReturnFormat format) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(ORGS_PATH + org.getLogin() +
-                ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
+        return getDefaultOrganizationWorkflowPermissions(org.getLogin(), format);
     }
 
     /**
@@ -1991,10 +1993,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @Wrapper
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/workflow")
     public DefaultWorkflowPermissions getDefaultOrganizationWorkflowPermissions(String org) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(ORGS_PATH + org +
-                ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
+        return getDefaultOrganizationWorkflowPermissions(org, LIBRARY_OBJECT);
     }
 
     /**
@@ -2023,7 +2025,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/workflow")
     public <T> T getDefaultOrganizationWorkflowPermissions(String org, ReturnFormat format) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
@@ -2049,10 +2051,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/workflow")
     public boolean setDefaultOrganizationWorkflowPermissions(Organization org, DefaultWorkflowPermissions defWorkflowPermissions) {
-        return setDefaultWorkflowPermissions(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
-                defWorkflowPermissions);
+        return setDefaultOrganizationWorkflowPermissions(org.getLogin(), defWorkflowPermissions);
     }
 
     /**
@@ -2075,7 +2076,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/workflow")
     public boolean setDefaultOrganizationWorkflowPermissions(String org, DefaultWorkflowPermissions defWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defWorkflowPermissions);
@@ -2111,10 +2112,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for an organization</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/workflow")
     public boolean setDefaultOrganizationWorkflowPermissions(Organization org, Params defaultWorkflowPermissions) {
-        return setDefaultWorkflowPermissions(ORGS_PATH + org.getLogin() + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
-                defaultWorkflowPermissions);
+        return setDefaultOrganizationWorkflowPermissions(org.getLogin(), defaultWorkflowPermissions);
     }
 
     /**
@@ -2146,7 +2146,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
      * Set default workflow permissions for an organization</a>
      **/
-    @RequestPath(path = "/orgs/{org}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/workflow")
     public boolean setDefaultOrganizationWorkflowPermissions(String org, Params defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(ORGS_PATH + org + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
@@ -2176,8 +2176,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
      * Get GitHub Actions permissions for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions")
     public RepositoryActionsPermissions getRepositoryActionsPermissions(Repository repository) throws IOException {
         return getRepositoryActionsPermissions(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
@@ -2208,7 +2209,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions")
     public <T> T getRepositoryActionsPermissions(Repository repository, ReturnFormat format) throws IOException {
         return getRepositoryActionsPermissions(repository.getOwner().getLogin(), repository.getName(), format);
     }
@@ -2238,7 +2239,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
      * Get GitHub Actions permissions for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions")
     public RepositoryActionsPermissions getRepositoryActionsPermissions(String owner, String repo) throws IOException {
         return getRepositoryActionsPermissions(owner, repo, LIBRARY_OBJECT);
     }
@@ -2270,7 +2272,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get GitHub Actions permissions for a repository</a>
      **/
     @Returner
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions")
     public <T> T getRepositoryActionsPermissions(String owner, String repo, ReturnFormat format) throws IOException {
         String orgPermissionsResponse = sendGetRequest(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_PATH);
         switch (format) {
@@ -2299,10 +2301,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
     public boolean setRepositoryActionsPermissions(Repository repository, boolean enable) {
-        return setActionsPermissions(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName() +
-                ACTIONS_PERMISSIONS_PATH, enable, null);
+        return setRepositoryActionsPermissions(repository.getOwner().getLogin(), repository.getName(), enable);
     }
 
     /**
@@ -2321,7 +2322,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
     public boolean setRepositoryActionsPermissions(String owner, String repo, boolean enable) {
         return setActionsPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_PATH, enable,
                 null);
@@ -2343,10 +2344,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
     public boolean setRepositoryActionsPermissions(Repository repository, RepositoryActionsPermissions repoPermissions) {
-        return setActionsPermissions(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName() +
-                ACTIONS_PERMISSIONS_PATH, repoPermissions.isEnabled(), repoPermissions.getAllowedActions());
+        return setRepositoryActionsPermissions(repository.getOwner().getLogin(), repository.getName(), repoPermissions);
     }
 
     /**
@@ -2366,7 +2366,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
     public boolean setRepositoryActionsPermissions(String owner, String repo, RepositoryActionsPermissions repoPermissions) {
         return setActionsPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_PATH,
                 repoPermissions.isEnabled(), repoPermissions.getAllowedActions());
@@ -2390,10 +2390,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
     public boolean setRepositoryActionsPermissions(Repository repository, boolean enable, AllowedActions allowedActions) {
-        return setActionsPermissions(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName() +
-                ACTIONS_PERMISSIONS_PATH, enable, allowedActions);
+        return setRepositoryActionsPermissions(repository.getOwner().getLogin(), repository.getName(), enable,
+                allowedActions);
     }
 
     /**
@@ -2415,7 +2415,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
     public boolean setRepositoryActionsPermissions(String owner, String repo, boolean enable, AllowedActions allowedActions) {
         return setActionsPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_PATH, enable,
                 allowedActions);
@@ -2466,29 +2466,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
      * Get the level of access for workflows outside of the repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/access")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/access")
     public String getAccessLevelOutsideRepository(Repository repository) {
         return getAccessLevelOutsideRepository(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the level of access that workflows outside the repository have to actions and reusable workflows in
-     * the repository. This endpoint only applies to internal repositories.
-     * For more information, see "Managing GitHub Actions settings for a repository."
-     * You must authenticate using an access token with the repo scope to use this endpoint ->
-     * <b> this step is automatically made by this library. </b> <br>
-     * {@code "GitHub Apps"} must have the repository administration permission to use this endpoint
-     *
-     * @param owner: the account owner of the repository. The name is not case-sensitive
-     * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return access level outside repository as {@link String}
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
-     * Get the level of access for workflows outside of the repository</a>
-     **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/access")
-    public String getAccessLevelOutsideRepository(String owner, String repo) {
-        return getAccessLevelOutsideRepository(owner, repo, LIBRARY_OBJECT);
     }
 
     /**
@@ -2507,9 +2489,29 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @apiNote in this case {@link ReturnFormat#LIBRARY_OBJECT} will return the {@link String} value fetched from the {@code "JSON"} response
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/access")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/access")
     public <T> T getAccessLevelOutsideRepository(Repository repository, ReturnFormat format) {
         return getAccessLevelOutsideRepository(repository.getOwner().getLogin(), repository.getName(), format);
+    }
+
+    /**
+     * Method to get the level of access that workflows outside the repository have to actions and reusable workflows in
+     * the repository. This endpoint only applies to internal repositories.
+     * For more information, see "Managing GitHub Actions settings for a repository."
+     * You must authenticate using an access token with the repo scope to use this endpoint ->
+     * <b> this step is automatically made by this library. </b> <br>
+     * {@code "GitHub Apps"} must have the repository administration permission to use this endpoint
+     *
+     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param repo:  the name of the repository. The name is not case-sensitive
+     * @return access level outside repository as {@link String}
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
+     * Get the level of access for workflows outside of the repository</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/access")
+    public String getAccessLevelOutsideRepository(String owner, String repo) {
+        return getAccessLevelOutsideRepository(owner, repo, LIBRARY_OBJECT);
     }
 
     /**
@@ -2529,7 +2531,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @apiNote in this case {@link ReturnFormat#LIBRARY_OBJECT} will return the {@link String} value fetched from the {@code "JSON"} response
      **/
     @Returner
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/access")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/access")
     public <T> T getAccessLevelOutsideRepository(String owner, String repo, ReturnFormat format) {
         try {
             JSONObject levelAccessResponse = new JSONObject(sendGetRequest(REPOS_PATH + owner + "/" + repo +
@@ -2564,7 +2566,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set the level of access for workflows outside of the repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/access")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/access")
     public boolean setAccessLevelOutsideRepository(Repository repository, AccessLevel accessLevel) {
         return setAccessLevelOutsideRepository(repository.getOwner().getLogin(), repository.getName(), accessLevel);
     }
@@ -2585,7 +2587,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-the-level-of-access-for-workflows-outside-of-the-repository">
      * Set the level of access for workflows outside of the repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/access")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/access")
     public boolean setAccessLevelOutsideRepository(String owner, String repo, AccessLevel accessLevel) {
         Params params = new Params();
         params.addParam("access_level", accessLevel);
@@ -2627,11 +2629,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public AARW getRepositoryAARW(Repository repository) throws IOException {
-        return returnAARW(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName() +
-                ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), LIBRARY_OBJECT);
+        return getRepositoryAARW(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
     /**
@@ -2661,10 +2663,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public <T> T getRepositoryAARW(Repository repository, ReturnFormat format) throws IOException {
-        return returnAARW(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName()
-                + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
+        return getRepositoryAARW(repository.getOwner().getLogin(), repository.getName(), format);
     }
 
     /**
@@ -2693,10 +2694,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public AARW getRepositoryAARW(String owner, String repo) throws IOException {
-        return returnAARW(sendGetRequest(REPOS_PATH + owner + "/" + repo +
-                ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), LIBRARY_OBJECT);
+        return getRepositoryAARW(owner, repo, LIBRARY_OBJECT);
     }
 
     /**
@@ -2726,7 +2727,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public <T> T getRepositoryAARW(String owner, String repo, ReturnFormat format) throws IOException {
         return returnAARW(sendGetRequest(REPOS_PATH + owner + "/" + repo +
                 ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH), format);
@@ -2770,7 +2771,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public boolean setRepositoryAARW(Repository repository, AARW aarw) {
         return setAARW(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName() +
                 ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
@@ -2796,7 +2797,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public boolean setRepositoryAARW(String owner, String repo, AARW aarw) {
         return setAARW(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
@@ -2836,7 +2837,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public boolean setRepositoryAARW(Repository repository, Params aarw) {
         return setAARW(REPOS_PATH + repository.getOwner().getLogin() + "/" + repository.getName() +
                 ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
@@ -2877,7 +2878,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
      * Set allowed actions and reusable workflows for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
     public boolean setRepositoryAARW(String owner, String repo, Params aarw) {
         return setAARW(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_SELECTED_ACTIONS_PATH, aarw);
     }
@@ -2960,11 +2961,12 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
+    @Wrapper
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public DefaultWorkflowPermissions getDefaultRepositoryWorkflowPermissions(Repository repository) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() +
-                "/" + repository.getName() + ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
+        return getDefaultRepositoryWorkflowPermissions(repository.getOwner().getLogin(), repository.getName(),
+                LIBRARY_OBJECT);
     }
 
     /**
@@ -2994,10 +2996,9 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Get default workflow permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public <T> T getDefaultRepositoryWorkflowPermissions(Repository repository, ReturnFormat format) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(REPOS_PATH + repository.getOwner().getLogin() +
-                "/" + repository.getName() + ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
+        return getDefaultRepositoryWorkflowPermissions(repository.getOwner().getLogin(), repository.getName(), format);
     }
 
     /**
@@ -3026,10 +3027,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public DefaultWorkflowPermissions getDefaultRepositoryWorkflowPermissions(String owner, String repo) throws IOException {
-        return returnDefaultWorkflowPermissions(sendGetRequest(REPOS_PATH + owner + "/" + repo +
-                ACTIONS_PERMISSIONS_WORKFLOW_PATH), LIBRARY_OBJECT);
+        return getDefaultRepositoryWorkflowPermissions(owner, repo, LIBRARY_OBJECT);
     }
 
     /**
@@ -3059,7 +3060,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public <T> T getDefaultRepositoryWorkflowPermissions(String owner, String repo, ReturnFormat format) throws IOException {
         return returnDefaultWorkflowPermissions(sendGetRequest(REPOS_PATH + owner + "/" + repo +
                 ACTIONS_PERMISSIONS_WORKFLOW_PATH), format);
@@ -3099,11 +3100,11 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public boolean setDefaultRepositoryWorkflowPermissions(Repository repository,
                                                            DefaultWorkflowPermissions defaultWorkflowPermissions) {
-        return setDefaultWorkflowPermissions(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_PERMISSIONS_WORKFLOW_PATH, defaultWorkflowPermissions);
+        return setDefaultRepositoryWorkflowPermissions(repository.getOwner().getLogin(), repository.getName(),
+                defaultWorkflowPermissions);
     }
 
     /**
@@ -3122,7 +3123,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public boolean setDefaultRepositoryWorkflowPermissions(String owner, String repo,
                                                            DefaultWorkflowPermissions defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
@@ -3153,10 +3154,10 @@ public class GitHubPermissionsManager extends GitHubManager {
      * Set default workflow permissions for a repository</a>
      **/
     @WrappedRequest
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public boolean setDefaultRepositoryWorkflowPermissions(Repository repository, Params defaultWorkflowPermissions) {
-        return setDefaultWorkflowPermissions(REPOS_PATH + repository.getOwner().getLogin() + "/" +
-                repository.getName() + ACTIONS_PERMISSIONS_WORKFLOW_PATH, defaultWorkflowPermissions);
+        return setDefaultRepositoryWorkflowPermissions(repository.getOwner().getLogin(), repository.getName(),
+                defaultWorkflowPermissions);
     }
 
     /**
@@ -3184,7 +3185,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
      * Set default workflow permissions for a repository</a>
      **/
-    @RequestPath(path = "/repos/{owner}/{repo}/actions/permissions/workflow")
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
     public boolean setDefaultRepositoryWorkflowPermissions(String owner, String repo, Params defaultWorkflowPermissions) {
         return setDefaultWorkflowPermissions(REPOS_PATH + owner + "/" + repo + ACTIONS_PERMISSIONS_WORKFLOW_PATH,
                 defaultWorkflowPermissions);
