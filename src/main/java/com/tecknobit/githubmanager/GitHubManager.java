@@ -359,9 +359,11 @@ public class GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
-    private String sendRequestWithBody(String endpoint, RequestMethod method, Params bodyPayload) throws IOException {
-        System.out.println(endpoint);
-        apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, bodyPayload);
+    private String sendRequestWithBody(String endpoint, RequestMethod method, Params payload) throws IOException {
+        System.out.println(BASE_ENDPOINT + endpoint);
+        if (payload != null)
+            System.out.println(payload.createJSONPayload());
+        apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, payload);
         return apiRequest.getResponse();
     }
 

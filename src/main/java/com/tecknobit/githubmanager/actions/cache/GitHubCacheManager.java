@@ -1537,7 +1537,7 @@ public class GitHubCacheManager extends GitHubManager {
     }
 
     /**
-     * Method to deletes a {@code "GitHub Actions"} cache for a repository, using a cache ID.
+     * Method to delete a {@code "GitHub Actions"} cache for a repository, using a cache ID.
      * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
@@ -1549,7 +1549,6 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
-    @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCacheById(Repository repository, ActionCache actionCacheToDelete) {
@@ -1557,7 +1556,7 @@ public class GitHubCacheManager extends GitHubManager {
     }
 
     /**
-     * Method to deletes a {@code "GitHub Actions"} cache for a repository, using a cache ID.
+     * Method to delete a {@code "GitHub Actions"} cache for a repository, using a cache ID.
      * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
@@ -1569,7 +1568,6 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
-    @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCacheById(Repository repository, long cacheId) {
@@ -1577,7 +1575,7 @@ public class GitHubCacheManager extends GitHubManager {
     }
 
     /**
-     * Method to deletes a {@code "GitHub Actions"} cache for a repository, using a cache ID.
+     * Method to delete a {@code "GitHub Actions"} cache for a repository, using a cache ID.
      * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint
@@ -1590,7 +1588,6 @@ public class GitHubCacheManager extends GitHubManager {
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
-    @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")
     public boolean deleteRepositoryCacheById(String owner, String repo, ActionCache actionCacheToDelete) {
@@ -1598,7 +1595,7 @@ public class GitHubCacheManager extends GitHubManager {
     }
 
     /**
-     * Method to deletes a {@code "GitHub Actions"} cache for a repository, using a cache ID.
+     * Method to delete a {@code "GitHub Actions"} cache for a repository, using a cache ID.
      * You must authenticate using an access token with the repo scope to use this endpoint -> <b> this step is automatically made
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:write"} permission to use this endpoint

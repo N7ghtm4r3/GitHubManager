@@ -1081,4 +1081,21 @@ public class Repository extends BaseResponseDetails {
         return hooksUrl;
     }
 
+    /**
+     * {@code RepositorySelection} list of available repository selections
+     **/
+    public enum RepositorySelection {
+
+        /**
+         * {@code "all"} repository selection
+         **/
+        all,
+
+        /**
+         * {@code "selected"} repository selection
+         **/
+        selected
+
+    }
+
 }
