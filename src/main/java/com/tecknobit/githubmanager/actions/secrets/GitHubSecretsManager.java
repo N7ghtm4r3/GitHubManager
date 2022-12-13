@@ -24,6 +24,7 @@ import java.util.Collection;
 import static com.goterl.lazysodium.utils.Key.fromBase64String;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Base64.getEncoder;
 
@@ -1963,25 +1964,6 @@ public class GitHubSecretsManager extends GitHubManager {
                                                        ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + secretName +
                 REPOSITORIES_PATH + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a selected repositories for an organization secret list
-     *
-     * @param repositoriesResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return selected repositories for an organization secret list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnRepositoriesList(String repositoriesResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(repositoriesResponse);
-            case LIBRARY_OBJECT:
-                return (T) new RepositoriesList(new JSONObject(repositoriesResponse));
-            default:
-                return (T) repositoriesResponse;
-        }
     }
 
     /**

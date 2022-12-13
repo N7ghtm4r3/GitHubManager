@@ -1,5 +1,6 @@
 package com.tecknobit.githubmanager.records.repository;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.basics.GitHubList;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import org.json.JSONArray;
@@ -7,6 +8,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
  * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
@@ -66,6 +69,25 @@ public class RepositoriesList extends GitHubList {
      **/
     public Collection<Repository> getRepositories() {
         return repositories;
+    }
+
+    /**
+     * Method to create a repositories list
+     *
+     * @param repositoriesResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnRepositoriesList(String repositoriesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(repositoriesResponse);
+            case LIBRARY_OBJECT:
+                return (T) new RepositoriesList(new JSONObject(repositoriesResponse));
+            default:
+                return (T) repositoriesResponse;
+        }
     }
 
 }
