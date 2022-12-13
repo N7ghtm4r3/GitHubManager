@@ -111,7 +111,6 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list <br>
      * There is a delay of the public events feed by five minutes, which means the most recent event returned by the public events
      * API actually occurred at least five minutes ago <br>
-     * <p>
      * Any params required
      *
      * @return events list as {@link Collection} of {@link Event} custom object
@@ -140,7 +139,6 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list <br>
      * There is a delay of the public events feed by five minutes, which means the most recent event returned by the public events
      * API actually occurred at least five minutes ago <br>
-     * <p>
      * Any params required
      *
      * @param format: return type formatter -> {@link ReturnFormat}
