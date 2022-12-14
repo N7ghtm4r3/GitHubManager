@@ -1,8 +1,12 @@
 package com.tecknobit.githubmanager.records.basics;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * The {@code GitHubResponse} class is useful to format all GitHub's responses giving basics methods
@@ -119,6 +123,21 @@ public abstract class GitHubResponse {
                     "\"}").put("instantiatedWithError", true).toString();
         }
         return new JSONObject(this).toString();
+    }
+
+    /**
+     * Method to create a {@link String} list
+     *
+     * @param jList: {@link JSONArray} source from assemble the list
+     * @return list of string a {@link ArrayList} of {@link String}
+     **/
+    @Returner
+    public static ArrayList<String> returnStringList(JSONArray jList) {
+        ArrayList<String> list = new ArrayList<>();
+        if (jList != null)
+            for (int j = 0; j < jList.length(); j++)
+                list.add(jList.getString(j));
+        return list;
     }
 
 }

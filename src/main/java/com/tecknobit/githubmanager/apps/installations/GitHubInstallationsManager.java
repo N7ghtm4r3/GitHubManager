@@ -1,6 +1,9 @@
 package com.tecknobit.githubmanager.apps.installations;
 
+import com.tecknobit.apimanager.annotations.RequestPath;
 import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.apps.apps.records.Installation;
 import com.tecknobit.githubmanager.apps.installations.records.InstallationsList;
@@ -10,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
 
@@ -103,23 +107,142 @@ public class GitHubInstallationsManager extends GitHubManager {
         super();
     }
 
+    /**
+     * Method to list repositories that an app installation can access. <br>
+     * You must use an installation access token to access this endpoint <br>
+     * Any params required
+     *
+     * @return repositories list as {@link RepositoriesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * List repositories accessible to the app installation</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/installation/repositories")
     public RepositoriesList getRepositoriesAppAccessible() throws IOException {
         return getRepositoriesAppAccessible(LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to list repositories that an app installation can access. <br>
+     * You must use an installation access token to access this endpoint
+     *
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * List repositories accessible to the app installation</a>
+     **/
+    @RequestPath(method = GET, path = "/installation/repositories")
     public <T> T getRepositoriesAppAccessible(ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(INSTALLATION_REPOSITORIES_PATH), format);
     }
 
+    /**
+     * Method to list repositories that an app installation can access. <br>
+     * You must use an installation access token to access this endpoint
+     *
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return repositories list as {@link RepositoriesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * List repositories accessible to the app installation</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/installation/repositories")
     public RepositoriesList getRepositoriesAppAccessible(Params queryParams) throws IOException {
         return getRepositoriesAppAccessible(queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to list repositories that an app installation can access. <br>
+     * You must use an installation access token to access this endpoint
+     *
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * List repositories accessible to the app installation</a>
+     **/
+    @RequestPath(method = GET, path = "/installation/repositories")
     public <T> T getRepositoriesAppAccessible(Params queryParams, ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(INSTALLATION_REPOSITORIES_PATH + queryParams.createQueryString()),
                 format);
     }
 
+    /**
+     * Method to revoke the installation token you're using to authenticate as an installation and access this endpoint.
+     * Once an installation token is revoked, the token is invalidated and cannot be used.
+     * Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the "Create an installation access token for an app" endpoint.
+     * You must use an installation access token to access this endpoint
+     * Any params required
+     *
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#revoke-an-installation-access-token">
+     * Revoke an installation access token</a>
+     **/
+    @RequestPath(method = DELETE, path = "/installation/token")
     public boolean revokeInstallationAccessToken() {
         try {
             sendDeleteRequest(INSTALLATION_TOKEN_PATH);
@@ -134,18 +257,141 @@ public class GitHubInstallationsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to lists installations of your GitHub App that the authenticated user has explicit permission
+     * ({@code ":read"}, {@code ":write"}, or {@code ":admin"}) to access.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator,
+     * and repositories that they can access through an organization membership.
+     * You can find the permissions for the installation under the permissions key <br>
+     * Any params required
+     *
+     * @return installations list as {@link InstallationsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * List app installations accessible to the user access token</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/installations")
     public InstallationsList getAppInstallationsTokenAccessible() throws Exception {
         return getAppInstallationsTokenAccessible(LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to lists installations of your GitHub App that the authenticated user has explicit permission
+     * ({@code ":read"}, {@code ":write"}, or {@code ":admin"}) to access.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator,
+     * and repositories that they can access through an organization membership.
+     * You can find the permissions for the installation under the permissions key
+     *
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return installations list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * List app installations accessible to the user access token</a>
+     **/
+    @RequestPath(method = GET, path = "/user/installations")
     public <T> T getAppInstallationsTokenAccessible(ReturnFormat format) throws Exception {
         return returnInstallationsList(sendGetRequest(USER_INSTALLATIONS_PATH), format);
     }
 
+    /**
+     * Method to lists installations of your GitHub App that the authenticated user has explicit permission
+     * ({@code ":read"}, {@code ":write"}, or {@code ":admin"}) to access.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator,
+     * and repositories that they can access through an organization membership.
+     * You can find the permissions for the installation under the permissions key
+     *
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return installations list as {@link InstallationsList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * List app installations accessible to the user access token</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/installations")
     public InstallationsList getAppInstallationsTokenAccessible(Params queryParams) throws Exception {
         return getAppInstallationsTokenAccessible(queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to lists installations of your GitHub App that the authenticated user has explicit permission
+     * ({@code ":read"}, {@code ":write"}, or {@code ":admin"}) to access.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator,
+     * and repositories that they can access through an organization membership.
+     * You can find the permissions for the installation under the permissions key
+     *
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return installations list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * List app installations accessible to the user access token</a>
+     **/
+    @RequestPath(method = GET, path = "/user/installations")
     public <T> T getAppInstallationsTokenAccessible(Params queryParams, ReturnFormat format) throws Exception {
         return returnInstallationsList(sendGetRequest(USER_INSTALLATIONS_PATH + queryParams.createQueryString()),
                 format);
@@ -170,55 +416,350 @@ public class GitHubInstallationsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installation: installation from fetch the list
+     * @return repositories list as {@link RepositoriesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public RepositoriesList getRepositoriesUserTokenAccessible(Installation installation) throws IOException {
         return getRepositoriesUserTokenAccessible(installation.getId(), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installation: installation from fetch the list
+     * @param format:       return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public <T> T getRepositoriesUserTokenAccessible(Installation installation, ReturnFormat format) throws IOException {
         return getRepositoriesUserTokenAccessible(installation.getId(), format);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installationId: the unique identifier of the installation
+     * @return repositories list as {@link RepositoriesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public RepositoriesList getRepositoriesUserTokenAccessible(long installationId) throws IOException {
         return getRepositoriesUserTokenAccessible(installationId, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param format:         return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public <T> T getRepositoriesUserTokenAccessible(long installationId, ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(USER_INSTALLATIONS_PATH + "/" + installationId +
                 REPOSITORIES_PATH), format);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installation: installation from fetch the list
+     * @param queryParams:  extra query params not mandatory, keys accepted are:
+     *                      <ul>
+     *                         <li>
+     *                             {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                         </li>
+     *                         <li>
+     *                             {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                         </li>
+     *                      </ul>
+     * @return repositories list as {@link RepositoriesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public RepositoriesList getRepositoriesUserTokenAccessible(Installation installation,
                                                                Params queryParams) throws IOException {
         return getRepositoriesUserTokenAccessible(installation.getId(), queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installation: installation from fetch the list
+     * @param queryParams:  extra query params not mandatory, keys accepted are:
+     *                      <ul>
+     *                         <li>
+     *                             {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                         </li>
+     *                         <li>
+     *                             {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                         </li>
+     *                      </ul>
+     * @param format:       return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public <T> T getRepositoriesUserTokenAccessible(Installation installation, Params queryParams,
                                                     ReturnFormat format) throws IOException {
         return getRepositoriesUserTokenAccessible(installation.getId(), queryParams, format);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param queryParams:    extra query params not mandatory, keys accepted are:
+     *                        <ul>
+     *                           <li>
+     *                               {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                           </li>
+     *                           <li>
+     *                               {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                           </li>
+     *                        </ul>
+     * @return repositories list as {@link RepositoriesList} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public RepositoriesList getRepositoriesUserTokenAccessible(long installationId, Params queryParams) throws IOException {
         return getRepositoriesUserTokenAccessible(installationId, queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to list repositories that the authenticated user has explicit permission ({@code ":read"}, {@code ":write"},
+     * or {@code ":admin"}) to access for an installation.
+     * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.
+     * You must use a user-to-server OAuth access token, created for a user who has authorized your GitHub App, to access this endpoint.
+     * The access the user has to each repository is included in the hash under the permissions key
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param queryParams:    extra query params not mandatory, keys accepted are:
+     *                        <ul>
+     *                           <li>
+     *                               {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                           </li>
+     *                           <li>
+     *                               {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                           </li>
+     *                        </ul>
+     * @param format:         return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * List repositories accessible to the user access token</a>
+     **/
+    @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
     public <T> T getRepositoriesUserTokenAccessible(long installationId, Params queryParams,
                                                     ReturnFormat format) throws IOException {
         return returnRepositoriesList(sendGetRequest(USER_INSTALLATIONS_PATH + "/" + installationId +
                 REPOSITORIES_PATH), format);
     }
 
+    /**
+     * Method to add a single repository to an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installation: installation to add the repository
+     * @param repository:   repository to add
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * Add a repository to an app installation</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean addRepositoryToAppInstallation(Installation installation, Repository repository) {
         return addRepositoryToAppInstallation(installation.getId(), repository.getId());
     }
 
+    /**
+     * Method to add a single repository to an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param repository:     repository to add
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * Add a repository to an app installation</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean addRepositoryToAppInstallation(long installationId, Repository repository) {
         return addRepositoryToAppInstallation(installationId, repository.getId());
     }
 
+    /**
+     * Method to add a single repository to an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installation: installation to add the repository
+     * @param repositoryId: the unique identifier of the repository
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * Add a repository to an app installation</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean addRepositoryToAppInstallation(Installation installation, long repositoryId) {
         return addRepositoryToAppInstallation(installation.getId(), repositoryId);
     }
 
+    /**
+     * Method to add a single repository to an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param repositoryId:   the unique identifier of the repository
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * Add a repository to an app installation</a>
+     **/
+    @RequestPath(method = PUT, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean addRepositoryToAppInstallation(long installationId, long repositoryId) {
         try {
             sendPutRequest(USER_INSTALLATIONS_PATH + "/" + installationId + REPOSITORIES_PATH + "/" +
@@ -234,18 +775,65 @@ public class GitHubInstallationsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installation: installation from remove the repository
+     * @param repository:   repository to remove
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * Remove a repository from an app installation</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean removeRepositoryFromAppInstallation(Installation installation, Repository repository) {
         return removeRepositoryFromAppInstallation(installation.getId(), repository.getId());
     }
 
+    /**
+     * Method to remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param repository:     repository to remove
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * Remove a repository from an app installation</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean removeRepositoryFromAppInstallation(long installationId, Repository repository) {
         return removeRepositoryFromAppInstallation(installationId, repository.getId());
     }
 
+    /**
+     * Method to remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installation: installation from remove the repository
+     * @param repositoryId: the unique identifier of the repository
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * Remove a repository from an app installation</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean removeRepositoryFromAppInstallation(Installation installation, long repositoryId) {
         return removeRepositoryFromAppInstallation(installation.getId(), repositoryId);
     }
 
+    /**
+     * Method to remove a single repository from an installation. The authenticated user must have admin access to the repository.
+     * You must use a personal access token (which you can create via the command line or Basic Authentication) to access this endpoint
+     *
+     * @param installationId: the unique identifier of the installation
+     * @param repositoryId:   the unique identifier of the repository
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * Remove a repository from an app installation</a>
+     **/
+    @RequestPath(method = DELETE, path = "/user/installations/{installation_id}/repositories/{repository_id}")
     public boolean removeRepositoryFromAppInstallation(long installationId, long repositoryId) {
         try {
             sendDeleteRequest(USER_INSTALLATIONS_PATH + "/" + installationId + REPOSITORIES_PATH + "/" +

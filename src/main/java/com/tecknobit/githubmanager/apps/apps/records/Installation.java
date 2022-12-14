@@ -1,10 +1,8 @@
 package com.tecknobit.githubmanager.apps.apps.records;
 
-import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.basics.GitHubResponse;
 import com.tecknobit.githubmanager.records.basics.User;
 import com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -245,30 +243,16 @@ public class Installation extends GitHubResponse {
         targetId = hResponse.getLong("target_id", 0);
         targetType = hResponse.getString("target_type");
         permissions = new AppPermissions(hResponse.getJSONObject("permissions", new JSONObject()));
-        events = returnStringList(hResponse.getJSONArray("events", new JSONArray()));
+        events = returnStringList(hResponse.getJSONArray("events"));
         singleFileName = hResponse.getString("single_file_name");
         hasMultipleSingleFiles = hResponse.getBoolean("has_multiple_single_files");
-        singleFilePaths = returnStringList(hResponse.getJSONArray("single_file_paths", new JSONArray()));
+        singleFilePaths = returnStringList(hResponse.getJSONArray("single_file_paths"));
         repositorySelection = RepositorySelection.valueOf(hResponse.getString("repository_selection", all.name()));
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");
         appSlug = hResponse.getString("app_slug");
         suspendedAt = hResponse.getString("suspended_at");
         suspendedBy = new User(hResponse.getJSONObject("suspended_by", new JSONObject()));
-    }
-
-    /**
-     * Method to create a {@link String} list
-     *
-     * @param jList: {@link JSONArray} source from assemble the list
-     * @return list of string a {@link ArrayList} of {@link String}
-     **/
-    @Returner
-    private ArrayList<String> returnStringList(JSONArray jList) {
-        ArrayList<String> list = new ArrayList<>();
-        for (int j = 0; j < jList.length(); j++)
-            list.add(jList.getString(j));
-        return list;
     }
 
     /**
