@@ -83,10 +83,15 @@ public class GitHubManager {
     public static final String SUBSCRIPTION_PATH = "/subscription";
 
     /**
+     * {@code USER_PATH} constant for {@code "user"} path
+     **/
+    public static final String USER_PATH = "user";
+
+    /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
      * re-insert credentials
      **/
-    protected static final Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
     /**
      * {@code mainHeaders} is instance for main headers of all requests
@@ -582,6 +587,23 @@ public class GitHubManager {
          * {@code "desc"} direction
          **/
         desc
+
+    }
+
+    /**
+     * {@code Sort} is a list for the sorts available
+     **/
+    public enum Sort {
+
+        /**
+         * {@code "created"} sort
+         **/
+        created,
+
+        /**
+         * {@code "updated"} sort
+         **/
+        updated
 
     }
 

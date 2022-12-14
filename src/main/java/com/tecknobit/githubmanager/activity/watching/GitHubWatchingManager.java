@@ -42,7 +42,7 @@ public class GitHubWatchingManager extends GitHubManager {
     /**
      * {@code USER_SUBSCRIPTIONS_PATH} constant for {@code "user/subscriptions"} path
      **/
-    public static final String USER_SUBSCRIPTIONS_PATH = "user" + SUBSCRIPTIONS_PATH;
+    public static final String USER_SUBSCRIPTIONS_PATH = USER_PATH + SUBSCRIPTIONS_PATH;
 
     /**
      * Constructor to init a {@link GitHubWatchingManager}

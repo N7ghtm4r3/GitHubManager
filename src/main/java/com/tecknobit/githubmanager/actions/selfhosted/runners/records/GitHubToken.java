@@ -65,10 +65,10 @@ public class GitHubToken extends GitHubResponse {
     /**
      * Constructor to init a {@link GitHubToken}
      *
-     * @param jRegistrationToken : registration token details as {@link JSONObject}
+     * @param jToken : token token details as {@link JSONObject}
      **/
-    public GitHubToken(JSONObject jRegistrationToken) {
-        super(jRegistrationToken);
+    public GitHubToken(JSONObject jToken) {
+        super(jToken);
         token = hResponse.getString("token");
         expiresAt = hResponse.getString("expires_at");
     }

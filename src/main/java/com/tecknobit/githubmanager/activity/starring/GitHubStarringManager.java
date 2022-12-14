@@ -39,7 +39,7 @@ public class GitHubStarringManager extends GitHubManager {
     /**
      * {@code USER_STARRED_PATH} constant for {@code "user/starred"} path
      **/
-    public static final String USER_STARRED_PATH = "user" + STARRED_PATH;
+    public static final String USER_STARRED_PATH = USER_PATH + STARRED_PATH;
 
     /**
      * Constructor to init a {@link GitHubStarringManager}
