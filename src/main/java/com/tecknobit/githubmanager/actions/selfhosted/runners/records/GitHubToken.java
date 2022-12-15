@@ -43,12 +43,12 @@ public class GitHubToken extends GitHubResponse {
     /**
      * {@code token} the token used for authentication
      **/
-    private final String token;
+    protected final String token;
 
     /**
      * {@code expiresAt} the time this token expires
      **/
-    private final String expiresAt;
+    protected final String expiresAt;
 
     /**
      * Constructor to init a {@link GitHubToken}

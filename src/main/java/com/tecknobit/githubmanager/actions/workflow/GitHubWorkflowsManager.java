@@ -27,7 +27,7 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 public class GitHubWorkflowsManager extends GitHubManager {
 
     /**
-     * {@code ATTEMPTS_PATH} constant for {@code "/actions/runs"} path
+     * {@code ATTEMPTS_PATH} constant for {@code "/attempts/"} path
      **/
     public static final String ATTEMPTS_PATH = "/attempts/";
 
