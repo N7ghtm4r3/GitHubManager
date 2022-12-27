@@ -243,10 +243,10 @@ public class Installation extends GitHubResponse {
         targetId = hResponse.getLong("target_id", 0);
         targetType = hResponse.getString("target_type");
         permissions = new AppPermissions(hResponse.getJSONObject("permissions", new JSONObject()));
-        events = returnStringList(hResponse.getJSONArray("events"));
+        events = returnStringsList(hResponse.getJSONArray("events"));
         singleFileName = hResponse.getString("single_file_name");
         hasMultipleSingleFiles = hResponse.getBoolean("has_multiple_single_files");
-        singleFilePaths = returnStringList(hResponse.getJSONArray("single_file_paths"));
+        singleFilePaths = returnStringsList(hResponse.getJSONArray("single_file_paths"));
         repositorySelection = RepositorySelection.valueOf(hResponse.getString("repository_selection", all.name()));
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");

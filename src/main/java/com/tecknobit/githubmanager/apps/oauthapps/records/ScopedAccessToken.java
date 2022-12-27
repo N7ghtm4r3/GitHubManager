@@ -146,7 +146,7 @@ public class ScopedAccessToken extends GitHubToken {
         super(jScopedAccessToken);
         id = hResponse.getLong("id", 0);
         url = hResponse.getString("url");
-        scopes = returnStringList(hResponse.getJSONArray("scopes"));
+        scopes = returnStringsList(hResponse.getJSONArray("scopes"));
         tokenLastEight = hResponse.getString("token_last_eight");
         hashedToken = hResponse.getString("hashed_token");
         app = new App(hResponse.getJSONObject("app", new JSONObject()));

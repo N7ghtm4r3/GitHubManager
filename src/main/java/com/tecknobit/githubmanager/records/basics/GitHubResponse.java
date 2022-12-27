@@ -132,7 +132,7 @@ public abstract class GitHubResponse {
      * @return list of string a {@link ArrayList} of {@link String}
      **/
     @Returner
-    public static ArrayList<String> returnStringList(JSONArray jList) {
+    public static ArrayList<String> returnStringsList(JSONArray jList) {
         ArrayList<String> list = new ArrayList<>();
         if (jList != null)
             for (int j = 0; j < jList.length(); j++)

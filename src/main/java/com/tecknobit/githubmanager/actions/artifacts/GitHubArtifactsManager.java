@@ -173,7 +173,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * by this library. </b> <br>
      * {@code "GitHub Apps"} must have the {@code "actions:read"} permission to use this endpoint
      *
-     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return artifacts list as {@link ArtifactsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

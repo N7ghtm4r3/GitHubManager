@@ -119,7 +119,7 @@ public class Plan extends BaseResponseDetails {
         hasFreeTrial = hResponse.getBoolean("has_free_trial");
         unitName = hResponse.getString("unit_name");
         state = hResponse.getString("state");
-        bullets = returnStringList(hResponse.getJSONArray("bullets"));
+        bullets = returnStringsList(hResponse.getJSONArray("bullets"));
     }
 
     /**
