@@ -2,9 +2,9 @@ package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.Review.Environment;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
-import com.tecknobit.githubmanager.records.basics.User;
 import com.tecknobit.githubmanager.records.organization.Team;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

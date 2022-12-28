@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.records.basics;
+package com.tecknobit.githubmanager.records.parents;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;

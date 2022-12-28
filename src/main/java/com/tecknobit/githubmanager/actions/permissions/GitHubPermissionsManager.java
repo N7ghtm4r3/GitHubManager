@@ -25,7 +25,7 @@ import java.util.Collection;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
-import static com.tecknobit.githubmanager.records.basics.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
+import static com.tecknobit.githubmanager.records.parents.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
 
 /**
  * The {@code GitHubPermissionsManager} class is useful to manage all GitHub's permissions endpoints

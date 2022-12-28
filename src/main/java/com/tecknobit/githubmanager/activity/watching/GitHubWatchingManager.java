@@ -6,7 +6,7 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.activity.watching.records.RepositorySubscription;
-import com.tecknobit.githubmanager.records.basics.User;
+import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
@@ -16,7 +16,7 @@ import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.records.basics.User.returnUsersList;
+import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
 import static com.tecknobit.githubmanager.records.repository.CompleteRepository.returnCompleteRepositoriesList;
 
 /**

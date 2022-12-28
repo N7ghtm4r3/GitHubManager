@@ -115,25 +115,25 @@ public class GitHubBranchesManager extends GitHubManager {
      *
      * @param repository: repository from fetch the list
      * @return branches list as {@link Collection} of {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
+     *                   <ul>
+     *                       <li>
+     *                           {@link #getErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #getJSONErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #printErrorResponse()}
+     *                       </li>
+     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(Repository repository) throws IOException {
+    public Collection<Branch> getBranches(Repository repository) throws Exception {
         return getBranches(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -143,24 +143,24 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param repository: repository from fetch the list
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return branches list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
+     *                   <ul>
+     *                       <li>
+     *                           {@link #getErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #getJSONErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #printErrorResponse()}
+     *                       </li>
+     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public <T> T getBranches(Repository repository, ReturnFormat format) throws IOException {
+    public <T> T getBranches(Repository repository, ReturnFormat format) throws Exception {
         return getBranches(repository.getOwner().getLogin(), repository.getName(), format);
     }
 
@@ -170,7 +170,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return branches list as {@link Collection} of {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -187,7 +187,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(String owner, String repo) throws IOException {
+    public Collection<Branch> getBranches(String owner, String repo) throws Exception {
         return getBranches(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -198,7 +198,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return branches list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -214,7 +214,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * List branches</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public <T> T getBranches(String owner, String repo, ReturnFormat format) throws IOException {
+    public <T> T getBranches(String owner, String repo, ReturnFormat format) throws Exception {
         return returnBranchesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + BRANCHES_PATH), format);
     }
 
@@ -237,7 +237,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                        </li>
      *                     </ul>
      * @return branches list as {@link Collection} of {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -255,7 +255,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(Repository repository, Params queryParams) throws IOException {
+    public Collection<Branch> getBranches(Repository repository, Params queryParams) throws Exception {
         return getBranches(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -279,7 +279,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return branches list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -296,7 +296,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public <T> T getBranches(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
+    public <T> T getBranches(Repository repository, Params queryParams, ReturnFormat format) throws Exception {
         return getBranches(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
     }
 
@@ -320,7 +320,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                        </li>
      *                     </ul>
      * @return branches list as {@link Collection} of {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -337,7 +337,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(String owner, String repo, Params queryParams) throws IOException {
+    public Collection<Branch> getBranches(String owner, String repo, Params queryParams) throws Exception {
         return getBranches(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -362,7 +362,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return branches list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -378,7 +378,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * List branches</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public <T> T getBranches(String owner, String repo, Params queryParams, ReturnFormat format) throws IOException {
+    public <T> T getBranches(String owner, String repo, Params queryParams, ReturnFormat format) throws Exception {
         return returnBranchesList(sendGetRequest(REPOS_PATH + owner + "/" + repo + BRANCHES_PATH +
                 queryParams.createQueryString()), format);
     }
@@ -391,7 +391,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @return branches list as {@code "format"} defines
      **/
     @Returner
-    private <T> T returnBranchesList(String branchesResponse, ReturnFormat format) {
+    private <T> T returnBranchesList(String branchesResponse, ReturnFormat format) throws Exception {
         switch (format) {
             case JSON:
                 return (T) new JSONArray(branchesResponse);
@@ -411,7 +411,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *
      * @param repository: repository from fetch the branch
      * @return branch as {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -429,7 +429,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}")
-    public Branch getBranch(Repository repository, String branch) throws IOException {
+    public Branch getBranch(Repository repository, String branch) throws Exception {
         return getBranch(repository.getOwner().getLogin(), repository.getName(), branch, LIBRARY_OBJECT);
     }
 
@@ -439,7 +439,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param repository: repository from fetch the branch
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return branch as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -456,7 +456,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}")
-    public <T> T getBranch(Repository repository, String branch, ReturnFormat format) throws IOException {
+    public <T> T getBranch(Repository repository, String branch, ReturnFormat format) throws Exception {
         return getBranch(repository.getOwner().getLogin(), repository.getName(), branch, format);
     }
 
@@ -466,7 +466,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return branch as {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -483,7 +483,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}")
-    public Branch getBranch(String owner, String repo, String branch) throws IOException {
+    public Branch getBranch(String owner, String repo, String branch) throws Exception {
         return getBranch(owner, repo, branch, LIBRARY_OBJECT);
     }
 
@@ -494,7 +494,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return branch as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -510,7 +510,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * Get a branch</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}")
-    public <T> T getBranch(String owner, String repo, String branch, ReturnFormat format) throws IOException {
+    public <T> T getBranch(String owner, String repo, String branch, ReturnFormat format) throws Exception {
         return returnBranch(sendGetRequest(REPOS_PATH + owner + "/" + repo + BRANCHES_PATH + "/" + branch),
                 format);
     }
@@ -549,7 +549,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param branch:     branch to rename
      * @param newName:    the new name of the branch
      * @return branch as {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -567,7 +567,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
-    public Branch renameBranch(Repository repository, Branch branch, String newName) throws IOException {
+    public Branch renameBranch(Repository repository, Branch branch, String newName) throws Exception {
         return renameBranch(repository.getOwner().getLogin(), repository.getName(), branch.getName(), newName, LIBRARY_OBJECT);
     }
 
@@ -606,7 +606,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param newName:    the new name of the branch
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return branch as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -623,7 +623,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
-    public <T> T renameBranch(Repository repository, Branch branch, String newName, ReturnFormat format) throws IOException {
+    public <T> T renameBranch(Repository repository, Branch branch, String newName, ReturnFormat format) throws Exception {
         return renameBranch(repository.getOwner().getLogin(), repository.getName(), branch.getName(), newName, format);
     }
 
@@ -661,7 +661,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @param newName:    the new name of the branch
      * @return branch as {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -679,7 +679,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
-    public Branch renameBranch(Repository repository, String branch, String newName) throws IOException {
+    public Branch renameBranch(Repository repository, String branch, String newName) throws Exception {
         return renameBranch(repository.getOwner().getLogin(), repository.getName(), branch, newName, LIBRARY_OBJECT);
     }
 
@@ -718,7 +718,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param newName:    the new name of the branch
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return branch as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -735,7 +735,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
-    public <T> T renameBranch(Repository repository, String branch, String newName, ReturnFormat format) throws IOException {
+    public <T> T renameBranch(Repository repository, String branch, String newName, ReturnFormat format) throws Exception {
         return renameBranch(repository.getOwner().getLogin(), repository.getName(), branch, newName, format);
     }
 
@@ -774,7 +774,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param branch:  branch to rename
      * @param newName: the new name of the branch
      * @return branch as {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -792,7 +792,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
-    public Branch renameBranch(String owner, String repo, Branch branch, String newName) throws IOException {
+    public Branch renameBranch(String owner, String repo, Branch branch, String newName) throws Exception {
         return renameBranch(owner, repo, branch.getName(), newName, LIBRARY_OBJECT);
     }
 
@@ -832,7 +832,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param newName: the new name of the branch
      * @param format:  return type formatter -> {@link ReturnFormat}
      * @return branch as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -850,7 +850,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
     public <T> T renameBranch(String owner, String repo, Branch branch, String newName,
-                              ReturnFormat format) throws IOException {
+                              ReturnFormat format) throws Exception {
         return renameBranch(owner, repo, branch.getName(), newName, format);
     }
 
@@ -889,7 +889,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param branch:  the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @param newName: the new name of the branch
      * @return branch as {@link Branch} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -906,7 +906,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
-    public Branch renameBranch(String owner, String repo, String branch, String newName) throws IOException {
+    public Branch renameBranch(String owner, String repo, String branch, String newName) throws Exception {
         return renameBranch(owner, repo, branch, newName, LIBRARY_OBJECT);
     }
 
@@ -963,7 +963,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
     public <T> T renameBranch(String owner, String repo, String branch, String newName,
-                              ReturnFormat format) throws IOException {
+                              ReturnFormat format) throws Exception {
         Params payload = new Params();
         payload.addParam("new_name", newName);
         return returnBranch(sendPostRequest(REPOS_PATH + owner + "/" + repo + BRANCHES_PATH + "/" + branch +
@@ -978,7 +978,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @return branch as {@code "format"} defines
      **/
     @Returner
-    private <T> T returnBranch(String branchResponse, ReturnFormat format) {
+    private <T> T returnBranch(String branchResponse, ReturnFormat format) throws Exception {
         switch (format) {
             case JSON:
                 return (T) new JSONObject(branchResponse);

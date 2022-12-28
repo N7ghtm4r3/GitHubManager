@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.apps.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
-import com.tecknobit.githubmanager.records.basics.User;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection;
 import org.json.JSONObject;
 

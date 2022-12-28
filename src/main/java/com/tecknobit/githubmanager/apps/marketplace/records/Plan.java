@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.marketplace.records;
 
-import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

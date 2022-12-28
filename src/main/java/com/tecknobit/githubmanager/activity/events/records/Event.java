@@ -2,8 +2,8 @@ package com.tecknobit.githubmanager.activity.events.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.WorkflowRun.Commit.CommitProfile;
-import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

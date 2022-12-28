@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.records.WorkflowUsage.Billable;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

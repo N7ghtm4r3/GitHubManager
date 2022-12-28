@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.records.basics;
+package com.tecknobit.githubmanager.records.parents;
 
 import org.json.JSONObject;
 

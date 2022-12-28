@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.actions.selfhosted.runners.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;

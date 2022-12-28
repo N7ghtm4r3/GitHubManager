@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.apps.records;
 
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.GitHubToken;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection;
 import org.json.JSONArray;

@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records;
 
 import com.tecknobit.githubmanager.GitHubManager.Visibility;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

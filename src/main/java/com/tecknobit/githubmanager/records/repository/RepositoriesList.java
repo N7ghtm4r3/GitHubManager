@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.records.repository;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.records.basics.GitHubList;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubList;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

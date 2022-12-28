@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.marketplace.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;

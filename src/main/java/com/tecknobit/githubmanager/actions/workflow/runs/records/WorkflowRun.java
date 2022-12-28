@@ -2,9 +2,9 @@ package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status;
-import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
-import com.tecknobit.githubmanager.records.basics.User;
+import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;

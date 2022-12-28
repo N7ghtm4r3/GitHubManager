@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.actions.permissions.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.selfhosted.records;
 
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.GitHubLabel;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -1,8 +1,13 @@
 package com.tecknobit.githubmanager.records.organization;
 
-import com.tecknobit.githubmanager.records.basics.BaseResponseDetails;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
+import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * The {@code Team} class is useful to format a GitHub's team
@@ -198,6 +203,29 @@ public class Team extends BaseResponseDetails {
      **/
     public Team getParent() {
         return parent;
+    }
+
+    /**
+     * Method to create a teams list
+     *
+     * @param teamsResponse: obtained from GitHub's response
+     * @param format:        return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnTeamsList(String teamsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(teamsResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<Team> teams = new ArrayList<>();
+                JSONArray jTeams = new JSONArray(teamsResponse);
+                for (int j = 0; j < jTeams.length(); j++)
+                    teams.add(new Team(jTeams.getJSONObject(j)));
+                return (T) teams;
+            default:
+                return (T) teamsResponse;
+        }
     }
 
 }

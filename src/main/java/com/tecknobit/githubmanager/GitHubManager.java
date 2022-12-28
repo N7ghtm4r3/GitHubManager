@@ -9,12 +9,18 @@ import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesLi
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Properties;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * The {@code GitHubManager} class is useful to manage all GitHubManager's endpoints
@@ -254,6 +260,52 @@ public class GitHubManager {
      **/
     public String sendDeleteRequest(String endpoint) throws IOException {
         return sendRequest(endpoint, DELETE);
+    }
+
+    /**
+     * Method to send a {@code "DELETE"} request with a payload to {@code "GitHub"}
+     *
+     * @param endpoint: endpoint of the request {@code "GitHub"}
+     * @param payload:  payload to send with the {@code "DELETE"} request
+     * @return response of the request as {@link HashMap} of {@link T}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     **/
+    public <T> HashMap<String, T> sendDeleteRequest(String endpoint, Params payload) throws IOException {
+        HttpURLConnection request = (HttpURLConnection) new URL(BASE_ENDPOINT + endpoint).openConnection();
+        HashMap<String, T> response = new HashMap<>();
+        request.setRequestMethod(DELETE.name());
+        request.setRequestProperty("authorization", " token " + this.accessToken);
+        request.setRequestProperty("accept", "application/vnd.github+json");
+        request.setDoOutput(true);
+        byte[] tBytes = payload.createJSONPayload().toString().getBytes(UTF_8);
+        request.getOutputStream().write(tBytes, 0, tBytes.length);
+        request.connect();
+        response.put("code", (T) String.valueOf(request.getResponseCode()));
+        StringBuilder sResponse = new StringBuilder();
+        BufferedReader bufferedReader;
+        String resultKey = "success";
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(request.getInputStream()));
+        } catch (IOException e) {
+            bufferedReader = new BufferedReader(new InputStreamReader(request.getErrorStream()));
+            resultKey = "error";
+        }
+        String line;
+        while ((line = bufferedReader.readLine()) != null)
+            sResponse.append(line);
+        response.put(resultKey, (T) sResponse.toString());
+        return response;
     }
 
     /**
@@ -615,6 +667,24 @@ public class GitHubManager {
      * @see com.tecknobit.apimanager.apis.APIRequest.Params
      **/
     public static class Params extends APIRequest.Params {
+
+        /**
+         * Constructor to init {@link Params} <br>
+         * Any params required
+         **/
+        public Params() {
+            super();
+        }
+
+        /**
+         * Constructor to init {@link Params} <br>
+         *
+         * @param mergeParams : other params to merge with current {@link Params}
+         **/
+        public Params(APIRequest.Params mergeParams) {
+            super(mergeParams);
+        }
+
     }
 
 }

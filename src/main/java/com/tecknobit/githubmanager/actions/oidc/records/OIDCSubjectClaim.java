@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.oidc.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

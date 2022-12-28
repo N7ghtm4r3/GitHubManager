@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.apps.webhooks.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 /**

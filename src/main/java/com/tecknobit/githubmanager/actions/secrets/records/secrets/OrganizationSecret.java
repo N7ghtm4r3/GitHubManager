@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.secrets.records.secrets;
 
 import com.tecknobit.githubmanager.GitHubManager.Visibility;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.vPrivate;

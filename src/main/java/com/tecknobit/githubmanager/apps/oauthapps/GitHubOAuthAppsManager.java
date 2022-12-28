@@ -9,15 +9,11 @@ import com.tecknobit.githubmanager.apps.apps.records.AppPermissions;
 import com.tecknobit.githubmanager.apps.oauthapps.records.ScopedAccessToken;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.util.HashMap;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * The {@code GitHubOAuthAppsManager} class is useful to manage all GitHub's marketplace endpoints
@@ -438,16 +434,9 @@ public class GitHubOAuthAppsManager extends GitHubManager {
         try {
             Params payload = new Params();
             payload.addParam("access_token", accessToken);
-            HttpURLConnection request = (HttpURLConnection) new URL(BASE_ENDPOINT + url).openConnection();
-            request.setRequestMethod(DELETE.name());
-            request.setRequestProperty("authorization", " token " + this.accessToken);
-            request.setRequestProperty("accept", "application/vnd.github+json");
-            request.setDoOutput(true);
-            byte[] tBytes = payload.createJSONPayload().toString().getBytes(UTF_8);
-            request.getOutputStream().write(tBytes, 0, tBytes.length);
-            request.connect();
-            if (request.getResponseCode() != 204) {
-                System.out.println(new BufferedReader(new InputStreamReader(request.getErrorStream())).readLine());
+            HashMap<String, Object> response = sendDeleteRequest(url, payload);
+            if (Integer.parseInt(response.get("code").toString()) != 204) {
+                System.out.println(response.get("error"));
                 return false;
             }
             return true;

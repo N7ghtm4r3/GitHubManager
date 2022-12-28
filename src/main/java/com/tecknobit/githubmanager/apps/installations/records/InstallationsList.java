@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.apps.installations.records;
 
 import com.tecknobit.githubmanager.apps.apps.records.Installation;
-import com.tecknobit.githubmanager.records.basics.GitHubList;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubList;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -3,8 +3,9 @@ package com.tecknobit.githubmanager.branches.branches.records;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.branches.branches.records.Branch.BranchCommit.CommitDetails.Tree;
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
-import com.tecknobit.githubmanager.records.basics.User;
+import com.tecknobit.githubmanager.branches.records.BranchProtection;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -57,7 +58,7 @@ public class Branch extends GitHubResponse {
     /**
      * {@code protection} of the branch
      **/
-    private final Protection protection;
+    private final BranchProtection protection;
 
     /**
      * {@code protectionUrl} protection url of the branch protection
@@ -74,7 +75,7 @@ public class Branch extends GitHubResponse {
      * @param protection    : protection of the branch
      * @param protectionUrl : protection url of the branch protection
      **/
-    public Branch(String name, BranchCommit commit, BranchLink _links, boolean isProtected, Protection protection,
+    public Branch(String name, BranchCommit commit, BranchLink _links, boolean isProtected, BranchProtection protection,
                   String protectionUrl) {
         super(null);
         this.name = name;
@@ -90,13 +91,13 @@ public class Branch extends GitHubResponse {
      *
      * @param jBranch : branch details as {@link JSONObject}
      **/
-    public Branch(JSONObject jBranch) {
+    public Branch(JSONObject jBranch) throws Exception {
         super(jBranch);
         name = hResponse.getString("name");
         commit = new BranchCommit(hResponse.getJSONObject("commit", new JSONObject()));
         _links = new BranchLink(hResponse.getJSONObject("_links", new JSONObject()));
         isProtected = hResponse.getBoolean("protected");
-        protection = new Protection(hResponse.getJSONObject("protection", new JSONObject()));
+        protection = new BranchProtection(hResponse.getJSONObject("protection", new JSONObject()));
         protectionUrl = hResponse.getString("protection_url");
     }
 
@@ -144,9 +145,9 @@ public class Branch extends GitHubResponse {
      * Method to get {@link #protection} instance <br>
      * Any params required
      *
-     * @return {@link #protection} instance as {@link Protection}
+     * @return {@link #protection} instance as {@link BranchProtection}
      **/
-    public Protection getProtection() {
+    public BranchProtection getProtection() {
         return protection;
     }
 
@@ -1290,172 +1291,6 @@ public class Branch extends GitHubResponse {
         @Override
         public String toString() {
             return new JSONObject(this).toString();
-        }
-
-    }
-
-    /**
-     * The {@code Protection} class is useful to format a GitHub's protection for {@link Branch}
-     *
-     * @author N7ghtm4r3 - Tecknobit
-     **/
-    public static class Protection {
-
-        /**
-         * {@code enabled} whether the protection for the {@link Branch} is enabled
-         **/
-        private final boolean enabled;
-
-        /**
-         * {@code requiredStatusCheck} required status check for the protection
-         **/
-        private final RequiredStatusCheck requiredStatusCheck;
-
-        /**
-         * Constructor to init a {@link Protection}
-         *
-         * @param enabled             : whether the protection for the {@link Branch} is enabled
-         * @param requiredStatusCheck : required status check for the protection
-         **/
-        public Protection(boolean enabled, RequiredStatusCheck requiredStatusCheck) {
-            this.enabled = enabled;
-            this.requiredStatusCheck = requiredStatusCheck;
-        }
-
-        /**
-         * Constructor to init a {@link Protection}
-         *
-         * @param jProtection : protection details as {@link JSONObject}
-         **/
-        public Protection(JSONObject jProtection) {
-            JsonHelper hProtection = new JsonHelper(jProtection);
-            enabled = hProtection.getBoolean("enabled");
-            requiredStatusCheck = new RequiredStatusCheck(hProtection.getJSONObject("required_status_checks",
-                    new JSONObject()));
-        }
-
-        /**
-         * Method to get {@link #enabled} instance <br>
-         * Any params required
-         *
-         * @return {@link #enabled} instance as boolean
-         **/
-        public boolean isEnabled() {
-            return enabled;
-        }
-
-        /**
-         * Method to get {@link #requiredStatusCheck} instance <br>
-         * Any params required
-         *
-         * @return {@link #requiredStatusCheck} instance as {@link RequiredStatusCheck}
-         **/
-        public RequiredStatusCheck getRequiredStatusCheck() {
-            return requiredStatusCheck;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
-         * The {@code RequiredStatusCheck} class is useful to format a GitHub's required status check for {@link Protection}
-         *
-         * @author N7ghtm4r3 - Tecknobit
-         **/
-        public static class RequiredStatusCheck {
-
-            /**
-             * {@code enforcementLevel} type of the enforcement level of the required status check
-             **/
-            private final String enforcementLevel;
-
-            /**
-             * {@code contexts} of the required status check
-             **/
-            private final ArrayList<String> contexts;
-
-            /**
-             * {@code checks} of the required status check
-             **/
-            private final String checks;
-
-            /**
-             * Constructor to init a {@link RequiredStatusCheck}
-             *
-             * @param enforcementLevel : type of the enforcement level of the required status check
-             * @param contexts         : contexts of the required status check
-             * @param checks           : checks of the required status check
-             **/
-            public RequiredStatusCheck(String enforcementLevel, ArrayList<String> contexts, String checks) {
-                this.enforcementLevel = enforcementLevel;
-                this.contexts = contexts;
-                this.checks = checks;
-            }
-
-            /**
-             * Constructor to init a {@link RequiredStatusCheck}
-             *
-             * @param jRequiredStatusCheck : required status check details as {@link JSONObject}
-             **/
-            public RequiredStatusCheck(JSONObject jRequiredStatusCheck) {
-                JsonHelper hRequiredStatusCheck = new JsonHelper(jRequiredStatusCheck);
-                enforcementLevel = hRequiredStatusCheck.getString("enforcement_level");
-                contexts = returnStringsList(hRequiredStatusCheck.getJSONArray("contexts"));
-                checks = hRequiredStatusCheck.getString("checks");
-            }
-
-            /**
-             * Method to get {@link #enforcementLevel} instance <br>
-             * Any params required
-             *
-             * @return {@link #enforcementLevel} instance as {@link String}
-             **/
-            public String getEnforcementLevel() {
-                return enforcementLevel;
-            }
-
-            /**
-             * Method to get {@link #contexts} instance <br>
-             * Any params required
-             *
-             * @return {@link #contexts} instance as {@link Collection} of {@link String}
-             **/
-            public Collection<String> getContexts() {
-                return contexts;
-            }
-
-            /**
-             * Method to get {@link #checks} instance <br>
-             * Any params required
-             *
-             * @return {@link #checks} instance as {@link String}
-             * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
-             * way, so if you get a specific usage, create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
-             * with GitHub's API response. Thank you for help!
-             **/
-            public String getChecks() {
-                return checks;
-            }
-
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
-            }
-
         }
 
     }

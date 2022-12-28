@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.activity.notifications.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 

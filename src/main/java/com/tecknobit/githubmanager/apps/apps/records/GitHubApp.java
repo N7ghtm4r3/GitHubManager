@@ -1,7 +1,9 @@
 package com.tecknobit.githubmanager.apps.apps.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
-import com.tecknobit.githubmanager.records.basics.User;
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -385,6 +387,29 @@ public class GitHubApp extends GitHubResponse {
      **/
     public String getPem() {
         return pem;
+    }
+
+    /**
+     * Method to create an apps list
+     *
+     * @param appsResponse : obtained from GitHub's response
+     * @param format       :        return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @return apps list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnAppsList(String appsResponse, GitHubManager.ReturnFormat format) throws Exception {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(appsResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<GitHubApp> apps = new ArrayList<>();
+                JSONArray jApps = new JSONArray(appsResponse);
+                for (int j = 0; j < jApps.length(); j++)
+                    apps.add(new GitHubApp(jApps.getJSONObject(j)));
+                return (T) apps;
+            default:
+                return (T) appsResponse;
+        }
     }
 
 }

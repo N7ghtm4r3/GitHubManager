@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.branches.branches.records;
 
-import com.tecknobit.githubmanager.records.basics.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 /**
@@ -17,6 +17,7 @@ public class ForkBranch extends GitHubResponse {
      * {@code mergeType} type of the merge
      **/
     private final MergeType mergeType;
+
     /**
      * {@code baseBranch} base branch of the fork branch
      **/
