@@ -6539,8 +6539,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the branch from fetch the list
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6574,7 +6574,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch from fetch the list
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6605,8 +6605,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from fetch the list
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6640,7 +6640,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch from fetch the list
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6670,8 +6670,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6704,7 +6704,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6735,8 +6735,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6769,7 +6769,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6801,8 +6801,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where add the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6839,7 +6839,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6874,8 +6874,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where add the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6912,7 +6912,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6945,8 +6945,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -6983,7 +6983,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7017,8 +7017,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7054,7 +7054,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7086,8 +7086,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where add the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7124,7 +7124,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7159,8 +7159,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where add the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7197,7 +7197,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7230,8 +7230,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7268,7 +7268,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7302,8 +7302,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7339,7 +7339,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7367,7 +7367,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7375,8 +7375,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where set the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7404,7 +7404,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7414,7 +7414,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7441,7 +7441,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7450,8 +7450,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where set the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7478,7 +7478,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7489,7 +7489,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7515,7 +7515,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7523,8 +7523,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7552,7 +7552,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7562,7 +7562,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7588,7 +7588,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7597,8 +7597,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7624,7 +7624,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7635,7 +7635,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7660,7 +7660,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7668,8 +7668,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where set the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7697,7 +7697,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7707,7 +7707,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7734,7 +7734,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7743,8 +7743,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where set the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7771,7 +7771,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7782,7 +7782,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7808,7 +7808,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7816,8 +7816,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7845,7 +7845,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7855,7 +7855,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7881,7 +7881,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7890,8 +7890,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7917,7 +7917,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation <br>
-     * Method to replaces the list of apps that have push access to this branch. This removes all apps that previously
+     * Method to replace the list of apps that have push access to this branch. This removes all apps that previously
      * had push access and grants push access to the new list of apps. Only installed GitHub Apps with write access to
      * the contents permission can be added as authorized actors on a protected branch
      *
@@ -7928,7 +7928,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -7963,8 +7963,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where from remove the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8001,7 +8001,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8036,8 +8036,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where from remove the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8074,7 +8074,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8107,8 +8107,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8145,7 +8145,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8179,8 +8179,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8216,7 +8216,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8248,8 +8248,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where from remove the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8286,7 +8286,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format      :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8321,8 +8321,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where from remove the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8359,7 +8359,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format  :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
      *                             {@link #getErrorResponse()}
@@ -8392,8 +8392,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps: the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *            Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
      *                           {@link #getErrorResponse()}
@@ -8430,7 +8430,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *            Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format       :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
      *                           {@link #getErrorResponse()}
@@ -8464,8 +8464,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps: the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *            Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp}
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
      *                           {@link #getErrorResponse()}
@@ -8501,7 +8501,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *            Note: The list of users, apps, and teams in total is limited to 100 items
      * @param format       :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
      *                           {@link #getErrorResponse()}
@@ -8530,121 +8530,791 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
             throw new IOException((String) response.get("error"));
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the branch from fetch the list
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> getTeamsWithTheAccess(Repository repository, Branch branch) throws IOException {
         return getTeamsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the branch from fetch the list
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T getTeamsWithTheAccess(Repository repository, Branch branch, ReturnFormat format) throws IOException {
         return getTeamsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from fetch the list
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> getTeamsWithTheAccess(String owner, String repo, Branch branch) throws IOException {
         return getTeamsWithTheAccess(owner, repo, branch.getName(), LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from fetch the list
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T getTeamsWithTheAccess(String owner, String repo, Branch branch, ReturnFormat format) throws IOException {
         return getTeamsWithTheAccess(owner, repo, branch.getName(), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> getTeamsWithTheAccess(Repository repository, String branch) throws IOException {
         return getTeamsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T getTeamsWithTheAccess(Repository repository, String branch, ReturnFormat format) throws IOException {
         return getTeamsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> getTeamsWithTheAccess(String owner, String repo, String branch) throws IOException {
         return getTeamsWithTheAccess(owner, repo, branch, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list of the teams who have push access to this branch. The list includes child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * Get teams with access to the protected branch</a>
+     **/
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T getTeamsWithTheAccess(String owner, String repo, String branch, ReturnFormat format) throws IOException {
         return returnTeamsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + BRANCHES_QUERY_PATH + branch +
                 PROTECTION_RESTRICTIONS_TEAMS_PATH), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(Repository repository, Branch branch,
                                                       Collection<String> teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(Repository repository, Branch branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(String owner, String repo, Branch branch,
                                                       Collection<String> teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(String owner, String repo, Branch branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(Repository repository, String branch,
                                                       Collection<String> teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(Repository repository, String branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(String owner, String repo, String branch,
                                                       Collection<String> teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(String owner, String repo, String branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch, teams.toArray(new String[0]), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(Repository repository, Branch branch,
                                                       String[] teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(Repository repository, Branch branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(String owner, String repo, Branch branch,
                                                       String[] teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(String owner, String repo, Branch branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(Repository repository, String branch,
                                                       String[] teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(Repository repository, String branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> addTeamAccessRestrictions(String owner, String repo, String branch,
                                                       String[] teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified teams push access for this branch. You can also give push access to child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * Add team access restrictions</a>
+     **/
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T addTeamAccessRestrictions(String owner, String repo, String branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -8653,87 +9323,555 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
                 PROTECTION_RESTRICTIONS_TEAMS_PATH, payload), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(Repository repository, Branch branch,
                                                       Collection<String> teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(Repository repository, Branch branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(String owner, String repo, Branch branch,
                                                       Collection<String> teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(String owner, String repo, Branch branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(Repository repository, String branch,
                                                       Collection<String> teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(Repository repository, String branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(String owner, String repo, String branch,
                                                       Collection<String> teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(String owner, String repo, String branch, Collection<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch, teams.toArray(new String[0]), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(Repository repository, Branch branch,
                                                       String[] teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(Repository repository, Branch branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(String owner, String repo, Branch branch,
                                                       String[] teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(String owner, String repo, Branch branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(Repository repository, String branch,
                                                       String[] teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(Repository repository, String branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> setTeamAccessRestrictions(String owner, String repo, String branch,
                                                       String[] teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of teams that have push access to this branch. This removes all teams that previously
+     * had push access and grants push access to the new list of teams. Team restrictions include child teams
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * Set team access restrictions</a>
+     **/
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T setTeamAccessRestrictions(String owner, String repo, String branch, String[] teams,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -8742,87 +9880,571 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
                 PROTECTION_RESTRICTIONS_TEAMS_PATH, payload), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(Repository repository, Branch branch,
                                                          Collection<String> teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(Repository repository, Branch branch, Collection<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, Branch branch,
                                                          Collection<String> teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(String owner, String repo, Branch branch, Collection<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(Repository repository, String branch,
                                                          Collection<String> teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(Repository repository, String branch, Collection<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, String branch,
                                                          Collection<String> teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(String owner, String repo, String branch, Collection<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch, teams.toArray(new String[0]), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(Repository repository, Branch branch,
                                                          String[] teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(Repository repository, Branch branch, String[] teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, Branch branch,
                                                          String[] teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(String owner, String repo, Branch branch, String[] teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(Repository repository, String branch,
                                                          String[] teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:      the slug values for teams as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(Repository repository, String branch, String[] teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, String branch,
                                                          String[] teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a team to push to this branch. You can also remove push access for child teams.
+     * <b>Note:</b> Teams that should no longer have push access. Use the team's slug, and the list of users, apps,
+     * and teams in total is limited to 100 items.
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param teams:  the slug values for teams as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return teams list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * Remove team access restrictions</a>
+     **/
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
     public <T> T removeTeamAccessRestrictions(String owner, String repo, String branch, String[] teams,
                                               ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -8836,121 +10458,793 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
             throw new IOException((String) response.get("error"));
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the branch from fetch the list
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> getUsersWithTheAccess(Repository repository, Branch branch) throws IOException {
         return getUsersWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the branch from fetch the list
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T getUsersWithTheAccess(Repository repository, Branch branch, ReturnFormat format) throws IOException {
         return getUsersWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from fetch the list
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> getUsersWithTheAccess(String owner, String repo, Branch branch) throws IOException {
         return getUsersWithTheAccess(owner, repo, branch.getName(), LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from fetch the list
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T getUsersWithTheAccess(String owner, String repo, Branch branch, ReturnFormat format) throws IOException {
         return getUsersWithTheAccess(owner, repo, branch.getName(), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> getUsersWithTheAccess(Repository repository, String branch) throws IOException {
         return getUsersWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param repository: the repository from fetch the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T getUsersWithTheAccess(Repository repository, String branch, ReturnFormat format) throws IOException {
         return getUsersWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> getUsersWithTheAccess(String owner, String repo, String branch) throws IOException {
         return getUsersWithTheAccess(owner, repo, branch, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to get the list the people who have push access to this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * Get users with access to the protected branch</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T getUsersWithTheAccess(String owner, String repo, String branch, ReturnFormat format) throws IOException {
         return returnUsersList(sendGetRequest(REPOS_PATH + owner + "/" + repo + BRANCHES_QUERY_PATH + branch +
                 PROTECTION_RESTRICTIONS_USERS_PATH), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(Repository repository, Branch branch,
                                                       Collection<String> users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(Repository repository, Branch branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(String owner, String repo, Branch branch,
                                                       Collection<String> users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(String owner, String repo, Branch branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(Repository repository, String branch,
                                                       Collection<String> users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(Repository repository, String branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(String owner, String repo, String branch,
                                                       Collection<String> users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(String owner, String repo, String branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch, users.toArray(new String[0]), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param users:      the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(Repository repository, Branch branch,
                                                       String[] users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the branch where add the list
+     * @param users:      the username for users as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(Repository repository, Branch branch, String[] users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param users:  the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(String owner, String repo, Branch branch,
                                                       String[] users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where add the list
+     * @param users:  the username for users as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(String owner, String repo, Branch branch, String[] users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(Repository repository, String branch,
                                                       String[] users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param repository: the repository where add the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(Repository repository, String branch, String[] users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> addUserAccessRestrictions(String owner, String repo, String branch,
                                                       String[] users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to grant the specified people push access for this branch
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * Add user access restrictions</a>
+     **/
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T addUserAccessRestrictions(String owner, String repo, String branch, String[] users,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -8959,87 +11253,555 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
                 PROTECTION_RESTRICTIONS_USERS_PATH, payload), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(Repository repository, Branch branch,
                                                       Collection<String> users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(Repository repository, Branch branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(String owner, String repo, Branch branch,
                                                       Collection<String> users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(String owner, String repo, Branch branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(Repository repository, String branch,
                                                       Collection<String> users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(Repository repository, String branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(String owner, String repo, String branch,
                                                       Collection<String> users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(String owner, String repo, String branch, Collection<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch, users.toArray(new String[0]), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param users:      the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(Repository repository, Branch branch,
                                                       String[] users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the branch where set the list
+     * @param users:      the username for users as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(Repository repository, Branch branch, String[] users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param users:  the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(String owner, String repo, Branch branch,
                                                       String[] users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch where set the list
+     * @param users:  the username for users as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(String owner, String repo, Branch branch, String[] users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(Repository repository, String branch,
                                                       String[] users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param repository: the repository where set the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(Repository repository, String branch, String[] users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> setUserAccessRestrictions(String owner, String repo, String branch,
                                                       String[] users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to replace the list of people that have push access to this branch. This removes all people that previously
+     * had push access and grants push access to the new list of people
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * Set user access restrictions</a>
+     **/
+    @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T setUserAccessRestrictions(String owner, String repo, String branch, String[] users,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
@@ -9048,87 +11810,571 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
                 PROTECTION_RESTRICTIONS_USERS_PATH, payload), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(Repository repository, Branch branch,
                                                          Collection<String> users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(Repository repository, Branch branch, Collection<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(String owner, String repo, Branch branch,
                                                          Collection<String> users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(String owner, String repo, Branch branch, Collection<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(Repository repository, String branch,
                                                          Collection<String> users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(Repository repository, String branch, Collection<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(String owner, String repo, String branch,
                                                          Collection<String> users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(String owner, String repo, String branch, Collection<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch, users.toArray(new String[0]), format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param users:      the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(Repository repository, Branch branch,
                                                          String[] users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param users:      the username for users as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(Repository repository, Branch branch, String[] users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param users:  the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(String owner, String repo, Branch branch,
                                                          String[] users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the branch from remove the list
+     * @param users:  the username for users as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(String owner, String repo, Branch branch, String[] users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(Repository repository, String branch,
                                                          String[] users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param repository: the repository from remove the list
+     * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:      the username for users as array of {@link String} format
+     * @param format:     return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(Repository repository, String branch, String[] users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as array of {@link String} format
+     * @return users list as {@link Collection} of {@link User} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @Wrapper
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public Collection<User> removeUserAccessRestrictions(String owner, String repo, String branch,
                                                          String[] users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
+    /**
+     * Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations,
+     * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
+     * For more information, see GitHub's products in the GitHub Help documentation <br>
+     * Method to remove the ability of a user to push to this branch
+     * <b>Note:</b> Usernames of the people who should no longer have push access and the list of users,
+     * apps, and teams in total is limited to 100 items
+     *
+     * @param owner:  the account owner of the repository. The name is not case-sensitive
+     * @param repo:   the name of the repository. The name is not case-sensitive
+     * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
+     * @param users:  the username for users as array of {@link String} format
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return users list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * Remove user access restrictions</a>
+     **/
+    @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
     public <T> T removeUserAccessRestrictions(String owner, String repo, String branch, String[] users,
                                               ReturnFormat format) throws IOException {
         Params payload = new Params();
