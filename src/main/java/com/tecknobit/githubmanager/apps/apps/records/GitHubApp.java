@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.apps.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
@@ -393,11 +393,11 @@ public class GitHubApp extends GitHubResponse {
      * Method to create an apps list
      *
      * @param appsResponse : obtained from GitHub's response
-     * @param format       :        return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @param format       :        return type formatter -> {@link ReturnFormat}
      * @return apps list as {@code "format"} defines
      **/
     @Returner
-    public static <T> T returnAppsList(String appsResponse, GitHubManager.ReturnFormat format) throws Exception {
+    public static <T> T returnAppsList(String appsResponse, ReturnFormat format) throws Exception {
         switch (format) {
             case JSON:
                 return (T) new JSONArray(appsResponse);
