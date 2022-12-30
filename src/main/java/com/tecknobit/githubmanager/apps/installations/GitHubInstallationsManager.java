@@ -125,7 +125,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
      * List repositories accessible to the app installation</a>
      **/
     @Wrapper
@@ -152,7 +152,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
      * List repositories accessible to the app installation</a>
      **/
     @RequestPath(method = GET, path = "/installation/repositories")
@@ -186,7 +186,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
      * List repositories accessible to the app installation</a>
      **/
     @Wrapper
@@ -222,7 +222,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
      * List repositories accessible to the app installation</a>
      **/
     @RequestPath(method = GET, path = "/installation/repositories")
@@ -239,7 +239,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * Any params required
      *
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#revoke-an-installation-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#revoke-an-installation-access-token">
      * Revoke an installation access token</a>
      **/
     @RequestPath(method = DELETE, path = "/installation/token")
@@ -279,7 +279,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
      * List app installations accessible to the user access token</a>
      **/
     @Wrapper
@@ -310,7 +310,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
      * List app installations accessible to the user access token</a>
      **/
     @RequestPath(method = GET, path = "/user/installations")
@@ -348,7 +348,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
      * List app installations accessible to the user access token</a>
      **/
     @Wrapper
@@ -388,7 +388,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-app-installations-accessible-to-the-user-access-token">
      * List app installations accessible to the user access token</a>
      **/
     @RequestPath(method = GET, path = "/user/installations")
@@ -437,7 +437,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @Wrapper
@@ -469,7 +469,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @WrappedRequest
@@ -499,7 +499,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @Wrapper
@@ -530,7 +530,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
@@ -569,7 +569,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @Wrapper
@@ -611,7 +611,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @WrappedRequest
@@ -651,7 +651,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @Wrapper
@@ -691,7 +691,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
      * List repositories accessible to the user access token</a>
      **/
     @RequestPath(method = GET, path = "/user/installations/{installation_id}/repositories")
@@ -708,7 +708,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installation: installation to add the repository
      * @param repository:   repository to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
      * Add a repository to an app installation</a>
      **/
     @WrappedRequest
@@ -724,7 +724,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installationId: the unique identifier of the installation
      * @param repository:     repository to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
      * Add a repository to an app installation</a>
      **/
     @WrappedRequest
@@ -740,7 +740,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installation: installation to add the repository
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
      * Add a repository to an app installation</a>
      **/
     @WrappedRequest
@@ -756,7 +756,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installationId: the unique identifier of the installation
      * @param repositoryId:   the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#add-a-repository-to-an-app-installation">
      * Add a repository to an app installation</a>
      **/
     @RequestPath(method = PUT, path = "/user/installations/{installation_id}/repositories/{repository_id}")
@@ -782,7 +782,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installation: installation from remove the repository
      * @param repository:   repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
      * Remove a repository from an app installation</a>
      **/
     @WrappedRequest
@@ -798,7 +798,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installationId: the unique identifier of the installation
      * @param repository:     repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
      * Remove a repository from an app installation</a>
      **/
     @WrappedRequest
@@ -814,7 +814,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installation: installation from remove the repository
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
      * Remove a repository from an app installation</a>
      **/
     @WrappedRequest
@@ -830,7 +830,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * @param installationId: the unique identifier of the installation
      * @param repositoryId:   the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#remove-a-repository-from-an-app-installation">
      * Remove a repository from an app installation</a>
      **/
     @RequestPath(method = DELETE, path = "/user/installations/{installation_id}/repositories/{repository_id}")

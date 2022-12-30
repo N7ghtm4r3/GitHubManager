@@ -134,7 +134,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
      * Get GitHub Actions billing for an organization</a>
      **/
     @Wrapper
@@ -167,7 +167,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
      * Get GitHub Actions billing for an organization</a>
      **/
     @WrappedRequest
@@ -198,7 +198,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
      * Get GitHub Actions billing for an organization</a>
      **/
     @Wrapper
@@ -230,7 +230,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-an-organization">
      * Get GitHub Actions billing for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/settings/billing/actions")
@@ -261,7 +261,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @Wrapper
@@ -295,7 +295,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @WrappedRequest
@@ -327,7 +327,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @Wrapper
@@ -360,7 +360,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/settings/billing/advanced-security")
@@ -401,7 +401,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @Wrapper
@@ -445,7 +445,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @WrappedRequest
@@ -487,7 +487,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @Wrapper
@@ -529,7 +529,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-advanced-security-active-committers-for-an-organization">
      * Get GitHub Advanced Security active committers for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/settings/billing/advanced-security")
@@ -576,7 +576,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
      * Get GitHub Packages billing for an organization</a>
      **/
     @Wrapper
@@ -606,7 +606,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
      * Get GitHub Packages billing for an organization</a>
      **/
     @WrappedRequest
@@ -634,7 +634,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
      * Get GitHub Packages billing for an organization</a>
      **/
     @Wrapper
@@ -663,7 +663,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-an-organization">
      * Get GitHub Packages billing for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/settings/billing/packages")
@@ -691,7 +691,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
      * Get shared storage billing for an organization</a>
      **/
     @Wrapper
@@ -721,7 +721,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
      * Get shared storage billing for an organization</a>
      **/
     @WrappedRequest
@@ -749,7 +749,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
      * Get shared storage billing for an organization</a>
      **/
     @Wrapper
@@ -778,7 +778,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-an-organization">
      * Get shared storage billing for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/settings/billing/shared-storage")
@@ -809,7 +809,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-a-user">
      * Get GitHub Actions billing for a user</a>
      **/
     @Wrapper
@@ -841,7 +841,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-actions-billing-for-a-user">
      * Get GitHub Actions billing for a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/settings/billing/actions")
@@ -888,7 +888,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-a-user">
      * Get GitHub Packages billing for a user</a>
      **/
     @Wrapper
@@ -917,7 +917,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-github-packages-billing-for-a-user">
      * Get GitHub Packages billing for a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/settings/billing/packages")
@@ -964,7 +964,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-a-user">
      * Get shared storage billing for a user</a>
      **/
     @Wrapper
@@ -993,7 +993,7 @@ public class GitHubBillingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/billing#get-shared-storage-billing-for-a-user">
      * Get shared storage billing for a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/settings/billing/shared-storage")

@@ -118,7 +118,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @Wrapper
@@ -146,7 +146,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @WrappedRequest
@@ -173,7 +173,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @Wrapper
@@ -201,7 +201,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
@@ -235,7 +235,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @Wrapper
@@ -272,7 +272,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @WrappedRequest
@@ -308,7 +308,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @Wrapper
@@ -345,7 +345,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-stargazers">
      * List stargazers</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
@@ -371,7 +371,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
     @Wrapper
@@ -398,7 +398,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/starred")
@@ -440,7 +440,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
     @Wrapper
@@ -484,7 +484,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-the-authenticated-user">
      * List repositories starred by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/starred")
@@ -497,7 +497,7 @@ public class GitHubStarringManager extends GitHubManager {
      *
      * @param repository: repository to check
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user">
      * Check if a repository is starred by the authenticated user</a>
      **/
     @WrappedRequest
@@ -512,7 +512,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#check-if-a-repository-is-starred-by-the-authenticated-user">
      * Check if a repository is starred by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/starred/{owner}/{repo}")
@@ -535,7 +535,7 @@ public class GitHubStarringManager extends GitHubManager {
      *
      * @param repository: repository to star
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#star-a-repository-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#star-a-repository-for-the-authenticated-user">
      * Star a repository for the authenticated user</a>
      **/
     @WrappedRequest
@@ -550,7 +550,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#star-a-repository-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#star-a-repository-for-the-authenticated-user">
      * Star a repository for the authenticated user</a>
      **/
     @RequestPath(method = PUT, path = "/user/starred/{owner}/{repo}")
@@ -573,7 +573,7 @@ public class GitHubStarringManager extends GitHubManager {
      *
      * @param repository: repository to ustar
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#unstar-a-repository-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#unstar-a-repository-for-the-authenticated-user">
      * Unstar a repository for the authenticated user</a>
      **/
     @WrappedRequest
@@ -588,7 +588,7 @@ public class GitHubStarringManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#unstar-a-repository-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#unstar-a-repository-for-the-authenticated-user">
      * Unstar a repository for the authenticated user</a>
      **/
     @RequestPath(method = DELETE, path = "/user/starred/{owner}/{repo}")
@@ -623,7 +623,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
     @Wrapper
@@ -650,7 +650,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/starred")
@@ -693,7 +693,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
     @Wrapper
@@ -738,7 +738,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/starring#list-repositories-starred-by-a-user">
      * List repositories starred by a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/starred")

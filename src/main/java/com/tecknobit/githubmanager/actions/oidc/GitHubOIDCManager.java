@@ -113,7 +113,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Get the customization template for an OIDC subject claim for an organization</a>
      **/
     @Wrapper
@@ -144,7 +144,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Get the customization template for an OIDC subject claim for an organization</a>
      **/
     @WrappedRequest
@@ -173,7 +173,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Get the customization template for an OIDC subject claim for an organization</a>
      **/
     @Wrapper
@@ -203,7 +203,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Get the customization template for an OIDC subject claim for an organization</a>
      **/
     @Returner
@@ -230,7 +230,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param includeClaimKeys: array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                          as {@link Collection} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Set the customization template for an OIDC subject claim for an organization</a>
      **/
     @WrappedRequest
@@ -249,7 +249,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param includeClaimKeys: array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                          as array of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Set the customization template for an OIDC subject claim for an organization</a>
      **/
     @WrappedRequest
@@ -268,7 +268,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param includeClaimKeys: array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                          as {@link Collection} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Set the customization template for an OIDC subject claim for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/oidc/customization/sub")
@@ -286,7 +286,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param includeClaimKeys: array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                          as array of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Set the customization template for an OIDC subject claim for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/oidc/customization/sub")
@@ -326,7 +326,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
      * Get the customization template for an OIDC subject claim for a repository</a>
      **/
     @Wrapper
@@ -357,7 +357,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
      * Get the customization template for an OIDC subject claim for a repository</a>
      **/
     @WrappedRequest
@@ -387,7 +387,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
      * Get the customization template for an OIDC subject claim for a repository</a>
      **/
     @Wrapper
@@ -418,7 +418,7 @@ public class GitHubOIDCManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository>
      * Get the customization template for an OIDC subject claim for a repository</a>
      **/
     @Returner
@@ -445,7 +445,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param useDefault: whether to use the default template or not. If {@code "true"}, the {@code "include_claim_keys"}
      *                    field is ignored
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @WrappedRequest
@@ -465,7 +465,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param useDefault: whether to use the default template or not. If {@code "true"}, the {@code "include_claim_keys"}
      *                    field is ignored
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")
@@ -497,7 +497,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param claimKeys:  array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                    as {@link Collection} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @WrappedRequest
@@ -520,7 +520,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param claimKeys:  array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                    as {@link Collection} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")
@@ -541,7 +541,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param claimKeys:  array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                    as array of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @WrappedRequest
@@ -564,7 +564,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param claimKeys:  array of unique strings. Each claim key can only contain alphanumeric characters and underscores
      *                    as array of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")

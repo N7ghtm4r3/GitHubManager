@@ -121,7 +121,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @Wrapper
@@ -149,7 +149,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @WrappedRequest
@@ -176,7 +176,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @Wrapper
@@ -204,7 +204,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
@@ -238,7 +238,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @Wrapper
@@ -275,7 +275,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @WrappedRequest
@@ -311,7 +311,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @Wrapper
@@ -348,7 +348,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-watchers">
      * List watchers</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
@@ -374,7 +374,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
     @Wrapper
@@ -402,7 +402,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
     @WrappedRequest
@@ -429,7 +429,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
     @Wrapper
@@ -457,7 +457,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#get-a-repository-subscription">
      * Get a repository subscription</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscription")
@@ -486,7 +486,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @Wrapper
@@ -517,7 +517,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @WrappedRequest
@@ -547,7 +547,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @Wrapper
@@ -578,7 +578,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
@@ -618,7 +618,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @Wrapper
@@ -661,7 +661,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @WrappedRequest
@@ -702,7 +702,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @Wrapper
@@ -744,7 +744,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#set-a-repository-subscription">
      * Set a repository subscription</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/subscription")
@@ -781,7 +781,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *
      * @param repository: repository from delete the subscription
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
      * Delete a repository subscription</a>
      **/
     @WrappedRequest
@@ -799,7 +799,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#delete-a-repository-subscription">
      * Delete a repository subscription</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/subscription")
@@ -834,7 +834,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
     @Wrapper
@@ -860,7 +860,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/subscriptions")
@@ -893,7 +893,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
     @Wrapper
@@ -928,7 +928,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-the-authenticated-user">
      * List repositories watched by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/subscriptions")
@@ -954,7 +954,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
     @Wrapper
@@ -981,7 +981,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/subscriptions")
@@ -1015,7 +1015,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
     @Wrapper
@@ -1051,7 +1051,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/watching#list-repositories-watched-by-a-user">
      * List repositories watched by a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/subscriptions")

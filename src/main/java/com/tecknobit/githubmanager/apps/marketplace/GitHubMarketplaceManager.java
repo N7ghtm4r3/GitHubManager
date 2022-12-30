@@ -139,7 +139,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
      * Get a subscription plan for an account</a>
      **/
     @Wrapper
@@ -170,7 +170,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
      * Get a subscription plan for an account</a>
      **/
     @WrappedRequest
@@ -199,7 +199,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
      * Get a subscription plan for an account</a>
      **/
     @Wrapper
@@ -229,7 +229,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#get-a-subscription-plan-for-an-account">
      * Get a subscription plan for an account</a>
      **/
     @RequestPath(method = GET, path = "/marketplace_listing/accounts/{account_id}")
@@ -264,7 +264,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
      * List plans</a>
      **/
     @Wrapper
@@ -292,7 +292,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
      * List plans</a>
      **/
     @RequestPath(method = GET, path = "/marketplace_listing/plans")
@@ -327,7 +327,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
      * List plans</a>
      **/
     @Wrapper
@@ -364,7 +364,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-plans">
      * List plans</a>
      **/
     @RequestPath(method = GET, path = "/marketplace_listing/plans")
@@ -418,7 +418,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @Wrapper
@@ -451,7 +451,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @WrappedRequest
@@ -482,7 +482,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @Wrapper
@@ -514,7 +514,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @RequestPath(method = GET, path = "/marketplace_listing/plans/{plan_id}/accounts")
@@ -563,7 +563,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @Wrapper
@@ -614,7 +614,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @WrappedRequest
@@ -663,7 +663,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @Wrapper
@@ -713,7 +713,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-accounts-for-a-plan">
      * List accounts for a plan</a>
      **/
     @Wrapper
@@ -765,7 +765,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
      * List subscriptions for the authenticated user</a>
      **/
     @Wrapper
@@ -793,7 +793,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
      * List subscriptions for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/marketplace_purchases")
@@ -828,7 +828,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
      * List subscriptions for the authenticated user</a>
      **/
     @Wrapper
@@ -865,7 +865,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user">
      * List subscriptions for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/user/marketplace_purchases")

@@ -127,7 +127,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @Wrapper
@@ -155,7 +155,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @WrappedRequest
@@ -182,7 +182,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @Wrapper
@@ -210,7 +210,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
@@ -249,7 +249,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @Wrapper
@@ -291,7 +291,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @WrappedRequest
@@ -332,7 +332,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @Wrapper
@@ -374,7 +374,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
@@ -423,7 +423,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
      * Get a branch</a>
      **/
     @Wrapper
@@ -451,7 +451,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
      * Get a branch</a>
      **/
     @WrappedRequest
@@ -478,7 +478,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
      * Get a branch</a>
      **/
     @Wrapper
@@ -506,7 +506,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#get-a-branch">
      * Get a branch</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}")
@@ -561,7 +561,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @Wrapper
@@ -618,7 +618,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @WrappedRequest
@@ -673,7 +673,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @Wrapper
@@ -730,7 +730,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @WrappedRequest
@@ -786,7 +786,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @Wrapper
@@ -844,7 +844,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @WrappedRequest
@@ -901,7 +901,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @Wrapper
@@ -958,7 +958,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#rename-a-branch">
      * Rename a branch</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/rename")
@@ -1007,7 +1007,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1036,7 +1036,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @WrappedRequest
@@ -1063,7 +1063,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1092,7 +1092,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @WrappedRequest
@@ -1120,7 +1120,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1150,7 +1150,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @WrappedRequest
@@ -1178,7 +1178,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1207,7 +1207,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Returner
@@ -1245,7 +1245,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1275,7 +1275,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @WrappedRequest
@@ -1304,7 +1304,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1334,7 +1334,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/merges")
@@ -1362,7 +1362,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1394,7 +1394,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @WrappedRequest
@@ -1425,7 +1425,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Wrapper
@@ -1457,7 +1457,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#merge-a-branch">
      * Sync a fork branch with the upstream repository</a>
      **/
     @Returner

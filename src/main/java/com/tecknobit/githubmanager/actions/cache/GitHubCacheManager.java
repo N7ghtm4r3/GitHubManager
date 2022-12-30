@@ -124,7 +124,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
      * Get GitHub Actions cache usage for an enterprise</a>
      **/
     @Wrapper
@@ -153,7 +153,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-enterprise">
      * Get GitHub Actions cache usage for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/cache/usage")
@@ -182,7 +182,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
     @Wrapper
@@ -214,7 +214,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
     @WrappedRequest
@@ -245,7 +245,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
     @Wrapper
@@ -276,7 +276,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-an-organization">
      * Get GitHub Actions cache usage for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage")
@@ -324,7 +324,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @Wrapper
@@ -356,7 +356,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @WrappedRequest
@@ -386,7 +386,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @Wrapper
@@ -417,7 +417,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
@@ -456,7 +456,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @Wrapper
@@ -497,7 +497,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @WrappedRequest
@@ -536,7 +536,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @Wrapper
@@ -576,7 +576,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization">
      * List repositories with GitHub Actions cache usage for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/cache/usage-by-repository")
@@ -626,7 +626,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
     @Wrapper
@@ -658,7 +658,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
     @WrappedRequest
@@ -690,7 +690,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
     @Wrapper
@@ -723,7 +723,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#get-github-actions-cache-usage-for-a-repository">
      * Get GitHub Actions cache usage for a repository</a>
      **/
     @Returner
@@ -761,7 +761,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @Wrapper
@@ -792,7 +792,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @WrappedRequest
@@ -822,7 +822,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @Wrapper
@@ -853,7 +853,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
@@ -910,7 +910,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @Wrapper
@@ -970,7 +970,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @WrappedRequest
@@ -1028,7 +1028,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @Wrapper
@@ -1087,7 +1087,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#list-github-actions-caches-for-a-repository">
      * List GitHub Actions caches for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/caches")
@@ -1120,7 +1120,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @Wrapper
@@ -1153,7 +1153,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
@@ -1186,7 +1186,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @Wrapper
@@ -1220,7 +1220,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
@@ -1253,7 +1253,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @Wrapper
@@ -1288,7 +1288,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
@@ -1323,7 +1323,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @Wrapper
@@ -1359,7 +1359,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
@@ -1394,7 +1394,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @Wrapper
@@ -1430,7 +1430,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
@@ -1465,7 +1465,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @Wrapper
@@ -1503,7 +1503,7 @@ public class GitHubCacheManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key">
      * Delete GitHub Actions caches for a repository (using a cache key)</a>
      **/
     @WrappedRequest
@@ -1546,7 +1546,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @param actionCacheToDelete: cache to delete
      *                             {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
     @WrappedRequest
@@ -1565,7 +1565,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @param cacheId:    the unique identifier of the GitHub Actions cache
      *                    {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
     @WrappedRequest
@@ -1585,7 +1585,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @param actionCacheToDelete: cache to delete
      *                             {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
     @WrappedRequest
@@ -1605,7 +1605,7 @@ public class GitHubCacheManager extends GitHubManager {
      * @param cacheId: the unique identifier of the GitHub Actions cache
      *                 {@code "refs/heads/<branch name>"} or simply {@code "<branch name>"}. To reference a pull request use {@code "refs/pull/<number>/merge"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id">
      * Delete a GitHub Actions cache for a repository (using a cache ID)</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/caches/{cache_id}")

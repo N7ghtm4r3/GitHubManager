@@ -127,7 +127,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-webhook-configuration-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-webhook-configuration-for-an-app">
      * Get a webhook configuration for an app</a>
      **/
     @Wrapper
@@ -155,7 +155,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-webhook-configuration-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-webhook-configuration-for-an-app">
      * Get a webhook configuration for an app</a>
      **/
     @RequestPath(method = GET, path = "/app/hook/config")
@@ -202,7 +202,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#update-a-webhook-configuration-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#update-a-webhook-configuration-for-an-app">
      * Update a webhook configuration for an app</a>
      **/
     @Wrapper
@@ -251,7 +251,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#update-a-webhook-configuration-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#update-a-webhook-configuration-for-an-app">
      * Update a webhook configuration for an app</a>
      **/
     @RequestPath(method = PATCH, path = "/app/hook/config")
@@ -296,7 +296,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
      * List deliveries for an app webhook</a>
      **/
     @Wrapper
@@ -323,7 +323,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
      * List deliveries for an app webhook</a>
      **/
     @RequestPath(method = GET, path = "/app/hook/deliveries")
@@ -362,7 +362,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
      * List deliveries for an app webhook</a>
      **/
     @Wrapper
@@ -403,7 +403,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#list-deliveries-for-an-app-webhook">
      * List deliveries for an app webhook</a>
      **/
     @RequestPath(method = GET, path = "/app/hook/deliveries")
@@ -453,7 +453,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-delivery-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-delivery-for-an-app-webhook">
      * Get a delivery for an app webhook</a>
      **/
     @Wrapper
@@ -481,7 +481,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-delivery-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-delivery-for-an-app-webhook">
      * Get a delivery for an app webhook</a>
      **/
     @Returner
@@ -504,7 +504,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *
      * @param delivery: delivery to redeliver
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#redeliver-a-delivery-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#redeliver-a-delivery-for-an-app-webhook">
      * Redeliver a delivery for an app webhook</a>
      **/
     @WrappedRequest
@@ -519,7 +519,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *
      * @param deliveryId: delivery identifier
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#redeliver-a-delivery-for-an-app-webhook">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#redeliver-a-delivery-for-an-app-webhook">
      * Redeliver a delivery for an app webhook</a>
      **/
     @RequestPath(method = POST, path = "/app/hook/deliveries/{delivery_id}/attempts")

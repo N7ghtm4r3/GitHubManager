@@ -116,7 +116,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *
      * @param accessToken: access token where revoke the authorization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-authorization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-authorization">
      * Delete an app authorization</a>
      **/
     @WrappedRequest
@@ -137,7 +137,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      * @param clientId:    the client ID of the GitHub app
      * @param accessToken: the OAuth access token used to authenticate to the GitHub API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-authorization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-authorization">
      * Delete an app authorization</a>
      **/
     @RequestPath(method = DELETE, path = "/applications/{client_id}/grant")
@@ -165,7 +165,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
      * Check a token</a>
      **/
     @Wrapper
@@ -196,7 +196,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
      * Check a token</a>
      **/
     @WrappedRequest
@@ -226,7 +226,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
      * Check a token</a>
      **/
     @Wrapper
@@ -257,7 +257,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#check-a-token">
      * Check a token</a>
      **/
     @RequestPath(method = POST, path = "/applications/{client_id}/token")
@@ -288,7 +288,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
      * Reset a token</a>
      **/
     @Wrapper
@@ -319,7 +319,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
      * Reset a token</a>
      **/
     @WrappedRequest
@@ -349,7 +349,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
      * Reset a token</a>
      **/
     @Wrapper
@@ -380,7 +380,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#reset-a-token">
      * Reset a token</a>
      **/
     @RequestPath(method = PATCH, path = "/applications/{client_id}/token")
@@ -398,7 +398,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *
      * @param accessToken: access token where revoke a token
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-token">
      * Delete an app token</a>
      **/
     @WrappedRequest
@@ -415,7 +415,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      * @param clientId:    the client ID of the GitHub app
      * @param accessToken: the OAuth access token used to authenticate to the GitHub API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-token">
      * Delete an app token</a>
      **/
     @RequestPath(method = DELETE, path = "/applications/{client_id}/token")
@@ -493,7 +493,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#create-a-scoped-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#create-a-scoped-access-token">
      * Create a scoped access token</a>
      **/
     @Wrapper
@@ -550,7 +550,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#create-a-scoped-access-token">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/oauth-applications#create-a-scoped-access-token">
      * Create a scoped access token</a>
      **/
     @RequestPath(method = POST, path = "/applications/{client_id}/token/scoped")

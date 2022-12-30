@@ -126,7 +126,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
     @Wrapper
@@ -155,7 +155,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
     @RequestPath(method = GET, path = "/events")
@@ -190,7 +190,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
     @Wrapper
@@ -227,7 +227,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events">
      * List public events</a>
      **/
     @RequestPath(method = GET, path = "/events")
@@ -252,7 +252,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @Wrapper
@@ -280,7 +280,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @WrappedRequest
@@ -307,7 +307,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @Wrapper
@@ -335,7 +335,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
@@ -369,7 +369,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @Wrapper
@@ -407,7 +407,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @WrappedRequest
@@ -444,7 +444,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @Wrapper
@@ -481,7 +481,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-network-of-repositories">
      * List public events for a network of repositories</a>
      **/
     @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
@@ -508,7 +508,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @Wrapper
@@ -536,7 +536,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @WrappedRequest
@@ -562,7 +562,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @Wrapper
@@ -589,7 +589,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/events")
@@ -623,7 +623,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @Wrapper
@@ -660,7 +660,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @WrappedRequest
@@ -695,7 +695,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @Wrapper
@@ -731,7 +731,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-organization-events">
      * List public organization events</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/events")
@@ -757,7 +757,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @Wrapper
@@ -785,7 +785,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @WrappedRequest
@@ -812,7 +812,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @Wrapper
@@ -840,7 +840,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
@@ -874,7 +874,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @Wrapper
@@ -911,7 +911,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @WrappedRequest
@@ -947,7 +947,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @Wrapper
@@ -984,7 +984,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-repository-events">
      * List repository events</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
@@ -1012,7 +1012,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
     @Wrapper
@@ -1040,7 +1040,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/events")
@@ -1075,7 +1075,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
     @Wrapper
@@ -1112,7 +1112,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-for-the-authenticated-user">
      * List events for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/events")
@@ -1140,7 +1140,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @Wrapper
@@ -1170,7 +1170,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @WrappedRequest
@@ -1199,7 +1199,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @Wrapper
@@ -1228,7 +1228,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
@@ -1266,7 +1266,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @Wrapper
@@ -1306,7 +1306,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @WrappedRequest
@@ -1344,7 +1344,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @Wrapper
@@ -1383,7 +1383,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-organization-events-for-the-authenticated-user">
      * List organization events for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
@@ -1410,7 +1410,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
     @Wrapper
@@ -1437,7 +1437,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/events/public")
@@ -1471,7 +1471,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
     @Wrapper
@@ -1507,7 +1507,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-for-a-user">
      * List public events for a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/events/public")
@@ -1535,7 +1535,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
     @Wrapper
@@ -1564,7 +1564,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/received_events")
@@ -1600,7 +1600,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
     @Wrapper
@@ -1638,7 +1638,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-events-received-by-the-authenticated-user">
      * List events received by the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/received_events")
@@ -1665,7 +1665,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
     @Wrapper
@@ -1692,7 +1692,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/received_events/public")
@@ -1727,7 +1727,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
     @Wrapper
@@ -1763,7 +1763,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/activity/events#list-public-events-received-by-a-user">
      * List public events received by a user</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/received_events/public")

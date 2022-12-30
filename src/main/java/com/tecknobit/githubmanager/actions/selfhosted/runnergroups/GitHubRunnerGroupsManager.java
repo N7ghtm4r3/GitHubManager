@@ -117,7 +117,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
     @Wrapper
@@ -146,7 +146,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups")
@@ -186,7 +186,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
     @Wrapper
@@ -227,7 +227,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-enterprise">
      * List self-hosted runner groups for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups")
@@ -257,7 +257,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
     @Wrapper
@@ -287,7 +287,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runner-groups")
@@ -345,7 +345,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
     @Wrapper
@@ -403,7 +403,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-enterprise">
      * Create a self-hosted runner group for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runner-groups")
@@ -434,7 +434,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-enterprise">
      * Get a self-hosted runner group for an enterprise</a>
      **/
     @Wrapper
@@ -464,7 +464,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-enterprise">
      * Get a self-hosted runner group for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
@@ -523,7 +523,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
     @Wrapper
@@ -585,7 +585,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
     @WrappedRequest
@@ -645,7 +645,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
     @RequestPath(method = PATCH, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
@@ -705,7 +705,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-enterprise">
      * Update a self-hosted runner group for an enterprise</a>
      **/
     @RequestPath(method = PATCH, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
@@ -723,7 +723,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param enterprise:  the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerGroup: the runner group to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-enterprise">
      * Delete a self-hosted runner group from an enterprise</a>
      **/
     @WrappedRequest
@@ -740,7 +740,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param enterprise:    the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-enterprise">
      * Delete a self-hosted runner group from an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}")
@@ -778,7 +778,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @Wrapper
@@ -809,7 +809,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -839,7 +839,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @Wrapper
@@ -869,7 +869,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
@@ -908,7 +908,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @Wrapper
@@ -949,7 +949,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -988,7 +988,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @Wrapper
@@ -1028,7 +1028,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * List organization access to a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
@@ -1047,7 +1047,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:       the runner group for the list
      * @param organizationsList: organizations list to authorize
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1065,7 +1065,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:     unique identifier of the self-hosted runner group
      * @param organizationsList: organizations list to authorize
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1086,7 +1086,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:      the runner group for the list
      * @param organizationsIds: list of organization IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1104,7 +1104,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:      the runner group for the list
      * @param organizationsIds: list of organization IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1122,7 +1122,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:    unique identifier of the self-hosted runner group
      * @param organizationsIds: list of organization IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
@@ -1139,7 +1139,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:    unique identifier of the self-hosted runner group
      * @param organizationsIds: list of organization IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
@@ -1158,7 +1158,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the organization
      * @param org:         organization to authorize
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1177,7 +1177,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the organization
      * @param orgId:       the unique identifier of the organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1196,7 +1196,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param org:           organization to authorize
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1215,7 +1215,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param orgId:         the unique identifier of the organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Add organization access to a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
@@ -1244,7 +1244,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the organization
      * @param org:         organization from revoke authorization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1263,7 +1263,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the organization
      * @param orgId:       the unique identifier of the organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1282,7 +1282,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param org:           organization from revoke authorization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
@@ -1301,7 +1301,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param orgId:         the unique identifier of the organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise">
      * Remove organization access to a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}")
@@ -1340,7 +1340,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @Wrapper
@@ -1371,7 +1371,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1401,7 +1401,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @Wrapper
@@ -1431,7 +1431,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
@@ -1470,7 +1470,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @Wrapper
@@ -1511,7 +1511,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1550,7 +1550,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @Wrapper
@@ -1590,7 +1590,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-enterprise">
      * List self-hosted runners in a group for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
@@ -1609,7 +1609,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the list
      * @param runners:     runners list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1627,7 +1627,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runners:       runners list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1648,7 +1648,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the list
      * @param runnersIds:  list of runner IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1666,7 +1666,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the list
      * @param runnersIds:  list of runner IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1684,7 +1684,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnersIds:    list of runner IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
@@ -1701,7 +1701,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnersIds:    list of runner IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
@@ -1719,7 +1719,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the runner
      * @param runner:      runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1737,7 +1737,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runner:        runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1755,7 +1755,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group for the runner
      * @param runnerId:    unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1773,7 +1773,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnerId:      unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-enterprise">
      * Add a self-hosted runner to a group for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
@@ -1801,7 +1801,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group from remove the runner
      * @param runner:      runner to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1819,7 +1819,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runner:        runner to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1837,7 +1837,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group from remove the runner
      * @param runnerId:    unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @WrappedRequest
@@ -1855,7 +1855,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnerId:      unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-enterprise">
      * Remove a self-hosted runner from a group for an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
@@ -1895,7 +1895,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @Wrapper
@@ -1927,7 +1927,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @WrappedRequest
@@ -1957,7 +1957,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @Wrapper
@@ -1988,7 +1988,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
@@ -2031,7 +2031,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @Wrapper
@@ -2076,7 +2076,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @WrappedRequest
@@ -2119,7 +2119,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
@@ -2162,7 +2162,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization">
      * List self-hosted runner groups for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
@@ -2213,7 +2213,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2246,7 +2246,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -2277,7 +2277,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2309,7 +2309,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runner-groups")
@@ -2372,7 +2372,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2436,7 +2436,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -2498,7 +2498,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2561,7 +2561,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization">
      * Create a self-hosted runner group for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups")
@@ -2593,7 +2593,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2625,7 +2625,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -2655,7 +2655,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2686,7 +2686,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization">
      * Get a self-hosted runner group for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
@@ -2746,7 +2746,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2809,7 +2809,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -2870,7 +2870,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -2933,7 +2933,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -2994,7 +2994,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -3057,7 +3057,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -3118,7 +3118,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @Wrapper
@@ -3181,7 +3181,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization">
      * Update a self-hosted runner group for an organization</a>
      **/
     @WrappedRequest
@@ -3220,7 +3220,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param org:         the organization from remove runner group
      * @param runnerGroup: the runner group to remove from the list
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
      * Delete a self-hosted runner group from an organization</a>
      **/
     @WrappedRequest
@@ -3238,7 +3238,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param org:           the organization from remove runner group
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
      * Delete a self-hosted runner group from an organization</a>
      **/
     @WrappedRequest
@@ -3256,7 +3256,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param org:         the organization name. The name is not case-sensitive
      * @param runnerGroup: the runner group to remove from the list
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
      * Delete a self-hosted runner group from an organization</a>
      **/
     @WrappedRequest
@@ -3274,7 +3274,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param org:           the organization name. The name is not case-sensitive
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization">
      * Delete a self-hosted runner group from an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}")
@@ -3313,7 +3313,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3346,7 +3346,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3377,7 +3377,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3409,7 +3409,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3440,7 +3440,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3473,7 +3473,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3504,7 +3504,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3535,7 +3535,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
@@ -3579,7 +3579,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3625,7 +3625,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3669,7 +3669,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3715,7 +3715,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3759,7 +3759,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3805,7 +3805,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3849,7 +3849,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @Wrapper
@@ -3894,7 +3894,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
@@ -3914,7 +3914,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:     the runner group to set the list
      * @param repositoriesIds: list of repository IDs that can access the runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3934,7 +3934,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:     the runner group to set the list
      * @param repositoriesIds: list of repository IDs that can access the runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3954,7 +3954,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
      * @param repositoriesIds: list of repository IDs that can access the runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3974,7 +3974,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
      * @param repositoriesIds: list of repository IDs that can access the runner group
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -3996,7 +3996,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:     the runner group to set the list
      * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4015,7 +4015,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:     the runner group to set the list
      * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4034,7 +4034,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:     the runner group to set the list
      * @param repositoriesIds: list of repository IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4053,7 +4053,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:     the runner group to set the list
      * @param repositoriesIds: list of repository IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4072,7 +4072,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
      * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4091,7 +4091,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
      * @param repositoriesIds: list of repository IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4110,7 +4110,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
      * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
@@ -4128,7 +4128,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
      * @param repositoriesIds: list of repository IDs that can access the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
@@ -4149,7 +4149,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group from remove the repository
      * @param repository:  the repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4170,7 +4170,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group from remove the repository
      * @param repository:  the repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4191,7 +4191,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:  the runner group from remove the repository
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4212,7 +4212,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup:  the runner group from remove the repository
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4233,7 +4233,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param repository:    the repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4254,7 +4254,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param repository:    the repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4275,7 +4275,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param repositoryId:  the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
@@ -4296,7 +4296,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param repositoryId:  the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization">
      * Remove repository access to a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}")
@@ -4336,7 +4336,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4368,7 +4368,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4399,7 +4399,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4431,7 +4431,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4462,7 +4462,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4494,7 +4494,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4524,7 +4524,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4555,7 +4555,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
@@ -4594,7 +4594,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4636,7 +4636,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4676,7 +4676,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4718,7 +4718,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4758,7 +4758,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4800,7 +4800,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4840,7 +4840,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @Wrapper
@@ -4881,7 +4881,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization">
      * List self-hosted runners in a group for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
@@ -4903,7 +4903,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: runner group to set the runners
      * @param runners:     runners list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4924,7 +4924,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: runner group to set the runners
      * @param runners:     runners list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4945,7 +4945,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runners:       runners list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4966,7 +4966,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runners:       runners list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -4990,7 +4990,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: runner group to set the runners
      * @param runnersIds:  list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -5011,7 +5011,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: runner group to set the runners
      * @param runnersIds:  list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -5032,7 +5032,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: runner group to set the runners
      * @param runnersIds:  list of runner IDs to add to the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -5053,7 +5053,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: runner group to set the runners
      * @param runnersIds:  list of runner IDs to add to the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -5074,7 +5074,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnersIds:    list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -5095,7 +5095,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnersIds:    list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
@@ -5116,7 +5116,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnersIds:    list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
@@ -5136,7 +5136,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnersIds:    list of runner IDs to add to the runner group in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
@@ -5157,7 +5157,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runner:      runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5178,7 +5178,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runner:      runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5199,7 +5199,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runner:        runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5220,7 +5220,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runner:        runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5241,7 +5241,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runnerId:    unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5262,7 +5262,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runnerId:    unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5283,7 +5283,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnerId:      unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @WrappedRequest
@@ -5304,7 +5304,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnerId:      unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization">
      * Add a self-hosted runner to a group for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")
@@ -5335,7 +5335,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runner:      runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5356,7 +5356,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runner:      runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5377,7 +5377,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runner:        runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5398,7 +5398,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runner:        runner to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5419,7 +5419,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runnerId:    unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5440,7 +5440,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroup: the runner group to add the runner
      * @param runnerId:    unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5461,7 +5461,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnerId:      unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @WrappedRequest
@@ -5482,7 +5482,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * @param runnerGroupId: unique identifier of the self-hosted runner group
      * @param runnerId:      unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization">
      * Remove a self-hosted runner from a group for an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}")

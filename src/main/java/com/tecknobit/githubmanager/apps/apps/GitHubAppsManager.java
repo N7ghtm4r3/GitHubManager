@@ -150,7 +150,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-the-authenticated-app">
      * Get the authenticated app</a>
      **/
     @Wrapper
@@ -178,7 +178,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-the-authenticated-app">
      * Get the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/app")
@@ -205,7 +205,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-a-github-app-from-a-manifest">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-a-github-app-from-a-manifest">
      * Create a GitHub App from a manifest</a>
      **/
     @Wrapper
@@ -234,7 +234,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-a-github-app-from-a-manifest">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-a-github-app-from-a-manifest">
      * Create a GitHub App from a manifest</a>
      **/
     @RequestPath(method = POST, path = "/app-manifests/{code}/conversions")
@@ -262,7 +262,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
      * List installations for the authenticated app</a>
      **/
     @Wrapper
@@ -290,7 +290,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
      * List installations for the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/app/installations")
@@ -332,7 +332,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
      * List installations for the authenticated app</a>
      **/
     @Wrapper
@@ -376,7 +376,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#list-installations-for-the-authenticated-app">
      * List installations for the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/app/installations")
@@ -426,7 +426,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-installation-for-the-authenticated-app">
      * Get an installation for the authenticated app</a>
      **/
     @Wrapper
@@ -454,7 +454,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-installation-for-the-authenticated-app">
      * Get an installation for the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/app/installations/{installation_id}")
@@ -470,7 +470,7 @@ public class GitHubAppsManager extends GitHubManager {
      *
      * @param installation: installation to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#delete-an-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#delete-an-installation-for-the-authenticated-app">
      * Delete an installation for the authenticated app</a>
      **/
     @WrappedRequest
@@ -487,7 +487,7 @@ public class GitHubAppsManager extends GitHubManager {
      *
      * @param installationId: the unique identifier of the installation
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#delete-an-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#delete-an-installation-for-the-authenticated-app">
      * Delete an installation for the authenticated app</a>
      **/
     @RequestPath(method = DELETE, path = "/app/installations/{installation_id}")
@@ -545,7 +545,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
      * Create an installation access token for an app</a>
      **/
     @Wrapper
@@ -597,7 +597,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
      * Create an installation access token for an app</a>
      **/
     @WrappedRequest
@@ -647,7 +647,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
      * Create an installation access token for an app</a>
      **/
     @Wrapper
@@ -697,7 +697,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#create-an-installation-access-token-for-an-app">
      * Create an installation access token for an app</a>
      **/
     @Returner
@@ -723,7 +723,7 @@ public class GitHubAppsManager extends GitHubManager {
      *
      * @param installation: installation to suspend
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#suspend-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#suspend-an-app-installation">
      * Suspend an app installation</a>
      **/
     @WrappedRequest
@@ -740,7 +740,7 @@ public class GitHubAppsManager extends GitHubManager {
      *
      * @param installationId: the unique identifier of the installation
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#suspend-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#suspend-an-app-installation">
      * Suspend an app installation</a>
      **/
     @RequestPath(method = PUT, path = "/app/installations/{installation_id}/suspended")
@@ -764,7 +764,7 @@ public class GitHubAppsManager extends GitHubManager {
      *
      * @param installation: installation to unsuspend
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#unsuspend-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#unsuspend-an-app-installation">
      * Suspend an app installation</a>
      **/
     @WrappedRequest
@@ -779,7 +779,7 @@ public class GitHubAppsManager extends GitHubManager {
      *
      * @param installationId: the unique identifier of the installation
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#unsuspend-an-app-installation">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#unsuspend-an-app-installation">
      * Suspend an app installation</a>
      **/
     @RequestPath(method = DELETE, path = "/app/installations/{installation_id}/suspended")
@@ -814,7 +814,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-app">
      * Get an app</a>
      * @implSpec The {@code ":app_slug"} is just the URL-friendly name of your GitHub App.
      * You can find this on the settings page for your GitHub App (e.g., <a href="https://github.com/settings/apps/:app_slug">app_slug</a>).
@@ -846,7 +846,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-app">
      * Get an app</a>
      * @implSpec The {@code ":app_slug"} is just the URL-friendly name of your GitHub App.
      * You can find this on the settings page for your GitHub App (e.g., <a href="https://github.com/settings/apps/:app_slug">app_slug</a>).
@@ -896,7 +896,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
      * Get an organization installation for the authenticated app</a>
      **/
     @Wrapper
@@ -925,7 +925,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
      * Get an organization installation for the authenticated app</a>
      **/
     @WrappedRequest
@@ -952,7 +952,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
      * Get an organization installation for the authenticated app</a>
      **/
     @Wrapper
@@ -980,7 +980,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-an-organization-installation-for-the-authenticated-app">
      * Get an organization installation for the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/installation")
@@ -1008,7 +1008,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
      * Get a repository installation for the authenticated app</a>
      **/
     @Wrapper
@@ -1039,7 +1039,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
      * Get a repository installation for the authenticated app</a>
      **/
     @WrappedRequest
@@ -1069,7 +1069,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
      * Get a repository installation for the authenticated app</a>
      **/
     @Wrapper
@@ -1100,7 +1100,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-repository-installation-for-the-authenticated-app">
      * Get a repository installation for the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/installation")
@@ -1126,7 +1126,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-user-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-user-installation-for-the-authenticated-app">
      * Get a user installation for the authenticated app</a>
      **/
     @Wrapper
@@ -1154,7 +1154,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-user-installation-for-the-authenticated-app">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/apps#get-a-user-installation-for-the-authenticated-app">
      * Get a user installation for the authenticated app</a>
      **/
     @RequestPath(method = GET, path = "/users/{username}/installation")

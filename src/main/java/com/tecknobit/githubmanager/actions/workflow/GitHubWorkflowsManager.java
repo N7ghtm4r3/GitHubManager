@@ -147,7 +147,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @Wrapper
@@ -179,7 +179,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @WrappedRequest
@@ -210,7 +210,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @Wrapper
@@ -242,7 +242,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
@@ -281,7 +281,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @Wrapper
@@ -323,7 +323,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @WrappedRequest
@@ -363,7 +363,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @Wrapper
@@ -404,7 +404,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#list-repository-workflows">
      * List repository workflows</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows")
@@ -456,7 +456,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @Wrapper
@@ -490,7 +490,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @WrappedRequest
@@ -523,7 +523,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @Wrapper
@@ -557,7 +557,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
@@ -589,7 +589,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @Wrapper
@@ -623,7 +623,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @WrappedRequest
@@ -656,7 +656,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @Wrapper
@@ -690,7 +690,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-a-workflow">
      * Get a workflow</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}")
@@ -729,7 +729,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repository: repository from disable thw workflow
      * @param workflow:   the workflow to disable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     @WrappedRequest
@@ -750,7 +750,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param workflow: the workflow to disable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     @WrappedRequest
@@ -770,7 +770,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repository: repository from disable thw workflow
      * @param workflowId: the {@code "ID"} of the workflow
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     @WrappedRequest
@@ -791,7 +791,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:       the name of the repository. The name is not case-sensitive
      * @param workflowId: the {@code "ID"} of the workflow
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
@@ -810,7 +810,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repository:   repository from disable thw workflow
      * @param workflowName: the workflow file name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     @WrappedRequest
@@ -831,7 +831,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:         the name of the repository. The name is not case-sensitive
      * @param workflowName: the workflow file name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable")
@@ -851,7 +851,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param workflow: the {@code "ID"} of the workflow. You can also pass the workflow file name as a string
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#disable-a-workflow">
      * Disable a workflow</a>
      **/
     private <T> boolean performWorkflowDeactivation(String owner, String repo, T workflow) {
@@ -882,7 +882,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param workflow:   the workflow to create the workflow dispatch event
      * @param ref:        the git reference for the workflow. The reference can be a branch or tag name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -906,7 +906,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param workflow: the workflow to create the workflow dispatch event
      * @param ref:      the git reference for the workflow. The reference can be a branch or tag name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -928,7 +928,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param workflowId: the {@code "ID"} of the workflow
      * @param ref:        the git reference for the workflow. The reference can be a branch or tag name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -952,7 +952,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param workflowId: the {@code "ID"} of the workflow
      * @param ref:        the git reference for the workflow. The reference can be a branch or tag name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
@@ -973,7 +973,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param workflowName: the workflow file name
      * @param ref:          the git reference for the workflow. The reference can be a branch or tag name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -997,7 +997,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param workflowName: the workflow file name
      * @param ref:          the git reference for the workflow. The reference can be a branch or tag name
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
@@ -1021,7 +1021,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                    The maximum number of properties is 10.
      *                    Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -1048,7 +1048,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                  The maximum number of properties is 10.
      *                  Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -1073,7 +1073,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                    The maximum number of properties is 10.
      *                    Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -1100,7 +1100,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                    The maximum number of properties is 10.
      *                    Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
@@ -1124,7 +1124,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                      The maximum number of properties is 10.
      *                      Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @WrappedRequest
@@ -1151,7 +1151,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                      The maximum number of properties is 10.
      *                      Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches")
@@ -1176,7 +1176,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                  The maximum number of properties is 10.
      *                  Any default properties configured in the workflow file will be used when inputs are omitted
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event">
      * Create a workflow dispatch event</a>
      **/
     private <T> boolean performWorkflowDispatchEventCreation(String owner, String repo, T workflow, String ref,
@@ -1207,7 +1207,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repository: the repository to enable the workflow
      * @param workflow:   the workflow to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     @WrappedRequest
@@ -1226,7 +1226,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param workflow: the workflow to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     @WrappedRequest
@@ -1244,7 +1244,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repository: the repository to enable the workflow
      * @param workflowId: the {@code "ID"} of the workflow
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     @WrappedRequest
@@ -1263,7 +1263,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:       the name of the repository. The name is not case-sensitive
      * @param workflowId: the {@code "ID"} of the workflow
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     @WrappedRequest
@@ -1281,7 +1281,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repository:   the repository to enable the workflow
      * @param workflowName: the workflow file name as a string
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     @WrappedRequest
@@ -1300,7 +1300,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:         the name of the repository. The name is not case-sensitive
      * @param workflowName: the workflow file name as a string
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable")
@@ -1319,7 +1319,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param workflow: the {@code "ID"} of the workflow. You can also pass the workflow file name as a string
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#enable-a-workflow">
      * Enable a workflow</a>
      **/
     private <T> boolean performWorkflowActivation(String owner, String repo, T workflow) {
@@ -1364,7 +1364,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @Wrapper
@@ -1402,7 +1402,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @WrappedRequest
@@ -1439,7 +1439,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @Wrapper
@@ -1478,7 +1478,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @WrappedRequest
@@ -1514,7 +1514,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @Wrapper
@@ -1552,7 +1552,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @WrappedRequest
@@ -1589,7 +1589,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @Wrapper
@@ -1627,7 +1627,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")
@@ -1663,7 +1663,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @Wrapper
@@ -1701,7 +1701,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @WrappedRequest
@@ -1738,7 +1738,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @Wrapper
@@ -1776,7 +1776,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflows#get-workflow-usage">
      * Get workflow usage</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing")

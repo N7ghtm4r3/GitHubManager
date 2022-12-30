@@ -115,7 +115,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
     @Wrapper
@@ -141,7 +141,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/notifications")
@@ -189,7 +189,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
     @Wrapper
@@ -239,7 +239,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-notifications-for-the-authenticated-user">
      * List notifications for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/notifications")
@@ -267,7 +267,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
     @Wrapper
@@ -296,7 +296,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
     @RequestPath(method = PUT, path = "/notifications")
@@ -336,7 +336,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
     @Wrapper
@@ -378,7 +378,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-notifications-as-read">
      * Mark notifications as read</a>
      **/
     @RequestPath(method = PUT, path = "/notifications")
@@ -403,7 +403,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread">
      * Get a thread</a>
      **/
     @Wrapper
@@ -430,7 +430,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread">
      * Get a thread</a>
      **/
     @Returner
@@ -454,7 +454,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param thread: thread to mark as read
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-a-thread-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-a-thread-as-read">
      * Mark a thread as read</a>
      **/
     @Wrapper
@@ -471,7 +471,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param threadId: the unique identifier of the notification thread
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-a-thread-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-a-thread-as-read">
      * Mark a thread as read</a>
      **/
     @RequestPath(method = PATCH, path = "/notifications/threads/{thread_id")
@@ -508,7 +508,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
     @Wrapper
@@ -538,7 +538,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
     @WrappedRequest
@@ -566,7 +566,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
     @Wrapper
@@ -595,7 +595,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#get-a-thread-subscription-for-the-authenticated-user">
      * Get a thread subscription for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/notifications/threads/{thread_id}/subscription")
@@ -627,7 +627,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
     @Wrapper
@@ -661,7 +661,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
     @WrappedRequest
@@ -693,7 +693,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
     @Wrapper
@@ -726,7 +726,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#set-a-thread-subscription">
      * Set a thread subscription</a>
      **/
     @RequestPath(method = PUT, path = "/notifications/threads/{thread_id}/subscription")
@@ -764,7 +764,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param thread: thread to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#delete-a-thread-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#delete-a-thread-subscription">
      * Delete a thread subscription</a>
      **/
     @WrappedRequest
@@ -781,7 +781,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param threadId: the unique identifier of the notification thread
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#delete-a-thread-subscription">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#delete-a-thread-subscription">
      * Delete a thread subscription</a>
      **/
     @RequestPath(method = DELETE, path = "/notifications/threads/{thread_id}/subscription")
@@ -816,7 +816,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @Wrapper
@@ -844,7 +844,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @WrappedRequest
@@ -871,7 +871,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @Wrapper
@@ -899,7 +899,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
@@ -949,7 +949,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @Wrapper
@@ -1002,7 +1002,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @WrappedRequest
@@ -1054,7 +1054,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @Wrapper
@@ -1107,7 +1107,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user">
      * List repository notifications for the authenticated user</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
@@ -1161,7 +1161,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @Wrapper
@@ -1192,7 +1192,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @WrappedRequest
@@ -1223,7 +1223,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @Wrapper
@@ -1255,7 +1255,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")
@@ -1288,7 +1288,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @Wrapper
@@ -1324,7 +1324,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @WrappedRequest
@@ -1360,7 +1360,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @Wrapper
@@ -1395,7 +1395,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/notifications#mark-repository-notifications-as-read">
      * Mark repository notifications as read</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/notifications")

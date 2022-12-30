@@ -139,7 +139,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
     @Wrapper
@@ -168,7 +168,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runners")
@@ -205,7 +205,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
     @Wrapper
@@ -243,7 +243,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-enterprise">
      * List self-hosted runners for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runners")
@@ -271,7 +271,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-enterprise">
      * List runner applications for an enterprise</a>
      **/
     @Wrapper
@@ -300,7 +300,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-enterprise">
      * List runner applications for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runners/downloads")
@@ -328,7 +328,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-enterprise">
      * Create a registration token for an enterprise</a>
      **/
     @Wrapper
@@ -357,7 +357,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-enterprise">
      * Create a registration token for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/registration-token")
@@ -385,7 +385,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-enterprise">
      * Create a remove token for an enterprise</a>
      **/
     @Wrapper
@@ -414,7 +414,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-enterprise">
      * Create a remove token for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/remove-token")
@@ -443,7 +443,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-enterprise">
      * Get a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -473,7 +473,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-enterprise">
      * Get a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runners/{runner_id}")
@@ -491,7 +491,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runner:     runner to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-enterprise">
      * Delete a self-hosted runner from an enterprise</a>
      **/
     @WrappedRequest
@@ -509,7 +509,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerId:   unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-enterprise">
      * Delete a self-hosted runner from an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runners/{runner_id}")
@@ -547,7 +547,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
      * List labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -578,7 +578,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
      * List labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -607,7 +607,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
      * List labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -637,7 +637,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-enterprise">
      * List labels for a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
@@ -667,7 +667,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -699,7 +699,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -730,7 +730,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -762,7 +762,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -796,7 +796,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -829,7 +829,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -860,7 +860,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -892,7 +892,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
@@ -925,7 +925,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -957,7 +957,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -988,7 +988,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1019,7 +1019,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise">
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
@@ -1053,7 +1053,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1086,7 +1086,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1118,7 +1118,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1151,7 +1151,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1186,7 +1186,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1220,7 +1220,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1252,7 +1252,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1285,7 +1285,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
@@ -1319,7 +1319,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1352,7 +1352,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1384,7 +1384,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1416,7 +1416,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise">
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
@@ -1448,7 +1448,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1479,7 +1479,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1508,7 +1508,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1538,7 +1538,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise">
      * Remove all custom labels from a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
@@ -1569,7 +1569,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1602,7 +1602,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1634,7 +1634,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1667,7 +1667,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1699,7 +1699,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1732,7 +1732,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @WrappedRequest
@@ -1764,7 +1764,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @Wrapper
@@ -1796,7 +1796,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise">
      * Remove a custom label from a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}")
@@ -1825,7 +1825,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @Wrapper
@@ -1855,7 +1855,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @WrappedRequest
@@ -1883,7 +1883,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @Wrapper
@@ -1912,7 +1912,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners")
@@ -1949,7 +1949,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @Wrapper
@@ -1988,7 +1988,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @WrappedRequest
@@ -2025,7 +2025,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @Wrapper
@@ -2063,7 +2063,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization">
      * List self-hosted runners for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners")
@@ -2091,7 +2091,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
      * List runner applications for an organization</a>
      **/
     @Wrapper
@@ -2121,7 +2121,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
      * List runner applications for an organization</a>
      **/
     @WrappedRequest
@@ -2149,7 +2149,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
      * List runner applications for an organization</a>
      **/
     @Wrapper
@@ -2178,7 +2178,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-an-organization">
      * List runner applications for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners/downloads")
@@ -2206,7 +2206,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
      * Create a registration token for an organization</a>
      **/
     @Wrapper
@@ -2236,7 +2236,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
      * Create a registration token for an organization</a>
      **/
     @WrappedRequest
@@ -2264,7 +2264,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
      * Create a registration token for an organization</a>
      **/
     @Wrapper
@@ -2293,7 +2293,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-an-organization">
      * Create a registration token for an organization</a>
      **/
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/registration-token")
@@ -2321,7 +2321,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
      * Create a remove token for an organization</a>
      **/
     @Wrapper
@@ -2351,7 +2351,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
      * Create a remove token for an organization</a>
      **/
     @WrappedRequest
@@ -2379,7 +2379,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
      * Create a remove token for an organization</a>
      **/
     @Wrapper
@@ -2408,7 +2408,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization">
      * Create a remove token for an organization</a>
      **/
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/remove-token")
@@ -2437,7 +2437,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
      * Get a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2468,7 +2468,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
      * Get a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -2497,7 +2497,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
      * Get a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2527,7 +2527,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-an-organization">
      * Get a self-hosted runner for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners/{runner_id}")
@@ -2545,7 +2545,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param org:    the organization from remove the runner
      * @param runner: runner to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
      * Delete a self-hosted runner from an organization</a>
      **/
     @WrappedRequest
@@ -2563,7 +2563,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param org:      the organization from remove the runner
      * @param runnerId: unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
      * Delete a self-hosted runner from an organization</a>
      **/
     @WrappedRequest
@@ -2581,7 +2581,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param org:    the organization name. The name is not case-sensitive
      * @param runner: runner to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
      * Delete a self-hosted runner from an organization</a>
      **/
     @WrappedRequest
@@ -2599,7 +2599,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param org:      the organization name. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-an-organization">
      * Delete a self-hosted runner from an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runners/{runner_id}")
@@ -2637,7 +2637,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2668,7 +2668,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -2697,7 +2697,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2728,7 +2728,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -2757,7 +2757,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2788,7 +2788,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -2817,7 +2817,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2847,7 +2847,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-an-organization">
      * List labels for a self-hosted runner for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
@@ -2877,7 +2877,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2909,7 +2909,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -2940,7 +2940,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -2972,7 +2972,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3003,7 +3003,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3035,7 +3035,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3066,7 +3066,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3098,7 +3098,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3132,7 +3132,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3165,7 +3165,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3196,7 +3196,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3229,7 +3229,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3260,7 +3260,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3293,7 +3293,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3324,7 +3324,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3357,7 +3357,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3391,7 +3391,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3423,7 +3423,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3454,7 +3454,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3486,7 +3486,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3517,7 +3517,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3549,7 +3549,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3580,7 +3580,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3611,7 +3611,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-an-organization">
      * Add custom labels to a self-hosted runner for an organization</a>
      **/
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
@@ -3644,7 +3644,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3676,7 +3676,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3707,7 +3707,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3739,7 +3739,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3770,7 +3770,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3802,7 +3802,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3833,7 +3833,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3865,7 +3865,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3899,7 +3899,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3932,7 +3932,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -3963,7 +3963,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -3996,7 +3996,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4027,7 +4027,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4060,7 +4060,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4091,7 +4091,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4124,7 +4124,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4158,7 +4158,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4190,7 +4190,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4221,7 +4221,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4253,7 +4253,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4284,7 +4284,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4316,7 +4316,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4347,7 +4347,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4378,7 +4378,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-an-organization">
      * Set custom labels for a self-hosted runner for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
@@ -4410,7 +4410,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4441,7 +4441,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4470,7 +4470,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4501,7 +4501,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4530,7 +4530,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4561,7 +4561,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4590,7 +4590,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4620,7 +4620,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization">
      * Remove all custom labels from a self-hosted runner for an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
@@ -4651,7 +4651,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4684,7 +4684,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4716,7 +4716,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4749,7 +4749,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4781,7 +4781,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4814,7 +4814,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4846,7 +4846,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4879,7 +4879,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4911,7 +4911,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -4944,7 +4944,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -4976,7 +4976,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -5009,7 +5009,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -5041,7 +5041,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -5074,7 +5074,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @WrappedRequest
@@ -5106,7 +5106,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @Wrapper
@@ -5138,7 +5138,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization">
      * Remove a custom label from a self-hosted runner for an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/runners/{runner_id}/labels/{name}")
@@ -5167,7 +5167,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @Wrapper
@@ -5197,7 +5197,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @WrappedRequest
@@ -5226,7 +5226,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @Wrapper
@@ -5256,7 +5256,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners")
@@ -5293,7 +5293,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @Wrapper
@@ -5333,7 +5333,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @WrappedRequest
@@ -5371,7 +5371,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @Wrapper
@@ -5410,7 +5410,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-self-hosted-runners-for-a-repository">
      * List self-hosted runners for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners")
@@ -5439,7 +5439,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
      * List runner applications for a repository</a>
      **/
     @Wrapper
@@ -5469,7 +5469,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
      * List runner applications for a repository</a>
      **/
     @WrappedRequest
@@ -5498,7 +5498,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
      * List runner applications for a repository</a>
      **/
     @Wrapper
@@ -5528,7 +5528,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-runner-applications-for-a-repository">
      * List runner applications for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners/downloads")
@@ -5584,7 +5584,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
      * Create a registration token for a repository</a>
      **/
     @Wrapper
@@ -5614,7 +5614,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
      * Create a registration token for a repository</a>
      **/
     @WrappedRequest
@@ -5643,7 +5643,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
      * Create a registration token for a repository</a>
      **/
     @Wrapper
@@ -5673,7 +5673,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository">
      * Create a registration token for a repository</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/registration-token")
@@ -5701,7 +5701,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
      * Create a remove token for a repository</a>
      **/
     @Wrapper
@@ -5731,7 +5731,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
      * Create a remove token for a repository</a>
      **/
     @WrappedRequest
@@ -5760,7 +5760,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
      * Create a remove token for a repository</a>
      **/
     @Wrapper
@@ -5790,7 +5790,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#create-a-remove-token-for-a-repository">
      * Create a remove token for a repository</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/remove-token")
@@ -5838,7 +5838,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
      * Get a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -5869,7 +5869,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
      * Get a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -5899,7 +5899,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
      * Get a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -5930,7 +5930,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#get-a-self-hosted-runner-for-a-repository">
      * Get a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}")
@@ -5967,7 +5967,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repository: the repository from delete the runner
      * @param runner:     runner to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
@@ -5986,7 +5986,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param runner: runner to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
@@ -6004,7 +6004,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repository: the repository from delete the runner
      * @param runnerId:   unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
@@ -6023,7 +6023,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#delete-a-self-hosted-runner-from-a-repository">
      * Delete a self-hosted runner from a repository</a>
      **/
     @WrappedRequest
@@ -6062,7 +6062,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6094,7 +6094,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6124,7 +6124,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6156,7 +6156,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6185,7 +6185,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6216,7 +6216,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6246,7 +6246,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6277,7 +6277,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#list-labels-for-a-self-hosted-runner-for-a-repository">
      * List labels for a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
@@ -6307,7 +6307,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6340,7 +6340,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6373,7 +6373,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6406,7 +6406,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6437,7 +6437,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6470,7 +6470,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6503,7 +6503,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6536,7 +6536,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6570,7 +6570,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6604,7 +6604,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6637,7 +6637,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6671,7 +6671,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6702,7 +6702,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6736,7 +6736,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6768,7 +6768,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6801,7 +6801,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
@@ -6834,7 +6834,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6867,7 +6867,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6900,7 +6900,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6933,7 +6933,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -6964,7 +6964,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -6997,7 +6997,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7029,7 +7029,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7061,7 +7061,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#add-custom-labels-to-a-self-hosted-runner-for-a-repository">
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
@@ -7095,7 +7095,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7129,7 +7129,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7163,7 +7163,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7198,7 +7198,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7230,7 +7230,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7264,7 +7264,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7298,7 +7298,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7333,7 +7333,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7368,7 +7368,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7403,7 +7403,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7437,7 +7437,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7472,7 +7472,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7504,7 +7504,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7539,7 +7539,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7572,7 +7572,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7606,7 +7606,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
@@ -7640,7 +7640,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7674,7 +7674,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7708,7 +7708,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7743,7 +7743,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7775,7 +7775,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7809,7 +7809,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7843,7 +7843,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7878,7 +7878,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#set-custom-labels-for-a-self-hosted-runner-for-a-repository">
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7912,7 +7912,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -7945,7 +7945,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -7977,7 +7977,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8010,7 +8010,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8041,7 +8041,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8074,7 +8074,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8105,7 +8105,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8137,7 +8137,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository">
      * Remove all custom labels from a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
@@ -8169,7 +8169,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8203,7 +8203,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8237,7 +8237,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8272,7 +8272,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8304,7 +8304,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8338,7 +8338,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8372,7 +8372,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8406,7 +8406,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8438,7 +8438,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8472,7 +8472,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8505,7 +8505,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8539,7 +8539,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8571,7 +8571,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8605,7 +8605,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @WrappedRequest
@@ -8638,7 +8638,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @Wrapper
@@ -8671,7 +8671,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runners#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository">
      * Remove a custom label from a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}")

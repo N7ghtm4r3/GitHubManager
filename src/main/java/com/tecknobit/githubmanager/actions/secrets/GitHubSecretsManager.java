@@ -148,7 +148,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @Wrapper
@@ -179,7 +179,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @WrappedRequest
@@ -208,7 +208,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @Wrapper
@@ -238,7 +238,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets")
@@ -275,7 +275,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @Wrapper
@@ -315,7 +315,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @WrappedRequest
@@ -353,7 +353,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @Wrapper
@@ -392,7 +392,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-organization-secrets">
      * List organization secrets</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets")
@@ -422,7 +422,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
      * Get an organization public key</a>
      **/
     @Wrapper
@@ -454,7 +454,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
      * Get an organization public key</a>
      **/
     @WrappedRequest
@@ -484,7 +484,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
      * Get an organization public key</a>
      **/
     @Wrapper
@@ -515,7 +515,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-public-key">
      * Get an organization public key</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets/public-key")
@@ -544,7 +544,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
     @Wrapper
@@ -576,7 +576,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
     @WrappedRequest
@@ -606,7 +606,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
     @Wrapper
@@ -637,7 +637,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
     @Returner
@@ -681,7 +681,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -724,7 +724,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -767,7 +767,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -806,7 +806,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -847,7 +847,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -888,7 +888,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -926,7 +926,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -970,7 +970,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1014,7 +1014,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1053,7 +1053,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1095,7 +1095,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1137,7 +1137,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1174,7 +1174,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1217,7 +1217,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1260,7 +1260,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1299,7 +1299,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1340,7 +1340,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1381,7 +1381,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1419,7 +1419,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1463,7 +1463,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1507,7 +1507,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @WrappedRequest
@@ -1546,7 +1546,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1588,7 +1588,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1630,7 +1630,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1703,7 +1703,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param org:            the organization from delete the secret
      * @param secretToDelete: the secret to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
      * Delete an organization secrete</a>
      **/
     @WrappedRequest
@@ -1721,7 +1721,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param org:            the organization name. The name is not case-sensitive
      * @param secretToDelete: the secret to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
      * Delete an organization secrete</a>
      **/
     @WrappedRequest
@@ -1739,7 +1739,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param org:        the organization from delete the secret
      * @param secretName: the name of the secret
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
      * Delete an organization secrete</a>
      **/
     @WrappedRequest
@@ -1757,7 +1757,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param org:        the organization name. The name is not case-sensitive
      * @param secretName: the name of the secret
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
      * Delete an organization secrete</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/secrets/{secret_name}")
@@ -1784,7 +1784,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param org:        the organization from fetch the selected repositories for an organization secret
      * @param secretName: the name of the secret
      * @return selected repositories for an organization secret as {@link RepositoriesList} custom object
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @Wrapper
@@ -1804,7 +1804,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName: the name of the secret
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return selected repositories for an organization secret as {@code "format"} defines
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @WrappedRequest
@@ -1823,7 +1823,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param org:        the organization name. The name is not case-sensitive
      * @param secretName: the name of the secret
      * @return selected repositories for an organization secret as {@link RepositoriesList} custom object
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @Wrapper
@@ -1842,7 +1842,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName: the name of the secret
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return selected repositories for an organization secret as {@code "format"} defines
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
@@ -1869,7 +1869,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                        </li>
      *                     </ul>
      * @return selected repositories for an organization secret as {@link RepositoriesList} custom object
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @Wrapper
@@ -1899,7 +1899,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return selected repositories for an organization secret as {@code "format"} defines
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @WrappedRequest
@@ -1927,7 +1927,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                        </li>
      *                     </ul>
      * @return selected repositories for an organization secret as {@link RepositoriesList} custom object
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @Wrapper
@@ -1956,7 +1956,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
      * @return selected repositories for an organization secret as {@code "format"} defines
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
      * List selected repositories for an organization secret</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
@@ -1981,7 +1981,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           an organization secret and Remove selected repository from an organization
      *                           secret endpoints in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
@@ -2006,7 +2006,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           an organization secret and Remove selected repository from an organization
      *                           secret endpoints in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
@@ -2026,7 +2026,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:               the name of the secret
      * @param repositories:repositories list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
@@ -2047,7 +2047,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:               the name of the secret
      * @param repositories:repositories list to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
@@ -2074,7 +2074,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           an organization secret and Remove selected repository from an organization
      *                           secret endpoints in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
@@ -2099,7 +2099,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           an organization secret and Remove selected repository from an organization
      *                           secret endpoints in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
@@ -2119,7 +2119,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:      the name of the secret
      * @param repositoryToAdd: repository to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
      * Add selected repository to an organization secret</a>
      **/
     @WrappedRequest
@@ -2140,7 +2140,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:   the name of the secret
      * @param repositoryId: identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
      * Add selected repository to an organization secret</a>
      **/
     @WrappedRequest
@@ -2160,7 +2160,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:      the name of the secret
      * @param repositoryToAdd: repository to add
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
      * Add selected repository to an organization secret</a>
      **/
     @WrappedRequest
@@ -2180,7 +2180,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:   the name of the secret
      * @param repositoryId: identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#add-selected-repository-to-an-organization-secret">
      * Add selected repository to an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
@@ -2210,7 +2210,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:         the name of the secret
      * @param repositoryToRemove: repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
      * Remove selected repository from an organization secret</a>
      **/
     @WrappedRequest
@@ -2231,7 +2231,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:   the name of the secret
      * @param repositoryId: identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
      * Remove selected repository from an organization secret</a>
      **/
     @WrappedRequest
@@ -2251,7 +2251,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:         the name of the secret
      * @param repositoryToRemove: repository to remove
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
      * Remove selected repository from an organization secret</a>
      **/
     @WrappedRequest
@@ -2271,7 +2271,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param secretName:   the name of the secret
      * @param repositoryId: identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#remove-selected-repository-from-an-organization-secret">
      * Remove selected repository from an organization secret</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}")
@@ -2310,7 +2310,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @Wrapper
@@ -2341,7 +2341,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @WrappedRequest
@@ -2371,7 +2371,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @Wrapper
@@ -2402,7 +2402,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/secrets")
@@ -2440,7 +2440,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @Wrapper
@@ -2481,7 +2481,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @WrappedRequest
@@ -2521,7 +2521,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @Wrapper
@@ -2561,7 +2561,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-repository-secrets">
      * List repository secrets</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/secrets")
@@ -2593,7 +2593,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
      * Get a repository public key</a>
      **/
     @Wrapper
@@ -2626,7 +2626,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
      * Get a repository public key</a>
      **/
     @WrappedRequest
@@ -2658,7 +2658,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
      * Get a repository public key</a>
      **/
     @Wrapper
@@ -2691,7 +2691,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-public-key">
      * Get a repository public key</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/secrets/public-key")
@@ -2721,7 +2721,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
      * Get a repository secret</a>
      **/
     @Wrapper
@@ -2753,7 +2753,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
      * Get a repository secret</a>
      **/
     @WrappedRequest
@@ -2784,7 +2784,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
      * Get a repository secret</a>
      **/
     @Wrapper
@@ -2816,7 +2816,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-a-repository-secret">
      * Get a repository secret</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
@@ -2849,7 +2849,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
@@ -2884,7 +2884,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
@@ -2917,7 +2917,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
@@ -2953,7 +2953,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
@@ -2986,7 +2986,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
@@ -3021,7 +3021,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
@@ -3054,7 +3054,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @WrappedRequest
@@ -3090,7 +3090,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-a-repository-secret">
      * Create or update a repository secret</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
@@ -3136,7 +3136,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param repository:     the repository from delete the secret
      * @param secretToDelete: the secret to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
      * Delete a repository secret</a>
      **/
     @WrappedRequest
@@ -3155,7 +3155,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param repo:           the name of the repository. The name is not case-sensitive
      * @param secretToDelete: the secret to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
      * Delete a repository secret</a>
      **/
     @WrappedRequest
@@ -3173,7 +3173,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param repository: the repository from delete the secret
      * @param secretName: the name of the secret
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
      * Delete a repository secret</a>
      **/
     @WrappedRequest
@@ -3192,7 +3192,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param repo:       the name of the repository. The name is not case-sensitive
      * @param secretName: the name of the secret
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-a-repository-secret">
      * Delete a repository secret</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
@@ -3231,7 +3231,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @Wrapper
@@ -3263,7 +3263,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @WrappedRequest
@@ -3294,7 +3294,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @Wrapper
@@ -3325,7 +3325,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @RequestPath(method = GET, path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
@@ -3365,7 +3365,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @Wrapper
@@ -3407,7 +3407,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @WrappedRequest
@@ -3447,7 +3447,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @Wrapper
@@ -3488,7 +3488,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
      * List environment secrets</a>
      **/
     @RequestPath(method = GET, path = "/repositories/{repository_id}/environments/{environment_name}/secrets")
@@ -3540,7 +3540,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
      * Get an environment public key</a>
      **/
     @Wrapper
@@ -3574,7 +3574,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
      * Get an environment public key</a>
      **/
     @WrappedRequest
@@ -3607,7 +3607,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
      * Get an environment public key</a>
      **/
     @Wrapper
@@ -3640,7 +3640,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
      * Get an environment public key</a>
      **/
     @RequestPath(method = GET, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key")
@@ -3690,7 +3690,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
      * Get an environment secret</a>
      **/
     @Wrapper
@@ -3723,7 +3723,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
      * Get an environment secret</a>
      **/
     @WrappedRequest
@@ -3755,7 +3755,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
      * Get an environment secret</a>
      **/
     @Wrapper
@@ -3787,7 +3787,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-secret">
      * Get an environment secret</a>
      **/
     @RequestPath(method = PUT, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name")
@@ -3841,7 +3841,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
@@ -3876,7 +3876,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @RequestPath(method = PUT, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name")
@@ -3910,7 +3910,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
@@ -3946,7 +3946,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @RequestPath(method = PUT, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name")
@@ -3981,7 +3981,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
@@ -4016,7 +4016,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @RequestPath(method = PUT, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name")
@@ -4050,7 +4050,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @WrappedRequest
@@ -4086,7 +4086,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote this method get the public key autonomously
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#create-or-update-an-environment-secret">
      * Create or update an environment secret</a>
      **/
     @RequestPath(method = PUT, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name")
@@ -4169,11 +4169,11 @@ public class GitHubSecretsManager extends GitHubManager {
      * this step is automatically made by this library. </b> <br>
      * {@code "GitHub Apps"} must have the secrets organization permission to use this endpoint
      *
-     * @param repository: the repository from delete the secret
+     * @param repository:      the repository from delete the secret
      * @param environmentName: the name of the environment
-     * @param secretName: the name of the secret
+     * @param secretName:      the name of the secret
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-environment-secret">
      * Delete an environment secret</a>
      **/
     @WrappedRequest
@@ -4192,7 +4192,7 @@ public class GitHubSecretsManager extends GitHubManager {
      * @param environmentName: the name of the environment
      * @param secretName: the name of the secret
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-environment-secret">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-environment-secret">
      * Delete an environment secret</a>
      **/
     @RequestPath(method = DELETE, path = "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name")

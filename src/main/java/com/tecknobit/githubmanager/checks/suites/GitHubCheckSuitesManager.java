@@ -13,6 +13,11 @@ import com.tecknobit.githubmanager.GitHubManager;
 public class GitHubCheckSuitesManager extends GitHubManager {
 
     /**
+     * {@code CHECK_SUITES_PATH} constant for {@code "/check-suites"} path
+     **/
+    public static final String CHECK_SUITES_PATH = "/check-suites";
+
+    /**
      * Constructor to init a {@link GitHubCheckSuitesManager}
      *
      * @param accessToken : personal access token for authentication to {@code "GitHub"}

@@ -156,7 +156,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
      * Get GitHub Actions permissions for an enterprise</a>
      **/
     @Wrapper
@@ -186,7 +186,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-enterprise">
      * Get GitHub Actions permissions for an enterprise</a>
      **/
     @Returner
@@ -213,8 +213,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:           the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param enabledOrganizations: the policy that controls the organizations in the enterprise that are allowed to run {@code "GitHub Actions"}
      *                              Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
-     * * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
+     *                              * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
      * Set GitHub Actions permissions for an enterprise</a>
      **/
     @Wrapper
@@ -233,7 +233,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:            the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param enterprisePermissions: enterprise actions permissions to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
      * Set GitHub Actions permissions for an enterprise</a>
      **/
     @Wrapper
@@ -255,7 +255,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param allowedActions:       the permissions policy that controls the actions and reusable workflows that are allowed to run.
      *                              Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-enterprise">
      * Set GitHub Actions permissions for an enterprise</a>
      **/
     @WrappedRequest
@@ -287,7 +287,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
@@ -318,7 +318,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/organizations")
@@ -357,7 +357,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
@@ -397,7 +397,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * List selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/organizations")
@@ -417,7 +417,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:               the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param selectedOrganizationsIds: list of organization IDs to enable for {@code "GitHub Actions"} in {@link Collection} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
@@ -436,7 +436,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:            the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param selectedOrganizations: list of organization to enable for {@code "GitHub Actions"} in {@link OrganizationsList} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
@@ -459,7 +459,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:               the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param selectedOrganizationsIds: list of organization IDs to enable for {@code "GitHub Actions"} in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
@@ -478,7 +478,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:           the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param organizationToEnable: organization to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Enable a selected organization for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
@@ -498,7 +498,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param orgId:      the unique identifier of the organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Enable a selected organization for GitHub Actions in an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
@@ -527,7 +527,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:            the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param organizationToDisable: organization to disable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Disable a selected organization for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
@@ -547,7 +547,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param orgId:      the unique identifier of the organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-organization-for-github-actions-in-an-enterprise">
      * Disable a selected organization for GitHub Actions in an enterprise</a>
      **/
     @RequestPath(method = DELETE, path = "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}")
@@ -586,7 +586,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Get allowed actions and reusable workflows for an enterprise</a>
      **/
     @Wrapper
@@ -617,7 +617,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Get allowed actions and reusable workflows for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
@@ -636,7 +636,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param aarw:       allowed actions and reusable workflows for an organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Set allowed actions and reusable workflows for an enterprise</a>
      **/
     @WrappedRequest
@@ -672,7 +672,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                       </li>
      *                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-enterprise">
      * Set allowed actions and reusable workflows for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/selected-actions")
@@ -703,7 +703,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
      * Get default workflow permissions for an enterprise</a>
      **/
     @Wrapper
@@ -735,7 +735,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-enterprise">
      * Get default workflow permissions for an enterprise</a>
      **/
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/permissions/workflow")
@@ -754,7 +754,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enterprise:                 the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param defaultWorkflowPermissions: the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
      * Set default workflow permissions for an enterprise</a>
      **/
     @WrappedRequest
@@ -785,7 +785,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                                       </li>
      *                                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-enterprise">
      * Set default workflow permissions for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/workflow")
@@ -814,7 +814,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
      * Get GitHub Actions permissions for an organization</a>
      **/
     @Wrapper
@@ -845,7 +845,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
      * Get GitHub Actions permissions for an organization</a>
      **/
     @WrappedRequest
@@ -874,7 +874,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
      * Get GitHub Actions permissions for an organization</a>
      **/
     @Wrapper
@@ -904,7 +904,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-an-organization">
      * Get GitHub Actions permissions for an organization</a>
      **/
     @Returner
@@ -933,7 +933,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enabledRepositories: the policy that controls the repositories in the organization that are allowed to run {@code "GitHub Actions"} ->
      *                             Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
     @Wrapper
@@ -955,7 +955,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param enabledRepositories: the policy that controls the repositories in the organization that are allowed to run {@code "GitHub Actions"} ->
      *                             Can be one of: {@code "all"}, {@code "none"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions")
@@ -974,7 +974,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                     the organization to set actions permissions
      * @param organizationPermissions: organization actions permissions to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
     @Wrapper
@@ -995,7 +995,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                     the organization name. The name is not case-sensitive
      * @param organizationPermissions: organization actions permissions to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
     @WrappedRequest
@@ -1019,7 +1019,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param allowedActions:      the permissions policy that controls the actions and reusable workflows that are allowed to run ->
      *                             Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
     @Wrapper
@@ -1044,7 +1044,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param allowedActions:      the permissions policy that controls the actions and reusable workflows that are allowed to run ->
      *                             Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-an-organization">
      * Set GitHub Actions permissions for an organization</a>
      **/
     @WrappedRequest
@@ -1076,7 +1076,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @Wrapper
@@ -1109,7 +1109,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1140,7 +1140,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @Wrapper
@@ -1172,7 +1172,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
@@ -1212,7 +1212,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @Wrapper
@@ -1255,7 +1255,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1296,7 +1296,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @Wrapper
@@ -1337,7 +1337,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
@@ -1358,7 +1358,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in {@link Collection}
      *                                 of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1379,7 +1379,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in {@link Collection}
      *                                 of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
@@ -1398,7 +1398,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                  the organization to set repositories
      * @param selectedRepositories: list of repository to enable for {@code "GitHub Actions"} in {@link OrganizationRepositoriesList}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1418,7 +1418,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                  the organization name. The name is not case-sensitive
      * @param selectedRepositories: list of repository to enable for {@code "GitHub Actions"} in {@link OrganizationRepositoriesList}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1441,7 +1441,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                     the organization to set repositories
      * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1461,7 +1461,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                     the organization name. The name is not case-sensitive
      * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in array of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
@@ -1481,7 +1481,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                the organization to set repository
      * @param repositoryToEnable: repository to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1501,7 +1501,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                the organization name. The name is not case-sensitive
      * @param repositoryToEnable: repository to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1521,7 +1521,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:          the organization to set repository
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1541,7 +1541,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:          the organization name. The name is not case-sensitive
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#enable-a-selected-repository-for-github-actions-in-an-organization">
      * Enable a selected repository for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
@@ -1570,7 +1570,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                 the organization from disable repositories
      * @param repositoryToDisable: repository to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1590,7 +1590,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                 the organization name. The name is not case-sensitive
      * @param repositoryToDisable: repository to enable
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1610,7 +1610,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:          the organization from disable repositories
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
@@ -1630,7 +1630,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:          the organization name. The name is not case-sensitive
      * @param repositoryId: the unique identifier of the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization">
      * Disable a selected repository for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
@@ -1670,7 +1670,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
     @Wrapper
@@ -1703,7 +1703,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
     @WrappedRequest
@@ -1734,7 +1734,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
     @Wrapper
@@ -1766,7 +1766,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-an-organization">
      * Get allowed actions and reusable workflows for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/selected-actions")
@@ -1790,7 +1790,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:  the organization to set allowed actions and reusable workflows
      * @param aarw: allowed actions and reusable workflows for an organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
      * Set allowed actions and reusable workflows for an organization</a>
      **/
     @WrappedRequest
@@ -1815,7 +1815,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:  the organization name. The name is not case-sensitive
      * @param aarw: allowed actions and reusable workflows for an organization
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
      * Set allowed actions and reusable workflows for an organization</a>
      **/
     @WrappedRequest
@@ -1856,7 +1856,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                 </li>
      *              </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
      * Set allowed actions and reusable workflows for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/selected-actions")
@@ -1896,7 +1896,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                 </li>
      *              </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-an-organization">
      * Set allowed actions and reusable workflows for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/selected-actions")
@@ -1926,7 +1926,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
     @Wrapper
@@ -1959,7 +1959,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
     @WrappedRequest
@@ -1990,7 +1990,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
     @Wrapper
@@ -2022,7 +2022,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-an-organization">
      * Get default workflow permissions for an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/workflow")
@@ -2047,7 +2047,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                    the organization to set default workflows permissions
      * @param defWorkflowPermissions: the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
      * Set default workflow permissions for an organization</a>
      **/
     @WrappedRequest
@@ -2072,7 +2072,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param org:                    the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param defWorkflowPermissions: the default workflow permissions granted to the {@code "GITHUB_TOKEN"} when running workflows
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
      * Set default workflow permissions for an organization</a>
      **/
     @WrappedRequest
@@ -2108,7 +2108,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                                       </li>
      *                                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
      * Set default workflow permissions for an organization</a>
      **/
     @WrappedRequest
@@ -2143,7 +2143,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                                       </li>
      *                                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-an-organization">
      * Set default workflow permissions for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/workflow")
@@ -2173,7 +2173,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
      * Get GitHub Actions permissions for a repository</a>
      **/
     @Wrapper
@@ -2205,7 +2205,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
      * Get GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
@@ -2236,7 +2236,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
      * Get GitHub Actions permissions for a repository</a>
      **/
     @Wrapper
@@ -2268,7 +2268,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-github-actions-permissions-for-a-repository">
      * Get GitHub Actions permissions for a repository</a>
      **/
     @Returner
@@ -2297,7 +2297,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repository: the repository to set action permissions
      * @param enable:     whether {@code "GitHub Actions"} is enabled on the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
@@ -2319,7 +2319,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param enable: whether {@code "GitHub Actions"} is enabled on the repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions")
@@ -2340,7 +2340,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repository:      the repository to set action permissions
      * @param repoPermissions: repository permissions to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
@@ -2362,7 +2362,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repo:            the name of the repository. The name is not case-sensitive
      * @param repoPermissions: repository permissions to set
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
@@ -2386,7 +2386,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param allowedActions: the permissions policy that controls the actions and reusable workflows that are allowed to run ->
      *                        Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
@@ -2411,7 +2411,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param allowedActions: the permissions policy that controls the actions and reusable workflows that are allowed to run ->
      *                        Can be one of: {@code "all"}, {@code "local_only"}, {@code "selected"}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-github-actions-permissions-for-a-repository">
      * Set GitHub Actions permissions for a repository</a>
      **/
     @WrappedRequest
@@ -2463,7 +2463,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *
      * @param repository: the repository from get the level outside
      * @return access level outside repository as {@link String}
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
      * Get the level of access for workflows outside of the repository</a>
      **/
     @Wrapper
@@ -2484,7 +2484,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repository: the repository from get the level outside
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return access level outside repository as {@code "format"} defines
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
      * Get the level of access for workflows outside of the repository</a>
      * @apiNote in this case {@link ReturnFormat#LIBRARY_OBJECT} will return the {@link String} value fetched from the {@code "JSON"} response
      **/
@@ -2505,7 +2505,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @return access level outside repository as {@link String}
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
      * Get the level of access for workflows outside of the repository</a>
      **/
     @Wrapper
@@ -2526,7 +2526,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return access level outside repository as {@code "format"} defines
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-the-level-of-access-for-workflows-outside-of-the-repository">
      * Get the level of access for workflows outside of the repository</a>
      * @apiNote in this case {@link ReturnFormat#LIBRARY_OBJECT} will return the {@link String} value fetched from the {@code "JSON"} response
      **/
@@ -2562,7 +2562,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param accessLevel: defines the level of access that workflows outside the repository have to actions and reusable
      *                     workflows within the repository. none means access is only possible from workflows in this repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-the-level-of-access-for-workflows-outside-of-the-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-the-level-of-access-for-workflows-outside-of-the-repository">
      * Set the level of access for workflows outside of the repository</a>
      **/
     @WrappedRequest
@@ -2584,7 +2584,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param accessLevel: defines the level of access that workflows outside the repository have to actions and reusable
      *                     workflows within the repository. none means access is only possible from workflows in this repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-the-level-of-access-for-workflows-outside-of-the-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-the-level-of-access-for-workflows-outside-of-the-repository">
      * Set the level of access for workflows outside of the repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/access")
@@ -2626,7 +2626,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
     @Wrapper
@@ -2659,7 +2659,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
@@ -2691,7 +2691,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
     @Wrapper
@@ -2724,7 +2724,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository">
      * Get allowed actions and reusable workflows for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
@@ -2767,7 +2767,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repository: the repository to set allowed actions and reusable workflows
      * @param aarw:       allowed actions and reusable workflows for a repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
@@ -2793,7 +2793,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param aarw:  allowed actions and reusable workflows for a repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
@@ -2833,7 +2833,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                       </li>
      *                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @WrappedRequest
@@ -2875,7 +2875,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                 </li>
      *              </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository">
      * Set allowed actions and reusable workflows for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/selected-actions")
@@ -2958,7 +2958,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
     @Wrapper
@@ -2992,7 +2992,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
     @WrappedRequest
@@ -3024,7 +3024,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
     @Wrapper
@@ -3057,7 +3057,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#get-default-workflow-permissions-for-a-repository">
      * Get default workflow permissions for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/permissions/workflow")
@@ -3096,7 +3096,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repository:                 the repository to set default workflows permissions
      * @param defaultWorkflowPermissions: default workflow permissions for a repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
      * Set default workflow permissions for a repository</a>
      **/
     @WrappedRequest
@@ -3119,7 +3119,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * @param repo:                       the name of the repository. The name is not case-sensitive
      * @param defaultWorkflowPermissions: default workflow permissions for a repository
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
      * Set default workflow permissions for a repository</a>
      **/
     @WrappedRequest
@@ -3150,7 +3150,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                                       </li>
      *                                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
      * Set default workflow permissions for a repository</a>
      **/
     @WrappedRequest
@@ -3182,7 +3182,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                                       </li>
      *                                    </ul>
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-default-workflow-permissions-for-a-repository">
      * Set default workflow permissions for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/permissions/workflow")

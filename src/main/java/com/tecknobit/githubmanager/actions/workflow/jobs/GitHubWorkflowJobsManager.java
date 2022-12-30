@@ -121,7 +121,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      **/
     @Wrapper
@@ -153,7 +153,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      **/
     @WrappedRequest
@@ -184,7 +184,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      **/
     @Wrapper
@@ -216,7 +216,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      **/
     @Returner
@@ -260,7 +260,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
      * Download job logs for a workflow run</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -300,7 +300,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
      * Download job logs for a workflow run</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -336,7 +336,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
      * Download job logs for a workflow run</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -373,7 +373,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run">
      * Download job logs for a workflow run</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -410,7 +410,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -446,7 +446,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
@@ -481,7 +481,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -517,7 +517,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
@@ -561,7 +561,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -607,7 +607,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
@@ -651,7 +651,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -697,7 +697,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
@@ -733,7 +733,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -770,7 +770,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
@@ -805,7 +805,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -840,7 +840,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
@@ -884,7 +884,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -930,7 +930,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @WrappedRequest
@@ -974,7 +974,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @Wrapper
@@ -1019,7 +1019,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run-attempt">
      * List jobs for a workflow run attempt</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs")
@@ -1052,7 +1052,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1086,7 +1086,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
@@ -1118,7 +1118,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1152,7 +1152,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
@@ -1185,7 +1185,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1220,7 +1220,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
@@ -1253,7 +1253,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1287,7 +1287,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")
@@ -1329,7 +1329,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1373,7 +1373,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
@@ -1415,7 +1415,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1459,7 +1459,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
@@ -1502,7 +1502,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1546,7 +1546,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @WrappedRequest
@@ -1589,7 +1589,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @Wrapper
@@ -1632,7 +1632,7 @@ public class GitHubWorkflowJobsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run">
      * List jobs for a workflow run</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs")

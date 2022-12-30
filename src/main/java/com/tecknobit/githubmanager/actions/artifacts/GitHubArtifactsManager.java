@@ -125,7 +125,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @Wrapper
@@ -157,7 +157,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @WrappedRequest
@@ -188,7 +188,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @Wrapper
@@ -219,7 +219,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
@@ -259,7 +259,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @Wrapper
@@ -302,7 +302,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @WrappedRequest
@@ -344,7 +344,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @Wrapper
@@ -387,7 +387,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-artifacts-for-a-repository">
      * List artifacts for a repository</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/artifacts")
@@ -417,7 +417,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
      * Get an artifact</a>
      **/
     @Wrapper
@@ -449,7 +449,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
      * Get an artifact</a>
      **/
     @WrappedRequest
@@ -480,7 +480,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
      * Get an artifact</a>
      **/
     @Wrapper
@@ -512,7 +512,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#get-an-artifact">
      * Get an artifact</a>
      **/
     @Returner
@@ -537,7 +537,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @param repository:       the repository from delete the artifact
      * @param artifactToDelete: artifact to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
     @Wrapper
@@ -555,7 +555,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @param repository: the repository from delete the artifact
      * @param artifactId: the unique identifier of the artifact
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
     @Wrapper
@@ -574,7 +574,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @param repo:             the name of the repository. The name is not case-sensitive
      * @param artifactToDelete: artifact to delete
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
     @Wrapper
@@ -593,7 +593,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      * @param repo:       the name of the repository. The name is not case-sensitive
      * @param artifactId: the unique identifier of the artifact
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#delete-an-artifact">
      * Delete an artifact</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}")
@@ -637,7 +637,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -677,7 +677,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -718,7 +718,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -759,7 +759,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -795,7 +795,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -832,7 +832,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -869,7 +869,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -906,7 +906,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
      * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
@@ -939,7 +939,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -971,7 +971,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
@@ -1002,7 +1002,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1034,7 +1034,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
@@ -1065,7 +1065,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1098,7 +1098,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
@@ -1130,7 +1130,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1162,7 +1162,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
@@ -1199,7 +1199,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1241,7 +1241,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
@@ -1281,7 +1281,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1323,7 +1323,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @WrappedRequest
@@ -1364,7 +1364,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1405,7 +1405,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")
@@ -1445,7 +1445,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @Wrapper
@@ -1486,7 +1486,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *         {@link #printErrorResponse()}
      *     </li>
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#list-workflow-run-artifacts">
      * List workflow run artifacts</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts")

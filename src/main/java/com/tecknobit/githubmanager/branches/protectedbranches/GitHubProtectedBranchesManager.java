@@ -176,7 +176,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @Wrapper
@@ -207,7 +207,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @WrappedRequest
@@ -237,7 +237,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @Wrapper
@@ -269,7 +269,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @WrappedRequest
@@ -298,7 +298,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @Wrapper
@@ -329,7 +329,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @WrappedRequest
@@ -359,7 +359,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @Wrapper
@@ -390,7 +390,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-branch-protection">
      * Get branch protection</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection")
@@ -429,7 +429,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -474,7 +474,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -517,7 +517,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -563,7 +563,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -605,7 +605,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -650,7 +650,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -693,7 +693,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -739,7 +739,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -821,7 +821,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -906,7 +906,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -990,7 +990,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -1076,7 +1076,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -1159,7 +1159,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -1244,7 +1244,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -1328,7 +1328,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @Wrapper
@@ -1414,7 +1414,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection">
      * Update branch protection</a>
      **/
     @WrappedRequest
@@ -1463,7 +1463,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the branch protection
      * @param branch:     the branch from delete the branch protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
      * Delete branch protection</a>
      **/
     @WrappedRequest
@@ -1481,7 +1481,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from delete the branch protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
      * Delete branch protection</a>
      **/
     @WrappedRequest
@@ -1498,7 +1498,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the branch protection
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
      * Delete branch protection</a>
      **/
     @WrappedRequest
@@ -1516,7 +1516,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-branch-protection">
      * Delete branch protection</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection")
@@ -1554,7 +1554,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @Wrapper
@@ -1586,7 +1586,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @WrappedRequest
@@ -1616,7 +1616,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @Wrapper
@@ -1648,7 +1648,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @WrappedRequest
@@ -1677,7 +1677,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @Wrapper
@@ -1708,7 +1708,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @WrappedRequest
@@ -1738,7 +1738,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @Wrapper
@@ -1769,7 +1769,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-admin-branch-protection">
      * Get admin branch protection</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins")
@@ -1799,7 +1799,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @Wrapper
@@ -1832,7 +1832,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @WrappedRequest
@@ -1863,7 +1863,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @Wrapper
@@ -1896,7 +1896,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @WrappedRequest
@@ -1926,7 +1926,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @Wrapper
@@ -1958,7 +1958,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @WrappedRequest
@@ -1989,7 +1989,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @Wrapper
@@ -2021,7 +2021,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-admin-branch-protection">
      * Set admin branch protection</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins")
@@ -2039,7 +2039,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the admin branch protection
      * @param branch:     the branch from delete the admin branch protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
      * Delete admin branch protection</a>
      **/
     @WrappedRequest
@@ -2058,7 +2058,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from delete the admin branch protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
      * Delete admin branch protection</a>
      **/
     @WrappedRequest
@@ -2076,7 +2076,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the admin branch protection
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
      * Delete admin branch protection</a>
      **/
     @WrappedRequest
@@ -2095,7 +2095,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-admin-branch-protection">
      * Delete admin branch protection</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins")
@@ -2134,7 +2134,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @Wrapper
@@ -2167,7 +2167,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @WrappedRequest
@@ -2198,7 +2198,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @Wrapper
@@ -2231,7 +2231,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @WrappedRequest
@@ -2261,7 +2261,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @Wrapper
@@ -2294,7 +2294,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @WrappedRequest
@@ -2324,7 +2324,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @Wrapper
@@ -2356,7 +2356,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-pull-request-review-protection">
      * Get pull request review protection</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews")
@@ -2418,7 +2418,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @Wrapper
@@ -2483,7 +2483,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @WrappedRequest
@@ -2547,7 +2547,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @Wrapper
@@ -2612,7 +2612,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @WrappedRequest
@@ -2674,7 +2674,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @Wrapper
@@ -2739,7 +2739,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @WrappedRequest
@@ -2803,7 +2803,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @Wrapper
@@ -2867,7 +2867,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-pull-request-review-protection">
      * Update pull request review protection</a>
      **/
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews")
@@ -2905,7 +2905,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete pull request review
      * @param branch:     the branch from delete the pull request review
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
      * Delete pull request review protection</a>
      **/
     @WrappedRequest
@@ -2924,7 +2924,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from delete the pull request review
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
      * Delete pull request review protection</a>
      **/
     @WrappedRequest
@@ -2942,7 +2942,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the pull request review
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
      * Delete pull request review protection</a>
      **/
     @WrappedRequest
@@ -2961,7 +2961,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-pull-request-review-protection">
      * Delete pull request review protection</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews")
@@ -3004,7 +3004,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @Wrapper
@@ -3040,7 +3040,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @WrappedRequest
@@ -3074,7 +3074,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @Wrapper
@@ -3110,7 +3110,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @WrappedRequest
@@ -3144,7 +3144,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @Wrapper
@@ -3179,7 +3179,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @WrappedRequest
@@ -3213,7 +3213,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @Wrapper
@@ -3248,7 +3248,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-commit-signature-protection">
      * Get commit signature protection</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures")
@@ -3281,7 +3281,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @Wrapper
@@ -3316,7 +3316,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @Wrapper
@@ -3351,7 +3351,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @Wrapper
@@ -3386,7 +3386,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @WrappedRequest
@@ -3419,7 +3419,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @Wrapper
@@ -3454,7 +3454,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @WrappedRequest
@@ -3488,7 +3488,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @Wrapper
@@ -3522,7 +3522,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#create-commit-signature-protection">
      * Create commit signature protection</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures")
@@ -3562,7 +3562,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the commit signature protection
      * @param branch:     the branch from delete the commit signature protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
      * Delete commit signature protection</a>
      **/
     @WrappedRequest
@@ -3583,7 +3583,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from delete the commit signature protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
      * Delete commit signature protection</a>
      **/
     @WrappedRequest
@@ -3603,7 +3603,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete the commit signature protection
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
      * Delete commit signature protection</a>
      **/
     @WrappedRequest
@@ -3624,7 +3624,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-commit-signature-protection">
      * Delete commit signature protection</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures")
@@ -3663,7 +3663,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @Wrapper
@@ -3695,7 +3695,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @WrappedRequest
@@ -3725,7 +3725,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @Wrapper
@@ -3757,7 +3757,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @WrappedRequest
@@ -3786,7 +3786,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @Wrapper
@@ -3817,7 +3817,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @WrappedRequest
@@ -3847,7 +3847,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @Wrapper
@@ -3878,7 +3878,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-status-checks-protection">
      * Get status checks protection</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks")
@@ -3918,7 +3918,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @Wrapper
@@ -3962,7 +3962,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @WrappedRequest
@@ -4005,7 +4005,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @Wrapper
@@ -4049,7 +4049,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @WrappedRequest
@@ -4090,7 +4090,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @Wrapper
@@ -4134,7 +4134,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @WrappedRequest
@@ -4177,7 +4177,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @Wrapper
@@ -4220,7 +4220,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection">
      * Update status check protection</a>
      **/
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks")
@@ -4257,7 +4257,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove status check protection
      * @param branch:     the branch from remove status check protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
      * Remove status check protection</a>
      **/
     @WrappedRequest
@@ -4275,7 +4275,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove status check protection
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
      * Remove status check protection</a>
      **/
     @WrappedRequest
@@ -4292,7 +4292,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove status check protection
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
      * Remove status check protection</a>
      **/
     @WrappedRequest
@@ -4310,7 +4310,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-protection">
      * Remove status check protection</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks")
@@ -4349,7 +4349,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @Wrapper
@@ -4381,7 +4381,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @WrappedRequest
@@ -4413,7 +4413,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @Wrapper
@@ -4445,7 +4445,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @WrappedRequest
@@ -4475,7 +4475,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @Wrapper
@@ -4507,7 +4507,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @WrappedRequest
@@ -4538,7 +4538,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @Wrapper
@@ -4569,7 +4569,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-all-status-check-contexts">
      * Get all status check contexts</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -4599,7 +4599,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -4633,7 +4633,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @WrappedRequest
@@ -4666,7 +4666,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -4700,7 +4700,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @WrappedRequest
@@ -4731,7 +4731,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -4765,7 +4765,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @WrappedRequest
@@ -4797,7 +4797,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -4830,7 +4830,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -4860,7 +4860,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -4894,7 +4894,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @WrappedRequest
@@ -4927,7 +4927,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -4961,7 +4961,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @WrappedRequest
@@ -4992,7 +4992,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -5026,7 +5026,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @WrappedRequest
@@ -5058,7 +5058,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @Wrapper
@@ -5091,7 +5091,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-status-check-contexts">
      * Add status check contexts</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -5124,7 +5124,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5158,7 +5158,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @WrappedRequest
@@ -5191,7 +5191,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5225,7 +5225,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @WrappedRequest
@@ -5256,7 +5256,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5290,7 +5290,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @WrappedRequest
@@ -5322,7 +5322,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5355,7 +5355,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -5385,7 +5385,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5419,7 +5419,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @WrappedRequest
@@ -5452,7 +5452,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5486,7 +5486,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @WrappedRequest
@@ -5517,7 +5517,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5551,7 +5551,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @WrappedRequest
@@ -5583,7 +5583,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @Wrapper
@@ -5616,7 +5616,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-status-check-contexts">
      * Set status check contexts</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -5649,7 +5649,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -5683,7 +5683,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @WrappedRequest
@@ -5716,7 +5716,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -5750,7 +5750,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @WrappedRequest
@@ -5781,7 +5781,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -5815,7 +5815,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @WrappedRequest
@@ -5847,7 +5847,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -5880,7 +5880,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -5910,7 +5910,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -5944,7 +5944,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @WrappedRequest
@@ -5977,7 +5977,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -6011,7 +6011,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @WrappedRequest
@@ -6042,7 +6042,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -6076,7 +6076,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @WrappedRequest
@@ -6108,7 +6108,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
@@ -6141,7 +6141,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
@@ -6199,7 +6199,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @Wrapper
@@ -6233,7 +6233,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @WrappedRequest
@@ -6265,7 +6265,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @Wrapper
@@ -6299,7 +6299,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @WrappedRequest
@@ -6330,7 +6330,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @Wrapper
@@ -6363,7 +6363,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @WrappedRequest
@@ -6395,7 +6395,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @Wrapper
@@ -6428,7 +6428,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-access-restrictions">
      * Get access restrictions</a>
      **/
     @Returner
@@ -6455,7 +6455,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete access restrictions
      * @param branch:     the branch from delete access restrictions
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
      * Delete access restrictions</a>
      **/
     @WrappedRequest
@@ -6474,7 +6474,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from delete access restrictions
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
      * Delete access restrictions</a>
      **/
     @WrappedRequest
@@ -6492,7 +6492,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from delete access restrictions
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
      * Delete access restrictions</a>
      **/
     @WrappedRequest
@@ -6511,7 +6511,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#delete-access-restrictions">
      * Delete access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions")
@@ -6552,7 +6552,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
@@ -6586,7 +6586,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -6618,7 +6618,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
@@ -6652,7 +6652,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -6683,7 +6683,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
@@ -6716,7 +6716,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -6748,7 +6748,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
@@ -6781,7 +6781,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -6814,7 +6814,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -6851,7 +6851,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @WrappedRequest
@@ -6887,7 +6887,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -6924,7 +6924,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @WrappedRequest
@@ -6958,7 +6958,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -6995,7 +6995,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @WrappedRequest
@@ -7030,7 +7030,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -7066,7 +7066,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -7099,7 +7099,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -7136,7 +7136,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @WrappedRequest
@@ -7172,7 +7172,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -7209,7 +7209,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @WrappedRequest
@@ -7243,7 +7243,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -7280,7 +7280,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @WrappedRequest
@@ -7315,7 +7315,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @Wrapper
@@ -7351,7 +7351,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-app-access-restrictions">
      * Add app access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -7388,7 +7388,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7426,7 +7426,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7463,7 +7463,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7501,7 +7501,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @WrappedRequest
@@ -7536,7 +7536,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7574,7 +7574,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @WrappedRequest
@@ -7610,7 +7610,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7647,7 +7647,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -7681,7 +7681,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7719,7 +7719,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @WrappedRequest
@@ -7756,7 +7756,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7794,7 +7794,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @WrappedRequest
@@ -7829,7 +7829,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7867,7 +7867,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @WrappedRequest
@@ -7903,7 +7903,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @Wrapper
@@ -7940,7 +7940,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-app-access-restrictions">
      * Set app access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -7976,7 +7976,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8013,7 +8013,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @WrappedRequest
@@ -8049,7 +8049,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8086,7 +8086,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @WrappedRequest
@@ -8120,7 +8120,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8157,7 +8157,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @WrappedRequest
@@ -8192,7 +8192,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8228,7 +8228,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -8261,7 +8261,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8298,7 +8298,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @WrappedRequest
@@ -8334,7 +8334,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8371,7 +8371,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @WrappedRequest
@@ -8405,7 +8405,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8442,7 +8442,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @WrappedRequest
@@ -8477,7 +8477,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @Wrapper
@@ -8513,7 +8513,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                           {@link #printErrorResponse()}
      *                       </li>
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-app-access-restrictions">
      * Remove app access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
@@ -8551,7 +8551,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @Wrapper
@@ -8584,7 +8584,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -8615,7 +8615,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @Wrapper
@@ -8648,7 +8648,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -8678,7 +8678,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @Wrapper
@@ -8710,7 +8710,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -8741,7 +8741,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @Wrapper
@@ -8773,7 +8773,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch">
      * Get teams with access to the protected branch</a>
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -8804,7 +8804,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -8839,7 +8839,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @WrappedRequest
@@ -8873,7 +8873,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -8908,7 +8908,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @WrappedRequest
@@ -8940,7 +8940,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -8975,7 +8975,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @WrappedRequest
@@ -9008,7 +9008,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -9042,7 +9042,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -9073,7 +9073,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -9108,7 +9108,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @WrappedRequest
@@ -9142,7 +9142,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -9177,7 +9177,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @WrappedRequest
@@ -9209,7 +9209,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -9244,7 +9244,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @WrappedRequest
@@ -9277,7 +9277,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @Wrapper
@@ -9311,7 +9311,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-team-access-restrictions">
      * Add team access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -9346,7 +9346,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9382,7 +9382,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @WrappedRequest
@@ -9417,7 +9417,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9453,7 +9453,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @WrappedRequest
@@ -9486,7 +9486,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9522,7 +9522,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @WrappedRequest
@@ -9556,7 +9556,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9591,7 +9591,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -9623,7 +9623,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9659,7 +9659,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @WrappedRequest
@@ -9694,7 +9694,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9730,7 +9730,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @WrappedRequest
@@ -9763,7 +9763,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9799,7 +9799,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @WrappedRequest
@@ -9833,7 +9833,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @Wrapper
@@ -9868,7 +9868,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-team-access-restrictions">
      * Set team access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -9904,7 +9904,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -9941,7 +9941,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @WrappedRequest
@@ -9977,7 +9977,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10014,7 +10014,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @WrappedRequest
@@ -10048,7 +10048,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10085,7 +10085,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @WrappedRequest
@@ -10120,7 +10120,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10156,7 +10156,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -10189,7 +10189,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10226,7 +10226,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @WrappedRequest
@@ -10262,7 +10262,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10299,7 +10299,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @WrappedRequest
@@ -10333,7 +10333,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10370,7 +10370,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @WrappedRequest
@@ -10405,7 +10405,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @Wrapper
@@ -10441,7 +10441,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-team-access-restrictions">
      * Remove team access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
@@ -10479,7 +10479,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @Wrapper
@@ -10512,7 +10512,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -10543,7 +10543,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @Wrapper
@@ -10576,7 +10576,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -10606,7 +10606,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @Wrapper
@@ -10638,7 +10638,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -10669,7 +10669,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @Wrapper
@@ -10702,7 +10702,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch">
      * Get users with access to the protected branch</a>
      **/
     @WrappedRequest
@@ -10734,7 +10734,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -10769,7 +10769,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @WrappedRequest
@@ -10803,7 +10803,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -10838,7 +10838,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @WrappedRequest
@@ -10870,7 +10870,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -10905,7 +10905,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @WrappedRequest
@@ -10938,7 +10938,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -10972,7 +10972,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
@@ -11003,7 +11003,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -11038,7 +11038,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @WrappedRequest
@@ -11072,7 +11072,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -11107,7 +11107,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @WrappedRequest
@@ -11139,7 +11139,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -11174,7 +11174,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @WrappedRequest
@@ -11207,7 +11207,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @Wrapper
@@ -11241,7 +11241,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#add-user-access-restrictions">
      * Add user access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
@@ -11276,7 +11276,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11312,7 +11312,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @WrappedRequest
@@ -11347,7 +11347,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11383,7 +11383,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @WrappedRequest
@@ -11416,7 +11416,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11452,7 +11452,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @WrappedRequest
@@ -11486,7 +11486,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11521,7 +11521,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
@@ -11553,7 +11553,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11589,7 +11589,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @WrappedRequest
@@ -11624,7 +11624,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11660,7 +11660,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @WrappedRequest
@@ -11693,7 +11693,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11729,7 +11729,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @WrappedRequest
@@ -11763,7 +11763,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @Wrapper
@@ -11798,7 +11798,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#set-user-access-restrictions">
      * Set user access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
@@ -11834,7 +11834,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -11871,7 +11871,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @WrappedRequest
@@ -11907,7 +11907,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -11944,7 +11944,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @WrappedRequest
@@ -11978,7 +11978,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -12015,7 +12015,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @WrappedRequest
@@ -12050,7 +12050,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -12086,7 +12086,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
@@ -12119,7 +12119,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -12156,7 +12156,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @WrappedRequest
@@ -12192,7 +12192,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -12229,7 +12229,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @WrappedRequest
@@ -12263,7 +12263,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -12300,7 +12300,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @WrappedRequest
@@ -12335,7 +12335,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @Wrapper
@@ -12371,7 +12371,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-user-access-restrictions">
      * Remove user access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")

@@ -131,7 +131,7 @@ public class GitHubFeedsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/feeds#get-feeds">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/feeds#get-feeds">
      * Get feeds</a>
      **/
     @Wrapper
@@ -184,7 +184,7 @@ public class GitHubFeedsManager extends GitHubManager {
      *                             {@link #printErrorResponse()}
      *                         </li>
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @implNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/feeds#get-feeds">
+     * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/activity/feeds#get-feeds">
      * Get feeds</a>
      **/
     @Returner
