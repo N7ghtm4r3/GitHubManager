@@ -5,11 +5,11 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.checks.records.Check.CheckStatus;
 import com.tecknobit.githubmanager.checks.runs.records.Action;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRun;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRun.CheckRunConclusion;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRun.CheckRunFilter;
-import com.tecknobit.githubmanager.checks.runs.records.CheckRun.CheckRunStatus;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRun.Output;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRunAnnotation;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRunsList;
@@ -273,7 +273,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -352,7 +352,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -432,7 +432,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -510,7 +510,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -717,7 +717,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -793,7 +793,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -870,7 +870,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -945,7 +945,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                           {@code "external_id"} -> a reference for the run on the integrator's system - [integer]
      *                       </li>
      *                       <li>
-     *                           {@code "status"} -> the current status, constants available at {@link CheckRunStatus} -
+     *                           {@code "status"} -> the current status, constants available at {@link CheckStatus} -
      *                           [string, default queued]
      *                       </li>
      *                       <li>
@@ -1994,7 +1994,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2048,7 +2048,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2102,7 +2102,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                         </li>
      *                         <li>
      *                             {@code "status"} -> returns check runs with the specified status,
-     *                             constants available at {@link CheckRunStatus} - [string]
+     *                             constants available at {@link CheckStatus} - [string]
      *                         </li>
      *                         <li>
      *                             {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2156,7 +2156,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                         </li>
      *                         <li>
      *                             {@code "status"} -> returns check runs with the specified status,
-     *                             constants available at {@link CheckRunStatus} - [string]
+     *                             constants available at {@link CheckStatus} - [string]
      *                         </li>
      *                         <li>
      *                             {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2211,7 +2211,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2265,7 +2265,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2319,7 +2319,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                         </li>
      *                         <li>
      *                             {@code "status"} -> returns check runs with the specified status,
-     *                             constants available at {@link CheckRunStatus} - [string]
+     *                             constants available at {@link CheckStatus} - [string]
      *                         </li>
      *                         <li>
      *                             {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2372,7 +2372,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                         </li>
      *                         <li>
      *                             {@code "status"} -> returns check runs with the specified status,
-     *                             constants available at {@link CheckRunStatus} - [string]
+     *                             constants available at {@link CheckStatus} - [string]
      *                         </li>
      *                         <li>
      *                             {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2558,7 +2558,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2613,7 +2613,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2670,7 +2670,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.
@@ -2724,7 +2724,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "status"} -> returns check runs with the specified status,
-     *                            constants available at {@link CheckRunStatus} - [string]
+     *                            constants available at {@link CheckStatus} - [string]
      *                        </li>
      *                        <li>
      *                            {@code "filter"} -> filters check runs by their completed_at timestamp.

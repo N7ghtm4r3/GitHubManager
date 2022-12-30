@@ -2,15 +2,14 @@ package com.tecknobit.githubmanager.checks.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
+import com.tecknobit.githubmanager.checks.records.Check;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuite;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.PullRequest;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -35,18 +34,9 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  * </ul>
  * @see GitHubResponse
  * @see BaseResponseDetails
+ * @see Check
  **/
-public class CheckRun extends BaseResponseDetails {
-
-    /**
-     * {@code headSha} the SHA of the commit that is being checked
-     **/
-    private final String headSha;
-
-    /**
-     * {@code nodeId} node identifier value
-     **/
-    private final String nodeId;
+public class CheckRun extends Check {
 
     /**
      * {@code externalId} external identifier value
@@ -62,11 +52,6 @@ public class CheckRun extends BaseResponseDetails {
      * {@code detailsUrl} details url value
      **/
     private final String detailsUrl;
-
-    /**
-     * {@code status} the phase of the lifecycle that the check is currently in
-     **/
-    private final CheckRunStatus status;
 
     /**
      * {@code conclusion} the end-phase of the lifecycle that the check is currently in
@@ -94,16 +79,6 @@ public class CheckRun extends BaseResponseDetails {
     private final CheckSuite checkSuite;
 
     /**
-     * {@code app} app of the check run
-     **/
-    private final GitHubApp app;
-
-    /**
-     * {@code pullRequests} pull requests list of the check run
-     **/
-    private final ArrayList<PullRequest> pullRequests;
-
-    /**
      * Constructor to init a {@link CheckRun}
      *
      * @param id           : identifier value
@@ -124,23 +99,18 @@ public class CheckRun extends BaseResponseDetails {
      * @param pullRequests : pull requests list of the check run
      **/
     public CheckRun(long id, String name, String url, String headSha, String nodeId, long externalId, String htmlUrl,
-                    String detailsUrl, CheckRunStatus status, CheckRunConclusion conclusion, String startedAt,
+                    String detailsUrl, CheckStatus status, CheckRunConclusion conclusion, String startedAt,
                     String completedAt, Output output, CheckSuite checkSuite, GitHubApp app,
                     ArrayList<PullRequest> pullRequests) {
-        super(id, name, url);
-        this.headSha = headSha;
-        this.nodeId = nodeId;
+        super(id, name, url, headSha, nodeId, status, pullRequests, app);
         this.externalId = externalId;
         this.htmlUrl = htmlUrl;
         this.detailsUrl = detailsUrl;
-        this.status = status;
         this.conclusion = conclusion;
         this.startedAt = startedAt;
         this.completedAt = completedAt;
         this.output = output;
         this.checkSuite = checkSuite;
-        this.app = app;
-        this.pullRequests = pullRequests;
     }
 
     /**
@@ -150,12 +120,9 @@ public class CheckRun extends BaseResponseDetails {
      **/
     public CheckRun(JSONObject jCheckRun) throws Exception {
         super(jCheckRun);
-        headSha = hResponse.getString("head_sha");
-        nodeId = hResponse.getString("node_id");
         externalId = hResponse.getLong("external_id", 0);
         htmlUrl = hResponse.getString("html_url");
         detailsUrl = hResponse.getString("details_url");
-        status = CheckRunStatus.valueOf(hResponse.getString("status"));
         String sConclusion = hResponse.getString("conclusion");
         if (sConclusion != null)
             conclusion = CheckRunConclusion.valueOf(sConclusion);
@@ -164,33 +131,7 @@ public class CheckRun extends BaseResponseDetails {
         startedAt = hResponse.getString("started_at");
         completedAt = hResponse.getString("completed_at");
         output = new Output(hResponse.getJSONObject("output", new JSONObject()));
-        app = new GitHubApp(hResponse.getJSONObject("app", new JSONObject()));
-        pullRequests = new ArrayList<>();
-        JSONArray jPullRequests = hResponse.getJSONArray("pull_requests", new JSONArray());
-        for (int j = 0; j < jPullRequests.length(); j++)
-            pullRequests.add(new PullRequest(jPullRequests.getJSONObject(j)));
-        hResponse.setJSONObjectSource(hResponse.getJSONObject("check_suite", new JSONObject()));
         checkSuite = new CheckSuite(hResponse.getJSONObject("check_suite", new JSONObject()));
-    }
-
-    /**
-     * Method to get {@link #headSha} instance <br>
-     * Any params required
-     *
-     * @return {@link #headSha} instance as {@link String}
-     **/
-    public String getHeadSha() {
-        return headSha;
-    }
-
-    /**
-     * Method to get {@link #nodeId} instance <br>
-     * Any params required
-     *
-     * @return {@link #nodeId} instance as {@link String}
-     **/
-    public String getNodeId() {
-        return nodeId;
     }
 
     /**
@@ -221,16 +162,6 @@ public class CheckRun extends BaseResponseDetails {
      **/
     public String getDetailsUrl() {
         return detailsUrl;
-    }
-
-    /**
-     * Method to get {@link #status} instance <br>
-     * Any params required
-     *
-     * @return {@link #status} instance as {@link CheckRunStatus}
-     **/
-    public CheckRunStatus getStatus() {
-        return status;
     }
 
     /**
@@ -304,49 +235,7 @@ public class CheckRun extends BaseResponseDetails {
     }
 
     /**
-     * Method to get {@link #app} instance <br>
-     * Any params required
-     *
-     * @return {@link #app} instance as {@link GitHubApp}
-     **/
-    public GitHubApp getApp() {
-        return app;
-    }
-
-    /**
-     * Method to get {@link #pullRequests} instance <br>
-     * Any params required
-     *
-     * @return {@link #pullRequests} instance as {@link Collection} of {@link PullRequest}
-     **/
-    public Collection<PullRequest> getPullRequests() {
-        return pullRequests;
-    }
-
-    /**
-     * {@code CheckRunStatus} list of available status for a {@link CheckRun}
-     **/
-    public enum CheckRunStatus {
-
-        /**
-         * {@code "queued"} status
-         **/
-        queued,
-
-        /**
-         * {@code "in_progress"} status
-         **/
-        in_progress,
-
-        /**
-         * {@code "completed"} status
-         **/
-        completed
-
-    }
-
-    /**
-     * {@code CheckRunConclusion} list of available conclusion for a {@link CheckRun}
+     * {@code CheckSuiteConclusion} list of available conclusion for a {@link CheckRun}
      **/
     public enum CheckRunConclusion {
 
