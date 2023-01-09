@@ -2,14 +2,11 @@ package com.tecknobit.githubmanager.codescanning.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.Location;
 import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.Repository;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.codescanning.records.ScanningAlert.Rule.SecuritySeverityLevel.low;
 
@@ -29,12 +26,13 @@ public class ScanningAlert extends GitHubResponse {
     private final String dismissedComment;
     private final Rule rule;
     private final Tool tool;
-    private final MostRecentInstance mostRecentInstance;
+    private final Instance mostRecentInstance;
     private final Repository repository;
+
     public ScanningAlert(long number, String createdAt, String updatedAt, String url, String htmlUrl, String instancesUrl,
                          State state, String fixedAt, User dismissedBy, String dismissedAt,
                          DismissedReason dismissedReason, String dismissedComment, Rule rule, Tool tool,
-                         MostRecentInstance mostRecentInstance, Repository repository) {
+                         Instance mostRecentInstance, Repository repository) {
         super(null);
         this.number = number;
         this.createdAt = createdAt;
@@ -78,7 +76,7 @@ public class ScanningAlert extends GitHubResponse {
         dismissedComment = hResponse.getString("dismissed_comment");
         rule = new Rule(hResponse.getJSONObject("rule", new JSONObject()));
         tool = new Tool(hResponse.getJSONObject("tool", new JSONObject()));
-        mostRecentInstance = new MostRecentInstance(hResponse.getJSONObject("most_recent_instance", new JSONObject()));
+        mostRecentInstance = new Instance(hResponse.getJSONObject("most_recent_instance", new JSONObject()));
         repository = new Repository(hResponse.getJSONObject("repository", new JSONObject()));
     }
 
@@ -138,7 +136,7 @@ public class ScanningAlert extends GitHubResponse {
         return tool;
     }
 
-    public MostRecentInstance getMostRecentInstance() {
+    public Instance getMostRecentInstance() {
         return mostRecentInstance;
     }
 
@@ -317,112 +315,6 @@ public class ScanningAlert extends GitHubResponse {
         @Override
         public String toString() {
             return new JSONObject(this).toString();
-        }
-
-    }
-
-    public static class MostRecentInstance {
-
-        private final String ref;
-        private final String analysisKey;
-        private final String environment;
-        private final String category;
-        private final State state;
-        private final String commitSha;
-        private final String message;
-        private final Location location;
-        private final String htmlUrl;
-        private final ArrayList<Classification> classifications;
-        public MostRecentInstance(String ref, String analysisKey, String environment, String category, State state,
-                                  String commitSha, String message, Location location, String htmlUrl,
-                                  ArrayList<Classification> classifications) {
-            this.ref = ref;
-            this.analysisKey = analysisKey;
-            this.environment = environment;
-            this.category = category;
-            this.state = state;
-            this.commitSha = commitSha;
-            this.message = message;
-            this.location = location;
-            this.htmlUrl = htmlUrl;
-            this.classifications = classifications;
-        }
-
-        public MostRecentInstance(JSONObject jInstance) {
-            JsonHelper hInstance = new JsonHelper(jInstance);
-            ref = hInstance.getString("ref");
-            analysisKey = hInstance.getString("analysis_key");
-            environment = hInstance.getString("environment");
-            category = hInstance.getString("category");
-            state = State.valueOf(hInstance.getString("state"));
-            commitSha = hInstance.getString("commit_sha");
-            message = hInstance.getJsonHelper("message").getString("text");
-            location = new Location(hInstance.getJSONObject("location", new JSONObject()));
-            htmlUrl = hInstance.getString("html_url");
-            classifications = new ArrayList<>();
-            JSONArray jClassifications = hInstance.getJSONArray("classifications", new JSONArray());
-            for (int j = 0; j < jClassifications.length(); j++)
-                classifications.add(Classification.valueOf(jClassifications.getString(j)));
-        }
-
-        public String getRef() {
-            return ref;
-        }
-
-        public String getAnalysisKey() {
-            return analysisKey;
-        }
-
-        public String getEnvironment() {
-            return environment;
-        }
-
-        public String getCategory() {
-            return category;
-        }
-
-        public State getState() {
-            return state;
-        }
-
-        public String getCommitSha() {
-            return commitSha;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public Location getLocation() {
-            return location;
-        }
-
-        public String getHtmlUrl() {
-            return htmlUrl;
-        }
-
-        public Collection<Classification> getClassifications() {
-            return classifications;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        public enum Classification {
-
-            source,
-            generated,
-            test,
-            library
-
         }
 
     }

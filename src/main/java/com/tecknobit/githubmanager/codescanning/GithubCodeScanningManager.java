@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.codescanning;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager;
-import com.tecknobit.githubmanager.codescanning.records.ScanningAlert;
+import com.tecknobit.githubmanager.codescanning.records.*;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
@@ -34,6 +34,26 @@ public class GithubCodeScanningManager extends GitHubManager {
      * {@code CODE_SCANNING_ALERTS_PATH} constant for {@code "/code-scanning/alerts"} path
      **/
     public static final String CODE_SCANNING_ALERTS_PATH = CODE_SCANNING_PATH + "alerts";
+
+    /**
+     * {@code INSTANCES_PATH} constant for {@code "/instances"} path
+     **/
+    public static final String INSTANCES_PATH = "/instances";
+
+    /**
+     * {@code CODE_SCANNING_ALERTS_PATH} constant for {@code "/code-scanning/alerts"} path
+     **/
+    public static final String CODE_SCANNING_ANALYSES_PATH = CODE_SCANNING_PATH + "analyses";
+
+    /**
+     * {@code CODE_SCANNING_CODEQL_DATABASES_PATH} constant for {@code "/code-scanning/codeql/databases"} path
+     **/
+    public static final String CODE_SCANNING_CODEQL_DATABASES_PATH = CODE_SCANNING_PATH + "codeql/databases";
+
+    /**
+     * {@code CODE_SCANNING_SARIFS_PATH} constant for {@code "/code-scanning/sarifs"} path
+     **/
+    public static final String CODE_SCANNING_SARIFS_PATH = CODE_SCANNING_PATH + "sarifs";
 
     /**
      * Constructor to init a {@link GithubCodeScanningManager}
@@ -290,6 +310,410 @@ public class GithubCodeScanningManager extends GitHubManager {
                 return (T) new ScanningAlert(new JSONObject(scanningAlertResponse));
             default:
                 return (T) scanningAlertResponse;
+        }
+    }
+
+    public Collection<Instance> getCodeScanningInstances(Repository repository, ScanningAlert alert) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alert.getNumber(),
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(Repository repository, ScanningAlert alert,
+                                          ReturnFormat format) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alert.getNumber(),
+                format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(String owner, String repo, ScanningAlert alert) throws IOException {
+        return getCodeScanningInstances(owner, repo, alert.getNumber(), LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(String owner, String repo, ScanningAlert alert,
+                                          ReturnFormat format) throws IOException {
+        return getCodeScanningInstances(owner, repo, alert.getNumber(), format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(Repository repository, long alertNumber) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alertNumber,
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(Repository repository, long alertNumber, ReturnFormat format) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alertNumber, format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(String owner, String repo, long alertNumber) throws IOException {
+        return getCodeScanningInstances(owner, repo, alertNumber, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(String owner, String repo, long alertNumber,
+                                          ReturnFormat format) throws IOException {
+        return returnInstances(sendGetRequest(REPOS_PATH + owner + "/" + repo + CODE_SCANNING_ALERTS_PATH
+                + "/" + alertNumber + INSTANCES_PATH), format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(Repository repository, ScanningAlert alert,
+                                                         Params queryParams) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alert.getNumber(),
+                queryParams, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(Repository repository, ScanningAlert alert, Params queryParams,
+                                          ReturnFormat format) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alert.getNumber(),
+                queryParams, format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(String owner, String repo, ScanningAlert alert,
+                                                         Params queryParams) throws IOException {
+        return getCodeScanningInstances(owner, repo, alert.getNumber(), queryParams, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(String owner, String repo, ScanningAlert alert, Params queryParams,
+                                          ReturnFormat format) throws IOException {
+        return getCodeScanningInstances(owner, repo, alert.getNumber(), queryParams, format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(Repository repository, long alertNumber,
+                                                         Params queryParams) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alertNumber, queryParams,
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(Repository repository, long alertNumber, Params queryParams,
+                                          ReturnFormat format) throws IOException {
+        return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alertNumber, queryParams,
+                format);
+    }
+
+    public Collection<Instance> getCodeScanningInstances(String owner, String repo, long alertNumber,
+                                                         Params queryParams) throws IOException {
+        return getCodeScanningInstances(owner, repo, alertNumber, queryParams, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningInstances(String owner, String repo, long alertNumber, Params queryParams,
+                                          ReturnFormat format) throws IOException {
+        return returnInstances(sendGetRequest(REPOS_PATH + owner + "/" + repo + CODE_SCANNING_ALERTS_PATH
+                + "/" + alertNumber + INSTANCES_PATH + queryParams.createQueryString()), format);
+    }
+
+    /**
+     * Method to create an instances list
+     *
+     * @param instancesResponse: obtained from GitHub's response
+     * @param format:            return type formatter -> {@link ReturnFormat}
+     * @return instances list as {@code "format"} defines
+     **/
+    @Returner
+    private <T> T returnInstances(String instancesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(instancesResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<Instance> instances = new ArrayList<>();
+                JSONArray jInstances = new JSONArray(instancesResponse);
+                for (int j = 0; j < jInstances.length(); j++)
+                    instances.add(new Instance(jInstances.getJSONObject(j)));
+                return (T) instances;
+            default:
+                return (T) instancesResponse;
+        }
+    }
+
+    public Collection<ScanningAnalysis> getCodeScanningAnalyses(Repository repository) throws IOException {
+        return getCodeScanningAnalyses(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningAnalyses(Repository repository, ReturnFormat format) throws IOException {
+        return getCodeScanningAnalyses(repository.getOwner().getLogin(), repository.getName(), format);
+    }
+
+    public Collection<ScanningAnalysis> getCodeScanningAnalyses(String owner, String repo) throws IOException {
+        return getCodeScanningAnalyses(owner, repo, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningAnalyses(String owner, String repo, ReturnFormat format) throws IOException {
+        return returnAnalyses(sendGetRequest(REPOS_PATH + owner + "/" + repo + CODE_SCANNING_ANALYSES_PATH),
+                format);
+    }
+
+    public Collection<ScanningAnalysis> getCodeScanningAnalyses(Repository repository,
+                                                                Params queryParams) throws IOException {
+        return getCodeScanningAnalyses(repository.getOwner().getLogin(), repository.getName(), queryParams,
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningAnalyses(Repository repository, Params queryParams, ReturnFormat format) throws IOException {
+        return getCodeScanningAnalyses(repository.getOwner().getLogin(), repository.getName(), queryParams, format);
+    }
+
+    public Collection<ScanningAnalysis> getCodeScanningAnalyses(String owner, String repo,
+                                                                Params queryParams) throws IOException {
+        return getCodeScanningAnalyses(owner, repo, queryParams, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningAnalyses(String owner, String repo, Params queryParams,
+                                         ReturnFormat format) throws IOException {
+        return returnAnalyses(sendGetRequest(REPOS_PATH + owner + "/" + repo + CODE_SCANNING_ANALYSES_PATH +
+                queryParams.createQueryString()), format);
+    }
+
+    /**
+     * Method to create an analyses list
+     *
+     * @param analysesResponse: obtained from GitHub's response
+     * @param format:           return type formatter -> {@link ReturnFormat}
+     * @return analyses list as {@code "format"} defines
+     **/
+    @Returner
+    private <T> T returnAnalyses(String analysesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(analysesResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<ScanningAnalysis> analyses = new ArrayList<>();
+                JSONArray jAnalyses = new JSONArray(analysesResponse);
+                for (int j = 0; j < jAnalyses.length(); j++)
+                    analyses.add(new ScanningAnalysis(jAnalyses.getJSONObject(j)));
+                return (T) analyses;
+            default:
+                return (T) analysesResponse;
+        }
+    }
+
+    public Collection<ScanningAnalysis> getCodeScanningAnalysis(Repository repository, long analysisId) throws IOException {
+        return getCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysisId,
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningAnalysis(Repository repository, long analysisId, ReturnFormat format) throws IOException {
+        return getCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysisId, format);
+    }
+
+    public Collection<ScanningAnalysis> getCodeScanningAnalysis(String owner, String repo,
+                                                                long analysisId) throws IOException {
+        return getCodeScanningAnalysis(owner, repo, analysisId, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeScanningAnalysis(String owner, String repo, long analysisId,
+                                         ReturnFormat format) throws IOException {
+        String analysisResponse = sendGetRequest(REPOS_PATH + owner + "/" + repo + CODE_SCANNING_ANALYSES_PATH
+                + "/" + analysisId);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(analysisResponse);
+            case LIBRARY_OBJECT:
+                return (T) new ScanningAnalysis(new JSONObject(analysisResponse));
+            default:
+                return (T) analysisResponse;
+        }
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(Repository repository,
+                                                               ScanningAnalysis analysis) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysis.getId(),
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(Repository repository, ScanningAnalysis analysis,
+                                            ReturnFormat format) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysis.getId(),
+                format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(String owner, String repo,
+                                                               ScanningAnalysis analysis) throws IOException {
+        return deleteCodeScanningAnalysis(owner, repo, analysis.getId(), LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(String owner, String repo, ScanningAnalysis analysis,
+                                            ReturnFormat format) throws IOException {
+        return deleteCodeScanningAnalysis(owner, repo, analysis.getId(), format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(Repository repository, long analysisId) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysisId,
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(Repository repository, long analysisId, ReturnFormat format) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysisId, format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(String owner, String repo,
+                                                               long analysisId) throws IOException {
+        return deleteCodeScanningAnalysis(owner, repo, analysisId, LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(String owner, String repo, long analysisId,
+                                            ReturnFormat format) throws IOException {
+        return returnScanningAnalysisDeletion(sendDeleteRequest(REPOS_PATH + owner + "/" + repo
+                + CODE_SCANNING_ANALYSES_PATH + "/" + analysisId), format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(Repository repository, ScanningAnalysis analysis,
+                                                               String confirmDelete) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysis.getId(),
+                confirmDelete, LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(Repository repository, ScanningAnalysis analysis, String confirmDelete,
+                                            ReturnFormat format) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysis.getId(),
+                confirmDelete, format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(String owner, String repo, ScanningAnalysis analysis,
+                                                               String confirmDelete) throws IOException {
+        return deleteCodeScanningAnalysis(owner, repo, analysis.getId(), confirmDelete, LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(String owner, String repo, ScanningAnalysis analysis, String confirmDelete,
+                                            ReturnFormat format) throws IOException {
+        return deleteCodeScanningAnalysis(owner, repo, analysis.getId(), confirmDelete, format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(Repository repository, long analysisId,
+                                                               String confirmDelete) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysisId,
+                confirmDelete, LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(Repository repository, long analysisId, String confirmDelete,
+                                            ReturnFormat format) throws IOException {
+        return deleteCodeScanningAnalysis(repository.getOwner().getLogin(), repository.getName(), analysisId,
+                confirmDelete, format);
+    }
+
+    public ScanningAnalysisDeletion deleteCodeScanningAnalysis(String owner, String repo, long analysisId,
+                                                               String confirmDelete) throws IOException {
+        return deleteCodeScanningAnalysis(owner, repo, analysisId, confirmDelete, LIBRARY_OBJECT);
+    }
+
+    public <T> T deleteCodeScanningAnalysis(String owner, String repo, long analysisId, String confirmDelete,
+                                            ReturnFormat format) throws IOException {
+        return returnScanningAnalysisDeletion(sendDeleteRequest(REPOS_PATH + owner + "/" + repo
+                + CODE_SCANNING_ANALYSES_PATH + "/" + analysisId), format);
+    }
+
+    /**
+     * Method to create an analysis deletion
+     *
+     * @param analysisDeletionResponse: obtained from GitHub's response
+     * @param format:                   return type formatter -> {@link ReturnFormat}
+     * @return analysis deletion as {@code "format"} defines
+     **/
+    @Returner
+    private <T> T returnScanningAnalysisDeletion(String analysisDeletionResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(analysisDeletionResponse);
+            case LIBRARY_OBJECT:
+                return (T) new ScanningAnalysisDeletion(new JSONObject(analysisDeletionResponse));
+            default:
+                return (T) analysisDeletionResponse;
+        }
+    }
+
+    public Collection<CodeQL> getCodeQLDatabases(Repository repository) throws IOException {
+        return getCodeQLDatabases(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeQLDatabases(Repository repository, ReturnFormat format) throws IOException {
+        return getCodeQLDatabases(repository.getOwner().getLogin(), repository.getName(), format);
+    }
+
+    public Collection<CodeQL> getCodeQLDatabases(String owner, String repo) throws IOException {
+        return getCodeQLDatabases(owner, repo, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeQLDatabases(String owner, String repo, ReturnFormat format) throws IOException {
+        String codeQLDatabasesResponse = sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                CODE_SCANNING_CODEQL_DATABASES_PATH);
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(codeQLDatabasesResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<CodeQL> databases = new ArrayList<>();
+                JSONArray jDatabases = new JSONArray(codeQLDatabasesResponse);
+                for (int j = 0; j < jDatabases.length(); j++)
+                    databases.add(new CodeQL(jDatabases.getJSONObject(j)));
+                return (T) databases;
+            default:
+                return (T) codeQLDatabasesResponse;
+        }
+    }
+
+    public CodeQL getCodeQLDatabase(Repository repository, String language) throws IOException {
+        return getCodeQLDatabase(repository.getOwner().getLogin(), repository.getName(), language, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeQLDatabase(Repository repository, String language, ReturnFormat format) throws IOException {
+        return getCodeQLDatabase(repository.getOwner().getLogin(), repository.getName(), language, format);
+    }
+
+    public CodeQL getCodeQLDatabase(String owner, String repo, String language) throws IOException {
+        return getCodeQLDatabase(owner, repo, language, LIBRARY_OBJECT);
+    }
+
+    public <T> T getCodeQLDatabase(String owner, String repo, String language, ReturnFormat format) throws IOException {
+        String codeQLDatabaseResponse = sendGetRequest(REPOS_PATH + owner + "/" + repo +
+                CODE_SCANNING_CODEQL_DATABASES_PATH + "/" + language);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(codeQLDatabaseResponse);
+            case LIBRARY_OBJECT:
+                return (T) new CodeQL(new JSONObject(codeQLDatabaseResponse));
+            default:
+                return (T) codeQLDatabaseResponse;
+        }
+    }
+
+
+    // TODO: 09/01/2023 UPLOAD SARIF METHODS 
+
+
+    public SARIFUpload getSARIFUploadInformation(Repository repository, SARIFData SARIF) throws IOException {
+        return getSARIFUploadInformation(repository.getOwner().getLogin(), repository.getName(), SARIF.getId(),
+                LIBRARY_OBJECT);
+    }
+
+    public <T> T getSARIFUploadInformation(Repository repository, SARIFData SARIF, ReturnFormat format) throws IOException {
+        return getSARIFUploadInformation(repository.getOwner().getLogin(), repository.getName(), SARIF.getId(), format);
+    }
+
+    public SARIFUpload getSARIFUploadInformation(String owner, String repo, SARIFData SARIF) throws IOException {
+        return getSARIFUploadInformation(owner, repo, SARIF.getId(), LIBRARY_OBJECT);
+    }
+
+    public <T> T getSARIFUploadInformation(String owner, String repo, SARIFData SARIF,
+                                           ReturnFormat format) throws IOException {
+        return getSARIFUploadInformation(owner, repo, SARIF.getId(), format);
+    }
+
+    public SARIFUpload getSARIFUploadInformation(Repository repository, String SARIFId) throws IOException {
+        return getSARIFUploadInformation(repository.getOwner().getLogin(), repository.getName(), SARIFId, LIBRARY_OBJECT);
+    }
+
+    public <T> T getSARIFUploadInformation(Repository repository, String SARIFId, ReturnFormat format) throws IOException {
+        return getSARIFUploadInformation(repository.getOwner().getLogin(), repository.getName(), SARIFId, format);
+    }
+
+    public SARIFUpload getSARIFUploadInformation(String owner, String repo, String SARIFId) throws IOException {
+        return getSARIFUploadInformation(owner, repo, SARIFId, LIBRARY_OBJECT);
+    }
+
+    public <T> T getSARIFUploadInformation(String owner, String repo, String SARIFId,
+                                           ReturnFormat format) throws IOException {
+        String SARIFResponse = sendGetRequest(REPOS_PATH + owner + "/" + repo + CODE_SCANNING_SARIFS_PATH + "/"
+                + SARIFId);
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(SARIFResponse);
+            case LIBRARY_OBJECT:
+                return (T) new SARIFUpload(new JSONObject(SARIFResponse));
+            default:
+                return (T) SARIFResponse;
         }
     }
 
