@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.checks.runs.records;
 
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.Location;
 import org.json.JSONObject;
 
 /**
@@ -10,33 +11,9 @@ import org.json.JSONObject;
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/checks/runs#list-check-run-annotations">
  * List check run annotations</a>
  * @see GitHubResponse
+ * @see Location
  **/
-public class CheckRunAnnotation extends GitHubResponse {
-
-    /**
-     * {@code path} of the annotation
-     **/
-    private final String path;
-
-    /**
-     * {@code startLine} start line of the annotation
-     **/
-    private final int startLine;
-
-    /**
-     * {@code endLine} end line of the annotation
-     **/
-    private final int endLine;
-
-    /**
-     * {@code startColumn} start column of the annotation
-     **/
-    private final int startColumn;
-
-    /**
-     * {@code endColumn} end column of the annotation
-     **/
-    private final int endColumn;
+public class CheckRunAnnotation extends Location {
 
     /**
      * {@code annotationLevel} annotation level of the annotation
@@ -74,11 +51,6 @@ public class CheckRunAnnotation extends GitHubResponse {
     public CheckRunAnnotation(String path, int startLine, int endLine, int startColumn, int endColumn,
                               String annotationLevel, String title, String rawDetails, String blobHref) {
         super(null);
-        this.path = path;
-        this.startLine = startLine;
-        this.endLine = endLine;
-        this.startColumn = startColumn;
-        this.endColumn = endColumn;
         this.annotationLevel = annotationLevel;
         this.title = title;
         this.rawDetails = rawDetails;
@@ -92,65 +64,10 @@ public class CheckRunAnnotation extends GitHubResponse {
      **/
     public CheckRunAnnotation(JSONObject jCheckRunAnnotation) {
         super(jCheckRunAnnotation);
-        path = hResponse.getString("path");
-        startLine = hResponse.getInt("start_line", 0);
-        endLine = hResponse.getInt("end_line", 0);
-        startColumn = hResponse.getInt("start_column", 0);
-        endColumn = hResponse.getInt("end_column", 0);
         annotationLevel = hResponse.getString("annotation_level");
         title = hResponse.getString("title");
         rawDetails = hResponse.getString("raw_details");
         blobHref = hResponse.getString("blob_href");
-    }
-
-    /**
-     * Method to get {@link #path} instance <br>
-     * Any params required
-     *
-     * @return {@link #path} instance as {@link String}
-     **/
-    public String getPath() {
-        return path;
-    }
-
-    /**
-     * Method to get {@link #startLine} instance <br>
-     * Any params required
-     *
-     * @return {@link #startLine} instance as int
-     **/
-    public int getStartLine() {
-        return startLine;
-    }
-
-    /**
-     * Method to get {@link #endLine} instance <br>
-     * Any params required
-     *
-     * @return {@link #endLine} instance as int
-     **/
-    public int getEndLine() {
-        return endLine;
-    }
-
-    /**
-     * Method to get {@link #startColumn} instance <br>
-     * Any params required
-     *
-     * @return {@link #startColumn} instance as int
-     **/
-    public int getStartColumn() {
-        return startColumn;
-    }
-
-    /**
-     * Method to get {@link #endColumn} instance <br>
-     * Any params required
-     *
-     * @return {@link #endColumn} instance as int
-     **/
-    public int getEndColumn() {
-        return endColumn;
     }
 
     /**
