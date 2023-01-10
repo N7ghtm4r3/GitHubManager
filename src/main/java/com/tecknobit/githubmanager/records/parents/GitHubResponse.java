@@ -29,7 +29,7 @@ public abstract class GitHubResponse {
     /**
      * {@code message} the message of the error if exists
      **/
-    protected final String message;
+    protected String message;
 
     /**
      * {@code documentationUrl} the documentation url to see more details if the error exists
