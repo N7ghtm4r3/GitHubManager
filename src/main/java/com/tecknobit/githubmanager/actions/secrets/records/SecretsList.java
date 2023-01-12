@@ -1,5 +1,7 @@
-package com.tecknobit.githubmanager.actions.secrets.records.secrets;
+package com.tecknobit.githubmanager.actions.secrets.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
@@ -67,13 +69,8 @@ public class SecretsList extends GitHubList {
         super(jSecretsList);
         secrets = new ArrayList<>();
         JSONArray jSecrets = hResponse.getJSONArray("secrets", new JSONArray());
-        for (int j = 0; j < jSecrets.length(); j++) {
-            JSONObject jSecret = jSecrets.getJSONObject(j);
-            if (jSecret.has("selected_repositories_url"))
-                secrets.add(new OrganizationSecret(jSecrets.getJSONObject(j)));
-            else
-                secrets.add(new Secret(jSecrets.getJSONObject(j)));
-        }
+        for (int j = 0; j < jSecrets.length(); j++)
+            secrets.add(new Secret(jSecrets.getJSONObject(j)));
     }
 
     /**
@@ -81,25 +78,28 @@ public class SecretsList extends GitHubList {
      * Any params required
      *
      * @return {@link #secrets} instance as {@link Collection} of {@link Secret}
-     * @apiNote this method will return a {@link Collection} that could include also {@link OrganizationSecret}
-     * objects if exist
      **/
     public Collection<Secret> getSecrets() {
         return secrets;
     }
 
     /**
-     * Method to get a list of filtered secrets
+     * Method to create a secrets list
      *
-     * @param filter: filter to fetch a list made only by {@link Secret} or {@link OrganizationSecret}
-     * @return {@link #secrets} instance as {@link Collection} of {@link Secret} or {@link OrganizationSecret}
+     * @param secretsListResponse: obtained from GitHub's response
+     * @param format:              return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @return all the secrets available list as {@code "format"} defines
      **/
-    public <T extends Secret> Collection<T> getSecrets(Class<T> filter) {
-        ArrayList<T> secrets = new ArrayList<>();
-        for (Secret secret : this.secrets)
-            if (secret.getClass() == filter)
-                secrets.add((T) secret);
-        return secrets;
+    @Returner
+    public static <T> T returnSecretsList(String secretsListResponse, GitHubManager.ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(secretsListResponse);
+            case LIBRARY_OBJECT:
+                return (T) new SecretsList(new JSONObject(secretsListResponse));
+            default:
+                return (T) secretsListResponse;
+        }
     }
 
 }

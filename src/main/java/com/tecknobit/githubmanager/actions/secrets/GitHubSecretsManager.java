@@ -8,9 +8,8 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
-import com.tecknobit.githubmanager.actions.secrets.records.secrets.OrganizationSecret;
-import com.tecknobit.githubmanager.actions.secrets.records.secrets.Secret;
-import com.tecknobit.githubmanager.actions.secrets.records.secrets.SecretsList;
+import com.tecknobit.githubmanager.actions.secrets.records.Secret;
+import com.tecknobit.githubmanager.actions.secrets.records.SecretsList;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
@@ -24,6 +23,8 @@ import java.util.Collection;
 import static com.goterl.lazysodium.utils.Key.fromBase64String;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.actions.secrets.records.Secret.returnSecret;
+import static com.tecknobit.githubmanager.actions.secrets.records.SecretsList.returnSecretsList;
 import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Base64.getEncoder;
@@ -531,7 +532,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *
      * @param org:        the organization from fetch the secret
      * @param secretName: the name of the secret
-     * @return organization secret as {@link OrganizationSecret} custom object
+     * @return organization secret as {@link Secret} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -550,7 +551,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets/{secret_name}")
-    public OrganizationSecret getOrganizationSecret(Organization org, String secretName) throws IOException {
+    public Secret getOrganizationSecret(Organization org, String secretName) throws IOException {
         return getOrganizationSecret(org.getLogin(), secretName, LIBRARY_OBJECT);
     }
 
@@ -593,7 +594,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *
      * @param org:        the organization name. The name is not case-sensitive
      * @param secretName: the name of the secret
-     * @return organization secret as {@link OrganizationSecret} custom object
+     * @return organization secret as {@link Secret} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -611,7 +612,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets/{secret_name}")
-    public OrganizationSecret getOrganizationSecret(String org, String secretName) throws IOException {
+    public Secret getOrganizationSecret(String org, String secretName) throws IOException {
         return getOrganizationSecret(org, secretName, LIBRARY_OBJECT);
     }
 
@@ -640,18 +641,9 @@ public class GitHubSecretsManager extends GitHubManager {
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#get-an-organization-secret">
      * Get an organization secret</a>
      **/
-    @Returner
     @RequestPath(method = GET, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public <T> T getOrganizationSecret(String org, String secretName, ReturnFormat format) throws IOException {
-        String secretResponse = sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + "/" + secretName);
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(secretResponse);
-            case LIBRARY_OBJECT:
-                return (T) new OrganizationSecret(new JSONObject(secretResponse));
-            default:
-                return (T) secretResponse;
-        }
+        return returnSecret(sendGetRequest(ORGS_PATH + org + ACTIONS_SECRETS_PATH + "/" + secretName), format);
     }
 
     /**
@@ -1708,7 +1700,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/secrets/{secret_name}")
-    public boolean deleteOrganizationSecret(Organization org, OrganizationSecret secretToDelete) {
+    public boolean deleteOrganizationSecret(Organization org, Secret secretToDelete) {
         return deleteOrganizationSecret(org.getLogin(), secretToDelete.getName());
     }
 
@@ -1726,7 +1718,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/secrets/{secret_name}")
-    public boolean deleteOrganizationSecret(String org, OrganizationSecret secretToDelete) {
+    public boolean deleteOrganizationSecret(String org, Secret secretToDelete) {
         return deleteOrganizationSecret(org, secretToDelete.getName());
     }
 
@@ -3499,25 +3491,6 @@ public class GitHubSecretsManager extends GitHubManager {
     }
 
     /**
-     * Method to create a secrets list
-     *
-     * @param secretsListResponse: obtained from GitHub's response
-     * @param format:              return type formatter -> {@link ReturnFormat}
-     * @return all the secrets available list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnSecretsList(String secretsListResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(secretsListResponse);
-            case LIBRARY_OBJECT:
-                return (T) new SecretsList(new JSONObject(secretsListResponse));
-            default:
-                return (T) secretsListResponse;
-        }
-    }
-
-    /**
      * Method to get your public key, which you need to encrypt secrets.
      * You need to encrypt a secret before you can create or update secrets.
      * Anyone with read access to the repository can use this endpoint.
@@ -3795,25 +3768,6 @@ public class GitHubSecretsManager extends GitHubManager {
                                       ReturnFormat format) throws IOException {
         return returnSecret(sendGetRequest(REPOSITORIES_QUERY_PATH + repositoryId + ENVIRONMENTS_PATH +
                 environmentName + SECRETS_PATH + "/" + secretName), format);
-    }
-
-    /**
-     * Method to create a secret
-     *
-     * @param secretResponse: obtained from GitHub's response
-     * @param format:         return type formatter -> {@link ReturnFormat}
-     * @return secret as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnSecret(String secretResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(secretResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Secret(new JSONObject(secretResponse));
-            default:
-                return (T) secretResponse;
-        }
     }
 
     /**
