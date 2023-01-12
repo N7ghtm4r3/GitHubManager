@@ -1,5 +1,7 @@
-package com.tecknobit.githubmanager.codespaces.codespaces.records;
+package com.tecknobit.githubmanager.codespaces.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
@@ -75,6 +77,25 @@ public class CodespacesList extends GitHubList {
      **/
     public Collection<Codespace> getCodespaces() {
         return codespaces;
+    }
+
+    /**
+     * Method to create a codespaces list
+     *
+     * @param codespacesListResponse: obtained from GitHub's response
+     * @param format:                 return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @return codespaces list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnCodespacesList(String codespacesListResponse, GitHubManager.ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(codespacesListResponse);
+            case LIBRARY_OBJECT:
+                return (T) new CodespacesList(new JSONObject(codespacesListResponse));
+            default:
+                return (T) codespacesListResponse;
+        }
     }
 
 }

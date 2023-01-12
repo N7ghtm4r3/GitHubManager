@@ -5,10 +5,10 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
-import com.tecknobit.githubmanager.codespaces.codespaces.records.Codespace;
 import com.tecknobit.githubmanager.codespaces.codespaces.records.CodespaceExportDetails;
-import com.tecknobit.githubmanager.codespaces.codespaces.records.CodespacesList;
 import com.tecknobit.githubmanager.codespaces.codespaces.records.DevContainersList;
+import com.tecknobit.githubmanager.codespaces.records.Codespace;
+import com.tecknobit.githubmanager.codespaces.records.CodespacesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
@@ -16,6 +16,8 @@ import java.io.IOException;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.codespaces.records.Codespace.returnCodespace;
+import static com.tecknobit.githubmanager.codespaces.records.CodespacesList.returnCodespacesList;
 
 /**
  * The {@code GitHubCodespacesManager} class is useful to manage all GitHub's codespaces endpoints
@@ -178,7 +180,6 @@ public class GitHubCodespacesManager extends GitHubManager {
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/codespaces#list-codespaces-in-a-repository-for-the-authenticated-user">
      * List codespaces in a repository for the authenticated user</a>
      **/
-    @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/codespaces")
     public <T> T getRepositoryCodespaces(Repository repository, ReturnFormat format) throws IOException {
@@ -1656,25 +1657,6 @@ public class GitHubCodespacesManager extends GitHubManager {
     }
 
     /**
-     * Method to create a codespaces list
-     *
-     * @param codespacesListResponse: obtained from GitHub's response
-     * @param format:                 return type formatter -> {@link ReturnFormat}
-     * @return codespaces list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnCodespacesList(String codespacesListResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(codespacesListResponse);
-            case LIBRARY_OBJECT:
-                return (T) new CodespacesList(new JSONObject(codespacesListResponse));
-            default:
-                return (T) codespacesListResponse;
-        }
-    }
-
-    /**
      * Method to create a codespace owned by the authenticated user for the specified pull request. <br>
      * You must authenticate using an access token with the codespace scope to use this endpoint. <br>
      * GitHub Apps must have read access to the codespaces repository permission to use this endpoint
@@ -2707,25 +2689,6 @@ public class GitHubCodespacesManager extends GitHubManager {
     public <T> T stopUserCodespace(String codespaceName, ReturnFormat format) throws IOException {
         return returnCodespace(sendPostRequest(USER_CODESPACES_PATH + "/" + codespaceName + STOP_PATH, null),
                 format);
-    }
-
-    /**
-     * Method to create a codespace
-     *
-     * @param codespaceResponse: obtained from GitHub's response
-     * @param format:            return type formatter -> {@link ReturnFormat}
-     * @return codespace as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnCodespace(String codespaceResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(codespaceResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Codespace(new JSONObject(codespaceResponse));
-            default:
-                return (T) codespaceResponse;
-        }
     }
 
 }

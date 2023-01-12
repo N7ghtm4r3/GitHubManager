@@ -1,6 +1,8 @@
-package com.tecknobit.githubmanager.codespaces.codespaces.records;
+package com.tecknobit.githubmanager.codespaces.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
@@ -631,6 +633,25 @@ public class Codespace extends BaseResponseDetails {
      **/
     public String getLastKnownStopNotice() {
         return lastKnownStopNotice;
+    }
+
+    /**
+     * Method to create a codespace
+     *
+     * @param codespaceResponse: obtained from GitHub's response
+     * @param format:            return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @return codespace as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnCodespace(String codespaceResponse, GitHubManager.ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(codespaceResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Codespace(new JSONObject(codespaceResponse));
+            default:
+                return (T) codespaceResponse;
+        }
     }
 
     /**

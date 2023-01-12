@@ -348,4 +348,31 @@ public class Organization extends GitHubResponse {
         return description;
     }
 
+    /**
+     * {@code OrganizationVisibility} list of available organization visibilities
+     **/
+    public enum OrganizationVisibility {
+
+        /**
+         * {@code disabled}  organization visibility
+         **/
+        disabled,
+
+        /**
+         * {@code selected_members}  organization visibility
+         **/
+        selected_members,
+
+        /**
+         * {@code all_members}  organization visibility
+         **/
+        all_members,
+
+        /**
+         * {@code all_members_and_outside_collaborators}  organization visibility
+         **/
+        all_members_and_outside_collaborators
+
+    }
+
 }
