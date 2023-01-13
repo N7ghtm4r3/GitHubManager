@@ -3,9 +3,6 @@ package com.tecknobit.githubmanager;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.apis.APIRequest;
 import com.tecknobit.apimanager.formatters.TimeFormatter;
-import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
-import com.tecknobit.githubmanager.records.organization.OrganizationsList;
-import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -92,6 +89,16 @@ public class GitHubManager {
      * {@code USER_PATH} constant for {@code "user"} path
      **/
     public static final String USER_PATH = "user";
+
+    /**
+     * {@code SECRETS_PATH} constant for {@code "/secrets"} path
+     **/
+    public static final String SECRETS_PATH = "/secrets";
+
+    /**
+     * {@code PUBLIC_KEY_PATH} constant for {@code "/public-key"} path
+     **/
+    public static final String PUBLIC_KEY_PATH = "/public-key";
 
     /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
@@ -495,63 +502,6 @@ public class GitHubManager {
         } catch (IOException e) {
             printErrorResponse();
             return false;
-        }
-    }
-
-    /**
-     * Method to create an organizations list for an enterprise
-     *
-     * @param organizationsResponse: obtained from GitHub's response
-     * @param format:                return type formatter -> {@link ReturnFormat}
-     * @return enabled organizations list for an enterprise as {@code "format"} defines
-     **/
-    @Returner
-    protected <T> T returnOrganizationsList(String organizationsResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(organizationsResponse);
-            case LIBRARY_OBJECT:
-                return (T) new OrganizationsList(new JSONObject(organizationsResponse));
-            default:
-                return (T) organizationsResponse;
-        }
-    }
-
-    /**
-     * Method to create a repositories list for an organization
-     *
-     * @param repositoriesResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return enabled repositories list for an organization as {@code "format"} defines
-     **/
-    @Returner
-    protected <T> T returnOrganizationRepositories(String repositoriesResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(repositoriesResponse);
-            case LIBRARY_OBJECT:
-                return (T) new OrganizationRepositoriesList(new JSONObject(repositoriesResponse));
-            default:
-                return (T) repositoriesResponse;
-        }
-    }
-
-    /**
-     * Method to create a runners list
-     *
-     * @param runnersGroupResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return runners list as {@code "format"} defines
-     **/
-    @Returner
-    protected <T> T returnRunnersList(String runnersGroupResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(runnersGroupResponse);
-            case LIBRARY_OBJECT:
-                return (T) new RunnersList(new JSONObject(runnersGroupResponse));
-            default:
-                return (T) runnersGroupResponse;
         }
     }
 

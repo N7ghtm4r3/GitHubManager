@@ -22,6 +22,9 @@ import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList.returnRunnersList;
+import static com.tecknobit.githubmanager.records.organization.OrganizationsList.returnOrganizationsList;
+import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.returnOrganizationRepositories;
 
 /**
  * The {@code GitHubRunnerGroupsManager} class is useful to manage all GitHub's runner groups endpoints

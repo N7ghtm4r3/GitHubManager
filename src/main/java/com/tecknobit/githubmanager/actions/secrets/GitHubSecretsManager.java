@@ -3,7 +3,6 @@ package com.tecknobit.githubmanager.actions.secrets;
 import com.goterl.lazysodium.LazySodiumJava;
 import com.goterl.lazysodium.SodiumJava;
 import com.tecknobit.apimanager.annotations.RequestPath;
-import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
@@ -13,16 +12,16 @@ import com.tecknobit.githubmanager.actions.secrets.records.SecretsList;
 import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 import static com.goterl.lazysodium.utils.Key.fromBase64String;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey.returnPublicKey;
+import static com.tecknobit.githubmanager.actions.secrets.records.Secret.createSecretPayload;
 import static com.tecknobit.githubmanager.actions.secrets.records.Secret.returnSecret;
 import static com.tecknobit.githubmanager.actions.secrets.records.SecretsList.returnSecretsList;
 import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
@@ -40,11 +39,6 @@ import static java.util.Base64.getEncoder;
 public class GitHubSecretsManager extends GitHubManager {
 
     /**
-     * {@code SECRETS_PATH} constant for {@code "/secrets"} path
-     **/
-    public static final String SECRETS_PATH = "/secrets";
-
-    /**
      * {@code ACTIONS_SECRETS_PATH} constant for {@code "/actions/secrets"} path
      **/
     public static final String ACTIONS_SECRETS_PATH = ACTIONS_PATH + "secrets";
@@ -52,7 +46,7 @@ public class GitHubSecretsManager extends GitHubManager {
     /**
      * {@code ACTIONS_SECRETS_PUBLIC_KEY_PATH} constant for {@code "/actions/secrets/public-key"} path
      **/
-    public static final String ACTIONS_SECRETS_PUBLIC_KEY_PATH = ACTIONS_SECRETS_PATH + "/public-key";
+    public static final String ACTIONS_SECRETS_PUBLIC_KEY_PATH = ACTIONS_SECRETS_PATH + PUBLIC_KEY_PATH;
 
     /**
      * {@code REPOSITORIES_PATH} constant for {@code "/actions/repositories"} path
@@ -2025,7 +2019,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
                                                              RepositoriesList repositories) {
-        return setSelectedOrganizationSecretRepositories(org.getLogin(), secretName, repositories);
+        return setSelectedOrganizationSecretRepositories(org.getLogin(), secretName, repositories.getIds());
     }
 
     /**
@@ -2043,12 +2037,8 @@ public class GitHubSecretsManager extends GitHubManager {
      * Set selected repositories for an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
-    public boolean setSelectedOrganizationSecretRepositories(String org, String secretName,
-                                                             RepositoriesList repositories) {
-        ArrayList<Long> ids = new ArrayList<>();
-        for (Repository repository : repositories.getRepositories())
-            ids.add(repository.getId());
-        return setSelectedOrganizationSecretRepositories(org, secretName, ids.toArray(new Long[0]));
+    public boolean setSelectedOrganizationSecretRepositories(String org, String secretName, RepositoriesList repositories) {
+        return setSelectedOrganizationSecretRepositories(org, secretName, repositories.getIds());
     }
 
     /**
@@ -2846,8 +2836,8 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
-    public boolean createRepositorySecret(Repository repository, String secretName, String secretValue,
-                                          GitHubPublicKey publicKey) throws Exception {
+    public boolean workWithRepositorySecret(Repository repository, String secretName, String secretValue,
+                                            GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(repository.getOwner().getLogin(), repository.getName(), secretName, secretValue, publicKey);
     }
 
@@ -2880,8 +2870,8 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update a repository secret</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
-    public boolean createRepositorySecret(String owner, String repo, String secretName, String secretValue,
-                                          GitHubPublicKey publicKey) throws Exception {
+    public boolean workWithRepositorySecret(String owner, String repo, String secretName, String secretValue,
+                                            GitHubPublicKey publicKey) throws Exception {
         return workWithSecret(owner, repo, secretName, secretValue, publicKey);
     }
 
@@ -2914,7 +2904,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
-    public boolean createRepositorySecret(Repository repository, String secretName, String secretValue) throws Exception {
+    public boolean workWithRepositorySecret(Repository repository, String secretName, String secretValue) throws Exception {
         String owner = repository.getOwner().getLogin();
         String name = repository.getName();
         return workWithSecret(owner, name, secretName, secretValue, getRepositoryPublicKey(owner, name));
@@ -2949,8 +2939,8 @@ public class GitHubSecretsManager extends GitHubManager {
      * Create or update a repository secret</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/secrets/{secret_name}")
-    public boolean createRepositorySecret(String owner, String repo, String secretName,
-                                          String secretValue) throws Exception {
+    public boolean workWithRepositorySecret(String owner, String repo, String secretName,
+                                            String secretValue) throws Exception {
         return workWithSecret(owner, repo, secretName, secretValue, getRepositoryPublicKey(owner, repo));
     }
 
@@ -3623,25 +3613,6 @@ public class GitHubSecretsManager extends GitHubManager {
     }
 
     /**
-     * Method to create a public key
-     *
-     * @param publicKeyResponse: obtained from GitHub's response
-     * @param format:            return type formatter -> {@link ReturnFormat}
-     * @return public key as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnPublicKey(String publicKeyResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(publicKeyResponse);
-            case LIBRARY_OBJECT:
-                return (T) new GitHubPublicKey(new JSONObject(publicKeyResponse));
-            default:
-                return (T) publicKeyResponse;
-        }
-    }
-
-    /**
      * Method to get a single environment secret without revealing its encrypted value.
      * You must authenticate using an access token with the repo scope to use this endpoint -> <b>
      * this step is automatically made by this library. </b> <br>
@@ -4098,13 +4069,8 @@ public class GitHubSecretsManager extends GitHubManager {
      *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private boolean workWithSecret(String endpoint, String secretValue, GitHubPublicKey publicKey) throws Exception {
-        LazySodiumJava lazySodium = new LazySodiumJava(new SodiumJava(), UTF_8);
-        String ciphertext = lazySodium.cryptoBoxSealEasy(secretValue, fromBase64String(publicKey.getKey()));
-        Params params = new Params();
-        params.addParam("encrypted_value", getEncoder().encodeToString(ciphertext.getBytes(UTF_8)));
-        params.addParam("key_id", "" + publicKey.getKeyId());
         try {
-            sendPutRequest(endpoint, params);
+            sendPutRequest(endpoint, createSecretPayload(secretValue, publicKey, null));
             int statusCode = apiRequest.getResponseStatusCode();
             if (statusCode != 201 && statusCode != 204) {
                 printErrorResponse();

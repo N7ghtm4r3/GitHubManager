@@ -1,14 +1,21 @@
 package com.tecknobit.githubmanager.actions.secrets.records;
 
+import com.goterl.lazysodium.LazySodiumJava;
+import com.goterl.lazysodium.SodiumJava;
+import com.goterl.lazysodium.exceptions.SodiumException;
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.GitHubManager.Params;
 import com.tecknobit.githubmanager.GitHubManager.Visibility;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
+import static com.goterl.lazysodium.utils.Key.fromBase64String;
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.vPrivate;
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.valueOf;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.Base64.getEncoder;
 
 /**
  * The {@code Secret} class is useful to format a GitHub's organization secret
@@ -39,6 +46,10 @@ import static com.tecknobit.githubmanager.GitHubManager.Visibility.valueOf;
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#delete-an-organization-secret">
  *             Delete an organization secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#get-an-organization-secret">
+ *             Get an organization secret</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -138,25 +149,6 @@ public class Secret extends GitHubResponse {
     }
 
     /**
-     * Method to create a secret
-     *
-     * @param secretResponse: obtained from GitHub's response
-     * @param format:         return type formatter -> {@link GitHubManager.ReturnFormat}
-     * @return secret as {@code "format"} defines
-     **/
-    @Returner
-    public static <T> T returnSecret(String secretResponse, GitHubManager.ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(secretResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Secret(new JSONObject(secretResponse));
-            default:
-                return (T) secretResponse;
-        }
-    }
-
-    /**
      * Method to get {@link #updatedAt} timestamp <br>
      * Any params required
      *
@@ -194,6 +186,44 @@ public class Secret extends GitHubResponse {
      **/
     public String getSelectedRepositoriesUrl() {
         return selectedRepositoriesUrl;
+    }
+
+    /**
+     * Method to create a payload to create or update a secret
+     *
+     * @param secretValue: the value of the secret
+     * @param publicKey:   public key used
+     * @param extraParams: extra params to add to the payload, you can pass {@code "null"} if there aren't
+     * @return payload as {@link Params}
+     **/
+    public static Params createSecretPayload(String secretValue, GitHubPublicKey publicKey,
+                                             Params extraParams) throws SodiumException {
+        if (extraParams == null)
+            extraParams = new Params();
+        LazySodiumJava lazySodium = new LazySodiumJava(new SodiumJava(), UTF_8);
+        String ciphertext = lazySodium.cryptoBoxSealEasy(secretValue, fromBase64String(publicKey.getKey()));
+        extraParams.addParam("encrypted_value", getEncoder().encodeToString(ciphertext.getBytes(UTF_8)));
+        extraParams.addParam("key_id", publicKey.getKeyId());
+        return extraParams;
+    }
+
+    /**
+     * Method to create a secret
+     *
+     * @param secretResponse: obtained from GitHub's response
+     * @param format:         return type formatter -> {@link ReturnFormat}
+     * @return secret as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnSecret(String secretResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(secretResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Secret(new JSONObject(secretResponse));
+            default:
+                return (T) secretResponse;
+        }
     }
 
 }

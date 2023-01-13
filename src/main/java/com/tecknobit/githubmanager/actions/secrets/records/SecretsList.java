@@ -1,7 +1,6 @@
 package com.tecknobit.githubmanager.actions.secrets.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
@@ -9,6 +8,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
  * The {@code SecretsList} class is useful to format a GitHub's secrets list
@@ -27,6 +28,10 @@ import java.util.Collection;
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#list-environment-secrets">
  *             List environment secrets</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#list-organization-secrets">
+ *             List organization secrets</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -87,11 +92,11 @@ public class SecretsList extends GitHubList {
      * Method to create a secrets list
      *
      * @param secretsListResponse: obtained from GitHub's response
-     * @param format:              return type formatter -> {@link GitHubManager.ReturnFormat}
-     * @return all the secrets available list as {@code "format"} defines
+     * @param format:              return type formatter -> {@link ReturnFormat}
+     * @return secrets list as {@code "format"} defines
      **/
     @Returner
-    public static <T> T returnSecretsList(String secretsListResponse, GitHubManager.ReturnFormat format) {
+    public static <T> T returnSecretsList(String secretsListResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
                 return (T) new JSONObject(secretsListResponse);

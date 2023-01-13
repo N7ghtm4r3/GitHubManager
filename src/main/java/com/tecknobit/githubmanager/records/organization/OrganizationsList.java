@@ -1,5 +1,7 @@
 package com.tecknobit.githubmanager.records.organization;
 
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
@@ -75,6 +77,25 @@ public class OrganizationsList extends GitHubList {
      **/
     public Collection<Organization> getOrganizations() {
         return organizations;
+    }
+
+    /**
+     * Method to create an organizations list for an enterprise
+     *
+     * @param organizationsResponse: obtained from GitHub's response
+     * @param format:                return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @return enabled organizations list for an enterprise as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnOrganizationsList(String organizationsResponse, GitHubManager.ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(organizationsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new OrganizationsList(new JSONObject(organizationsResponse));
+            default:
+                return (T) organizationsResponse;
+        }
     }
 
 }

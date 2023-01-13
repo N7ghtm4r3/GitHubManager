@@ -15,8 +15,25 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
  * The {@code RepositoriesList} class is useful to format a GitHub's repositories list
  *
  * @author N7ghtm4r3 - Tecknobit
- * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
- * List selected repositories for an organization secret</a>
+ * @apiNote see the official documentation at:
+ * <ul>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
+ *             List selected repositories for an organization secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-app-installation">
+ *             List repositories accessible to the app installation</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/apps/installations#list-repositories-accessible-to-the-user-access-token">
+ *             List repositories accessible to the user access token</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#list-selected-repositories-for-an-organization-secret">
+ *             List selected repositories for an organization secret</a>
+ *     </li>
+ * </ul>
  * @see GitHubResponse
  * @see GitHubList
  **/
@@ -69,6 +86,19 @@ public class RepositoriesList extends GitHubList {
      **/
     public Collection<Repository> getRepositories() {
         return repositories;
+    }
+
+    /**
+     * Method to get the ids from the {@link #repositories} instance <br>
+     * Any params required
+     *
+     * @return ids from {@link #repositories} instance as {@link Collection} of {@link Long}
+     **/
+    public Collection<Long> getIds() {
+        ArrayList<Long> ids = new ArrayList<>();
+        for (Repository repository : repositories)
+            ids.add(repository.getId());
+        return ids;
     }
 
     /**

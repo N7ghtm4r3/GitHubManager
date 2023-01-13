@@ -24,6 +24,7 @@ import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList.returnRunnersList;
 
 /**
  * The {@code GitHubRunnersManager} class is useful to manage all GitHub's runners endpoints

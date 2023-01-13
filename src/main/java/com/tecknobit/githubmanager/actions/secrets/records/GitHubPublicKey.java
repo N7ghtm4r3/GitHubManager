@@ -1,7 +1,10 @@
 package com.tecknobit.githubmanager.actions.secrets.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
+
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
  * The {@code GitHubPublicKey} class is useful to format a GitHub's public key
@@ -20,6 +23,10 @@ import org.json.JSONObject;
  *     <li>
  *         <a href="https://docs.github.com/en/rest/actions/secrets#get-an-environment-public-key">
  *             Get an environment public key</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#get-an-organization-public-key">
+ *             Get an organization public key</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -77,6 +84,25 @@ public class GitHubPublicKey extends GitHubResponse {
      **/
     public String getKey() {
         return key;
+    }
+
+    /**
+     * Method to create a public key
+     *
+     * @param publicKeyResponse: obtained from GitHub's response
+     * @param format:            return type formatter -> {@link ReturnFormat}
+     * @return public key as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnPublicKey(String publicKeyResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(publicKeyResponse);
+            case LIBRARY_OBJECT:
+                return (T) new GitHubPublicKey(new JSONObject(publicKeyResponse));
+            default:
+                return (T) publicKeyResponse;
+        }
     }
 
 }
