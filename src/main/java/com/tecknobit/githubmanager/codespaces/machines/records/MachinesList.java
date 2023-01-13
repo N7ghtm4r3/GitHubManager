@@ -63,7 +63,7 @@ public class MachinesList extends GitHubList {
     public MachinesList(JSONObject jMachinesList) {
         super(jMachinesList);
         machines = new ArrayList<>();
-        JSONArray jMachines = new JSONArray();
+        JSONArray jMachines = hResponse.getJSONArray("machines", new JSONArray());
         for (int j = 0; j < jMachines.length(); j++)
             machines.add(new Machine(jMachines.getJSONObject(j)));
     }
