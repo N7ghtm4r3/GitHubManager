@@ -2,9 +2,9 @@ package com.tecknobit.githubmanager.checks.suites.records;
 
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.records.Check;
+import com.tecknobit.githubmanager.records.generic.PullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.PullRequest;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import org.json.JSONObject;
 

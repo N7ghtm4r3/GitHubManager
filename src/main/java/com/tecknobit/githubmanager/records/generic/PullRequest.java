@@ -1,6 +1,7 @@
-package com.tecknobit.githubmanager.records.parents;
+package com.tecknobit.githubmanager.records.generic;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import org.json.JSONObject;
 
 /**

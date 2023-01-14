@@ -1,7 +1,6 @@
 package com.tecknobit.githubmanager.records.parents;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -12,98 +11,99 @@ import java.util.ArrayList;
  * The {@code User} class is useful to format a GitHub's user
  *
  * @author N7ghtm4r3 - Tecknobit
+ * @see GitHubResponse
  **/
-public class User {
+public class User extends GitHubResponse {
 
     /**
      * {@code login} login value
      **/
-    private final String login;
+    protected final String login;
 
     /**
      * {@code id} identifier value
      **/
-    private final long id;
+    protected final long id;
 
     /**
      * {@code nodeId} identifier of the node value
      **/
-    private final String nodeId;
+    protected final String nodeId;
 
     /**
      * {@code avatarUrl} avatar url value
      **/
-    private final String avatarUrl;
+    protected final String avatarUrl;
 
     /**
      * {@code gravatarId} gravatar url value
      **/
-    private final String gravatarId;
+    protected final String gravatarId;
 
     /**
      * {@code "url"} value
      **/
-    private final String url;
+    protected final String url;
 
     /**
      * {@code htmlUrl} html url value
      **/
-    private final String htmlUrl;
+    protected final String htmlUrl;
 
     /**
      * {@code followersUrl} followers url value
      **/
-    private final String followersUrl;
+    protected final String followersUrl;
 
     /**
      * {@code followingUrl} following url value
      **/
-    private final String followingUrl;
+    protected final String followingUrl;
 
     /**
      * {@code gistsUrl} gists url value
      **/
-    private final String gistsUrl;
+    protected final String gistsUrl;
 
     /**
      * {@code starredUrl} starred url value
      **/
-    private final String starredUrl;
+    protected final String starredUrl;
 
     /**
      * {@code subscriptionsUrl} subscriptions url value
      **/
-    private final String subscriptionsUrl;
+    protected final String subscriptionsUrl;
 
     /**
      * {@code organizationsUrl} organizations url value
      **/
-    private final String organizationsUrl;
+    protected final String organizationsUrl;
 
     /**
      * {@code reposUrl} repos url value
      **/
-    private final String reposUrl;
+    protected final String reposUrl;
 
     /**
      * {@code eventsUrl} events url value
      **/
-    private final String eventsUrl;
+    protected final String eventsUrl;
 
     /**
      * {@code receivedEventsUrl} received events url value
      **/
-    private final String receivedEventsUrl;
+    protected final String receivedEventsUrl;
 
     /**
      * {@code type} type value
      **/
-    private final String type;
+    protected final String type;
 
     /**
      * {@code siteAdmin} site admin value
      **/
-    private final boolean siteAdmin;
+    protected final boolean siteAdmin;
 
     /**
      * Constructor to init a {@link User}
@@ -213,6 +213,7 @@ public class User {
                 String htmlUrl, String followersUrl, String followingUrl, String gistsUrl, String starredUrl,
                 String subscriptionsUrl, String organizationsUrl, String reposUrl, String eventsUrl,
                 String receivedEventsUrl, String type, boolean siteAdmin) {
+        super(null);
         this.login = login;
         this.id = id;
         this.nodeId = nodeId;
@@ -236,28 +237,28 @@ public class User {
     /**
      * Constructor to init a {@link User}
      *
-     * @param jOwner: owner details as {@link JSONObject}
+     * @param jUser: user details as {@link JSONObject}
      **/
-    public User(JSONObject jOwner) {
-        JsonHelper hOwner = new JsonHelper(jOwner);
-        login = hOwner.getString("login");
-        id = hOwner.getLong("id", 0);
-        nodeId = hOwner.getString("node_id");
-        avatarUrl = hOwner.getString("avatar_url");
-        gravatarId = hOwner.getString("gravatar_id");
-        url = hOwner.getString("url");
-        htmlUrl = hOwner.getString("html_url");
-        followersUrl = hOwner.getString("followers_url");
-        followingUrl = hOwner.getString("following_url");
-        gistsUrl = hOwner.getString("gists_url");
-        starredUrl = hOwner.getString("starred_url");
-        subscriptionsUrl = hOwner.getString("subscriptions_url");
-        organizationsUrl = hOwner.getString("organizations_url");
-        reposUrl = hOwner.getString("repos_url");
-        eventsUrl = hOwner.getString("events_url");
-        receivedEventsUrl = hOwner.getString("received_events_url");
-        type = hOwner.getString("type");
-        siteAdmin = hOwner.getBoolean("site_admin");
+    public User(JSONObject jUser) {
+        super(jUser);
+        login = hResponse.getString("login");
+        id = hResponse.getLong("id", 0);
+        nodeId = hResponse.getString("node_id");
+        avatarUrl = hResponse.getString("avatar_url");
+        gravatarId = hResponse.getString("gravatar_id");
+        url = hResponse.getString("url");
+        htmlUrl = hResponse.getString("html_url");
+        followersUrl = hResponse.getString("followers_url");
+        followingUrl = hResponse.getString("following_url");
+        gistsUrl = hResponse.getString("gists_url");
+        starredUrl = hResponse.getString("starred_url");
+        subscriptionsUrl = hResponse.getString("subscriptions_url");
+        organizationsUrl = hResponse.getString("organizations_url");
+        reposUrl = hResponse.getString("repos_url");
+        eventsUrl = hResponse.getString("events_url");
+        receivedEventsUrl = hResponse.getString("received_events_url");
+        type = hResponse.getString("type");
+        siteAdmin = hResponse.getBoolean("site_admin");
     }
 
     /**

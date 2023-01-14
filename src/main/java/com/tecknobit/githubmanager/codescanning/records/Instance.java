@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.codescanning.records;
 
+import com.tecknobit.githubmanager.records.generic.Location;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.Location;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

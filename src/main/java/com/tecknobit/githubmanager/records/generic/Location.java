@@ -1,5 +1,6 @@
-package com.tecknobit.githubmanager.records.parents;
+package com.tecknobit.githubmanager.records.generic;
 
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 /**

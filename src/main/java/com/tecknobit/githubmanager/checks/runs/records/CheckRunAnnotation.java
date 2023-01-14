@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.checks.runs.records;
 
+import com.tecknobit.githubmanager.records.generic.Location;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.Location;
 import org.json.JSONObject;
 
 /**

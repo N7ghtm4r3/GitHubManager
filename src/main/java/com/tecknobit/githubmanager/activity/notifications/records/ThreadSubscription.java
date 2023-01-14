@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.activity.notifications.records;
 
+import com.tecknobit.githubmanager.activity.records.Subscription;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.Subscription;
 import org.json.JSONObject;
 
 /**

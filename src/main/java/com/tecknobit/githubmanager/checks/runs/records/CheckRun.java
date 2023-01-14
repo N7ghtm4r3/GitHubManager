@@ -4,9 +4,9 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.records.Check;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuite;
+import com.tecknobit.githubmanager.records.generic.PullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.PullRequest;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

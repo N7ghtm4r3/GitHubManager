@@ -3,6 +3,7 @@ package com.tecknobit.githubmanager.records.repository;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
+import com.tecknobit.githubmanager.records.generic.Permissions;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
@@ -876,98 +877,6 @@ public class CompleteRepository extends Repository {
         @Override
         public String toString() {
             return visibility;
-        }
-
-    }
-
-    /**
-     * The {@code Permissions} class is useful to format a GitHub's permissions for a repository
-     *
-     * @author N7ghtm4r3 - Tecknobit
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
-     * List selected repositories enabled for GitHub Actions in an organization</a>
-     **/
-    public static class Permissions {
-
-        /**
-         * {@code "admin"} flag
-         **/
-        private final boolean admin;
-
-        /**
-         * {@code "push"} flag
-         **/
-        private final boolean push;
-
-        /**
-         * {@code "pull"} flag
-         **/
-        private final boolean pull;
-
-        /**
-         * Constructor to init a {@link Permissions}
-         *
-         * @param admin: admin flag
-         * @param push:  push flag
-         * @param pull:  pull flag
-         **/
-        public Permissions(boolean admin, boolean push, boolean pull) {
-            this.admin = admin;
-            this.push = push;
-            this.pull = pull;
-        }
-
-        /**
-         * Constructor to init a {@link Permissions}
-         *
-         * @param jPermissions: permissions details as {@link JSONObject}
-         **/
-        public Permissions(JSONObject jPermissions) {
-            JsonHelper hRepoPermissions = new JsonHelper(jPermissions);
-            admin = hRepoPermissions.getBoolean("admin");
-            push = hRepoPermissions.getBoolean("push");
-            pull = hRepoPermissions.getBoolean("pull");
-        }
-
-        /**
-         * Method to get {@link #admin} instance <br>
-         * Any params required
-         *
-         * @return {@link #admin} instance as boolean
-         **/
-        public boolean isAdmin() {
-            return admin;
-        }
-
-        /**
-         * Method to get {@link #push} instance <br>
-         * Any params required
-         *
-         * @return {@link #push} instance as boolean
-         **/
-        public boolean isPush() {
-            return push;
-        }
-
-        /**
-         * Method to get {@link #pull} instance <br>
-         * Any params required
-         *
-         * @return {@link #pull} instance as boolean
-         **/
-        public boolean isPull() {
-            return pull;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }
