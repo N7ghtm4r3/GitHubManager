@@ -33,6 +33,10 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
  *         <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#list-selected-repositories-for-an-organization-secret">
  *             List selected repositories for an organization secret</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret">
+ *             List selected repositories for a user secret</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  * @see GitHubList

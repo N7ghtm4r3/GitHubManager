@@ -50,11 +50,6 @@ public class GitHubCodespacesManager extends GitHubManager {
     public static final String PULLS_PATH = "/pulls/";
 
     /**
-     * {@code USER_CODESPACES_PATH} constant for {@code "user/codespaces"} path
-     **/
-    public static final String USER_CODESPACES_PATH = USER_PATH + CODESPACES_PATH;
-
-    /**
      * {@code EXPORTS_PATH} constant for {@code "/exports"} path
      **/
     public static final String EXPORTS_PATH = "/exports";

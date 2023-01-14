@@ -51,6 +51,14 @@ import static java.util.Base64.getEncoder;
  *         <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#get-an-organization-secret">
  *             Get an organization secret</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/repository-secrets#get-a-repository-secret">
+ *             Get a repository secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/codespaces/secrets#get-a-secret-for-the-authenticated-user">
+ *             Get a secret for the authenticated user</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/
@@ -203,7 +211,7 @@ public class Secret extends GitHubResponse {
         LazySodiumJava lazySodium = new LazySodiumJava(new SodiumJava(), UTF_8);
         String ciphertext = lazySodium.cryptoBoxSealEasy(secretValue, fromBase64String(publicKey.getKey()));
         extraParams.addParam("encrypted_value", getEncoder().encodeToString(ciphertext.getBytes(UTF_8)));
-        extraParams.addParam("key_id", publicKey.getKeyId());
+        extraParams.addParam("key_id", "" + publicKey.getKeyId());
         return extraParams;
     }
 

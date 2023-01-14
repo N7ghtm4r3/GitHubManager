@@ -17,6 +17,7 @@ import java.util.Properties;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
+import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespacesManager.CODESPACES_PATH;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
@@ -99,6 +100,16 @@ public class GitHubManager {
      * {@code PUBLIC_KEY_PATH} constant for {@code "/public-key"} path
      **/
     public static final String PUBLIC_KEY_PATH = "/public-key";
+
+    /**
+     * {@code CODESPACES_SECRETS_PATH} constant for {@code "/codespaces/secrets"} path
+     **/
+    public static final String CODESPACES_SECRETS_PATH = CODESPACES_PATH + SECRETS_PATH;
+
+    /**
+     * {@code USER_CODESPACES_PATH} constant for {@code "user/codespaces"} path
+     **/
+    public static final String USER_CODESPACES_PATH = USER_PATH + CODESPACES_PATH;
 
     /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without

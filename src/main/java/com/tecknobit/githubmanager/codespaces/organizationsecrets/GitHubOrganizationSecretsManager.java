@@ -20,7 +20,6 @@ import static com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKe
 import static com.tecknobit.githubmanager.actions.secrets.records.Secret.createSecretPayload;
 import static com.tecknobit.githubmanager.actions.secrets.records.Secret.returnSecret;
 import static com.tecknobit.githubmanager.actions.secrets.records.SecretsList.returnSecretsList;
-import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespacesManager.CODESPACES_PATH;
 import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
 
 /**
@@ -32,11 +31,6 @@ import static com.tecknobit.githubmanager.records.repository.RepositoriesList.re
  * @see GitHubManager
  **/
 public class GitHubOrganizationSecretsManager extends GitHubManager {
-
-    /**
-     * {@code CODESPACES_SECRETS_PATH} constant for {@code "/codespaces/secrets"} path
-     **/
-    public static final String CODESPACES_SECRETS_PATH = CODESPACES_PATH + SECRETS_PATH;
 
     /**
      * Constructor to init a {@link GitHubOrganizationSecretsManager}
@@ -757,7 +751,6 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
         GitHubPublicKey key = getOrganizationPublicKey(org);
         Params payload = new Params();
         payload.addParam("visibility", visibility.toString());
-        payload.addParam("key_id", key.getKeyId());
         if (repositoryIds != null)
             payload.addParam("selected_repository_ids", repositoryIds);
         try {
