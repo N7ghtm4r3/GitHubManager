@@ -442,14 +442,18 @@ public class User extends GitHubResponse {
     }
 
     /**
-     * Returns a string representation of the object <br>
-     * Any params required
+     * Method to create a users list
      *
-     * @return a string representation of the object as {@link String}
-     */
-    @Override
-    public String toString() {
-        return new JSONObject(this).toString();
+     * @param jUsers: obtained from GitHub's response
+     * @return users list as {@link ArrayList} of {@link User}
+     **/
+    @Returner
+    public static ArrayList<User> returnUsersList(JSONArray jUsers) {
+        ArrayList<User> users = new ArrayList<>();
+        if (jUsers != null)
+            for (int j = 0; j < jUsers.length(); j++)
+                users.add(new User(jUsers.getJSONObject(j)));
+        return users;
     }
 
     /**
@@ -465,14 +469,21 @@ public class User extends GitHubResponse {
             case JSON:
                 return (T) new JSONArray(usersResponse);
             case LIBRARY_OBJECT:
-                ArrayList<User> users = new ArrayList<>();
-                JSONArray jUsers = new JSONArray(usersResponse);
-                for (int j = 0; j < jUsers.length(); j++)
-                    users.add(new User(jUsers.getJSONObject(j)));
-                return (T) users;
+                return (T) returnUsersList(new JSONArray(usersResponse));
             default:
                 return (T) usersResponse;
         }
+    }
+
+    /**
+     * Returns a string representation of the object <br>
+     * Any params required
+     *
+     * @return a string representation of the object as {@link String}
+     */
+    @Override
+    public String toString() {
+        return new JSONObject(this).toString();
     }
 
 }

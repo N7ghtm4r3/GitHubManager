@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.checks.records;
 
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRun;
-import com.tecknobit.githubmanager.records.generic.PullRequest;
+import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
@@ -61,7 +61,7 @@ public class Check extends BaseResponseDetails {
     /**
      * {@code pullRequests} pull requests list of the check run
      **/
-    protected final ArrayList<PullRequest> pullRequests;
+    protected final ArrayList<MinimalPullRequest> pullRequests;
 
     /**
      * {@code app} app of the check run
@@ -81,7 +81,7 @@ public class Check extends BaseResponseDetails {
      * @param app          : app of the check run
      **/
     public Check(long id, String name, String url, String headSha, String nodeId, CheckStatus status,
-                 ArrayList<PullRequest> pullRequests, GitHubApp app) {
+                 ArrayList<MinimalPullRequest> pullRequests, GitHubApp app) {
         super(id, name, url);
         this.headSha = headSha;
         this.nodeId = nodeId;
@@ -104,7 +104,7 @@ public class Check extends BaseResponseDetails {
         pullRequests = new ArrayList<>();
         JSONArray jPullRequests = hResponse.getJSONArray("pull_requests", new JSONArray());
         for (int j = 0; j < jPullRequests.length(); j++)
-            pullRequests.add(new PullRequest(jPullRequests.getJSONObject(j)));
+            pullRequests.add(new MinimalPullRequest(jPullRequests.getJSONObject(j)));
     }
 
     /**
@@ -151,9 +151,9 @@ public class Check extends BaseResponseDetails {
      * Method to get {@link #pullRequests} instance <br>
      * Any params required
      *
-     * @return {@link #pullRequests} instance as {@link Collection} of {@link PullRequest}
+     * @return {@link #pullRequests} instance as {@link Collection} of {@link MinimalPullRequest}
      **/
-    public Collection<PullRequest> getPullRequests() {
+    public Collection<MinimalPullRequest> getPullRequests() {
         return pullRequests;
     }
 

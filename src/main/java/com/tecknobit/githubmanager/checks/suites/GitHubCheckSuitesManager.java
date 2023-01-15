@@ -17,7 +17,6 @@ import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.checks.runs.GitHubCheckRunsManager.COMMITS_PATH;
 import static com.tecknobit.githubmanager.checks.runs.GitHubCheckRunsManager.REREQUEST_PATH;
 
 /**

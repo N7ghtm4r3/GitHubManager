@@ -473,7 +473,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
     }
 
     /**
-     * Method to create a collaborators suites list
+     * Method to create a collaborators list
      *
      * @param collaboratorsListResponse: obtained from GitHub's response
      * @param format:                    return type formatter -> {@link ReturnFormat}

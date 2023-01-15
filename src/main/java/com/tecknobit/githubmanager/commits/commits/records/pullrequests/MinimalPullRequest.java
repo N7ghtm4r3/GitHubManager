@@ -1,15 +1,15 @@
-package com.tecknobit.githubmanager.records.generic;
+package com.tecknobit.githubmanager.commits.commits.records.pullrequests;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import org.json.JSONObject;
 
 /**
- * The {@code PullRequest} class is useful to format a GitHub's pull request
+ * The {@code MinimalPullRequest} class is useful to format a GitHub's minimal pull request
  *
  * @author N7ghtm4r3 - Tecknobit
  **/
-public class PullRequest {
+public class MinimalPullRequest {
 
     /**
      * {@code id} identifier value
@@ -29,15 +29,15 @@ public class PullRequest {
     /**
      * {@code "head"} value
      **/
-    private final PullRequestPart head;
+    private final MinimalPullRequestPart head;
 
     /**
      * {@code "base"} value
      **/
-    private final PullRequestPart base;
+    private final MinimalPullRequestPart base;
 
     /**
-     * Constructor to init a {@link PullRequest}
+     * Constructor to init a {@link MinimalPullRequest}
      *
      * @param id     : identifier value
      * @param number : number value
@@ -45,7 +45,7 @@ public class PullRequest {
      * @param head:  head value
      * @param base:  base value
      **/
-    public PullRequest(long id, int number, String url, PullRequestPart head, PullRequestPart base) {
+    public MinimalPullRequest(long id, int number, String url, MinimalPullRequestPart head, MinimalPullRequestPart base) {
         this.id = id;
         this.number = number;
         this.url = url;
@@ -54,17 +54,17 @@ public class PullRequest {
     }
 
     /**
-     * Constructor to init a {@link PullRequest}
+     * Constructor to init a {@link MinimalPullRequest}
      *
      * @param jPullRequest : pull request details as {@link JSONObject}
      **/
-    public PullRequest(JSONObject jPullRequest) {
+    public MinimalPullRequest(JSONObject jPullRequest) {
         JsonHelper hPullRequest = new JsonHelper(jPullRequest);
         id = hPullRequest.getLong("id", 0);
         number = hPullRequest.getInt("number", 0);
         url = hPullRequest.getString("url");
-        head = new PullRequestPart(hPullRequest.getJSONObject("head", new JSONObject()));
-        base = new PullRequestPart(hPullRequest.getJSONObject("base", new JSONObject()));
+        head = new MinimalPullRequestPart(hPullRequest.getJSONObject("head", new JSONObject()));
+        base = new MinimalPullRequestPart(hPullRequest.getJSONObject("base", new JSONObject()));
     }
 
     /**
@@ -101,9 +101,9 @@ public class PullRequest {
      * Method to get {@link #head} instance <br>
      * Any params required
      *
-     * @return {@link #head} instance as {@link PullRequestPart}
+     * @return {@link #head} instance as {@link MinimalPullRequestPart}
      **/
-    public PullRequestPart getHead() {
+    public MinimalPullRequestPart getHead() {
         return head;
     }
 
@@ -111,9 +111,9 @@ public class PullRequest {
      * Method to get {@link #base} instance <br>
      * Any params required
      *
-     * @return {@link #base} instance as {@link PullRequestPart}
+     * @return {@link #base} instance as {@link MinimalPullRequestPart}
      **/
-    public PullRequestPart getBase() {
+    public MinimalPullRequestPart getBase() {
         return base;
     }
 
@@ -129,11 +129,11 @@ public class PullRequest {
     }
 
     /**
-     * The {@code PullRequest} class is useful to format a GitHub's pull request part
+     * The {@code MinimalPullRequest} class is useful to format a GitHub's pull request part
      *
      * @author N7ghtm4r3 - Tecknobit
      **/
-    public static class PullRequestPart {
+    public static class MinimalPullRequestPart {
 
         /**
          * {@code "sha"} value
@@ -151,24 +151,24 @@ public class PullRequest {
         private final BaseResponseDetails repo;
 
         /**
-         * Constructor to init a {@link PullRequestPart}
+         * Constructor to init a {@link MinimalPullRequestPart}
          *
          * @param sha   : sha value
          * @param ref   : ref value
          * @param repo: repo value
          **/
-        public PullRequestPart(String sha, String ref, BaseResponseDetails repo) {
+        public MinimalPullRequestPart(String sha, String ref, BaseResponseDetails repo) {
             this.sha = sha;
             this.ref = ref;
             this.repo = repo;
         }
 
         /**
-         * Constructor to init a {@link PullRequestPart}
+         * Constructor to init a {@link MinimalPullRequestPart}
          *
          * @param jPullRequestPart: pull request part details as {@link JSONObject}
          **/
-        public PullRequestPart(JSONObject jPullRequestPart) {
+        public MinimalPullRequestPart(JSONObject jPullRequestPart) {
             JsonHelper hHead = new JsonHelper(jPullRequestPart);
             sha = hHead.getString("sha");
             ref = hHead.getString("ref");

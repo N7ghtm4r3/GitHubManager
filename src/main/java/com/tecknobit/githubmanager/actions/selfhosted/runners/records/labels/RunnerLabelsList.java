@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * The {@code LabelsList} class is useful to format a GitHub's labels list
+ * The {@code RunnerLabelsList} class is useful to format a GitHub's labels list
  *
  * @author N7ghtm4r3 - Tecknobit
  * @apiNote see the official documentation at:
@@ -74,54 +74,54 @@ import java.util.Collection;
  * @see GitHubResponse
  * @see GitHubList
  **/
-public class LabelsList extends GitHubList {
+public class RunnerLabelsList extends GitHubList {
 
     /**
      * {@code labels} labels list
      **/
-    private final ArrayList<GitHubLabel> labels;
+    private final ArrayList<RunnerLabel> labels;
 
     /**
-     * Constructor to init an {@link LabelsList}
+     * Constructor to init an {@link RunnerLabelsList}
      *
      * @param labels: labels list
      **/
-    public LabelsList(ArrayList<GitHubLabel> labels) {
+    public RunnerLabelsList(ArrayList<RunnerLabel> labels) {
         super(labels.size());
         this.labels = labels;
     }
 
     /**
-     * Constructor to init an {@link LabelsList}
+     * Constructor to init an {@link RunnerLabelsList}
      *
      * @param totalCount : total number of the labels in the list
      * @param labels:    labels list
      **/
-    public LabelsList(int totalCount, ArrayList<GitHubLabel> labels) {
+    public RunnerLabelsList(int totalCount, ArrayList<RunnerLabel> labels) {
         super(totalCount);
         this.labels = labels;
     }
 
     /**
-     * Constructor to init a {@link LabelsList}
+     * Constructor to init a {@link RunnerLabelsList}
      *
      * @param jLabelsList : labels list details as {@link JSONObject}
      **/
-    public LabelsList(JSONObject jLabelsList) {
+    public RunnerLabelsList(JSONObject jLabelsList) {
         super(jLabelsList);
         labels = new ArrayList<>();
         JSONArray jLabels = hResponse.getJSONArray("labels", new JSONArray());
         for (int j = 0; j < jLabels.length(); j++)
-            labels.add(new GitHubLabel(jLabels.getJSONObject(j)));
+            labels.add(new RunnerLabel(jLabels.getJSONObject(j)));
     }
 
     /**
      * Method to get {@link #labels} instance <br>
      * Any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link GitHubLabel}
+     * @return {@link #labels} instance as {@link Collection} of {@link RunnerLabel}
      **/
-    public Collection<GitHubLabel> getLabels() {
+    public Collection<RunnerLabel> getLabels() {
         return labels;
     }
 

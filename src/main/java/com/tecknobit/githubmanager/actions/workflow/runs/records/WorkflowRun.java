@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status;
-import com.tecknobit.githubmanager.records.generic.PullRequest;
+import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
@@ -99,7 +99,7 @@ public class WorkflowRun extends BaseResponseDetails {
     /**
      * {@code pullRequests} pull requests list
      **/
-    private final ArrayList<PullRequest> pullRequests;
+    private final ArrayList<MinimalPullRequest> pullRequests;
 
     /**
      * {@code createdAt} created at value
@@ -231,7 +231,7 @@ public class WorkflowRun extends BaseResponseDetails {
      **/
     public WorkflowRun(long id, String name, String nodeId, long checkSuiteId, String checkSuiteNodeId, String headBranch,
                        String headSha, String path, int runNumber, String event, String displayTitle, Status status,
-                       long workflowId, String url, String htmlUrl, ArrayList<PullRequest> pullRequests, String createdAt,
+                       long workflowId, String url, String htmlUrl, ArrayList<MinimalPullRequest> pullRequests, String createdAt,
                        String updatedAt, User actor, int runAttempt, ArrayList<ReferencedWorkflow> referencedWorkflows,
                        String runStartedAt, User triggeringActor, String jobsUrl, String logsUrl, String checkSuiteUrl,
                        String artifactsUrl, String cancelUrl, String rerunUrl, String previousAttemptUrl, String workflowUrl,
@@ -292,7 +292,7 @@ public class WorkflowRun extends BaseResponseDetails {
         pullRequests = new ArrayList<>();
         JSONArray jPullRequests = hResponse.getJSONArray("pull_requests", new JSONArray());
         for (int j = 0; j < jPullRequests.length(); j++)
-            pullRequests.add(new PullRequest(jPullRequests.getJSONObject(j)));
+            pullRequests.add(new MinimalPullRequest(jPullRequests.getJSONObject(j)));
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");
         actor = new User(hResponse.getJSONObject("actor", new JSONObject()));
@@ -440,9 +440,9 @@ public class WorkflowRun extends BaseResponseDetails {
      * Method to get {@link #pullRequests} instance <br>
      * Any params required
      *
-     * @return {@link #pullRequests} instance as {@link Collection} of {@link PullRequest}
+     * @return {@link #pullRequests} instance as {@link Collection} of {@link MinimalPullRequest}
      **/
-    public Collection<PullRequest> getPullRequests() {
+    public Collection<MinimalPullRequest> getPullRequests() {
         return pullRequests;
     }
 

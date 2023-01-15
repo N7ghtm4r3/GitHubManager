@@ -112,6 +112,16 @@ public class GitHubManager {
     public static final String USER_CODESPACES_PATH = USER_PATH + CODESPACES_PATH;
 
     /**
+     * {@code COMMITS_QUERY_PATH} constant for {@code "/commits"} path
+     **/
+    public static final String COMMITS_PATH = "/commits";
+
+    /**
+     * {@code PULLS_PATH} constant for {@code "/pulls"} path
+     **/
+    public static final String PULLS_PATH = "/pulls";
+
+    /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
      * re-insert credentials
      **/

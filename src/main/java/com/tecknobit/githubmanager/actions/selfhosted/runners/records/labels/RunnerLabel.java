@@ -3,14 +3,14 @@ package com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.GitHubLabel.LabelType.read_only;
+import static com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.RunnerLabel.LabelType.read_only;
 
 /**
- * The {@code Label} class is useful to format a GitHub's label
+ * The {@code Label} class is useful to format a GitHub's runner label
  *
  * @author N7ghtm4r3 - Tecknobit
  **/
-public class GitHubLabel extends GitHubResponse {
+public class RunnerLabel extends GitHubResponse {
 
     /**
      * {@code type} type of the label
@@ -28,13 +28,13 @@ public class GitHubLabel extends GitHubResponse {
     private final String name;
 
     /**
-     * Constructor to init a {@link GitHubLabel}
+     * Constructor to init a {@link RunnerLabel}
      *
      * @param id:   identifier of the label
      * @param name: the name of the label
      * @param type: type of the label
      **/
-    public GitHubLabel(long id, String name, LabelType type) {
+    public RunnerLabel(long id, String name, LabelType type) {
         super(null);
         this.id = id;
         this.name = name;
@@ -42,11 +42,11 @@ public class GitHubLabel extends GitHubResponse {
     }
 
     /**
-     * Constructor to init a {@link GitHubLabel}
+     * Constructor to init a {@link RunnerLabel}
      *
      * @param jGitHubLabel : label details as {@link JSONObject}
      **/
-    public GitHubLabel(JSONObject jGitHubLabel) {
+    public RunnerLabel(JSONObject jGitHubLabel) {
         super(jGitHubLabel);
         id = hResponse.getLong("id", 0);
         name = hResponse.getString("name");
@@ -83,17 +83,41 @@ public class GitHubLabel extends GitHubResponse {
         return name;
     }
 
+    /**
+     * {@code LabelType} list of available label types
+     **/
     public enum LabelType {
 
+        /**
+         * {@code read_only} label type
+         **/
         read_only("read-only"),
+
+        /**
+         * {@code custom} label type
+         **/
         custom("custom");
 
+        /**
+         * {@code labelType} label type
+         **/
         private final String labelType;
 
+        /**
+         * Constructor to init {@link LabelType}
+         *
+         * @param labelType: label type
+         **/
         LabelType(String labelType) {
             this.labelType = labelType;
         }
 
+        /**
+         * Method to get {@link #labelType} instance <br>
+         * Any params required
+         *
+         * @return {@link #labelType} instance as {@link String}
+         **/
         @Override
         public String toString() {
             return labelType;

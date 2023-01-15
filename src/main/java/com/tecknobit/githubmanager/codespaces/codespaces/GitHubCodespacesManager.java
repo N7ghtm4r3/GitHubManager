@@ -45,9 +45,9 @@ public class GitHubCodespacesManager extends GitHubManager {
     public static final String CODESPACES_NEW_PATH = CODESPACES_PATH + "/new";
 
     /**
-     * {@code PULLS_PATH} constant for {@code "/pulls/"} path
+     * {@code PULLS_QUERY_PATH} constant for {@code "/pulls/"} path
      **/
-    public static final String PULLS_PATH = "/pulls/";
+    public static final String PULLS_QUERY_PATH = PULLS_PATH + "/";
 
     /**
      * {@code EXPORTS_PATH} constant for {@code "/exports"} path
@@ -1519,7 +1519,7 @@ public class GitHubCodespacesManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/{pull_number}/codespaces")
     public <T> T createCodespaceFromPullRequest(String owner, String repo, long pullNumber, Params bodyParams,
                                                 ReturnFormat format) throws IOException {
-        return returnCodespace(sendPostRequest(REPOS_PATH + owner + "/" + repo + PULLS_PATH + pullNumber
+        return returnCodespace(sendPostRequest(REPOS_PATH + owner + "/" + repo + PULLS_QUERY_PATH + pullNumber
                 + CODESPACES_PATH, bodyParams), format);
     }
 

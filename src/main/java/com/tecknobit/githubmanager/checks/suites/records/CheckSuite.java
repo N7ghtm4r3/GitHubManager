@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.checks.suites.records;
 
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.records.Check;
-import com.tecknobit.githubmanager.records.generic.PullRequest;
+import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
@@ -112,7 +112,7 @@ public class CheckSuite extends Check {
      * @param runsRerequestable    : whether check runs of the suite are requestable
      **/
     public CheckSuite(long id, String name, String url, String headSha, String nodeId, CheckStatus status,
-                      ArrayList<PullRequest> pullRequests, GitHubApp app, String headBranch,
+                      ArrayList<MinimalPullRequest> pullRequests, GitHubApp app, String headBranch,
                       CheckSuiteConclusion conclusion, String before, String after, String createdAt, String updatedAt,
                       CompleteRepository repository, int latestCheckRunsCount, String checkRunsUrl, boolean rerequestable,
                       boolean runsRerequestable) {

@@ -6,8 +6,8 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.branches.branches.records.Branch;
-import com.tecknobit.githubmanager.branches.branches.records.Branch.BranchCommit;
 import com.tecknobit.githubmanager.branches.branches.records.ForkBranch;
+import com.tecknobit.githubmanager.commits.commits.records.Commit;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -1232,7 +1232,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param repository: repository where merge the branch
      * @param base:       the name of the base branch that the head will be merged into
      * @param head:       the head to merge. This can be a branch name or a commit SHA1
-     * @return merge branch as {@link BranchCommit} custom object
+     * @return merge branch as {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1251,7 +1251,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/merges")
-    public BranchCommit mergeBranch(Repository repository, String base, String head) throws IOException {
+    public Commit mergeBranch(Repository repository, String base, String head) throws IOException {
         return mergeBranch(repository.getOwner().getLogin(), repository.getName(), base, head, LIBRARY_OBJECT);
     }
 
@@ -1291,7 +1291,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param base:  the name of the base branch that the head will be merged into
      * @param head:  the head to merge. This can be a branch name or a commit SHA1
-     * @return merge branch as {@link BranchCommit} custom object
+     * @return merge branch as {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1309,7 +1309,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/merges")
-    public BranchCommit mergeBranch(String owner, String repo, String base, String head) throws IOException {
+    public Commit mergeBranch(String owner, String repo, String base, String head) throws IOException {
         return mergeBranch(owner, repo, base, head, LIBRARY_OBJECT);
     }
 
@@ -1349,7 +1349,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param base:          the name of the base branch that the head will be merged into
      * @param head:          the head to merge. This can be a branch name or a commit SHA1
      * @param commitMessage: commit message to use for the merge commit. If omitted, a default message will be used
-     * @return merge branch as {@link BranchCommit} custom object
+     * @return merge branch as {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1368,7 +1368,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/merges")
-    public BranchCommit mergeBranch(Repository repository, String base, String head, String commitMessage) throws IOException {
+    public Commit mergeBranch(Repository repository, String base, String head, String commitMessage) throws IOException {
         return mergeBranch(repository.getOwner().getLogin(), repository.getName(), base, head, commitMessage,
                 LIBRARY_OBJECT);
     }
@@ -1412,7 +1412,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * @param base:          the name of the base branch that the head will be merged into
      * @param head:          the head to merge. This can be a branch name or a commit SHA1
      * @param commitMessage: commit message to use for the merge commit. If omitted, a default message will be used
-     * @return merge branch as {@link BranchCommit} custom object
+     * @return merge branch as {@link com.tecknobit.githubmanager.commits.commits.records.Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1430,8 +1430,8 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/merges")
-    public BranchCommit mergeBranch(String owner, String repo, String base, String head,
-                                    String commitMessage) throws IOException {
+    public Commit mergeBranch(String owner, String repo, String base, String head,
+                              String commitMessage) throws IOException {
         return mergeBranch(owner, repo, base, head, commitMessage, LIBRARY_OBJECT);
     }
 
@@ -1474,7 +1474,7 @@ public class GitHubBranchesManager extends GitHubManager {
             case JSON:
                 return (T) new JSONObject(commitResponse);
             case LIBRARY_OBJECT:
-                return (T) new BranchCommit(new JSONObject(commitResponse));
+                return (T) new Commit(new JSONObject(commitResponse));
             default:
                 return (T) commitResponse;
         }

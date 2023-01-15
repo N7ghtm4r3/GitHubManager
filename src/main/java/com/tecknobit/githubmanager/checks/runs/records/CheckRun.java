@@ -4,7 +4,7 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.records.Check;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuite;
-import com.tecknobit.githubmanager.records.generic.PullRequest;
+import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
@@ -101,7 +101,7 @@ public class CheckRun extends Check {
     public CheckRun(long id, String name, String url, String headSha, String nodeId, long externalId, String htmlUrl,
                     String detailsUrl, CheckStatus status, CheckRunConclusion conclusion, String startedAt,
                     String completedAt, Output output, CheckSuite checkSuite, GitHubApp app,
-                    ArrayList<PullRequest> pullRequests) {
+                    ArrayList<MinimalPullRequest> pullRequests) {
         super(id, name, url, headSha, nodeId, status, pullRequests, app);
         this.externalId = externalId;
         this.htmlUrl = htmlUrl;

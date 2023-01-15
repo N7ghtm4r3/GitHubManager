@@ -25,6 +25,7 @@ import java.util.Collection;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.checks.suites.GitHubCheckSuitesManager.CHECK_SUITES_PATH;
+import static com.tecknobit.githubmanager.commits.commits.GitHubCommitsManager.COMMITS_QUERY_PATH;
 
 /**
  * The {@code GitHubCheckRunsManager} class is useful to manage all GitHub's check runs endpoints
@@ -50,11 +51,6 @@ public class GitHubCheckRunsManager extends GitHubManager {
      * {@code REREQUEST_PATH} constant for {@code "/rerequest"} path
      **/
     public static final String REREQUEST_PATH = "/rerequest";
-
-    /**
-     * {@code COMMITS_PATH} constant for {@code "/commits/"} path
-     **/
-    public static final String COMMITS_PATH = "/commits/";
 
     /**
      * Constructor to init a {@link GitHubCheckRunsManager}
@@ -2539,7 +2535,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{ref}/check-runs")
     public <T> T getGitReferenceCheckRuns(String owner, String repo, String ref, ReturnFormat format) throws Exception {
-        return returnCheckRunsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + COMMITS_PATH + ref +
+        return returnCheckRunsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + COMMITS_QUERY_PATH + ref +
                 CHECK_RUNS_PATH), format);
     }
 
@@ -2760,7 +2756,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{ref}/check-runs")
     public <T> T getGitReferenceCheckRuns(String owner, String repo, String ref, Params queryParams,
                                           ReturnFormat format) throws Exception {
-        return returnCheckRunsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + COMMITS_PATH + ref +
+        return returnCheckRunsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + COMMITS_QUERY_PATH + ref +
                 CHECK_RUNS_PATH + queryParams.createQueryString()), format);
     }
 

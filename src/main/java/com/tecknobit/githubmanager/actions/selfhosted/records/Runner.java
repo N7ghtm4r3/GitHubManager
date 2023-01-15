@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.actions.selfhosted.records;
 
-import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.GitHubLabel;
+import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.RunnerLabel;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -55,7 +55,7 @@ public class Runner extends GitHubResponse {
     /**
      * {@code labels} labels list
      **/
-    private final ArrayList<GitHubLabel> labels;
+    private final ArrayList<RunnerLabel> labels;
 
     /**
      * Constructor to init a {@link Runner}
@@ -67,7 +67,7 @@ public class Runner extends GitHubResponse {
      * @param busy:flag for busy value
      * @param labels:   labels list
      **/
-    public Runner(long id, String name, String os, String status, boolean busy, ArrayList<GitHubLabel> labels) {
+    public Runner(long id, String name, String os, String status, boolean busy, ArrayList<RunnerLabel> labels) {
         super(null);
         this.id = id;
         this.name = name;
@@ -92,7 +92,7 @@ public class Runner extends GitHubResponse {
         labels = new ArrayList<>();
         JSONArray jLabels = hResponse.getJSONArray("labels", new JSONArray());
         for (int j = 0; j < jLabels.length(); j++)
-            labels.add(new GitHubLabel(jLabels.getJSONObject(j)));
+            labels.add(new RunnerLabel(jLabels.getJSONObject(j)));
     }
 
     /**
@@ -149,9 +149,9 @@ public class Runner extends GitHubResponse {
      * Method to get {@link #labels} instance <br>
      * Any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link GitHubLabel}
+     * @return {@link #labels} instance as {@link Collection} of {@link RunnerLabel}
      **/
-    public Collection<GitHubLabel> getLabels() {
+    public Collection<RunnerLabel> getLabels() {
         return labels;
     }
 
