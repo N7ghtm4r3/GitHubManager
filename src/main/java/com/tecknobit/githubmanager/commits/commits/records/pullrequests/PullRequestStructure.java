@@ -19,38 +19,47 @@ public class PullRequestStructure extends GitHubResponse {
      * {@code url} of the pull request
      **/
     protected final String url;
+
     /**
      * {@code htmlUrl} html url of the pull request
      **/
     protected final String htmlUrl;
+
     /**
      * {@code id} id of the pull request
      **/
     protected final long id;
+
     /**
      * {@code nodeId} node identifier of the pull request
      **/
     protected final String nodeId;
+
     /**
      * {@code number} of the pull request
      **/
     protected final long number;
+
     /**
      * {@code state} of the pull request
      **/
     protected final PullRequestState state;
+
     /**
      * {@code title} of the pull request
      **/
     protected final String title;
+
     /**
      * {@code createdAt} creation time of the pull request
      **/
     protected final String createdAt;
+
     /**
      * {@code updatedAt} update time of the pull request
      **/
     protected final String updatedAt;
+
     /**
      * {@code closedAt} close time of the pull request
      **/

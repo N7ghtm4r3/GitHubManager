@@ -30,102 +30,127 @@ public class PullRequest extends PullRequestStructure {
      * {@code diffUrl} diff url of the pull request
      **/
     private final String diffUrl;
+
     /**
      * {@code patchUrl} patch url of the pull request
      **/
     private final String patchUrl;
+
     /**
      * {@code issueUrl} issue rl of the pull request
      **/
     private final String issueUrl;
+
     /**
      * {@code commitsUrl} commits url of the pull request
      **/
     private final String commitsUrl;
+
     /**
      * {@code reviewCommentsUrl} review comments url of the pull request
      **/
     private final String reviewCommentsUrl;
+
     /**
      * {@code reviewCommentUrl} review comment url of the pull request
      **/
     private final String reviewCommentUrl;
+
     /**
      * {@code commentsUrl} comments url of the pull request
      **/
     private final String commentsUrl;
+
     /**
      * {@code statusesUrl} statuses url of the pull request
      **/
     private final String statusesUrl;
+
     /**
      * {@code locked} whether the pull request is locked
      **/
     private final boolean locked;
+
     /**
      * {@code user} of the pull request
      **/
     private final User user;
+
     /**
      * {@code body} of the pull request
      **/
     private final String body;
+
     /**
      * {@code labels} of the pull request
      **/
     private final ArrayList<Label> labels;
+
     /**
      * {@code milestone} of the pull request
      **/
     private final Milestone milestone;
+
     /**
      * {@code activeLockReason} active lock reason of the pull request
      **/
     private final String activeLockReason;
+
     /**
      * {@code mergedAt} merged time of the pull request
      **/
     private final String mergedAt;
+
     /**
      * {@code mergeCommitSha} merge commit sha of the pull request
      **/
     private final String mergeCommitSha;
+
     /**
      * {@code assignee} of the pull request
      **/
     private final User assignee;
+
     /**
      * {@code assignees} of the pull request
      **/
     private final ArrayList<User> assignees;
+
     /**
      * {@code requestedReviewers} requested reviewers of the pull request
      **/
     private final ArrayList<User> requestedReviewers;
+
     /**
      * {@code requestedTeams} requested teams of the pull request
      **/
     private final ArrayList<Team> requestedTeams;
+
     /**
      * {@code head} of the pull request
      **/
     private final PullRequestPart head;
+
     /**
      * {@code base} of the pull request
      **/
     private final PullRequestPart base;
+
     /**
      * {@code _links} links of the pull request
      **/
     private final Links _links;
+
     /**
      * {@code authorAssociation} how the author is associated with the repository
      **/
     private final AuthorAssociation authorAssociation;
+
     /**
      * {@code autoMerge} the status of auto merging a pull request
      **/
     private final AutoMerge autoMerge;
+
     /**
      * {@code draft} indicates whether the pull request is a draft
      **/
@@ -1380,6 +1405,17 @@ public class PullRequest extends PullRequestStructure {
          **/
         public String getCommitMessage() {
             return commitMessage;
+        }
+
+        /**
+         * Returns a string representation of the object <br>
+         * Any params required
+         *
+         * @return a string representation of the object as {@link String}
+         */
+        @Override
+        public String toString() {
+            return new JSONObject(this).toString();
         }
 
         /**

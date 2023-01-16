@@ -24,50 +24,62 @@ public class CommitsComparison extends GitHubResponse {
      * {@code url} of the comparison
      **/
     private final String url;
+
     /**
      * {@code htmlUrl} html url of the comparison
      **/
     private final String htmlUrl;
+
     /**
      * {@code permanentLinkUrl} permanent link url of the comparison
      **/
     private final String permanentLinkUrl;
+
     /**
      * {@code diffUrl} diff url of the comparison
      **/
     private final String diffUrl;
+
     /**
      * {@code patchUrl} patch url of the comparison
      **/
     private final String patchUrl;
+
     /**
      * {@code baseCommit} base commit of the comparison
      **/
     private final Commit baseCommit;
+
     /**
      * {@code mergeBaseCommit} merge base commit of the comparison
      **/
     private final Commit mergeBaseCommit;
+
     /**
      * {@code status} of the comparison
      **/
     private final CommitStatus status;
+
     /**
      * {@code aheadBy} ahead by of the comparison
      **/
     private final int aheadBy;
+
     /**
      * {@code behindBy} behind by of the comparison
      **/
     private final int behindBy;
+
     /**
      * {@code totalCommits} total commits of the comparison
      **/
     private final int totalCommits;
+
     /**
      * {@code commits} list of {@link Commit}
      **/
     private final ArrayList<Commit> commits;
+
     /**
      * {@code files} list of {@link CommitFile}
      **/
