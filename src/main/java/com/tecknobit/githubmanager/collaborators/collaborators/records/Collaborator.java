@@ -20,6 +20,7 @@ public class Collaborator extends User {
      * {@code permissions} of the collaborator
      **/
     private final Permissions permissions;
+
     /**
      * {@code roleName} role name of the collaborator
      **/
