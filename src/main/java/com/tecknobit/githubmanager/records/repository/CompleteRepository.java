@@ -1,11 +1,11 @@
 package com.tecknobit.githubmanager.records.repository;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.generic.Permissions;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -887,8 +887,9 @@ public class CompleteRepository extends Repository {
      * @author N7ghtm4r3 - Tecknobit
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
      * List selected repositories enabled for GitHub Actions in an organization</a>
+     * @see InnerClassItem
      **/
-    public static class License {
+    public static class License extends InnerClassItem {
 
         /**
          * {@code "key"} value
@@ -931,6 +932,7 @@ public class CompleteRepository extends Repository {
          * @param htmlUrl: html url value
          **/
         public License(String key, String name, String url, String spdxId, String nodeId, String htmlUrl) {
+            super(null);
             this.key = key;
             this.name = name;
             this.url = url;
@@ -945,13 +947,13 @@ public class CompleteRepository extends Repository {
          * @param jLicense: license details as {@link JSONObject}
          **/
         public License(JSONObject jLicense) {
-            JsonHelper hLicense = new JsonHelper(jLicense);
-            key = hLicense.getString("key");
-            name = hLicense.getString("name");
-            url = hLicense.getString("url");
-            spdxId = hLicense.getString("spdx_id");
-            nodeId = hLicense.getString("node_id");
-            htmlUrl = hLicense.getString("html_url");
+            super(jLicense);
+            key = hItem.getString("key");
+            name = hItem.getString("name");
+            url = hItem.getString("url");
+            spdxId = hItem.getString("spdx_id");
+            nodeId = hItem.getString("node_id");
+            htmlUrl = hItem.getString("html_url");
         }
 
         /**
@@ -1012,17 +1014,6 @@ public class CompleteRepository extends Repository {
          **/
         public String getHtmlUrl() {
             return htmlUrl;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

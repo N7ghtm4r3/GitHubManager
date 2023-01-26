@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.actions.workflow.jobs.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -424,8 +424,9 @@ public class Job extends BaseResponseDetails {
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-jobs#get-a-job-for-a-workflow-run">
      * Get a job for a workflow run</a>
      * @see GitHubResponse
+     * @see InnerClassItem
      **/
-    public static class Step {
+    public static class Step extends InnerClassItem {
 
         /**
          * {@code name} the name of the job
@@ -468,6 +469,7 @@ public class Job extends BaseResponseDetails {
          * @param completedAt : the time that the job finished, in ISO 8601 format
          **/
         public Step(String name, Status status, Conclusion conclusion, int number, String startedAt, String completedAt) {
+            super(null);
             this.name = name;
             this.status = status;
             this.conclusion = conclusion;
@@ -482,13 +484,13 @@ public class Job extends BaseResponseDetails {
          * @param jStep : step details as {@link JSONObject}
          **/
         public Step(JSONObject jStep) {
-            JsonHelper hStep = new JsonHelper(jStep);
-            name = hStep.getString("name");
-            status = Status.valueOf(hStep.getString("status", Status.in_progress.toString()));
-            conclusion = Conclusion.valueOf(hStep.getString("conclusion"));
-            number = hStep.getInt("number", 0);
-            startedAt = hStep.getString("started_at");
-            completedAt = hStep.getString("completed_at");
+            super(jStep);
+            name = hItem.getString("name");
+            status = Status.valueOf(hItem.getString("status", Status.in_progress.toString()));
+            conclusion = Conclusion.valueOf(hItem.getString("conclusion"));
+            number = hItem.getInt("number", 0);
+            startedAt = hItem.getString("started_at");
+            completedAt = hItem.getString("completed_at");
         }
 
         /**
@@ -569,17 +571,6 @@ public class Job extends BaseResponseDetails {
          **/
         public long getCompletedAtTimestamp() {
             return getDateTimestamp(completedAt);
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

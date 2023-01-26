@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.actions.artifacts.records;
 
 import com.tecknobit.apimanager.apis.APIRequest;
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -259,8 +259,9 @@ public class Artifact extends BaseResponseDetails {
      * @author N7ghtm4r3 - Tecknobit
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#about-the-artifacts-api">
      * About the Artifacts API</a>
+     * @see InnerClassItem
      **/
-    public static class ArtifactWorkflowRun {
+    public static class ArtifactWorkflowRun extends InnerClassItem {
 
         /**
          * {@code id} identifier of the workflow run
@@ -297,6 +298,7 @@ public class Artifact extends BaseResponseDetails {
          * @param headSha:          head sha value es. -> 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
          **/
         public ArtifactWorkflowRun(long id, long repositoryId, long headRepositoryId, String headBranch, String headSha) {
+            super(null);
             this.id = id;
             this.repositoryId = repositoryId;
             this.headRepositoryId = headRepositoryId;
@@ -310,12 +312,12 @@ public class Artifact extends BaseResponseDetails {
          * @param jWorkflowRun: workflow run details as {@link JSONObject}
          **/
         public ArtifactWorkflowRun(JSONObject jWorkflowRun) {
-            JsonHelper hWorkflowRun = new JsonHelper(jWorkflowRun);
-            id = hWorkflowRun.getLong("id", 0);
-            repositoryId = hWorkflowRun.getLong("repository_id", 0);
-            headRepositoryId = hWorkflowRun.getLong("head_repository_id", 0);
-            headBranch = hWorkflowRun.getString("head_branch");
-            headSha = hWorkflowRun.getString("head_sha");
+            super(jWorkflowRun);
+            id = hItem.getLong("id", 0);
+            repositoryId = hItem.getLong("repository_id", 0);
+            headRepositoryId = hItem.getLong("head_repository_id", 0);
+            headBranch = hItem.getString("head_branch");
+            headSha = hItem.getString("head_sha");
         }
 
         /**
@@ -366,17 +368,6 @@ public class Artifact extends BaseResponseDetails {
          **/
         public String getHeadSha() {
             return headSha;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

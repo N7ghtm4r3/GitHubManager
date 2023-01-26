@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.webhooks.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -324,8 +324,9 @@ public class Delivery extends GitHubResponse {
      * The {@code Request} class is useful to format a GitHub's request for a delivery
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Request {
+    public static class Request extends InnerClassItem {
 
         /**
          * {@code headers} the response headers received when the delivery was made
@@ -354,6 +355,7 @@ public class Delivery extends GitHubResponse {
          * @param payload : the response payload received
          **/
         public Request(HashMap<String, String> headers, String payload) {
+            super(null);
             this.headers = headers;
             this.payload = payload;
         }
@@ -364,16 +366,16 @@ public class Delivery extends GitHubResponse {
          * @param jRequest : request details as {@link JSONObject}
          **/
         public Request(JSONObject jRequest) {
-            JsonHelper hRequest = new JsonHelper(jRequest);
+            super(jRequest);
             headers = new HashMap<>();
-            JSONObject jHeaders = hRequest.getJSONObject("headers", new JSONObject());
+            JSONObject jHeaders = hItem.getJSONObject("headers", new JSONObject());
             for (String key : jHeaders.keySet())
                 headers.put(key, jHeaders.getString(key));
             String tmpPayload;
             try {
-                tmpPayload = hRequest.getJSONObject("payload", null).toString();
+                tmpPayload = hItem.getJSONObject("payload", null).toString();
             } catch (Exception e) {
-                tmpPayload = hRequest.getString("payload");
+                tmpPayload = hItem.getString("payload");
             }
             payload = tmpPayload;
         }
@@ -406,17 +408,6 @@ public class Delivery extends GitHubResponse {
          **/
         public JSONObject getJSONPayload() {
             return new JSONObject(payload);
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

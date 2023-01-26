@@ -32,38 +32,47 @@ public class Invitation extends GitHubResponse {
      * {@code id} unique identifier of the repository invitation
      **/
     private final long id;
+
     /**
      * {@code nodeId} unique node identifier
      **/
     private final String nodeId;
+
     /**
      * {@code repository} of the invitation
      **/
     private final Repository repository;
+
     /**
      * {@code invitee} of the invitation
      **/
     private final User invitee;
+
     /**
      * {@code inviter} of the invitation
      **/
     private final User inviter;
+
     /**
      * {@code permissions} the permission associated with the invitation
      **/
     private final CollaboratorPermission permissions;
+
     /**
      * {@code createdAt} creation time of the invitation
      **/
     private final String createdAt;
+
     /**
      * {@code expired} whether or not the invitation has expired
      **/
     private final boolean expired;
+
     /**
      * {@code url} for the repository invitation
      **/
     private final String url;
+
     /**
      * {@code htmlUrl} html url of the repository invitation
      **/
@@ -115,25 +124,6 @@ public class Invitation extends GitHubResponse {
         expired = hResponse.getBoolean("expired");
         url = hResponse.getString("url");
         htmlUrl = hResponse.getString("html_url");
-    }
-
-    /**
-     * Method to create an invitation
-     *
-     * @param invitationResponse: obtained from GitHub's response
-     * @param format:             return type formatter -> {@link ReturnFormat}
-     * @return invitation as {@code "format"} defines
-     **/
-    @Returner
-    public static <T> T returnInvitation(String invitationResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(invitationResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Invitation(new JSONObject(invitationResponse));
-            default:
-                return (T) invitationResponse;
-        }
     }
 
     /**
@@ -244,6 +234,25 @@ public class Invitation extends GitHubResponse {
      **/
     public String getHtmlUrl() {
         return htmlUrl;
+    }
+
+    /**
+     * Method to create an invitation
+     *
+     * @param invitationResponse: obtained from GitHub's response
+     * @param format:             return type formatter -> {@link ReturnFormat}
+     * @return invitation as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnInvitation(String invitationResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(invitationResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Invitation(new JSONObject(invitationResponse));
+            default:
+                return (T) invitationResponse;
+        }
     }
 
     /**

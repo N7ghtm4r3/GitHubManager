@@ -4,6 +4,7 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -372,8 +373,9 @@ public class BranchProtection extends GitHubResponse {
      * The {@code RequiredStatusCheck} class is useful to format a GitHub's required status check for {@link BranchProtection}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class RequiredStatusCheck {
+    public static class RequiredStatusCheck extends InnerClassItem {
 
         /**
          * {@code enforcementLevel} type of the enforcement level of the required status check
@@ -422,6 +424,7 @@ public class BranchProtection extends GitHubResponse {
          **/
         public RequiredStatusCheck(String enforcementLevel, ArrayList<String> contexts, ArrayList<Check> checks,
                                    String contextsUrl, boolean strict) {
+            super(null);
             this.enforcementLevel = enforcementLevel;
             this.contexts = contexts;
             this.contextsUrl = contextsUrl;
@@ -435,15 +438,15 @@ public class BranchProtection extends GitHubResponse {
          * @param jRequiredStatusCheck : required status check details as {@link JSONObject}
          **/
         public RequiredStatusCheck(JSONObject jRequiredStatusCheck) {
-            JsonHelper hRequiredStatusCheck = new JsonHelper(jRequiredStatusCheck);
-            enforcementLevel = hRequiredStatusCheck.getString("enforcement_level");
-            contexts = returnStringsList(hRequiredStatusCheck.getJSONArray("contexts"));
+            super(jRequiredStatusCheck);
+            enforcementLevel = hItem.getString("enforcement_level");
+            contexts = returnStringsList(hItem.getJSONArray("contexts"));
             checks = new ArrayList<>();
-            JSONArray jChecks = hRequiredStatusCheck.getJSONArray("checks", new JSONArray());
+            JSONArray jChecks = hItem.getJSONArray("checks", new JSONArray());
             for (int j = 0; j < jChecks.length(); j++)
                 checks.add(new Check(jChecks.getJSONObject(j)));
-            contextsUrl = hRequiredStatusCheck.getString("contexts_url");
-            strict = hRequiredStatusCheck.getBoolean("strict");
+            contextsUrl = hItem.getString("contexts_url");
+            strict = hItem.getBoolean("strict");
         }
 
         /**
@@ -497,22 +500,12 @@ public class BranchProtection extends GitHubResponse {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code Check} class is useful to format a GitHub's check for {@link RequiredStatusCheck}
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class Check {
+        public static class Check extends InnerClassItem {
 
             /**
              * {@code context} of the check
@@ -535,6 +528,7 @@ public class BranchProtection extends GitHubResponse {
              * @param appId   : app identifier of the check
              **/
             public Check(String context, long appId) {
+                super(null);
                 this.context = context;
                 this.appId = appId;
             }
@@ -545,9 +539,9 @@ public class BranchProtection extends GitHubResponse {
              * @param jCheck : check details as {@link JSONObject}
              **/
             public Check(JSONObject jCheck) {
-                JsonHelper hCheck = new JsonHelper(jCheck);
-                context = hCheck.getString("context");
-                appId = hCheck.getLong("app_id", 0);
+                super(jCheck);
+                context = hItem.getString("context");
+                appId = hItem.getLong("app_id", 0);
             }
 
             /**
@@ -570,17 +564,6 @@ public class BranchProtection extends GitHubResponse {
                 return appId;
             }
 
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
-            }
-
         }
 
     }
@@ -589,8 +572,9 @@ public class BranchProtection extends GitHubResponse {
      * The {@code ProtectionItem} class is useful to format a GitHub's protection item of the {@link BranchProtection}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class ProtectionItem {
+    public static class ProtectionItem extends InnerClassItem {
 
         /**
          * {@code url} of the protection item
@@ -609,6 +593,7 @@ public class BranchProtection extends GitHubResponse {
          * @param enabled : whether the protection item is enabled
          **/
         public ProtectionItem(String url, boolean enabled) {
+            super(null);
             this.url = url;
             this.enabled = enabled;
         }
@@ -619,9 +604,9 @@ public class BranchProtection extends GitHubResponse {
          * @param jProtectionItem : protection item details as {@link JSONObject}
          **/
         public ProtectionItem(JSONObject jProtectionItem) {
-            JsonHelper hProtectionItem = new JsonHelper(jProtectionItem);
-            url = hProtectionItem.getString("url");
-            enabled = hProtectionItem.getBoolean("enabled");
+            super(jProtectionItem);
+            url = hItem.getString("url");
+            enabled = hItem.getBoolean("enabled");
         }
 
         /**
@@ -644,17 +629,6 @@ public class BranchProtection extends GitHubResponse {
             return enabled;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
@@ -664,8 +638,9 @@ public class BranchProtection extends GitHubResponse {
      * @param <T> if you need to update the {@link RequiredPullRequestReviews} you can instantiate it with the
      *            {@link String} as type parameter, else you can simply use it with {@link Object} as type parameter
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class RequiredPullRequestReviews<T> {
+    public static class RequiredPullRequestReviews<T> extends InnerClassItem {
 
         /**
          * {@code url} of the required pull request reviews
@@ -716,6 +691,7 @@ public class BranchProtection extends GitHubResponse {
         public RequiredPullRequestReviews(String url, Restrictions<T> dismissalRestrictions, boolean dismissStaleReviews,
                                           boolean requireCodeOwnerReviews, int requiredApprovingReviewCount,
                                           boolean requireLastPushApproval, Restrictions<T> bypassPullRequestAllowances) {
+            super(null);
             this.url = url;
             this.dismissalRestrictions = dismissalRestrictions;
             this.dismissStaleReviews = dismissStaleReviews;
@@ -731,15 +707,15 @@ public class BranchProtection extends GitHubResponse {
          * @param jRequestReviews : required pull request reviews details as {@link JSONObject}
          **/
         public RequiredPullRequestReviews(JSONObject jRequestReviews) throws Exception {
-            JsonHelper hRequestReviews = new JsonHelper(jRequestReviews);
-            url = hRequestReviews.getString("url");
-            dismissalRestrictions = new Restrictions<>(hRequestReviews.getJSONObject("dismissal_restrictions",
+            super(jRequestReviews);
+            url = hItem.getString("url");
+            dismissalRestrictions = new Restrictions<>(hItem.getJSONObject("dismissal_restrictions",
                     new JSONObject()));
-            dismissStaleReviews = hRequestReviews.getBoolean("dismiss_stale_reviews");
-            requireCodeOwnerReviews = hRequestReviews.getBoolean("require_code_owner_reviews");
-            requiredApprovingReviewCount = hRequestReviews.getInt("required_approving_review_count", 0);
-            requireLastPushApproval = hRequestReviews.getBoolean("require_last_push_approval");
-            JSONObject jRequestAllowances = hRequestReviews.getJSONObject("bypass_pull_request_allowances");
+            dismissStaleReviews = hItem.getBoolean("dismiss_stale_reviews");
+            requireCodeOwnerReviews = hItem.getBoolean("require_code_owner_reviews");
+            requiredApprovingReviewCount = hItem.getInt("required_approving_review_count", 0);
+            requireLastPushApproval = hItem.getBoolean("require_last_push_approval");
+            JSONObject jRequestAllowances = hItem.getJSONObject("bypass_pull_request_allowances");
             if (jRequestAllowances != null)
                 bypassPullRequestAllowances = new Restrictions<>(jRequestAllowances);
             else
@@ -816,17 +792,6 @@ public class BranchProtection extends GitHubResponse {
             return bypassPullRequestAllowances;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
@@ -835,8 +800,9 @@ public class BranchProtection extends GitHubResponse {
      * @param <T> if you need to update the {@link Restrictions} you can instantiate it with the
      *            {@link String} as type parameter, else you can simply use it with {@link Object} as type parameter
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Restrictions<T> {
+    public static class Restrictions<T> extends InnerClassItem {
 
         /**
          * {@code url} of the restrictions
@@ -893,6 +859,7 @@ public class BranchProtection extends GitHubResponse {
          * @apiNote this constructor is useful when the {@link Restrictions} have to be updated
          **/
         public Restrictions(ArrayList<String> users, ArrayList<String> teams, ArrayList<String> apps) {
+            super(null);
             this.users = (ArrayList<T>) users;
             this.teams = (ArrayList<T>) teams;
             this.apps = (ArrayList<T>) apps;
@@ -915,6 +882,7 @@ public class BranchProtection extends GitHubResponse {
          **/
         public Restrictions(String url, String usersUrl, String teamsUrl, String appsUrl, ArrayList<User> users,
                             ArrayList<Team> teams, ArrayList<GitHubApp> apps) {
+            super(null);
             this.url = url;
             this.usersUrl = usersUrl;
             this.teamsUrl = teamsUrl;
@@ -930,14 +898,14 @@ public class BranchProtection extends GitHubResponse {
          * @param jRestrictions           : restrictions details as {@link JSONObject}
          **/
         public Restrictions(JSONObject jRestrictions) throws Exception {
-            JsonHelper hRestrictions = new JsonHelper(jRestrictions);
-            url = hRestrictions.getString("url");
-            usersUrl = hRestrictions.getString("users_url");
-            teamsUrl = hRestrictions.getString("teams_url");
-            appsUrl = hRestrictions.getString("apps_url");
-            users = returnUsersList(String.valueOf(hRestrictions.getJSONArray("users", new JSONArray())), LIBRARY_OBJECT);
-            teams = returnTeamsList(String.valueOf(hRestrictions.getJSONArray("teams", new JSONArray())), LIBRARY_OBJECT);
-            apps = returnAppsList(String.valueOf(hRestrictions.getJSONArray("apps", new JSONArray())), LIBRARY_OBJECT);
+            super(jRestrictions);
+            url = hItem.getString("url");
+            usersUrl = hItem.getString("users_url");
+            teamsUrl = hItem.getString("teams_url");
+            appsUrl = hItem.getString("apps_url");
+            users = returnUsersList(String.valueOf(hItem.getJSONArray("users", new JSONArray())), LIBRARY_OBJECT);
+            teams = returnTeamsList(String.valueOf(hItem.getJSONArray("teams", new JSONArray())), LIBRARY_OBJECT);
+            apps = returnAppsList(String.valueOf(hItem.getJSONArray("apps", new JSONArray())), LIBRARY_OBJECT);
         }
 
         /**
@@ -1008,17 +976,6 @@ public class BranchProtection extends GitHubResponse {
          **/
         public Collection<T> getApps() {
             return apps;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

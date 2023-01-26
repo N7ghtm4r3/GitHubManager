@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.billing.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
@@ -131,8 +131,9 @@ public class ActionsBilling extends GitHubResponse {
      * The {@code MinutesUsedBreakdown} class is useful to format a GitHub's minutes used breakdown for actions billing
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class MinutesUsedBreakdown {
+    public static class MinutesUsedBreakdown extends InnerClassItem {
 
         /**
          * {@code UBUNTU} total minutes used on Ubuntu runner machines
@@ -225,6 +226,7 @@ public class ActionsBilling extends GitHubResponse {
         public MinutesUsedBreakdown(int UBUNTU, int MACOS, int WINDOWS, int ubuntu4Core, int ubuntu8Core, int ubuntu16Core,
                                     int ubuntu32Core, int ubuntu64Core, int windows4Core, int windows8Core, int windows16Core,
                                     int windows32Core, int windows64Core, int total) {
+            super(null);
             this.UBUNTU = UBUNTU;
             this.MACOS = MACOS;
             this.WINDOWS = WINDOWS;
@@ -247,21 +249,21 @@ public class ActionsBilling extends GitHubResponse {
          * @param jBreakdown : minutes used breakdown details as {@link JSONObject}
          **/
         public MinutesUsedBreakdown(JSONObject jBreakdown) {
-            JsonHelper hBreakdown = new JsonHelper(jBreakdown);
-            UBUNTU = hBreakdown.getInt("UBUNTU", 0);
-            MACOS = hBreakdown.getInt("MACOS", 0);
-            WINDOWS = hBreakdown.getInt("WINDOWS", 0);
-            ubuntu4Core = hBreakdown.getInt("ubuntu_4_core", 0);
-            ubuntu8Core = hBreakdown.getInt("ubuntu_8_core", 0);
-            ubuntu16Core = hBreakdown.getInt("ubuntu_16_core", 0);
-            ubuntu32Core = hBreakdown.getInt("ubuntu_32_core", 0);
-            ubuntu64Core = hBreakdown.getInt("ubuntu_64_core", 0);
-            windows4Core = hBreakdown.getInt("windows_4_core", 0);
-            windows8Core = hBreakdown.getInt("windows_8_core", 0);
-            windows16Core = hBreakdown.getInt("windows_16_core", 0);
-            windows32Core = hBreakdown.getInt("windows_32_core", 0);
-            windows64Core = hBreakdown.getInt("windows_64_core", 0);
-            total = hBreakdown.getInt("total", 0);
+            super(jBreakdown);
+            UBUNTU = hItem.getInt("UBUNTU", 0);
+            MACOS = hItem.getInt("MACOS", 0);
+            WINDOWS = hItem.getInt("WINDOWS", 0);
+            ubuntu4Core = hItem.getInt("ubuntu_4_core", 0);
+            ubuntu8Core = hItem.getInt("ubuntu_8_core", 0);
+            ubuntu16Core = hItem.getInt("ubuntu_16_core", 0);
+            ubuntu32Core = hItem.getInt("ubuntu_32_core", 0);
+            ubuntu64Core = hItem.getInt("ubuntu_64_core", 0);
+            windows4Core = hItem.getInt("windows_4_core", 0);
+            windows8Core = hItem.getInt("windows_8_core", 0);
+            windows16Core = hItem.getInt("windows_16_core", 0);
+            windows32Core = hItem.getInt("windows_32_core", 0);
+            windows64Core = hItem.getInt("windows_64_core", 0);
+            total = hItem.getInt("total", 0);
         }
 
         /**
@@ -402,17 +404,6 @@ public class ActionsBilling extends GitHubResponse {
          **/
         public int getTotal() {
             return total;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

@@ -2,6 +2,7 @@ package com.tecknobit.githubmanager.commits.commits.records.pullrequests;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 /**
@@ -132,8 +133,9 @@ public class MinimalPullRequest {
      * The {@code MinimalPullRequest} class is useful to format a GitHub's pull request part
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class MinimalPullRequestPart {
+    public static class MinimalPullRequestPart extends InnerClassItem {
 
         /**
          * {@code "sha"} value
@@ -158,6 +160,7 @@ public class MinimalPullRequest {
          * @param repo: repo value
          **/
         public MinimalPullRequestPart(String sha, String ref, BaseResponseDetails repo) {
+            super(null);
             this.sha = sha;
             this.ref = ref;
             this.repo = repo;
@@ -169,10 +172,10 @@ public class MinimalPullRequest {
          * @param jPullRequestPart: pull request part details as {@link JSONObject}
          **/
         public MinimalPullRequestPart(JSONObject jPullRequestPart) {
-            JsonHelper hHead = new JsonHelper(jPullRequestPart);
-            sha = hHead.getString("sha");
-            ref = hHead.getString("ref");
-            repo = new BaseResponseDetails(hHead.getJSONObject("repo", new JSONObject()));
+            super(jPullRequestPart);
+            sha = hItem.getString("sha");
+            ref = hItem.getString("ref");
+            repo = new BaseResponseDetails(hItem.getJSONObject("repo", new JSONObject()));
         }
 
         /**
@@ -203,17 +206,6 @@ public class MinimalPullRequest {
          **/
         public BaseResponseDetails getRepo() {
             return repo;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

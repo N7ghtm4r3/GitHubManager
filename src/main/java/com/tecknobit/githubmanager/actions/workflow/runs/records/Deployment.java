@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.Review.Environment;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -170,12 +170,14 @@ public class Deployment extends GitHubResponse {
 
     /**
      * The {@code Reviewer} class is useful to format a GitHub's reviewer
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-runs#get-pending-deployments-for-a-workflow-run">
-     *     Get pending deployments for a workflow run</a>
-     * @author N7ghtm4r3 - Tecknobit
+     *
      * @param <T> this parameter should be filled with {@link User} or {@link Team} objects to work properly
+     * @author N7ghtm4r3 - Tecknobit
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/workflow-runs#get-pending-deployments-for-a-workflow-run">
+     * Get pending deployments for a workflow run</a>
+     * @see InnerClassItem
      **/
-    public static class Reviewer<T> {
+    public static class Reviewer<T> extends InnerClassItem {
 
         /**
          * {@code type} reviewer type value
@@ -194,6 +196,7 @@ public class Deployment extends GitHubResponse {
          * @throws IllegalArgumentException when entity inserted does not respect the correct range
          **/
         public Reviewer(T entity) {
+            super(null);
             this.reviewer = entity;
             Class<?> rClass = reviewer.getClass();
             if (rClass == User.class)
@@ -210,6 +213,7 @@ public class Deployment extends GitHubResponse {
          * @param entity: entity to populate reviewer
          **/
         public Reviewer(ReviewerType type, T entity) {
+            super(null);
             this.type = type;
             this.reviewer = entity;
         }
@@ -219,12 +223,12 @@ public class Deployment extends GitHubResponse {
          * @param jReviewer: reviewer details as {@link JSONObject}
          **/
         public Reviewer(JSONObject jReviewer) {
-            JsonHelper hReviewer = new JsonHelper(jReviewer);
-            type = ReviewerType.valueOf(hReviewer.getString("type", ReviewerType.User.toString()));
+            super(jReviewer);
+            type = ReviewerType.valueOf(hItem.getString("type", ReviewerType.User.toString()));
             if (type.equals(ReviewerType.User))
-                reviewer = (T) new User(hReviewer.getJSONObject("reviewer", new JSONObject()));
+                reviewer = (T) new User(hItem.getJSONObject("reviewer", new JSONObject()));
             else
-                reviewer = (T) new Team(hReviewer.getJSONObject("reviewer", new JSONObject()));
+                reviewer = (T) new Team(hItem.getJSONObject("reviewer", new JSONObject()));
         }
 
         /**
@@ -245,17 +249,6 @@ public class Deployment extends GitHubResponse {
          **/
         public T getEntity() {
             return reviewer;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
         /**

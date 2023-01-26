@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.commits.commits.records.pullrequests;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import org.json.JSONArray;
@@ -1012,8 +1012,9 @@ public class PullRequest extends PullRequestStructure {
      * The {@code PullRequestPart} class is useful to format a GitHub's pull request part of a {@link PullRequest}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class PullRequestPart {
+    public static class PullRequestPart extends InnerClassItem {
 
         /**
          * {@code label} of the pull request part
@@ -1050,6 +1051,7 @@ public class PullRequest extends PullRequestStructure {
          * @param repo  : repo the pull request part
          **/
         public PullRequestPart(String label, String ref, String sha, User user, CompleteRepository repo) {
+            super(null);
             this.label = label;
             this.ref = ref;
             this.sha = sha;
@@ -1063,12 +1065,12 @@ public class PullRequest extends PullRequestStructure {
          * @param jPullRequestPart : pull request part as details as {@link JSONObject}
          **/
         public PullRequestPart(JSONObject jPullRequestPart) {
-            JsonHelper hPullRequestPart = new JsonHelper(jPullRequestPart);
-            label = hPullRequestPart.getString("label");
-            ref = hPullRequestPart.getString("ref");
-            sha = hPullRequestPart.getString("sha");
-            user = new User(hPullRequestPart.getJSONObject("user", new JSONObject()));
-            repo = new CompleteRepository(hPullRequestPart.getJSONObject("repo", new JSONObject()));
+            super(jPullRequestPart);
+            label = hItem.getString("label");
+            ref = hItem.getString("ref");
+            sha = hItem.getString("sha");
+            user = new User(hItem.getJSONObject("user", new JSONObject()));
+            repo = new CompleteRepository(hItem.getJSONObject("repo", new JSONObject()));
         }
 
         /**
@@ -1121,25 +1123,15 @@ public class PullRequest extends PullRequestStructure {
             return repo;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
      * The {@code Links} class is useful to format a GitHub's links of a {@link PullRequest}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Links {
+    public static class Links extends InnerClassItem {
 
         /**
          * {@code self} link
@@ -1195,6 +1187,7 @@ public class PullRequest extends PullRequestStructure {
          **/
         public Links(String self, String html, String issue, String comments, String reviewComments, String reviewComment,
                      String commits, String statuses) {
+            super(null);
             this.self = self;
             this.html = html;
             this.issue = issue;
@@ -1211,15 +1204,15 @@ public class PullRequest extends PullRequestStructure {
          * @param jLinks : link details as {@link JSONObject}
          **/
         public Links(JSONObject jLinks) {
-            JsonHelper hLinks = new JsonHelper(jLinks);
-            self = hLinks.getJsonHelper("self").getString("href");
-            html = hLinks.getJsonHelper("html").getString("href");
-            issue = hLinks.getJsonHelper("issue").getString("href");
-            comments = hLinks.getJsonHelper("comments").getString("href");
-            reviewComments = hLinks.getJsonHelper("review_comments").getString("href");
-            reviewComment = hLinks.getJsonHelper("review_comment").getString("href");
-            commits = hLinks.getJsonHelper("commits").getString("href");
-            statuses = hLinks.getJsonHelper("statuses").getString("href");
+            super(jLinks);
+            self = hItem.getJsonHelper("self").getString("href");
+            html = hItem.getJsonHelper("html").getString("href");
+            issue = hItem.getJsonHelper("issue").getString("href");
+            comments = hItem.getJsonHelper("comments").getString("href");
+            reviewComments = hItem.getJsonHelper("review_comments").getString("href");
+            reviewComment = hItem.getJsonHelper("review_comment").getString("href");
+            commits = hItem.getJsonHelper("commits").getString("href");
+            statuses = hItem.getJsonHelper("statuses").getString("href");
         }
 
         /**
@@ -1302,38 +1295,31 @@ public class PullRequest extends PullRequestStructure {
             return statuses;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
      * The {@code AutoMerge} class is useful to format a GitHub's auto merge of a {@link PullRequest}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class AutoMerge {
+    public static class AutoMerge extends InnerClassItem {
 
         /**
          * {@code enabledBy} who enabled the auto merge
          **/
         private final User enabledBy;
+
         /**
          * {@code mergeMethod} the merge method to use
          **/
         private final MergeMethod mergeMethod;
+
         /**
          * {@code commitTitle} title for the merge commit message
          **/
         private final String commitTitle;
+
         /**
          * {@code commitMessage} commit message for the merge commit
          **/
@@ -1348,6 +1334,7 @@ public class PullRequest extends PullRequestStructure {
          * @param commitMessage : commit message for the merge commit
          **/
         public AutoMerge(User enabledBy, MergeMethod mergeMethod, String commitTitle, String commitMessage) {
+            super(null);
             this.enabledBy = enabledBy;
             this.mergeMethod = mergeMethod;
             this.commitTitle = commitTitle;
@@ -1360,11 +1347,11 @@ public class PullRequest extends PullRequestStructure {
          * @param jAutoMerge : auto merge details as {@link JSONObject}
          **/
         public AutoMerge(JSONObject jAutoMerge) {
-            JsonHelper hAutoMerge = new JsonHelper(jAutoMerge);
-            enabledBy = new User(hAutoMerge.getJSONObject("enabled_by", new JSONObject()));
-            mergeMethod = MergeMethod.valueOf(hAutoMerge.getString("merge_method"));
-            commitTitle = hAutoMerge.getString("commit_title");
-            commitMessage = hAutoMerge.getString("commit_message");
+            super(jAutoMerge);
+            enabledBy = new User(hItem.getJSONObject("enabled_by", new JSONObject()));
+            mergeMethod = MergeMethod.valueOf(hItem.getString("merge_method"));
+            commitTitle = hItem.getString("commit_title");
+            commitMessage = hItem.getString("commit_message");
         }
 
         /**
@@ -1405,17 +1392,6 @@ public class PullRequest extends PullRequestStructure {
          **/
         public String getCommitMessage() {
             return commitMessage;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
         /**

@@ -1,10 +1,10 @@
 package com.tecknobit.githubmanager.codespaces.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
@@ -782,8 +782,9 @@ public class Codespace extends BaseResponseDetails {
      * The {@code Machine} class is useful to format a GitHub's machine for a {@link Codespace}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Machine {
+    public static class Machine extends InnerClassItem {
 
         /**
          * {@code name} the name of the machine
@@ -837,6 +838,7 @@ public class Codespace extends BaseResponseDetails {
          **/
         public Machine(String name, String displayName, String operatingSystem, double storageInBytes, double memoryInBytes,
                        int cpus, PrebuildAvailability prebuildAvailability) {
+            super(null);
             this.name = name;
             this.displayName = displayName;
             this.operatingSystem = operatingSystem;
@@ -852,14 +854,14 @@ public class Codespace extends BaseResponseDetails {
          * @param jMachine : machine details as {@link JSONObject}
          **/
         public Machine(JSONObject jMachine) {
-            JsonHelper hMachine = new JsonHelper(jMachine);
-            name = hMachine.getString("name");
-            displayName = hMachine.getString("display_name");
-            operatingSystem = hMachine.getString("operating_system");
-            storageInBytes = hMachine.getDouble("storage_in_bytes", 0);
-            memoryInBytes = hMachine.getDouble("memory_in_bytes", 0);
-            cpus = hMachine.getInt("cpus", 0);
-            String sPrebuildAvailability = hMachine.getString("prebuild_availability");
+            super(jMachine);
+            name = hItem.getString("name");
+            displayName = hItem.getString("display_name");
+            operatingSystem = hItem.getString("operating_system");
+            storageInBytes = hItem.getDouble("storage_in_bytes", 0);
+            memoryInBytes = hItem.getDouble("memory_in_bytes", 0);
+            cpus = hItem.getInt("cpus", 0);
+            String sPrebuildAvailability = hItem.getString("prebuild_availability");
             if (sPrebuildAvailability != null)
                 prebuildAvailability = PrebuildAvailability.valueOf(sPrebuildAvailability);
             else
@@ -959,17 +961,6 @@ public class Codespace extends BaseResponseDetails {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * {@code PrebuildAvailability} list of available prebuild availabilities
          **/
         public enum PrebuildAvailability {
@@ -997,8 +988,9 @@ public class Codespace extends BaseResponseDetails {
      * The {@code GitStatus} class is useful to format a GitHub's git status for a {@link Codespace}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class GitStatus {
+    public static class GitStatus extends InnerClassItem {
 
         /**
          * {@code ahead} the number of commits the local repository is ahead of the remote
@@ -1035,6 +1027,7 @@ public class Codespace extends BaseResponseDetails {
          * @param ref                   : the current branch (or SHA if in detached HEAD state) of the local repository
          **/
         public GitStatus(int ahead, int behind, boolean hasUnpushedChanges, boolean hasUncommittedChanges, String ref) {
+            super(null);
             this.ahead = ahead;
             this.behind = behind;
             this.hasUnpushedChanges = hasUnpushedChanges;
@@ -1048,12 +1041,12 @@ public class Codespace extends BaseResponseDetails {
          * @param jGitStatus : git status details as {@link JSONObject}
          **/
         public GitStatus(JSONObject jGitStatus) {
-            JsonHelper hGitStatus = new JsonHelper(jGitStatus);
-            ahead = hGitStatus.getInt("ahead", 0);
-            behind = hGitStatus.getInt("behind", 0);
-            hasUnpushedChanges = hGitStatus.getBoolean("has_unpushed_changes");
-            hasUncommittedChanges = hGitStatus.getBoolean("has_uncommitted_changes");
-            ref = hGitStatus.getString("ref");
+            super(jGitStatus);
+            ahead = hItem.getInt("ahead", 0);
+            behind = hItem.getInt("behind", 0);
+            hasUnpushedChanges = hItem.getBoolean("has_unpushed_changes");
+            hasUncommittedChanges = hItem.getBoolean("has_uncommitted_changes");
+            ref = hItem.getString("ref");
         }
 
         /**
@@ -1104,17 +1097,6 @@ public class Codespace extends BaseResponseDetails {
          **/
         public String getRef() {
             return ref;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

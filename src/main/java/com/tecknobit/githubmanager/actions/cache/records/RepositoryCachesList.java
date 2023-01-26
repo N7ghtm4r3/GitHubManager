@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.actions.cache.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -118,8 +118,9 @@ public class RepositoryCachesList extends GitHubList {
      *     </li>
      * </ul>
      * @see GitHubResponse
+     * @see InnerClassItem
      **/
-    public static class ActionCache {
+    public static class ActionCache extends InnerClassItem {
 
         /**
          * {@code id} identifier of the cache
@@ -171,6 +172,7 @@ public class RepositoryCachesList extends GitHubList {
          **/
         public ActionCache(long id, String ref, String key, String version, String lastAccessedAt, String createdAt,
                            int sizeInBytes) {
+            super(null);
             this.id = id;
             this.ref = ref;
             this.key = key;
@@ -186,14 +188,14 @@ public class RepositoryCachesList extends GitHubList {
          * @param jActionCache: action cache details as {@link JSONObject}
          **/
         public ActionCache(JSONObject jActionCache) {
-            JsonHelper hActionCache = new JsonHelper(jActionCache);
-            id = hActionCache.getLong("id", 0);
-            ref = hActionCache.getString("ref");
-            key = hActionCache.getString("key");
-            version = hActionCache.getString("version");
-            lastAccessedAt = hActionCache.getString("last_accessed_at");
-            createdAt = hActionCache.getString("created_at");
-            sizeInBytes = hActionCache.getInt("size_in_bytes");
+            super(jActionCache);
+            id = hItem.getLong("id", 0);
+            ref = hItem.getString("ref");
+            key = hItem.getString("key");
+            version = hItem.getString("version");
+            lastAccessedAt = hItem.getString("last_accessed_at");
+            createdAt = hItem.getString("created_at");
+            sizeInBytes = hItem.getInt("size_in_bytes");
         }
 
         /**
@@ -284,17 +286,6 @@ public class RepositoryCachesList extends GitHubList {
          **/
         public int getSizeInBytes() {
             return sizeInBytes;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

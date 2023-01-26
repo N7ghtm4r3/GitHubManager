@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.branches.branches.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.branches.records.BranchProtection;
 import com.tecknobit.githubmanager.commits.commits.records.Commit;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 /**
@@ -109,8 +109,9 @@ public class Branch extends ShortBranch {
      * The {@code BranchLink} class is useful to format a GitHub's branch link for {@link Branch}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class BranchLink {
+    public static class BranchLink extends InnerClassItem {
 
         /**
          * {@code self} value of the link
@@ -129,6 +130,7 @@ public class Branch extends ShortBranch {
          * @param html : html value of the link
          **/
         public BranchLink(String self, String html) {
+            super(null);
             this.self = self;
             this.html = html;
         }
@@ -139,9 +141,9 @@ public class Branch extends ShortBranch {
          * @param jBranchLink : link details as {@link JSONObject}
          **/
         public BranchLink(JSONObject jBranchLink) {
-            JsonHelper hBranchLink = new JsonHelper(jBranchLink);
-            self = hBranchLink.getString("self");
-            html = hBranchLink.getString("html");
+            super(jBranchLink);
+            self = hItem.getString("self");
+            html = hItem.getString("html");
         }
 
         /**
@@ -162,17 +164,6 @@ public class Branch extends ShortBranch {
          **/
         public String getHtml() {
             return html;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

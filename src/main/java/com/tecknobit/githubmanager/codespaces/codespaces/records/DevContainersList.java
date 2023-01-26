@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.codespaces.codespaces.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -82,8 +82,9 @@ public class DevContainersList extends GitHubList {
      * The {@code DevContainer} class is useful to format a GitHub's dev container
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class DevContainer {
+    public static class DevContainer extends InnerClassItem {
 
         /**
          * {@code path} of the container
@@ -102,6 +103,7 @@ public class DevContainersList extends GitHubList {
          * @param name : name of the container
          **/
         public DevContainer(String path, String name) {
+            super(null);
             this.path = path;
             this.name = name;
         }
@@ -112,9 +114,9 @@ public class DevContainersList extends GitHubList {
          * @param jDevContainer : dev container details as {@link JSONObject}
          **/
         public DevContainer(JSONObject jDevContainer) {
-            JsonHelper hDevContainer = new JsonHelper(jDevContainer);
-            path = hDevContainer.getString("name");
-            name = hDevContainer.getString("path");
+            super(jDevContainer);
+            path = hItem.getString("name");
+            name = hItem.getString("path");
         }
 
         /**
@@ -135,17 +137,6 @@ public class DevContainersList extends GitHubList {
          **/
         public String getName() {
             return name;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

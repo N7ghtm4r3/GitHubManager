@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.commits.commitcomments.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.commits.commits.records.pullrequests.PullRequest.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONObject;
 
@@ -336,8 +336,9 @@ public class CommitComment extends GitHubResponse {
      * The {@code Reactions} class is useful to format a GitHub's reactions for {@link CommitComment}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Reactions {
+    public static class Reactions extends InnerClassItem {
 
         /**
          * {@code url} of the reactions
@@ -405,6 +406,7 @@ public class CommitComment extends GitHubResponse {
          **/
         public Reactions(String url, int totalCount, int plusOne, int minusOne, int laugh, int confused, int heart,
                          int hooray, int eyes, int rocket) {
+            super(null);
             this.url = url;
             this.totalCount = totalCount;
             this.plusOne = plusOne;
@@ -423,17 +425,17 @@ public class CommitComment extends GitHubResponse {
          * @param jReactions : reactions details as {@link JSONObject}
          **/
         public Reactions(JSONObject jReactions) {
-            JsonHelper hReactions = new JsonHelper(jReactions);
-            url = hReactions.getString("url");
-            totalCount = hReactions.getInt("total_count", 0);
-            plusOne = hReactions.getInt("+1", 0);
-            minusOne = hReactions.getInt("-1", 0);
-            laugh = hReactions.getInt("laugh", 0);
-            confused = hReactions.getInt("confused", 0);
-            heart = hReactions.getInt("heart", 0);
-            hooray = hReactions.getInt("hooray", 0);
-            eyes = hReactions.getInt("eyes", 0);
-            rocket = hReactions.getInt("rocket", 0);
+            super(jReactions);
+            url = hItem.getString("url");
+            totalCount = hItem.getInt("total_count", 0);
+            plusOne = hItem.getInt("+1", 0);
+            minusOne = hItem.getInt("-1", 0);
+            laugh = hItem.getInt("laugh", 0);
+            confused = hItem.getInt("confused", 0);
+            heart = hItem.getInt("heart", 0);
+            hooray = hItem.getInt("hooray", 0);
+            eyes = hItem.getInt("eyes", 0);
+            rocket = hItem.getInt("rocket", 0);
         }
 
         /**
@@ -534,17 +536,6 @@ public class CommitComment extends GitHubResponse {
          **/
         public int getRocket() {
             return rocket;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

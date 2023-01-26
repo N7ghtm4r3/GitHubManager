@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.records.WorkflowUsage.Billable;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -114,9 +114,9 @@ public class WorkflowRunUsage extends GitHubResponse {
          **/
         public BillableRun(JSONObject jBillableRun) {
             super(jBillableRun);
-            jobs = hBillable.getInt("jobs", 0);
+            jobs = hItem.getInt("jobs", 0);
             jobRuns = new ArrayList<>();
-            JSONArray jJobRuns = hBillable.getJSONArray("job_runs", new JSONArray());
+            JSONArray jJobRuns = hItem.getJSONArray("job_runs", new JSONArray());
             for (int j = 0; j < jJobRuns.length(); j++)
                 jobRuns.add(new JobRun(jJobRuns.getJSONObject(j)));
         }
@@ -142,22 +142,12 @@ public class WorkflowRunUsage extends GitHubResponse {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code JobRun} class is useful to format a GitHub's job run
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class JobRun {
+        public static class JobRun extends InnerClassItem {
 
             /**
              * {@code jobId} job identifier
@@ -176,6 +166,7 @@ public class WorkflowRunUsage extends GitHubResponse {
              * @param durationMs: duration in milliseconds value
              **/
             public JobRun(long jobId, long durationMs) {
+                super(null);
                 this.jobId = jobId;
                 this.durationMs = durationMs;
             }
@@ -186,9 +177,9 @@ public class WorkflowRunUsage extends GitHubResponse {
              * @param jJobRun: job run details as {@link JSONObject}
              **/
             public JobRun(JSONObject jJobRun) {
-                JsonHelper hJobRun = new JsonHelper(jJobRun);
-                jobId = hJobRun.getLong("job_id", 0);
-                durationMs = hJobRun.getLong("duration_ms", 0);
+                super(jJobRun);
+                jobId = hItem.getLong("job_id", 0);
+                durationMs = hItem.getLong("duration_ms", 0);
             }
 
             /**
@@ -209,17 +200,6 @@ public class WorkflowRunUsage extends GitHubResponse {
              **/
             public long getDurationMs() {
                 return durationMs;
-            }
-
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
             }
 
         }

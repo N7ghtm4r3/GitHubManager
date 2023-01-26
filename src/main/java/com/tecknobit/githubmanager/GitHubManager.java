@@ -631,6 +631,33 @@ public class GitHubManager {
     }
 
     /**
+     * {@code SeverityLevel} list of available severities level
+     **/
+    public enum SeverityLevel {
+
+        /**
+         * {@code low} security severity level
+         **/
+        low,
+
+        /**
+         * {@code medium} security severity level
+         **/
+        medium,
+
+        /**
+         * {@code high} security severity level
+         **/
+        high,
+
+        /**
+         * {@code critical} security severity level
+         **/
+        critical
+
+    }
+
+    /**
      * The {@code Params} class is useful to assemble params values for the request
      *
      * @implNote this class can be used to assemble body payload or query request params

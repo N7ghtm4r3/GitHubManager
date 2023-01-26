@@ -1,10 +1,10 @@
 package com.tecknobit.githubmanager.commits.commits.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.commits.commits.records.Commit.CommitDetails.Tree;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -275,22 +275,12 @@ public class Commit extends GitHubResponse {
     }
 
     /**
-     * Returns a string representation of the object <br>
-     * Any params required
-     *
-     * @return a string representation of the object as {@link String}
-     */
-    @Override
-    public String toString() {
-        return new JSONObject(this).toString();
-    }
-
-    /**
      * The {@code CommitDetails} class is useful to format a GitHub's commit details for {@link Commit}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class CommitDetails {
+    public static class CommitDetails extends InnerClassItem {
 
         /**
          * {@code author} of the commit
@@ -340,6 +330,7 @@ public class Commit extends GitHubResponse {
          **/
         public CommitDetails(CommitProfile author, CommitProfile committer, String message, Tree tree, String url,
                              int commentCount, Verification verification) {
+            super(null);
             this.author = author;
             this.committer = committer;
             this.message = message;
@@ -355,14 +346,14 @@ public class Commit extends GitHubResponse {
          * @param jCommitDetails : commit details as {@link JSONObject}
          **/
         public CommitDetails(JSONObject jCommitDetails) {
-            JsonHelper hCommitDetails = new JsonHelper(jCommitDetails);
-            author = new CommitProfile(hCommitDetails.getJSONObject("author", new JSONObject()));
-            committer = new CommitProfile(hCommitDetails.getJSONObject("committer", new JSONObject()));
-            message = hCommitDetails.getString("message");
-            tree = new Tree(hCommitDetails.getJSONObject("tree", new JSONObject()));
-            url = hCommitDetails.getString("url");
-            commentCount = hCommitDetails.getInt("comment_count", 0);
-            verification = new Verification(hCommitDetails.getJSONObject("verification", new JSONObject()));
+            super(jCommitDetails);
+            author = new CommitProfile(hItem.getJSONObject("author", new JSONObject()));
+            committer = new CommitProfile(hItem.getJSONObject("committer", new JSONObject()));
+            message = hItem.getString("message");
+            tree = new Tree(hItem.getJSONObject("tree", new JSONObject()));
+            url = hItem.getString("url");
+            commentCount = hItem.getInt("comment_count", 0);
+            verification = new Verification(hItem.getJSONObject("verification", new JSONObject()));
         }
 
         /**
@@ -436,22 +427,12 @@ public class Commit extends GitHubResponse {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code Tree} class is useful to format a GitHub's commit tree for {@link CommitDetails}
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class Tree {
+        public static class Tree extends InnerClassItem {
 
             /**
              * {@code sha} of the tree
@@ -464,20 +445,15 @@ public class Commit extends GitHubResponse {
             protected final String url;
 
             /**
-             * {@code hTree} {@link JsonHelper} for the tree
-             **/
-            protected final JsonHelper hTree;
-
-            /**
              * Constructor to init a {@link Tree}
              *
              * @param sha : sha of the tree
              * @param url : url of the tree
              **/
             public Tree(String sha, String url) {
+                super(null);
                 this.sha = sha;
                 this.url = url;
-                hTree = null;
             }
 
             /**
@@ -486,9 +462,9 @@ public class Commit extends GitHubResponse {
              * @param jTree : tree details as {@link JSONObject}
              **/
             public Tree(JSONObject jTree) {
-                hTree = new JsonHelper(jTree);
-                sha = hTree.getString("sha");
-                url = hTree.getString("url");
+                super(jTree);
+                sha = hItem.getString("sha");
+                url = hItem.getString("url");
             }
 
             /**
@@ -511,25 +487,15 @@ public class Commit extends GitHubResponse {
                 return url;
             }
 
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
-            }
-
         }
 
         /**
          * The {@code CommitProfile} class is useful to format a GitHub's commit profile for {@link CommitDetails}
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class CommitProfile {
+        public static class CommitProfile extends InnerClassItem {
 
             /**
              * {@code name} of the profile
@@ -554,6 +520,7 @@ public class Commit extends GitHubResponse {
              * @param date  : date of the committing
              **/
             public CommitProfile(String name, String email, String date) {
+                super(null);
                 this.name = name;
                 this.email = email;
                 this.date = date;
@@ -565,10 +532,10 @@ public class Commit extends GitHubResponse {
              * @param jCommitProfile : commit profile as {@link JSONObject}
              **/
             public CommitProfile(JSONObject jCommitProfile) {
-                JsonHelper hCommitProfile = new JsonHelper(jCommitProfile);
-                name = hCommitProfile.getString("name");
-                email = hCommitProfile.getString("email");
-                date = hCommitProfile.getString("date");
+                super(jCommitProfile);
+                name = hItem.getString("name");
+                email = hItem.getString("email");
+                date = hItem.getString("date");
             }
 
             /**
@@ -611,25 +578,15 @@ public class Commit extends GitHubResponse {
                 return TimeFormatter.getDateTimestamp(date);
             }
 
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
-            }
-
         }
 
         /**
          * The {@code Verification} class is useful to format a GitHub's verification for {@link CommitDetails}
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class Verification {
+        public static class Verification extends InnerClassItem {
 
             /**
              * {@code verified} whether the commit is verified
@@ -660,6 +617,7 @@ public class Commit extends GitHubResponse {
              * @param payload   : payload of the verification
              **/
             public Verification(boolean verified, String reason, String signature, String payload) {
+                super(null);
                 this.verified = verified;
                 this.reason = reason;
                 this.signature = signature;
@@ -672,11 +630,11 @@ public class Commit extends GitHubResponse {
              * @param jVerification : verification details as {@link JSONObject}
              **/
             public Verification(JSONObject jVerification) {
-                JsonHelper hVerification = new JsonHelper(jVerification);
-                verified = hVerification.getBoolean("verified");
-                reason = hVerification.getString("reason");
-                signature = hVerification.getString("signature");
-                payload = hVerification.getString("payload");
+                super(jVerification);
+                verified = hItem.getBoolean("verified");
+                reason = hItem.getString("reason");
+                signature = hItem.getString("signature");
+                payload = hItem.getString("payload");
             }
 
             /**
@@ -719,17 +677,6 @@ public class Commit extends GitHubResponse {
                 return payload;
             }
 
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
-            }
-
         }
 
     }
@@ -766,7 +713,7 @@ public class Commit extends GitHubResponse {
          **/
         public Parent(JSONObject jParent) {
             super(jParent);
-            htmlUrl = hTree.getString("html_url");
+            htmlUrl = hItem.getString("html_url");
         }
 
         /**
@@ -785,8 +732,9 @@ public class Commit extends GitHubResponse {
      * The {@code Stats} class is useful to format a GitHub's stats for {@link Commit}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Stats {
+    public static class Stats extends InnerClassItem {
 
         /**
          * {@code additions} value
@@ -811,6 +759,7 @@ public class Commit extends GitHubResponse {
          * @param total:    total value
          **/
         public Stats(int additions, int deletions, int total) {
+            super(null);
             this.additions = additions;
             this.deletions = deletions;
             this.total = total;
@@ -822,10 +771,10 @@ public class Commit extends GitHubResponse {
          * @param jStats : stats details as {@link JSONObject}
          **/
         public Stats(JSONObject jStats) {
-            JsonHelper hStats = new JsonHelper(jStats);
-            additions = hStats.getInt("additions", 0);
-            deletions = hStats.getInt("deletions", 0);
-            total = hStats.getInt("total", 0);
+            super(jStats);
+            additions = hItem.getInt("additions", 0);
+            deletions = hItem.getInt("deletions", 0);
+            total = hItem.getInt("total", 0);
         }
 
         /**
@@ -858,25 +807,15 @@ public class Commit extends GitHubResponse {
             return total;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
      * The {@code CommitFile} class is useful to format a GitHub's file for {@link Commit}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class CommitFile {
+    public static class CommitFile extends InnerClassItem {
 
         /**
          * {@code fileName} name of the file
@@ -925,6 +864,7 @@ public class Commit extends GitHubResponse {
          **/
         public CommitFile(String fileName, int additions, int deletions, int changes, FileStatus status, String rawUrl,
                           String blobUrl, String patch) {
+            super(null);
             this.fileName = fileName;
             this.additions = additions;
             this.deletions = deletions;
@@ -941,15 +881,15 @@ public class Commit extends GitHubResponse {
          * @param jCommitFile : file details as {@link JSONObject}
          **/
         public CommitFile(JSONObject jCommitFile) {
-            JsonHelper hCommitFile = new JsonHelper(jCommitFile);
-            fileName = hCommitFile.getString("filename");
-            additions = hCommitFile.getInt("additions", 0);
-            deletions = hCommitFile.getInt("deletions", 0);
-            changes = hCommitFile.getInt("changes", 0);
-            status = FileStatus.valueOf(hCommitFile.getString("status"));
-            rawUrl = hCommitFile.getString("raw_url");
-            blobUrl = hCommitFile.getString("blob_url");
-            patch = hCommitFile.getString("patch");
+            super(jCommitFile);
+            fileName = hItem.getString("filename");
+            additions = hItem.getInt("additions", 0);
+            deletions = hItem.getInt("deletions", 0);
+            changes = hItem.getInt("changes", 0);
+            status = FileStatus.valueOf(hItem.getString("status"));
+            rawUrl = hItem.getString("raw_url");
+            blobUrl = hItem.getString("blob_url");
+            patch = hItem.getString("patch");
         }
 
         /**
@@ -1045,17 +985,6 @@ public class Commit extends GitHubResponse {
          **/
         public String getPatch() {
             return patch;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
         /**

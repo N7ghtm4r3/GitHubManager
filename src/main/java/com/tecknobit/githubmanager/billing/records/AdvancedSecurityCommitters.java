@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.billing.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -96,8 +96,9 @@ public class AdvancedSecurityCommitters extends GitHubList {
      * for {@link AdvancedSecurityCommitters}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class SecurityRepository {
+    public static class SecurityRepository extends InnerClassItem {
 
         /**
          * {@code name} name of the security repository
@@ -123,6 +124,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
          **/
         public SecurityRepository(String name, int advancedSecurityCommitters,
                                   ArrayList<AdvancedSecurityCommitterBreakdown> advancedSecurityCommittersBreakdown) {
+            super(null);
             this.name = name;
             this.advancedSecurityCommitters = advancedSecurityCommitters;
             this.advancedSecurityCommittersBreakdown = advancedSecurityCommittersBreakdown;
@@ -134,11 +136,11 @@ public class AdvancedSecurityCommitters extends GitHubList {
          * @param jSecurityRepository: security repository details as {@link JSONObject}
          **/
         public SecurityRepository(JSONObject jSecurityRepository) {
-            JsonHelper hSecurityRepository = new JsonHelper(jSecurityRepository);
-            name = hSecurityRepository.getString("name");
-            advancedSecurityCommitters = hSecurityRepository.getInt("advanced_security_committers", 0);
+            super(jSecurityRepository);
+            name = hItem.getString("name");
+            advancedSecurityCommitters = hItem.getInt("advanced_security_committers", 0);
             advancedSecurityCommittersBreakdown = new ArrayList<>();
-            JSONArray jCommitters = hSecurityRepository.getJSONArray("advanced_security_committers_breakdown",
+            JSONArray jCommitters = hItem.getJSONArray("advanced_security_committers_breakdown",
                     new JSONArray());
             for (int j = 0; j < jCommitters.length(); j++)
                 advancedSecurityCommittersBreakdown.add(new AdvancedSecurityCommitterBreakdown(jCommitters.getJSONObject(j)));
@@ -175,23 +177,13 @@ public class AdvancedSecurityCommitters extends GitHubList {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code AdvancedSecurityCommitterBreakdown} class is useful to format a GitHub's advanced security
          * committer breakdown for {@link SecurityRepository}
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class AdvancedSecurityCommitterBreakdown {
+        public static class AdvancedSecurityCommitterBreakdown extends InnerClassItem {
 
             /**
              * {@code userLogin} user login of the advanced security committer breakdown
@@ -210,6 +202,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
              * @param lastPushedDate: last pushed date of the advanced security committer breakdown
              **/
             public AdvancedSecurityCommitterBreakdown(String userLogin, String lastPushedDate) {
+                super(null);
                 this.userLogin = userLogin;
                 this.lastPushedDate = lastPushedDate;
             }
@@ -220,9 +213,9 @@ public class AdvancedSecurityCommitters extends GitHubList {
              * @param jCommitter: committer details as {@link JSONObject}
              **/
             public AdvancedSecurityCommitterBreakdown(JSONObject jCommitter) {
-                JsonHelper hCommitter = new JsonHelper(jCommitter);
-                userLogin = hCommitter.getString("user_login");
-                lastPushedDate = hCommitter.getString("last_pushed_date");
+                super(jCommitter);
+                userLogin = hItem.getString("user_login");
+                lastPushedDate = hItem.getString("last_pushed_date");
             }
 
             /**
@@ -253,17 +246,6 @@ public class AdvancedSecurityCommitters extends GitHubList {
              **/
             public long getLastPushedDateTimestamp() {
                 return getDateTimestamp(lastPushedDate, "yyyy-MM-dd");
-            }
-
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
             }
 
         }

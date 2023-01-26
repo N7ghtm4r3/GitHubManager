@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.workflow.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -59,8 +59,9 @@ public class WorkflowUsage extends GitHubResponse {
      * The {@code BillableRun} class is useful to format a GitHub's billable
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Billable {
+    public static class Billable extends InnerClassItem {
 
         /**
          * {@code name} name of the billable
@@ -73,20 +74,15 @@ public class WorkflowUsage extends GitHubResponse {
         protected final long totalMs;
 
         /**
-         * {@code hBillable} instance to work on {@code "JSON"} data format
-         **/
-        protected final JsonHelper hBillable;
-
-        /**
          * Constructor to init a {@link Billable}
          *
          * @param name:    name of the billable
          * @param totalMs: total run duration in milliseconds
          **/
         public Billable(String name, long totalMs) {
+            super(null);
             this.name = name;
             this.totalMs = totalMs;
-            hBillable = null;
         }
 
         /**
@@ -95,9 +91,9 @@ public class WorkflowUsage extends GitHubResponse {
          * @param jBillable: billable details as {@link JSONObject}
          **/
         public Billable(JSONObject jBillable) {
-            hBillable = new JsonHelper(jBillable);
-            name = hBillable.getString("name");
-            totalMs = hBillable.getLong("total_ms", 0);
+            super(jBillable);
+            name = hItem.getString("name");
+            totalMs = hItem.getLong("total_ms", 0);
         }
 
         /**
@@ -118,17 +114,6 @@ public class WorkflowUsage extends GitHubResponse {
          **/
         public long getTotalMs() {
             return totalMs;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

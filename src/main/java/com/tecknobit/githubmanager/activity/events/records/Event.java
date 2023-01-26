@@ -4,6 +4,7 @@ import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.WorkflowRun.Commit.CommitProfile;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -328,8 +329,9 @@ public class Event extends GitHubResponse {
      * The {@code EventEntity} class is useful to format a GitHub's entity for an event
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class EventEntity {
+    public static class EventEntity extends InnerClassItem {
 
         /**
          * {@code id} identifier value
@@ -372,6 +374,7 @@ public class Event extends GitHubResponse {
          * @param avatarUrl:    avatar url value
          **/
         public EventEntity(long id, String login, String displayLogin, String gravatarId, String url, String avatarUrl) {
+            super(null);
             this.id = id;
             this.login = login;
             this.displayLogin = displayLogin;
@@ -386,13 +389,13 @@ public class Event extends GitHubResponse {
          * @param jEntity: entity details as {@link JSONObject}
          **/
         public EventEntity(JSONObject jEntity) {
-            JsonHelper hActor = new JsonHelper(jEntity);
-            id = hActor.getLong("id", -1);
-            login = hActor.getString("login");
-            displayLogin = hActor.getString("display_login");
-            gravatarId = hActor.getString("gravatar_id");
-            url = hActor.getString("url");
-            avatarUrl = hActor.getString("avatar_url");
+            super(jEntity);
+            id = hItem.getLong("id", -1);
+            login = hItem.getString("login");
+            displayLogin = hItem.getString("display_login");
+            gravatarId = hItem.getString("gravatar_id");
+            url = hItem.getString("url");
+            avatarUrl = hItem.getString("avatar_url");
         }
 
         /**
@@ -455,25 +458,15 @@ public class Event extends GitHubResponse {
             return avatarUrl;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
      * The {@code Payload} class is useful to format a GitHub's payload for an event
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Payload {
+    public static class Payload extends InnerClassItem {
 
         /**
          * {@code pushId} push identifier value
@@ -541,6 +534,7 @@ public class Event extends GitHubResponse {
          * @param action: action value
          **/
         public Payload(String action) {
+            super(null);
             this.action = action;
             pushId = -1;
             size = -1;
@@ -565,6 +559,7 @@ public class Event extends GitHubResponse {
          * @param pusherType:   pusher type
          **/
         public Payload(String ref, String refType, String masterBranch, String description, String pusherType) {
+            super(null);
             this.ref = ref;
             this.refType = refType;
             this.masterBranch = masterBranch;
@@ -592,6 +587,7 @@ public class Event extends GitHubResponse {
          **/
         public Payload(long pushId, int size, int distinctSize, String ref, String head, String before,
                        ArrayList<Commit> commits) {
+            super(null);
             this.pushId = pushId;
             this.size = size;
             this.distinctSize = distinctSize;
@@ -612,22 +608,22 @@ public class Event extends GitHubResponse {
          * @param jPayload: payload details {@link JSONObject}
          **/
         public Payload(JSONObject jPayload) {
-            JsonHelper hPayload = new JsonHelper(jPayload);
-            action = hPayload.getString("action");
-            pushId = hPayload.getLong("push_id");
-            size = hPayload.getInt("size");
-            distinctSize = hPayload.getInt("distinct_size");
-            ref = hPayload.getString("ref");
-            head = hPayload.getString("head");
-            before = hPayload.getString("before");
+            super(jPayload);
+            action = hItem.getString("action");
+            pushId = hItem.getLong("push_id");
+            size = hItem.getInt("size");
+            distinctSize = hItem.getInt("distinct_size");
+            ref = hItem.getString("ref");
+            head = hItem.getString("head");
+            before = hItem.getString("before");
             commits = new ArrayList<>();
-            JSONArray hCommits = hPayload.getJSONArray("commits", new JSONArray());
+            JSONArray hCommits = hItem.getJSONArray("commits", new JSONArray());
             for (int j = 0; j < hCommits.length(); j++)
                 commits.add(new Commit(hCommits.getJSONObject(j)));
-            refType = hPayload.getString("ref_type");
-            masterBranch = hPayload.getString("master_branch");
-            description = hPayload.getString("description");
-            pusherType = hPayload.getString("pusher_type");
+            refType = hItem.getString("ref_type");
+            masterBranch = hItem.getString("master_branch");
+            description = hItem.getString("description");
+            pusherType = hItem.getString("pusher_type");
         }
 
         /**
@@ -748,17 +744,6 @@ public class Event extends GitHubResponse {
          **/
         public String getPusherType() {
             return pusherType;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
         /**

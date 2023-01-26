@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.checks.suites.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -76,8 +76,9 @@ public class CheckSuitesPreferences extends GitHubResponse {
      * The {@code SuitesPreferences} class is useful to format a GitHub's preferences for {@link CheckSuitesPreferences}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class SuitesPreferences {
+    public static class SuitesPreferences extends InnerClassItem {
 
         /**
          * {@code autoTriggerChecks} list of {@link AutoTriggerCheck}
@@ -90,6 +91,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
          * @param autoTriggerChecks : list of {@link AutoTriggerCheck}
          **/
         public SuitesPreferences(ArrayList<AutoTriggerCheck> autoTriggerChecks) {
+            super(null);
             this.autoTriggerChecks = autoTriggerChecks;
         }
 
@@ -99,9 +101,9 @@ public class CheckSuitesPreferences extends GitHubResponse {
          * @param jPreferences : preferences details as {@link JSONObject}
          **/
         public SuitesPreferences(JSONObject jPreferences) {
-            JsonHelper hPreferences = new JsonHelper(jPreferences);
+            super(jPreferences);
             autoTriggerChecks = new ArrayList<>();
-            JSONArray jAutoTriggerChecks = hPreferences.getJSONArray("auto_trigger_checks", new JSONArray());
+            JSONArray jAutoTriggerChecks = hItem.getJSONArray("auto_trigger_checks", new JSONArray());
             for (int j = 0; j < jAutoTriggerChecks.length(); j++)
                 autoTriggerChecks.add(new AutoTriggerCheck(jAutoTriggerChecks.getJSONObject(j)));
         }
@@ -117,22 +119,12 @@ public class CheckSuitesPreferences extends GitHubResponse {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code AutoTriggerCheck} class is useful to format a GitHub's auto trigger check for {@link SuitesPreferences}
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class AutoTriggerCheck {
+        public static class AutoTriggerCheck extends InnerClassItem {
 
             /**
              * {@code appId} app identifier
@@ -145,6 +137,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
             private final boolean setting;
 
             public AutoTriggerCheck(long appId, boolean setting) {
+                super(null);
                 this.appId = appId;
                 this.setting = setting;
             }
@@ -155,9 +148,9 @@ public class CheckSuitesPreferences extends GitHubResponse {
              * @param jAutoTriggerCheck : auto trigger check details as {@link JSONObject}
              **/
             public AutoTriggerCheck(JSONObject jAutoTriggerCheck) {
-                JsonHelper hAutoTriggerCheck = new JsonHelper(jAutoTriggerCheck);
-                appId = hAutoTriggerCheck.getLong("app_id", 0);
-                setting = hAutoTriggerCheck.getBoolean("setting");
+                super(jAutoTriggerCheck);
+                appId = hItem.getLong("app_id", 0);
+                setting = hItem.getBoolean("setting");
             }
 
             /**
@@ -179,17 +172,6 @@ public class CheckSuitesPreferences extends GitHubResponse {
              **/
             public boolean isSetting() {
                 return setting;
-            }
-
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
             }
 
         }

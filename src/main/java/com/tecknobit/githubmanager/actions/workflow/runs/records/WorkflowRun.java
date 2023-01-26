@@ -1,10 +1,10 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status;
 import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
@@ -722,8 +722,9 @@ public class WorkflowRun extends BaseResponseDetails {
      * The {@code ReferencedWorkflow} class is useful to format a GitHub's referenced workflow
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class ReferencedWorkflow {
+    public static class ReferencedWorkflow extends InnerClassItem {
 
         /**
          * {@code "path"} value
@@ -748,6 +749,7 @@ public class WorkflowRun extends BaseResponseDetails {
          * @param ref   : ref value
          **/
         public ReferencedWorkflow(String path, String sha, String ref) {
+            super(null);
             this.path = path;
             this.sha = sha;
             this.ref = ref;
@@ -759,10 +761,10 @@ public class WorkflowRun extends BaseResponseDetails {
          * @param jReferencedWorkflow: referenced workflow details as {@link JSONObject}
          **/
         public ReferencedWorkflow(JSONObject jReferencedWorkflow) {
-            JsonHelper hReferencedWorkflow = new JsonHelper(jReferencedWorkflow);
-            path = hReferencedWorkflow.getString("path");
-            sha = hReferencedWorkflow.getString("sha");
-            ref = hReferencedWorkflow.getString("ref");
+            super(jReferencedWorkflow);
+            path = hItem.getString("path");
+            sha = hItem.getString("sha");
+            ref = hItem.getString("ref");
         }
 
         /**
@@ -795,25 +797,15 @@ public class WorkflowRun extends BaseResponseDetails {
             return ref;
         }
 
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
     }
 
     /**
      * The {@code Commit} class is useful to format a GitHub's commit
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Commit {
+    public static class Commit extends InnerClassItem {
 
         /**
          * {@code id} identifier value
@@ -856,6 +848,7 @@ public class WorkflowRun extends BaseResponseDetails {
          * @param committer  : committer value
          **/
         public Commit(long id, long treeId, String message, String timestamp, CommitProfile author, CommitProfile committer) {
+            super(null);
             this.id = id;
             this.treeId = treeId;
             this.message = message;
@@ -870,13 +863,13 @@ public class WorkflowRun extends BaseResponseDetails {
          * @param jCommit: commit details as {@link JSONObject}
          **/
         public Commit(JSONObject jCommit) {
-            JsonHelper hCommit = new JsonHelper(jCommit);
-            id = hCommit.getLong("id", 0);
-            treeId = hCommit.getLong("tree_id", 0);
-            message = hCommit.getString("message");
-            timestamp = hCommit.getString("timestamp");
-            author = new CommitProfile(hCommit.getJSONObject("author", new JSONObject()));
-            committer = new CommitProfile(hCommit.getJSONObject("committer", new JSONObject()));
+            super(jCommit);
+            id = hItem.getLong("id", 0);
+            treeId = hItem.getLong("tree_id", 0);
+            message = hItem.getString("message");
+            timestamp = hItem.getString("timestamp");
+            author = new CommitProfile(hItem.getJSONObject("author", new JSONObject()));
+            committer = new CommitProfile(hItem.getJSONObject("committer", new JSONObject()));
         }
 
         /**
@@ -950,22 +943,12 @@ public class WorkflowRun extends BaseResponseDetails {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code CommitProfile} class is useful to format a GitHub's commit profile
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class CommitProfile {
+        public static class CommitProfile extends InnerClassItem {
 
             /**
              * {@code "name"} value
@@ -984,6 +967,7 @@ public class WorkflowRun extends BaseResponseDetails {
              * @param email : email value
              **/
             public CommitProfile(String name, String email) {
+                super(null);
                 this.name = name;
                 this.email = email;
             }
@@ -994,9 +978,9 @@ public class WorkflowRun extends BaseResponseDetails {
              * @param jCommitProfile: commit profile details as {@link JSONObject}
              **/
             public CommitProfile(JSONObject jCommitProfile) {
-                JsonHelper hCommitProfile = new JsonHelper(jCommitProfile);
-                name = hCommitProfile.getString("name");
-                email = hCommitProfile.getString("email");
+                super(jCommitProfile);
+                name = hItem.getString("name");
+                email = hItem.getString("email");
             }
 
             /**
@@ -1017,17 +1001,6 @@ public class WorkflowRun extends BaseResponseDetails {
              **/
             public String getEmail() {
                 return email;
-            }
-
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
             }
 
         }

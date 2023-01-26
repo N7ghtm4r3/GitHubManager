@@ -475,15 +475,4 @@ public class User extends GitHubResponse {
         }
     }
 
-    /**
-     * Returns a string representation of the object <br>
-     * Any params required
-     *
-     * @return a string representation of the object as {@link String}
-     */
-    @Override
-    public String toString() {
-        return new JSONObject(this).toString();
-    }
-
 }

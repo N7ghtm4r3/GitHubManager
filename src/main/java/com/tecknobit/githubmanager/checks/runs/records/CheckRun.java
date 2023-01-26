@@ -1,12 +1,12 @@
 package com.tecknobit.githubmanager.checks.runs.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.records.Check;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuite;
 import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -297,8 +297,9 @@ public class CheckRun extends Check {
      * The {@code Output} class is useful to format a GitHub's output for a {@link CheckRun}
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class Output {
+    public static class Output extends InnerClassItem {
 
         /**
          * {@code title} of the output
@@ -346,6 +347,7 @@ public class CheckRun extends Check {
          * @param annotationsUrl   : annotations url of the output
          **/
         public Output(String title, String summary, String text, int annotationsCount, String annotationsUrl) {
+            super(null);
             this.title = title;
             this.summary = summary;
             this.text = text;
@@ -359,12 +361,12 @@ public class CheckRun extends Check {
          * @param jOutput : output details as {@link JSONObject}
          **/
         public Output(JSONObject jOutput) {
-            JsonHelper hOutput = new JsonHelper(jOutput);
-            title = hOutput.getString("title");
-            summary = hOutput.getString("summary");
-            text = hOutput.getString("text");
-            annotationsCount = hOutput.getInt("annotations_count", 0);
-            annotationsUrl = hOutput.getString("annotations_url");
+            super(jOutput);
+            title = hItem.getString("title");
+            summary = hItem.getString("summary");
+            text = hItem.getString("text");
+            annotationsCount = hItem.getInt("annotations_count", 0);
+            annotationsUrl = hItem.getString("annotations_url");
         }
 
         /**
@@ -415,17 +417,6 @@ public class CheckRun extends Check {
          **/
         public String getAnnotationsUrl() {
             return annotationsUrl;
-        }
-
-        /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
         }
 
     }

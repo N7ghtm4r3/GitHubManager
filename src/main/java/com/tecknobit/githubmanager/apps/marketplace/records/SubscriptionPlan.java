@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.apps.marketplace.records;
 
-import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
@@ -294,8 +294,9 @@ public class SubscriptionPlan extends GitHubResponse {
      * subscription plan
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      **/
-    public static class MarketPlacePurchase {
+    public static class MarketPlacePurchase extends InnerClassItem {
 
         /**
          * {@code billingCycle} the billing cycle of the marketplace purchase
@@ -351,6 +352,7 @@ public class SubscriptionPlan extends GitHubResponse {
          **/
         public MarketPlacePurchase(String billingCycle, String nextBillingDate, double unitCount, boolean onFreeTrial,
                                    String freeTrialEndsOn, String updatedAt, Account account, Plan plan) {
+            super(null);
             this.billingCycle = billingCycle;
             this.nextBillingDate = nextBillingDate;
             this.unitCount = unitCount;
@@ -367,15 +369,15 @@ public class SubscriptionPlan extends GitHubResponse {
          * @param jPlacePurchase: marketplace purchase details as {@link JSONObject}
          **/
         public MarketPlacePurchase(JSONObject jPlacePurchase) {
-            JsonHelper hPlacePurchase = new JsonHelper(jPlacePurchase);
-            billingCycle = hPlacePurchase.getString("billing_cycle");
-            nextBillingDate = hPlacePurchase.getString("next_billing_date");
-            unitCount = hPlacePurchase.getDouble("unit_count", 0);
-            onFreeTrial = hPlacePurchase.getBoolean("on_free_trial");
-            freeTrialEndsOn = hPlacePurchase.getString("free_trial_ends_on");
-            updatedAt = hPlacePurchase.getString("updated_at");
-            account = new Account(hPlacePurchase.getJSONObject("account", new JSONObject()));
-            plan = new Plan(hPlacePurchase.getJSONObject("plan"));
+            super(jPlacePurchase);
+            billingCycle = hItem.getString("billing_cycle");
+            nextBillingDate = hItem.getString("next_billing_date");
+            unitCount = hItem.getDouble("unit_count", 0);
+            onFreeTrial = hItem.getBoolean("on_free_trial");
+            freeTrialEndsOn = hItem.getString("free_trial_ends_on");
+            updatedAt = hItem.getString("updated_at");
+            account = new Account(hItem.getJSONObject("account", new JSONObject()));
+            plan = new Plan(hItem.getJSONObject("plan"));
         }
 
         /**
@@ -500,22 +502,12 @@ public class SubscriptionPlan extends GitHubResponse {
         }
 
         /**
-         * Returns a string representation of the object <br>
-         * Any params required
-         *
-         * @return a string representation of the object as {@link String}
-         */
-        @Override
-        public String toString() {
-            return new JSONObject(this).toString();
-        }
-
-        /**
          * The {@code Account} class is useful to format a GitHub's account for a marketplace purchase
          *
          * @author N7ghtm4r3 - Tecknobit
+         * @see InnerClassItem
          **/
-        public static class Account {
+        public static class Account extends InnerClassItem {
 
             /**
              * {@code login} the login of the account
@@ -565,6 +557,7 @@ public class SubscriptionPlan extends GitHubResponse {
              **/
             public Account(String login, long id, String nodeId, String email, String url, String organizationBillingEmail,
                            String type) {
+                super(null);
                 this.login = login;
                 this.id = id;
                 this.nodeId = nodeId;
@@ -580,14 +573,14 @@ public class SubscriptionPlan extends GitHubResponse {
              * @param jAccount: account details as {@link JSONObject}
              **/
             public Account(JSONObject jAccount) {
-                JsonHelper hAccount = new JsonHelper(jAccount);
-                login = hAccount.getString("login");
-                id = hAccount.getLong("id", 0);
-                nodeId = hAccount.getString("node_id");
-                url = hAccount.getString("url");
-                email = hAccount.getString("email");
-                organizationBillingEmail = hAccount.getString("organization_billing_email");
-                type = hAccount.getString("type");
+                super(jAccount);
+                login = hItem.getString("login");
+                id = hItem.getLong("id", 0);
+                nodeId = hItem.getString("node_id");
+                url = hItem.getString("url");
+                email = hItem.getString("email");
+                organizationBillingEmail = hItem.getString("organization_billing_email");
+                type = hItem.getString("type");
             }
 
             /**
@@ -658,17 +651,6 @@ public class SubscriptionPlan extends GitHubResponse {
              **/
             public String getType() {
                 return type;
-            }
-
-            /**
-             * Returns a string representation of the object <br>
-             * Any params required
-             *
-             * @return a string representation of the object as {@link String}
-             */
-            @Override
-            public String toString() {
-                return new JSONObject(this).toString();
             }
 
         }
