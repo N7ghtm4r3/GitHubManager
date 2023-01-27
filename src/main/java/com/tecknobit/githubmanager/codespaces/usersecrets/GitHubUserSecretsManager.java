@@ -502,7 +502,7 @@ public class GitHubUserSecretsManager extends GitHubManager {
      * GitHub Apps must have read access to the {@code "codespaces_user_secrets"} user permission to use this endpoint <br>
      *
      * @param secret: the secret from fetch the list
-     * @return secrets list as {@link SecretsList} custom object
+     * @return repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -564,7 +564,7 @@ public class GitHubUserSecretsManager extends GitHubManager {
      * GitHub Apps must have read access to the {@code "codespaces_user_secrets"} user permission to use this endpoint <br>
      *
      * @param secretName: the name of the secret
-     * @return secrets list as {@link SecretsList} custom object
+     * @return repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>

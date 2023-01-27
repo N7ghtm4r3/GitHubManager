@@ -51,18 +51,22 @@ public class DependabotAlert extends GitHubAlert {
      * {@code state} the state of the Dependabot alert
      **/
     private final DependabotAlertState state;
+
     /**
      * {@code dependency} details for the vulnerable dependency
      **/
     private final Dependency dependency;
+
     /**
      * {@code securityAdvisory} details for the GitHub Security Advisory
      **/
     private final SecurityAdvisory securityAdvisory;
+
     /**
      * {@code securityVulnerability} details pertaining to one vulnerable version range for the advisory
      **/
     private final Vulnerability securityVulnerability;
+
     /**
      * {@code dismissedReason} the reason that the alert was dismissed
      **/
@@ -285,10 +289,12 @@ public class DependabotAlert extends GitHubAlert {
          * {@code dPackage} details for the vulnerable package
          **/
         private final Package dPackage;
+
         /**
          * {@code manifestPath} the full path to the dependency manifest file, relative to the root of the repository
          **/
         private final String manifestPath;
+
         /**
          * {@code scope} the execution scope of the vulnerable dependency
          **/

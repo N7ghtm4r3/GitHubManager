@@ -36,6 +36,14 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
  *         <a href="https://docs.github.com/en/rest/codespaces/secrets#get-public-key-for-the-authenticated-user">
  *             Get public key for the authenticated user</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/dependabot/secrets#get-an-organization-public-key">
+ *             Get an organization public key</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/dependabot/secrets#get-a-repository-public-key">
+ *             Get a repository public key</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/

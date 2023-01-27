@@ -59,6 +59,14 @@ import static java.util.Base64.getEncoder;
  *         <a href="https://docs.github.com/en/rest/codespaces/secrets#get-a-secret-for-the-authenticated-user">
  *             Get a secret for the authenticated user</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/dependabot/secrets#get-an-organization-secret">
+ *             Get an organization secret</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/dependabot/secrets#get-a-repository-secret">
+ *             Get a repository secret</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/
