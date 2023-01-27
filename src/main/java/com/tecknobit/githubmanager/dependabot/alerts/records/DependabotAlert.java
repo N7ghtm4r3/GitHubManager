@@ -366,6 +366,11 @@ public class DependabotAlert extends GitHubAlert {
         public enum Scope {
 
             /**
+             * {@code unknown} scope
+             **/
+            unknown,
+
+            /**
              * {@code development} scope
              **/
             development,
