@@ -73,7 +73,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
     /**
      * Method to get {@link #totalAdvancedSecurityCommitters} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalAdvancedSecurityCommitters} instance as int
      **/
@@ -83,7 +83,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
     /**
      * Method to get {@link #repositories} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositories} instance as {@link Collection} of {@link SecurityRepository}
      **/
@@ -148,7 +148,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -158,7 +158,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
         /**
          * Method to get {@link #advancedSecurityCommitters} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #advancedSecurityCommitters} instance as int
          **/
@@ -168,7 +168,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
         /**
          * Method to get {@link #advancedSecurityCommittersBreakdown} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #advancedSecurityCommittersBreakdown} instance as {@link Collection} of {@link AdvancedSecurityCommitterBreakdown}
          **/
@@ -220,7 +220,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
             /**
              * Method to get {@link #userLogin} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #userLogin} instance as {@link String}
              **/
@@ -230,7 +230,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
             /**
              * Method to get {@link #lastPushedDate} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #lastPushedDate} instance as {@link String}
              **/
@@ -240,7 +240,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
 
             /**
              * Method to get {@link #lastPushedDate} timestamp <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #lastPushedDate} timestamp as long
              **/

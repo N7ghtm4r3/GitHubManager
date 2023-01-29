@@ -71,7 +71,7 @@ public class OrganizationsList extends GitHubList {
 
     /**
      * Method to get {@link #organizations} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizations} instance as {@link Collection} of {@link Organization}
      **/

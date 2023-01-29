@@ -79,7 +79,7 @@ public class GitHubUserSecretsManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubUserSecretsManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -103,7 +103,7 @@ public class GitHubUserSecretsManager extends GitHubManager {
      * endpoint. <br>
      * User must have Codespaces access to use this endpoint. <br>
      * GitHub Apps must have read access to the {@code "codespaces_user_secrets"} user permission to use this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return secrets list as {@link SecretsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -240,7 +240,7 @@ public class GitHubUserSecretsManager extends GitHubManager {
      * endpoint. <br>
      * User must have Codespaces access to use this endpoint. <br>
      * GitHub Apps must have read access to the {@code "codespaces_user_secrets"} user permission to use this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return public key as {@link GitHubPublicKey} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

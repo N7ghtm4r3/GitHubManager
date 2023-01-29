@@ -161,7 +161,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -171,7 +171,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -181,7 +181,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #scopes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #scopes} instance as {@link Collection} of {@link String}
      **/
@@ -191,7 +191,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #tokenLastEight} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #tokenLastEight} instance as {@link String}
      **/
@@ -201,7 +201,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #hashedToken} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hashedToken} instance as {@link String}
      **/
@@ -211,7 +211,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #app} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #app} instance as {@link App}
      **/
@@ -221,7 +221,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #note} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #note} instance as {@link String}
      **/
@@ -231,7 +231,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #noteUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #noteUrl} instance as {@link String}
      **/
@@ -241,7 +241,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -251,7 +251,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -261,7 +261,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -271,7 +271,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -281,7 +281,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #fingerprint} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #fingerprint} instance as {@link String}
      **/
@@ -291,7 +291,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #user} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #user} instance as {@link User}
      **/
@@ -301,7 +301,7 @@ public class ScopedAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #installation} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #installation} instance as {@link Installation}
      **/
@@ -358,7 +358,7 @@ public class ScopedAccessToken extends GitHubToken {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -368,7 +368,7 @@ public class ScopedAccessToken extends GitHubToken {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -378,7 +378,7 @@ public class ScopedAccessToken extends GitHubToken {
 
         /**
          * Method to get {@link #clientId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #clientId} instance as {@link String}
          **/
@@ -388,7 +388,7 @@ public class ScopedAccessToken extends GitHubToken {
 
         /**
          * Returns a string representation of the object <br>
-         * Any params required
+         * No-any params required
          *
          * @return a string representation of the object as {@link String}
          */

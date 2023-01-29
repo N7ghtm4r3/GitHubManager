@@ -15,7 +15,6 @@ import java.io.IOException;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespacesManager.CODESPACES_PATH;
-import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespacesManager.USER_CODESPACES_PATH;
 
 /**
  * The {@code GitHubMachinesManager} class is useful to manage all GitHub's machines endpoints
@@ -74,7 +73,7 @@ public class GitHubMachinesManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubMachinesManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert

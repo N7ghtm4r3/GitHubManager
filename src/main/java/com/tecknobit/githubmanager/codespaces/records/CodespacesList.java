@@ -71,7 +71,7 @@ public class CodespacesList extends GitHubList {
 
     /**
      * Method to get {@link #codespaces} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #codespaces} instance as {@link Collection} of {@link Codespace}
      **/

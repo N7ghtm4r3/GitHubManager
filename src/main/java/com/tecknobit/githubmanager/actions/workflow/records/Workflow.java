@@ -66,7 +66,7 @@ public class Workflow extends Environment {
 
     /**
      * Method to get {@link #path} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #path} instance as {@link String}
      **/
@@ -76,7 +76,7 @@ public class Workflow extends Environment {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link WorkflowState}
      **/
@@ -86,7 +86,7 @@ public class Workflow extends Environment {
 
     /**
      * Method to get {@link #badgeUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #badgeUrl} instance as {@link String}
      **/

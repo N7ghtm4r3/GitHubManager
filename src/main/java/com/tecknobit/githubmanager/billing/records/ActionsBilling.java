@@ -78,7 +78,7 @@ public class ActionsBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #totalMinutesUsed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalMinutesUsed} instance as int
      **/
@@ -88,7 +88,7 @@ public class ActionsBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #totalPaidMinutesUsed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalPaidMinutesUsed} instance as double
      **/
@@ -109,7 +109,7 @@ public class ActionsBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #includedMinutes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #includedMinutes} instance as int
      **/
@@ -119,7 +119,7 @@ public class ActionsBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #minutesUsedBreakdown} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #minutesUsedBreakdown} instance as {@link MinutesUsedBreakdown}
      **/
@@ -268,7 +268,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #UBUNTU} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #UBUNTU} instance as int
          **/
@@ -278,7 +278,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #MACOS} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #MACOS} instance as int
          **/
@@ -288,7 +288,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #WINDOWS} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #WINDOWS} instance as int
          **/
@@ -298,7 +298,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #ubuntu4Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ubuntu4Core} instance as int
          **/
@@ -308,7 +308,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #ubuntu8Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ubuntu8Core} instance as int
          **/
@@ -318,7 +318,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #ubuntu16Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ubuntu16Core} instance as int
          **/
@@ -328,7 +328,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #ubuntu32Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ubuntu32Core} instance as int
          **/
@@ -338,7 +338,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #ubuntu64Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ubuntu64Core} instance as int
          **/
@@ -348,7 +348,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #windows4Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #windows4Core} instance as int
          **/
@@ -358,7 +358,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #windows8Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #windows8Core} instance as int
          **/
@@ -368,7 +368,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #windows16Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #windows16Core} instance as int
          **/
@@ -378,7 +378,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #windows32Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #windows32Core} instance as int
          **/
@@ -388,7 +388,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #windows64Core} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #windows64Core} instance as int
          **/
@@ -398,7 +398,7 @@ public class ActionsBilling extends GitHubResponse {
 
         /**
          * Method to get {@link #total} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #total} instance as int
          **/

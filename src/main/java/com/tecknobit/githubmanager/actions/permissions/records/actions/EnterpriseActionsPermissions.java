@@ -55,7 +55,7 @@ public class EnterpriseActionsPermissions extends ActionsPermissions {
 
     /**
      * Method to get {@link #enabledOrganizations} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #enabledOrganizations} instance as {@link EnabledItems}
      **/

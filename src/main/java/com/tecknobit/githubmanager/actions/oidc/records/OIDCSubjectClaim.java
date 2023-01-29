@@ -70,7 +70,7 @@ public class OIDCSubjectClaim extends GitHubResponse {
 
     /**
      * Method to get {@link #useDefault} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #useDefault} instance as boolean
      **/
@@ -80,7 +80,7 @@ public class OIDCSubjectClaim extends GitHubResponse {
 
     /**
      * Method to get {@link #includeClaimKeys} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #includeClaimKeys} instance as {@link Collection} of {@link String}
      **/

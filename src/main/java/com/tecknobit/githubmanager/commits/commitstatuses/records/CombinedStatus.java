@@ -112,7 +112,7 @@ public class CombinedStatus extends GitHubList {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link CommitStatusState}
      **/
@@ -122,7 +122,7 @@ public class CombinedStatus extends GitHubList {
 
     /**
      * Method to get {@link #statuses} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #statuses} instance as {@link Collection} of {@link CommitStatus}
      **/
@@ -132,7 +132,7 @@ public class CombinedStatus extends GitHubList {
 
     /**
      * Method to get {@link #sha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sha} instance as {@link String}
      **/
@@ -142,7 +142,7 @@ public class CombinedStatus extends GitHubList {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link Repository}
      **/
@@ -152,7 +152,7 @@ public class CombinedStatus extends GitHubList {
 
     /**
      * Method to get {@link #commitUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commitUrl} instance as {@link String}
      **/
@@ -162,7 +162,7 @@ public class CombinedStatus extends GitHubList {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/

@@ -94,7 +94,7 @@ public class AARW extends GitHubResponse {
 
     /**
      * Method to get {@link #githubOwnedAllowed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #githubOwnedAllowed} instance as boolean
      **/
@@ -104,7 +104,7 @@ public class AARW extends GitHubResponse {
 
     /**
      * Method to get {@link #verifiedAllowed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #verifiedAllowed} instance as boolean
      **/
@@ -114,7 +114,7 @@ public class AARW extends GitHubResponse {
 
     /**
      * Method to get {@link #patternsAllowed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #patternsAllowed} instance as {@link Collection} of {@link String}
      **/

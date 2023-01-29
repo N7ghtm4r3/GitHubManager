@@ -89,7 +89,7 @@ public class GitHubInstallationsManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubInstallationsManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -110,7 +110,7 @@ public class GitHubInstallationsManager extends GitHubManager {
     /**
      * Method to list repositories that an app installation can access. <br>
      * You must use an installation access token to access this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -236,7 +236,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * Once an installation token is revoked, the token is invalidated and cannot be used.
      * Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the "Create an installation access token for an app" endpoint.
      * You must use an installation access token to access this endpoint
-     * Any params required
+     * No-any params required
      *
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/installations#revoke-an-installation-access-token">
@@ -264,7 +264,7 @@ public class GitHubInstallationsManager extends GitHubManager {
      * The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator,
      * and repositories that they can access through an organization membership.
      * You can find the permissions for the installation under the permissions key <br>
-     * Any params required
+     * No-any params required
      *
      * @return installations list as {@link InstallationsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

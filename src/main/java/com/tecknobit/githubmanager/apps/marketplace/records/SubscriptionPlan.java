@@ -112,7 +112,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -122,7 +122,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #type} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #type} instance as {@link String}
      **/
@@ -132,7 +132,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -142,7 +142,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #login} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #login} instance as {@link String}
      **/
@@ -152,7 +152,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #organizationBillingEmail} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationBillingEmail} instance as {@link String}
      **/
@@ -162,7 +162,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #email} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #email} instance as {@link String}
      **/
@@ -172,7 +172,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #marketplacePendingChange} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #marketplacePendingChange} instance as {@link MarketplacePendingChange}
      **/
@@ -182,7 +182,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
     /**
      * Method to get {@link #marketPlacePurchase} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #marketPlacePurchase} instance as {@link MarketPlacePurchase}
      **/
@@ -238,7 +238,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #effectiveDate} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #effectiveDate} instance as {@link String}
          **/
@@ -248,7 +248,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #effectiveDate} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #effectiveDate} timestamp as long
          **/
@@ -258,7 +258,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as long
          **/
@@ -268,7 +268,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #plan} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #plan} instance as {@link Plan}
          **/
@@ -278,7 +278,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Returns a string representation of the object <br>
-         * Any params required
+         * No-any params required
          *
          * @return a string representation of the object as {@link String}
          */
@@ -382,7 +382,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #billingCycle} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #billingCycle} instance as {@link String}
          **/
@@ -392,7 +392,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #nextBillingDate} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #nextBillingDate} instance as {@link String}
          **/
@@ -402,7 +402,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #nextBillingDate} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #nextBillingDate} timestamp as long
          **/
@@ -412,7 +412,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #unitCount} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #unitCount} instance as double
          **/
@@ -433,7 +433,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #onFreeTrial} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #onFreeTrial} instance as boolean
          **/
@@ -443,7 +443,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #freeTrialEndsOn} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #freeTrialEndsOn} instance as {@link String}
          **/
@@ -453,7 +453,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #freeTrialEndsOn} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #freeTrialEndsOn} timestamp as long
          **/
@@ -463,7 +463,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #updatedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #updatedAt} instance as {@link String}
          **/
@@ -473,7 +473,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #updatedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #updatedAt} timestamp as long
          **/
@@ -483,7 +483,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #account} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #account} instance as {@link Account}
          **/
@@ -493,7 +493,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
         /**
          * Method to get {@link #plan} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #plan} instance as {@link Plan}
          **/
@@ -585,7 +585,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #login} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #login} instance as {@link String}
              **/
@@ -595,7 +595,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #id} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #id} instance as long
              **/
@@ -605,7 +605,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #nodeId} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #nodeId} instance as {@link String}
              **/
@@ -615,7 +615,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #email} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #email} instance as {@link String}
              **/
@@ -625,7 +625,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #url} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #url} instance as {@link String}
              **/
@@ -635,7 +635,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #organizationBillingEmail} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #organizationBillingEmail} instance as {@link String}
              **/
@@ -645,7 +645,7 @@ public class SubscriptionPlan extends GitHubResponse {
 
             /**
              * Method to get {@link #type} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #type} instance as {@link String}
              **/

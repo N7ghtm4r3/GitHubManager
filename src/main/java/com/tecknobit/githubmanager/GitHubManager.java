@@ -196,7 +196,7 @@ public class GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -454,7 +454,7 @@ public class GitHubManager {
 
     /**
      * Method to get error response of the request <br>
-     * Any params required
+     * No-any params required
      *
      * @return error response of request as {@link String} or defaultErrorResponse as {@link String} if is not a request
      * error
@@ -465,7 +465,7 @@ public class GitHubManager {
 
     /**
      * Method to get error response of the request <br>
-     * Any params required
+     * No-any params required
      *
      * @return error response of the request formatted as {@link JSONObject} or {@link JSONArray} object or defaultErrorResponse
      * as {@link String} if is not a request error
@@ -476,7 +476,7 @@ public class GitHubManager {
 
     /**
      * Method to print error response of the request <br>
-     * Any params required
+     * No-any params required
      **/
     public void printErrorResponse() {
         apiRequest.printErrorResponse();
@@ -484,7 +484,7 @@ public class GitHubManager {
 
     /**
      * Method to print error response of request <br>
-     * Any params required
+     * No-any params required
      *
      * @implNote response will be printed in JSON format or in a simple {@link String} format
      **/
@@ -494,7 +494,7 @@ public class GitHubManager {
 
     /**
      * Method to get status response code of the request <br>
-     * Any params required
+     * No-any params required
      *
      * @return response code of the request as int
      **/
@@ -562,7 +562,7 @@ public class GitHubManager {
 
         /**
          * Method to get {@link #visibility} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #visibility} instance as {@link String}
          **/
@@ -668,7 +668,7 @@ public class GitHubManager {
 
         /**
          * Constructor to init {@link Params} <br>
-         * Any params required
+         * No-any params required
          **/
         public Params() {
             super();

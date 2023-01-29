@@ -211,7 +211,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #enabled} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #enabled} instance as boolean
      **/
@@ -221,7 +221,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -231,7 +231,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #requiredStatusCheck} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requiredStatusCheck} instance as {@link RequiredStatusCheck}
      **/
@@ -241,7 +241,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #enforceAdmins} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #enforceAdmins} instance as {@link ProtectionItem}
      **/
@@ -251,7 +251,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #requiredPullRequestReviews} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requiredPullRequestReviews} instance as {@link RequiredPullRequestReviews} of {@link Object}
      **/
@@ -261,7 +261,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #restrictions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #restrictions} instance as {@link Restrictions} of {@link Object}
      **/
@@ -271,7 +271,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #requiredLinearHistory} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requiredLinearHistory} instance as boolean
      **/
@@ -281,7 +281,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #allowForcePushes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowForcePushes} instance as boolean
      **/
@@ -291,7 +291,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #allowDeletions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowDeletions} instance as boolean
      **/
@@ -301,7 +301,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #blockCreations} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #blockCreations} instance as boolean
      **/
@@ -311,7 +311,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #requiredConversationResolution} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requiredConversationResolution} instance as boolean
      **/
@@ -321,7 +321,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -331,7 +331,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #protectionUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #protectionUrl} instance as {@link String}
      **/
@@ -341,7 +341,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #requiredSignatures} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requiredSignatures} instance as {@link ProtectionItem}
      **/
@@ -351,7 +351,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #lockBranch} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lockBranch} instance as boolean
      **/
@@ -361,7 +361,7 @@ public class BranchProtection extends GitHubResponse {
 
     /**
      * Method to get {@link #allowForkSyncing} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowForkSyncing} instance as boolean
      **/
@@ -451,7 +451,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #enforcementLevel} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #enforcementLevel} instance as {@link String}
          **/
@@ -461,7 +461,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #contexts} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #contexts} instance as {@link Collection} of {@link String}
          **/
@@ -471,7 +471,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #checks} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #checks} instance as {@link Collection} of {@link Check}
          **/
@@ -481,7 +481,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #contextsUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #contextsUrl} instance as {@link String}
          **/
@@ -491,7 +491,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #strict} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #strict} instance as boolean
          **/
@@ -546,7 +546,7 @@ public class BranchProtection extends GitHubResponse {
 
             /**
              * Method to get {@link #context} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #context} instance as {@link String}
              **/
@@ -556,7 +556,7 @@ public class BranchProtection extends GitHubResponse {
 
             /**
              * Method to get {@link #appId} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #appId} instance as long
              **/
@@ -611,7 +611,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -621,7 +621,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #enabled} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #enabled} instance as boolean
          **/
@@ -724,7 +724,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -734,7 +734,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #dismissalRestrictions} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #dismissalRestrictions} instance as {@link Restrictions} of {@link T}
          **/
@@ -744,7 +744,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #dismissStaleReviews} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #dismissStaleReviews} instance as boolean
          **/
@@ -754,7 +754,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #requireCodeOwnerReviews} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #requireCodeOwnerReviews} instance as boolean
          **/
@@ -764,7 +764,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #requiredApprovingReviewCount} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #requiredApprovingReviewCount} instance as int
          **/
@@ -774,7 +774,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #requireLastPushApproval} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #requireLastPushApproval} instance as boolean
          **/
@@ -784,7 +784,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #bypassPullRequestAllowances} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #bypassPullRequestAllowances} instance as {@link Restrictions} of {@link T}
          **/
@@ -910,7 +910,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -920,7 +920,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #usersUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #usersUrl} instance as {@link String}
          **/
@@ -930,7 +930,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #teamsUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #teamsUrl} instance as {@link String}
          **/
@@ -940,7 +940,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #appsUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #appsUrl} instance as {@link String}
          **/
@@ -950,7 +950,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #users} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #users} instance as {@link Collection} of {@link T}
          **/
@@ -960,7 +960,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #teams} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #teams} instance as {@link Collection} of {@link T}
          **/
@@ -970,7 +970,7 @@ public class BranchProtection extends GitHubResponse {
 
         /**
          * Method to get {@link #apps} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #apps} instance as {@link Collection} of {@link T}
          **/

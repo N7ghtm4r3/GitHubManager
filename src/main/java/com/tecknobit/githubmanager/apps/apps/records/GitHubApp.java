@@ -211,7 +211,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -221,7 +221,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #slug} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #slug} instance as {@link String}
      **/
@@ -231,7 +231,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -241,7 +241,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #owner} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #owner} instance as {@link User}
      **/
@@ -251,7 +251,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -261,7 +261,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/
@@ -271,7 +271,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #externalUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #externalUrl} instance as {@link String}
      **/
@@ -281,7 +281,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -291,7 +291,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -301,7 +301,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -311,7 +311,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -321,7 +321,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -331,7 +331,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #permissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permissions} instance as {@link AppPermissions}
      **/
@@ -341,7 +341,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #events} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #events} instance as {@link Collection} of {@link String}
      **/
@@ -351,7 +351,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #clientId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #clientId} instance as {@link String}
      **/
@@ -361,7 +361,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #clientSecret} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #clientSecret} instance as {@link String}
      **/
@@ -371,7 +371,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #webhookSecret} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #webhookSecret} instance as {@link String}
      **/
@@ -381,7 +381,7 @@ public class GitHubApp extends GitHubResponse {
 
     /**
      * Method to get {@link #pem} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pem} instance as {@link String}
      **/

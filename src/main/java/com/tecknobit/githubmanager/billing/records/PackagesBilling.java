@@ -68,7 +68,7 @@ public class PackagesBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #totalGigabytesBandwidthUsed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalGigabytesBandwidthUsed} instance as double
      **/
@@ -89,7 +89,7 @@ public class PackagesBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #totalPaidGigabytesBandwidthUsed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalPaidGigabytesBandwidthUsed} instance as double
      **/
@@ -110,7 +110,7 @@ public class PackagesBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #includedGigabytesBandwidth} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #includedGigabytesBandwidth} instance as double
      **/

@@ -106,7 +106,7 @@ public class GitHubCodespacesManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubCodespacesManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -1527,7 +1527,7 @@ public class GitHubCodespacesManager extends GitHubManager {
      * Method to get the list of the authenticated user's codespaces <br>
      * You must authenticate using an access token with the codespace scope to use this endpoint. <br>
      * GitHub Apps must have read access to the codespaces repository permission to use this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return codespaces list as {@link CodespacesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

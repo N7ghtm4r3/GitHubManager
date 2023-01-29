@@ -80,7 +80,7 @@ public class GitHubNotificationsManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubNotificationsManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -100,7 +100,7 @@ public class GitHubNotificationsManager extends GitHubManager {
 
     /**
      * Method to get all notifications list for the current user, sorted by most recently updated <br>
-     * Any params required
+     * No-any params required
      *
      * @return notifications list as {@link Collection} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -252,7 +252,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * complete in one request, you will receive a 202 Accepted status and GitHub will run an asynchronous process to mark
      * notifications as "read." To check whether any "unread" notifications remain, you can use the List notifications
      * for the authenticated user endpoint and pass the query parameter all=false <br>
-     * Any params required
+     * No-any params required
      *
      * @return message status as {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

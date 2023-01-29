@@ -90,7 +90,7 @@ public class ScanningItem extends GitHubResponse {
 
     /**
      * Method to get {@link #ref} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #ref} instance as {@link String}
      **/
@@ -100,7 +100,7 @@ public class ScanningItem extends GitHubResponse {
 
     /**
      * Method to get {@link #analysisKey} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #analysisKey} instance as {@link String}
      **/
@@ -110,7 +110,7 @@ public class ScanningItem extends GitHubResponse {
 
     /**
      * Method to get {@link #environment} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #environment} instance as {@link String}
      **/
@@ -120,7 +120,7 @@ public class ScanningItem extends GitHubResponse {
 
     /**
      * Method to get {@link #commitSha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commitSha} instance as {@link String}
      **/
@@ -130,7 +130,7 @@ public class ScanningItem extends GitHubResponse {
 
     /**
      * Method to get {@link #category} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #category} instance as {@link String}
      **/

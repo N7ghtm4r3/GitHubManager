@@ -150,7 +150,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -160,7 +160,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -170,7 +170,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #visibility} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #visibility} instance as {@link Visibility}
      **/
@@ -180,7 +180,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #isDefault} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #isDefault} instance as boolean
      **/
@@ -190,7 +190,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #runnersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runnersUrl} instance as {@link String}
      **/
@@ -200,7 +200,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #allowsPublicRepositories} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowsPublicRepositories} instance as boolean
      **/
@@ -210,7 +210,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #restrictedToWorkflows} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #restrictedToWorkflows} instance as boolean
      **/
@@ -220,7 +220,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #selectedWorkFlows} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #selectedWorkFlows} instance as {@link Collection} of {@link String}
      **/
@@ -230,7 +230,7 @@ public class RunnerGroup extends GitHubResponse {
 
     /**
      * Method to get {@link #workflowRestrictionsReadOnly} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #workflowRestrictionsReadOnly} instance as boolean
      **/

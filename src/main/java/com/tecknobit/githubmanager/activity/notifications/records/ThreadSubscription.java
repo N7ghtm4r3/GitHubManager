@@ -55,7 +55,7 @@ public class ThreadSubscription extends Subscription {
 
     /**
      * Method to get {@link #threadUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #threadUrl} instance as {@link String}
      **/

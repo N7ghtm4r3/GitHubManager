@@ -64,7 +64,7 @@ public class DependencySubmission extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -74,7 +74,7 @@ public class DependencySubmission extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -84,7 +84,7 @@ public class DependencySubmission extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -94,7 +94,7 @@ public class DependencySubmission extends GitHubResponse {
 
     /**
      * Method to get {@link #result} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #result} instance as {@link String}
      **/
@@ -168,7 +168,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as {@link String}
          **/
@@ -178,7 +178,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #correlator} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #correlator} instance as {@link String}
          **/
@@ -188,7 +188,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #htmlUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #htmlUrl} instance as {@link String}
          **/
@@ -249,7 +249,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -259,7 +259,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #version} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #version} instance as {@link String}
          **/
@@ -269,7 +269,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -333,7 +333,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #key} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #key} instance as {@link ManifestsKey}
          **/
@@ -343,7 +343,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #metadata} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #metadata} instance as {@link Object}
          **/
@@ -353,7 +353,7 @@ public class DependencySubmission extends GitHubResponse {
 
         /**
          * Method to get {@link #resolved} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #resolved} instance as {@link Collection} of {@link Resolved}
          **/
@@ -404,7 +404,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #name} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #name} instance as {@link String}
              **/
@@ -414,7 +414,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #sourceLocation} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #sourceLocation} instance as {@link String}
              **/
@@ -515,7 +515,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #packageUrl} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #packageUrl} instance as {@link String}
              **/
@@ -525,7 +525,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #metadata} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #metadata} instance as {@link Object}
              **/
@@ -535,7 +535,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #relationship} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #relationship} instance as {@link Relationship}
              **/
@@ -545,7 +545,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #scope} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #scope} instance as {@link Scope}
              **/
@@ -555,7 +555,7 @@ public class DependencySubmission extends GitHubResponse {
 
             /**
              * Method to get {@link #dependencies} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #dependencies} instance as {@link Collection} of {@link String}
              **/

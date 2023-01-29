@@ -55,7 +55,7 @@ public class RunnerLabel extends GitHubResponse {
 
     /**
      * Method to get {@link #type} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #type} instance as {@link String}
      **/
@@ -65,7 +65,7 @@ public class RunnerLabel extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -75,7 +75,7 @@ public class RunnerLabel extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -114,7 +114,7 @@ public class RunnerLabel extends GitHubResponse {
 
         /**
          * Method to get {@link #labelType} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #labelType} instance as {@link String}
          **/

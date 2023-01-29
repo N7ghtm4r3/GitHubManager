@@ -432,7 +432,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #diffUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #diffUrl} instance as {@link String}
      **/
@@ -442,7 +442,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #patchUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #patchUrl} instance as {@link String}
      **/
@@ -452,7 +452,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #issueUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #issueUrl} instance as {@link String}
      **/
@@ -462,7 +462,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #commitsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commitsUrl} instance as {@link String}
      **/
@@ -472,7 +472,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #reviewCommentsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reviewCommentsUrl} instance as {@link String}
      **/
@@ -482,7 +482,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #reviewCommentUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reviewCommentUrl} instance as {@link String}
      **/
@@ -492,7 +492,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #commentsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commentsUrl} instance as {@link String}
      **/
@@ -502,7 +502,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #statusesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #statusesUrl} instance as {@link String}
      **/
@@ -512,7 +512,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #locked} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #locked} instance as boolean
      **/
@@ -522,7 +522,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #user} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #user} instance as {@link User}
      **/
@@ -532,7 +532,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #body} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #body} instance as {@link String}
      **/
@@ -542,7 +542,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #labels} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #labels} instance as {@link Collection} of {@link Label}
      **/
@@ -552,7 +552,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #milestone} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #milestone} instance as {@link Milestone}
      **/
@@ -562,7 +562,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #activeLockReason} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #activeLockReason} instance as {@link String}
      **/
@@ -572,7 +572,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #mergedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mergedAt} instance as {@link String}
      **/
@@ -582,7 +582,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #mergedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mergedAt} timestamp as long
      **/
@@ -592,7 +592,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #mergeCommitSha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mergeCommitSha} instance as {@link String}
      **/
@@ -602,7 +602,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #assignee} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #assignee} instance as {@link User}
      **/
@@ -612,7 +612,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #assignees} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #assignees} instance as {@link Collection} of {@link User}
      **/
@@ -622,7 +622,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #requestedReviewers} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requestedReviewers} instance as {@link Collection} of {@link User}
      **/
@@ -632,7 +632,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #requestedTeams} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #requestedTeams} instance as {@link Collection} of {@link Team}
      **/
@@ -642,7 +642,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #head} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #head} instance as {@link PullRequestPart}
      **/
@@ -652,7 +652,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #base} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #base} instance as {@link PullRequestPart}
      **/
@@ -662,7 +662,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #_links} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #_links} instance as {@link Links}
      **/
@@ -672,7 +672,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #authorAssociation} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #authorAssociation} instance as {@link AuthorAssociation}
      **/
@@ -682,7 +682,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #autoMerge} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #autoMerge} instance as {@link AutoMerge}
      **/
@@ -692,7 +692,7 @@ public class PullRequest extends PullRequestStructure {
 
     /**
      * Method to get {@link #draft} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #draft} instance as boolean
      **/
@@ -810,7 +810,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #nodeId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #nodeId} instance as {@link String}
          **/
@@ -820,7 +820,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #description} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #description} instance as {@link String}
          **/
@@ -830,7 +830,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #color} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #color} instance as {@link String}
          **/
@@ -840,7 +840,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #isDefault} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #isDefault} instance as {@link String}
          **/
@@ -938,7 +938,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #labelsUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #labelsUrl} instance as {@link String}
          **/
@@ -948,7 +948,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #description} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #description} instance as {@link String}
          **/
@@ -958,7 +958,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #creator} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #creator} instance as {@link User}
          **/
@@ -968,7 +968,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #openIssues} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #openIssues} instance as int
          **/
@@ -978,7 +978,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #closedIssues} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #closedIssues} instance as int
          **/
@@ -988,7 +988,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #dueOn} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #dueOn} instance as {@link String}
          **/
@@ -998,7 +998,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #dueOn} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #dueOn} timestamp as long
          **/
@@ -1075,7 +1075,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #label} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #label} instance as {@link String}
          **/
@@ -1085,7 +1085,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #ref} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ref} instance as {@link String}
          **/
@@ -1095,7 +1095,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #sha} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #sha} instance as {@link String}
          **/
@@ -1105,7 +1105,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #user} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #user} instance as {@link User}
          **/
@@ -1115,7 +1115,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #repo} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #repo} instance as {@link CompleteRepository}
          **/
@@ -1217,7 +1217,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #self} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #self} instance as {@link String}
          **/
@@ -1227,7 +1227,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #html} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #html} instance as {@link String}
          **/
@@ -1237,7 +1237,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #issue} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #issue} instance as {@link String}
          **/
@@ -1247,7 +1247,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #comments} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #comments} instance as {@link String}
          **/
@@ -1257,7 +1257,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #reviewComments} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #reviewComments} instance as {@link String}
          **/
@@ -1267,7 +1267,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #reviewComment} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #reviewComment} instance as {@link String}
          **/
@@ -1277,7 +1277,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #commits} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #commits} instance as {@link String}
          **/
@@ -1287,7 +1287,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #statuses} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #statuses} instance as {@link String}
          **/
@@ -1356,7 +1356,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #enabledBy} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #enabledBy} instance as {@link User}
          **/
@@ -1366,7 +1366,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #mergeMethod} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #mergeMethod} instance as {@link MergeMethod}
          **/
@@ -1376,7 +1376,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #commitTitle} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #commitTitle} instance as {@link String}
          **/
@@ -1386,7 +1386,7 @@ public class PullRequest extends PullRequestStructure {
 
         /**
          * Method to get {@link #commitMessage} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #commitMessage} instance as {@link String}
          **/

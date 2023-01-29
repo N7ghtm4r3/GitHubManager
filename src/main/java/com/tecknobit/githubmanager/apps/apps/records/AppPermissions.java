@@ -180,7 +180,7 @@ public class AppPermissions {
 
     /**
      * Constructor to init a {@link AppPermissions} <br>
-     * Any params required
+     * No-any params required
      *
      * @apiNote to set the different permissions you can instantiate {@link AppPermissions}
      * with this empty constructor and subsequently set the different permissions with the setter methods
@@ -217,7 +217,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #actions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #actions} instance as {@link PermissionType}
      **/
@@ -236,7 +236,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #administration} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #administration} instance as {@link PermissionType}
      **/
@@ -255,7 +255,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #checks} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checks} instance as {@link PermissionType}
      **/
@@ -274,7 +274,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #contents} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #contents} instance as {@link PermissionType}
      **/
@@ -293,7 +293,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #deployments} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #deployments} instance as {@link PermissionType}
      **/
@@ -312,7 +312,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #environments} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #environments} instance as {@link PermissionType}
      **/
@@ -331,7 +331,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #issues} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #issues} instance as {@link PermissionType}
      **/
@@ -350,7 +350,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #metadata} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #metadata} instance as {@link PermissionType}
      **/
@@ -369,7 +369,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #packages} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #packages} instance as {@link PermissionType}
      **/
@@ -388,7 +388,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #pages} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pages} instance as {@link PermissionType}
      **/
@@ -407,7 +407,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #pullRequests} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pullRequests} instance as {@link PermissionType}
      **/
@@ -426,7 +426,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #repositoryAnnouncementBanners} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoryAnnouncementBanners} instance as {@link PermissionType}
      **/
@@ -445,7 +445,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #repositoryHooks} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoryHooks} instance as {@link PermissionType}
      **/
@@ -464,7 +464,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #repositoryProjects} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoryProjects} instance as {@link APermissionType}
      **/
@@ -483,7 +483,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #secretScanningAlerts} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #secretScanningAlerts} instance as {@link PermissionType}
      **/
@@ -502,7 +502,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #secrets} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #secrets} instance as {@link PermissionType}
      **/
@@ -521,7 +521,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #securityEvents} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #securityEvents} instance as {@link PermissionType}
      **/
@@ -540,7 +540,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #singleFile} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #singleFile} instance as {@link PermissionType}
      **/
@@ -559,7 +559,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #statuses} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #statuses} instance as {@link PermissionType}
      **/
@@ -578,7 +578,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #vulnerabilityAlerts} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #vulnerabilityAlerts} instance as {@link PermissionType}
      **/
@@ -597,7 +597,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #workflows} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #workflows} instance as {@link PermissionType}
      **/
@@ -614,7 +614,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #members} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #members} instance as {@link PermissionType}
      **/
@@ -633,7 +633,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationAdministration} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationAdministration} instance as {@link PermissionType}
      **/
@@ -652,7 +652,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationCustomRoles} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationCustomRoles} instance as {@link PermissionType}
      **/
@@ -671,7 +671,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationAnnouncementBanners} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationAnnouncementBanners} instance as {@link PermissionType}
      **/
@@ -690,7 +690,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationHooks} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationHooks} instance as {@link PermissionType}
      **/
@@ -709,7 +709,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationPlan} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationPlan} instance as {@link PermissionType}
      **/
@@ -728,7 +728,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationProjects} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationProjects} instance as {@link APermissionType}
      **/
@@ -747,7 +747,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationPackages} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationPackages} instance as {@link PermissionType}
      **/
@@ -766,7 +766,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationSecrets} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationSecrets} instance as {@link PermissionType}
      **/
@@ -785,7 +785,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationSelfHostedRunners} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationSelfHostedRunners} instance as {@link PermissionType}
      **/
@@ -804,7 +804,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #organizationUserBlocking} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationUserBlocking} instance as {@link PermissionType}
      **/
@@ -823,7 +823,7 @@ public class AppPermissions {
 
     /**
      * Method to get {@link #teamDiscussions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #teamDiscussions} instance as {@link PermissionType}
      **/
@@ -842,7 +842,7 @@ public class AppPermissions {
 
     /**
      * Returns a string representation of the object <br>
-     * Any params required
+     * No-any params required
      *
      * @return a string representation of the object as {@link String}
      */

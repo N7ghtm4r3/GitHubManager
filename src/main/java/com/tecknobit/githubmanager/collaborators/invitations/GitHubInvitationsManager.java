@@ -80,7 +80,7 @@ public class GitHubInvitationsManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubInvitationsManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -675,7 +675,7 @@ public class GitHubInvitationsManager extends GitHubManager {
 
     /**
      * When authenticating as a user, this method will list all currently open repository invitations for that user <br>
-     * Any params required
+     * No-any params required
      *
      * @return invitations list as {@link Collection} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

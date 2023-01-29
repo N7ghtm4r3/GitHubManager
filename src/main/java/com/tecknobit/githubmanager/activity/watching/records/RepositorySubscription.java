@@ -55,7 +55,7 @@ public class RepositorySubscription extends Subscription {
 
     /**
      * Method to get {@link #repositoryUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoryUrl} instance as {@link String}
      **/

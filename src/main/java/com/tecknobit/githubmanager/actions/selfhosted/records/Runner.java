@@ -97,7 +97,7 @@ public class Runner extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -107,7 +107,7 @@ public class Runner extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -117,7 +117,7 @@ public class Runner extends GitHubResponse {
 
     /**
      * Method to get {@link #os} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #os} instance as {@link String}
      **/
@@ -127,7 +127,7 @@ public class Runner extends GitHubResponse {
 
     /**
      * Method to get {@link #status} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #status} instance as {@link String}
      **/
@@ -137,7 +137,7 @@ public class Runner extends GitHubResponse {
 
     /**
      * Method to get {@link #busy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #busy} instance as boolean
      **/
@@ -147,7 +147,7 @@ public class Runner extends GitHubResponse {
 
     /**
      * Method to get {@link #labels} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #labels} instance as {@link Collection} of {@link RunnerLabel}
      **/

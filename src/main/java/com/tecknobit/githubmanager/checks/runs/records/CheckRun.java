@@ -136,7 +136,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #externalId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #externalId} instance as long
      **/
@@ -146,7 +146,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -156,7 +156,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #detailsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #detailsUrl} instance as {@link String}
      **/
@@ -166,7 +166,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #conclusion} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #conclusion} instance as {@link CheckRunConclusion}
      **/
@@ -176,7 +176,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #startedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startedAt} instance as {@link String}
      **/
@@ -186,7 +186,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #startedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startedAt} timestamp as long
      **/
@@ -196,7 +196,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #completedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #completedAt} instance as {@link String}
      **/
@@ -206,7 +206,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #completedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #completedAt} timestamp as long
      **/
@@ -216,7 +216,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #output} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #output} instance as {@link Output}
      **/
@@ -226,7 +226,7 @@ public class CheckRun extends Check {
 
     /**
      * Method to get {@link #checkSuite} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkSuite} instance as {@link CheckSuite}
      **/
@@ -371,7 +371,7 @@ public class CheckRun extends Check {
 
         /**
          * Method to get {@link #title} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #title} instance as {@link String}
          **/
@@ -381,7 +381,7 @@ public class CheckRun extends Check {
 
         /**
          * Method to get {@link #summary} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #summary} instance as {@link String}
          **/
@@ -391,7 +391,7 @@ public class CheckRun extends Check {
 
         /**
          * Method to get {@link #text} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #text} instance as {@link String}
          **/
@@ -401,7 +401,7 @@ public class CheckRun extends Check {
 
         /**
          * Method to get {@link #annotationsCount} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #annotationsCount} instance as int
          **/
@@ -411,7 +411,7 @@ public class CheckRun extends Check {
 
         /**
          * Method to get {@link #annotationsUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #annotationsUrl} instance as {@link String}
          **/

@@ -69,7 +69,7 @@ public class InstallationAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #permissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permissions} instance as {@link AppPermissions}
      **/
@@ -79,7 +79,7 @@ public class InstallationAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #repositorySelection} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositorySelection} instance as {@link RepositorySelection}
      **/
@@ -89,7 +89,7 @@ public class InstallationAccessToken extends GitHubToken {
 
     /**
      * Method to get {@link #repositories} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositories} instance as {@link Collection} of {@link CompleteRepository}
      **/

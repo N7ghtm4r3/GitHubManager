@@ -69,7 +69,7 @@ public class CheckRunsList extends GitHubList {
 
     /**
      * Method to get {@link #checkRuns} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkRuns} instance as {@link Collection} of {@link CheckRun}
      **/

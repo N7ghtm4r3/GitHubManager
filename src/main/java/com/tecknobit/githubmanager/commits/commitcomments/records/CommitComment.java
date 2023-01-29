@@ -184,7 +184,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -194,7 +194,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -204,7 +204,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -214,7 +214,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -224,7 +224,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #body} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #body} instance as {@link String}
      **/
@@ -234,7 +234,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #path} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #path} instance as {@link String}
      **/
@@ -244,7 +244,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #position} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #position} instance as int
      **/
@@ -254,7 +254,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #line} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #line} instance as int
      **/
@@ -264,7 +264,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #commitId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commitId} instance as {@link String}
      **/
@@ -274,7 +274,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #user} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #user} instance as {@link User}
      **/
@@ -284,7 +284,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -294,7 +294,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -304,7 +304,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -314,7 +314,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #authorAssociation} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #authorAssociation} instance as {@link AuthorAssociation}
      **/
@@ -324,7 +324,7 @@ public class CommitComment extends GitHubResponse {
 
     /**
      * Method to get {@link #reactions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reactions} instance as {@link Reactions}
      **/
@@ -440,7 +440,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -450,7 +450,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #totalCount} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #totalCount} instance as int
          **/
@@ -460,7 +460,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #plusOne} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #plusOne} instance as int
          **/
@@ -470,7 +470,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #minusOne} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #minusOne} instance as int
          **/
@@ -480,7 +480,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #laugh} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #laugh} instance as int
          **/
@@ -490,7 +490,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #confused} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #confused} instance as int
          **/
@@ -500,7 +500,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #heart} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #heart} instance as int
          **/
@@ -510,7 +510,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #hooray} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #hooray} instance as int
          **/
@@ -520,7 +520,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #eyes} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #eyes} instance as int
          **/
@@ -530,7 +530,7 @@ public class CommitComment extends GitHubResponse {
 
         /**
          * Method to get {@link #rocket} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #rocket} instance as int
          **/

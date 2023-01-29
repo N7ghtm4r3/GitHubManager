@@ -92,7 +92,7 @@ public class RepositoriesList extends GitHubList {
 
     /**
      * Method to get {@link #repositories} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositories} instance as {@link Collection} of {@link Repository}
      **/
@@ -102,7 +102,7 @@ public class RepositoriesList extends GitHubList {
 
     /**
      * Method to get the ids from the {@link #repositories} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return ids from {@link #repositories} instance as {@link Collection} of {@link Long}
      **/

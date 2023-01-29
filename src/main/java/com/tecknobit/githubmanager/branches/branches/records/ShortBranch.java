@@ -56,7 +56,7 @@ public class ShortBranch extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -66,7 +66,7 @@ public class ShortBranch extends GitHubResponse {
 
     /**
      * Method to get {@link #commit} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commit} instance as {@link Commit}
      **/
@@ -76,7 +76,7 @@ public class ShortBranch extends GitHubResponse {
 
     /**
      * Method to get {@link #isProtected} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #isProtected} instance as boolean
      **/

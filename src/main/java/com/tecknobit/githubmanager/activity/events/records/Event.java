@@ -160,7 +160,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -170,7 +170,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #type} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #type} instance as {@link EventType}
      **/
@@ -180,7 +180,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #actor} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #actor} instance as {@link EventEntity}
      **/
@@ -190,7 +190,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #repo} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repo} instance as {@link BaseResponseDetails}
      **/
@@ -200,7 +200,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #payload} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #payload} instance as {@link Payload}
      **/
@@ -210,7 +210,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #isPublic} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #isPublic} instance as boolean
      **/
@@ -220,7 +220,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -230,7 +230,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -240,7 +240,7 @@ public class Event extends GitHubResponse {
 
     /**
      * Method to get {@link #org} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #org} instance as {@link EventEntity}
      **/
@@ -400,7 +400,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as long
          **/
@@ -410,7 +410,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #login} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #login} instance as {@link String}
          **/
@@ -420,7 +420,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #displayLogin} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #displayLogin} instance as {@link String}
          **/
@@ -430,7 +430,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #gravatarId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #gravatarId} instance as {@link String}
          **/
@@ -440,7 +440,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -450,7 +450,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #avatarUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #avatarUrl} instance as {@link String}
          **/
@@ -628,7 +628,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #pushId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #pushId} instance as long
          **/
@@ -638,7 +638,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #size} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #size} instance as int
          **/
@@ -648,7 +648,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #distinctSize} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #distinctSize} instance as int
          **/
@@ -658,7 +658,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #ref} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ref} instance as {@link String}
          **/
@@ -668,7 +668,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #head} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #head} instance as {@link String}
          **/
@@ -678,7 +678,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #before} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #before} instance as {@link String}
          **/
@@ -688,7 +688,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #commits} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #commits} instance as {@link Collection} of {@link Commit}
          **/
@@ -698,7 +698,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #action} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #action} instance as {@link String}
          **/
@@ -708,7 +708,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #refType} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #refType} instance as {@link String}
          **/
@@ -718,7 +718,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #masterBranch} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #masterBranch} instance as {@link String}
          **/
@@ -728,7 +728,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #description} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #description} instance as {@link String}
          **/
@@ -738,7 +738,7 @@ public class Event extends GitHubResponse {
 
         /**
          * Method to get {@link #pusherType} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #pusherType} instance as {@link String}
          **/
@@ -811,7 +811,7 @@ public class Event extends GitHubResponse {
 
             /**
              * Method to get {@link #sha} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #sha} instance as {@link String}
              **/
@@ -821,7 +821,7 @@ public class Event extends GitHubResponse {
 
             /**
              * Method to get {@link #author} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #author} instance as {@link CommitProfile}
              **/
@@ -831,7 +831,7 @@ public class Event extends GitHubResponse {
 
             /**
              * Method to get {@link #message} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #message} instance as {@link String}
              **/
@@ -841,7 +841,7 @@ public class Event extends GitHubResponse {
 
             /**
              * Method to get {@link #distinct} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #distinct} instance as boolean
              **/
@@ -851,7 +851,7 @@ public class Event extends GitHubResponse {
 
             /**
              * Method to get {@link #url} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #url} instance as {@link String}
              **/
@@ -861,7 +861,7 @@ public class Event extends GitHubResponse {
 
             /**
              * Returns a string representation of the object <br>
-             * Any params required
+             * No-any params required
              *
              * @return a string representation of the object as {@link String}
              */

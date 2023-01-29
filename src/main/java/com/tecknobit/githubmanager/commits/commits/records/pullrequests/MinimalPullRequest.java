@@ -70,7 +70,7 @@ public class MinimalPullRequest {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -80,7 +80,7 @@ public class MinimalPullRequest {
 
     /**
      * Method to get {@link #number} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #number} instance as int
      **/
@@ -90,7 +90,7 @@ public class MinimalPullRequest {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -100,7 +100,7 @@ public class MinimalPullRequest {
 
     /**
      * Method to get {@link #head} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #head} instance as {@link MinimalPullRequestPart}
      **/
@@ -110,7 +110,7 @@ public class MinimalPullRequest {
 
     /**
      * Method to get {@link #base} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #base} instance as {@link MinimalPullRequestPart}
      **/
@@ -120,7 +120,7 @@ public class MinimalPullRequest {
 
     /**
      * Returns a string representation of the object <br>
-     * Any params required
+     * No-any params required
      *
      * @return a string representation of the object as {@link String}
      */
@@ -180,7 +180,7 @@ public class MinimalPullRequest {
 
         /**
          * Method to get {@link #sha} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #sha} instance as {@link String}
          **/
@@ -190,7 +190,7 @@ public class MinimalPullRequest {
 
         /**
          * Method to get {@link #ref} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ref} instance as {@link String}
          **/
@@ -200,7 +200,7 @@ public class MinimalPullRequest {
 
         /**
          * Method to get {@link #repo} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #repo} instance as {@link BaseResponseDetails}
          **/

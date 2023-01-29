@@ -318,7 +318,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -328,7 +328,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #checkSuiteId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkSuiteId} instance as long
      **/
@@ -338,7 +338,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #checkSuiteNodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkSuiteNodeId} instance as {@link String}
      **/
@@ -348,7 +348,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #headBranch} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headBranch} instance as {@link String}
      **/
@@ -358,7 +358,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #headSha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headSha} instance as {@link String}
      **/
@@ -368,7 +368,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #path} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #path} instance as {@link String}
      **/
@@ -378,7 +378,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runNumber} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runNumber} instance as int
      **/
@@ -388,7 +388,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #event} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #event} instance as {@link String}
      **/
@@ -398,7 +398,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #displayTitle} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #displayTitle} instance as {@link String}
      **/
@@ -408,7 +408,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #status} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #status} instance as {@link Status}
      **/
@@ -418,7 +418,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #workflowId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #workflowId} instance as long
      **/
@@ -428,7 +428,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -438,7 +438,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #pullRequests} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pullRequests} instance as {@link Collection} of {@link MinimalPullRequest}
      **/
@@ -448,7 +448,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -458,7 +458,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -468,7 +468,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -478,7 +478,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -488,7 +488,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #actor} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #actor} instance as {@link User}
      **/
@@ -498,7 +498,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runAttempt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runAttempt} instance as int
      **/
@@ -508,7 +508,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #referencedWorkflows} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #referencedWorkflows} instance as {@link Collection} of {@link ReferencedWorkflow}
      **/
@@ -518,7 +518,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runStartedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runStartedAt} instance as {@link String}
      **/
@@ -528,7 +528,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #triggeringActor} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #triggeringActor} instance as {@link User}
      **/
@@ -538,7 +538,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #jobsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #jobsUrl} instance as {@link String}
      **/
@@ -548,7 +548,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #logsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #logsUrl} instance as {@link String}
      **/
@@ -558,7 +558,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #checkSuiteUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkSuiteUrl} instance as {@link String}
      **/
@@ -568,7 +568,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #artifactsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #artifactsUrl} instance as {@link String}
      **/
@@ -578,7 +578,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #cancelUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #cancelUrl} instance as {@link String}
      **/
@@ -588,7 +588,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #rerunUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #rerunUrl} instance as {@link String}
      **/
@@ -598,7 +598,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #previousAttemptUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #previousAttemptUrl} instance as {@link String}
      **/
@@ -608,7 +608,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #workflowUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #workflowUrl} instance as {@link String}
      **/
@@ -618,7 +618,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #headCommit} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headCommit} instance as {@link Commit}
      **/
@@ -628,7 +628,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link Repository}
      **/
@@ -638,7 +638,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
     /**
      * Method to get {@link #headRepository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headRepository} instance as {@link Repository}
      **/
@@ -769,7 +769,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #path} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #path} instance as {@link String}
          **/
@@ -779,7 +779,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #sha} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #sha} instance as {@link String}
          **/
@@ -789,7 +789,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #ref} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ref} instance as {@link String}
          **/
@@ -874,7 +874,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as long
          **/
@@ -884,7 +884,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #treeId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #treeId} instance as long
          **/
@@ -894,7 +894,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #message} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #message} instance as {@link String}
          **/
@@ -904,7 +904,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #timestamp} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #timestamp} instance as {@link String}
          **/
@@ -914,7 +914,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #timestamp} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #timestamp} timestamp as long
          **/
@@ -924,7 +924,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #author} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #author} instance as {@link CommitProfile}
          **/
@@ -934,7 +934,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
         /**
          * Method to get {@link #committer} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #committer} instance as {@link CommitProfile}
          **/
@@ -985,7 +985,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
             /**
              * Method to get {@link #name} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #name} instance as {@link String}
              **/
@@ -995,7 +995,7 @@ public class WorkflowRun extends BaseResponseDetails {
 
             /**
              * Method to get {@link #email} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #email} instance as {@link String}
              **/

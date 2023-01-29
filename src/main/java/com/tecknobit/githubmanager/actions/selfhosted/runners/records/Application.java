@@ -110,7 +110,7 @@ public class Application extends GitHubResponse {
 
     /**
      * Method to get {@link #os} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #os} instance as {@link String}
      **/
@@ -120,7 +120,7 @@ public class Application extends GitHubResponse {
 
     /**
      * Method to get {@link #architecture} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #architecture} instance as {@link String}
      **/
@@ -130,7 +130,7 @@ public class Application extends GitHubResponse {
 
     /**
      * Method to get {@link #downloadUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #downloadUrl} instance as {@link String}
      **/
@@ -140,7 +140,7 @@ public class Application extends GitHubResponse {
 
     /**
      * Method to get {@link #fileName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #fileName} instance as {@link String}
      **/
@@ -150,7 +150,7 @@ public class Application extends GitHubResponse {
 
     /**
      * Method to get {@link #tempDownloadToken} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #tempDownloadToken} instance as {@link String}
      **/
@@ -160,7 +160,7 @@ public class Application extends GitHubResponse {
 
     /**
      * Method to get {@link #sha256Checksum} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sha256Checksum} instance as {@link String}
      **/

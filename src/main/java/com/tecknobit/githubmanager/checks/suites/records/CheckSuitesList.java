@@ -60,7 +60,7 @@ public class CheckSuitesList extends GitHubList {
 
     /**
      * Method to get {@link #checkSuites} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkSuites} instance as {@link Collection} of {@link CheckSuite}
      **/

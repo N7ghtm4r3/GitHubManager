@@ -94,7 +94,7 @@ public class RepositoryCachesList extends GitHubList {
 
     /**
      * Method to get {@link #actionCaches} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #actionCaches} instance as {@link Collection} of {@link ActionCache}
      **/
@@ -200,7 +200,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as long
          **/
@@ -210,7 +210,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #ref} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ref} instance as {@link String}
          **/
@@ -220,7 +220,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #key} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #key} instance as {@link String}
          **/
@@ -230,7 +230,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #version} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #version} instance as {@link String}
          **/
@@ -240,7 +240,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #lastAccessedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #lastAccessedAt} instance as {@link String}
          **/
@@ -250,7 +250,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #lastAccessedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #lastAccessedAt} timestamp as long
          **/
@@ -260,7 +260,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #createdAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #createdAt} instance as {@link String}
          **/
@@ -270,7 +270,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #createdAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #createdAt} timestamp as long
          **/
@@ -280,7 +280,7 @@ public class RepositoryCachesList extends GitHubList {
 
         /**
          * Method to get {@link #sizeInBytes} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #sizeInBytes} instance as int
          **/

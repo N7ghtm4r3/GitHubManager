@@ -69,7 +69,7 @@ public class RunnerGroupsList extends GitHubList {
 
     /**
      * Method to get {@link #runnerGroups} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runnerGroups} instance as {@link Collection} of {@link RunnerGroup}
      **/

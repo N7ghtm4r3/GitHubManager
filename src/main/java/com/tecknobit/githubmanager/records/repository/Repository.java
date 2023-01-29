@@ -613,7 +613,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -623,7 +623,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #fullName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #fullName} instance as {@link String}
      **/
@@ -633,7 +633,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #owner} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #owner} instance as {@link User}
      **/
@@ -643,7 +643,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #privateRepo} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #privateRepo} instance as boolean
      **/
@@ -653,7 +653,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -663,7 +663,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/
@@ -673,7 +673,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #fork} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #fork} instance as boolean
      **/
@@ -683,7 +683,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #archiveUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #archiveUrl} instance as {@link String}
      **/
@@ -693,7 +693,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #assigneesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #assigneesUrl} instance as {@link String}
      **/
@@ -703,7 +703,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #blobsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #blobsUrl} instance as {@link String}
      **/
@@ -713,7 +713,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #branchesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #branchesUrl} instance as {@link String}
      **/
@@ -723,7 +723,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #collaboratorsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #collaboratorsUrl} instance as {@link String}
      **/
@@ -733,7 +733,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #commentsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commentsUrl} instance as {@link String}
      **/
@@ -743,7 +743,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #commitsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commitsUrl} instance as {@link String}
      **/
@@ -753,7 +753,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #compareUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #compareUrl} instance as {@link String}
      **/
@@ -763,7 +763,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #contentsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #contentsUrl} instance as {@link String}
      **/
@@ -773,7 +773,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #contributorsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #contributorsUrl} instance as {@link String}
      **/
@@ -783,7 +783,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #deploymentsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #deploymentsUrl} instance as {@link String}
      **/
@@ -793,7 +793,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #downloadUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #downloadUrl} instance as {@link String}
      **/
@@ -803,7 +803,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #eventsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #eventsUrl} instance as {@link String}
      **/
@@ -813,7 +813,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #forksUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #forksUrl} instance as {@link String}
      **/
@@ -823,7 +823,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #gitCommitsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gitCommitsUrl} instance as {@link String}
      **/
@@ -833,7 +833,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #gitRefsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gitRefsUrl} instance as {@link String}
      **/
@@ -843,7 +843,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #gitTagsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gitTagsUrl} instance as {@link String}
      **/
@@ -853,7 +853,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #gitUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gitUrl} instance as {@link String}
      **/
@@ -863,7 +863,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #issueCommentUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #issueCommentUrl} instance as {@link String}
      **/
@@ -873,7 +873,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #issueEventsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #issueEventsUrl} instance as {@link String}
      **/
@@ -883,7 +883,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #issuesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #issuesUrl} instance as {@link String}
      **/
@@ -893,7 +893,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #keysUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #keysUrl} instance as {@link String}
      **/
@@ -903,7 +903,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #labelsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #labelsUrl} instance as {@link String}
      **/
@@ -913,7 +913,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #languagesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #languagesUrl} instance as {@link String}
      **/
@@ -923,7 +923,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #mergesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mergesUrl} instance as {@link String}
      **/
@@ -933,7 +933,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #milestonesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #milestonesUrl} instance as {@link String}
      **/
@@ -943,7 +943,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #notificationsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #notificationsUrl} instance as {@link String}
      **/
@@ -953,7 +953,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #pullsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pullsUrl} instance as {@link String}
      **/
@@ -963,7 +963,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #releasesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #releasesUrl} instance as {@link String}
      **/
@@ -973,7 +973,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #sshUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sshUrl} instance as {@link String}
      **/
@@ -983,7 +983,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #stargazersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #stargazersUrl} instance as {@link String}
      **/
@@ -993,7 +993,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #statutesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #statutesUrl} instance as {@link String}
      **/
@@ -1003,7 +1003,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #subscribersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subscribersUrl} instance as {@link String}
      **/
@@ -1013,7 +1013,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #subscriptionUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subscriptionUrl} instance as {@link String}
      **/
@@ -1023,7 +1023,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #tagsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #tagsUrl} instance as {@link String}
      **/
@@ -1033,7 +1033,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #teamsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #teamsUrl} instance as {@link String}
      **/
@@ -1043,7 +1043,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #treesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #treesUrl} instance as {@link String}
      **/
@@ -1053,7 +1053,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #cloneUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #cloneUrl} instance as {@link String}
      **/
@@ -1063,7 +1063,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #mirrorUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mirrorUrl} instance as {@link String}
      **/
@@ -1073,7 +1073,7 @@ public class Repository extends BaseResponseDetails {
 
     /**
      * Method to get {@link #hooksUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hooksUrl} instance as {@link String}
      **/

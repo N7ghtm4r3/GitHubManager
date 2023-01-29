@@ -63,7 +63,7 @@ public class ActionsPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #allowedActions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowedActions} instance as {@link AllowedActions}
      **/
@@ -73,7 +73,7 @@ public class ActionsPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #selectedActionsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #selectedActionsUrl} instance as {@link String}
      **/

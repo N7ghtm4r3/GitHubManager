@@ -101,7 +101,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubMarketplaceManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -249,7 +249,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      * Method to list all plans that are part of your GitHub Marketplace listing. <br>
      * GitHub Apps must use a JWT to access this endpoint. <br>
      * OAuth Apps must use basic authentication with their client ID and client secret to access this endpoint<br>
-     * Any params required
+     * No-any params required
      *
      * @return plans list as {@link Collection} of {@link Plan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -750,7 +750,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      * Method to list the active subscriptions for the authenticated user. You must use a user-to-server OAuth access token,
      * created for a user who has authorized your GitHub App, to access this endpoint.
      * OAuth Apps must authenticate using an OAuth token <br>
-     * Any params required
+     * No-any params required
      *
      * @return subscriptions list as {@link Collection} of {@link MarketPlacePurchase} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

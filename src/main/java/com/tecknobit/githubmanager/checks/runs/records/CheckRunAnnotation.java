@@ -72,7 +72,7 @@ public class CheckRunAnnotation extends Location {
 
     /**
      * Method to get {@link #annotationLevel} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #annotationLevel} instance as {@link String}
      **/
@@ -82,7 +82,7 @@ public class CheckRunAnnotation extends Location {
 
     /**
      * Method to get {@link #title} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #title} instance as {@link String}
      **/
@@ -92,7 +92,7 @@ public class CheckRunAnnotation extends Location {
 
     /**
      * Method to get {@link #rawDetails} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #rawDetails} instance as {@link String}
      **/
@@ -102,7 +102,7 @@ public class CheckRunAnnotation extends Location {
 
     /**
      * Method to get {@link #blobHref} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #blobHref} instance as {@link String}
      **/

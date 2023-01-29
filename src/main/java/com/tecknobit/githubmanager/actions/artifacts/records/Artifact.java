@@ -131,7 +131,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -141,7 +141,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #sizeInBytes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sizeInBytes} instance as int
      **/
@@ -151,7 +151,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #archiveDownloadUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #archiveDownloadUrl} instance as {@link String}
      **/
@@ -161,7 +161,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #archiveDownloadUrlFile} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #archiveDownloadUrlFile} instance as {@link File}
      **/
@@ -175,7 +175,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #expired} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #expired} instance as boolean
      **/
@@ -185,7 +185,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -195,7 +195,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -205,7 +205,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #expiresAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #expiresAt} instance as {@link String}
      **/
@@ -215,7 +215,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #expiresAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #expiresAt} timestamp as long
      **/
@@ -225,7 +225,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -235,7 +235,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -245,7 +245,7 @@ public class Artifact extends BaseResponseDetails {
 
     /**
      * Method to get {@link #artifactWorkflowRun} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #artifactWorkflowRun} instance as {@link ArtifactWorkflowRun}
      **/
@@ -322,7 +322,7 @@ public class Artifact extends BaseResponseDetails {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as long
          **/
@@ -332,7 +332,7 @@ public class Artifact extends BaseResponseDetails {
 
         /**
          * Method to get {@link #repositoryId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #repositoryId} instance as long
          **/
@@ -342,7 +342,7 @@ public class Artifact extends BaseResponseDetails {
 
         /**
          * Method to get {@link #headRepositoryId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #headRepositoryId} instance as long
          **/
@@ -352,7 +352,7 @@ public class Artifact extends BaseResponseDetails {
 
         /**
          * Method to get {@link #headBranch} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #headBranch} instance as {@link String}
          **/
@@ -362,7 +362,7 @@ public class Artifact extends BaseResponseDetails {
 
         /**
          * Method to get {@link #headSha} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #headSha} instance as {@link String}
          **/

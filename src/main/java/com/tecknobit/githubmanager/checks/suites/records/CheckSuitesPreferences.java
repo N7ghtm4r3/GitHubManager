@@ -54,7 +54,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
 
     /**
      * Method to get {@link #preferences} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #preferences} instance as {@link SuitesPreferences}
      **/
@@ -64,7 +64,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link CompleteRepository}
      **/
@@ -110,7 +110,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
 
         /**
          * Method to get {@link #autoTriggerChecks} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #autoTriggerChecks} instance as {@link Collection} of {@link AutoTriggerCheck}
          **/
@@ -155,7 +155,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
 
             /**
              * Method to get {@link #appId} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #appId} instance as long
              **/
@@ -166,7 +166,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
 
             /**
              * Method to get {@link #setting} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #setting} instance as boolean
              **/

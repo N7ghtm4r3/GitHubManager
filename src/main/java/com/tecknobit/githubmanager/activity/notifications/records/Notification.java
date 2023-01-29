@@ -121,7 +121,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -131,7 +131,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link Repository}
      **/
@@ -141,7 +141,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #subject} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subject} instance as {@link Subject}
      **/
@@ -151,7 +151,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #reason} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reason} instance as {@link String}
      **/
@@ -161,7 +161,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #unread} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #unread} instance as boolean
      **/
@@ -171,7 +171,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -181,7 +181,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -191,7 +191,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #lastReadAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastReadAt} instance as {@link String}
      **/
@@ -201,7 +201,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #lastReadAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastReadAt} timestamp as long
      **/
@@ -211,7 +211,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -221,7 +221,7 @@ public class Notification extends GitHubResponse {
 
     /**
      * Method to get {@link #subscriptionUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subscriptionUrl} instance as {@link String}
      **/
@@ -283,7 +283,7 @@ public class Notification extends GitHubResponse {
 
         /**
          * Method to get {@link #title} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #title} instance as {@link String}
          **/
@@ -293,7 +293,7 @@ public class Notification extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -303,7 +303,7 @@ public class Notification extends GitHubResponse {
 
         /**
          * Method to get {@link #latestCommentUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #latestCommentUrl} instance as {@link String}
          **/
@@ -313,7 +313,7 @@ public class Notification extends GitHubResponse {
 
         /**
          * Method to get {@link #type} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #type} instance as {@link String}
          **/
@@ -323,7 +323,7 @@ public class Notification extends GitHubResponse {
 
         /**
          * Returns a string representation of the object <br>
-         * Any params required
+         * No-any params required
          *
          * @return a string representation of the object as {@link String}
          */

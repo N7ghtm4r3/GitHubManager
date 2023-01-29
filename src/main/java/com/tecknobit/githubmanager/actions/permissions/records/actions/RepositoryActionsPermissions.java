@@ -52,7 +52,7 @@ public class RepositoryActionsPermissions extends ActionsPermissions {
 
     /**
      * Method to get {@link #enabled} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #enabled} instance as boolean
      **/

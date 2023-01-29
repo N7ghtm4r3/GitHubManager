@@ -70,7 +70,7 @@ public class DevContainersList extends GitHubList {
 
     /**
      * Method to get {@link #devContainers} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #devContainers} instance as {@link Collection} of {@link DevContainer}
      **/
@@ -121,7 +121,7 @@ public class DevContainersList extends GitHubList {
 
         /**
          * Method to get {@link #path} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #path} instance as {@link String}
          **/
@@ -131,7 +131,7 @@ public class DevContainersList extends GitHubList {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/

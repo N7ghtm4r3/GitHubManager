@@ -142,7 +142,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #changeType} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #changeType} instance as {@link ChangeType}
      **/
@@ -152,7 +152,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #manifest} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #manifest} instance as {@link String}
      **/
@@ -162,7 +162,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #ecosystem} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #ecosystem} instance as {@link Ecosystem}
      **/
@@ -172,7 +172,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -182,7 +182,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #version} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #version} instance as {@link String}
      **/
@@ -192,7 +192,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #packageUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #packageUrl} instance as {@link String}
      **/
@@ -202,7 +202,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #license} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #license} instance as {@link String}
      **/
@@ -212,7 +212,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #sourceRepositoryUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sourceRepositoryUrl} instance as {@link String}
      **/
@@ -222,7 +222,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #vulnerabilities} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #vulnerabilities} instance as {@link Collection} of {@link ReviewVulnerability}
      **/
@@ -232,7 +232,7 @@ public class DependencyReview extends GitHubResponse {
 
     /**
      * Method to get {@link #scope} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #scope} instance as {@link Scope}
      **/
@@ -299,7 +299,7 @@ public class DependencyReview extends GitHubResponse {
 
         /**
          * Method to get {@link #severity} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #severity} instance as {@link SeverityLevel}
          **/
@@ -309,7 +309,7 @@ public class DependencyReview extends GitHubResponse {
 
         /**
          * Method to get {@link #advisoryGHSAId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #advisoryGHSAId} instance as {@link String}
          **/
@@ -319,7 +319,7 @@ public class DependencyReview extends GitHubResponse {
 
         /**
          * Method to get {@link #advisorySummary} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #advisorySummary} instance as {@link String}
          **/
@@ -329,7 +329,7 @@ public class DependencyReview extends GitHubResponse {
 
         /**
          * Method to get {@link #advisoryUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #advisoryUrl} instance as {@link String}
          **/

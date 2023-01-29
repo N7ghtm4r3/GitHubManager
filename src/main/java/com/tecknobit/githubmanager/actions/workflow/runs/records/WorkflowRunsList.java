@@ -69,7 +69,7 @@ public class WorkflowRunsList extends GitHubList {
 
     /**
      * Method to get {@link #workflowRuns} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #workflowRuns} instance as {@link Collection} of {@link WorkflowRun}
      **/

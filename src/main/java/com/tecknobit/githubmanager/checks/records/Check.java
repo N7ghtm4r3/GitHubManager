@@ -109,7 +109,7 @@ public class Check extends BaseResponseDetails {
 
     /**
      * Method to get {@link #headSha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headSha} instance as {@link String}
      **/
@@ -119,7 +119,7 @@ public class Check extends BaseResponseDetails {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -129,7 +129,7 @@ public class Check extends BaseResponseDetails {
 
     /**
      * Method to get {@link #status} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #status} instance as {@link CheckStatus}
      **/
@@ -139,7 +139,7 @@ public class Check extends BaseResponseDetails {
 
     /**
      * Method to get {@link #app} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #app} instance as {@link GitHubApp}
      **/
@@ -149,7 +149,7 @@ public class Check extends BaseResponseDetails {
 
     /**
      * Method to get {@link #pullRequests} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pullRequests} instance as {@link Collection} of {@link MinimalPullRequest}
      **/

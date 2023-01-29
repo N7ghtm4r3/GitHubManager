@@ -68,7 +68,7 @@ public class SharedStorageBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #daysLeftInBillingCycle} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #daysLeftInBillingCycle} instance as int
      **/
@@ -78,7 +78,7 @@ public class SharedStorageBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #estimatedPaidStorageForMonth} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #estimatedPaidStorageForMonth} instance as double
      **/
@@ -99,7 +99,7 @@ public class SharedStorageBilling extends GitHubResponse {
 
     /**
      * Method to get {@link #estimatedStorageForMonth} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #estimatedStorageForMonth} instance as double
      **/

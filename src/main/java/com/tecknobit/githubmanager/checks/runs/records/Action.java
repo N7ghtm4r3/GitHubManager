@@ -39,7 +39,7 @@ public class Action {
 
     /**
      * Method to get {@link #label} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #label} instance as {@link String}
      **/
@@ -49,7 +49,7 @@ public class Action {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/
@@ -59,7 +59,7 @@ public class Action {
 
     /**
      * Method to get {@link #identifier} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #identifier} instance as {@link String}
      **/
@@ -69,7 +69,7 @@ public class Action {
 
     /**
      * Returns a string representation of the object <br>
-     * Any params required
+     * No-any params required
      *
      * @return a string representation of the object as {@link String}
      */

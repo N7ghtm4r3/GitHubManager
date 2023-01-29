@@ -60,7 +60,7 @@ public class RepositoriesCacheUsagesList extends GitHubList {
 
     /**
      * Method to get {@link #repositoryCacheUsages} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoryCacheUsages} instance as {@link Collection} of {@link RepositoryCacheUsage}
      **/

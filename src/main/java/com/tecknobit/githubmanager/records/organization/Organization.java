@@ -230,7 +230,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #login} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #login} instance as {@link String}
      **/
@@ -240,7 +240,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -250,7 +250,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -260,7 +260,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -270,7 +270,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #reposUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reposUrl} instance as {@link String}
      **/
@@ -280,7 +280,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #eventsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #eventsUrl} instance as {@link String}
      **/
@@ -290,7 +290,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #hooksUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hooksUrl} instance as {@link String}
      **/
@@ -300,7 +300,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #issuesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #issuesUrl} instance as {@link String}
      **/
@@ -310,7 +310,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #membersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #membersUrl} instance as {@link String}
      **/
@@ -320,7 +320,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #publicMembersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #publicMembersUrl} instance as {@link String}
      **/
@@ -330,7 +330,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #avatarUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #avatarUrl} instance as {@link String}
      **/
@@ -340,7 +340,7 @@ public class Organization extends GitHubResponse {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/

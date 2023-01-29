@@ -120,7 +120,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -130,7 +130,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #key} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #key} instance as {@link String}
      **/
@@ -140,7 +140,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -150,7 +150,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #title} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #title} instance as {@link String}
      **/
@@ -160,7 +160,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #verified} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #verified} instance as boolean
      **/
@@ -170,7 +170,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -180,7 +180,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -190,7 +190,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #readOnly} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #readOnly} instance as boolean
      **/
@@ -200,7 +200,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #addedBy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #addedBy} instance as {@link String}
      **/
@@ -210,7 +210,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #lastUsed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastUsed} instance as {@link String}
      **/
@@ -220,7 +220,7 @@ public class DeployKey extends GitHubResponse {
 
     /**
      * Method to get {@link #lastUsed} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastUsed} timestamp as long
      **/

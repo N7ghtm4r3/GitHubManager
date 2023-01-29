@@ -83,7 +83,7 @@ public class GitHubStarringManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubStarringManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubStarringManager}'s manager without re-insert
@@ -356,7 +356,7 @@ public class GitHubStarringManager extends GitHubManager {
 
     /**
      * Method to get the repositories the authenticated user has starred <br>
-     * Any params required
+     * No-any params required
      *
      * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -382,7 +382,7 @@ public class GitHubStarringManager extends GitHubManager {
 
     /**
      * Method to get the repositories the authenticated user has starred <br>
-     * Any params required
+     * No-any params required
      *
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repositories list as {@code "format"} defines

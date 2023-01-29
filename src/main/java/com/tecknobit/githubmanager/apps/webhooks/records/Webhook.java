@@ -83,7 +83,7 @@ public class Webhook extends GitHubResponse {
 
     /**
      * Method to get {@link #contentType} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #contentType} instance as {@link String}
      **/
@@ -93,7 +93,7 @@ public class Webhook extends GitHubResponse {
 
     /**
      * Method to get {@link #insecureSsl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #insecureSsl} instance as int
      **/
@@ -103,7 +103,7 @@ public class Webhook extends GitHubResponse {
 
     /**
      * Method to get {@link #secret} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #secret} instance as {@link String}
      **/
@@ -113,7 +113,7 @@ public class Webhook extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/

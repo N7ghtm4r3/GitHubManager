@@ -73,7 +73,7 @@ public class DefaultWorkflowPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #defaultWorkflowPermissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #defaultWorkflowPermissions} instance as {@link String}
      **/
@@ -83,7 +83,7 @@ public class DefaultWorkflowPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #canApprovePullRequestReviews} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #canApprovePullRequestReviews} instance as boolean
      **/

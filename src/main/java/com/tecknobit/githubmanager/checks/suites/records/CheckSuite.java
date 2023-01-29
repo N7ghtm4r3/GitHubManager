@@ -156,7 +156,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #headBranch} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headBranch} instance as {@link String}
      **/
@@ -166,7 +166,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #conclusion} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #conclusion} instance as {@link String}
      **/
@@ -176,7 +176,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #before} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #before} instance as {@link String}
      **/
@@ -186,7 +186,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #after} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #after} instance as {@link String}
      **/
@@ -196,7 +196,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -206,7 +206,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -216,7 +216,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -226,7 +226,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -236,7 +236,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link CompleteRepository}
      **/
@@ -246,7 +246,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #latestCheckRunsCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #latestCheckRunsCount} instance as int
      **/
@@ -256,7 +256,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #checkRunsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkRunsUrl} instance as {@link String}
      **/
@@ -266,7 +266,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #rerequestable} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #rerequestable} instance as boolean
      **/
@@ -276,7 +276,7 @@ public class CheckSuite extends Check {
 
     /**
      * Method to get {@link #runsRerequestable} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runsRerequestable} instance as boolean
      **/

@@ -133,7 +133,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #error} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #error} instance as {@link String}
      **/
@@ -143,7 +143,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -153,7 +153,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -163,7 +163,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #resultsCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #resultsCount} instance as int
      **/
@@ -173,7 +173,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #rulesCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #rulesCount} instance as int
      **/
@@ -183,7 +183,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -193,7 +193,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -203,7 +203,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #sarifId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sarifId} instance as long
      **/
@@ -213,7 +213,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #tool} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #tool} instance as {@link Tool}
      **/
@@ -223,7 +223,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #deletable} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #deletable} instance as boolean
      **/
@@ -233,7 +233,7 @@ public class ScanningAnalysis extends ScanningItem {
 
     /**
      * Method to get {@link #warning} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #warning} instance as {@link String}
      **/

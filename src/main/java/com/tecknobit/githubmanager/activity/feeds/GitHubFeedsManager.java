@@ -69,7 +69,7 @@ public class GitHubFeedsManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubFeedsManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -116,7 +116,7 @@ public class GitHubFeedsManager extends GitHubManager {
      *     </li>
      * </ul>
      * Note: Private feeds are only returned when authenticating via Basic Auth since current feed URIs use the older, non-revocable auth tokens<br>
-     * Any params required
+     * No-any params required
      *
      * @return feeds as {@link Feed} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

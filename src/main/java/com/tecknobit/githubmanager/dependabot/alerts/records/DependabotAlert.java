@@ -123,7 +123,7 @@ public class DependabotAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link DependabotAlertState}
      **/
@@ -133,7 +133,7 @@ public class DependabotAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #dependency} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dependency} instance as {@link Dependency}
      **/
@@ -143,7 +143,7 @@ public class DependabotAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #securityAdvisory} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #securityAdvisory} instance as {@link SecurityAdvisory}
      **/
@@ -153,7 +153,7 @@ public class DependabotAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #securityVulnerability} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #securityVulnerability} instance as {@link Vulnerability}
      **/
@@ -163,7 +163,7 @@ public class DependabotAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #dismissedReason} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dismissedReason} instance as {@link DependabotDismissedReason}
      **/
@@ -332,7 +332,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #dPackage} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #dPackage} instance as {@link Package}
          **/
@@ -342,7 +342,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #manifestPath} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #manifestPath} instance as {@link String}
          **/
@@ -352,7 +352,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #scope} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #scope} instance as {@link Scope}
          **/
@@ -530,7 +530,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #ghsaId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ghsaId} instance as {@link String}
          **/
@@ -540,7 +540,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #cveId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #cveId} instance as {@link String}
          **/
@@ -550,7 +550,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #summary} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #summary} instance as {@link String}
          **/
@@ -560,7 +560,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #description} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #description} instance as {@link String}
          **/
@@ -570,7 +570,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #vulnerabilities} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #vulnerabilities} instance as {@link Collection} of {@link Vulnerability}
          **/
@@ -580,7 +580,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #severity} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #severity} instance as {@link SeverityLevel}
          **/
@@ -590,7 +590,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #cvss} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #cvss} instance as {@link CVSS}
          **/
@@ -600,7 +600,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #cwes} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #cwes} instance as {@link Collection} of {@link CWE}
          **/
@@ -610,7 +610,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #identifiers} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #identifiers} instance as {@link Collection} of {@link Identifier}
          **/
@@ -620,7 +620,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #references} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #references} instance as {@link Collection} of {@link String}
          **/
@@ -630,7 +630,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #publishedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #publishedAt} instance as {@link String}
          **/
@@ -640,7 +640,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #publishedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #publishedAt} timestamp as long
          **/
@@ -650,7 +650,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #updatedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #updatedAt} instance as {@link String}
          **/
@@ -660,7 +660,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #updatedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #updatedAt} timestamp as long
          **/
@@ -670,7 +670,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #withdrawnAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #withdrawnAt} instance as {@link String}
          **/
@@ -680,7 +680,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #withdrawnAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #withdrawnAt} timestamp as long
          **/
@@ -731,7 +731,7 @@ public class DependabotAlert extends GitHubAlert {
 
             /**
              * Method to get {@link #score} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #score} instance as double
              **/
@@ -752,7 +752,7 @@ public class DependabotAlert extends GitHubAlert {
 
             /**
              * Method to get {@link #vectorString} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #vectorString} instance as {@link String}
              **/
@@ -805,7 +805,7 @@ public class DependabotAlert extends GitHubAlert {
 
             /**
              * Method to get {@link #cweId} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #cweId} instance as {@link String}
              **/
@@ -815,7 +815,7 @@ public class DependabotAlert extends GitHubAlert {
 
             /**
              * Method to get {@link #name} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #name} instance as {@link String}
              **/
@@ -867,7 +867,7 @@ public class DependabotAlert extends GitHubAlert {
 
             /**
              * Method to get {@link #type} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #type} instance as {@link IdentifierType}
              **/
@@ -877,7 +877,7 @@ public class DependabotAlert extends GitHubAlert {
 
             /**
              * Method to get {@link #value} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #value} instance as {@link String}
              **/
@@ -966,7 +966,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #vPackage} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #vPackage} instance as {@link Package}
          **/
@@ -976,7 +976,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #severity} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #severity} instance as {@link SeverityLevel}
          **/
@@ -986,7 +986,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #vulnerableVersionRange} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #vulnerableVersionRange} instance as {@link String}
          **/
@@ -996,7 +996,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #firstPatchedVersion} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #firstPatchedVersion} instance as {@link String}
          **/
@@ -1049,7 +1049,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #ecosystem} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ecosystem} instance as {@link String}
          **/
@@ -1059,7 +1059,7 @@ public class DependabotAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/

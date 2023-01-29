@@ -48,7 +48,7 @@ public class ForkBranch extends GitHubResponse {
 
     /**
      * Method to get {@link #mergeType} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mergeType} instance as {@link MergeType}
      **/
@@ -58,7 +58,7 @@ public class ForkBranch extends GitHubResponse {
 
     /**
      * Method to get {@link #baseBranch} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #baseBranch} instance as {@link String}
      **/
@@ -102,7 +102,7 @@ public class ForkBranch extends GitHubResponse {
 
         /**
          * Method to get {@link #type} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #type} instance as {@link String}
          **/

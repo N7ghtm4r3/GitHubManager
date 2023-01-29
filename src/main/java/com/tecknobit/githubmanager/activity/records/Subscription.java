@@ -83,7 +83,7 @@ public class Subscription extends GitHubResponse {
 
     /**
      * Method to get {@link #subscribed} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subscribed} instance as boolean
      **/
@@ -93,7 +93,7 @@ public class Subscription extends GitHubResponse {
 
     /**
      * Method to get {@link #ignored} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #ignored} instance as boolean
      **/
@@ -103,7 +103,7 @@ public class Subscription extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -113,7 +113,7 @@ public class Subscription extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -123,7 +123,7 @@ public class Subscription extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/

@@ -175,7 +175,7 @@ public class Collaborator extends User {
 
     /**
      * Method to get {@link #permissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permissions} instance as {@link Permissions}
      **/
@@ -185,7 +185,7 @@ public class Collaborator extends User {
 
     /**
      * Method to get {@link #roleName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #roleName} instance as {@link String}
      **/

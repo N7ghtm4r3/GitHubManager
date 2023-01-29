@@ -56,7 +56,7 @@ public class RepositoryPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #permission} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permission} instance as {@link String}
      **/
@@ -66,7 +66,7 @@ public class RepositoryPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #roleName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #roleName} instance as {@link String}
      **/
@@ -76,7 +76,7 @@ public class RepositoryPermissions extends GitHubResponse {
 
     /**
      * Method to get {@link #user} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #user} instance as {@link Collaborator}
      **/

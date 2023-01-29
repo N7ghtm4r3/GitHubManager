@@ -57,7 +57,7 @@ public class CacheUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #totalActiveCachesSizeInBytes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalActiveCachesSizeInBytes} instance as int
      **/
@@ -67,7 +67,7 @@ public class CacheUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #totalActiveCachesCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalActiveCachesCount} instance as int
      **/

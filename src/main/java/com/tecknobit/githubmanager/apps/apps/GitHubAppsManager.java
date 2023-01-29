@@ -113,7 +113,7 @@ public class GitHubAppsManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubAppsManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -135,7 +135,7 @@ public class GitHubAppsManager extends GitHubManager {
      * Method to return the GitHub App associated with the authentication credentials used
      * For more details about your app's installations, see the "List installations for the authenticated app" endpoint.
      * You must use a JWT to access this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return GitHub app as {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
@@ -247,7 +247,7 @@ public class GitHubAppsManager extends GitHubManager {
      * Method to get an installations list for the authenticated app <br>
      * You must use a JWT to access this endpoint. <br>
      * The permissions the installation has are included under the permissions key <br>
-     * Any params required
+     * No-any params required
      *
      * @return installations list as {@link Collection} of {@link Installation} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:

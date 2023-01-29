@@ -128,7 +128,7 @@ public class ScanningAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #instancesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #instancesUrl} instance as {@link String}
      **/
@@ -138,7 +138,7 @@ public class ScanningAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link State}
      **/
@@ -148,7 +148,7 @@ public class ScanningAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #dismissedReason} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dismissedReason} instance as {@link DismissedReason}
      **/
@@ -158,7 +158,7 @@ public class ScanningAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #rule} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #rule} instance as {@link Rule}
      **/
@@ -168,7 +168,7 @@ public class ScanningAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #tool} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #tool} instance as {@link Tool}
      **/
@@ -178,7 +178,7 @@ public class ScanningAlert extends GitHubAlert {
 
     /**
      * Method to get {@link #mostRecentInstance} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mostRecentInstance} instance as {@link Instance}
      **/
@@ -249,7 +249,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #reason} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #reason} instance as {@link String}
          **/
@@ -360,7 +360,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #id} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #id} instance as long
          **/
@@ -370,7 +370,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -380,7 +380,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #severity} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #severity} instance as {@link Severity}
          **/
@@ -390,7 +390,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #securitySeverityLevel} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #securitySeverityLevel} instance as {@link SeverityLevel}
          **/
@@ -400,7 +400,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #description} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #description} instance as {@link String}
          **/
@@ -410,7 +410,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #fullDescription} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #fullDescription} instance as {@link String}
          **/
@@ -420,7 +420,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #tags} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #tags} instance as {@link Collection} of {@link String}
          **/
@@ -430,7 +430,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #help} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #help} instance as {@link String}
          **/
@@ -440,7 +440,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #helpUri} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #helpUri} instance as {@link String}
          **/
@@ -528,7 +528,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -538,7 +538,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #guid} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #guid} instance as {@link String}
          **/
@@ -548,7 +548,7 @@ public class ScanningAlert extends GitHubAlert {
 
         /**
          * Method to get {@link #version} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #version} instance as {@link String}
          **/

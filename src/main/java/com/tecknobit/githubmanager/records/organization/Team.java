@@ -117,7 +117,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -127,7 +127,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -137,7 +137,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #slug} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #slug} instance as {@link String}
      **/
@@ -147,7 +147,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/
@@ -157,7 +157,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #privacy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #privacy} instance as {@link String}
      **/
@@ -167,7 +167,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #permission} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permission} instance as {@link String}
      **/
@@ -177,7 +177,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #membersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #membersUrl} instance as {@link String}
      **/
@@ -187,7 +187,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #repositoriesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoriesUrl} instance as {@link String}
      **/
@@ -197,7 +197,7 @@ public class Team extends BaseResponseDetails {
 
     /**
      * Method to get {@link #parent} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #parent} instance as {@link Team}
      **/

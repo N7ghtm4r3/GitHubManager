@@ -65,7 +65,7 @@ public class RepositoryCacheUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #fullName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #fullName} instance as {@link String}
      **/
@@ -75,7 +75,7 @@ public class RepositoryCacheUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #activeCachesSizeInBytes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #activeCachesSizeInBytes} instance as int
      **/
@@ -85,7 +85,7 @@ public class RepositoryCacheUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #activeCachesCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #activeCachesCount} instance as int
      **/

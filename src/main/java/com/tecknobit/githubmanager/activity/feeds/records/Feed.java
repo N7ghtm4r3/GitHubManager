@@ -133,7 +133,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #timelineUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #timelineUrl} instance as {@link String}
      **/
@@ -143,7 +143,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #userUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #userUrl} instance as {@link String}
      **/
@@ -153,7 +153,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserPublicUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserPublicUrl} instance as {@link String}
      **/
@@ -163,7 +163,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserUrl} instance as {@link String}
      **/
@@ -173,7 +173,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserActorUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserActorUrl} instance as {@link String}
      **/
@@ -183,7 +183,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserOrganizationUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserOrganizationUrl} instance as {@link String}
      **/
@@ -193,7 +193,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserOrganizationUrls} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserOrganizationUrls} instance as {@link Collection} of {@link String}
      **/
@@ -203,7 +203,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #securityAdvisoriesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #securityAdvisoriesUrl} instance as {@link String}
      **/
@@ -213,7 +213,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #links} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #links} instance as {@link HashMap} of {@link String}, {@link Link}
      **/
@@ -223,7 +223,7 @@ public class Feed extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserOrganizations} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserOrganizations} instance as {@link Collection} of {@link Link}
      **/
@@ -277,7 +277,7 @@ public class Feed extends GitHubResponse {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -287,7 +287,7 @@ public class Feed extends GitHubResponse {
 
         /**
          * Method to get {@link #href} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #href} instance as {@link String}
          **/
@@ -297,7 +297,7 @@ public class Feed extends GitHubResponse {
 
         /**
          * Method to get {@link #type} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #type} instance as {@link String}
          **/
@@ -307,7 +307,7 @@ public class Feed extends GitHubResponse {
 
         /**
          * Returns a string representation of the object <br>
-         * Any params required
+         * No-any params required
          *
          * @return a string representation of the object as {@link String}
          */

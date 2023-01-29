@@ -96,7 +96,7 @@ public class SecretsList extends GitHubList {
 
     /**
      * Method to get {@link #secrets} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #secrets} instance as {@link Collection} of {@link Secret}
      **/

@@ -77,7 +77,7 @@ public class Branch extends ShortBranch {
 
     /**
      * Method to get {@link #_links} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #_links} instance as {@link BranchLink}
      **/
@@ -87,7 +87,7 @@ public class Branch extends ShortBranch {
 
     /**
      * Method to get {@link #protection} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #protection} instance as {@link BranchProtection}
      **/
@@ -97,7 +97,7 @@ public class Branch extends ShortBranch {
 
     /**
      * Method to get {@link #protectionUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #protectionUrl} instance as {@link String}
      **/
@@ -148,7 +148,7 @@ public class Branch extends ShortBranch {
 
         /**
          * Method to get {@link #self} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #self} instance as {@link String}
          **/
@@ -158,7 +158,7 @@ public class Branch extends ShortBranch {
 
         /**
          * Method to get {@link #html} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #html} instance as {@link String}
          **/

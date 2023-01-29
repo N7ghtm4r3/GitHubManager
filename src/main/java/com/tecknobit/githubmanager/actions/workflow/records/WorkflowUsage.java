@@ -47,7 +47,7 @@ public class WorkflowUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #billables} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #billables} instance as {@link Collection} of {@link Billable}
      **/
@@ -98,7 +98,7 @@ public class WorkflowUsage extends GitHubResponse {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -108,7 +108,7 @@ public class WorkflowUsage extends GitHubResponse {
 
         /**
          * Method to get {@link #totalMs} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #totalMs} instance as long
          **/

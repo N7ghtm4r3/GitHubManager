@@ -75,7 +75,7 @@ public class GitHubToken extends GitHubResponse {
 
     /**
      * Method to get {@link #token} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #token} instance as {@link String}
      **/
@@ -85,7 +85,7 @@ public class GitHubToken extends GitHubResponse {
 
     /**
      * Method to get {@link #expiresAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #expiresAt} instance as {@link String}
      **/
@@ -95,7 +95,7 @@ public class GitHubToken extends GitHubResponse {
 
     /**
      * Method to get {@link #expiresAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #expiresAt} timestamp as long
      **/

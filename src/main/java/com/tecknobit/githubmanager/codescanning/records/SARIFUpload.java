@@ -60,7 +60,7 @@ public class SARIFUpload extends GitHubResponse {
 
     /**
      * Method to get {@link #processingStatus} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #processingStatus} instance as {@link ProcessingStatus}
      **/
@@ -70,7 +70,7 @@ public class SARIFUpload extends GitHubResponse {
 
     /**
      * Method to get {@link #analysesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #analysesUrl} instance as {@link String}
      **/
@@ -80,7 +80,7 @@ public class SARIFUpload extends GitHubResponse {
 
     /**
      * Method to get {@link #errors} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #errors} instance as {@link Collection} of {@link String}
      **/

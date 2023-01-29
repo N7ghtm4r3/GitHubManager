@@ -99,7 +99,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #language} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #language} instance as {@link String}
      **/
@@ -109,7 +109,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #uploader} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #uploader} instance as {@link User}
      **/
@@ -119,7 +119,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #contentType} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #contentType} instance as {@link String}
      **/
@@ -129,7 +129,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #size} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #size} instance as double
      **/
@@ -150,7 +150,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -160,7 +160,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -170,7 +170,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -180,7 +180,7 @@ public class CodeQL extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/

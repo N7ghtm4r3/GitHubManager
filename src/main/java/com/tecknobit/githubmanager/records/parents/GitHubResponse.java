@@ -59,7 +59,7 @@ public abstract class GitHubResponse {
 
     /**
      * Method to get {@link #message} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #message} instance as {@link String}
      **/
@@ -69,7 +69,7 @@ public abstract class GitHubResponse {
 
     /**
      * Method to get {@link #documentationUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #documentationUrl} instance as {@link String}
      **/
@@ -79,7 +79,7 @@ public abstract class GitHubResponse {
 
     /**
      * Method to get {@link #instantiatedWithError} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #instantiatedWithError} instance as boolean
      **/
@@ -89,7 +89,7 @@ public abstract class GitHubResponse {
 
     /**
      * Returns a string representation of the object <br>
-     * Any params required
+     * No-any params required
      *
      * @return a string representation of the object as {@link String} in two different ways:
      * <ul>

@@ -70,7 +70,7 @@ public class MachinesList extends GitHubList {
 
     /**
      * Method to get {@link #machines} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #machines} instance as {@link Collection} of {@link Machine}
      **/

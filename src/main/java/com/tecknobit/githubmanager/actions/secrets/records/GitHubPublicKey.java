@@ -84,7 +84,7 @@ public class GitHubPublicKey extends GitHubResponse {
 
     /**
      * Method to get {@link #keyId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #keyId} instance as long
      **/
@@ -94,7 +94,7 @@ public class GitHubPublicKey extends GitHubResponse {
 
     /**
      * Method to get {@link #key} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #key} instance as {@link String}
      **/

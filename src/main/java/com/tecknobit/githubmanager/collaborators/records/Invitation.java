@@ -128,7 +128,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -138,7 +138,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -148,7 +148,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link Repository}
      **/
@@ -158,7 +158,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #invitee} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #invitee} instance as {@link User}
      **/
@@ -168,7 +168,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #inviter} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #inviter} instance as {@link User}
      **/
@@ -178,7 +178,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #permissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permissions} instance as {@link CollaboratorPermission}
      **/
@@ -188,7 +188,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -198,7 +198,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -208,7 +208,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #expired} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #expired} instance as boolean
      **/
@@ -218,7 +218,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -228,7 +228,7 @@ public class Invitation extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/

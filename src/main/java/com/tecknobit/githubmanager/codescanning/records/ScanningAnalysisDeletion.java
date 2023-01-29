@@ -48,7 +48,7 @@ public class ScanningAnalysisDeletion extends GitHubResponse {
 
     /**
      * Method to get {@link #nextAnalysisUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nextAnalysisUrl} instance as {@link String}
      **/
@@ -58,7 +58,7 @@ public class ScanningAnalysisDeletion extends GitHubResponse {
 
     /**
      * Method to get {@link #confirmDeleteUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #confirmDeleteUrl} instance as {@link String}
      **/

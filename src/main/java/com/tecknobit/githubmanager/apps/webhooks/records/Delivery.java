@@ -161,7 +161,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -171,7 +171,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #guid} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #guid} instance as {@link String}
      **/
@@ -181,7 +181,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #deliveredAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #deliveredAt} instance as {@link String}
      **/
@@ -191,7 +191,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #deliveredAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #deliveredAt} timestamp as long
      **/
@@ -201,7 +201,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #redelivery} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #redelivery} instance as boolean
      **/
@@ -211,7 +211,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #duration} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #duration} instance as boolean
      **/
@@ -232,7 +232,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #status} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #status} instance as {@link String}
      **/
@@ -242,7 +242,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #statusCode} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #statusCode} instance as int
      **/
@@ -252,7 +252,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #event} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #event} instance as {@link String}
      **/
@@ -262,7 +262,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #action} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #action} instance as {@link String}
      **/
@@ -272,7 +272,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #installationId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #installationId} instance as long
      **/
@@ -282,7 +282,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #repositoryId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoryId} instance as long
      **/
@@ -292,7 +292,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -302,7 +302,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #request} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #request} instance as {@link Request}
      **/
@@ -312,7 +312,7 @@ public class Delivery extends GitHubResponse {
 
     /**
      * Method to get {@link #response} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #response} instance as {@link Request}
      **/
@@ -382,7 +382,7 @@ public class Delivery extends GitHubResponse {
 
         /**
          * Method to get {@link #headers} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #headers} instance as {@link HashMap} of <{@link String}, {@link String}>
          **/
@@ -392,7 +392,7 @@ public class Delivery extends GitHubResponse {
 
         /**
          * Method to get {@link #payload} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #payload} instance as {@link String}
          **/
@@ -402,7 +402,7 @@ public class Delivery extends GitHubResponse {
 
         /**
          * Method to get {@link #payload} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #payload} instance as {@link JSONObject}
          **/

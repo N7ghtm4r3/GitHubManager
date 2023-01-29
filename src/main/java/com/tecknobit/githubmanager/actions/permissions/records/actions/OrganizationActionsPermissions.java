@@ -56,7 +56,7 @@ public class OrganizationActionsPermissions extends ActionsPermissions {
 
     /**
      * Method to get {@link #enabledRepositories} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #enabledRepositories} instance as {@link EnabledItems}
      **/

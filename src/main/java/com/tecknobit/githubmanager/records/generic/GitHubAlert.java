@@ -159,7 +159,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #number} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #number} instance as long
      **/
@@ -169,7 +169,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -179,7 +179,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -189,7 +189,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -199,7 +199,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -209,7 +209,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -219,7 +219,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -229,7 +229,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #fixedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #fixedAt} instance as {@link String}
      **/
@@ -239,7 +239,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -249,7 +249,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #dismissedBy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dismissedBy} instance as {@link User}
      **/
@@ -259,7 +259,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #dismissedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dismissedAt} instance as {@link String}
      **/
@@ -269,7 +269,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #dismissedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dismissedAt} timestamp as long
      **/
@@ -279,7 +279,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #dismissedComment} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #dismissedComment} instance as {@link String}
      **/
@@ -289,7 +289,7 @@ public class GitHubAlert extends GitHubResponse {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link Repository}
      **/

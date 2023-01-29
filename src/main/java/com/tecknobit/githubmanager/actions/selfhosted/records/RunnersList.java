@@ -71,7 +71,7 @@ public class RunnersList extends GitHubList {
 
     /**
      * Method to get {@link #runners} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runners} instance as {@link Collection} of {@link Runner}
      **/

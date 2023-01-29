@@ -61,7 +61,7 @@ public class InstallationsList extends GitHubList {
 
     /**
      * Method to get {@link #installations} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #installations} instance as {@link Collection} of {@link Installation}
      **/

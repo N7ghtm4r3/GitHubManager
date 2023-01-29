@@ -92,7 +92,7 @@ public class Deployment extends GitHubResponse {
 
     /**
      * Method to get {@link #environment} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #environment} instance as {@link Environment}
      **/
@@ -102,7 +102,7 @@ public class Deployment extends GitHubResponse {
 
     /**
      * Method to get {@link #waitTimer} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #waitTimer} instance as long
      **/
@@ -112,7 +112,7 @@ public class Deployment extends GitHubResponse {
 
     /**
      * Method to get {@link #waitTimerStartedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #waitTimerStartedAt} instance as {@link String}
      **/
@@ -122,7 +122,7 @@ public class Deployment extends GitHubResponse {
 
     /**
      * Method to get {@link #waitTimerStartedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #waitTimerStartedAt} timestamp as long
      **/
@@ -132,7 +132,7 @@ public class Deployment extends GitHubResponse {
 
     /**
      * Method to get {@link #currentUserCanApprove} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #currentUserCanApprove} instance as boolean
      **/
@@ -142,7 +142,7 @@ public class Deployment extends GitHubResponse {
 
     /**
      * Method to get {@link #reviewers} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reviewers} instance as {@link Collection} of {@link Reviewer}
      **/
@@ -233,7 +233,7 @@ public class Deployment extends GitHubResponse {
 
         /**
          * Method to get {@link #type} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #type} instance as {@link ReviewerType}
          **/
@@ -243,7 +243,7 @@ public class Deployment extends GitHubResponse {
 
         /**
          * Method to get {@link #reviewer} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #reviewer} instance as {@link T}
          **/

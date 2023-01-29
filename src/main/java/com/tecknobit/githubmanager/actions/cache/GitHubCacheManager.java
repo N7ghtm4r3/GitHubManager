@@ -87,7 +87,7 @@ public class GitHubCacheManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubCacheManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubCacheManager}'s manager without re-insert

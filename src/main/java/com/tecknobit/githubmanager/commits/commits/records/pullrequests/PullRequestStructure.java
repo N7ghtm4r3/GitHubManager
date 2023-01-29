@@ -115,7 +115,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -125,7 +125,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -135,7 +135,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -145,7 +145,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -155,7 +155,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #number} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #number} instance as long
      **/
@@ -165,7 +165,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link PullRequestState}
      **/
@@ -175,7 +175,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #title} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #title} instance as {@link String}
      **/
@@ -185,7 +185,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -195,7 +195,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -205,7 +205,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -215,7 +215,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -225,7 +225,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #closedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #closedAt} instance as {@link String}
      **/
@@ -235,7 +235,7 @@ public class PullRequestStructure extends GitHubResponse {
 
     /**
      * Method to get {@link #closedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #closedAt} timestamp as long
      **/

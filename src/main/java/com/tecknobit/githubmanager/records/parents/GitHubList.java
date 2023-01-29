@@ -38,7 +38,7 @@ public abstract class GitHubList extends GitHubResponse {
 
     /**
      * Method to get {@link #totalCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalCount} instance as int
      **/

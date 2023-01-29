@@ -57,7 +57,7 @@ public class WorkflowRunUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #billables} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #billables} instance as {@link Collection} of {@link BillableRun}
      **/
@@ -67,7 +67,7 @@ public class WorkflowRunUsage extends GitHubResponse {
 
     /**
      * Method to get {@link #runDurationMs} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runDurationMs} instance as long
      **/
@@ -123,7 +123,7 @@ public class WorkflowRunUsage extends GitHubResponse {
 
         /**
          * Method to get {@link #jobs} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #jobs} instance as int
          **/
@@ -133,7 +133,7 @@ public class WorkflowRunUsage extends GitHubResponse {
 
         /**
          * Method to get {@link #jobRuns} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #jobRuns} instance as {@link Collection} of {@link JobRun}
          **/
@@ -184,7 +184,7 @@ public class WorkflowRunUsage extends GitHubResponse {
 
             /**
              * Method to get {@link #jobId} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #jobId} instance as long
              **/
@@ -194,7 +194,7 @@ public class WorkflowRunUsage extends GitHubResponse {
 
             /**
              * Method to get {@link #durationMs} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #durationMs} instance as long
              **/

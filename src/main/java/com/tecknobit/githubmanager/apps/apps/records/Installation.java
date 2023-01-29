@@ -257,7 +257,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -267,7 +267,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #account} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #account} instance as {@link User}
      **/
@@ -277,7 +277,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #accessTokensUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #accessTokensUrl} instance as {@link String}
      **/
@@ -287,7 +287,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #repositoriesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositoriesUrl} instance as {@link String}
      **/
@@ -297,7 +297,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -307,7 +307,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #appId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #appId} instance as long
      **/
@@ -317,7 +317,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #targetId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #targetId} instance as long
      **/
@@ -327,7 +327,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #targetType} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #targetType} instance as {@link String}
      **/
@@ -337,7 +337,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #permissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permissions} instance as {@link AppPermissions}
      **/
@@ -347,7 +347,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #events} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #events} instance as {@link Collection} of {@link String}
      **/
@@ -357,7 +357,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #singleFileName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #singleFileName} instance as {@link String}
      **/
@@ -367,7 +367,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #hasMultipleSingleFiles} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasMultipleSingleFiles} instance as boolean
      **/
@@ -377,7 +377,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #singleFilePaths} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #singleFilePaths} instance as {@link Collection} of {@link String}
      **/
@@ -387,7 +387,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #repositorySelection} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repositorySelection} instance as {@link RepositorySelection}
      **/
@@ -397,7 +397,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -407,7 +407,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -417,7 +417,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -427,7 +427,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -437,7 +437,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #appSlug} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #appSlug} instance as {@link String}
      **/
@@ -447,7 +447,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #suspendedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #suspendedAt} instance as {@link String}
      **/
@@ -457,7 +457,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #suspendedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #suspendedAt} timestamp as long
      **/
@@ -467,7 +467,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #suspendedBy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #suspendedBy} instance as {@link User}
      **/
@@ -477,7 +477,7 @@ public class Installation extends GitHubResponse {
 
     /**
      * Method to get {@link #contactEmail} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #contactEmail} instance as {@link String}
      **/

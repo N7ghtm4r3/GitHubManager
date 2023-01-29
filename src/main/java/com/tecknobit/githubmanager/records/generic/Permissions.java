@@ -79,7 +79,7 @@ public class Permissions {
 
     /**
      * Method to get {@link #admin} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #admin} instance as boolean
      **/
@@ -89,7 +89,7 @@ public class Permissions {
 
     /**
      * Method to get {@link #triage} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #triage} instance as boolean
      **/
@@ -99,7 +99,7 @@ public class Permissions {
 
     /**
      * Method to get {@link #push} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #push} instance as boolean
      **/
@@ -109,7 +109,7 @@ public class Permissions {
 
     /**
      * Method to get {@link #maintain} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #maintain} instance as boolean
      **/
@@ -119,7 +119,7 @@ public class Permissions {
 
     /**
      * Method to get {@link #pull} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pull} instance as boolean
      **/
@@ -129,7 +129,7 @@ public class Permissions {
 
     /**
      * Returns a string representation of the object <br>
-     * Any params required
+     * No-any params required
      *
      * @return a string representation of the object as {@link String}
      */

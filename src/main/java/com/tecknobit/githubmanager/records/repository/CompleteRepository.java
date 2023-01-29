@@ -456,7 +456,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #svnUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #svnUrl} instance as {@link String}
      **/
@@ -466,7 +466,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #homePage} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #homePage} instance as {@link String}
      **/
@@ -476,7 +476,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #forksCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #forksCount} instance as int
      **/
@@ -486,7 +486,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #stargazersCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #stargazersCount} instance as int
      **/
@@ -496,7 +496,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #watchersCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #watchersCount} instance as int
      **/
@@ -506,7 +506,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #size} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #size} instance as int
      **/
@@ -516,7 +516,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #defaultBranch} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #defaultBranch} instance as {@link String}
      **/
@@ -526,7 +526,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #openIssuesCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #openIssuesCount} instance as int
      **/
@@ -536,7 +536,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #isTemplate} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #isTemplate} instance as boolean
      **/
@@ -546,7 +546,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #template} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #template} instance as {@link CompleteRepository}
      **/
@@ -556,7 +556,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #topics} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #topics} instance as {@link Collection} of {@link String}
      **/
@@ -566,7 +566,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #hasIssues} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasIssues} instance as boolean
      **/
@@ -576,7 +576,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #hasProjects} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasProjects} instance as boolean
      **/
@@ -586,7 +586,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #hasWiki} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasWiki} instance as boolean
      **/
@@ -596,7 +596,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #hasPages} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasPages} instance as boolean
      **/
@@ -606,7 +606,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #hasDownloads} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasDownloads} instance as boolean
      **/
@@ -616,7 +616,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #archived} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #archived} instance as boolean
      **/
@@ -626,7 +626,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #disabled} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #disabled} instance as boolean
      **/
@@ -636,7 +636,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #visibility} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #visibility} instance as {@link RepoVisibility}
      **/
@@ -646,7 +646,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #pushedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pushedAt} instance as {@link String}
      **/
@@ -656,7 +656,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #pushedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pushedAt} timestamp as long
      **/
@@ -666,7 +666,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -676,7 +676,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -686,7 +686,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -696,7 +696,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #permissions} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permissions} instance as {@link Permissions}
      **/
@@ -706,7 +706,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -716,7 +716,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #allowRebaseMerge} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowRebaseMerge} instance as boolean
      **/
@@ -726,7 +726,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #tempCloneToken} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #tempCloneToken} instance as {@link String}
      **/
@@ -736,7 +736,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #allowSquashMerge} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowSquashMerge} instance as boolean
      **/
@@ -746,7 +746,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #allowAutoMerge} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowAutoMerge} instance as boolean
      **/
@@ -756,7 +756,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #deleteBranchOnMerge} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #deleteBranchOnMerge} instance as boolean
      **/
@@ -766,7 +766,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #allowMergeCommit} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #allowMergeCommit} instance as boolean
      **/
@@ -776,7 +776,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #subscribersCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subscribersCount} instance as int
      **/
@@ -786,7 +786,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #networkCount} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #networkCount} instance as int
      **/
@@ -796,7 +796,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #license} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #license} instance as {@link License}
      **/
@@ -806,7 +806,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #forks} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #forks} instance as int
      **/
@@ -816,7 +816,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #openIssues} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #openIssues} instance as int
      **/
@@ -826,7 +826,7 @@ public class CompleteRepository extends Repository {
 
     /**
      * Method to get {@link #watchers} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #watchers} instance as int
      **/
@@ -870,7 +870,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #visibility} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #visibility} instance as {@link String}
          **/
@@ -958,7 +958,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #key} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #key} instance as {@link String}
          **/
@@ -968,7 +968,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -978,7 +978,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -988,7 +988,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #spdxId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #spdxId} instance as {@link String}
          **/
@@ -998,7 +998,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #nodeId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #nodeId} instance as {@link String}
          **/
@@ -1008,7 +1008,7 @@ public class CompleteRepository extends Repository {
 
         /**
          * Method to get {@link #htmlUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #htmlUrl} instance as {@link String}
          **/

@@ -166,7 +166,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #sha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sha} instance as {@link String}
      **/
@@ -176,7 +176,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -186,7 +186,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #commit} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commit} instance as {@link CommitDetails}
      **/
@@ -196,7 +196,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -206,7 +206,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -216,7 +216,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #commentsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commentsUrl} instance as {@link String}
      **/
@@ -226,7 +226,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #author} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #author} instance as {@link User}
      **/
@@ -236,7 +236,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #committer} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #committer} instance as {@link User}
      **/
@@ -246,7 +246,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #parents} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #parents} instance as {@link Collection} of {@link Parent}
      **/
@@ -256,7 +256,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #stats} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #stats} instance as {@link String}
      **/
@@ -266,7 +266,7 @@ public class Commit extends GitHubResponse {
 
     /**
      * Method to get {@link #files} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #files} instance as {@link Collection} of {@link CommitFile}
      **/
@@ -358,7 +358,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #author} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #author} instance as {@link CommitProfile}
          **/
@@ -368,7 +368,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #committer} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #committer} instance as {@link CommitProfile}
          **/
@@ -378,7 +378,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #message} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #message} instance as {@link String}
          **/
@@ -388,7 +388,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #tree} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #tree} instance as {@link Tree}
          **/
@@ -398,7 +398,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #url} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #url} instance as {@link String}
          **/
@@ -408,7 +408,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #commentCount} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #commentCount} instance as int
          **/
@@ -418,7 +418,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #verification} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #verification} instance as {@link Verification}
          **/
@@ -469,7 +469,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #sha} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #sha} instance as {@link String}
              **/
@@ -479,7 +479,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #url} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #url} instance as {@link String}
              **/
@@ -540,7 +540,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #name} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #name} instance as {@link String}
              **/
@@ -550,7 +550,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #email} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #email} instance as {@link String}
              **/
@@ -560,7 +560,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #date} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #date} instance as {@link String}
              **/
@@ -570,7 +570,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #date} timestamp <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #date} timestamp as long
              **/
@@ -639,7 +639,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #verified} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #verified} instance as boolean
              **/
@@ -649,7 +649,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #reason} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #reason} instance as {@link String}
              **/
@@ -659,7 +659,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #signature} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #signature} instance as {@link String}
              **/
@@ -669,7 +669,7 @@ public class Commit extends GitHubResponse {
 
             /**
              * Method to get {@link #payload} instance <br>
-             * Any params required
+             * No-any params required
              *
              * @return {@link #payload} instance as {@link String}
              **/
@@ -718,7 +718,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #htmlUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #htmlUrl} instance as {@link String}
          **/
@@ -779,7 +779,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #additions} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #additions} instance as int
          **/
@@ -789,7 +789,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #deletions} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #deletions} instance as int
          **/
@@ -799,7 +799,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #total} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #total} instance as int
          **/
@@ -909,7 +909,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #fileName} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #fileName} instance as {@link String}
          **/
@@ -919,7 +919,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #additions} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #additions} instance as int
          **/
@@ -929,7 +929,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #deletions} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #deletions} instance as int
          **/
@@ -939,7 +939,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #changes} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #changes} instance as int
          **/
@@ -949,7 +949,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #status} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #status} instance as {@link FileStatus}
          **/
@@ -959,7 +959,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #rawUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #rawUrl} instance as {@link String}
          **/
@@ -969,7 +969,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #blobUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #blobUrl} instance as {@link String}
          **/
@@ -979,7 +979,7 @@ public class Commit extends GitHubResponse {
 
         /**
          * Method to get {@link #patch} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #patch} instance as {@link String}
          **/

@@ -263,7 +263,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #login} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #login} instance as {@link String}
      **/
@@ -273,7 +273,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -283,7 +283,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -293,7 +293,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #avatarUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #avatarUrl} instance as {@link String}
      **/
@@ -303,7 +303,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #gravatarId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gravatarId} instance as {@link String}
      **/
@@ -313,7 +313,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -323,7 +323,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -333,7 +333,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #followersUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #followersUrl} instance as {@link String}
      **/
@@ -343,7 +343,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #followingUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #followingUrl} instance as {@link String}
      **/
@@ -353,7 +353,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #gistsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gistsUrl} instance as {@link String}
      **/
@@ -363,7 +363,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #starredUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #starredUrl} instance as {@link String}
      **/
@@ -373,7 +373,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #subscriptionsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #subscriptionsUrl} instance as {@link String}
      **/
@@ -383,7 +383,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #organizationsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #organizationsUrl} instance as {@link String}
      **/
@@ -393,7 +393,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #reposUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #reposUrl} instance as {@link String}
      **/
@@ -403,7 +403,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #eventsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #eventsUrl} instance as {@link String}
      **/
@@ -413,7 +413,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #receivedEventsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #receivedEventsUrl} instance as {@link String}
      **/
@@ -423,7 +423,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #type} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #type} instance as {@link String}
      **/
@@ -433,7 +433,7 @@ public class User extends GitHubResponse {
 
     /**
      * Method to get {@link #siteAdmin} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #siteAdmin} instance as boolean
      **/

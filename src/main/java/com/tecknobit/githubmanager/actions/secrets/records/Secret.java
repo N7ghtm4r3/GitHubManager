@@ -136,7 +136,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -146,7 +146,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -156,7 +156,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -166,7 +166,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -176,7 +176,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -186,7 +186,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #visibility} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #visibility} instance as {@link Visibility}
      **/
@@ -196,7 +196,7 @@ public class Secret extends GitHubResponse {
 
     /**
      * Method to get {@link #selectedRepositoriesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #selectedRepositoriesUrl} instance as {@link String}
      **/

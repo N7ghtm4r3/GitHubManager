@@ -100,7 +100,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link String}
      **/
@@ -110,7 +110,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #completedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #completedAt} instance as {@link String}
      **/
@@ -120,7 +120,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #completedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #completedAt} timestamp as long
      **/
@@ -130,7 +130,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #branch} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #branch} instance as {@link String}
      **/
@@ -140,7 +140,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #sha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #sha} instance as {@link String}
      **/
@@ -150,7 +150,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as {@link String}
      **/
@@ -160,7 +160,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #exportUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #exportUrl} instance as {@link String}
      **/
@@ -170,7 +170,7 @@ public class CodespaceExportDetails extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/

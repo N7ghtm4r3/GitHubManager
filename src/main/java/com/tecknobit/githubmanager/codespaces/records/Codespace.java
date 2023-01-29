@@ -317,7 +317,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #displayName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #displayName} instance as {@link String}
      **/
@@ -327,7 +327,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #environmentId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #environmentId} instance as {@link String}
      **/
@@ -337,7 +337,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #owner} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #owner} instance as {@link User}
      **/
@@ -347,7 +347,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #billableOwner} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #billableOwner} instance as {@link User}
      **/
@@ -357,7 +357,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #repository} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #repository} instance as {@link Repository}
      **/
@@ -367,7 +367,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #machine} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #machine} instance as {@link Machine}
      **/
@@ -377,7 +377,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #prebuild} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #prebuild} instance as boolean
      **/
@@ -387,7 +387,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #devContainerPath} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #devContainerPath} instance as {@link String}
      **/
@@ -397,7 +397,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -407,7 +407,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -417,7 +417,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -427,7 +427,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -437,7 +437,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #lastUsedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastUsedAt} instance as {@link String}
      **/
@@ -447,7 +447,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #lastUsedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastUsedAt} timestamp as long
      **/
@@ -457,7 +457,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link CodespaceState}
      **/
@@ -467,7 +467,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #gitStatus} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #gitStatus} instance as {@link GitStatus}
      **/
@@ -477,7 +477,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #location} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #location} instance as {@link CodespaceLocation}
      **/
@@ -487,7 +487,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #idleTimeoutMinutes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #idleTimeoutMinutes} instance as int
      **/
@@ -497,7 +497,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #webUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #webUrl} instance as {@link String}
      **/
@@ -507,7 +507,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #machinesUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #machinesUrl} instance as {@link String}
      **/
@@ -517,7 +517,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #startUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startUrl} instance as {@link String}
      **/
@@ -527,7 +527,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #stopUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #stopUrl} instance as {@link String}
      **/
@@ -537,7 +537,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #pullsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pullsUrl} instance as {@link String}
      **/
@@ -547,7 +547,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #recentFolders} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #recentFolders} instance as {@link Collection} of {@link String}
      **/
@@ -557,7 +557,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runtimeConstraints} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runtimeConstraints} instance as {@link Collection} of {@link String}
      **/
@@ -567,7 +567,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #pendingOperation} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pendingOperation} instance as boolean
      **/
@@ -577,7 +577,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #pendingOperationDisabledReason} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #pendingOperationDisabledReason} instance as {@link String}
      **/
@@ -587,7 +587,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #idleTimeoutNotice} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #idleTimeoutNotice} instance as {@link String}
      **/
@@ -597,7 +597,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #retentionPeriodMinutes} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #retentionPeriodMinutes} instance as int
      **/
@@ -607,7 +607,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #retentionExpiresAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #retentionExpiresAt} instance as {@link String}
      **/
@@ -617,7 +617,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #retentionExpiresAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #retentionExpiresAt} timestamp as long
      **/
@@ -627,7 +627,7 @@ public class Codespace extends BaseResponseDetails {
 
     /**
      * Method to get {@link #lastKnownStopNotice} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #lastKnownStopNotice} instance as {@link String}
      **/
@@ -870,7 +870,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -880,7 +880,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #displayName} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #displayName} instance as {@link String}
          **/
@@ -890,7 +890,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #operatingSystem} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #operatingSystem} instance as {@link String}
          **/
@@ -900,7 +900,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #storageInBytes} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #storageInBytes} instance as double
          **/
@@ -921,7 +921,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #memoryInBytes} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #memoryInBytes} instance as double
          **/
@@ -942,7 +942,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #cpus} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #cpus} instance as int
          **/
@@ -952,7 +952,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #prebuildAvailability} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #prebuildAvailability} instance as {@link String}
          **/
@@ -1051,7 +1051,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #ahead} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ahead} instance as int
          **/
@@ -1061,7 +1061,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #behind} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #behind} instance as int
          **/
@@ -1071,7 +1071,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #hasUnpushedChanges} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #hasUnpushedChanges} instance as boolean
          **/
@@ -1081,7 +1081,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #hasUncommittedChanges} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #hasUncommittedChanges} instance as boolean
          **/
@@ -1091,7 +1091,7 @@ public class Codespace extends BaseResponseDetails {
 
         /**
          * Method to get {@link #ref} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #ref} instance as {@link String}
          **/

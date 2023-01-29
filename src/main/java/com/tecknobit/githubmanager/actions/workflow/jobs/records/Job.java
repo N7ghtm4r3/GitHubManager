@@ -181,7 +181,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runId} instance as long
      **/
@@ -191,7 +191,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runUrl} instance as {@link String}
      **/
@@ -201,7 +201,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -211,7 +211,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #headSha} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #headSha} instance as {@link String}
      **/
@@ -221,7 +221,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -231,7 +231,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #status} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #status} instance as {@link Status}
      **/
@@ -241,7 +241,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #conclusion} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #conclusion} instance as {@link Conclusion}
      **/
@@ -251,7 +251,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #startedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startedAt} instance as {@link String}
      **/
@@ -261,7 +261,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #steps} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #steps} instance as {@link Collection} of {@link Step}
      **/
@@ -271,7 +271,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #startedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startedAt} timestamp as long
      **/
@@ -285,7 +285,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #completedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #completedAt} timestamp as long
      **/
@@ -295,7 +295,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #checkRunUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #checkRunUrl} instance as {@link String}
      **/
@@ -305,7 +305,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #labels} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #labels} instance as {@link Collection} of {@link String}
      **/
@@ -315,7 +315,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runnerId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runnerId} instance as long
      **/
@@ -325,7 +325,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runnerName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runnerName} instance as {@link String}
      **/
@@ -335,7 +335,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runnerGroupId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runnerGroupId} instance as long
      **/
@@ -345,7 +345,7 @@ public class Job extends BaseResponseDetails {
 
     /**
      * Method to get {@link #runnerGroupName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #runnerGroupName} instance as {@link String}
      **/
@@ -495,7 +495,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #name} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #name} instance as {@link String}
          **/
@@ -505,7 +505,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #status} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #status} instance as {@link Status}
          **/
@@ -515,7 +515,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #conclusion} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #conclusion} instance as {@link Conclusion}
          **/
@@ -525,7 +525,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #number} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #number} instance as int
          **/
@@ -535,7 +535,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #startedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #startedAt} instance as {@link String}
          **/
@@ -545,7 +545,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #startedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #startedAt} timestamp as long
          **/
@@ -555,7 +555,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #completedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #completedAt} instance as {@link String}
          **/
@@ -565,7 +565,7 @@ public class Job extends BaseResponseDetails {
 
         /**
          * Method to get {@link #completedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #completedAt} timestamp as long
          **/

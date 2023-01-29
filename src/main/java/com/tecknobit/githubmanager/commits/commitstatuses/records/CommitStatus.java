@@ -129,7 +129,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -139,7 +139,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #id} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #id} instance as long
      **/
@@ -149,7 +149,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #nodeId} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #nodeId} instance as {@link String}
      **/
@@ -159,7 +159,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link CommitStatusState}
      **/
@@ -169,7 +169,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/
@@ -179,7 +179,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #targetUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #targetUrl} instance as {@link String}
      **/
@@ -189,7 +189,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #context} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #context} instance as {@link String}
      **/
@@ -199,7 +199,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} instance as {@link String}
      **/
@@ -209,7 +209,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #createdAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #createdAt} timestamp as long
      **/
@@ -219,7 +219,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} instance as {@link String}
      **/
@@ -229,7 +229,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #updatedAt} timestamp <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #updatedAt} timestamp as long
      **/
@@ -239,7 +239,7 @@ public class CommitStatus extends GitHubResponse {
 
     /**
      * Method to get {@link #creator} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #creator} instance as {@link User}
      **/

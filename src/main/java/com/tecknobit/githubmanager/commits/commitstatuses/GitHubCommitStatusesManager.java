@@ -83,7 +83,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubCommitStatusesManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert

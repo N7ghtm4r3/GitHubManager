@@ -148,7 +148,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -158,7 +158,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -168,7 +168,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #permanentLinkUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #permanentLinkUrl} instance as {@link String}
      **/
@@ -178,7 +178,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #diffUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #diffUrl} instance as {@link String}
      **/
@@ -188,7 +188,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #patchUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #patchUrl} instance as {@link String}
      **/
@@ -198,7 +198,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #baseCommit} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #baseCommit} instance as {@link Commit}
      **/
@@ -208,7 +208,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #mergeBaseCommit} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #mergeBaseCommit} instance as {@link String}
      **/
@@ -218,7 +218,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #status} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #status} instance as {@link CommitStatus}
      **/
@@ -228,7 +228,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #aheadBy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #aheadBy} instance as int
      **/
@@ -238,7 +238,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #behindBy} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #behindBy} instance as int
      **/
@@ -248,7 +248,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #totalCommits} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #totalCommits} instance as int
      **/
@@ -258,7 +258,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #commits} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #commits} instance as {@link Collection} of {@link Commit}
      **/
@@ -268,7 +268,7 @@ public class CommitsComparison extends GitHubResponse {
 
     /**
      * Method to get {@link #files} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #files} instance as {@link Collection} of {@link CommitFile}
      **/

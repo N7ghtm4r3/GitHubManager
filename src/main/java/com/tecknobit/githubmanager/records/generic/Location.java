@@ -70,7 +70,7 @@ public class Location extends GitHubResponse {
 
     /**
      * Method to get {@link #path} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #path} instance as {@link String}
      **/
@@ -80,7 +80,7 @@ public class Location extends GitHubResponse {
 
     /**
      * Method to get {@link #startLine} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startLine} instance as int
      **/
@@ -90,7 +90,7 @@ public class Location extends GitHubResponse {
 
     /**
      * Method to get {@link #endLine} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #endLine} instance as int
      **/
@@ -100,7 +100,7 @@ public class Location extends GitHubResponse {
 
     /**
      * Method to get {@link #startColumn} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #startColumn} instance as int
      **/
@@ -110,7 +110,7 @@ public class Location extends GitHubResponse {
 
     /**
      * Method to get {@link #endColumn} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #endColumn} instance as int
      **/

@@ -90,7 +90,7 @@ public class GitHubWebhooksManager extends GitHubManager {
 
     /**
      * Constructor to init a {@link GitHubWebhooksManager} <br>
-     * Any params required
+     * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
      * @apiNote this constructor is useful to instantiate a new {@link GitHubManager}'s manager without re-insert
@@ -112,7 +112,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      * Method to return the webhook configuration for a GitHub App.
      * For more information about configuring a webhook for your app, see "Creating a GitHub App." <br>
      * You must use a JWT to access this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return webhook as {@link Webhook} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -281,7 +281,7 @@ public class GitHubWebhooksManager extends GitHubManager {
     /**
      * Method to return a list of webhook deliveries for the webhook configured for a GitHub App. <br>
      * You must use a JWT to access this endpoint <br>
-     * Any params required
+     * No-any params required
      *
      * @return deliveries list as {@link Collection} of {@link Delivery} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:

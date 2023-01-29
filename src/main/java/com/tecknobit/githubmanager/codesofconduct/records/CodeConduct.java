@@ -81,7 +81,7 @@ public class CodeConduct extends GitHubResponse {
 
     /**
      * Method to get {@link #key} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #key} instance as {@link String}
      **/
@@ -91,7 +91,7 @@ public class CodeConduct extends GitHubResponse {
 
     /**
      * Method to get {@link #name} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #name} instance as {@link String}
      **/
@@ -101,7 +101,7 @@ public class CodeConduct extends GitHubResponse {
 
     /**
      * Method to get {@link #url} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #url} instance as {@link String}
      **/
@@ -111,7 +111,7 @@ public class CodeConduct extends GitHubResponse {
 
     /**
      * Method to get {@link #body} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #body} instance as {@link String}
      **/
@@ -121,7 +121,7 @@ public class CodeConduct extends GitHubResponse {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/

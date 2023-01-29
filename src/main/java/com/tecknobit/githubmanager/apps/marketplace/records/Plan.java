@@ -124,7 +124,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #accountsUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #accountsUrl} instance as {@link String}
      **/
@@ -134,7 +134,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #number} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #number} instance as int
      **/
@@ -144,7 +144,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #description} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #description} instance as {@link String}
      **/
@@ -154,7 +154,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #monthlyPriceInCents} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #monthlyPriceInCents} instance as double
      **/
@@ -175,7 +175,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #yearlyPriceInCents} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #yearlyPriceInCents} instance as double
      **/
@@ -196,7 +196,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #priceModel} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #priceModel} instance as {@link PriceModel}
      **/
@@ -206,7 +206,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #hasFreeTrial} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #hasFreeTrial} instance as boolean
      **/
@@ -216,7 +216,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #unitName} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #unitName} instance as {@link String}
      **/
@@ -226,7 +226,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link String}
      **/
@@ -236,7 +236,7 @@ public class Plan extends BaseResponseDetails {
 
     /**
      * Method to get {@link #bullets} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #bullets} instance as {@link Collection} of {@link String}
      **/

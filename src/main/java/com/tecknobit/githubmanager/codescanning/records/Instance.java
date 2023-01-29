@@ -87,7 +87,7 @@ public class Instance extends ScanningItem {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link State}
      **/
@@ -97,7 +97,7 @@ public class Instance extends ScanningItem {
 
     /**
      * Method to get {@link #location} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #location} instance as {@link Location}
      **/
@@ -107,7 +107,7 @@ public class Instance extends ScanningItem {
 
     /**
      * Method to get {@link #htmlUrl} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #htmlUrl} instance as {@link String}
      **/
@@ -117,7 +117,7 @@ public class Instance extends ScanningItem {
 
     /**
      * Method to get {@link #classifications} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #classifications} instance as {@link Collection} of {@link Classification}
      **/

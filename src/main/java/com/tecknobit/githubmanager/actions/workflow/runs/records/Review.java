@@ -80,7 +80,7 @@ public class Review extends GitHubResponse {
 
     /**
      * Method to get {@link #state} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #state} instance as {@link ApprovalState}
      **/
@@ -90,7 +90,7 @@ public class Review extends GitHubResponse {
 
     /**
      * Method to get {@link #comment} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #comment} instance as {@link String}
      **/
@@ -100,7 +100,7 @@ public class Review extends GitHubResponse {
 
     /**
      * Method to get {@link #environments} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #environments} instance as {@link Collection} of {@link Environment}
      **/
@@ -110,7 +110,7 @@ public class Review extends GitHubResponse {
 
     /**
      * Method to get {@link #user} instance <br>
-     * Any params required
+     * No-any params required
      *
      * @return {@link #user} instance as {@link User}
      **/
@@ -182,7 +182,7 @@ public class Review extends GitHubResponse {
 
         /**
          * Method to get {@link #nodeId} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #nodeId} instance as {@link String}
          **/
@@ -192,7 +192,7 @@ public class Review extends GitHubResponse {
 
         /**
          * Method to get {@link #htmlUrl} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #htmlUrl} instance as {@link String}
          **/
@@ -202,7 +202,7 @@ public class Review extends GitHubResponse {
 
         /**
          * Method to get {@link #createdAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #createdAt} instance as {@link String}
          **/
@@ -212,7 +212,7 @@ public class Review extends GitHubResponse {
 
         /**
          * Method to get {@link #createdAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #createdAt} timestamp as long
          **/
@@ -222,7 +222,7 @@ public class Review extends GitHubResponse {
 
         /**
          * Method to get {@link #updatedAt} instance <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #updatedAt} instance as {@link String}
          **/
@@ -232,7 +232,7 @@ public class Review extends GitHubResponse {
 
         /**
          * Method to get {@link #updatedAt} timestamp <br>
-         * Any params required
+         * No-any params required
          *
          * @return {@link #updatedAt} timestamp as long
          **/
