@@ -821,30 +821,37 @@ public class Commit extends GitHubResponse {
          * {@code fileName} name of the file
          **/
         private final String fileName;
+
         /**
          * {@code additions} of the file
          **/
         private final int additions;
+
         /**
          * {@code deletions} of the file
          **/
         private final int deletions;
+
         /**
          * {@code changes}  of the file
          **/
         private final int changes;
+
         /**
          * {@code status} of the file
          **/
         private final FileStatus status;
+
         /**
          * {@code rawUrl} raw url of the file
          **/
         private final String rawUrl;
+
         /**
          * {@code blobUrl} blob url of the file
          **/
         private final String blobUrl;
+
         /**
          * {@code patch} patch of the file
          **/

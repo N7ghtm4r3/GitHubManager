@@ -1,6 +1,21 @@
 package com.tecknobit.githubmanager.emojis;
 
+import com.tecknobit.apimanager.annotations.RequestPath;
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
+import static com.tecknobit.apimanager.apis.APIRequest.downloadFile;
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 
 /**
  * The {@code GitHubEmojisManager} class is useful to manage all GitHub's emojis endpoints
@@ -11,6 +26,11 @@ import com.tecknobit.githubmanager.GitHubManager;
  * @see GitHubManager
  **/
 public class GitHubEmojisManager extends GitHubManager {
+
+    /**
+     * {@code EMOJIS_PATH} constant for {@code "emojis"} path
+     **/
+    public static final String EMOJIS_PATH = "emojis";
 
     /**
      * Constructor to init a {@link GitHubEmojisManager}
@@ -70,6 +90,129 @@ public class GitHubEmojisManager extends GitHubManager {
      **/
     public GitHubEmojisManager() {
         super();
+    }
+
+    /**
+     * Method to get all the emojis available to use on GitHub
+     *
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @param emojis: query emojis to fetch
+     * @return emojis list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/emojis#get-emojis">
+     * Get emojis</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/emojis")
+    public <T> T getEmojis(ReturnFormat format, String... emojis) throws IOException {
+        return returnEmojis(null, format, emojis);
+    }
+
+    /**
+     * Method to get all the emojis available to use on GitHub
+     *
+     * @param suffix: suffix to save the emoji files
+     * @param emojis: query emojis to fetch
+     * @return emojis list as array of {@link File}
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/emojis#get-emojis">
+     * Get emojis</a>
+     * @implNote the files will not be stored permanently
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/emojis")
+    public File[] getEmojis(String suffix, String... emojis) throws IOException {
+        return getEmojis(suffix, LIBRARY_OBJECT, emojis);
+    }
+
+    /**
+     * Method to get all the emojis available to use on GitHub
+     *
+     * @param suffix: suffix to save the emoji files
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @param emojis: query emojis to fetch
+     * @return emojis list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/emojis#get-emojis">
+     * Get emojis</a>
+     * @implNote the files will not be stored permanently
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/emojis")
+    public <T> T getEmojis(String suffix, ReturnFormat format, String... emojis) throws IOException {
+        return returnEmojis(suffix, format, emojis);
+    }
+
+    /**
+     * Method to create an emojis list
+     *
+     * @param suffix: suffix to save the emoji files
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @param emojis: query emojis to fetch
+     * @return emojis list as {@code "format"} defines
+     **/
+    @Returner
+    private <T> T returnEmojis(String suffix, ReturnFormat format, String... emojis) throws IOException {
+        JSONObject emojisResponse = new JSONObject(sendGetRequest(EMOJIS_PATH));
+        if (emojis.length > 0) {
+            if (suffix != null && !suffix.startsWith("."))
+                suffix = "." + suffix;
+            for (int j = 0; j < emojis.length; j++)
+                emojis[j] = emojis[j].toLowerCase();
+            ArrayList<String> lEmojis = new ArrayList<>(Arrays.stream(emojis).toList());
+            for (Iterator<String> it = emojisResponse.keys(); it.hasNext(); ) {
+                String key = it.next();
+                if (!lEmojis.contains(key))
+                    it.remove();
+            }
+        }
+        switch (format) {
+            case JSON:
+                return (T) emojisResponse;
+            case LIBRARY_OBJECT:
+                File[] files = new File[emojis.length];
+                for (int j = 0; j < emojis.length; j++) {
+                    String emoji = emojis[j];
+                    files[j] = downloadFile(emojisResponse.getString(emoji), emoji + suffix, false);
+                }
+                return (T) files;
+            default:
+                return (T) emojisResponse.toString();
+        }
     }
 
 }
