@@ -1,6 +1,23 @@
 package com.tecknobit.githubmanager.gists.comments;
 
+import com.tecknobit.apimanager.annotations.RequestPath;
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.gists.comments.records.GistComment;
+import com.tecknobit.githubmanager.gists.gists.records.Gist;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.commits.commitcomments.GitHubCommitCommentsManager.COMMENTS_PATH;
+import static com.tecknobit.githubmanager.gists.gists.GitHubGistsManager.GISTS_PATH;
 
 /**
  * The {@code GitHubGistsCommentsManager} class is useful to manage all GitHub's gists comments endpoints
@@ -70,6 +87,821 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     public GitHubGistsCommentsManager() {
         super();
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gist: the gist from fetch the list
+     * @return gist comments list as {@link Collection} of {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public Collection<GistComment> getGistComments(Gist gist) throws IOException {
+        return getGistComments(gist.getId(), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gist:   the gist from fetch the list
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return gist comments list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public <T> T getGistComments(Gist gist, ReturnFormat format) throws IOException {
+        return getGistComments(gist.getId(), format);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gistId: the unique identifier of the gist
+     * @return gist comments list as {@link Collection} of {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public Collection<GistComment> getGistComments(String gistId) throws IOException {
+        return getGistComments(gistId, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gistId: the unique identifier of the gist
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return gist comments list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public <T> T getGistComments(String gistId, ReturnFormat format) throws IOException {
+        return returnGistComments(sendGetRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH), format);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gist:        the gist from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return gist comments list as {@link Collection} of {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public Collection<GistComment> getGistComments(Gist gist, Params queryParams) throws IOException {
+        return getGistComments(gist.getId(), queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gist:        the gist from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return gist comments list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public <T> T getGistComments(Gist gist, Params queryParams, ReturnFormat format) throws IOException {
+        return getGistComments(gist.getId(), queryParams, format);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gistId:      the unique identifier of the gist
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return gist comments list as {@link Collection} of {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public Collection<GistComment> getGistComments(String gistId, Params queryParams) throws IOException {
+        return getGistComments(gistId, queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of the gist comments
+     *
+     * @param gistId:      the unique identifier of the gist
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format:      return type formatter -> {@link ReturnFormat}
+     * @return gist comments list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#list-gist-comments">
+     * List gist comments</a>
+     **/
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
+    public <T> T getGistComments(String gistId, Params queryParams, ReturnFormat format) throws IOException {
+        return returnGistComments(sendGetRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH
+                + queryParams.createQueryString()), format);
+    }
+
+    /**
+     * Method to create a gist comments list
+     *
+     * @param gistCommentsResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return gist comments list as {@code "format"} defines
+     **/
+    @Returner
+    private <T> T returnGistComments(String gistCommentsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(gistCommentsResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<GistComment> gistComments = new ArrayList<>();
+                JSONArray jGistComments = new JSONArray(gistCommentsResponse);
+                for (int j = 0; j < jGistComments.length(); j++)
+                    gistComments.add(new GistComment(jGistComments.getJSONObject(j)));
+                return (T) gistComments;
+            default:
+                return (T) gistCommentsResponse;
+        }
+    }
+
+    /**
+     * Method to create a gist comment
+     *
+     * @param gist: the gist where create the comment
+     * @param body: the comment text
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#create-a-gist-comment">
+     * Create a gist comment</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
+    public GistComment createGistComment(Gist gist, String body) throws IOException {
+        return createGistComment(gist.getId(), body, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to create a gist comment
+     *
+     * @param gist:   the gist where create the comment
+     * @param body:   the comment text
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#create-a-gist-comment">
+     * Create a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
+    public <T> T createGistComment(Gist gist, String body, ReturnFormat format) throws IOException {
+        return createGistComment(gist.getId(), body, format);
+    }
+
+    /**
+     * Method to create a gist comment
+     *
+     * @param gistId: the unique identifier of the gist
+     * @param body:   the comment text
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#create-a-gist-comment">
+     * Create a gist comment</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
+    public GistComment createGistComment(String gistId, String body) throws IOException {
+        return createGistComment(gistId, body, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to create a gist comment
+     *
+     * @param gistId: the unique identifier of the gist
+     * @param body:   the comment text
+     * @param format: return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#create-a-gist-comment">
+     * Create a gist comment</a>
+     **/
+    @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
+    public <T> T createGistComment(String gistId, String body, ReturnFormat format) throws IOException {
+        Params payload = new Params();
+        payload.addParam("body", body);
+        return returnGistComment(sendPostRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH, payload), format);
+    }
+
+    /**
+     * Method to get a gist comment
+     *
+     * @param gist:      the gist from fetch the comment
+     * @param commentId: the unique identifier of the comment
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#get-a-gist-comment">
+     * Get a gist comment</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
+    public GistComment getGistComment(Gist gist, String commentId) throws IOException {
+        return getGistComment(gist.getId(), commentId, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a gist comment
+     *
+     * @param gist:      the gist from fetch the comment
+     * @param commentId: the unique identifier of the comment
+     * @param format:    return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#get-a-gist-comment">
+     * Get a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
+    public <T> T getGistComment(Gist gist, String commentId, ReturnFormat format) throws IOException {
+        return getGistComment(gist.getId(), commentId, format);
+    }
+
+    /**
+     * Method to get a gist comment
+     *
+     * @param gistId:    the unique identifier of the gist
+     * @param commentId: the unique identifier of the comment
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#get-a-gist-comment">
+     * Get a gist comment</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
+    public GistComment getGistComment(String gistId, String commentId) throws IOException {
+        return getGistComment(gistId, commentId, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get a gist comment
+     *
+     * @param gistId:    the unique identifier of the gist
+     * @param commentId: the unique identifier of the comment
+     * @param format:    return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#get-a-gist-comment">
+     * Get a gist comment</a>
+     **/
+    @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
+    public <T> T getGistComment(String gistId, String commentId, ReturnFormat format) throws IOException {
+        return returnGistComment(sendGetRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH + "/" + commentId), format);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gist:    the gist where update the comment
+     * @param comment: the comment to update
+     * @param body:    the comment text
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public GistComment updateGistComment(Gist gist, GistComment comment, String body) throws IOException {
+        return updateGistComment(gist.getId(), comment.getId(), body, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gist:    the gist where update the comment
+     * @param comment: the comment to update
+     * @param body:    the comment text
+     * @param format:  return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public <T> T updateGistComment(Gist gist, GistComment comment, String body, ReturnFormat format) throws IOException {
+        return updateGistComment(gist.getId(), comment.getId(), body, format);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gist:      the gist where update the comment
+     * @param commentId: the unique identifier of the comment
+     * @param body:      the comment text
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public GistComment updateGistComment(Gist gist, String commentId, String body) throws IOException {
+        return updateGistComment(gist.getId(), commentId, body, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gist:      the gist where update the comment
+     * @param commentId: the unique identifier of the comment
+     * @param body:      the comment text
+     * @param format:    return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public <T> T updateGistComment(Gist gist, String commentId, String body, ReturnFormat format) throws IOException {
+        return updateGistComment(gist.getId(), commentId, body, format);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gistId:  the unique identifier of the gist
+     * @param comment: the comment to update
+     * @param body:    the comment text
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public GistComment updateGistComment(String gistId, GistComment comment, String body) throws IOException {
+        return updateGistComment(gistId, comment.getId(), body, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gistId:  the unique identifier of the gist
+     * @param comment: the comment to update
+     * @param body:    the comment text
+     * @param format:  return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public <T> T updateGistComment(String gistId, GistComment comment, String body, ReturnFormat format) throws IOException {
+        return updateGistComment(gistId, comment.getId(), body, format);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gistId:    the unique identifier of the gist
+     * @param commentId: the unique identifier of the comment
+     * @param body:      the comment text
+     * @return gist comment as {@link GistComment} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @Wrapper
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public GistComment updateGistComment(String gistId, String commentId, String body) throws IOException {
+        return updateGistComment(gistId, commentId, body, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to update a gist comment
+     *
+     * @param gistId:    the unique identifier of the gist
+     * @param commentId: the unique identifier of the comment
+     * @param body:      the comment text
+     * @param format:    return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#update-a-gist-comment">
+     * Update a gist comment</a>
+     **/
+    @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
+    public <T> T updateGistComment(String gistId, String commentId, String body, ReturnFormat format) throws IOException {
+        Params payload = new Params();
+        payload.addParam("body", body);
+        return returnGistComment(sendPatchRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH + "/" + commentId,
+                payload), format);
+    }
+
+    /**
+     * Method to create a gist comment
+     *
+     * @param gistCommentResponse: obtained from GitHub's response
+     * @param format:              return type formatter -> {@link ReturnFormat}
+     * @return gist comment as {@code "format"} defines
+     **/
+    @Returner
+    private <T> T returnGistComment(String gistCommentResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(gistCommentResponse);
+            case LIBRARY_OBJECT:
+                return (T) new GistComment(new JSONObject(gistCommentResponse));
+            default:
+                return (T) gistCommentResponse;
+        }
+    }
+
+    /**
+     * Method to delete a gist comment
+     *
+     * @param gist:    the gist where delete the comment
+     * @param comment: the comment to delete
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#delete-a-gist-comment">
+     * Delete a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
+    public boolean deleteGistComment(Gist gist, GistComment comment) {
+        return deleteGistComment(gist.getId(), comment.getId());
+    }
+
+    /**
+     * Method to delete a gist comment
+     *
+     * @param gistId:  the unique identifier of the gist
+     * @param comment: the comment to delete
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#delete-a-gist-comment">
+     * Delete a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
+    public boolean deleteGistComment(String gistId, GistComment comment) {
+        return deleteGistComment(gistId, comment.getId());
+    }
+
+    /**
+     * Method to delete a gist comment
+     *
+     * @param gist:      the gist where delete the comment
+     * @param commentId: the unique identifier of the comment
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#delete-a-gist-comment">
+     * Delete a gist comment</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
+    public boolean deleteGistComment(Gist gist, String commentId) {
+        return deleteGistComment(gist.getId(), commentId);
+    }
+
+    /**
+     * Method to delete a gist comment
+     *
+     * @param gistId:    the unique identifier of the gist
+     * @param commentId: the unique identifier of the comment
+     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/gists/comments#delete-a-gist-comment">
+     * Delete a gist comment</a>
+     **/
+    @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
+    public boolean deleteGistComment(String gistId, String commentId) {
+        try {
+            sendDeleteRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH + "/" + commentId);
+            if (apiRequest.getResponseStatusCode() != 204) {
+                printErrorResponse();
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            printErrorResponse();
+            return false;
+        }
     }
 
 }

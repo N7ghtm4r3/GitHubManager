@@ -35,6 +35,7 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  *     </li>
  * </ul>
  * @see GitHubResponse
+ * @see BaseResponseDetails
  **/
 public class Artifact extends BaseResponseDetails {
 
