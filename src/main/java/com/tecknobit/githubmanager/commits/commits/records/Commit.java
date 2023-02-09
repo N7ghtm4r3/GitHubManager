@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.commits.commits.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.TimeFormatter;
-import com.tecknobit.githubmanager.commits.commits.records.Commit.CommitDetails.Tree;
+import com.tecknobit.githubmanager.records.generic.ShaItem;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
@@ -300,7 +300,7 @@ public class Commit extends GitHubResponse {
         /**
          * {@code tree} of the commit
          **/
-        private final Tree tree;
+        private final ShaItem tree;
 
         /**
          * {@code url} of the commit
@@ -328,7 +328,7 @@ public class Commit extends GitHubResponse {
          * @param commentCount : comment count of the commit
          * @param verification : verification of the commit
          **/
-        public CommitDetails(CommitProfile author, CommitProfile committer, String message, Tree tree, String url,
+        public CommitDetails(CommitProfile author, CommitProfile committer, String message, ShaItem tree, String url,
                              int commentCount, Verification verification) {
             super(null);
             this.author = author;
@@ -350,7 +350,7 @@ public class Commit extends GitHubResponse {
             author = new CommitProfile(hItem.getJSONObject("author", new JSONObject()));
             committer = new CommitProfile(hItem.getJSONObject("committer", new JSONObject()));
             message = hItem.getString("message");
-            tree = new Tree(hItem.getJSONObject("tree", new JSONObject()));
+            tree = new ShaItem(hItem.getJSONObject("tree", new JSONObject()));
             url = hItem.getString("url");
             commentCount = hItem.getInt("comment_count", 0);
             verification = new Verification(hItem.getJSONObject("verification", new JSONObject()));
@@ -390,9 +390,9 @@ public class Commit extends GitHubResponse {
          * Method to get {@link #tree} instance <br>
          * No-any params required
          *
-         * @return {@link #tree} instance as {@link Tree}
+         * @return {@link #tree} instance as {@link ShaItem}
          **/
-        public Tree getTree() {
+        public ShaItem getShaItem() {
             return tree;
         }
 
@@ -424,69 +424,6 @@ public class Commit extends GitHubResponse {
          **/
         public Verification getVerification() {
             return verification;
-        }
-
-        /**
-         * The {@code Tree} class is useful to format a GitHub's commit tree for {@link CommitDetails}
-         *
-         * @author N7ghtm4r3 - Tecknobit
-         * @see InnerClassItem
-         **/
-        public static class Tree extends InnerClassItem {
-
-            /**
-             * {@code sha} of the tree
-             **/
-            protected final String sha;
-
-            /**
-             * {@code url} of the tree
-             **/
-            protected final String url;
-
-            /**
-             * Constructor to init a {@link Tree}
-             *
-             * @param sha : sha of the tree
-             * @param url : url of the tree
-             **/
-            public Tree(String sha, String url) {
-                super(null);
-                this.sha = sha;
-                this.url = url;
-            }
-
-            /**
-             * Constructor to init a {@link Tree}
-             *
-             * @param jTree : tree details as {@link JSONObject}
-             **/
-            public Tree(JSONObject jTree) {
-                super(jTree);
-                sha = hItem.getString("sha");
-                url = hItem.getString("url");
-            }
-
-            /**
-             * Method to get {@link #sha} instance <br>
-             * No-any params required
-             *
-             * @return {@link #sha} instance as {@link String}
-             **/
-            public String getSha() {
-                return sha;
-            }
-
-            /**
-             * Method to get {@link #url} instance <br>
-             * No-any params required
-             *
-             * @return {@link #url} instance as {@link String}
-             **/
-            public String getUrl() {
-                return url;
-            }
-
         }
 
         /**
@@ -685,9 +622,9 @@ public class Commit extends GitHubResponse {
      * The {@code Parent} class is useful to format a GitHub's parent for {@link Commit}
      *
      * @author N7ghtm4r3 - Tecknobit
-     * @see Tree
+     * @see ShaItem
      **/
-    public static class Parent extends Tree {
+    public static class Parent extends ShaItem {
 
         /**
          * {@code htmlUrl} html url of the parent
@@ -713,7 +650,7 @@ public class Commit extends GitHubResponse {
          **/
         public Parent(JSONObject jParent) {
             super(jParent);
-            htmlUrl = hItem.getString("html_url");
+            htmlUrl = hResponse.getString("html_url");
         }
 
         /**
