@@ -15,20 +15,20 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 public class ShaItem extends GitHubResponse {
 
     /**
-     * {@code sha} of the tree
+     * {@code sha} of the item
      **/
     protected final String sha;
 
     /**
-     * {@code url} of the tree
+     * {@code url} of the item
      **/
     protected final String url;
 
     /**
      * Constructor to init a {@link ShaItem}
      *
-     * @param sha : sha of the tree
-     * @param url : url of the sha item
+     * @param sha : sha of the item
+     * @param url : url of the item
      **/
     public ShaItem(String sha, String url) {
         super(null);
