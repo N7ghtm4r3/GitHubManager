@@ -79,6 +79,7 @@ public class WorkflowRunUsage extends GitHubResponse {
      * The {@code BillableRun} class is useful to format a GitHub's billable run
      *
      * @author N7ghtm4r3 - Tecknobit
+     * @see InnerClassItem
      * @see Billable
      **/
     public static class BillableRun extends Billable {

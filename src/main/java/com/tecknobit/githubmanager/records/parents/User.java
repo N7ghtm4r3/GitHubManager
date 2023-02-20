@@ -1,11 +1,12 @@
 package com.tecknobit.githubmanager.records.parents;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.GitHubManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
  * The {@code User} class is useful to format a GitHub's user
@@ -460,11 +461,11 @@ public class User extends GitHubResponse {
      * Method to create a users list
      *
      * @param usersResponse: obtained from GitHub's response
-     * @param format:        return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @param format:        return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      **/
     @Returner
-    public static <T> T returnUsersList(String usersResponse, GitHubManager.ReturnFormat format) {
+    public static <T> T returnUsersList(String usersResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
                 return (T) new JSONArray(usersResponse);

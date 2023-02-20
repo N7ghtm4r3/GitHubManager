@@ -1,10 +1,7 @@
 package com.tecknobit.githubmanager.commits.commits.records.pullrequests;
 
 import com.tecknobit.githubmanager.records.organization.Team;
-import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
-import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.records.parents.*;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,9 +19,10 @@ import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
  * @apiNote see the official documentation at:<a href="https://docs.github.com/en/rest/commits/commits#list-pull-requests-associated-with-a-commith">
  * List pull requests associated with a commit</a>
  * @see GitHubResponse
- * @see PullRequestStructure
+ * @see GitHubOperationBaseStructure
+ * @see GitHubOperation
  **/
-public class PullRequest extends PullRequestStructure {
+public class PullRequest extends GitHubOperation {
 
     /**
      * {@code diffUrl} diff url of the pull request
@@ -67,36 +65,6 @@ public class PullRequest extends PullRequestStructure {
     private final String statusesUrl;
 
     /**
-     * {@code locked} whether the pull request is locked
-     **/
-    private final boolean locked;
-
-    /**
-     * {@code user} of the pull request
-     **/
-    private final User user;
-
-    /**
-     * {@code body} of the pull request
-     **/
-    private final String body;
-
-    /**
-     * {@code labels} of the pull request
-     **/
-    private final ArrayList<Label> labels;
-
-    /**
-     * {@code milestone} of the pull request
-     **/
-    private final Milestone milestone;
-
-    /**
-     * {@code activeLockReason} active lock reason of the pull request
-     **/
-    private final String activeLockReason;
-
-    /**
      * {@code mergedAt} merged time of the pull request
      **/
     private final String mergedAt;
@@ -105,16 +73,6 @@ public class PullRequest extends PullRequestStructure {
      * {@code mergeCommitSha} merge commit sha of the pull request
      **/
     private final String mergeCommitSha;
-
-    /**
-     * {@code assignee} of the pull request
-     **/
-    private final User assignee;
-
-    /**
-     * {@code assignees} of the pull request
-     **/
-    private final ArrayList<User> assignees;
 
     /**
      * {@code requestedReviewers} requested reviewers of the pull request
@@ -140,11 +98,6 @@ public class PullRequest extends PullRequestStructure {
      * {@code _links} links of the pull request
      **/
     private final Links _links;
-
-    /**
-     * {@code authorAssociation} how the author is associated with the repository
-     **/
-    private final AuthorAssociation authorAssociation;
 
     /**
      * {@code autoMerge} the status of auto merging a pull request
@@ -193,11 +146,11 @@ public class PullRequest extends PullRequestStructure {
      * @param authorAssociation  : id of the pull request
      * @param draft              : indicates whether the pull request is a draft
      **/
-    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, PullRequestState state,
+    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, OperationState state,
                        String title, String createdAt, String updatedAt, String closedAt, String diffUrl, String patchUrl,
                        String issueUrl, String commitsUrl, String reviewCommentsUrl, String reviewCommentUrl,
                        String commentsUrl, String statusesUrl, boolean locked, User user, String body,
-                       ArrayList<Label> labels, Milestone milestone, String activeLockReason, User assignee,
+                       ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason, User assignee,
                        ArrayList<User> assignees, ArrayList<User> requestedReviewers, ArrayList<Team> requestedTeams,
                        PullRequestPart head, PullRequestPart base, Links _links, AuthorAssociation authorAssociation,
                        boolean draft) {
@@ -246,11 +199,11 @@ public class PullRequest extends PullRequestStructure {
      * @param authorAssociation  : id of the pull request
      * @param draft              : indicates whether the pull request is a draft
      **/
-    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, PullRequestState state,
+    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, OperationState state,
                        String title, String createdAt, String updatedAt, String closedAt, String diffUrl, String patchUrl,
                        String issueUrl, String commitsUrl, String reviewCommentsUrl, String reviewCommentUrl,
                        String commentsUrl, String statusesUrl, boolean locked, User user, String body,
-                       ArrayList<Label> labels, Milestone milestone, String activeLockReason, String mergedAt,
+                       ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason, String mergedAt,
                        String mergeCommitSha, User assignee, ArrayList<User> assignees, ArrayList<User> requestedReviewers,
                        ArrayList<Team> requestedTeams, PullRequestPart head, PullRequestPart base, Links _links,
                        AuthorAssociation authorAssociation, boolean draft) {
@@ -298,11 +251,11 @@ public class PullRequest extends PullRequestStructure {
      * @param autoMerge:         the status of auto merging a pull request
      * @param draft              : indicates whether the pull request is a draft
      **/
-    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, PullRequestState state,
+    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, OperationState state,
                        String title, String createdAt, String updatedAt, String closedAt, String diffUrl, String patchUrl,
                        String issueUrl, String commitsUrl, String reviewCommentsUrl, String reviewCommentUrl,
                        String commentsUrl, String statusesUrl, boolean locked, User user, String body,
-                       ArrayList<Label> labels, Milestone milestone, String activeLockReason, User assignee,
+                       ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason, User assignee,
                        ArrayList<User> assignees, ArrayList<User> requestedReviewers, ArrayList<Team> requestedTeams,
                        PullRequestPart head, PullRequestPart base, Links _links, AuthorAssociation authorAssociation,
                        AutoMerge autoMerge, boolean draft) {
@@ -352,15 +305,16 @@ public class PullRequest extends PullRequestStructure {
      * @param autoMerge:         the status of auto merging a pull request
      * @param draft              : indicates whether the pull request is a draft
      **/
-    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, PullRequestState state,
+    public PullRequest(String url, String htmlUrl, long id, String nodeId, long number, OperationState state,
                        String title, String createdAt, String updatedAt, String closedAt, String diffUrl, String patchUrl,
                        String issueUrl, String commitsUrl, String reviewCommentsUrl, String reviewCommentUrl,
                        String commentsUrl, String statusesUrl, boolean locked, User user, String body,
-                       ArrayList<Label> labels, Milestone milestone, String activeLockReason, String mergedAt,
+                       ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason, String mergedAt,
                        String mergeCommitSha, User assignee, ArrayList<User> assignees, ArrayList<User> requestedReviewers,
                        ArrayList<Team> requestedTeams, PullRequestPart head, PullRequestPart base, Links _links,
                        AuthorAssociation authorAssociation, AutoMerge autoMerge, boolean draft) {
-        super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt);
+        super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt, locked, user, body, labels,
+                milestone, activeLockReason, assignee, assignees, authorAssociation);
         this.diffUrl = diffUrl;
         this.patchUrl = patchUrl;
         this.issueUrl = issueUrl;
@@ -369,22 +323,13 @@ public class PullRequest extends PullRequestStructure {
         this.reviewCommentUrl = reviewCommentUrl;
         this.commentsUrl = commentsUrl;
         this.statusesUrl = statusesUrl;
-        this.locked = locked;
-        this.user = user;
-        this.body = body;
-        this.labels = labels;
-        this.milestone = milestone;
-        this.activeLockReason = activeLockReason;
         this.mergedAt = mergedAt;
         this.mergeCommitSha = mergeCommitSha;
-        this.assignee = assignee;
-        this.assignees = assignees;
         this.requestedReviewers = requestedReviewers;
         this.requestedTeams = requestedTeams;
         this.head = head;
         this.base = base;
         this._links = _links;
-        this.authorAssociation = authorAssociation;
         this.autoMerge = autoMerge;
         this.draft = draft;
     }
@@ -404,19 +349,11 @@ public class PullRequest extends PullRequestStructure {
         reviewCommentUrl = hResponse.getString("review_comment_url");
         commentsUrl = hResponse.getString("comments_url");
         statusesUrl = hResponse.getString("statuses_url");
-        locked = hResponse.getBoolean("locked");
-        user = new User(hResponse.getJSONObject("user", new JSONObject()));
-        body = hResponse.getString("body");
-        labels = new ArrayList<>();
         JSONArray jLabels = hResponse.getJSONArray("labels", new JSONArray());
         for (int j = 0; j < jLabels.length(); j++)
             labels.add(new Label(jLabels.getJSONObject(j)));
-        milestone = new Milestone(hResponse.getJSONObject("milestone", new JSONObject()));
-        activeLockReason = hResponse.getString("active_lock_reason");
         mergedAt = hResponse.getString("merged_at");
         mergeCommitSha = hResponse.getString("merge_commit_sha");
-        assignee = new User(hResponse.getJSONObject("assignee", new JSONObject()));
-        assignees = returnUsersList(hResponse.getJSONArray("assignees"));
         requestedReviewers = returnUsersList(hResponse.getJSONArray("requested_reviewers"));
         requestedTeams = new ArrayList<>();
         JSONArray jRequestedTeams = hResponse.getJSONArray("requested_teams", new JSONArray());
@@ -425,8 +362,7 @@ public class PullRequest extends PullRequestStructure {
         head = new PullRequestPart(hResponse.getJSONObject("head", new JSONObject()));
         base = new PullRequestPart(hResponse.getJSONObject("base", new JSONObject()));
         _links = new Links(hResponse.getJSONObject("_links", new JSONObject()));
-        authorAssociation = AuthorAssociation.valueOf(hResponse.getString("author_association"));
-        autoMerge = new AutoMerge(hResponse.getJSONObject("", new JSONObject()));
+        autoMerge = new AutoMerge(hResponse.getJSONObject("auto_merge", new JSONObject()));
         draft = hResponse.getBoolean("draft");
     }
 
@@ -511,66 +447,6 @@ public class PullRequest extends PullRequestStructure {
     }
 
     /**
-     * Method to get {@link #locked} instance <br>
-     * No-any params required
-     *
-     * @return {@link #locked} instance as boolean
-     **/
-    public boolean isLocked() {
-        return locked;
-    }
-
-    /**
-     * Method to get {@link #user} instance <br>
-     * No-any params required
-     *
-     * @return {@link #user} instance as {@link User}
-     **/
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Method to get {@link #body} instance <br>
-     * No-any params required
-     *
-     * @return {@link #body} instance as {@link String}
-     **/
-    public String getBody() {
-        return body;
-    }
-
-    /**
-     * Method to get {@link #labels} instance <br>
-     * No-any params required
-     *
-     * @return {@link #labels} instance as {@link Collection} of {@link Label}
-     **/
-    public Collection<Label> getLabels() {
-        return labels;
-    }
-
-    /**
-     * Method to get {@link #milestone} instance <br>
-     * No-any params required
-     *
-     * @return {@link #milestone} instance as {@link Milestone}
-     **/
-    public Milestone getMilestone() {
-        return milestone;
-    }
-
-    /**
-     * Method to get {@link #activeLockReason} instance <br>
-     * No-any params required
-     *
-     * @return {@link #activeLockReason} instance as {@link String}
-     **/
-    public String getActiveLockReason() {
-        return activeLockReason;
-    }
-
-    /**
      * Method to get {@link #mergedAt} instance <br>
      * No-any params required
      *
@@ -598,26 +474,6 @@ public class PullRequest extends PullRequestStructure {
      **/
     public String getMergeCommitSha() {
         return mergeCommitSha;
-    }
-
-    /**
-     * Method to get {@link #assignee} instance <br>
-     * No-any params required
-     *
-     * @return {@link #assignee} instance as {@link User}
-     **/
-    public User getAssignee() {
-        return assignee;
-    }
-
-    /**
-     * Method to get {@link #assignees} instance <br>
-     * No-any params required
-     *
-     * @return {@link #assignees} instance as {@link Collection} of {@link User}
-     **/
-    public Collection<User> getAssignees() {
-        return assignees;
     }
 
     /**
@@ -671,16 +527,6 @@ public class PullRequest extends PullRequestStructure {
     }
 
     /**
-     * Method to get {@link #authorAssociation} instance <br>
-     * No-any params required
-     *
-     * @return {@link #authorAssociation} instance as {@link AuthorAssociation}
-     **/
-    public AuthorAssociation getAuthorAssociation() {
-        return authorAssociation;
-    }
-
-    /**
      * Method to get {@link #autoMerge} instance <br>
      * No-any params required
      *
@@ -698,314 +544,6 @@ public class PullRequest extends PullRequestStructure {
      **/
     public boolean isDraft() {
         return draft;
-    }
-
-    /**
-     * {@code AuthorAssociation} list of available author associations
-     **/
-    public enum AuthorAssociation {
-
-        /**
-         * {@code COLLABORATOR} author association
-         **/
-        COLLABORATOR,
-
-        /**
-         * {@code CONTRIBUTOR} author association
-         **/
-        CONTRIBUTOR,
-
-        /**
-         * {@code FIRST_TIMER} author association
-         **/
-        FIRST_TIMER,
-
-        /**
-         * {@code FIRST_TIME_CONTRIBUTOR} author association
-         **/
-        FIRST_TIME_CONTRIBUTOR,
-
-        /**
-         * {@code MANNEQUIN} author association
-         **/
-        MANNEQUIN,
-
-        /**
-         * {@code MEMBER} author association
-         **/
-        MEMBER,
-
-        /**
-         * {@code NONE} author association
-         **/
-        NONE,
-
-        /**
-         * {@code OWNER} author association
-         **/
-        OWNER
-
-    }
-
-    /**
-     * The {@code Label} class is useful to format a GitHub's label
-     *
-     * @author N7ghtm4r3 - Tecknobit
-     * @see GitHubResponse
-     * @see BaseResponseDetails
-     **/
-    public static class Label extends BaseResponseDetails {
-
-        /**
-         * {@code nodeId} node identifier of the label
-         **/
-        private final String nodeId;
-
-        /**
-         * {@code description} of the label
-         **/
-        private final String description;
-
-        /**
-         * {@code color} of the label
-         **/
-        private final String color;
-
-        /**
-         * {@code isDefault} whether the label is a default label
-         **/
-        private final boolean isDefault;
-
-        /**
-         * Constructor to init a {@link Label}
-         *
-         * @param id          : identifier value
-         * @param name        : the name of the item
-         * @param url         : url value
-         * @param nodeId      : node identifier value
-         * @param description : description of the label
-         * @param color       : color of the label
-         * @param isDefault   : whether the label is a default label
-         **/
-        public Label(long id, String name, String url, String nodeId, String description, String color, boolean isDefault) {
-            super(id, name, url);
-            this.nodeId = nodeId;
-            this.description = description;
-            this.color = color;
-            this.isDefault = isDefault;
-        }
-
-        /**
-         * Constructor to init a {@link Label}
-         *
-         * @param jLabel : label details as {@link JSONObject}
-         **/
-        public Label(JSONObject jLabel) {
-            super(jLabel);
-            nodeId = hResponse.getString("node_id");
-            description = hResponse.getString("description");
-            color = hResponse.getString("color");
-            isDefault = hResponse.getBoolean("default");
-        }
-
-        /**
-         * Method to get {@link #nodeId} instance <br>
-         * No-any params required
-         *
-         * @return {@link #nodeId} instance as {@link String}
-         **/
-        public String getNodeId() {
-            return nodeId;
-        }
-
-        /**
-         * Method to get {@link #description} instance <br>
-         * No-any params required
-         *
-         * @return {@link #description} instance as {@link String}
-         **/
-        public String getDescription() {
-            return description;
-        }
-
-        /**
-         * Method to get {@link #color} instance <br>
-         * No-any params required
-         *
-         * @return {@link #color} instance as {@link String}
-         **/
-        public String getColor() {
-            return color;
-        }
-
-        /**
-         * Method to get {@link #isDefault} instance <br>
-         * No-any params required
-         *
-         * @return {@link #isDefault} instance as {@link String}
-         **/
-        public boolean isDefault() {
-            return isDefault;
-        }
-
-    }
-
-    /**
-     * The {@code Milestone} class is useful to format a GitHub's milestone
-     *
-     * @author N7ghtm4r3 - Tecknobit
-     * @see GitHubResponse
-     * @see PullRequestStructure
-     **/
-    public static class Milestone extends PullRequestStructure {
-
-        /**
-         * {@code labelsUrl} labels url of the milestone
-         **/
-        private final String labelsUrl;
-
-        /**
-         * {@code description} of the milestone
-         **/
-        private final String description;
-
-        /**
-         * {@code creator} of the milestone
-         **/
-        private final User creator;
-
-        /**
-         * {@code openIssues} open issues
-         **/
-        private final int openIssues;
-
-        /**
-         * {@code openIssues} closed issues
-         **/
-        private final int closedIssues;
-
-        /**
-         * {@code dueOn} due on date of the milestone
-         **/
-        private final String dueOn;
-
-        /**
-         * Constructor to init a {@link Milestone}
-         *
-         * @param url          : url of the pull request
-         * @param htmlUrl      : html url of the pull request
-         * @param id           : id of the pull request
-         * @param nodeId       : node identifier of the pull request
-         * @param number       : number of the pull request
-         * @param state        : state of the pull request
-         * @param title        : title of the pull request
-         * @param createdAt    : creation time of the pull request
-         * @param updatedAt    : update time of the pull request
-         * @param closedAt     :  close time of the pull request
-         * @param labelsUrl    : labels url of the milestone
-         * @param description  : description of the milestone
-         * @param creator      : creator of the milestone
-         * @param openIssues   : open issues
-         * @param closedIssues : closed issues
-         * @param dueOn        : due on date of the milestone
-         **/
-        public Milestone(String url, String htmlUrl, long id, String nodeId, long number, PullRequestState state,
-                         String title, String createdAt, String updatedAt, String closedAt, String labelsUrl,
-                         String description, User creator, int openIssues, int closedIssues, String dueOn) {
-            super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt);
-            this.labelsUrl = labelsUrl;
-            this.description = description;
-            this.creator = creator;
-            this.openIssues = openIssues;
-            this.closedIssues = closedIssues;
-            this.dueOn = dueOn;
-        }
-
-        /**
-         * Constructor to init a {@link Milestone}
-         *
-         * @param jMilestone : milestone details as {@link JSONObject}
-         **/
-        public Milestone(JSONObject jMilestone) {
-            super(jMilestone);
-            labelsUrl = hResponse.getString("labels_url");
-            description = hResponse.getString("description");
-            creator = new User(hResponse.getJSONObject("creator", new JSONObject()));
-            openIssues = hResponse.getInt("open_issues", 0);
-            closedIssues = hResponse.getInt("closed_issues", 0);
-            dueOn = hResponse.getString("due_on");
-        }
-
-        /**
-         * Method to get {@link #labelsUrl} instance <br>
-         * No-any params required
-         *
-         * @return {@link #labelsUrl} instance as {@link String}
-         **/
-        public String getLabelsUrl() {
-            return labelsUrl;
-        }
-
-        /**
-         * Method to get {@link #description} instance <br>
-         * No-any params required
-         *
-         * @return {@link #description} instance as {@link String}
-         **/
-        public String getDescription() {
-            return description;
-        }
-
-        /**
-         * Method to get {@link #creator} instance <br>
-         * No-any params required
-         *
-         * @return {@link #creator} instance as {@link User}
-         **/
-        public User getCreator() {
-            return creator;
-        }
-
-        /**
-         * Method to get {@link #openIssues} instance <br>
-         * No-any params required
-         *
-         * @return {@link #openIssues} instance as int
-         **/
-        public int getOpenIssues() {
-            return openIssues;
-        }
-
-        /**
-         * Method to get {@link #closedIssues} instance <br>
-         * No-any params required
-         *
-         * @return {@link #closedIssues} instance as int
-         **/
-        public int getClosedIssues() {
-            return closedIssues;
-        }
-
-        /**
-         * Method to get {@link #dueOn} instance <br>
-         * No-any params required
-         *
-         * @return {@link #dueOn} instance as {@link String}
-         **/
-        public String getDueOn() {
-            return dueOn;
-        }
-
-        /**
-         * Method to get {@link #dueOn} timestamp <br>
-         * No-any params required
-         *
-         * @return {@link #dueOn} timestamp as long
-         **/
-        public long getDueOnTimestamp() {
-            return getDateTimestamp(dueOn);
-        }
-
     }
 
     /**
@@ -1349,7 +887,7 @@ public class PullRequest extends PullRequestStructure {
         public AutoMerge(JSONObject jAutoMerge) {
             super(jAutoMerge);
             enabledBy = new User(hItem.getJSONObject("enabled_by", new JSONObject()));
-            mergeMethod = MergeMethod.valueOf(hItem.getString("merge_method"));
+            mergeMethod = MergeMethod.valueOf(hItem.getString("merge_method", MergeMethod.merge.name()));
             commitTitle = hItem.getString("commit_title");
             commitMessage = hItem.getString("commit_message");
         }

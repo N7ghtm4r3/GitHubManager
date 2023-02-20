@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.commits.commitcomments.records;
 
-import com.tecknobit.githubmanager.commits.commits.records.pullrequests.PullRequest.AuthorAssociation;
+import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;

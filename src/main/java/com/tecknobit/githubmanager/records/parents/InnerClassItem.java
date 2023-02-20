@@ -8,7 +8,7 @@ import org.json.JSONObject;
  *
  * @author N7ghtm4r3 - Tecknobit
  **/
-public class InnerClassItem {
+public abstract class InnerClassItem {
 
     /**
      * {@code hItem} useful to manage the {@code "JSON"} data
