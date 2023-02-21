@@ -65,6 +65,11 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
     protected final ArrayList<User> assignees;
 
     /**
+     * {@code draft} indicates whether the operation is a draft
+     **/
+    protected final boolean draft;
+
+    /**
      * Constructor to init a {@link GitHubOperation}
      *
      * @param url               : url the operation
@@ -86,11 +91,12 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
      * @param assignee          : assignee the operation
      * @param assignees         : assignees the operation
      * @param authorAssociation : id the operation
+     * @param draft: indicates whether the operation is a draft
      **/
     public GitHubOperation(String url, String htmlUrl, long id, String nodeId, long number, OperationState state,
                            String title, String createdAt, String updatedAt, String closedAt, boolean locked, User user,
                            String body, ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason,
-                           User assignee, ArrayList<User> assignees, AuthorAssociation authorAssociation) {
+                           User assignee, ArrayList<User> assignees, AuthorAssociation authorAssociation, boolean draft) {
         super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt);
         this.locked = locked;
         this.user = user;
@@ -101,6 +107,7 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
         this.assignee = assignee;
         this.assignees = assignees;
         this.authorAssociation = authorAssociation;
+        this.draft = draft;
     }
 
     /**
@@ -130,6 +137,7 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
         assignee = new User(hResponse.getJSONObject("assignee", new JSONObject()));
         assignees = returnUsersList(hResponse.getJSONArray("assignees"));
         authorAssociation = AuthorAssociation.valueOf(hResponse.getString("author_association"));
+        draft = hResponse.getBoolean("draft");
     }
 
     /**
@@ -220,6 +228,16 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
      **/
     public AuthorAssociation getAuthorAssociation() {
         return authorAssociation;
+    }
+
+    /**
+     * Method to get {@link #draft} instance <br>
+     * No-any params required
+     *
+     * @return {@link #draft} instance as boolean
+     **/
+    public boolean isDraft() {
+        return draft;
     }
 
     /**
@@ -564,6 +582,23 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
          **/
         public long getDueOnTimestamp() {
             return getDateTimestamp(dueOn);
+        }
+
+        /**
+         * {@code MilestoneSort} is a list for the milestone sorts available
+         **/
+        public enum MilestoneSort {
+
+            /**
+             * {@code "due_on"} sort
+             **/
+            due_on,
+
+            /**
+             * {@code "completeness"} sort
+             **/
+            completeness
+
         }
 
     }

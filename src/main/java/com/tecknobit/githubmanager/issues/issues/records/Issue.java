@@ -91,6 +91,11 @@ public class Issue extends GitHubOperation {
     private final StateReason stateReason;
 
     /**
+     * {@code closedBy} who closed the issue
+     **/
+    private final User closedBy;
+
+    /**
      * Constructor to init a {@link Issue}
      *
      * @param url               : url of the issue
@@ -119,16 +124,18 @@ public class Issue extends GitHubOperation {
      * @param comments          : comments of the issue
      * @param pullRequest       : pull request attached to the issue
      * @param repository        : repository of the issue
-     * @param stateReason:      the reason for the current state
+     * @param stateReason       :      the reason for the current state
+     * @param draft             : indicates whether the issue is a draft
+     * @param closedBy: who closed the issue
      **/
     public Issue(String url, String htmlUrl, long id, String nodeId, long number, OperationState state, String title,
                  String createdAt, String updatedAt, String closedAt, boolean locked, User user, String body,
                  ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason, User assignee,
                  ArrayList<User> assignees, AuthorAssociation authorAssociation, String repositoryUrl, String labelsUrl,
                  String commentsUrl, String eventsUrl, int comments, IssuePullRequest pullRequest,
-                 CompleteRepository repository, StateReason stateReason) {
+                 CompleteRepository repository, StateReason stateReason, boolean draft, User closedBy) {
         super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt, locked, user, body, labels,
-                milestone, activeLockReason, assignee, assignees, authorAssociation);
+                milestone, activeLockReason, assignee, assignees, authorAssociation, draft);
         this.repositoryUrl = repositoryUrl;
         this.labelsUrl = labelsUrl;
         this.commentsUrl = commentsUrl;
@@ -137,6 +144,7 @@ public class Issue extends GitHubOperation {
         this.pullRequest = pullRequest;
         this.repository = repository;
         this.stateReason = stateReason;
+        this.closedBy = closedBy;
     }
 
     /**
@@ -158,6 +166,11 @@ public class Issue extends GitHubOperation {
             stateReason = StateReason.valueOf(sStateReason);
         else
             stateReason = null;
+        JSONObject jClosedBy = hResponse.getJSONObject("");
+        if (jClosedBy != null)
+            closedBy = new User(jClosedBy);
+        else
+            closedBy = null;
     }
 
     /**
@@ -228,6 +241,16 @@ public class Issue extends GitHubOperation {
      **/
     public CompleteRepository getRepository() {
         return repository;
+    }
+
+    /**
+     * Method to get {@link #closedBy} instance <br>
+     * No-any params required
+     *
+     * @return {@link #closedBy} instance as {@link User}
+     **/
+    public User getClosedBy() {
+        return closedBy;
     }
 
     /**

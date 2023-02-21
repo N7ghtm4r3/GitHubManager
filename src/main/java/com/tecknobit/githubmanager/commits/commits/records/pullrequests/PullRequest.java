@@ -105,11 +105,6 @@ public class PullRequest extends GitHubOperation {
     private final AutoMerge autoMerge;
 
     /**
-     * {@code draft} indicates whether the pull request is a draft
-     **/
-    private final boolean draft;
-
-    /**
      * Constructor to init a {@link PullRequest}
      *
      * @param url                : url of the pull request
@@ -314,7 +309,7 @@ public class PullRequest extends GitHubOperation {
                        ArrayList<Team> requestedTeams, PullRequestPart head, PullRequestPart base, Links _links,
                        AuthorAssociation authorAssociation, AutoMerge autoMerge, boolean draft) {
         super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt, locked, user, body, labels,
-                milestone, activeLockReason, assignee, assignees, authorAssociation);
+                milestone, activeLockReason, assignee, assignees, authorAssociation, draft);
         this.diffUrl = diffUrl;
         this.patchUrl = patchUrl;
         this.issueUrl = issueUrl;
@@ -331,7 +326,6 @@ public class PullRequest extends GitHubOperation {
         this.base = base;
         this._links = _links;
         this.autoMerge = autoMerge;
-        this.draft = draft;
     }
 
     /**
@@ -363,7 +357,6 @@ public class PullRequest extends GitHubOperation {
         base = new PullRequestPart(hResponse.getJSONObject("base", new JSONObject()));
         _links = new Links(hResponse.getJSONObject("_links", new JSONObject()));
         autoMerge = new AutoMerge(hResponse.getJSONObject("auto_merge", new JSONObject()));
-        draft = hResponse.getBoolean("draft");
     }
 
     /**
@@ -534,16 +527,6 @@ public class PullRequest extends GitHubOperation {
      **/
     public AutoMerge getAutoMerge() {
         return autoMerge;
-    }
-
-    /**
-     * Method to get {@link #draft} instance <br>
-     * No-any params required
-     *
-     * @return {@link #draft} instance as boolean
-     **/
-    public boolean isDraft() {
-        return draft;
     }
 
     /**

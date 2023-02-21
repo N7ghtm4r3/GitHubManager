@@ -293,6 +293,17 @@ public class CommitComment extends GitHubResponse {
     }
 
     /**
+     * Method to get {@link #createdAt} timestamp <br>
+     * No-any params required
+     *
+     * @return {@link #createdAt} timestamp as long
+     **/
+    public long getCreatedAtTimestamp() {
+        return getDateTimestamp(createdAt);
+    }
+
+
+    /**
      * Method to get {@link #updatedAt} instance <br>
      * No-any params required
      *
@@ -303,13 +314,13 @@ public class CommitComment extends GitHubResponse {
     }
 
     /**
-     * Method to get {@link #createdAt} timestamp <br>
+     * Method to get {@link #updatedAt} timestamp <br>
      * No-any params required
      *
-     * @return {@link #createdAt} timestamp as long
+     * @return {@link #updatedAt} timestamp as long
      **/
-    public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+    public long getUpdatedAtTimestamp() {
+        return getDateTimestamp(updatedAt);
     }
 
     /**

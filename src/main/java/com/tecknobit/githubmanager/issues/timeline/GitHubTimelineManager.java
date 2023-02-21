@@ -1,6 +1,20 @@
 package com.tecknobit.githubmanager.issues.timeline;
 
+import com.tecknobit.apimanager.annotations.RequestPath;
+import com.tecknobit.apimanager.annotations.WrappedRequest;
+import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.issues.events.records.IssueEvent;
+import com.tecknobit.githubmanager.issues.issues.records.Issue;
+import com.tecknobit.githubmanager.records.repository.Repository;
+
+import java.io.IOException;
+import java.util.Collection;
+
+import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.issues.events.records.IssueEvent.returnIssueEventsList;
+import static com.tecknobit.githubmanager.issues.issues.GitHubIssuesManager.ISSUES_PATH;
 
 /**
  * The {@code GitHubTimelineManager} class is useful to manage all GitHub's timeline endpoints
@@ -11,6 +25,11 @@ import com.tecknobit.githubmanager.GitHubManager;
  * @see GitHubManager
  **/
 public class GitHubTimelineManager extends GitHubManager {
+
+    /**
+     * {@code TIMELINE_PATH} constant for {@code "/timeline"} path
+     **/
+    public static final String TIMELINE_PATH = "/timeline";
 
     /**
      * Constructor to init a {@link GitHubTimelineManager}
@@ -70,6 +89,545 @@ public class GitHubTimelineManager extends GitHubManager {
      **/
     public GitHubTimelineManager() {
         super();
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository: the repository from fetch the list
+     * @param issue:      the issue from fetch the list
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, Issue issue) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(),
+                LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository: the repository from fetch the list
+     * @param issue:      the issue from fetch the list
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(Repository repository, Issue issue, ReturnFormat format) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param repo:  the name of the repository. The name is not case-sensitive
+     * @param issue: the issue from fetch the list
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, Issue issue) throws Exception {
+        return getIssueTimelineEvents(owner, repo, issue.getNumber(), LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner: the account owner of the repository. The name is not case-sensitive
+     * @param repo:  the name of the repository. The name is not case-sensitive
+     * @param issue: the issue from fetch the list
+     * @param format :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(String owner, String repo, Issue issue, ReturnFormat format) throws Exception {
+        return getIssueTimelineEvents(owner, repo, issue.getNumber(), format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository:  the repository from fetch the list
+     * @param issueNumber: the number that identifies the issue
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, long issueNumber) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository:  the repository from fetch the list
+     * @param issueNumber: the number that identifies the issue
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(Repository repository, long issueNumber, ReturnFormat format) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param issueNumber: the number that identifies the issue
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, long issueNumber) throws Exception {
+        return getIssueTimelineEvents(owner, repo, issueNumber, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param issueNumber: the number that identifies the issue
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(String owner, String repo, long issueNumber, ReturnFormat format) throws Exception {
+        return returnIssueEventsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + "/" + ISSUES_PATH + "/"
+                + issueNumber + TIMELINE_PATH), format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository:  the repository from fetch the list
+     * @param issue:       the issue from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, Issue issue,
+                                                         Params queryParams) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(),
+                queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository:  the repository from fetch the list
+     * @param issue:       the issue from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(Repository repository, Issue issue, Params queryParams,
+                                        ReturnFormat format) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(),
+                queryParams, format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param issue:       the issue from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, Issue issue,
+                                                         Params queryParams) throws Exception {
+        return getIssueTimelineEvents(owner, repo, issue.getNumber(), queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param issue:       the issue from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(String owner, String repo, Issue issue, Params queryParams,
+                                        ReturnFormat format) throws Exception {
+        return getIssueTimelineEvents(owner, repo, issue.getNumber(), queryParams, format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository:  the repository from fetch the list
+     * @param issueNumber: the number that identifies the issue
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, long issueNumber,
+                                                         Params queryParams) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, queryParams,
+                LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param repository:  the repository from fetch the list
+     * @param issueNumber: the number that identifies the issue
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(Repository repository, long issueNumber, Params queryParams,
+                                        ReturnFormat format) throws Exception {
+        return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, queryParams,
+                format);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param issueNumber: the number that identifies the issue
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, long issueNumber,
+                                                         Params queryParams) throws Exception {
+        return getIssueTimelineEvents(owner, repo, issueNumber, queryParams, LIBRARY_OBJECT);
+    }
+
+    /**
+     * Method to get the list of timeline events for an issue
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param issueNumber: the number that identifies the issue
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return issue events list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/issues/timeline#list-timeline-events-for-an-issue">
+     * List timeline events for an issue</a>
+     **/
+    @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
+    public <T> T getIssueTimelineEvents(String owner, String repo, long issueNumber, Params queryParams,
+                                        ReturnFormat format) throws Exception {
+        return returnIssueEventsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + "/" + ISSUES_PATH + "/"
+                + issueNumber + TIMELINE_PATH + queryParams.createQueryString()), format);
     }
 
 }
