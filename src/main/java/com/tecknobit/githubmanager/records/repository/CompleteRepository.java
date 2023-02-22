@@ -2,10 +2,10 @@ package com.tecknobit.githubmanager.records.repository;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
+import com.tecknobit.githubmanager.licenses.records.CommonLicense;
 import com.tecknobit.githubmanager.records.generic.Permissions;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -200,7 +200,7 @@ public class CompleteRepository extends Repository {
     /**
      * {@code license} license value
      **/
-    private final License license;
+    private final CommonLicense license;
 
     /**
      * {@code forks} forks value
@@ -326,7 +326,7 @@ public class CompleteRepository extends Repository {
                               RepoVisibility visibility, String pushedAt, String createdAt, String updatedAt,
                               Permissions permissions, boolean allowRebaseMerge, String tempCloneToken,
                               boolean allowSquashMerge, boolean allowAutoMerge, boolean deleteBranchOnMerge,
-                              boolean allowMergeCommit, int subscribersCount, int networkCount, License license,
+                              boolean allowMergeCommit, int subscribersCount, int networkCount, CommonLicense license,
                               int forks, int openIssues, int watchers) {
         super(id, nodeId, name, fullName, owner, privateRepo, htmlUrl, description, fork, url, archiveUrl,
                 assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl,
@@ -425,7 +425,7 @@ public class CompleteRepository extends Repository {
         allowMergeCommit = hResponse.getBoolean("allow_merge_commit");
         subscribersCount = hResponse.getInt("subscribers_count", 0);
         networkCount = hResponse.getInt("network_count", 0);
-        license = new License(hResponse.getJSONObject("license", new JSONObject()));
+        license = new CommonLicense(hResponse.getJSONObject("license", new JSONObject()));
         forks = hResponse.getInt("forks", 0);
         openIssues = hResponse.getInt("open_issues", 0);
         watchers = hResponse.getInt("watchers", 0);
@@ -798,9 +798,9 @@ public class CompleteRepository extends Repository {
      * Method to get {@link #license} instance <br>
      * No-any params required
      *
-     * @return {@link #license} instance as {@link License}
+     * @return {@link #license} instance as {@link CommonLicense}
      **/
-    public License getLicense() {
+    public CommonLicense getLicense() {
         return license;
     }
 
@@ -877,143 +877,6 @@ public class CompleteRepository extends Repository {
         @Override
         public String toString() {
             return visibility;
-        }
-
-    }
-
-    /**
-     * The {@code License} class is useful to format a GitHub's license for a repository
-     *
-     * @author N7ghtm4r3 - Tecknobit
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization">
-     * List selected repositories enabled for GitHub Actions in an organization</a>
-     * @see InnerClassItem
-     **/
-    public static class License extends InnerClassItem {
-
-        /**
-         * {@code "key"} value
-         **/
-        private final String key;
-
-        /**
-         * {@code "name"} value
-         **/
-        private final String name;
-
-        /**
-         * {@code "url"} value
-         **/
-        private final String url;
-
-        /**
-         * {@code "spdxId"} value
-         **/
-        private final String spdxId;
-
-        /**
-         * {@code "nodeId"} value
-         **/
-        private final String nodeId;
-
-        /**
-         * {@code "htmlUrl"} value
-         **/
-        private final String htmlUrl;
-
-        /**
-         * Constructor to init a {@link License}
-         *
-         * @param key:     key value
-         * @param name:    name value
-         * @param url:     url value
-         * @param spdxId:  spdx identifier value
-         * @param nodeId:  identifier of the node value
-         * @param htmlUrl: html url value
-         **/
-        public License(String key, String name, String url, String spdxId, String nodeId, String htmlUrl) {
-            super(null);
-            this.key = key;
-            this.name = name;
-            this.url = url;
-            this.spdxId = spdxId;
-            this.nodeId = nodeId;
-            this.htmlUrl = htmlUrl;
-        }
-
-        /**
-         * Constructor to init a {@link License}
-         *
-         * @param jLicense: license details as {@link JSONObject}
-         **/
-        public License(JSONObject jLicense) {
-            super(jLicense);
-            key = hItem.getString("key");
-            name = hItem.getString("name");
-            url = hItem.getString("url");
-            spdxId = hItem.getString("spdx_id");
-            nodeId = hItem.getString("node_id");
-            htmlUrl = hItem.getString("html_url");
-        }
-
-        /**
-         * Method to get {@link #key} instance <br>
-         * No-any params required
-         *
-         * @return {@link #key} instance as {@link String}
-         **/
-        public String getKey() {
-            return key;
-        }
-
-        /**
-         * Method to get {@link #name} instance <br>
-         * No-any params required
-         *
-         * @return {@link #name} instance as {@link String}
-         **/
-        public String getName() {
-            return name;
-        }
-
-        /**
-         * Method to get {@link #url} instance <br>
-         * No-any params required
-         *
-         * @return {@link #url} instance as {@link String}
-         **/
-        public String getUrl() {
-            return url;
-        }
-
-        /**
-         * Method to get {@link #spdxId} instance <br>
-         * No-any params required
-         *
-         * @return {@link #spdxId} instance as {@link String}
-         **/
-        public String getSpdxId() {
-            return spdxId;
-        }
-
-        /**
-         * Method to get {@link #nodeId} instance <br>
-         * No-any params required
-         *
-         * @return {@link #nodeId} instance as {@link String}
-         **/
-        public String getNodeId() {
-            return nodeId;
-        }
-
-        /**
-         * Method to get {@link #htmlUrl} instance <br>
-         * No-any params required
-         *
-         * @return {@link #htmlUrl} instance as {@link String}
-         **/
-        public String getHtmlUrl() {
-            return htmlUrl;
         }
 
     }

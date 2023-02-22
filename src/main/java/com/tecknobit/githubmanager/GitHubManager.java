@@ -2,6 +2,7 @@ package com.tecknobit.githubmanager;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.apis.APIRequest;
+import com.tecknobit.apimanager.apis.APIRequest.Headers;
 import com.tecknobit.apimanager.formatters.TimeFormatter;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -130,7 +131,7 @@ public class GitHubManager {
     /**
      * {@code mainHeaders} is instance for main headers of all requests
      **/
-    private static APIRequest.Headers mainHeaders;
+    protected static Headers mainHeaders;
 
     /**
      * {@code accessToken} personal access token for authentication to {@code "GitHub"}
@@ -240,7 +241,7 @@ public class GitHubManager {
             properties.setProperty("defaultErrorMessage", defaultErrorMessage);
         properties.setProperty("requestTimeout", String.valueOf(requestTimeout));
         if (mainHeaders == null) {
-            mainHeaders = new APIRequest.Headers();
+            mainHeaders = new Headers();
             mainHeaders.addHeader("authorization", " token " + accessToken);
             mainHeaders.addHeader("accept", "application/vnd.github+json");
         }
