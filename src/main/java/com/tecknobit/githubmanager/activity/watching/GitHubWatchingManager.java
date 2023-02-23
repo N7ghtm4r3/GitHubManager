@@ -12,7 +12,7 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -108,7 +108,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Method to get the people watching the specified repository
      *
      * @param repository: repository from fetch the list
-     * @return watchers list as {@link Collection} of {@link User} custom object
+     * @return watchers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -127,7 +127,7 @@ public class GitHubWatchingManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
-    public Collection<User> getWatchers(Repository repository) throws IOException {
+    public ArrayList<User> getWatchers(Repository repository) throws IOException {
         return getWatchers(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -163,7 +163,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return watchers list as {@link Collection} of {@link User} custom object
+     * @return watchers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -181,7 +181,7 @@ public class GitHubWatchingManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
-    public Collection<User> getWatchers(String owner, String repo) throws IOException {
+    public ArrayList<User> getWatchers(String owner, String repo) throws IOException {
         return getWatchers(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -225,7 +225,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return watchers list as {@link Collection} of {@link User} custom object
+     * @return watchers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -244,7 +244,7 @@ public class GitHubWatchingManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
-    public Collection<User> getWatchers(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<User> getWatchers(Repository repository, Params queryParams) throws IOException {
         return getWatchers(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -298,7 +298,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return watchers list as {@link Collection} of {@link User} custom object
+     * @return watchers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -316,7 +316,7 @@ public class GitHubWatchingManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/subscribers")
-    public Collection<User> getWatchers(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<User> getWatchers(String owner, String repo, Params queryParams) throws IOException {
         return getWatchers(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -821,7 +821,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Method to get the list of the repositories watched by the authenticated user <br>
      * No-any params required
      *
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -839,7 +839,7 @@ public class GitHubWatchingManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/subscriptions")
-    public Collection<CompleteRepository> getAuthenticatedUserRepositoriesWatched() throws IOException {
+    public ArrayList<CompleteRepository> getAuthenticatedUserRepositoriesWatched() throws IOException {
         return getAuthenticatedUserRepositoriesWatched(LIBRARY_OBJECT);
     }
 
@@ -880,7 +880,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -898,7 +898,7 @@ public class GitHubWatchingManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/subscriptions")
-    public Collection<CompleteRepository> getAuthenticatedUserRepositoriesWatched(Params queryParams) throws IOException {
+    public ArrayList<CompleteRepository> getAuthenticatedUserRepositoriesWatched(Params queryParams) throws IOException {
         return getAuthenticatedUserRepositoriesWatched(queryParams, LIBRARY_OBJECT);
     }
 
@@ -941,7 +941,7 @@ public class GitHubWatchingManager extends GitHubManager {
      * Method to get the list of the repositories a user is watching
      *
      * @param username: the handle for the GitHub user account
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -959,7 +959,7 @@ public class GitHubWatchingManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/subscriptions")
-    public Collection<CompleteRepository> getUserRepositoriesWatched(String username) throws IOException {
+    public ArrayList<CompleteRepository> getUserRepositoriesWatched(String username) throws IOException {
         return getUserRepositoriesWatched(username, LIBRARY_OBJECT);
     }
 
@@ -1002,7 +1002,7 @@ public class GitHubWatchingManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1020,7 +1020,7 @@ public class GitHubWatchingManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/subscriptions")
-    public Collection<CompleteRepository> getUserRepositoriesWatched(String username, Params queryParams) throws IOException {
+    public ArrayList<CompleteRepository> getUserRepositoriesWatched(String username, Params queryParams) throws IOException {
         return getUserRepositoriesWatched(username, queryParams, LIBRARY_OBJECT);
     }
 

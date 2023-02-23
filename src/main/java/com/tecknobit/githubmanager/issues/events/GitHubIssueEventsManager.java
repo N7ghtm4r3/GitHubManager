@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.issues.issues.records.Issue;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -96,7 +96,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      * Method to get the list of the issue events for a repository
      *
      * @param repository: the repository from fetch the list
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -115,7 +115,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/events")
-    public Collection<IssueEvent> getRepositoryIssueEvents(Repository repository) throws Exception {
+    public ArrayList<IssueEvent> getRepositoryIssueEvents(Repository repository) throws Exception {
         return getRepositoryIssueEvents(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -151,7 +151,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -169,7 +169,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/events")
-    public Collection<IssueEvent> getRepositoryIssueEvents(String owner, String repo) throws Exception {
+    public ArrayList<IssueEvent> getRepositoryIssueEvents(String owner, String repo) throws Exception {
         return getRepositoryIssueEvents(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -213,7 +213,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -232,7 +232,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/events")
-    public Collection<IssueEvent> getRepositoryIssueEvents(Repository repository, Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getRepositoryIssueEvents(Repository repository, Params queryParams) throws Exception {
         return getRepositoryIssueEvents(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -287,7 +287,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -305,7 +305,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/events")
-    public Collection<IssueEvent> getRepositoryIssueEvents(String owner, String repo, Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getRepositoryIssueEvents(String owner, String repo, Params queryParams) throws Exception {
         return getRepositoryIssueEvents(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -473,7 +473,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param issue:      the issue from fetch the list
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -492,7 +492,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(Repository repository, Issue issue) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(Repository repository, Issue issue) throws Exception {
         return getIssueEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -501,7 +501,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param issue:      the issue from fetch the list
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -529,7 +529,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param issue: the issue from fetch the list
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -548,7 +548,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(String owner, String repo, Issue issue) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(String owner, String repo, Issue issue) throws Exception {
         return getIssueEvents(owner, repo, issue.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -586,7 +586,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *
      * @param repository:  the repository from fetch the list
      * @param issueNumber: the number that identifies the issue
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -605,7 +605,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(Repository repository, long issueNumber) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(Repository repository, long issueNumber) throws Exception {
         return getIssueEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, LIBRARY_OBJECT);
     }
 
@@ -643,7 +643,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
      * @param issueNumber: the number that identifies the issue
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -661,7 +661,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(String owner, String repo, long issueNumber) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(String owner, String repo, long issueNumber) throws Exception {
         return getIssueEvents(owner, repo, issueNumber, LIBRARY_OBJECT);
     }
 
@@ -708,7 +708,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -727,7 +727,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(Repository repository, Issue issue, Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(Repository repository, Issue issue, Params queryParams) throws Exception {
         return getIssueEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -785,7 +785,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -804,7 +804,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(String owner, String repo, Issue issue, Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(String owner, String repo, Issue issue, Params queryParams) throws Exception {
         return getIssueEvents(owner, repo, issue.getNumber(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -861,7 +861,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -880,8 +880,8 @@ public class GitHubIssueEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(Repository repository, long issueNumber,
-                                                 Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(Repository repository, long issueNumber,
+                                                Params queryParams) throws Exception {
         return getIssueEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -939,7 +939,7 @@ public class GitHubIssueEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issue events list as {@link Collection} of {@link IssueEvent} custom object
+     * @return issue events list as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -957,8 +957,8 @@ public class GitHubIssueEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/events")
-    public Collection<IssueEvent> getIssueEvents(String owner, String repo, long issueNumber,
-                                                 Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueEvents(String owner, String repo, long issueNumber,
+                                                Params queryParams) throws Exception {
         return getIssueEvents(owner, repo, issueNumber, queryParams, LIBRARY_OBJECT);
     }
 

@@ -20,7 +20,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -259,7 +258,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * by this library. </b> <br>
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
-     * @return enterprise applications list as {@link Collection} of {@link Application} custom object
+     * @return enterprise applications list as {@link ArrayList} of {@link Application} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -277,7 +276,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/actions/runners/downloads")
-    public Collection<Application> getEnterpriseApplicationsList(String enterprise) throws IOException {
+    public ArrayList<Application> getEnterpriseApplicationsList(String enterprise) throws IOException {
         return getEnterpriseApplicationsList(enterprise, LIBRARY_OBJECT);
     }
 
@@ -783,7 +782,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runner:     runner to set the custom list
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link RunnerLabel} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link RunnerLabel} format
      * @return enterprise labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -804,7 +803,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addEnterpriseCustomLabels(String enterprise, Runner runner,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -815,7 +814,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runner:     runner to set the custom list
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link RunnerLabel} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link RunnerLabel} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return enterprise labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -835,7 +834,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
-    public <T> T addEnterpriseCustomLabels(String enterprise, Runner runner, Collection<String> labels,
+    public <T> T addEnterpriseCustomLabels(String enterprise, Runner runner, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
     }
@@ -847,7 +846,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerId:   unique identifier of the self-hosted runner
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link RunnerLabel} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link RunnerLabel} format
      * @return enterprise labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -867,7 +866,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @Wrapper
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addEnterpriseCustomLabels(String enterprise, long runnerId,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return addEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -878,7 +877,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerId:   unique identifier of the self-hosted runner
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link RunnerLabel} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link RunnerLabel} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return enterprise labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -897,7 +896,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = POST, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
-    public <T> T addEnterpriseCustomLabels(String enterprise, long runnerId, Collection<String> labels,
+    public <T> T addEnterpriseCustomLabels(String enterprise, long runnerId, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("labels", labels.stream().toList());
@@ -1173,7 +1172,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runner:     runner to set the custom list
      * @param labels:     the names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @return enterprise labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1194,7 +1193,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setEnterpriseCustomLabels(String enterprise, Runner runner,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -1206,7 +1205,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runner:     runner to set the custom list
      * @param labels:     the names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return enterprise labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -1226,7 +1225,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
-    public <T> T setEnterpriseCustomLabels(String enterprise, Runner runner, Collection<String> labels,
+    public <T> T setEnterpriseCustomLabels(String enterprise, Runner runner, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runner.getId(), labels, format);
     }
@@ -1239,7 +1238,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerId:   unique identifier of the self-hosted runner
      * @param labels:     the names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @return enterprise labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1259,7 +1258,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @Wrapper
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setEnterpriseCustomLabels(String enterprise, long runnerId,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return setEnterpriseCustomLabels(enterprise, runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -1271,7 +1270,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerId:   unique identifier of the self-hosted runner
      * @param labels:     the names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return enterprise labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -1290,7 +1289,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runners/{runner_id}/labels")
-    public <T> T setEnterpriseCustomLabels(String enterprise, long runnerId, Collection<String> labels,
+    public <T> T setEnterpriseCustomLabels(String enterprise, long runnerId, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("labels", labels.stream().toList());
@@ -2079,7 +2078,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * by this library. </b> <br>
      *
      * @param org: the organization from fetch the list
-     * @return organization applications list as {@link Collection} of {@link Application} custom object
+     * @return organization applications list as {@link ArrayList} of {@link Application} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2098,7 +2097,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners/downloads")
-    public Collection<Application> getOrganizationApplicationsList(Organization org) throws IOException {
+    public ArrayList<Application> getOrganizationApplicationsList(Organization org) throws IOException {
         return getOrganizationApplicationsList(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -2137,7 +2136,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * by this library. </b> <br>
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return organization applications list as {@link Collection} of {@link Application} custom object
+     * @return organization applications list as {@link ArrayList} of {@link Application} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2155,7 +2154,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runners/downloads")
-    public Collection<Application> getOrganizationApplicationsList(String org) throws IOException {
+    public ArrayList<Application> getOrganizationApplicationsList(String org) throws IOException {
         return getOrganizationApplicationsList(org, LIBRARY_OBJECT);
     }
 
@@ -3119,7 +3118,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization to add the custom labels list
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -3140,7 +3139,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addOrganizationCustomLabels(Organization org, Runner runner,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -3151,7 +3150,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization to add the custom labels list
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -3171,7 +3170,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T addOrganizationCustomLabels(Organization org, Runner runner, Collection<String> labels,
+    public <T> T addOrganizationCustomLabels(Organization org, Runner runner, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
     }
@@ -3183,7 +3182,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization name. The name is not case-sensitive
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -3204,7 +3203,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addOrganizationCustomLabels(String org, Runner runner,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -3215,7 +3214,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization name. The name is not case-sensitive
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -3235,7 +3234,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T addOrganizationCustomLabels(String org, Runner runner, Collection<String> labels,
+    public <T> T addOrganizationCustomLabels(String org, Runner runner, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org, runner.getId(), labels, format);
     }
@@ -3247,7 +3246,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization to add the custom labels list
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -3268,7 +3267,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addOrganizationCustomLabels(Organization org, long runnerId,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -3279,7 +3278,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization to add the custom labels list
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -3299,7 +3298,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T addOrganizationCustomLabels(Organization org, long runnerId, Collection<String> labels,
+    public <T> T addOrganizationCustomLabels(Organization org, long runnerId, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         return addOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
     }
@@ -3311,7 +3310,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization name. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -3332,7 +3331,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addOrganizationCustomLabels(String org, long runnerId,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return addOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -3343,7 +3342,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization name. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection}  of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList}  of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -3363,7 +3362,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T addOrganizationCustomLabels(String org, long runnerId, Collection<String> labels,
+    public <T> T addOrganizationCustomLabels(String org, long runnerId, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("labels", labels.stream().toList());
@@ -3886,7 +3885,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization to set the list
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -3907,7 +3906,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setOrganizationCustomLabels(Organization org, Runner runner,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -3918,7 +3917,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization to set the list
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -3938,7 +3937,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T setOrganizationCustomLabels(Organization org, Runner runner, Collection<String> labels,
+    public <T> T setOrganizationCustomLabels(Organization org, Runner runner, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runner.getId(), labels, format);
     }
@@ -3950,7 +3949,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization name. The name is not case-sensitive
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -3971,7 +3970,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setOrganizationCustomLabels(String org, Runner runner,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -3982,7 +3981,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:    the organization name. The name is not case-sensitive
      * @param runner: the runner to add the custom labels list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4002,7 +4001,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T setOrganizationCustomLabels(String org, Runner runner, Collection<String> labels,
+    public <T> T setOrganizationCustomLabels(String org, Runner runner, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org, runner.getId(), labels, format);
     }
@@ -4014,7 +4013,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization to set the list
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -4035,7 +4034,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setOrganizationCustomLabels(Organization org, long runnerId,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -4046,7 +4045,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization to set the list
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4066,7 +4065,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T setOrganizationCustomLabels(Organization org, long runnerId, Collection<String> labels,
+    public <T> T setOrganizationCustomLabels(Organization org, long runnerId, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         return setOrganizationCustomLabels(org.getLogin(), runnerId, labels, format);
     }
@@ -4078,7 +4077,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization name. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return organizations labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -4099,7 +4098,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setOrganizationCustomLabels(String org, long runnerId,
-                                                        Collection<String> labels) throws IOException {
+                                                        ArrayList<String> labels) throws IOException {
         return setOrganizationCustomLabels(org, runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -4110,7 +4109,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param org:      the organization name. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return organizations labels as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4130,7 +4129,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runners/{runner_id}/labels")
-    public <T> T setOrganizationCustomLabels(String org, long runnerId, Collection<String> labels,
+    public <T> T setOrganizationCustomLabels(String org, long runnerId, ArrayList<String> labels,
                                              ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("labels", labels.stream().toList());
@@ -5427,7 +5426,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * by this library. </b> <br>
      *
      * @param repository: the repository from fetch the list
-     * @return repository applications list as {@link Collection} of {@link Application} custom object
+     * @return repository applications list as {@link ArrayList} of {@link Application} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5446,7 +5445,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners/downloads")
-    public Collection<Application> getRepositoryApplicationsList(Repository repository) throws IOException {
+    public ArrayList<Application> getRepositoryApplicationsList(Repository repository) throws IOException {
         return getRepositoryApplicationsList(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -5486,7 +5485,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return repository applications list as {@link Collection} of {@link Application} custom object
+     * @return repository applications list as {@link ArrayList} of {@link Application} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5504,7 +5503,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runners/downloads")
-    public Collection<Application> getRepositoryApplicationsList(String owner, String repo) throws IOException {
+    public ArrayList<Application> getRepositoryApplicationsList(String owner, String repo) throws IOException {
         return getRepositoryApplicationsList(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -6557,7 +6556,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param runner:     the runner to add the list
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -6578,7 +6577,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addRepositoryCustomLabels(Repository repository, Runner runner,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 LIBRARY_OBJECT);
     }
@@ -6590,7 +6589,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param runner:     the runner to add the list
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -6610,7 +6609,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T addRepositoryCustomLabels(Repository repository, Runner runner, Collection<String> labels,
+    public <T> T addRepositoryCustomLabels(Repository repository, Runner runner, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 format);
@@ -6624,7 +6623,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param runner: the runner to add the list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -6645,7 +6644,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addRepositoryCustomLabels(String owner, String repo, Runner runner,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -6657,7 +6656,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param runner: the runner to add the list
-     * @param labels: the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels: the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -6677,7 +6676,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T addRepositoryCustomLabels(String owner, String repo, Runner runner, Collection<String> labels,
+    public <T> T addRepositoryCustomLabels(String owner, String repo, Runner runner, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
     }
@@ -6689,7 +6688,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param runnerId:   unique identifier of the self-hosted runner
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -6710,7 +6709,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addRepositoryCustomLabels(Repository repository, long runnerId,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
                 LIBRARY_OBJECT);
     }
@@ -6722,7 +6721,7 @@ public class GitHubRunnersManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param runnerId:   unique identifier of the self-hosted runner
-     * @param labels:     the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:     the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -6742,7 +6741,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T addRepositoryCustomLabels(Repository repository, long runnerId, Collection<String> labels,
+    public <T> T addRepositoryCustomLabels(Repository repository, long runnerId, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return addRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels, format);
     }
@@ -6755,7 +6754,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -6775,7 +6774,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList addRepositoryCustomLabels(String owner, String repo, long runnerId,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return addRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -6787,7 +6786,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
-     * @param labels:   the names of the custom labels to add to the runner in {@link Collection} of {@link String} format
+     * @param labels:   the names of the custom labels to add to the runner in {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -6806,7 +6805,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Add custom labels to a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T addRepositoryCustomLabels(String owner, String repo, long runnerId, Collection<String> labels,
+    public <T> T addRepositoryCustomLabels(String owner, String repo, long runnerId, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("labels", labels.stream().toList());
@@ -7355,7 +7354,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repository: the repository to set the list
      * @param runner:     the runner to set the list
      * @param labels:     he names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -7376,7 +7375,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setRepositoryCustomLabels(Repository repository, Runner runner,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 LIBRARY_OBJECT);
     }
@@ -7389,7 +7388,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repository: the repository to set the list
      * @param runner:     the runner to set the list
      * @param labels:     he names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -7409,7 +7408,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T setRepositoryCustomLabels(Repository repository, Runner runner, Collection<String> labels,
+    public <T> T setRepositoryCustomLabels(Repository repository, Runner runner, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runner.getId(), labels,
                 format);
@@ -7424,7 +7423,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param runner: the runner to set the list
      * @param labels: he names of the custom labels to set for the runner.
-     *                You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -7445,7 +7444,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setRepositoryCustomLabels(String owner, String repo, Runner runner,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, LIBRARY_OBJECT);
     }
 
@@ -7458,7 +7457,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param runner: the runner to set the list
      * @param labels: he names of the custom labels to set for the runner.
-     *                You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -7478,7 +7477,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T setRepositoryCustomLabels(String owner, String repo, Runner runner, Collection<String> labels,
+    public <T> T setRepositoryCustomLabels(String owner, String repo, Runner runner, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runner.getId(), labels, format);
     }
@@ -7491,7 +7490,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repository: the repository to set the list
      * @param runnerId:   unique identifier of the self-hosted runner
      * @param labels:     he names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -7512,7 +7511,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setRepositoryCustomLabels(Repository repository, long runnerId,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels,
                 LIBRARY_OBJECT);
     }
@@ -7525,7 +7524,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repository: the repository to set the list
      * @param runnerId:   unique identifier of the self-hosted runner
      * @param labels:     he names of the custom labels to set for the runner.
-     *                    You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                    You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -7545,7 +7544,7 @@ public class GitHubRunnersManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T setRepositoryCustomLabels(Repository repository, long runnerId, Collection<String> labels,
+    public <T> T setRepositoryCustomLabels(Repository repository, long runnerId, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         return setRepositoryCustomLabels(repository.getOwner().getLogin(), repository.getName(), runnerId, labels, format);
     }
@@ -7559,7 +7558,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
      * @param labels:   he names of the custom labels to set for the runner.
-     *                  You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                  You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @return repository labels list as {@link RunnerLabelsList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -7579,7 +7578,7 @@ public class GitHubRunnersManager extends GitHubManager {
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
     public RunnerLabelsList setRepositoryCustomLabels(String owner, String repo, long runnerId,
-                                                      Collection<String> labels) throws IOException {
+                                                      ArrayList<String> labels) throws IOException {
         return setRepositoryCustomLabels(owner, repo, runnerId, labels, LIBRARY_OBJECT);
     }
 
@@ -7592,7 +7591,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param runnerId: unique identifier of the self-hosted runner
      * @param labels:   he names of the custom labels to set for the runner.
-     *                  You can pass an empty array to remove all custom labels in {@link Collection} of {@link String} format
+     *                  You can pass an empty array to remove all custom labels in {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return repository labels list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -7611,7 +7610,7 @@ public class GitHubRunnersManager extends GitHubManager {
      * Set custom labels for a self-hosted runner for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels")
-    public <T> T setRepositoryCustomLabels(String owner, String repo, long runnerId, Collection<String> labels,
+    public <T> T setRepositoryCustomLabels(String owner, String repo, long runnerId, ArrayList<String> labels,
                                            ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("labels", labels.stream().toList());

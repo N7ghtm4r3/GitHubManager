@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.issues.issues.records.Issue;
 import com.tecknobit.githubmanager.records.repository.Repository;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -96,7 +96,7 @@ public class GitHubTimelineManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param issue:      the issue from fetch the list
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -115,7 +115,7 @@ public class GitHubTimelineManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, Issue issue) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(Repository repository, Issue issue) throws Exception {
         return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(),
                 LIBRARY_OBJECT);
     }
@@ -154,7 +154,7 @@ public class GitHubTimelineManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param issue: the issue from fetch the list
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -173,7 +173,7 @@ public class GitHubTimelineManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, Issue issue) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(String owner, String repo, Issue issue) throws Exception {
         return getIssueTimelineEvents(owner, repo, issue.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -211,7 +211,7 @@ public class GitHubTimelineManager extends GitHubManager {
      *
      * @param repository:  the repository from fetch the list
      * @param issueNumber: the number that identifies the issue
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -230,7 +230,7 @@ public class GitHubTimelineManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, long issueNumber) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(Repository repository, long issueNumber) throws Exception {
         return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, LIBRARY_OBJECT);
     }
 
@@ -268,7 +268,7 @@ public class GitHubTimelineManager extends GitHubManager {
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
      * @param issueNumber: the number that identifies the issue
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -286,7 +286,7 @@ public class GitHubTimelineManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, long issueNumber) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(String owner, String repo, long issueNumber) throws Exception {
         return getIssueTimelineEvents(owner, repo, issueNumber, LIBRARY_OBJECT);
     }
 
@@ -333,7 +333,7 @@ public class GitHubTimelineManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -352,8 +352,8 @@ public class GitHubTimelineManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, Issue issue,
-                                                         Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(Repository repository, Issue issue,
+                                                        Params queryParams) throws Exception {
         return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(),
                 queryParams, LIBRARY_OBJECT);
     }
@@ -412,7 +412,7 @@ public class GitHubTimelineManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -431,8 +431,8 @@ public class GitHubTimelineManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, Issue issue,
-                                                         Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(String owner, String repo, Issue issue,
+                                                        Params queryParams) throws Exception {
         return getIssueTimelineEvents(owner, repo, issue.getNumber(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -489,7 +489,7 @@ public class GitHubTimelineManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -508,8 +508,8 @@ public class GitHubTimelineManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(Repository repository, long issueNumber,
-                                                         Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(Repository repository, long issueNumber,
+                                                        Params queryParams) throws Exception {
         return getIssueTimelineEvents(repository.getOwner().getLogin(), repository.getName(), issueNumber, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -568,7 +568,7 @@ public class GitHubTimelineManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return timeline events as {@link Collection} of {@link IssueEvent} custom object
+     * @return timeline events as {@link ArrayList} of {@link IssueEvent} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -586,8 +586,8 @@ public class GitHubTimelineManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/timeline")
-    public Collection<IssueEvent> getIssueTimelineEvents(String owner, String repo, long issueNumber,
-                                                         Params queryParams) throws Exception {
+    public ArrayList<IssueEvent> getIssueTimelineEvents(String owner, String repo, long issueNumber,
+                                                        Params queryParams) throws Exception {
         return getIssueTimelineEvents(owner, repo, issueNumber, queryParams, LIBRARY_OBJECT);
     }
 

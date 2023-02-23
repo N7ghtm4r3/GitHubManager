@@ -5,7 +5,6 @@ import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code GitHubMetaInformation} class is useful to format a GitHub's meta information
@@ -162,9 +161,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #sshKeys} instance <br>
      * No-any params required
      *
-     * @return {@link #sshKeys} instance as {@link Collection} of {@link String}
+     * @return {@link #sshKeys} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getSshKeys() {
+    public ArrayList<String> getSshKeys() {
         return sshKeys;
     }
 
@@ -172,9 +171,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #hooks} instance <br>
      * No-any params required
      *
-     * @return {@link #hooks} instance as {@link Collection} of {@link String}
+     * @return {@link #hooks} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getHooks() {
+    public ArrayList<String> getHooks() {
         return hooks;
     }
 
@@ -182,9 +181,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #web} instance <br>
      * No-any params required
      *
-     * @return {@link #web} instance as {@link Collection} of {@link String}
+     * @return {@link #web} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getWeb() {
+    public ArrayList<String> getWeb() {
         return web;
     }
 
@@ -192,9 +191,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #api} instance <br>
      * No-any params required
      *
-     * @return {@link #api} instance as {@link Collection} of {@link String}
+     * @return {@link #api} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getApi() {
+    public ArrayList<String> getApi() {
         return api;
     }
 
@@ -202,9 +201,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #git} instance <br>
      * No-any params required
      *
-     * @return {@link #git} instance as {@link Collection} of {@link String}
+     * @return {@link #git} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getGit() {
+    public ArrayList<String> getGit() {
         return git;
     }
 
@@ -212,9 +211,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #packages} instance <br>
      * No-any params required
      *
-     * @return {@link #packages} instance as {@link Collection} of {@link String}
+     * @return {@link #packages} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getPackages() {
+    public ArrayList<String> getPackages() {
         return packages;
     }
 
@@ -222,9 +221,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #pages} instance <br>
      * No-any params required
      *
-     * @return {@link #pages} instance as {@link Collection} of {@link String}
+     * @return {@link #pages} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getPages() {
+    public ArrayList<String> getPages() {
         return pages;
     }
 
@@ -232,9 +231,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #importer} instance <br>
      * No-any params required
      *
-     * @return {@link #importer} instance as {@link Collection} of {@link String}
+     * @return {@link #importer} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getImporter() {
+    public ArrayList<String> getImporter() {
         return importer;
     }
 
@@ -242,9 +241,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #actions} instance <br>
      * No-any params required
      *
-     * @return {@link #actions} instance as {@link Collection} of {@link String}
+     * @return {@link #actions} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getActions() {
+    public ArrayList<String> getActions() {
         return actions;
     }
 
@@ -252,9 +251,9 @@ public class GitHubMetaInformation extends GitHubResponse {
      * Method to get {@link #dependabot} instance <br>
      * No-any params required
      *
-     * @return {@link #dependabot} instance as {@link Collection} of {@link String}
+     * @return {@link #dependabot} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getDependabot() {
+    public ArrayList<String> getDependabot() {
         return dependabot;
     }
 

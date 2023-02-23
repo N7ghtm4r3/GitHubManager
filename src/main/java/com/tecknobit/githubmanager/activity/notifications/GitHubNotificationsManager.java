@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -102,7 +101,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Method to get all notifications list for the current user, sorted by most recently updated <br>
      * No-any params required
      *
-     * @return notifications list as {@link Collection} of {@link Notification} custom object
+     * @return notifications list as {@link ArrayList} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -120,7 +119,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/notifications")
-    public Collection<Notification> getAuthenticatedUserNotifications() throws IOException {
+    public ArrayList<Notification> getAuthenticatedUserNotifications() throws IOException {
         return getAuthenticatedUserNotifications(LIBRARY_OBJECT);
     }
 
@@ -176,7 +175,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return notifications list as {@link Collection} of {@link Notification} custom object
+     * @return notifications list as {@link ArrayList} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -194,7 +193,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/notifications")
-    public Collection<Notification> getAuthenticatedUserNotifications(Params queryParams) throws IOException {
+    public ArrayList<Notification> getAuthenticatedUserNotifications(Params queryParams) throws IOException {
         return getAuthenticatedUserNotifications(queryParams, LIBRARY_OBJECT);
     }
 
@@ -803,7 +802,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      * Method to get all notifications list for the current user in the specified repository
      *
      * @param repository: repository from fetch the notifications
-     * @return notifications list as {@link Collection} of {@link Notification} custom object
+     * @return notifications list as {@link ArrayList} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -822,7 +821,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
-    public Collection<Notification> getRepositoryNotifications(Repository repository) throws IOException {
+    public ArrayList<Notification> getRepositoryNotifications(Repository repository) throws IOException {
         return getRepositoryNotifications(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -858,7 +857,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return notifications list as {@link Collection} of {@link Notification} custom object
+     * @return notifications list as {@link ArrayList} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -876,7 +875,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
-    public Collection<Notification> getRepositoryNotifications(String owner, String repo) throws IOException {
+    public ArrayList<Notification> getRepositoryNotifications(String owner, String repo) throws IOException {
         return getRepositoryNotifications(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -936,7 +935,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return notifications list as {@link Collection} of {@link Notification} custom object
+     * @return notifications list as {@link ArrayList} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -955,7 +954,7 @@ public class GitHubNotificationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
-    public Collection<Notification> getRepositoryNotifications(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Notification> getRepositoryNotifications(Repository repository, Params queryParams) throws IOException {
         return getRepositoryNotifications(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1041,7 +1040,7 @@ public class GitHubNotificationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return notifications list as {@link Collection} of {@link Notification} custom object
+     * @return notifications list as {@link ArrayList} of {@link Notification} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1059,8 +1058,8 @@ public class GitHubNotificationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/notifications")
-    public Collection<Notification> getRepositoryNotifications(String owner, String repo,
-                                                               Params queryParams) throws IOException {
+    public ArrayList<Notification> getRepositoryNotifications(String owner, String repo,
+                                                              Params queryParams) throws IOException {
         return getRepositoryNotifications(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

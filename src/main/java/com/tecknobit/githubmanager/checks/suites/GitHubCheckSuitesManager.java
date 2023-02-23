@@ -13,7 +13,7 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -250,7 +250,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
      *
      * @param repository:        repository where update the check suite preferences
      * @param autoTriggerChecks: enables or disables automatic creation of CheckSuite events upon pushes to the repository.
-     *                           Enabled by default as {@link Collection} of {@link AutoTriggerCheck} format
+     *                           Enabled by default as {@link ArrayList} of {@link AutoTriggerCheck} format
      * @return check suite preferences as {@link CheckSuitesPreferences} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
@@ -271,7 +271,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/check-suites/preferences")
     public CheckSuitesPreferences updateSuitesRepositoryPreferences(Repository repository,
-                                                                    Collection<AutoTriggerCheck> autoTriggerChecks) throws Exception {
+                                                                    ArrayList<AutoTriggerCheck> autoTriggerChecks) throws Exception {
         return updateSuitesRepositoryPreferences(repository.getOwner().getLogin(), repository.getName(), autoTriggerChecks,
                 LIBRARY_OBJECT);
     }
@@ -284,7 +284,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
      *
      * @param repository:        repository where update the check suite preferences
      * @param autoTriggerChecks: enables or disables automatic creation of CheckSuite events upon pushes to the repository.
-     *                           Enabled by default as {@link Collection} of {@link AutoTriggerCheck} format
+     *                           Enabled by default as {@link ArrayList} of {@link AutoTriggerCheck} format
      * @param format:            return type formatter -> {@link ReturnFormat}
      * @return check suite preferences as {@code "format"} defines
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
@@ -304,7 +304,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/check-suites/preferences")
-    public <T> T updateSuitesRepositoryPreferences(Repository repository, Collection<AutoTriggerCheck> autoTriggerChecks,
+    public <T> T updateSuitesRepositoryPreferences(Repository repository, ArrayList<AutoTriggerCheck> autoTriggerChecks,
                                                    ReturnFormat format) throws Exception {
         return updateSuitesRepositoryPreferences(repository.getOwner().getLogin(), repository.getName(), autoTriggerChecks,
                 format);
@@ -319,7 +319,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
      * @param owner:             the account owner of the repository. The name is not case-sensitive
      * @param repo:              the name of the repository. The name is not case-sensitive
      * @param autoTriggerChecks: enables or disables automatic creation of CheckSuite events upon pushes to the repository.
-     *                           Enabled by default as {@link Collection} of {@link AutoTriggerCheck} format
+     *                           Enabled by default as {@link ArrayList} of {@link AutoTriggerCheck} format
      * @return check suite preferences as {@link CheckSuitesPreferences} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
@@ -339,7 +339,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
     @Wrapper
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/check-suites/preferences")
     public CheckSuitesPreferences updateSuitesRepositoryPreferences(String owner, String repo,
-                                                                    Collection<AutoTriggerCheck> autoTriggerChecks) throws Exception {
+                                                                    ArrayList<AutoTriggerCheck> autoTriggerChecks) throws Exception {
         return updateSuitesRepositoryPreferences(owner, repo, autoTriggerChecks, LIBRARY_OBJECT);
     }
 
@@ -352,7 +352,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
      * @param owner:             the account owner of the repository. The name is not case-sensitive
      * @param repo:              the name of the repository. The name is not case-sensitive
      * @param autoTriggerChecks: enables or disables automatic creation of CheckSuite events upon pushes to the repository.
-     *                           Enabled by default as {@link Collection} of {@link AutoTriggerCheck} format
+     *                           Enabled by default as {@link ArrayList} of {@link AutoTriggerCheck} format
      * @param format:            return type formatter -> {@link ReturnFormat}
      * @return check suite preferences as {@code "format"} defines
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
@@ -371,7 +371,7 @@ public class GitHubCheckSuitesManager extends GitHubManager {
      * Update repository preferences for check suites</a>
      **/
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/check-suites/preferences")
-    public <T> T updateSuitesRepositoryPreferences(String owner, String repo, Collection<AutoTriggerCheck> autoTriggerChecks,
+    public <T> T updateSuitesRepositoryPreferences(String owner, String repo, ArrayList<AutoTriggerCheck> autoTriggerChecks,
                                                    ReturnFormat format) throws Exception {
         return updateSuitesRepositoryPreferences(owner, repo, autoTriggerChecks.toArray(new AutoTriggerCheck[0]), format);
     }

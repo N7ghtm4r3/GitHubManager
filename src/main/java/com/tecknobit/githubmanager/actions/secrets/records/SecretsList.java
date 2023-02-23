@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
@@ -98,9 +97,9 @@ public class SecretsList extends GitHubList {
      * Method to get {@link #secrets} instance <br>
      * No-any params required
      *
-     * @return {@link #secrets} instance as {@link Collection} of {@link Secret}
+     * @return {@link #secrets} instance as {@link ArrayList} of {@link Secret}
      **/
-    public Collection<Secret> getSecrets() {
+    public ArrayList<Secret> getSecrets() {
         return secrets;
     }
 

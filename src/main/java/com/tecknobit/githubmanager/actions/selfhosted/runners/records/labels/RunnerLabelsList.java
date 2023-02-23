@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code RunnerLabelsList} class is useful to format a GitHub's labels list
@@ -119,9 +118,9 @@ public class RunnerLabelsList extends GitHubList {
      * Method to get {@link #labels} instance <br>
      * No-any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link RunnerLabel}
+     * @return {@link #labels} instance as {@link ArrayList} of {@link RunnerLabel}
      **/
-    public Collection<RunnerLabel> getLabels() {
+    public ArrayList<RunnerLabel> getLabels() {
         return labels;
     }
 

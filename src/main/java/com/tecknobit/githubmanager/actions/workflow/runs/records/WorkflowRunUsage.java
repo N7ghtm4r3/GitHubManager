@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code WorkflowRunUsage} class is useful to format a GitHub's workflow run usage
@@ -59,9 +58,9 @@ public class WorkflowRunUsage extends GitHubResponse {
      * Method to get {@link #billables} instance <br>
      * No-any params required
      *
-     * @return {@link #billables} instance as {@link Collection} of {@link BillableRun}
+     * @return {@link #billables} instance as {@link ArrayList} of {@link BillableRun}
      **/
-    public Collection<BillableRun> getBillables() {
+    public ArrayList<BillableRun> getBillables() {
         return billables;
     }
 
@@ -136,9 +135,9 @@ public class WorkflowRunUsage extends GitHubResponse {
          * Method to get {@link #jobRuns} instance <br>
          * No-any params required
          *
-         * @return {@link #jobRuns} instance as {@link Collection} of {@link JobRun}
+         * @return {@link #jobRuns} instance as {@link ArrayList} of {@link JobRun}
          **/
-        public Collection<JobRun> getJobRuns() {
+        public ArrayList<JobRun> getJobRuns() {
             return jobRuns;
         }
 

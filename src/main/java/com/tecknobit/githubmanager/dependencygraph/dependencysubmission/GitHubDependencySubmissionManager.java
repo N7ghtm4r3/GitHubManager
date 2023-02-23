@@ -413,7 +413,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -463,7 +463,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -513,7 +513,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -563,7 +563,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -614,7 +614,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -665,7 +665,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -716,7 +716,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>
@@ -766,7 +766,7 @@ public class GitHubDependencySubmissionManager extends GitHubManager {
      *                           to 8 keys with scalar values - [object]
      *                       </li>
      *                       <li>
-     *                           {@code "manifests"} -> a collection of package manifests, which are a collection of related
+     *                           {@code "manifests"} -> a ArrayList of package manifests, which are a ArrayList of related
      *                           dependencies declared in a file or representing a logical group of dependencies
      *                           - [object]
      *                       </li>

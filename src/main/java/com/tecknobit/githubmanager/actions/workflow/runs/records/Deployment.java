@@ -9,7 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -144,19 +143,20 @@ public class Deployment extends GitHubResponse {
      * Method to get {@link #reviewers} instance <br>
      * No-any params required
      *
-     * @return {@link #reviewers} instance as {@link Collection} of {@link Reviewer}
+     * @return {@link #reviewers} instance as {@link ArrayList} of {@link Reviewer}
      **/
-    public Collection<Reviewer<?>> getReviewers() {
+    public ArrayList<Reviewer<?>> getReviewers() {
         return reviewers;
     }
 
     /**
      * Method to get a list of reviewers filtered
+     *
      * @param filter: filter to create a list of {@link User} or {@link Team}
+     * @return list filtered as {@link ArrayList} of {@link User} of {@link Team}
      * @throws IllegalArgumentException when filter inserted does not respect the correct range
-     * @return list filtered as {@link Collection} of {@link User} of {@link Team}
      **/
-    public <T> Collection<T> getReviewers(Class<T> filter) {
+    public <T> ArrayList<T> getReviewers(Class<T> filter) {
         if (filter != User.class && filter != Team.class)
             throw new IllegalArgumentException("Filter must be User or Team class type");
         ArrayList<T> fReviewers = new ArrayList<>();

@@ -17,7 +17,6 @@ import org.json.JSONArray;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -114,7 +113,7 @@ public class GitHubIssuesManager extends GitHubManager {
      * issues that are not necessarily assigned to you <br>
      * No-any params required
      *
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -136,7 +135,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/issues")
-    public Collection<Issue> getUserAssignedIssues() throws IOException {
+    public ArrayList<Issue> getUserAssignedIssues() throws IOException {
         return getUserAssignedIssues(LIBRARY_OBJECT);
     }
 
@@ -223,7 +222,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -245,7 +244,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/issues")
-    public Collection<Issue> getUserAssignedIssues(Params queryParams) throws IOException {
+    public ArrayList<Issue> getUserAssignedIssues(Params queryParams) throws IOException {
         return getUserAssignedIssues(queryParams, LIBRARY_OBJECT);
     }
 
@@ -331,7 +330,7 @@ public class GitHubIssuesManager extends GitHubManager {
      * Method to get the list of the issues in an organization assigned to the authenticated user
      *
      * @param org: the organization from fetch the list
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -354,7 +353,7 @@ public class GitHubIssuesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/issues")
-    public Collection<Issue> getOrganizationAssignedIssues(Organization org) throws IOException {
+    public ArrayList<Issue> getOrganizationAssignedIssues(Organization org) throws IOException {
         return getOrganizationAssignedIssues(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -393,7 +392,7 @@ public class GitHubIssuesManager extends GitHubManager {
      * Method to get the list of the issues in an organization assigned to the authenticated user
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -415,7 +414,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/issues")
-    public Collection<Issue> getOrganizationAssignedIssues(String org) throws IOException {
+    public ArrayList<Issue> getOrganizationAssignedIssues(String org) throws IOException {
         return getOrganizationAssignedIssues(org, LIBRARY_OBJECT);
     }
 
@@ -488,7 +487,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -511,7 +510,7 @@ public class GitHubIssuesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/issues")
-    public Collection<Issue> getOrganizationAssignedIssues(Organization org, Params queryParams) throws IOException {
+    public ArrayList<Issue> getOrganizationAssignedIssues(Organization org, Params queryParams) throws IOException {
         return getOrganizationAssignedIssues(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -620,7 +619,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -642,7 +641,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/issues")
-    public Collection<Issue> getOrganizationAssignedIssues(String org, Params queryParams) throws IOException {
+    public ArrayList<Issue> getOrganizationAssignedIssues(String org, Params queryParams) throws IOException {
         return getOrganizationAssignedIssues(org, queryParams, LIBRARY_OBJECT);
     }
 
@@ -716,7 +715,7 @@ public class GitHubIssuesManager extends GitHubManager {
      * Method to get the list of the issues in a repository. Only open issues will be listed.
      *
      * @param repository: the repository from fetch the list
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -739,7 +738,7 @@ public class GitHubIssuesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues")
-    public Collection<Issue> getRepositoryIssues(Repository repository) throws IOException {
+    public ArrayList<Issue> getRepositoryIssues(Repository repository) throws IOException {
         return getRepositoryIssues(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -779,7 +778,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -801,7 +800,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues")
-    public Collection<Issue> getRepositoryIssues(String owner, String repo) throws IOException {
+    public ArrayList<Issue> getRepositoryIssues(String owner, String repo) throws IOException {
         return getRepositoryIssues(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -880,7 +879,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -903,7 +902,7 @@ public class GitHubIssuesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues")
-    public Collection<Issue> getRepositoryIssues(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Issue> getRepositoryIssues(Repository repository, Params queryParams) throws IOException {
         return getRepositoryIssues(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1023,7 +1022,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1045,7 +1044,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues")
-    public Collection<Issue> getRepositoryIssues(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Issue> getRepositoryIssues(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoryIssues(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -2249,7 +2248,7 @@ public class GitHubIssuesManager extends GitHubManager {
      * Method to get the list of the issues across owned and member repositories assigned to the authenticated user <br>
      * No-any params required
      *
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2271,7 +2270,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/issues")
-    public Collection<Issue> getUserAccountAssignedIssues() throws IOException {
+    public ArrayList<Issue> getUserAccountAssignedIssues() throws IOException {
         return getUserAccountAssignedIssues(LIBRARY_OBJECT);
     }
 
@@ -2342,7 +2341,7 @@ public class GitHubIssuesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return issues list as {@link Collection} of {@link Issue} custom object
+     * @return issues list as {@link ArrayList} of {@link Issue} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2364,7 +2363,7 @@ public class GitHubIssuesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/issues")
-    public Collection<Issue> getUserAccountAssignedIssues(Params queryParams) throws IOException {
+    public ArrayList<Issue> getUserAccountAssignedIssues(Params queryParams) throws IOException {
         return getUserAccountAssignedIssues(queryParams, LIBRARY_OBJECT);
     }
 

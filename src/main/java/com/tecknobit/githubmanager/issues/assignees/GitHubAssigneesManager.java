@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.records.repository.Repository;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -96,7 +96,7 @@ public class GitHubAssigneesManager extends GitHubManager {
      * Method to get the list of the available assignees for issues in a repository <br>
      *
      * @param repository: the repository from fetch the list
-     * @return assignees list as {@link Collection} of {@link User} custom object
+     * @return assignees list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -115,7 +115,7 @@ public class GitHubAssigneesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/assignees")
-    public Collection<User> getAssignees(Repository repository) throws IOException {
+    public ArrayList<User> getAssignees(Repository repository) throws IOException {
         return getAssignees(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -151,7 +151,7 @@ public class GitHubAssigneesManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return assignees list as {@link Collection} of {@link User} custom object
+     * @return assignees list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -169,7 +169,7 @@ public class GitHubAssigneesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/assignees")
-    public Collection<User> getAssignees(String owner, String repo) throws IOException {
+    public ArrayList<User> getAssignees(String owner, String repo) throws IOException {
         return getAssignees(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -213,7 +213,7 @@ public class GitHubAssigneesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return assignees list as {@link Collection} of {@link User} custom object
+     * @return assignees list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -232,7 +232,7 @@ public class GitHubAssigneesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/assignees")
-    public Collection<User> getAssignees(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<User> getAssignees(Repository repository, Params queryParams) throws IOException {
         return getAssignees(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -286,7 +286,7 @@ public class GitHubAssigneesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return assignees list as {@link Collection} of {@link User} custom object
+     * @return assignees list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -304,7 +304,7 @@ public class GitHubAssigneesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/assignees")
-    public Collection<User> getAssignees(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<User> getAssignees(String owner, String repo, Params queryParams) throws IOException {
         return getAssignees(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

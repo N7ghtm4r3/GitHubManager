@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code CheckRunsList} class is useful to format a GitHub's check runs list
@@ -71,9 +70,9 @@ public class CheckRunsList extends GitHubList {
      * Method to get {@link #checkRuns} instance <br>
      * No-any params required
      *
-     * @return {@link #checkRuns} instance as {@link Collection} of {@link CheckRun}
+     * @return {@link #checkRuns} instance as {@link ArrayList} of {@link CheckRun}
      **/
-    public Collection<CheckRun> getCheckRuns() {
+    public ArrayList<CheckRun> getCheckRuns() {
         return checkRuns;
     }
 

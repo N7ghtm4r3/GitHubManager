@@ -12,7 +12,6 @@ import org.json.JSONArray;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -102,7 +101,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      * When authenticating as a user with admin rights to a repository, this method will list all currently open repository invitations
      *
      * @param repository: the repository from fetch the list
-     * @return invitations list as {@link Collection} of {@link Invitation} custom object
+     * @return invitations list as {@link ArrayList} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -121,7 +120,7 @@ public class GitHubInvitationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/invitations")
-    public Collection<Invitation> getRepositoryInvitations(Repository repository) throws IOException {
+    public ArrayList<Invitation> getRepositoryInvitations(Repository repository) throws IOException {
         return getRepositoryInvitations(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -157,7 +156,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return invitations list as {@link Collection} of {@link Invitation} custom object
+     * @return invitations list as {@link ArrayList} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -175,7 +174,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/invitations")
-    public Collection<Invitation> getRepositoryInvitations(String owner, String repo) throws IOException {
+    public ArrayList<Invitation> getRepositoryInvitations(String owner, String repo) throws IOException {
         return getRepositoryInvitations(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -219,7 +218,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return invitations list as {@link Collection} of {@link Invitation} custom object
+     * @return invitations list as {@link ArrayList} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -238,7 +237,7 @@ public class GitHubInvitationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/invitations")
-    public Collection<Invitation> getRepositoryInvitations(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Invitation> getRepositoryInvitations(Repository repository, Params queryParams) throws IOException {
         return getRepositoryInvitations(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -293,7 +292,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return invitations list as {@link Collection} of {@link Invitation} custom object
+     * @return invitations list as {@link ArrayList} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -311,7 +310,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/invitations")
-    public Collection<Invitation> getRepositoryInvitations(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Invitation> getRepositoryInvitations(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoryInvitations(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -677,7 +676,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      * When authenticating as a user, this method will list all currently open repository invitations for that user <br>
      * No-any params required
      *
-     * @return invitations list as {@link Collection} of {@link Invitation} custom object
+     * @return invitations list as {@link ArrayList} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -695,7 +694,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/repository_invitations")
-    public Collection<Invitation> getUserRepositoryInvitations() throws IOException {
+    public ArrayList<Invitation> getUserRepositoryInvitations() throws IOException {
         return getUserRepositoryInvitations(LIBRARY_OBJECT);
     }
 
@@ -736,7 +735,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return invitations list as {@link Collection} of {@link Invitation} custom object
+     * @return invitations list as {@link ArrayList} of {@link Invitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -754,7 +753,7 @@ public class GitHubInvitationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/repository_invitations")
-    public Collection<Invitation> getUserRepositoryInvitations(Params queryParams) throws IOException {
+    public ArrayList<Invitation> getUserRepositoryInvitations(Params queryParams) throws IOException {
         return getUserRepositoryInvitations(queryParams, LIBRARY_OBJECT);
     }
 

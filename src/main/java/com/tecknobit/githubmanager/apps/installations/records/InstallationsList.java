@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code InstallationsList} class is useful to format a GitHub's installations list
@@ -63,9 +62,9 @@ public class InstallationsList extends GitHubList {
      * Method to get {@link #installations} instance <br>
      * No-any params required
      *
-     * @return {@link #installations} instance as {@link Collection} of {@link Installation}
+     * @return {@link #installations} instance as {@link ArrayList} of {@link Installation}
      **/
-    public Collection<Installation> getInstallations() {
+    public ArrayList<Installation> getInstallations() {
         return installations;
     }
 

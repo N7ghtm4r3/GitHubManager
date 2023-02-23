@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code Runner} class is useful to format a GitHub's runner
@@ -149,9 +148,9 @@ public class Runner extends GitHubResponse {
      * Method to get {@link #labels} instance <br>
      * No-any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link RunnerLabel}
+     * @return {@link #labels} instance as {@link ArrayList} of {@link RunnerLabel}
      **/
-    public Collection<RunnerLabel> getLabels() {
+    public ArrayList<RunnerLabel> getLabels() {
         return labels;
     }
 

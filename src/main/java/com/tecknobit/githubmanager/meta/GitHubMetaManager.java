@@ -10,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -368,7 +368,7 @@ public class GitHubMetaManager extends GitHubManager {
      * Method to get all supported GitHub API versions <br>
      * No-any params required
      *
-     * @return api versions as {@link Collection} of {@link String}
+     * @return api versions as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -385,7 +385,7 @@ public class GitHubMetaManager extends GitHubManager {
      * Get all API versions</a>
      **/
     @RequestPath(method = GET, path = "/versions")
-    public Collection<String> getAllApiVersions() throws IOException {
+    public ArrayList<String> getAllApiVersions() throws IOException {
         return returnStringsList(new JSONArray(sendGetRequest(VERSIONS_PATH)));
     }
 

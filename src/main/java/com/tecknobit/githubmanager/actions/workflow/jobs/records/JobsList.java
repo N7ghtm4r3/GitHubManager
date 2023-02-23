@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code JobsList} class is useful to format a GitHub's jobs list
@@ -71,9 +70,9 @@ public class JobsList extends GitHubList {
      * Method to get {@link #jobs} instance <br>
      * No-any params required
      *
-     * @return {@link #jobs} instance as {@link Collection} of {@link Job}
+     * @return {@link #jobs} instance as {@link ArrayList} of {@link Job}
      **/
-    public Collection<Job> getJobs() {
+    public ArrayList<Job> getJobs() {
         return jobs;
     }
 

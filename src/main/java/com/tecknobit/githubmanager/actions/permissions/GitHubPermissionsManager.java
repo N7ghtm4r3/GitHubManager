@@ -20,7 +20,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -417,14 +416,14 @@ public class GitHubPermissionsManager extends GitHubManager {
      * <b> this step is automatically made by this library. </b> <br>
      *
      * @param enterprise:               the slug version of the enterprise name. You can also substitute this value with the enterprise id
-     * @param selectedOrganizationsIds: list of organization IDs to enable for {@code "GitHub Actions"} in {@link Collection} of {@link Long} format
+     * @param selectedOrganizationsIds: list of organization IDs to enable for {@code "GitHub Actions"} in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise">
      * Set selected organizations enabled for GitHub Actions in an enterprise</a>
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/permissions/organizations")
-    public boolean enableSelectedEnterpriseOrganizations(String enterprise, Collection<Long> selectedOrganizationsIds) {
+    public boolean enableSelectedEnterpriseOrganizations(String enterprise, ArrayList<Long> selectedOrganizationsIds) {
         return enableSelectedEnterpriseOrganizations(enterprise, selectedOrganizationsIds.toArray(new Long[0]));
     }
 
@@ -1357,7 +1356,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the administration organization permission to use this API
      *
      * @param org:                     the organization to set repositories
-     * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in {@link Collection}
+     * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in {@link ArrayList}
      *                                 of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
@@ -1365,7 +1364,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepositories(Organization org, Collection<Long> selectedRepositoriesIds) {
+    public boolean enableSelectedOrganizationRepositories(Organization org, ArrayList<Long> selectedRepositoriesIds) {
         return enableSelectedOrganizationRepositories(org.getLogin(), selectedRepositoriesIds.toArray(new Long[0]));
     }
 
@@ -1378,14 +1377,14 @@ public class GitHubPermissionsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the administration organization permission to use this API
      *
      * @param org:                     the organization name. The name is not case-sensitive
-     * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in {@link Collection}
+     * @param selectedRepositoriesIds: list of repository IDs to enable for {@code "GitHub Actions"} in {@link ArrayList}
      *                                 of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepositories(String org, Collection<Long> selectedRepositoriesIds) {
+    public boolean enableSelectedOrganizationRepositories(String org, ArrayList<Long> selectedRepositoriesIds) {
         return enableSelectedOrganizationRepositories(org, selectedRepositoriesIds.toArray(new Long[0]));
     }
 

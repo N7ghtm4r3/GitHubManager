@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.POST;
@@ -495,7 +494,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param ref:        ref parameter
-     * @return commit statuses list as {@link Collection} of {@link CombinedStatus} custom object
+     * @return commit statuses list as {@link ArrayList} of {@link CombinedStatus} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -516,7 +515,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{ref}/statuses")
-    public Collection<CommitStatus> getCommitStatuses(Repository repository, String ref) throws IOException {
+    public ArrayList<CommitStatus> getCommitStatuses(Repository repository, String ref) throws IOException {
         return getCommitStatuses(repository.getOwner().getLogin(), repository.getName(), ref, LIBRARY_OBJECT);
     }
 
@@ -556,7 +555,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param ref:   ref parameter
-     * @return commit statuses list as {@link Collection} of {@link CombinedStatus} custom object
+     * @return commit statuses list as {@link ArrayList} of {@link CombinedStatus} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -576,7 +575,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{ref}/statuses")
-    public Collection<CommitStatus> getCommitStatuses(String owner, String repo, String ref) throws IOException {
+    public ArrayList<CommitStatus> getCommitStatuses(String owner, String repo, String ref) throws IOException {
         return getCommitStatuses(owner, repo, ref, LIBRARY_OBJECT);
     }
 
@@ -625,7 +624,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit statuses list as {@link Collection} of {@link CombinedStatus} custom object
+     * @return commit statuses list as {@link ArrayList} of {@link CombinedStatus} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -646,8 +645,8 @@ public class GitHubCommitStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{ref}/statuses")
-    public Collection<CommitStatus> getCommitStatuses(Repository repository, String ref,
-                                                      Params queryParams) throws IOException {
+    public ArrayList<CommitStatus> getCommitStatuses(Repository repository, String ref,
+                                                     Params queryParams) throws IOException {
         return getCommitStatuses(repository.getOwner().getLogin(), repository.getName(), ref, queryParams, LIBRARY_OBJECT);
     }
 
@@ -706,7 +705,7 @@ public class GitHubCommitStatusesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit statuses list as {@link Collection} of {@link CombinedStatus} custom object
+     * @return commit statuses list as {@link ArrayList} of {@link CombinedStatus} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -726,8 +725,8 @@ public class GitHubCommitStatusesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{ref}/statuses")
-    public Collection<CommitStatus> getCommitStatuses(String owner, String repo, String ref,
-                                                      Params queryParams) throws IOException {
+    public ArrayList<CommitStatus> getCommitStatuses(String owner, String repo, String ref,
+                                                     Params queryParams) throws IOException {
         return getCommitStatuses(owner, repo, ref, queryParams, LIBRARY_OBJECT);
     }
 

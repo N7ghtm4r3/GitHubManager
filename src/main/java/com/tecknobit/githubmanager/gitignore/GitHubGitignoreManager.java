@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -94,7 +93,7 @@ public class GitHubGitignoreManager extends GitHubManager {
      * Method to get the list of the all templates available to pass as an option when creating a repository <br>
      * No-any params required
      *
-     * @return templates list as {@link Collection} of {@link String}
+     * @return templates list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -112,7 +111,7 @@ public class GitHubGitignoreManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gitignore/templates")
-    public Collection<String> getAllGitignoreTemplates() throws IOException {
+    public ArrayList<String> getAllGitignoreTemplates() throws IOException {
         return getAllGitignoreTemplates(LIBRARY_OBJECT);
     }
 
@@ -159,7 +158,7 @@ public class GitHubGitignoreManager extends GitHubManager {
      * The API also allows fetching the source of a single template. Use the raw media type to get the raw contents
      *
      * @param name: name of the template to fetch
-     * @return template as {@link Collection} of {@link GitignoreTemplate} custom object
+     * @return template as {@link ArrayList} of {@link GitignoreTemplate} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>

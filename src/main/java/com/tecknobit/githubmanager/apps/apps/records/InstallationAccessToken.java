@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection.all;
 
@@ -91,9 +90,9 @@ public class InstallationAccessToken extends GitHubToken {
      * Method to get {@link #repositories} instance <br>
      * No-any params required
      *
-     * @return {@link #repositories} instance as {@link Collection} of {@link CompleteRepository}
+     * @return {@link #repositories} instance as {@link ArrayList} of {@link CompleteRepository}
      **/
-    public Collection<CompleteRepository> getRepositories() {
+    public ArrayList<CompleteRepository> getRepositories() {
         return repositories;
     }
 

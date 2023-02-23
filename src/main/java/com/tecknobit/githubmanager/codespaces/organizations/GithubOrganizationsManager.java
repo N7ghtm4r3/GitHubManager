@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.records.organization.Organization;
 import com.tecknobit.githubmanager.records.organization.Organization.OrganizationVisibility;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -397,7 +397,7 @@ public class GithubOrganizationsManager extends GitHubManager {
      * @param org:               organization where manage the access control
      * @param visibility:        which users can access codespaces in the organization. disabled means that no users can access codespaces in the organization
      * @param selectedUsernames: the usernames of the organization members who should be granted access to codespaces in the organization.
-     *                           Required when visibility is {@code "selected_members"} as {@link Collection} of {@link String}
+     *                           Required when visibility is {@code "selected_members"} as {@link ArrayList} of {@link String}
      *                           format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organizations#manage-access-control-for-organization-codespaces">
@@ -406,7 +406,7 @@ public class GithubOrganizationsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/billing")
     public boolean manageAccessControl(Organization org, OrganizationVisibility visibility,
-                                       Collection<String> selectedUsernames) {
+                                       ArrayList<String> selectedUsernames) {
         return manageAccessControl(org.getLogin(), visibility, selectedUsernames.toArray(new String[0]));
     }
 
@@ -418,14 +418,14 @@ public class GithubOrganizationsManager extends GitHubManager {
      * @param org:               the organization name. The name is not case-sensitive
      * @param visibility:        which users can access codespaces in the organization. disabled means that no users can access codespaces in the organization
      * @param selectedUsernames: the usernames of the organization members who should be granted access to codespaces in the organization.
-     *                           Required when visibility is {@code "selected_members"} as {@link Collection} of {@link String}
+     *                           Required when visibility is {@code "selected_members"} as {@link ArrayList} of {@link String}
      *                           format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organizations#manage-access-control-for-organization-codespaces">
      * Manage access control for organization codespaces</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/billing")
-    public boolean manageAccessControl(String org, OrganizationVisibility visibility, Collection<String> selectedUsernames) {
+    public boolean manageAccessControl(String org, OrganizationVisibility visibility, ArrayList<String> selectedUsernames) {
         return manageAccessControl(org, visibility, selectedUsernames.toArray(new String[0]));
     }
 

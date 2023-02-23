@@ -10,7 +10,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.apps.apps.records.GitHubApp.returnAppsList;
@@ -463,9 +462,9 @@ public class BranchProtection extends GitHubResponse {
          * Method to get {@link #contexts} instance <br>
          * No-any params required
          *
-         * @return {@link #contexts} instance as {@link Collection} of {@link String}
+         * @return {@link #contexts} instance as {@link ArrayList} of {@link String}
          **/
-        public Collection<String> getContexts() {
+        public ArrayList<String> getContexts() {
             return contexts;
         }
 
@@ -473,9 +472,9 @@ public class BranchProtection extends GitHubResponse {
          * Method to get {@link #checks} instance <br>
          * No-any params required
          *
-         * @return {@link #checks} instance as {@link Collection} of {@link Check}
+         * @return {@link #checks} instance as {@link ArrayList} of {@link Check}
          **/
-        public Collection<Check> getChecks() {
+        public ArrayList<Check> getChecks() {
             return checks;
         }
 
@@ -952,9 +951,9 @@ public class BranchProtection extends GitHubResponse {
          * Method to get {@link #users} instance <br>
          * No-any params required
          *
-         * @return {@link #users} instance as {@link Collection} of {@link T}
+         * @return {@link #users} instance as {@link ArrayList} of {@link T}
          **/
-        public Collection<T> getUsers() {
+        public ArrayList<T> getUsers() {
             return users;
         }
 
@@ -962,9 +961,9 @@ public class BranchProtection extends GitHubResponse {
          * Method to get {@link #teams} instance <br>
          * No-any params required
          *
-         * @return {@link #teams} instance as {@link Collection} of {@link T}
+         * @return {@link #teams} instance as {@link ArrayList} of {@link T}
          **/
-        public Collection<T> getTeams() {
+        public ArrayList<T> getTeams() {
             return teams;
         }
 
@@ -972,9 +971,9 @@ public class BranchProtection extends GitHubResponse {
          * Method to get {@link #apps} instance <br>
          * No-any params required
          *
-         * @return {@link #apps} instance as {@link Collection} of {@link T}
+         * @return {@link #apps} instance as {@link ArrayList} of {@link T}
          **/
-        public Collection<T> getApps() {
+        public ArrayList<T> getApps() {
             return apps;
         }
 

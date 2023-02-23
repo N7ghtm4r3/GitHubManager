@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code DeploymentBranchPoliciesList} class is useful to format a GitHub's deployment branch policies
@@ -62,9 +61,9 @@ public class DeploymentBranchPoliciesList extends GitHubList {
      * Method to get {@link #deploymentBranchPolicies} instance <br>
      * No-any params required
      *
-     * @return {@link #deploymentBranchPolicies} instance as {@link Collection} of {@link DeploymentBranchPolicy}
+     * @return {@link #deploymentBranchPolicies} instance as {@link ArrayList} of {@link DeploymentBranchPolicy}
      **/
-    public Collection<DeploymentBranchPolicy> getDeploymentBranchPolicies() {
+    public ArrayList<DeploymentBranchPolicy> getDeploymentBranchPolicies() {
         return deploymentBranchPolicies;
     }
 

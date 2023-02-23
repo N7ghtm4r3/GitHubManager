@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -251,7 +250,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      * OAuth Apps must use basic authentication with their client ID and client secret to access this endpoint<br>
      * No-any params required
      *
-     * @return plans list as {@link Collection} of {@link Plan} custom object
+     * @return plans list as {@link ArrayList} of {@link Plan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -269,7 +268,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/marketplace_listing/plans")
-    public Collection<Plan> getPlans() throws IOException {
+    public ArrayList<Plan> getPlans() throws IOException {
         return getPlans(LIBRARY_OBJECT);
     }
 
@@ -314,7 +313,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return plans list as {@link Collection} of {@link Plan} custom object
+     * @return plans list as {@link ArrayList} of {@link Plan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -332,7 +331,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/marketplace_listing/plans")
-    public Collection<Plan> getPlans(Params queryParams) throws IOException {
+    public ArrayList<Plan> getPlans(Params queryParams) throws IOException {
         return getPlans(queryParams, LIBRARY_OBJECT);
     }
 
@@ -405,7 +404,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      * OAuth Apps must use basic authentication with their client ID and client secret to access this endpoint
      *
      * @param plan: from fetch the list
-     * @return accounts list as {@link Collection} of {@link SubscriptionPlan} custom object
+     * @return accounts list as {@link ArrayList} of {@link SubscriptionPlan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -424,7 +423,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/marketplace_listing/plans/{plan_id}/accounts")
-    public Collection<SubscriptionPlan> getAccountsForPlan(Plan plan) throws IOException {
+    public ArrayList<SubscriptionPlan> getAccountsForPlan(Plan plan) throws IOException {
         return getAccountsForPlan(plan.getId(), LIBRARY_OBJECT);
     }
 
@@ -469,7 +468,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      * OAuth Apps must use basic authentication with their client ID and client secret to access this endpoint
      *
      * @param planId: the unique identifier of the plan
-     * @return accounts list as {@link Collection} of {@link SubscriptionPlan} custom object
+     * @return accounts list as {@link ArrayList} of {@link SubscriptionPlan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -487,7 +486,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/marketplace_listing/plans/{plan_id}/accounts")
-    public Collection<SubscriptionPlan> getAccountsForPlan(long planId) throws IOException {
+    public ArrayList<SubscriptionPlan> getAccountsForPlan(long planId) throws IOException {
         return getAccountsForPlan(planId, LIBRARY_OBJECT);
     }
 
@@ -550,7 +549,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return accounts list as {@link Collection} of {@link SubscriptionPlan} custom object
+     * @return accounts list as {@link ArrayList} of {@link SubscriptionPlan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -569,7 +568,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/marketplace_listing/plans/{plan_id}/accounts")
-    public Collection<SubscriptionPlan> getAccountsForPlan(Plan plan, Params queryParams) throws IOException {
+    public ArrayList<SubscriptionPlan> getAccountsForPlan(Plan plan, Params queryParams) throws IOException {
         return getAccountsForPlan(plan.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -650,7 +649,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return accounts list as {@link Collection} of {@link SubscriptionPlan} custom object
+     * @return accounts list as {@link ArrayList} of {@link SubscriptionPlan} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -668,7 +667,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/marketplace_listing/plans/{plan_id}/accounts")
-    public Collection<SubscriptionPlan> getAccountsForPlan(long planId, Params queryParams) throws IOException {
+    public ArrayList<SubscriptionPlan> getAccountsForPlan(long planId, Params queryParams) throws IOException {
         return getAccountsForPlan(planId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -752,7 +751,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      * OAuth Apps must authenticate using an OAuth token <br>
      * No-any params required
      *
-     * @return subscriptions list as {@link Collection} of {@link MarketPlacePurchase} custom object
+     * @return subscriptions list as {@link ArrayList} of {@link MarketPlacePurchase} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -770,7 +769,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/marketplace_purchases")
-    public Collection<MarketPlacePurchase> getAuthenticatedUserSubscriptions() throws IOException {
+    public ArrayList<MarketPlacePurchase> getAuthenticatedUserSubscriptions() throws IOException {
         return getAuthenticatedUserSubscriptions(LIBRARY_OBJECT);
     }
 
@@ -815,7 +814,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return subscriptions list as {@link Collection} of {@link MarketPlacePurchase} custom object
+     * @return subscriptions list as {@link ArrayList} of {@link MarketPlacePurchase} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -833,7 +832,7 @@ public class GitHubMarketplaceManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/marketplace_purchases")
-    public Collection<MarketPlacePurchase> getAuthenticatedUserSubscriptions(Params queryParams) throws IOException {
+    public ArrayList<MarketPlacePurchase> getAuthenticatedUserSubscriptions(Params queryParams) throws IOException {
         return getAuthenticatedUserSubscriptions(queryParams, LIBRARY_OBJECT);
     }
 

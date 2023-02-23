@@ -7,7 +7,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code GitCommit} class is useful to format a GitHub's git commit
@@ -109,9 +108,9 @@ public class GitCommit extends CommitData {
      * Method to get {@link #parents} instance <br>
      * No-any params required
      *
-     * @return {@link #parents} instance as {@link Collection} of {@link Parent}
+     * @return {@link #parents} instance as {@link ArrayList} of {@link Parent}
      **/
-    public Collection<Parent> getParents() {
+    public ArrayList<Parent> getParents() {
         return parents;
     }
 

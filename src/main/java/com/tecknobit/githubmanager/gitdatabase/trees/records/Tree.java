@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
@@ -83,9 +82,9 @@ public class Tree extends ShaItem {
      * Method to get {@link #tree} instance <br>
      * No-any params required
      *
-     * @return {@link #tree} instance as {@link Collection} of {@link TreeValue}
+     * @return {@link #tree} instance as {@link ArrayList} of {@link TreeValue}
      **/
-    public Collection<TreeValue> getTree() {
+    public ArrayList<TreeValue> getTree() {
         return tree;
     }
 

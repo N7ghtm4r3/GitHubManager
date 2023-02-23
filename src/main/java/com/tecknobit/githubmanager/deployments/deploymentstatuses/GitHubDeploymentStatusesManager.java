@@ -13,7 +13,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.POST;
@@ -96,7 +95,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param deployment: the deployment from fetch the list
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -115,7 +114,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(Repository repository, Deployment deployment) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(Repository repository, Deployment deployment) throws Exception {
         return getDeploymentStatuses(repository.getOwner().getLogin(), repository.getName(), deployment.getId(),
                 LIBRARY_OBJECT);
     }
@@ -154,7 +153,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      * @param owner:      the account owner of the repository. The name is not case-sensitive
      * @param repo:       the name of the repository. The name is not case-sensitive
      * @param deployment: the deployment from fetch the list
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -173,8 +172,8 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(String owner, String repo,
-                                                              Deployment deployment) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(String owner, String repo,
+                                                             Deployment deployment) throws Exception {
         return getDeploymentStatuses(owner, repo, deployment.getId(), LIBRARY_OBJECT);
     }
 
@@ -212,7 +211,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      *
      * @param repository:   the repository from fetch the list
      * @param deploymentId: deployment_id parameter
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -231,7 +230,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(Repository repository, long deploymentId) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(Repository repository, long deploymentId) throws Exception {
         return getDeploymentStatuses(repository.getOwner().getLogin(), repository.getName(), deploymentId, LIBRARY_OBJECT);
     }
 
@@ -269,7 +268,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      * @param owner:        the account owner of the repository. The name is not case-sensitive
      * @param repo:         the name of the repository. The name is not case-sensitive
      * @param deploymentId: deployment_id parameter
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -287,7 +286,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(String owner, String repo, long deploymentId) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(String owner, String repo, long deploymentId) throws Exception {
         return getDeploymentStatuses(owner, repo, deploymentId, LIBRARY_OBJECT);
     }
 
@@ -334,7 +333,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -353,8 +352,8 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(Repository repository, Deployment deployment,
-                                                              Params queryParams) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(Repository repository, Deployment deployment,
+                                                             Params queryParams) throws Exception {
         return getDeploymentStatuses(repository.getOwner().getLogin(), repository.getName(), deployment.getId(),
                 queryParams, LIBRARY_OBJECT);
     }
@@ -413,7 +412,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -432,8 +431,8 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(String owner, String repo, Deployment deployment,
-                                                              Params queryParams) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(String owner, String repo, Deployment deployment,
+                                                             Params queryParams) throws Exception {
         return getDeploymentStatuses(owner, repo, deployment.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -490,7 +489,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      *                             {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                         </li>
      *                      </ul>
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -509,8 +508,8 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(Repository repository, long deploymentId,
-                                                              Params queryParams) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(Repository repository, long deploymentId,
+                                                             Params queryParams) throws Exception {
         return getDeploymentStatuses(repository.getOwner().getLogin(), repository.getName(), deploymentId, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -569,7 +568,7 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      *                             {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                         </li>
      *                      </ul>
-     * @return deployment statuses as {@link Collection} of {@link DeploymentStatus} custom object
+     * @return deployment statuses as {@link ArrayList} of {@link DeploymentStatus} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -587,8 +586,8 @@ public class GitHubDeploymentStatusesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses")
-    public Collection<DeploymentStatus> getDeploymentStatuses(String owner, String repo, long deploymentId,
-                                                              Params queryParams) throws Exception {
+    public ArrayList<DeploymentStatus> getDeploymentStatuses(String owner, String repo, long deploymentId,
+                                                             Params queryParams) throws Exception {
         return getDeploymentStatuses(owner, repo, deploymentId, queryParams, LIBRARY_OBJECT);
     }
 

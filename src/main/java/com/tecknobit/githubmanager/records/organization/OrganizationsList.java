@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code OrganizationsList} class is useful to format a GitHub's organizations list
@@ -73,9 +72,9 @@ public class OrganizationsList extends GitHubList {
      * Method to get {@link #organizations} instance <br>
      * No-any params required
      *
-     * @return {@link #organizations} instance as {@link Collection} of {@link Organization}
+     * @return {@link #organizations} instance as {@link ArrayList} of {@link Organization}
      **/
-    public Collection<Organization> getOrganizations() {
+    public ArrayList<Organization> getOrganizations() {
         return organizations;
     }
 

@@ -129,7 +129,7 @@ public abstract class GitHubResponse {
      * Method to create a {@link String} list
      *
      * @param jList: {@link JSONArray} source from assemble the list
-     * @return list of string a {@link ArrayList} of {@link String}
+     * @return list of string as {@link ArrayList} of {@link String}
      **/
     @Returner
     public static ArrayList<String> returnStringsList(JSONArray jList) {
@@ -137,6 +137,21 @@ public abstract class GitHubResponse {
         if (jList != null)
             for (int j = 0; j < jList.length(); j++)
                 list.add(jList.getString(j));
+        return list;
+    }
+
+    /**
+     * Method to create an {@link Integer} list
+     *
+     * @param jList: {@link JSONArray} source from assemble the list
+     * @return list of integer as {@link ArrayList} of {@link Integer}
+     **/
+    @Returner
+    public static ArrayList<Integer> returnIntegersList(JSONArray jList) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (jList != null)
+            for (int j = 0; j < jList.length(); j++)
+                list.add(jList.getInt(j));
         return list;
     }
 

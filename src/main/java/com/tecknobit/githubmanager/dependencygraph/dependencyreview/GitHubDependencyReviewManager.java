@@ -11,7 +11,6 @@ import org.json.JSONArray;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -100,7 +99,7 @@ public class GitHubDependencyReviewManager extends GitHubManager {
      * @param basehead:   the base and head Git revisions to compare. The Git revisions will be resolved to commit SHAs.
      *                    Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge
      *                    base will be determined. This parameter expects the format {base}...{head}
-     * @return dependency reviews as {@link Collection} of {@link DependencyReview} custom object
+     * @return dependency reviews as {@link ArrayList} of {@link DependencyReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -119,8 +118,8 @@ public class GitHubDependencyReviewManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependency-graph/compare/{basehead}")
-    public Collection<DependencyReview> getDiffDependenciesBetweenCommits(Repository repository,
-                                                                          String basehead) throws IOException {
+    public ArrayList<DependencyReview> getDiffDependenciesBetweenCommits(Repository repository,
+                                                                         String basehead) throws IOException {
         return getDiffDependenciesBetweenCommits(repository.getOwner().getLogin(), repository.getName(), basehead,
                 LIBRARY_OBJECT);
     }
@@ -166,7 +165,7 @@ public class GitHubDependencyReviewManager extends GitHubManager {
      * @param basehead: the base and head Git revisions to compare. The Git revisions will be resolved to commit SHAs.
      *                  Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge
      *                  base will be determined. This parameter expects the format {base}...{head}
-     * @return dependency reviews as {@link Collection} of {@link DependencyReview} custom object
+     * @return dependency reviews as {@link ArrayList} of {@link DependencyReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -184,8 +183,8 @@ public class GitHubDependencyReviewManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependency-graph/compare/{basehead}")
-    public Collection<DependencyReview> getDiffDependenciesBetweenCommits(String owner, String repo,
-                                                                          String basehead) throws IOException {
+    public ArrayList<DependencyReview> getDiffDependenciesBetweenCommits(String owner, String repo,
+                                                                         String basehead) throws IOException {
         return getDiffDependenciesBetweenCommits(owner, repo, basehead, LIBRARY_OBJECT);
     }
 
@@ -231,7 +230,7 @@ public class GitHubDependencyReviewManager extends GitHubManager {
      *                    Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge
      *                    base will be determined. This parameter expects the format {base}...{head}
      * @param name:       the full path, relative to the repository root, of the dependency manifest file
-     * @return dependency reviews as {@link Collection} of {@link DependencyReview} custom object
+     * @return dependency reviews as {@link ArrayList} of {@link DependencyReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -250,8 +249,8 @@ public class GitHubDependencyReviewManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependency-graph/compare/{basehead}")
-    public Collection<DependencyReview> getDiffDependenciesBetweenCommits(Repository repository, String basehead,
-                                                                          String name) throws IOException {
+    public ArrayList<DependencyReview> getDiffDependenciesBetweenCommits(Repository repository, String basehead,
+                                                                         String name) throws IOException {
         return getDiffDependenciesBetweenCommits(repository.getOwner().getLogin(), repository.getName(), basehead, name,
                 LIBRARY_OBJECT);
     }
@@ -300,7 +299,7 @@ public class GitHubDependencyReviewManager extends GitHubManager {
      *                  Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge
      *                  base will be determined. This parameter expects the format {base}...{head}
      * @param name:     the full path, relative to the repository root, of the dependency manifest file
-     * @return dependency reviews as {@link Collection} of {@link DependencyReview} custom object
+     * @return dependency reviews as {@link ArrayList} of {@link DependencyReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -318,8 +317,8 @@ public class GitHubDependencyReviewManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependency-graph/compare/{basehead}")
-    public Collection<DependencyReview> getDiffDependenciesBetweenCommits(String owner, String repo, String basehead,
-                                                                          String name) throws IOException {
+    public ArrayList<DependencyReview> getDiffDependenciesBetweenCommits(String owner, String repo, String basehead,
+                                                                         String name) throws IOException {
         return getDiffDependenciesBetweenCommits(owner, repo, basehead, name, LIBRARY_OBJECT);
     }
 

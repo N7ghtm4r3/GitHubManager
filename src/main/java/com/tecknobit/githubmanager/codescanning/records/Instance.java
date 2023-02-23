@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.codescanning.records.ScanningAlert.State;
 
@@ -119,9 +118,9 @@ public class Instance extends ScanningItem {
      * Method to get {@link #classifications} instance <br>
      * No-any params required
      *
-     * @return {@link #classifications} instance as {@link Collection} of {@link Classification}
+     * @return {@link #classifications} instance as {@link ArrayList} of {@link Classification}
      **/
-    public Collection<Classification> getClassifications() {
+    public ArrayList<Classification> getClassifications() {
         return classifications;
     }
 

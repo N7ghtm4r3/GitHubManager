@@ -5,7 +5,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 /**
@@ -195,9 +194,9 @@ public class Feed extends GitHubResponse {
      * Method to get {@link #currentUserOrganizationUrls} instance <br>
      * No-any params required
      *
-     * @return {@link #currentUserOrganizationUrls} instance as {@link Collection} of {@link String}
+     * @return {@link #currentUserOrganizationUrls} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getCurrentUserOrganizationUrls() {
+    public ArrayList<String> getCurrentUserOrganizationUrls() {
         return currentUserOrganizationUrls;
     }
 
@@ -225,9 +224,9 @@ public class Feed extends GitHubResponse {
      * Method to get {@link #currentUserOrganizations} instance <br>
      * No-any params required
      *
-     * @return {@link #currentUserOrganizations} instance as {@link Collection} of {@link Link}
+     * @return {@link #currentUserOrganizations} instance as {@link ArrayList} of {@link Link}
      **/
-    public Collection<Link> getCurrentUserOrganizations() {
+    public ArrayList<Link> getCurrentUserOrganizations() {
         return currentUserOrganizations;
     }
 

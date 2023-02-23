@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -97,7 +96,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param issue:      the repository from fetch the list
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -116,7 +115,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(Repository repository, Issue issue) throws IOException {
+    public ArrayList<Label> getIssueLabels(Repository repository, Issue issue) throws IOException {
         return getIssueLabels(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -154,7 +153,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param issue: the repository from fetch the list
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -173,7 +172,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(String owner, String repo, Issue issue) throws IOException {
+    public ArrayList<Label> getIssueLabels(String owner, String repo, Issue issue) throws IOException {
         return getIssueLabels(owner, repo, issue.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -211,7 +210,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *
      * @param repository:  the repository from fetch the list
      * @param issueNumber: the number that identifies the issue
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -230,7 +229,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(Repository repository, long issueNumber) throws IOException {
+    public ArrayList<Label> getIssueLabels(Repository repository, long issueNumber) throws IOException {
         return getIssueLabels(repository.getOwner().getLogin(), repository.getName(), issueNumber, LIBRARY_OBJECT);
     }
 
@@ -268,7 +267,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param owner:       the account owner of the repository. The name is not case-sensitive
      * @param repo:        the name of the repository. The name is not case-sensitive
      * @param issueNumber: the number that identifies the issue
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -286,7 +285,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(String owner, String repo, long issueNumber) throws IOException {
+    public ArrayList<Label> getIssueLabels(String owner, String repo, long issueNumber) throws IOException {
         return getIssueLabels(owner, repo, issueNumber, LIBRARY_OBJECT);
     }
 
@@ -333,7 +332,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -352,7 +351,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(Repository repository, Issue issue, Params queryParams) throws IOException {
+    public ArrayList<Label> getIssueLabels(Repository repository, Issue issue, Params queryParams) throws IOException {
         return getIssueLabels(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -411,7 +410,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -430,7 +429,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(String owner, String repo, Issue issue, Params queryParams) throws IOException {
+    public ArrayList<Label> getIssueLabels(String owner, String repo, Issue issue, Params queryParams) throws IOException {
         return getIssueLabels(owner, repo, issue.getNumber(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -487,7 +486,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -506,7 +505,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(Repository repository, long issueNumber, Params queryParams) throws IOException {
+    public ArrayList<Label> getIssueLabels(Repository repository, long issueNumber, Params queryParams) throws IOException {
         return getIssueLabels(repository.getOwner().getLogin(), repository.getName(), issueNumber, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -564,7 +563,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -582,8 +581,8 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> getIssueLabels(String owner, String repo, long issueNumber,
-                                            Params queryParams) throws IOException {
+    public ArrayList<Label> getIssueLabels(String owner, String repo, long issueNumber,
+                                           Params queryParams) throws IOException {
         return getIssueLabels(owner, repo, issueNumber, queryParams, LIBRARY_OBJECT);
     }
 
@@ -636,7 +635,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                    a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                    You can also add labels to the existing labels for an issue. For more information,
      *                    see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -655,7 +654,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> addIssueLabels(Repository repository, Issue issue, String... labels) throws IOException {
+    public ArrayList<Label> addIssueLabels(Repository repository, Issue issue, String... labels) throws IOException {
         return addIssueLabels(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), LIBRARY_OBJECT,
                 labels);
     }
@@ -705,7 +704,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                You can also add labels to the existing labels for an issue. For more information,
      *                see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -724,7 +723,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> addIssueLabels(String owner, String repo, Issue issue, String... labels) throws IOException {
+    public ArrayList<Label> addIssueLabels(String owner, String repo, Issue issue, String... labels) throws IOException {
         return addIssueLabels(owner, repo, issue.getNumber(), LIBRARY_OBJECT, labels);
     }
 
@@ -773,7 +772,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                     a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                     You can also add labels to the existing labels for an issue. For more information,
      *                     see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -792,7 +791,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> addIssueLabels(Repository repository, long issueNumber, String... labels) throws IOException {
+    public ArrayList<Label> addIssueLabels(Repository repository, long issueNumber, String... labels) throws IOException {
         return addIssueLabels(repository.getOwner().getLogin(), repository.getName(), issueNumber, LIBRARY_OBJECT,
                 labels);
     }
@@ -842,7 +841,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                     a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                     You can also add labels to the existing labels for an issue. For more information,
      *                     see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -860,7 +859,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> addIssueLabels(String owner, String repo, long issueNumber, String... labels) throws IOException {
+    public ArrayList<Label> addIssueLabels(String owner, String repo, long issueNumber, String... labels) throws IOException {
         return addIssueLabels(owner, repo, issueNumber, LIBRARY_OBJECT, labels);
     }
 
@@ -912,7 +911,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                    a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                    You can also add labels to the existing labels for an issue. For more information,
      *                    see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -931,7 +930,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> setIssueLabels(Repository repository, Issue issue, String... labels) throws IOException {
+    public ArrayList<Label> setIssueLabels(Repository repository, Issue issue, String... labels) throws IOException {
         return setIssueLabels(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), LIBRARY_OBJECT,
                 labels);
     }
@@ -983,7 +982,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                You can also add labels to the existing labels for an issue. For more information,
      *                see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1002,7 +1001,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> setIssueLabels(String owner, String repo, Issue issue, String... labels) throws IOException {
+    public ArrayList<Label> setIssueLabels(String owner, String repo, Issue issue, String... labels) throws IOException {
         return setIssueLabels(owner, repo, issue.getNumber(), LIBRARY_OBJECT, labels);
     }
 
@@ -1053,7 +1052,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                     a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                     You can also add labels to the existing labels for an issue. For more information,
      *                     see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1072,7 +1071,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> setIssueLabels(Repository repository, long issueNumber, String... labels) throws IOException {
+    public ArrayList<Label> setIssueLabels(Repository repository, long issueNumber, String... labels) throws IOException {
         return setIssueLabels(repository.getOwner().getLogin(), repository.getName(), issueNumber, LIBRARY_OBJECT,
                 labels);
     }
@@ -1124,7 +1123,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                     a string or an array of labels directly, but GitHub recommends passing an object with the labels key.
      *                     You can also add labels to the existing labels for an issue. For more information,
      *                     see "Add labels to an issue."
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1142,8 +1141,8 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels")
-    public Collection<Label> setIssueLabels(String owner, String repo, long issueNumber,
-                                            String... labels) throws IOException {
+    public ArrayList<Label> setIssueLabels(String owner, String repo, long issueNumber,
+                                           String... labels) throws IOException {
         return setIssueLabels(owner, repo, issueNumber, LIBRARY_OBJECT, labels);
     }
 
@@ -1262,7 +1261,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repository: the repository from remove the label
      * @param issue:      the repository from remove the label
      * @param label:      the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1281,7 +1280,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(Repository repository, Issue issue, Label label) throws IOException {
+    public ArrayList<Label> removeIssueLabel(Repository repository, Issue issue, Label label) throws IOException {
         return removeIssueLabel(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(),
                 label.getName(), LIBRARY_OBJECT);
     }
@@ -1323,7 +1322,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param issue: the repository from remove the label
      * @param label: the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1342,7 +1341,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(String owner, String repo, Issue issue, Label label) throws IOException {
+    public ArrayList<Label> removeIssueLabel(String owner, String repo, Issue issue, Label label) throws IOException {
         return removeIssueLabel(owner, repo, issue.getNumber(), label.getName(), LIBRARY_OBJECT);
     }
 
@@ -1382,7 +1381,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repository:  the repository from remove the label
      * @param issueNumber: the number that identifies the issue
      * @param label:       the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1401,7 +1400,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(Repository repository, long issueNumber, Label label) throws IOException {
+    public ArrayList<Label> removeIssueLabel(Repository repository, long issueNumber, Label label) throws IOException {
         return removeIssueLabel(repository.getOwner().getLogin(), repository.getName(), issueNumber, label.getName(),
                 LIBRARY_OBJECT);
     }
@@ -1444,7 +1443,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repo:        the name of the repository. The name is not case-sensitive
      * @param issueNumber: the number that identifies the issue
      * @param label:       the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1463,7 +1462,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(String owner, String repo, long issueNumber, Label label) throws IOException {
+    public ArrayList<Label> removeIssueLabel(String owner, String repo, long issueNumber, Label label) throws IOException {
         return removeIssueLabel(owner, repo, issueNumber, label.getName(), LIBRARY_OBJECT);
     }
 
@@ -1504,7 +1503,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repository: the repository from remove the label
      * @param issue:      the repository from remove the label
      * @param name:       the name of the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1523,7 +1522,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(Repository repository, Issue issue, String name) throws IOException {
+    public ArrayList<Label> removeIssueLabel(Repository repository, Issue issue, String name) throws IOException {
         return removeIssueLabel(repository.getOwner().getLogin(), repository.getName(), issue.getNumber(), name,
                 LIBRARY_OBJECT);
     }
@@ -1565,7 +1564,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param issue: the repository from remove the label
      * @param name:  the name of the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1584,7 +1583,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(String owner, String repo, Issue issue, String name) throws IOException {
+    public ArrayList<Label> removeIssueLabel(String owner, String repo, Issue issue, String name) throws IOException {
         return removeIssueLabel(owner, repo, issue.getNumber(), name, LIBRARY_OBJECT);
     }
 
@@ -1625,7 +1624,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repository:  the repository from remove the label
      * @param issueNumber: the number that identifies the issue
      * @param name:        the name of the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1644,7 +1643,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(Repository repository, long issueNumber, String name) throws IOException {
+    public ArrayList<Label> removeIssueLabel(Repository repository, long issueNumber, String name) throws IOException {
         return removeIssueLabel(repository.getOwner().getLogin(), repository.getName(), issueNumber, name, LIBRARY_OBJECT);
     }
 
@@ -1685,7 +1684,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param repo:        the name of the repository. The name is not case-sensitive
      * @param issueNumber: the number that identifies the issue
      * @param name:        the name of the label to delete
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1703,7 +1702,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}")
-    public Collection<Label> removeIssueLabel(String owner, String repo, long issueNumber, String name) throws IOException {
+    public ArrayList<Label> removeIssueLabel(String owner, String repo, long issueNumber, String name) throws IOException {
         return removeIssueLabel(owner, repo, issueNumber, name, LIBRARY_OBJECT);
     }
 
@@ -1742,7 +1741,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * Method to get the list of the labels for a repository
      *
      * @param repository: the repository from fetch the list
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1761,7 +1760,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/labels")
-    public Collection<Label> getRepositoryLabels(Repository repository) throws IOException {
+    public ArrayList<Label> getRepositoryLabels(Repository repository) throws IOException {
         return getRepositoryLabels(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -1797,7 +1796,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1815,7 +1814,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/labels")
-    public Collection<Label> getRepositoryLabels(String owner, String repo) throws IOException {
+    public ArrayList<Label> getRepositoryLabels(String owner, String repo) throws IOException {
         return getRepositoryLabels(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -1859,7 +1858,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1878,7 +1877,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/labels")
-    public Collection<Label> getRepositoryLabels(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Label> getRepositoryLabels(Repository repository, Params queryParams) throws IOException {
         return getRepositoryLabels(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1932,7 +1931,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1950,7 +1949,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/labels")
-    public Collection<Label> getRepositoryLabels(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Label> getRepositoryLabels(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoryLabels(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -2668,7 +2667,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param milestone:  the milestone from fetch the list
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2687,7 +2686,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(Repository repository, Milestone milestone) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(Repository repository, Milestone milestone) throws IOException {
         return getMilestoneIssuesLabels(repository.getOwner().getLogin(), repository.getName(), milestone.getNumber(),
                 LIBRARY_OBJECT);
     }
@@ -2728,7 +2727,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param owner:     the account owner of the repository. The name is not case-sensitive
      * @param repo:      the name of the repository. The name is not case-sensitive
      * @param milestone: the milestone from fetch the list
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2747,7 +2746,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(String owner, String repo, Milestone milestone) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(String owner, String repo, Milestone milestone) throws IOException {
         return getMilestoneIssuesLabels(owner, repo, milestone.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -2786,7 +2785,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *
      * @param repository:      the repository from fetch the list
      * @param milestoneNumber: the number that identifies the milestone
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2805,7 +2804,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(Repository repository, long milestoneNumber) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(Repository repository, long milestoneNumber) throws IOException {
         return getMilestoneIssuesLabels(repository.getOwner().getLogin(), repository.getName(), milestoneNumber,
                 LIBRARY_OBJECT);
     }
@@ -2844,7 +2843,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      * @param owner:           the account owner of the repository. The name is not case-sensitive
      * @param repo:            the name of the repository. The name is not case-sensitive
      * @param milestoneNumber: the number that identifies the milestone
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2862,7 +2861,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(String owner, String repo, long milestoneNumber) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(String owner, String repo, long milestoneNumber) throws IOException {
         return getMilestoneIssuesLabels(owner, repo, milestoneNumber, LIBRARY_OBJECT);
     }
 
@@ -2910,7 +2909,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2929,8 +2928,8 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(Repository repository, Milestone milestone,
-                                                      Params queryParams) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(Repository repository, Milestone milestone,
+                                                     Params queryParams) throws IOException {
         return getMilestoneIssuesLabels(repository.getOwner().getLogin(), repository.getName(), milestone.getNumber(),
                 queryParams, LIBRARY_OBJECT);
     }
@@ -2989,7 +2988,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3008,8 +3007,8 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(String owner, String repo, Milestone milestone,
-                                                      Params queryParams) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(String owner, String repo, Milestone milestone,
+                                                     Params queryParams) throws IOException {
         return getMilestoneIssuesLabels(owner, repo, milestone.getNumber(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -3066,7 +3065,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                                {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                            </li>
      *                         </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3085,8 +3084,8 @@ public class GitHubIssueLabelsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(Repository repository, long milestoneNumber,
-                                                      Params queryParams) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(Repository repository, long milestoneNumber,
+                                                     Params queryParams) throws IOException {
         return getMilestoneIssuesLabels(repository.getOwner().getLogin(), repository.getName(), milestoneNumber,
                 queryParams, LIBRARY_OBJECT);
     }
@@ -3145,7 +3144,7 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      *                                {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                            </li>
      *                         </ul>
-     * @return labels list as {@link Collection} of {@link Label} custom object
+     * @return labels list as {@link ArrayList} of {@link Label} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3163,8 +3162,8 @@ public class GitHubIssueLabelsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones/{milestone_number}/labels")
-    public Collection<Label> getMilestoneIssuesLabels(String owner, String repo, long milestoneNumber,
-                                                      Params queryParams) throws IOException {
+    public ArrayList<Label> getMilestoneIssuesLabels(String owner, String repo, long milestoneNumber,
+                                                     Params queryParams) throws IOException {
         return getMilestoneIssuesLabels(owner, repo, milestoneNumber, queryParams, LIBRARY_OBJECT);
     }
 

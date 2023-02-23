@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -108,7 +107,7 @@ public class GitHubReferencesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param ref:        ref parameter
-     * @return git references as {@link Collection} of {@link GitReference} custom object
+     * @return git references as {@link ArrayList} of {@link GitReference} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -127,7 +126,7 @@ public class GitHubReferencesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/git/matching-refs/{ref}")
-    public Collection<GitReference> getMatchingReferences(Repository repository, String ref) throws IOException {
+    public ArrayList<GitReference> getMatchingReferences(Repository repository, String ref) throws IOException {
         return getMatchingReferences(repository.getOwner().getLogin(), repository.getName(), ref, LIBRARY_OBJECT);
     }
 
@@ -165,7 +164,7 @@ public class GitHubReferencesManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param ref:   ref parameter
-     * @return git references as {@link Collection} of {@link GitReference} custom object
+     * @return git references as {@link ArrayList} of {@link GitReference} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -183,7 +182,7 @@ public class GitHubReferencesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/git/matching-refs/{ref}")
-    public Collection<GitReference> getMatchingReferences(String owner, String repo, String ref) throws IOException {
+    public ArrayList<GitReference> getMatchingReferences(String owner, String repo, String ref) throws IOException {
         return getMatchingReferences(owner, repo, ref, LIBRARY_OBJECT);
     }
 

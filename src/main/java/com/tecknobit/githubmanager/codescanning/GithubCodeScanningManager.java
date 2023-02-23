@@ -17,7 +17,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
-import java.util.Collection;
 import java.util.Scanner;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
@@ -133,7 +132,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * or {@code "security_events"} scope -> <b> this step is automatically made by this library. </b> <br>
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -151,7 +150,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/code-scanning/alerts")
-    public Collection<ScanningAlert> getEnterpriseScanningAlerts(String enterprise) throws IOException {
+    public ArrayList<ScanningAlert> getEnterpriseScanningAlerts(String enterprise) throws IOException {
         return getEnterpriseScanningAlerts(enterprise, LIBRARY_OBJECT);
     }
 
@@ -234,7 +233,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            available {@link Sort} - [string, default created]
      *                        </li>
      *                     </ul>
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -252,8 +251,8 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/code-scanning/alerts")
-    public Collection<ScanningAlert> getEnterpriseScanningAlerts(String enterprise,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<ScanningAlert> getEnterpriseScanningAlerts(String enterprise,
+                                                                Params queryParams) throws IOException {
         return getEnterpriseScanningAlerts(enterprise, queryParams, LIBRARY_OBJECT);
     }
 
@@ -339,7 +338,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * GitHub Apps must have the {@code "security_events"} read permission to use this endpoint
      *
      * @param org: the organization from fetch the list
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -358,7 +357,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/code-scanning/alerts")
-    public Collection<ScanningAlert> getOrganizationScanningAlerts(Organization org) throws IOException {
+    public ArrayList<ScanningAlert> getOrganizationScanningAlerts(Organization org) throws IOException {
         return getOrganizationScanningAlerts(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -405,7 +404,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * GitHub Apps must have the {@code "security_events"} read permission to use this endpoint
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -423,7 +422,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/code-scanning/alerts")
-    public Collection<ScanningAlert> getOrganizationScanningAlerts(String org) throws IOException {
+    public ArrayList<ScanningAlert> getOrganizationScanningAlerts(String org) throws IOException {
         return getOrganizationScanningAlerts(org, LIBRARY_OBJECT);
     }
 
@@ -514,7 +513,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            be returned, constants available {@link Severity} - [string]
      *                        </li>
      *                     </ul>
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -533,7 +532,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/code-scanning/alerts")
-    public Collection<ScanningAlert> getOrganizationScanningAlerts(Organization org, Params queryParams) throws IOException {
+    public ArrayList<ScanningAlert> getOrganizationScanningAlerts(Organization org, Params queryParams) throws IOException {
         return getOrganizationScanningAlerts(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -668,7 +667,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            be returned, constants available {@link Severity} - [string]
      *                        </li>
      *                     </ul>
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -686,7 +685,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/code-scanning/alerts")
-    public Collection<ScanningAlert> getOrganizationScanningAlerts(String org, Params queryParams) throws IOException {
+    public ArrayList<ScanningAlert> getOrganizationScanningAlerts(String org, Params queryParams) throws IOException {
         return getOrganizationScanningAlerts(org, queryParams, LIBRARY_OBJECT);
     }
 
@@ -776,7 +775,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * of this alert for the default branch (or for the specified Git reference if you used ref in the request)
      *
      * @param repository: the repository from fetch the list
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -795,7 +794,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts")
-    public Collection<ScanningAlert> getRepositoryScanningAlerts(Repository repository) throws IOException {
+    public ArrayList<ScanningAlert> getRepositoryScanningAlerts(Repository repository) throws IOException {
         return getRepositoryScanningAlerts(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -841,7 +840,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -859,7 +858,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts")
-    public Collection<ScanningAlert> getRepositoryScanningAlerts(String owner, String repo) throws IOException {
+    public ArrayList<ScanningAlert> getRepositoryScanningAlerts(String owner, String repo) throws IOException {
         return getRepositoryScanningAlerts(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -949,7 +948,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            be returned, constants available {@link Severity} - [string]
      *                        </li>
      *                     </ul>
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -968,8 +967,8 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts")
-    public Collection<ScanningAlert> getRepositoryScanningAlerts(Repository repository,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<ScanningAlert> getRepositoryScanningAlerts(Repository repository,
+                                                                Params queryParams) throws IOException {
         return getRepositoryScanningAlerts(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1105,7 +1104,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            be returned, constants available {@link Severity} - [string]
      *                        </li>
      *                     </ul>
-     * @return scanning alerts list as {@link Collection} of {@link ScanningAlert} custom object
+     * @return scanning alerts list as {@link ArrayList} of {@link ScanningAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1123,8 +1122,8 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts")
-    public Collection<ScanningAlert> getRepositoryScanningAlerts(String owner, String repo,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<ScanningAlert> getRepositoryScanningAlerts(String owner, String repo,
+                                                                Params queryParams) throws IOException {
         return getRepositoryScanningAlerts(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1702,7 +1701,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param alert:      the alert from fetch the list
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1721,7 +1720,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(Repository repository, ScanningAlert alert) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(Repository repository, ScanningAlert alert) throws IOException {
         return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alert.getNumber(),
                 LIBRARY_OBJECT);
     }
@@ -1766,7 +1765,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param alert: the alert from fetch the list
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1785,7 +1784,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(String owner, String repo, ScanningAlert alert) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(String owner, String repo, ScanningAlert alert) throws IOException {
         return getCodeScanningInstances(owner, repo, alert.getNumber(), LIBRARY_OBJECT);
     }
 
@@ -1830,7 +1829,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * @param alertNumber: the number that identifies an alert. You can find this at the end of the URL for a code scanning
      *                     alert within GitHub, and in the number field in the response from the GET /repos/{owner}/{repo}/code-scanning/alerts
      *                     operation
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1849,7 +1848,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(Repository repository, long alertNumber) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(Repository repository, long alertNumber) throws IOException {
         return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alertNumber,
                 LIBRARY_OBJECT);
     }
@@ -1896,7 +1895,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * @param alertNumber: the number that identifies an alert. You can find this at the end of the URL for a code scanning
      *                     alert within GitHub, and in the number field in the response from the GET /repos/{owner}/{repo}/code-scanning/alerts
      *                     operation
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1914,7 +1913,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(String owner, String repo, long alertNumber) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(String owner, String repo, long alertNumber) throws IOException {
         return getCodeScanningInstances(owner, repo, alertNumber, LIBRARY_OBJECT);
     }
 
@@ -1973,7 +1972,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            To reference a pull request use {@code "refs/pull/<number>/merge"} - [string]
      *                        </li>
      *                     </ul>
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1992,8 +1991,8 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(Repository repository, ScanningAlert alert,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(Repository repository, ScanningAlert alert,
+                                                        Params queryParams) throws IOException {
         return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alert.getNumber(),
                 queryParams, LIBRARY_OBJECT);
     }
@@ -2066,7 +2065,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            To reference a pull request use {@code "refs/pull/<number>/merge"} - [string]
      *                        </li>
      *                     </ul>
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2085,8 +2084,8 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(String owner, String repo, ScanningAlert alert,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(String owner, String repo, ScanningAlert alert,
+                                                        Params queryParams) throws IOException {
         return getCodeScanningInstances(owner, repo, alert.getNumber(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -2159,7 +2158,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            To reference a pull request use {@code "refs/pull/<number>/merge"} - [string]
      *                        </li>
      *                     </ul>
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2178,8 +2177,8 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(Repository repository, long alertNumber,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(Repository repository, long alertNumber,
+                                                        Params queryParams) throws IOException {
         return getCodeScanningInstances(repository.getOwner().getLogin(), repository.getName(), alertNumber, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -2256,7 +2255,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            To reference a pull request use {@code "refs/pull/<number>/merge"} - [string]
      *                        </li>
      *                     </ul>
-     * @return code scanning instances list as {@link Collection} of {@link Instance} custom object
+     * @return code scanning instances list as {@link ArrayList} of {@link Instance} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2274,8 +2273,8 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances")
-    public Collection<Instance> getCodeScanningInstances(String owner, String repo, long alertNumber,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<Instance> getCodeScanningInstances(String owner, String repo, long alertNumber,
+                                                        Params queryParams) throws IOException {
         return getCodeScanningInstances(owner, repo, alertNumber, queryParams, LIBRARY_OBJECT);
     }
 
@@ -2361,7 +2360,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * public repos only. GitHub Apps must have the {@code "security_events"} read permission to use this endpoint
      *
      * @param repository: the repository from fetch the list
-     * @return scanning analyses as {@link Collection} of {@link ScanningAnalysis} custom object
+     * @return scanning analyses as {@link ArrayList} of {@link ScanningAnalysis} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2380,7 +2379,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/analyses")
-    public Collection<ScanningAnalysis> getCodeScanningAnalyses(Repository repository) throws IOException {
+    public ArrayList<ScanningAnalysis> getCodeScanningAnalyses(Repository repository) throws IOException {
         return getCodeScanningAnalyses(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -2430,7 +2429,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return scanning analyses as {@link Collection} of {@link ScanningAnalysis} custom object
+     * @return scanning analyses as {@link ArrayList} of {@link ScanningAnalysis} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2448,7 +2447,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/analyses")
-    public Collection<ScanningAnalysis> getCodeScanningAnalyses(String owner, String repo) throws IOException {
+    public ArrayList<ScanningAnalysis> getCodeScanningAnalyses(String owner, String repo) throws IOException {
         return getCodeScanningAnalyses(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -2538,7 +2537,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            available {@link Sort} - [string, default created]
      *                        </li>
      *                     </ul>
-     * @return scanning analyses as {@link Collection} of {@link ScanningAnalysis} custom object
+     * @return scanning analyses as {@link ArrayList} of {@link ScanningAnalysis} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2557,8 +2556,8 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/analyses")
-    public Collection<ScanningAnalysis> getCodeScanningAnalyses(Repository repository,
-                                                                Params queryParams) throws IOException {
+    public ArrayList<ScanningAnalysis> getCodeScanningAnalyses(Repository repository,
+                                                               Params queryParams) throws IOException {
         return getCodeScanningAnalyses(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -2689,7 +2688,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *                            available {@link Sort} - [string, default created]
      *                        </li>
      *                     </ul>
-     * @return scanning analyses as {@link Collection} of {@link ScanningAnalysis} custom object
+     * @return scanning analyses as {@link ArrayList} of {@link ScanningAnalysis} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2707,8 +2706,8 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/analyses")
-    public Collection<ScanningAnalysis> getCodeScanningAnalyses(String owner, String repo,
-                                                                Params queryParams) throws IOException {
+    public ArrayList<ScanningAnalysis> getCodeScanningAnalyses(String owner, String repo,
+                                                               Params queryParams) throws IOException {
         return getCodeScanningAnalyses(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -3489,7 +3488,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      * Method to get a list of the CodeQL databases that are available in a repository
      *
      * @param repository: the repository from fetch the list
-     * @return CodeQL databases list as {@link Collection} of {@link CodeQL} custom object
+     * @return CodeQL databases list as {@link ArrayList} of {@link CodeQL} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3508,7 +3507,7 @@ public class GithubCodeScanningManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/codeql/databases")
-    public Collection<CodeQL> getCodeQLDatabases(Repository repository) throws IOException {
+    public ArrayList<CodeQL> getCodeQLDatabases(Repository repository) throws IOException {
         return getCodeQLDatabases(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -3544,7 +3543,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return CodeQL databases list as {@link Collection} of {@link CodeQL} custom object
+     * @return CodeQL databases list as {@link ArrayList} of {@link CodeQL} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3562,7 +3561,7 @@ public class GithubCodeScanningManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/code-scanning/codeql/databases")
-    public Collection<CodeQL> getCodeQLDatabases(String owner, String repo) throws IOException {
+    public ArrayList<CodeQL> getCodeQLDatabases(String owner, String repo) throws IOException {
         return getCodeQLDatabases(owner, repo, LIBRARY_OBJECT);
     }
 

@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.commits.commits.records.Commit.CommitFile.returnFiles;
 
@@ -260,9 +259,9 @@ public class CommitsComparison extends GitHubResponse {
      * Method to get {@link #commits} instance <br>
      * No-any params required
      *
-     * @return {@link #commits} instance as {@link Collection} of {@link Commit}
+     * @return {@link #commits} instance as {@link ArrayList} of {@link Commit}
      **/
-    public Collection<Commit> getCommits() {
+    public ArrayList<Commit> getCommits() {
         return commits;
     }
 
@@ -270,9 +269,9 @@ public class CommitsComparison extends GitHubResponse {
      * Method to get {@link #files} instance <br>
      * No-any params required
      *
-     * @return {@link #files} instance as {@link Collection} of {@link CommitFile}
+     * @return {@link #files} instance as {@link ArrayList} of {@link CommitFile}
      **/
-    public Collection<CommitFile> getFiles() {
+    public ArrayList<CommitFile> getFiles() {
         return files;
     }
 

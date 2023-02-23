@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code RunnersList} class is useful to format a GitHub's runners list
@@ -73,9 +72,9 @@ public class RunnersList extends GitHubList {
      * Method to get {@link #runners} instance <br>
      * No-any params required
      *
-     * @return {@link #runners} instance as {@link Collection} of {@link Runner}
+     * @return {@link #runners} instance as {@link ArrayList} of {@link Runner}
      **/
-    public Collection<Runner> getRunners() {
+    public ArrayList<Runner> getRunners() {
         return runners;
     }
 

@@ -14,8 +14,8 @@ import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 import static com.goterl.lazysodium.utils.Key.fromBase64String;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
@@ -738,7 +738,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @param publicKey:         public key to use
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -759,7 +759,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue,
+                                            ArrayList<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, publicKey);
@@ -859,7 +859,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @param publicKey:         public key to use
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -879,7 +879,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue,
+                                            ArrayList<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]), secretValue,
                 publicKey);
@@ -985,7 +985,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1006,7 +1006,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(Organization org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue) throws Exception {
+                                            ArrayList<Long> repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, getOrganizationPublicKey(name));
@@ -1108,7 +1108,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1128,7 +1128,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean createOrganizationSecret(String org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue) throws Exception {
+                                            ArrayList<Long> repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, getOrganizationPublicKey(org));
     }
@@ -1231,7 +1231,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @param publicKey:         public key to use
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -1252,7 +1252,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue,
+                                            ArrayList<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, publicKey);
@@ -1352,7 +1352,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1372,7 +1372,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue,
+                                            ArrayList<Long> repositoriesIds, String secretValue,
                                             GitHubPublicKey publicKey) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]), secretValue,
                 publicKey);
@@ -1478,7 +1478,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1499,7 +1499,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(Organization org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue) throws Exception {
+                                            ArrayList<Long> repositoriesIds, String secretValue) throws Exception {
         String name = org.getLogin();
         return workWithOrganizationSecret(name, secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, getOrganizationPublicKey(name));
@@ -1601,7 +1601,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can manage the list of selected repositories using the List selected repositories for
      *                           an organization secret, Set selected repositories for an organization secret,
-     *                           and Remove selected repository from an organization secret endpoints. -> {@link Collection} of {@link Long} format
+     *                           and Remove selected repository from an organization secret endpoints. -> {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -1621,7 +1621,7 @@ public class GitHubSecretsManager extends GitHubManager {
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}")
     public boolean updateOrganizationSecret(String org, String secretName, Visibility visibility,
-                                            Collection<Long> repositoriesIds, String secretValue) throws Exception {
+                                            ArrayList<Long> repositoriesIds, String secretValue) throws Exception {
         return workWithOrganizationSecret(org, secretName, visibility, repositoriesIds.toArray(new Long[0]),
                 secretValue, getOrganizationPublicKey(org));
     }
@@ -1965,7 +1965,7 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can add and remove individual repositories using the Add selected repository to
      *                           an organization secret and Remove selected repository from an organization
-     *                           secret endpoints in {@link Collection} of {@link Long} format
+     *                           secret endpoints in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
@@ -1973,7 +1973,7 @@ public class GitHubSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(Organization org, String secretName,
-                                                             Collection<Long> repositoriesIds) {
+                                                             ArrayList<Long> repositoriesIds) {
         return setSelectedOrganizationSecretRepositories(org.getLogin(), secretName, repositoriesIds.toArray(new Long[0]));
     }
 
@@ -1990,14 +1990,14 @@ public class GitHubSecretsManager extends GitHubManager {
      *                           You can only provide a list of repository ids when the visibility is set to selected.
      *                           You can add and remove individual repositories using the Add selected repository to
      *                           an organization secret and Remove selected repository from an organization
-     *                           secret endpoints in {@link Collection} of {@link Long} format
+     *                           secret endpoints in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/secrets/{secret_name}/repositories")
     public boolean setSelectedOrganizationSecretRepositories(String org, String secretName,
-                                                             Collection<Long> repositoriesIds) {
+                                                             ArrayList<Long> repositoriesIds) {
         return setSelectedOrganizationSecretRepositories(org, secretName, repositoriesIds.toArray(new Long[0]));
     }
 

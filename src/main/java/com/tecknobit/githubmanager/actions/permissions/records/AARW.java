@@ -5,7 +5,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code AARW} class is useful to format a GitHub's allowed actions and reusable workflows
@@ -116,9 +115,9 @@ public class AARW extends GitHubResponse {
      * Method to get {@link #patternsAllowed} instance <br>
      * No-any params required
      *
-     * @return {@link #patternsAllowed} instance as {@link Collection} of {@link String}
+     * @return {@link #patternsAllowed} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getPatternsAllowed() {
+    public ArrayList<String> getPatternsAllowed() {
         return patternsAllowed;
     }
 

@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code CombinedStatus} class is useful to format a GitHub's combined status
@@ -124,9 +123,9 @@ public class CombinedStatus extends GitHubList {
      * Method to get {@link #statuses} instance <br>
      * No-any params required
      *
-     * @return {@link #statuses} instance as {@link Collection} of {@link CommitStatus}
+     * @return {@link #statuses} instance as {@link ArrayList} of {@link CommitStatus}
      **/
-    public Collection<CommitStatus> getStatuses() {
+    public ArrayList<CommitStatus> getStatuses() {
         return statuses;
     }
 

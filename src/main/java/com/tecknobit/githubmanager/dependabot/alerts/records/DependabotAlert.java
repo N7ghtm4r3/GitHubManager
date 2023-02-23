@@ -10,7 +10,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
@@ -572,9 +571,9 @@ public class DependabotAlert extends GitHubAlert {
          * Method to get {@link #vulnerabilities} instance <br>
          * No-any params required
          *
-         * @return {@link #vulnerabilities} instance as {@link Collection} of {@link Vulnerability}
+         * @return {@link #vulnerabilities} instance as {@link ArrayList} of {@link Vulnerability}
          **/
-        public Collection<Vulnerability> getVulnerabilities() {
+        public ArrayList<Vulnerability> getVulnerabilities() {
             return vulnerabilities;
         }
 
@@ -602,9 +601,9 @@ public class DependabotAlert extends GitHubAlert {
          * Method to get {@link #cwes} instance <br>
          * No-any params required
          *
-         * @return {@link #cwes} instance as {@link Collection} of {@link CWE}
+         * @return {@link #cwes} instance as {@link ArrayList} of {@link CWE}
          **/
-        public Collection<CWE> getCwes() {
+        public ArrayList<CWE> getCwes() {
             return cwes;
         }
 
@@ -612,9 +611,9 @@ public class DependabotAlert extends GitHubAlert {
          * Method to get {@link #identifiers} instance <br>
          * No-any params required
          *
-         * @return {@link #identifiers} instance as {@link Collection} of {@link Identifier}
+         * @return {@link #identifiers} instance as {@link ArrayList} of {@link Identifier}
          **/
-        public Collection<Identifier> getIdentifiers() {
+        public ArrayList<Identifier> getIdentifiers() {
             return identifiers;
         }
 
@@ -622,9 +621,9 @@ public class DependabotAlert extends GitHubAlert {
          * Method to get {@link #references} instance <br>
          * No-any params required
          *
-         * @return {@link #references} instance as {@link Collection} of {@link String}
+         * @return {@link #references} instance as {@link ArrayList} of {@link String}
          **/
-        public Collection<String> getReferences() {
+        public ArrayList<String> getReferences() {
             return references;
         }
 

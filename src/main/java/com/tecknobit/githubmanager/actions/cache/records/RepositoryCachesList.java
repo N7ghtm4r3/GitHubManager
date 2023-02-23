@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -96,9 +95,9 @@ public class RepositoryCachesList extends GitHubList {
      * Method to get {@link #actionCaches} instance <br>
      * No-any params required
      *
-     * @return {@link #actionCaches} instance as {@link Collection} of {@link ActionCache}
+     * @return {@link #actionCaches} instance as {@link ArrayList} of {@link ActionCache}
      **/
-    public Collection<ActionCache> getActionCaches() {
+    public ArrayList<ActionCache> getActionCaches() {
         return actionCaches;
     }
 

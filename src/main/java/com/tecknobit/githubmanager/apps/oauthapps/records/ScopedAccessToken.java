@@ -8,7 +8,6 @@ import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -183,9 +182,9 @@ public class ScopedAccessToken extends GitHubToken {
      * Method to get {@link #scopes} instance <br>
      * No-any params required
      *
-     * @return {@link #scopes} instance as {@link Collection} of {@link String}
+     * @return {@link #scopes} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getScopes() {
+    public ArrayList<String> getScopes() {
         return scopes;
     }
 

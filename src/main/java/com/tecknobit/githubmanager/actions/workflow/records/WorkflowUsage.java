@@ -5,7 +5,6 @@ import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code WorkflowUsage} class is useful to format a GitHub's workflow usage
@@ -49,9 +48,9 @@ public class WorkflowUsage extends GitHubResponse {
      * Method to get {@link #billables} instance <br>
      * No-any params required
      *
-     * @return {@link #billables} instance as {@link Collection} of {@link Billable}
+     * @return {@link #billables} instance as {@link ArrayList} of {@link Billable}
      **/
-    public Collection<Billable> getBillables() {
+    public ArrayList<Billable> getBillables() {
         return billables;
     }
 

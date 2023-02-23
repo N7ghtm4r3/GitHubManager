@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.POST;
@@ -114,7 +113,7 @@ public class GitHubBranchesManager extends GitHubManager {
      * Method to get a list of branches
      *
      * @param repository: repository from fetch the list
-     * @return branches list as {@link Collection} of {@link Branch} custom object
+     * @return branches list as {@link ArrayList} of {@link Branch} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -133,7 +132,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(Repository repository) throws Exception {
+    public ArrayList<Branch> getBranches(Repository repository) throws Exception {
         return getBranches(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -169,25 +168,25 @@ public class GitHubBranchesManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return branches list as {@link Collection} of {@link Branch} custom object
+     * @return branches list as {@link ArrayList} of {@link Branch} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     *                   <ul>
+     *                       <li>
+     *                           {@link #getErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #getJSONErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #printErrorResponse()}
+     *                       </li>
+     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branches#list-branches">
      * List branches</a>
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(String owner, String repo) throws Exception {
+    public ArrayList<Branch> getBranches(String owner, String repo) throws Exception {
         return getBranches(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -236,7 +235,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return branches list as {@link Collection} of {@link Branch} custom object
+     * @return branches list as {@link ArrayList} of {@link Branch} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -255,7 +254,7 @@ public class GitHubBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(Repository repository, Params queryParams) throws Exception {
+    public ArrayList<Branch> getBranches(Repository repository, Params queryParams) throws Exception {
         return getBranches(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -319,7 +318,7 @@ public class GitHubBranchesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return branches list as {@link Collection} of {@link Branch} custom object
+     * @return branches list as {@link ArrayList} of {@link Branch} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -337,7 +336,7 @@ public class GitHubBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches")
-    public Collection<Branch> getBranches(String owner, String repo, Params queryParams) throws Exception {
+    public ArrayList<Branch> getBranches(String owner, String repo, Params queryParams) throws Exception {
         return getBranches(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

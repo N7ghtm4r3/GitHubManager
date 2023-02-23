@@ -4,7 +4,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code License} class is useful to format a GitHub's license
@@ -122,9 +121,9 @@ public class License extends CommonLicense {
      * Method to get {@link #permissions} instance <br>
      * No-any params required
      *
-     * @return {@link #permissions} instance as {@link Collection} of {@link String}
+     * @return {@link #permissions} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getPermissions() {
+    public ArrayList<String> getPermissions() {
         return permissions;
     }
 
@@ -132,9 +131,9 @@ public class License extends CommonLicense {
      * Method to get {@link #conditions} instance <br>
      * No-any params required
      *
-     * @return {@link #conditions} instance as {@link Collection} of {@link String}
+     * @return {@link #conditions} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getConditions() {
+    public ArrayList<String> getConditions() {
         return conditions;
     }
 
@@ -142,9 +141,9 @@ public class License extends CommonLicense {
      * Method to get {@link #limitations} instance <br>
      * No-any params required
      *
-     * @return {@link #limitations} instance as {@link Collection} of {@link String}
+     * @return {@link #limitations} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getLimitations() {
+    public ArrayList<String> getLimitations() {
         return limitations;
     }
 

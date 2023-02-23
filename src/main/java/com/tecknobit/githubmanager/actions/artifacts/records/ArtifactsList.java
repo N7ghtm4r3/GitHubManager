@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code ArtifactsList} class is useful to format a list of GitHub's artifact
@@ -71,9 +70,9 @@ public class ArtifactsList extends GitHubList {
      * Method to get {@link #artifacts} instance <br>
      * No-any params required
      *
-     * @return {@link #artifacts} instance as {@link Collection} of {@link Artifact}
+     * @return {@link #artifacts} instance as {@link ArrayList} of {@link Artifact}
      **/
-    public Collection<Artifact> getArtifacts() {
+    public ArrayList<Artifact> getArtifacts() {
         return artifacts;
     }
 

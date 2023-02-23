@@ -9,7 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code DependencyReview} class is useful to format a GitHub's dependency review
@@ -224,9 +223,9 @@ public class DependencyReview extends GitHubResponse {
      * Method to get {@link #vulnerabilities} instance <br>
      * No-any params required
      *
-     * @return {@link #vulnerabilities} instance as {@link Collection} of {@link ReviewVulnerability}
+     * @return {@link #vulnerabilities} instance as {@link ArrayList} of {@link ReviewVulnerability}
      **/
-    public Collection<ReviewVulnerability> getVulnerabilities() {
+    public ArrayList<ReviewVulnerability> getVulnerabilities() {
         return vulnerabilities;
     }
 

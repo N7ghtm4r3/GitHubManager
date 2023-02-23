@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code CodespacesList} class is useful to format a GitHub's codespaces list
@@ -73,9 +72,9 @@ public class CodespacesList extends GitHubList {
      * Method to get {@link #codespaces} instance <br>
      * No-any params required
      *
-     * @return {@link #codespaces} instance as {@link Collection} of {@link Codespace}
+     * @return {@link #codespaces} instance as {@link ArrayList} of {@link Codespace}
      **/
-    public Collection<Codespace> getCodespaces() {
+    public ArrayList<Codespace> getCodespaces() {
         return codespaces;
     }
 

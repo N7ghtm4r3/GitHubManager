@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -94,7 +93,7 @@ public class GitHubCodesConductManager extends GitHubManager {
      * Method to get all codes of conduct <br>
      * No-any params required
      *
-     * @return codes of conduct list as {@link Collection} of {@link CodeConduct} custom object
+     * @return codes of conduct list as {@link ArrayList} of {@link CodeConduct} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -112,7 +111,7 @@ public class GitHubCodesConductManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/codes_of_conduct")
-    public Collection<CodeConduct> getAllCodesOfConduct() throws IOException {
+    public ArrayList<CodeConduct> getAllCodesOfConduct() throws IOException {
         return getAllCodesOfConduct(LIBRARY_OBJECT);
     }
 

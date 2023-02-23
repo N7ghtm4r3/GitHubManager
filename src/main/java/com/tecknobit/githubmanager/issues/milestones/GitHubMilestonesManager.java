@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -98,7 +97,7 @@ public class GitHubMilestonesManager extends GitHubManager {
      * Method to get the list of the milestones
      *
      * @param repository: the repository from fetch the list
-     * @return milestones list as {@link Collection} of {@link Milestone} custom object
+     * @return milestones list as {@link ArrayList} of {@link Milestone} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -117,7 +116,7 @@ public class GitHubMilestonesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones")
-    public Collection<Milestone> getMilestones(Repository repository) throws IOException {
+    public ArrayList<Milestone> getMilestones(Repository repository) throws IOException {
         return getMilestones(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -153,7 +152,7 @@ public class GitHubMilestonesManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return milestones list as {@link Collection} of {@link Milestone} custom object
+     * @return milestones list as {@link ArrayList} of {@link Milestone} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -171,7 +170,7 @@ public class GitHubMilestonesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones")
-    public Collection<Milestone> getMilestones(String owner, String repo) throws IOException {
+    public ArrayList<Milestone> getMilestones(String owner, String repo) throws IOException {
         return getMilestones(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -227,7 +226,7 @@ public class GitHubMilestonesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return milestones list as {@link Collection} of {@link Milestone} custom object
+     * @return milestones list as {@link ArrayList} of {@link Milestone} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -246,7 +245,7 @@ public class GitHubMilestonesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones")
-    public Collection<Milestone> getMilestones(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Milestone> getMilestones(Repository repository, Params queryParams) throws IOException {
         return getMilestones(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -324,7 +323,7 @@ public class GitHubMilestonesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return milestones list as {@link Collection} of {@link Milestone} custom object
+     * @return milestones list as {@link ArrayList} of {@link Milestone} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -342,7 +341,7 @@ public class GitHubMilestonesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/milestones")
-    public Collection<Milestone> getMilestones(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Milestone> getMilestones(String owner, String repo, Params queryParams) throws IOException {
         return getMilestones(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

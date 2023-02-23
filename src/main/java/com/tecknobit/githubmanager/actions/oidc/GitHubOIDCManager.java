@@ -11,7 +11,7 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.PUT;
@@ -100,7 +100,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * GitHub Apps must have the {@code "organization_administration:write"} permission to use this endpoint
      *
      * @param org: the organization from fetch the OIDC subject claim
-     * @return customization template for an OpenID Connect (OIDC) subject claim as {@link Collection} of {@link String}
+     * @return customization template for an OpenID Connect (OIDC) subject claim as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -119,7 +119,7 @@ public class GitHubOIDCManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")
-    public Collection<String> getOrganizationOIDCSubjectClaim(Organization org) throws IOException {
+    public ArrayList<String> getOrganizationOIDCSubjectClaim(Organization org) throws IOException {
         return getOrganizationOIDCSubjectClaim(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -160,7 +160,7 @@ public class GitHubOIDCManager extends GitHubManager {
      * GitHub Apps must have the {@code "organization_administration:write"} permission to use this endpoint
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return customization template for an OpenID Connect (OIDC) subject claim as {@link Collection} of {@link String}
+     * @return customization template for an OpenID Connect (OIDC) subject claim as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -178,7 +178,7 @@ public class GitHubOIDCManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")
-    public Collection<String> getOrganizationOIDCSubjectClaim(String org) throws IOException {
+    public ArrayList<String> getOrganizationOIDCSubjectClaim(String org) throws IOException {
         return getOrganizationOIDCSubjectClaim(org, LIBRARY_OBJECT);
     }
 
@@ -228,14 +228,14 @@ public class GitHubOIDCManager extends GitHubManager {
      *
      * @param org:              the organization where set the OIDC subject claim
      * @param includeClaimKeys: array of unique strings. Each claim key can only contain alphanumeric characters and underscores
-     *                          as {@link Collection} of {@link String} format
+     *                          as {@link ArrayList} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Set the customization template for an OIDC subject claim for an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/oidc/customization/sub")
-    public boolean setOrganizationOIDCSubjectClaim(Organization org, Collection<String> includeClaimKeys) {
+    public boolean setOrganizationOIDCSubjectClaim(Organization org, ArrayList<String> includeClaimKeys) {
         return setOrganizationOIDCSubjectClaim(org.getLogin(), includeClaimKeys.toArray(new String[0]));
     }
 
@@ -266,13 +266,13 @@ public class GitHubOIDCManager extends GitHubManager {
      *
      * @param org:              the organization name. The name is not case-sensitive
      * @param includeClaimKeys: array of unique strings. Each claim key can only contain alphanumeric characters and underscores
-     *                          as {@link Collection} of {@link String} format
+     *                          as {@link ArrayList} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization">
      * Set the customization template for an OIDC subject claim for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/oidc/customization/sub")
-    public boolean setOrganizationOIDCSubjectClaim(String org, Collection<String> includeClaimKeys) {
+    public boolean setOrganizationOIDCSubjectClaim(String org, ArrayList<String> includeClaimKeys) {
         return setOrganizationOIDCSubjectClaim(org, includeClaimKeys.toArray(new String[0]));
     }
 
@@ -495,14 +495,14 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param useDefault: whether to use the default template or not. If {@code "true"}, the {@code "include_claim_keys"}
      *                    field is ignored
      * @param claimKeys:  array of unique strings. Each claim key can only contain alphanumeric characters and underscores
-     *                    as {@link Collection} of {@link String} format
+     *                    as {@link ArrayList} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")
-    public boolean setRepositoryOIDCSubjectClaim(Repository repository, boolean useDefault, Collection<String> claimKeys) {
+    public boolean setRepositoryOIDCSubjectClaim(Repository repository, boolean useDefault, ArrayList<String> claimKeys) {
         return setRepositoryOIDCSubjectClaim(repository.getOwner().getLogin(), repository.getName(), useDefault,
                 claimKeys.toArray(new String[0]));
     }
@@ -518,14 +518,14 @@ public class GitHubOIDCManager extends GitHubManager {
      * @param useDefault: whether to use the default template or not. If {@code "true"}, the {@code "include_claim_keys"}
      *                    field is ignored
      * @param claimKeys:  array of unique strings. Each claim key can only contain alphanumeric characters and underscores
-     *                    as {@link Collection} of {@link String} format
+     *                    as {@link ArrayList} of {@link String} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository">
      * Set the customization template for an OIDC subject claim for a repository</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/actions/oidc/customization/sub")
     public boolean setRepositoryOIDCSubjectClaim(String owner, String repo, boolean useDefault,
-                                                 Collection<String> claimKeys) {
+                                                 ArrayList<String> claimKeys) {
         return setRepositoryOIDCSubjectClaim(owner, repo, useDefault, claimKeys.toArray(new String[0]));
     }
 

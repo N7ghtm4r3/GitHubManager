@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.NoSuchElementException;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
@@ -174,9 +173,9 @@ public class Environment extends BaseResponseDetails {
      * Method to get {@link #protectionRules} instance <br>
      * No-any params required
      *
-     * @return {@link #protectionRules} instance as {@link Collection} of {@link ProtectionRule}
+     * @return {@link #protectionRules} instance as {@link ArrayList} of {@link ProtectionRule}
      **/
-    public Collection<ProtectionRule> getProtectionRules() {
+    public ArrayList<ProtectionRule> getProtectionRules() {
         return protectionRules;
     }
 

@@ -4,7 +4,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code SARIFUpload} class is useful to format a GitHub's SARIF upload
@@ -82,9 +81,9 @@ public class SARIFUpload extends GitHubResponse {
      * Method to get {@link #errors} instance <br>
      * No-any params required
      *
-     * @return {@link #errors} instance as {@link Collection} of {@link String}
+     * @return {@link #errors} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getErrors() {
+    public ArrayList<String> getErrors() {
         return errors;
     }
 

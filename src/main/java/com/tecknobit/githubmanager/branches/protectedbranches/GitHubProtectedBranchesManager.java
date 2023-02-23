@@ -19,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
@@ -4336,7 +4336,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the branch  from fetch the list
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4355,7 +4355,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> getAllStatusCheckContexts(Repository repository, Branch branch) throws IOException {
+    public ArrayList<String> getAllStatusCheckContexts(Repository repository, Branch branch) throws IOException {
         return getAllStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 LIBRARY_OBJECT);
     }
@@ -4400,7 +4400,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch  from fetch the list
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4419,7 +4419,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> getAllStatusCheckContexts(String owner, String repo, Branch branch) throws IOException {
+    public ArrayList<String> getAllStatusCheckContexts(String owner, String repo, Branch branch) throws IOException {
         return getAllStatusCheckContexts(owner, repo, branch.getName(), LIBRARY_OBJECT);
     }
 
@@ -4462,7 +4462,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4481,7 +4481,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> getAllStatusCheckContexts(Repository repository, String branch) throws IOException {
+    public ArrayList<String> getAllStatusCheckContexts(Repository repository, String branch) throws IOException {
         return getAllStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch,
                 LIBRARY_OBJECT);
     }
@@ -4525,7 +4525,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4543,7 +4543,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> getAllStatusCheckContexts(String owner, String repo, String branch) throws IOException {
+    public ArrayList<String> getAllStatusCheckContexts(String owner, String repo, String branch) throws IOException {
         return getAllStatusCheckContexts(owner, repo, branch, LIBRARY_OBJECT);
     }
 
@@ -4585,8 +4585,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param branch:     the branch to add the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4605,8 +4605,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(Repository repository, Branch branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(Repository repository, Branch branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return addStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 LIBRARY_OBJECT);
     }
@@ -4618,7 +4618,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param branch:     the branch to add the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4638,7 +4638,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T addStatusCheckContexts(Repository repository, Branch branch, Collection<String> contexts,
+    public <T> T addStatusCheckContexts(Repository repository, Branch branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return addStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 format);
@@ -4652,8 +4652,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to add the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4672,8 +4672,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(String owner, String repo, Branch branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(String owner, String repo, Branch branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return addStatusCheckContexts(owner, repo, branch.getName(), contexts, LIBRARY_OBJECT);
     }
 
@@ -4685,7 +4685,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to add the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4705,7 +4705,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T addStatusCheckContexts(String owner, String repo, Branch branch, Collection<String> contexts,
+    public <T> T addStatusCheckContexts(String owner, String repo, Branch branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return addStatusCheckContexts(owner, repo, branch.getName(), contexts, format);
     }
@@ -4717,8 +4717,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4737,8 +4737,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(Repository repository, String branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(Repository repository, String branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return addStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts,
                 LIBRARY_OBJECT);
     }
@@ -4750,7 +4750,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4770,7 +4770,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T addStatusCheckContexts(Repository repository, String branch, Collection<String> contexts,
+    public <T> T addStatusCheckContexts(Repository repository, String branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return addStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts, format);
     }
@@ -4783,8 +4783,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4802,8 +4802,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(String owner, String repo, String branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(String owner, String repo, String branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return addStatusCheckContexts(owner, repo, branch, contexts, LIBRARY_OBJECT);
     }
 
@@ -4815,7 +4815,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -4834,7 +4834,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Add status check contexts</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T addStatusCheckContexts(String owner, String repo, String branch, Collection<String> contexts,
+    public <T> T addStatusCheckContexts(String owner, String repo, String branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return addStatusCheckContexts(owner, repo, branch, contexts.toArray(new String[0]), format);
     }
@@ -4847,7 +4847,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository to add the list
      * @param branch:     the branch to add the list
      * @param contexts:   the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4866,8 +4866,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(Repository repository, Branch branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(Repository repository, Branch branch,
+                                                    String[] contexts) throws IOException {
         return addStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 LIBRARY_OBJECT);
     }
@@ -4914,7 +4914,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to add the list
      * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4933,8 +4933,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(String owner, String repo, Branch branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(String owner, String repo, Branch branch,
+                                                    String[] contexts) throws IOException {
         return addStatusCheckContexts(owner, repo, branch.getName(), contexts, LIBRARY_OBJECT);
     }
 
@@ -4979,7 +4979,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository to add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @param contexts:   the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -4998,8 +4998,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(Repository repository, String branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(Repository repository, String branch,
+                                                    String[] contexts) throws IOException {
         return addStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts,
                 LIBRARY_OBJECT);
     }
@@ -5045,7 +5045,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
      * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5063,8 +5063,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> addStatusCheckContexts(String owner, String repo, String branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> addStatusCheckContexts(String owner, String repo, String branch,
+                                                    String[] contexts) throws IOException {
         return addStatusCheckContexts(owner, repo, branch, contexts, LIBRARY_OBJECT);
     }
 
@@ -5110,8 +5110,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to set the list
      * @param branch:     the branch to set the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5130,8 +5130,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(Repository repository, Branch branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(Repository repository, Branch branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return setStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 LIBRARY_OBJECT);
     }
@@ -5143,7 +5143,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to set the list
      * @param branch:     the branch to set the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5163,7 +5163,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T setStatusCheckContexts(Repository repository, Branch branch, Collection<String> contexts,
+    public <T> T setStatusCheckContexts(Repository repository, Branch branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return setStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 format);
@@ -5177,8 +5177,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to set the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5197,8 +5197,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(String owner, String repo, Branch branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(String owner, String repo, Branch branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return setStatusCheckContexts(owner, repo, branch.getName(), contexts, LIBRARY_OBJECT);
     }
 
@@ -5210,7 +5210,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to set the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5230,7 +5230,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T setStatusCheckContexts(String owner, String repo, Branch branch, Collection<String> contexts,
+    public <T> T setStatusCheckContexts(String owner, String repo, Branch branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return setStatusCheckContexts(owner, repo, branch.getName(), contexts, format);
     }
@@ -5242,8 +5242,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5262,8 +5262,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(Repository repository, String branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(Repository repository, String branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return setStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts,
                 LIBRARY_OBJECT);
     }
@@ -5275,7 +5275,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository to set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5295,7 +5295,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T setStatusCheckContexts(Repository repository, String branch, Collection<String> contexts,
+    public <T> T setStatusCheckContexts(Repository repository, String branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return setStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts, format);
     }
@@ -5308,8 +5308,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5327,8 +5327,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(String owner, String repo, String branch,
-                                                     Collection<String> contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(String owner, String repo, String branch,
+                                                    ArrayList<String> contexts) throws IOException {
         return setStatusCheckContexts(owner, repo, branch, contexts, LIBRARY_OBJECT);
     }
 
@@ -5340,7 +5340,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5359,7 +5359,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Set status check contexts</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T setStatusCheckContexts(String owner, String repo, String branch, Collection<String> contexts,
+    public <T> T setStatusCheckContexts(String owner, String repo, String branch, ArrayList<String> contexts,
                                         ReturnFormat format) throws IOException {
         return setStatusCheckContexts(owner, repo, branch, contexts.toArray(new String[0]), format);
     }
@@ -5372,7 +5372,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository to set the list
      * @param branch:     the branch to set the list
      * @param contexts:   the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5391,8 +5391,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(Repository repository, Branch branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(Repository repository, Branch branch,
+                                                    String[] contexts) throws IOException {
         return setStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 LIBRARY_OBJECT);
     }
@@ -5439,7 +5439,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to set the list
      * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5458,8 +5458,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(String owner, String repo, Branch branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(String owner, String repo, Branch branch,
+                                                    String[] contexts) throws IOException {
         return setStatusCheckContexts(owner, repo, branch.getName(), contexts, LIBRARY_OBJECT);
     }
 
@@ -5504,7 +5504,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository to set the list
      * @param branch:     the branch to set the list
      * @param contexts:   the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5523,8 +5523,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(Repository repository, String branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(Repository repository, String branch,
+                                                    String[] contexts) throws IOException {
         return setStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts,
                 LIBRARY_OBJECT);
     }
@@ -5570,7 +5570,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch to set the list
      * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5588,8 +5588,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> setStatusCheckContexts(String owner, String repo, String branch,
-                                                     String[] contexts) throws IOException {
+    public ArrayList<String> setStatusCheckContexts(String owner, String repo, String branch,
+                                                    String[] contexts) throws IOException {
         return setStatusCheckContexts(owner, repo, branch, contexts, LIBRARY_OBJECT);
     }
 
@@ -5635,8 +5635,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5655,8 +5655,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(Repository repository, Branch branch,
-                                                        Collection<String> contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(Repository repository, Branch branch,
+                                                       ArrayList<String> contexts) throws IOException {
         return removeStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 LIBRARY_OBJECT);
     }
@@ -5668,7 +5668,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5688,7 +5688,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T removeStatusCheckContexts(Repository repository, Branch branch, Collection<String> contexts,
+    public <T> T removeStatusCheckContexts(Repository repository, Branch branch, ArrayList<String> contexts,
                                            ReturnFormat format) throws IOException {
         return removeStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 format);
@@ -5702,8 +5702,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch from remove the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5722,8 +5722,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(String owner, String repo, Branch branch,
-                                                        Collection<String> contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(String owner, String repo, Branch branch,
+                                                       ArrayList<String> contexts) throws IOException {
         return removeStatusCheckContexts(owner, repo, branch.getName(), contexts, LIBRARY_OBJECT);
     }
 
@@ -5735,7 +5735,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch from remove the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5755,7 +5755,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T removeStatusCheckContexts(String owner, String repo, Branch branch, Collection<String> contexts,
+    public <T> T removeStatusCheckContexts(String owner, String repo, Branch branch, ArrayList<String> contexts,
                                            ReturnFormat format) throws IOException {
         return removeStatusCheckContexts(owner, repo, branch.getName(), contexts, format);
     }
@@ -5767,8 +5767,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5787,8 +5787,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(Repository repository, String branch,
-                                                        Collection<String> contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(Repository repository, String branch,
+                                                       ArrayList<String> contexts) throws IOException {
         return removeStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts,
                 LIBRARY_OBJECT);
     }
@@ -5800,7 +5800,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param contexts:   the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts:   the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5820,7 +5820,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T removeStatusCheckContexts(Repository repository, String branch, Collection<String> contexts,
+    public <T> T removeStatusCheckContexts(Repository repository, String branch, ArrayList<String> contexts,
                                            ReturnFormat format) throws IOException {
         return removeStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts, format);
     }
@@ -5833,8 +5833,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch from remove the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5852,8 +5852,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(String owner, String repo, String branch,
-                                                        Collection<String> contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(String owner, String repo, String branch,
+                                                       ArrayList<String> contexts) throws IOException {
         return removeStatusCheckContexts(owner, repo, branch, contexts, LIBRARY_OBJECT);
     }
 
@@ -5865,7 +5865,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch from remove the list
-     * @param contexts: the name of the status checks as {@link Collection} of {@link String} format
+     * @param contexts: the name of the status checks as {@link ArrayList} of {@link String} format
      * @param format:   return type formatter -> {@link ReturnFormat}
      * @return contexts list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -5884,7 +5884,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Remove status check contexts</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public <T> T removeStatusCheckContexts(String owner, String repo, String branch, Collection<String> contexts,
+    public <T> T removeStatusCheckContexts(String owner, String repo, String branch, ArrayList<String> contexts,
                                            ReturnFormat format) throws IOException {
         return removeStatusCheckContexts(owner, repo, branch, contexts.toArray(new String[0]), format);
     }
@@ -5897,7 +5897,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
      * @param contexts:   the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5916,8 +5916,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(Repository repository, Branch branch,
-                                                        String[] contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(Repository repository, Branch branch,
+                                                       String[] contexts) throws IOException {
         return removeStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch.getName(), contexts,
                 LIBRARY_OBJECT);
     }
@@ -5964,7 +5964,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch from remove the list
      * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -5983,8 +5983,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(String owner, String repo, Branch branch,
-                                                        String[] contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(String owner, String repo, Branch branch,
+                                                       String[] contexts) throws IOException {
         return removeStatusCheckContexts(owner, repo, branch.getName(), contexts, LIBRARY_OBJECT);
     }
 
@@ -6026,30 +6026,30 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server.
      * For more information, see GitHub's products in the GitHub Help documentation
      *
-     * @param repository:  the repository from remove the list
-     * @param branch: the branch from remove the list
-     * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @param repository: the repository from remove the list
+     * @param branch:     the branch from remove the list
+     * @param contexts:   the name of the status checks as array of {@link String} format
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                   <ul>
-     *                       <li>
-     *                           {@link #getErrorResponse()}
-     *                       </li>
-     *                       <li>
-     *                           {@link #getJSONErrorResponse()}
-     *                       </li>
-     *                       <li>
-     *                           {@link #printErrorResponse()}
-     *                       </li>
-     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#remove-status-check-contexts">
      * Remove status check contexts</a>
      **/
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(Repository repository, String branch,
-                                                        String[] contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(Repository repository, String branch,
+                                                       String[] contexts) throws IOException {
         return removeStatusCheckContexts(repository.getOwner().getLogin(), repository.getName(), branch, contexts,
                 LIBRARY_OBJECT);
     }
@@ -6095,7 +6095,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param branch:   the branch from remove the list
      * @param contexts: the name of the status checks as array of {@link String} format
-     * @return contexts list as {@link Collection} of {@link String}
+     * @return contexts list as {@link ArrayList} of {@link String}
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -6113,8 +6113,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts")
-    public Collection<String> removeStatusCheckContexts(String owner, String repo, String branch,
-                                                        String[] contexts) throws IOException {
+    public ArrayList<String> removeStatusCheckContexts(String owner, String repo, String branch,
+                                                       String[] contexts) throws IOException {
         return removeStatusCheckContexts(owner, repo, branch, contexts, LIBRARY_OBJECT);
     }
 
@@ -6539,26 +6539,26 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the branch from fetch the list
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     *                   <ul>
+     *                       <li>
+     *                           {@link #getErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #getJSONErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #printErrorResponse()}
+     *                       </li>
+     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> getAppsWithTheAccess(Repository repository, Branch branch) throws Exception {
+    public ArrayList<GitHubApp> getAppsWithTheAccess(Repository repository, Branch branch) throws Exception {
         return getAppsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 LIBRARY_OBJECT);
     }
@@ -6605,26 +6605,26 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from fetch the list
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     *                   <ul>
+     *                       <li>
+     *                           {@link #getErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #getJSONErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #printErrorResponse()}
+     *                       </li>
+     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> getAppsWithTheAccess(String owner, String repo, Branch branch) throws Exception {
+    public ArrayList<GitHubApp> getAppsWithTheAccess(String owner, String repo, Branch branch) throws Exception {
         return getAppsWithTheAccess(owner, repo, branch.getName(), LIBRARY_OBJECT);
     }
 
@@ -6670,26 +6670,26 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     *                   <ul>
+     *                       <li>
+     *                           {@link #getErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #getJSONErrorResponse()}
+     *                       </li>
+     *                       <li>
+     *                           {@link #printErrorResponse()}
+     *                       </li>
+     *                   </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch">
      * Get apps with access to the protected branch</a>
      **/
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> getAppsWithTheAccess(Repository repository, String branch) throws Exception {
+    public ArrayList<GitHubApp> getAppsWithTheAccess(Repository repository, String branch) throws Exception {
         return getAppsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, LIBRARY_OBJECT);
     }
 
@@ -6735,7 +6735,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -6753,7 +6753,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> getAppsWithTheAccess(String owner, String repo, String branch) throws Exception {
+    public ArrayList<GitHubApp> getAppsWithTheAccess(String owner, String repo, String branch) throws Exception {
         return getAppsWithTheAccess(owner, repo, branch, LIBRARY_OBJECT);
     }
 
@@ -6801,7 +6801,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where add the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -6820,8 +6820,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(Repository repository, Branch branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(Repository repository, Branch branch,
+                                                         ArrayList<String> apps) throws Exception {
         return addAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 LIBRARY_OBJECT);
     }
@@ -6856,7 +6856,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T addAppAccessRestrictions(Repository repository, Branch branch, Collection<String> apps,
+    public <T> T addAppAccessRestrictions(Repository repository, Branch branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return addAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 format);
@@ -6874,7 +6874,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where add the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -6893,8 +6893,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(String owner, String repo, Branch branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(String owner, String repo, Branch branch,
+                                                         ArrayList<String> apps) throws Exception {
         return addAppAccessRestrictions(owner, repo, branch.getName(), apps, LIBRARY_OBJECT);
     }
 
@@ -6929,7 +6929,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T addAppAccessRestrictions(String owner, String repo, Branch branch, Collection<String> apps,
+    public <T> T addAppAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return addAppAccessRestrictions(owner, repo, branch.getName(), apps, format);
     }
@@ -6945,7 +6945,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -6964,8 +6964,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(Repository repository, String branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(Repository repository, String branch,
+                                                         ArrayList<String> apps) throws Exception {
         return addAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps,
                 LIBRARY_OBJECT);
     }
@@ -7000,7 +7000,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T addAppAccessRestrictions(Repository repository, String branch, Collection<String> apps,
+    public <T> T addAppAccessRestrictions(Repository repository, String branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return addAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps, format);
     }
@@ -7017,7 +7017,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name.
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7035,8 +7035,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(String owner, String repo, String branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(String owner, String repo, String branch,
+                                                         ArrayList<String> apps) throws Exception {
         return addAppAccessRestrictions(owner, repo, branch, apps, LIBRARY_OBJECT);
     }
 
@@ -7070,7 +7070,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Add app access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T addAppAccessRestrictions(String owner, String repo, String branch, Collection<String> apps,
+    public <T> T addAppAccessRestrictions(String owner, String repo, String branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return addAppAccessRestrictions(owner, repo, branch, apps.toArray(new String[0]), format);
     }
@@ -7086,7 +7086,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where add the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7105,8 +7105,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(Repository repository, Branch branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(Repository repository, Branch branch,
+                                                         String[] apps) throws Exception {
         return addAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 LIBRARY_OBJECT);
     }
@@ -7159,7 +7159,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where add the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7178,8 +7178,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(String owner, String repo, Branch branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(String owner, String repo, Branch branch,
+                                                         String[] apps) throws Exception {
         return addAppAccessRestrictions(owner, repo, branch.getName(), apps, LIBRARY_OBJECT);
     }
 
@@ -7230,7 +7230,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7249,8 +7249,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(Repository repository, String branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(Repository repository, String branch,
+                                                         String[] apps) throws Exception {
         return addAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps,
                 LIBRARY_OBJECT);
     }
@@ -7302,7 +7302,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7320,8 +7320,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> addAppAccessRestrictions(String owner, String repo, String branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> addAppAccessRestrictions(String owner, String repo, String branch,
+                                                         String[] apps) throws Exception {
         return addAppAccessRestrictions(owner, repo, branch, apps, LIBRARY_OBJECT);
     }
 
@@ -7375,7 +7375,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where set the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7394,8 +7394,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(Repository repository, Branch branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(Repository repository, Branch branch,
+                                                         ArrayList<String> apps) throws Exception {
         return setAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 LIBRARY_OBJECT);
     }
@@ -7431,7 +7431,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T setAppAccessRestrictions(Repository repository, Branch branch, Collection<String> apps,
+    public <T> T setAppAccessRestrictions(Repository repository, Branch branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return setAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 format);
@@ -7450,7 +7450,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where set the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7469,8 +7469,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(String owner, String repo, Branch branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(String owner, String repo, Branch branch,
+                                                         ArrayList<String> apps) throws Exception {
         return setAppAccessRestrictions(owner, repo, branch.getName(), apps, LIBRARY_OBJECT);
     }
 
@@ -7506,7 +7506,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T setAppAccessRestrictions(String owner, String repo, Branch branch, Collection<String> apps,
+    public <T> T setAppAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return setAppAccessRestrictions(owner, repo, branch.getName(), apps, format);
     }
@@ -7523,7 +7523,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7542,8 +7542,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(Repository repository, String branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(Repository repository, String branch,
+                                                         ArrayList<String> apps) throws Exception {
         return setAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps,
                 LIBRARY_OBJECT);
     }
@@ -7579,7 +7579,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T setAppAccessRestrictions(Repository repository, String branch, Collection<String> apps,
+    public <T> T setAppAccessRestrictions(Repository repository, String branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return setAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps, format);
     }
@@ -7597,7 +7597,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7615,8 +7615,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(String owner, String repo, String branch,
-                                                          Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(String owner, String repo, String branch,
+                                                         ArrayList<String> apps) throws Exception {
         return setAppAccessRestrictions(owner, repo, branch, apps, LIBRARY_OBJECT);
     }
 
@@ -7651,7 +7651,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Set app access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T setAppAccessRestrictions(String owner, String repo, String branch, Collection<String> apps,
+    public <T> T setAppAccessRestrictions(String owner, String repo, String branch, ArrayList<String> apps,
                                           ReturnFormat format) throws Exception {
         return setAppAccessRestrictions(owner, repo, branch, apps.toArray(new String[0]), format);
     }
@@ -7668,7 +7668,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where set the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7687,8 +7687,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(Repository repository, Branch branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(Repository repository, Branch branch,
+                                                         String[] apps) throws Exception {
         return setAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 LIBRARY_OBJECT);
     }
@@ -7743,7 +7743,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where set the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7762,8 +7762,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(String owner, String repo, Branch branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(String owner, String repo, Branch branch,
+                                                         String[] apps) throws Exception {
         return setAppAccessRestrictions(owner, repo, branch.getName(), apps, LIBRARY_OBJECT);
     }
 
@@ -7816,7 +7816,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7835,8 +7835,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(Repository repository, String branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(Repository repository, String branch,
+                                                         String[] apps) throws Exception {
         return setAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps,
                 LIBRARY_OBJECT);
     }
@@ -7890,7 +7890,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7908,8 +7908,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> setAppAccessRestrictions(String owner, String repo, String branch,
-                                                          String[] apps) throws Exception {
+    public ArrayList<GitHubApp> setAppAccessRestrictions(String owner, String repo, String branch,
+                                                         String[] apps) throws Exception {
         return setAppAccessRestrictions(owner, repo, branch, apps, LIBRARY_OBJECT);
     }
 
@@ -7963,7 +7963,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where from remove the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -7982,8 +7982,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(Repository repository, Branch branch,
-                                                             Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(Repository repository, Branch branch,
+                                                            ArrayList<String> apps) throws Exception {
         return removeAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 LIBRARY_OBJECT);
     }
@@ -8018,7 +8018,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T removeAppAccessRestrictions(Repository repository, Branch branch, Collection<String> apps,
+    public <T> T removeAppAccessRestrictions(Repository repository, Branch branch, ArrayList<String> apps,
                                              ReturnFormat format) throws Exception {
         return removeAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 format);
@@ -8036,7 +8036,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where from remove the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8055,8 +8055,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(String owner, String repo, Branch branch,
-                                                             Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(String owner, String repo, Branch branch,
+                                                            ArrayList<String> apps) throws Exception {
         return removeAppAccessRestrictions(owner, repo, branch.getName(), apps, LIBRARY_OBJECT);
     }
 
@@ -8091,7 +8091,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T removeAppAccessRestrictions(String owner, String repo, Branch branch, Collection<String> apps,
+    public <T> T removeAppAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> apps,
                                              ReturnFormat format) throws Exception {
         return removeAppAccessRestrictions(owner, repo, branch.getName(), apps, format);
     }
@@ -8107,7 +8107,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8126,8 +8126,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(Repository repository, String branch,
-                                                             Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(Repository repository, String branch,
+                                                            ArrayList<String> apps) throws Exception {
         return removeAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps,
                 LIBRARY_OBJECT);
     }
@@ -8162,7 +8162,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T removeAppAccessRestrictions(Repository repository, String branch, Collection<String> apps,
+    public <T> T removeAppAccessRestrictions(Repository repository, String branch, ArrayList<String> apps,
                                              ReturnFormat format) throws Exception {
         return removeAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps, format);
     }
@@ -8179,7 +8179,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8197,8 +8197,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(String owner, String repo, String branch,
-                                                             Collection<String> apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(String owner, String repo, String branch,
+                                                            ArrayList<String> apps) throws Exception {
         return removeAppAccessRestrictions(owner, repo, branch, apps, LIBRARY_OBJECT);
     }
 
@@ -8232,7 +8232,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Remove app access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public <T> T removeAppAccessRestrictions(String owner, String repo, String branch, Collection<String> apps,
+    public <T> T removeAppAccessRestrictions(String owner, String repo, String branch, ArrayList<String> apps,
                                              ReturnFormat format) throws Exception {
         return removeAppAccessRestrictions(owner, repo, branch, apps.toArray(new String[0]), format);
     }
@@ -8248,7 +8248,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch:     the branch where from remove the list
      * @param apps:       the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                    Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8267,8 +8267,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(Repository repository, Branch branch,
-                                                             String[] apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(Repository repository, Branch branch,
+                                                            String[] apps) throws Exception {
         return removeAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), apps,
                 LIBRARY_OBJECT);
     }
@@ -8321,7 +8321,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the branch where from remove the list
      * @param apps:   the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *                Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8340,8 +8340,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(String owner, String repo, Branch branch,
-                                                             String[] apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(String owner, String repo, Branch branch,
+                                                            String[] apps) throws Exception {
         return removeAppAccessRestrictions(owner, repo, branch.getName(), apps, LIBRARY_OBJECT);
     }
 
@@ -8392,7 +8392,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps: the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *            Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -8411,8 +8411,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(Repository repository, String branch,
-                                                             String[] apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(Repository repository, String branch,
+                                                            String[] apps) throws Exception {
         return removeAppAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, apps,
                 LIBRARY_OBJECT);
     }
@@ -8464,7 +8464,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param apps: the GitHub Apps that have push access to this branch. Use the slugified version of the app name
      *            Note: The list of users, apps, and teams in total is limited to 100 items
-     * @return apps list as {@link Collection} of {@link GitHubApp} custom object
+     * @return apps list as {@link ArrayList} of {@link GitHubApp} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -8482,8 +8482,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps")
-    public Collection<GitHubApp> removeAppAccessRestrictions(String owner, String repo, String branch,
-                                                             String[] apps) throws Exception {
+    public ArrayList<GitHubApp> removeAppAccessRestrictions(String owner, String repo, String branch,
+                                                            String[] apps) throws Exception {
         return removeAppAccessRestrictions(owner, repo, branch, apps, LIBRARY_OBJECT);
     }
 
@@ -8538,7 +8538,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the branch from fetch the list
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8557,7 +8557,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> getTeamsWithTheAccess(Repository repository, Branch branch) throws IOException {
+    public ArrayList<Team> getTeamsWithTheAccess(Repository repository, Branch branch) throws IOException {
         return getTeamsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 LIBRARY_OBJECT);
     }
@@ -8602,7 +8602,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from fetch the list
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8621,7 +8621,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> getTeamsWithTheAccess(String owner, String repo, Branch branch) throws IOException {
+    public ArrayList<Team> getTeamsWithTheAccess(String owner, String repo, Branch branch) throws IOException {
         return getTeamsWithTheAccess(owner, repo, branch.getName(), LIBRARY_OBJECT);
     }
 
@@ -8665,7 +8665,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8684,7 +8684,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> getTeamsWithTheAccess(Repository repository, String branch) throws IOException {
+    public ArrayList<Team> getTeamsWithTheAccess(Repository repository, String branch) throws IOException {
         return getTeamsWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, LIBRARY_OBJECT);
     }
 
@@ -8728,7 +8728,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8746,7 +8746,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> getTeamsWithTheAccess(String owner, String repo, String branch) throws IOException {
+    public ArrayList<Team> getTeamsWithTheAccess(String owner, String repo, String branch) throws IOException {
         return getTeamsWithTheAccess(owner, repo, branch, LIBRARY_OBJECT);
     }
 
@@ -8790,8 +8790,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the branch where add the list
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8810,8 +8810,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(Repository repository, Branch branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(Repository repository, Branch branch,
+                                                     ArrayList<String> teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
@@ -8824,7 +8824,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the branch where add the list
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -8844,7 +8844,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T addTeamAccessRestrictions(Repository repository, Branch branch, Collection<String> teams,
+    public <T> T addTeamAccessRestrictions(Repository repository, Branch branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
@@ -8859,8 +8859,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where add the list
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8879,8 +8879,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(String owner, String repo, Branch branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(String owner, String repo, Branch branch,
+                                                     ArrayList<String> teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
@@ -8893,7 +8893,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where add the list
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -8913,7 +8913,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T addTeamAccessRestrictions(String owner, String repo, Branch branch, Collection<String> teams,
+    public <T> T addTeamAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
@@ -8926,8 +8926,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -8946,8 +8946,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(Repository repository, String branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(Repository repository, String branch,
+                                                     ArrayList<String> teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
@@ -8960,7 +8960,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -8980,7 +8980,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T addTeamAccessRestrictions(Repository repository, String branch, Collection<String> teams,
+    public <T> T addTeamAccessRestrictions(Repository repository, String branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
@@ -8994,8 +8994,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9013,8 +9013,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(String owner, String repo, String branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(String owner, String repo, String branch,
+                                                     ArrayList<String> teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
@@ -9027,7 +9027,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -9046,7 +9046,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Add team access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T addTeamAccessRestrictions(String owner, String repo, String branch, Collection<String> teams,
+    public <T> T addTeamAccessRestrictions(String owner, String repo, String branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch, teams.toArray(new String[0]), format);
     }
@@ -9060,7 +9060,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where add the list
      * @param branch:     the branch where add the list
      * @param teams:      the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9079,8 +9079,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(Repository repository, Branch branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(Repository repository, Branch branch,
+                                                     String[] teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
@@ -9129,7 +9129,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where add the list
      * @param teams:  the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9148,8 +9148,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(String owner, String repo, Branch branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(String owner, String repo, Branch branch,
+                                                     String[] teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
@@ -9196,7 +9196,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param teams:      the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9215,8 +9215,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(Repository repository, String branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(Repository repository, String branch,
+                                                     String[] teams) throws IOException {
         return addTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
@@ -9264,7 +9264,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param teams:  the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9282,8 +9282,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> addTeamAccessRestrictions(String owner, String repo, String branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> addTeamAccessRestrictions(String owner, String repo, String branch,
+                                                     String[] teams) throws IOException {
         return addTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
@@ -9332,8 +9332,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the branch where set the list
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9352,8 +9352,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(Repository repository, Branch branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(Repository repository, Branch branch,
+                                                     ArrayList<String> teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
@@ -9367,7 +9367,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the branch where set the list
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -9387,7 +9387,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T setTeamAccessRestrictions(Repository repository, Branch branch, Collection<String> teams,
+    public <T> T setTeamAccessRestrictions(Repository repository, Branch branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
@@ -9403,8 +9403,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where set the list
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9423,8 +9423,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(String owner, String repo, Branch branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(String owner, String repo, Branch branch,
+                                                     ArrayList<String> teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
@@ -9438,7 +9438,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where set the list
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -9458,7 +9458,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T setTeamAccessRestrictions(String owner, String repo, Branch branch, Collection<String> teams,
+    public <T> T setTeamAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
@@ -9472,8 +9472,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9492,8 +9492,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(Repository repository, String branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(Repository repository, String branch,
+                                                     ArrayList<String> teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
@@ -9507,7 +9507,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -9527,7 +9527,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T setTeamAccessRestrictions(Repository repository, String branch, Collection<String> teams,
+    public <T> T setTeamAccessRestrictions(Repository repository, String branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
@@ -9542,8 +9542,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9561,8 +9561,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(String owner, String repo, String branch,
-                                                      Collection<String> teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(String owner, String repo, String branch,
+                                                     ArrayList<String> teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
@@ -9576,7 +9576,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -9595,7 +9595,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Set team access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T setTeamAccessRestrictions(String owner, String repo, String branch, Collection<String> teams,
+    public <T> T setTeamAccessRestrictions(String owner, String repo, String branch, ArrayList<String> teams,
                                            ReturnFormat format) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch, teams.toArray(new String[0]), format);
     }
@@ -9610,7 +9610,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where set the list
      * @param branch:     the branch where set the list
      * @param teams:      the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9629,8 +9629,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(Repository repository, Branch branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(Repository repository, Branch branch,
+                                                     String[] teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
@@ -9681,7 +9681,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where set the list
      * @param teams:  the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9700,8 +9700,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(String owner, String repo, Branch branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(String owner, String repo, Branch branch,
+                                                     String[] teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
@@ -9750,7 +9750,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param teams:      the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9769,8 +9769,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(Repository repository, String branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(Repository repository, String branch,
+                                                     String[] teams) throws IOException {
         return setTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
@@ -9820,7 +9820,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param teams:  the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9838,8 +9838,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> setTeamAccessRestrictions(String owner, String repo, String branch,
-                                                      String[] teams) throws IOException {
+    public ArrayList<Team> setTeamAccessRestrictions(String owner, String repo, String branch,
+                                                     String[] teams) throws IOException {
         return setTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
@@ -9890,8 +9890,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9910,8 +9910,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(Repository repository, Branch branch,
-                                                         Collection<String> teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(Repository repository, Branch branch,
+                                                        ArrayList<String> teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 LIBRARY_OBJECT);
     }
@@ -9926,7 +9926,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -9946,7 +9946,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T removeTeamAccessRestrictions(Repository repository, Branch branch, Collection<String> teams,
+    public <T> T removeTeamAccessRestrictions(Repository repository, Branch branch, ArrayList<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), teams,
                 format);
@@ -9963,8 +9963,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove the list
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -9983,8 +9983,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, Branch branch,
-                                                         Collection<String> teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(String owner, String repo, Branch branch,
+                                                        ArrayList<String> teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
@@ -9999,7 +9999,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove the list
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10019,7 +10019,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T removeTeamAccessRestrictions(String owner, String repo, Branch branch, Collection<String> teams,
+    public <T> T removeTeamAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, format);
     }
@@ -10034,8 +10034,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10054,8 +10054,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(Repository repository, String branch,
-                                                         Collection<String> teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(Repository repository, String branch,
+                                                        ArrayList<String> teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
@@ -10070,7 +10070,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:      the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:      the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10090,7 +10090,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T removeTeamAccessRestrictions(Repository repository, String branch, Collection<String> teams,
+    public <T> T removeTeamAccessRestrictions(Repository repository, String branch, ArrayList<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams, format);
     }
@@ -10106,8 +10106,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10125,8 +10125,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, String branch,
-                                                         Collection<String> teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(String owner, String repo, String branch,
+                                                        ArrayList<String> teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
@@ -10141,7 +10141,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param teams:  the slug values for teams as {@link Collection} of {@link String} format
+     * @param teams:  the slug values for teams as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return teams list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10160,7 +10160,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Remove team access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public <T> T removeTeamAccessRestrictions(String owner, String repo, String branch, Collection<String> teams,
+    public <T> T removeTeamAccessRestrictions(String owner, String repo, String branch, ArrayList<String> teams,
                                               ReturnFormat format) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch, teams.toArray(new String[0]), format);
     }
@@ -10176,7 +10176,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
      * @param teams:      the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10195,8 +10195,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(Repository repository, Branch branch,
-                                                         String[] teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(Repository repository, Branch branch,
+                                                        String[] teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 teams, LIBRARY_OBJECT);
     }
@@ -10249,7 +10249,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove the list
      * @param teams:  the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10268,8 +10268,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, Branch branch,
-                                                         String[] teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(String owner, String repo, Branch branch,
+                                                        String[] teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch.getName(), teams, LIBRARY_OBJECT);
     }
 
@@ -10320,7 +10320,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param teams:      the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10339,8 +10339,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(Repository repository, String branch,
-                                                         String[] teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(Repository repository, String branch,
+                                                        String[] teams) throws IOException {
         return removeTeamAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, teams,
                 LIBRARY_OBJECT);
     }
@@ -10392,7 +10392,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param teams:  the slug values for teams as array of {@link String} format
-     * @return teams list as {@link Collection} of {@link Team} custom object
+     * @return teams list as {@link ArrayList} of {@link Team} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10410,8 +10410,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams")
-    public Collection<Team> removeTeamAccessRestrictions(String owner, String repo, String branch,
-                                                         String[] teams) throws IOException {
+    public ArrayList<Team> removeTeamAccessRestrictions(String owner, String repo, String branch,
+                                                        String[] teams) throws IOException {
         return removeTeamAccessRestrictions(owner, repo, branch, teams, LIBRARY_OBJECT);
     }
 
@@ -10466,7 +10466,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the branch from fetch the list
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10485,7 +10485,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> getUsersWithTheAccess(Repository repository, Branch branch) throws IOException {
+    public ArrayList<User> getUsersWithTheAccess(Repository repository, Branch branch) throws IOException {
         return getUsersWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 LIBRARY_OBJECT);
     }
@@ -10530,7 +10530,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from fetch the list
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10549,7 +10549,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> getUsersWithTheAccess(String owner, String repo, Branch branch) throws IOException {
+    public ArrayList<User> getUsersWithTheAccess(String owner, String repo, Branch branch) throws IOException {
         return getUsersWithTheAccess(owner, repo, branch.getName(), LIBRARY_OBJECT);
     }
 
@@ -10593,7 +10593,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10612,7 +10612,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> getUsersWithTheAccess(Repository repository, String branch) throws IOException {
+    public ArrayList<User> getUsersWithTheAccess(Repository repository, String branch) throws IOException {
         return getUsersWithTheAccess(repository.getOwner().getLogin(), repository.getName(), branch, LIBRARY_OBJECT);
     }
 
@@ -10656,7 +10656,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10675,7 +10675,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> getUsersWithTheAccess(String owner, String repo, String branch) throws IOException {
+    public ArrayList<User> getUsersWithTheAccess(String owner, String repo, String branch) throws IOException {
         return getUsersWithTheAccess(owner, repo, branch, LIBRARY_OBJECT);
     }
 
@@ -10720,8 +10720,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the branch where add the list
-     * @param users:      the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10740,8 +10740,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(Repository repository, Branch branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(Repository repository, Branch branch,
+                                                     ArrayList<String> users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
@@ -10754,7 +10754,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the branch where add the list
-     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10774,7 +10774,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T addUserAccessRestrictions(Repository repository, Branch branch, Collection<String> users,
+    public <T> T addUserAccessRestrictions(Repository repository, Branch branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 format);
@@ -10789,8 +10789,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where add the list
-     * @param users:  the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10809,8 +10809,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(String owner, String repo, Branch branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(String owner, String repo, Branch branch,
+                                                     ArrayList<String> users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
@@ -10823,7 +10823,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where add the list
-     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10843,7 +10843,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T addUserAccessRestrictions(String owner, String repo, Branch branch, Collection<String> users,
+    public <T> T addUserAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
@@ -10856,8 +10856,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:      the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10876,8 +10876,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(Repository repository, String branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(Repository repository, String branch,
+                                                     ArrayList<String> users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
@@ -10890,7 +10890,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10910,7 +10910,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T addUserAccessRestrictions(Repository repository, String branch, Collection<String> users,
+    public <T> T addUserAccessRestrictions(Repository repository, String branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
@@ -10924,8 +10924,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:  the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -10943,8 +10943,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(String owner, String repo, String branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(String owner, String repo, String branch,
+                                                     ArrayList<String> users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
@@ -10957,7 +10957,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -10976,7 +10976,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Add user access restrictions</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T addUserAccessRestrictions(String owner, String repo, String branch, Collection<String> users,
+    public <T> T addUserAccessRestrictions(String owner, String repo, String branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch, users.toArray(new String[0]), format);
     }
@@ -10990,7 +10990,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where add the list
      * @param branch:     the branch where add the list
      * @param users:      the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11009,8 +11009,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(Repository repository, Branch branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(Repository repository, Branch branch,
+                                                     String[] users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
@@ -11059,7 +11059,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where add the list
      * @param users:  the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11078,8 +11078,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(String owner, String repo, Branch branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(String owner, String repo, Branch branch,
+                                                     String[] users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
@@ -11126,7 +11126,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where add the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param users:      the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11145,8 +11145,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(Repository repository, String branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(Repository repository, String branch,
+                                                     String[] users) throws IOException {
         return addUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
@@ -11194,7 +11194,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param users:  the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11212,8 +11212,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> addUserAccessRestrictions(String owner, String repo, String branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> addUserAccessRestrictions(String owner, String repo, String branch,
+                                                     String[] users) throws IOException {
         return addUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
@@ -11262,8 +11262,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the branch where set the list
-     * @param users:      the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11282,8 +11282,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(Repository repository, Branch branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(Repository repository, Branch branch,
+                                                     ArrayList<String> users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
@@ -11297,7 +11297,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the branch where set the list
-     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -11317,7 +11317,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T setUserAccessRestrictions(Repository repository, Branch branch, Collection<String> users,
+    public <T> T setUserAccessRestrictions(Repository repository, Branch branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 format);
@@ -11333,8 +11333,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where set the list
-     * @param users:  the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11353,8 +11353,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(String owner, String repo, Branch branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(String owner, String repo, Branch branch,
+                                                     ArrayList<String> users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
@@ -11368,7 +11368,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where set the list
-     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -11388,7 +11388,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T setUserAccessRestrictions(String owner, String repo, Branch branch, Collection<String> users,
+    public <T> T setUserAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
@@ -11402,8 +11402,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:      the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11422,8 +11422,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(Repository repository, String branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(Repository repository, String branch,
+                                                     ArrayList<String> users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
@@ -11437,7 +11437,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository where set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -11457,7 +11457,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T setUserAccessRestrictions(Repository repository, String branch, Collection<String> users,
+    public <T> T setUserAccessRestrictions(Repository repository, String branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
@@ -11472,8 +11472,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:  the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11491,8 +11491,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(String owner, String repo, String branch,
-                                                      Collection<String> users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(String owner, String repo, String branch,
+                                                     ArrayList<String> users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
@@ -11506,7 +11506,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -11525,7 +11525,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Set user access restrictions</a>
      **/
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T setUserAccessRestrictions(String owner, String repo, String branch, Collection<String> users,
+    public <T> T setUserAccessRestrictions(String owner, String repo, String branch, ArrayList<String> users,
                                            ReturnFormat format) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch, users.toArray(new String[0]), format);
     }
@@ -11540,7 +11540,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where set the list
      * @param branch:     the branch where set the list
      * @param users:      the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11559,8 +11559,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(Repository repository, Branch branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(Repository repository, Branch branch,
+                                                     String[] users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(), users,
                 LIBRARY_OBJECT);
     }
@@ -11611,7 +11611,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch where set the list
      * @param users:  the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11630,8 +11630,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(String owner, String repo, Branch branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(String owner, String repo, Branch branch,
+                                                     String[] users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
@@ -11680,7 +11680,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository where set the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param users:      the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11699,8 +11699,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(Repository repository, String branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(Repository repository, String branch,
+                                                     String[] users) throws IOException {
         return setUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
@@ -11750,7 +11750,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param users:  the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11768,8 +11768,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PUT, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> setUserAccessRestrictions(String owner, String repo, String branch,
-                                                      String[] users) throws IOException {
+    public ArrayList<User> setUserAccessRestrictions(String owner, String repo, String branch,
+                                                     String[] users) throws IOException {
         return setUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
@@ -11820,8 +11820,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param users:      the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11840,8 +11840,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(Repository repository, Branch branch,
-                                                         Collection<String> users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(Repository repository, Branch branch,
+                                                        ArrayList<String> users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, LIBRARY_OBJECT);
     }
@@ -11856,7 +11856,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
-     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -11876,7 +11876,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T removeUserAccessRestrictions(Repository repository, Branch branch, Collection<String> users,
+    public <T> T removeUserAccessRestrictions(Repository repository, Branch branch, ArrayList<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, format);
@@ -11893,8 +11893,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove the list
-     * @param users:  the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11913,8 +11913,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(String owner, String repo, Branch branch,
-                                                         Collection<String> users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(String owner, String repo, Branch branch,
+                                                        ArrayList<String> users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
@@ -11929,7 +11929,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove the list
-     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -11949,7 +11949,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T removeUserAccessRestrictions(String owner, String repo, Branch branch, Collection<String> users,
+    public <T> T removeUserAccessRestrictions(String owner, String repo, Branch branch, ArrayList<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, format);
     }
@@ -11964,8 +11964,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:      the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -11984,8 +11984,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(Repository repository, String branch,
-                                                         Collection<String> users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(Repository repository, String branch,
+                                                        ArrayList<String> users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
@@ -12000,7 +12000,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      *
      * @param repository: the repository from remove the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:      the username for users as {@link Collection} of {@link String} format
+     * @param users:      the username for users as {@link ArrayList} of {@link String} format
      * @param format:     return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -12020,7 +12020,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T removeUserAccessRestrictions(Repository repository, String branch, Collection<String> users,
+    public <T> T removeUserAccessRestrictions(Repository repository, String branch, ArrayList<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users, format);
     }
@@ -12036,8 +12036,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:  the username for users as {@link Collection} of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -12055,8 +12055,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(String owner, String repo, String branch,
-                                                         Collection<String> users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(String owner, String repo, String branch,
+                                                        ArrayList<String> users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 
@@ -12071,7 +12071,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
-     * @param users:  the username for users as {@link Collection} of {@link String} format
+     * @param users:  the username for users as {@link ArrayList} of {@link String} format
      * @param format: return type formatter -> {@link ReturnFormat}
      * @return users list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
@@ -12090,7 +12090,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * Remove user access restrictions</a>
      **/
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public <T> T removeUserAccessRestrictions(String owner, String repo, String branch, Collection<String> users,
+    public <T> T removeUserAccessRestrictions(String owner, String repo, String branch, ArrayList<String> users,
                                               ReturnFormat format) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch, users.toArray(new String[0]), format);
     }
@@ -12106,7 +12106,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove the list
      * @param branch:     the branch from remove the list
      * @param users:      the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -12125,8 +12125,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(Repository repository, Branch branch,
-                                                         String[] users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(Repository repository, Branch branch,
+                                                        String[] users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch.getName(),
                 users, LIBRARY_OBJECT);
     }
@@ -12179,7 +12179,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the branch from remove the list
      * @param users:  the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -12198,8 +12198,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(String owner, String repo, Branch branch,
-                                                         String[] users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(String owner, String repo, Branch branch,
+                                                        String[] users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch.getName(), users, LIBRARY_OBJECT);
     }
 
@@ -12250,7 +12250,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repository: the repository from remove the list
      * @param branch:     the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param users:      the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -12269,8 +12269,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(Repository repository, String branch,
-                                                         String[] users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(Repository repository, String branch,
+                                                        String[] users) throws IOException {
         return removeUserAccessRestrictions(repository.getOwner().getLogin(), repository.getName(), branch, users,
                 LIBRARY_OBJECT);
     }
@@ -12322,7 +12322,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param branch: the name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use the GraphQL API.
      * @param users:  the username for users as array of {@link String} format
-     * @return users list as {@link Collection} of {@link User} custom object
+     * @return users list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -12340,8 +12340,8 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users")
-    public Collection<User> removeUserAccessRestrictions(String owner, String repo, String branch,
-                                                         String[] users) throws IOException {
+    public ArrayList<User> removeUserAccessRestrictions(String owner, String repo, String branch,
+                                                        String[] users) throws IOException {
         return removeUserAccessRestrictions(owner, repo, branch, users, LIBRARY_OBJECT);
     }
 

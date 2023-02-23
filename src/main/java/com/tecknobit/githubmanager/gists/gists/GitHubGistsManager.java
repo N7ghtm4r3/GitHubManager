@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -119,7 +118,7 @@ public class GitHubGistsManager extends GitHubManager {
      * gists <br>
      * No-any params required
      *
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -137,7 +136,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists")
-    public Collection<Gist> getAuthenticatedUserGists() throws IOException {
+    public ArrayList<Gist> getAuthenticatedUserGists() throws IOException {
         return getAuthenticatedUserGists(LIBRARY_OBJECT);
     }
 
@@ -184,7 +183,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -202,7 +201,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists")
-    public Collection<Gist> getAuthenticatedUserGists(Params queryParams) throws IOException {
+    public ArrayList<Gist> getAuthenticatedUserGists(Params queryParams) throws IOException {
         return getAuthenticatedUserGists(queryParams, LIBRARY_OBJECT);
     }
 
@@ -382,7 +381,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list public gists sorted by most recently updated to least recently updated <br>
      * No-any params required
      *
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -402,7 +401,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/public")
-    public Collection<Gist> getPublicGists() throws IOException {
+    public ArrayList<Gist> getPublicGists() throws IOException {
         return getPublicGists(LIBRARY_OBJECT);
     }
 
@@ -449,7 +448,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -469,7 +468,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/public")
-    public Collection<Gist> getPublicGists(Params queryParams) throws IOException {
+    public ArrayList<Gist> getPublicGists(Params queryParams) throws IOException {
         return getPublicGists(queryParams, LIBRARY_OBJECT);
     }
 
@@ -517,7 +516,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list the authenticated user's starred gists <br>
      * No-any params required
      *
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -535,7 +534,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/starred")
-    public Collection<Gist> getStarredGists() throws IOException {
+    public ArrayList<Gist> getStarredGists() throws IOException {
         return getStarredGists(LIBRARY_OBJECT);
     }
 
@@ -580,7 +579,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -598,7 +597,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/starred")
-    public Collection<Gist> getStarredGists(Params queryParams) throws IOException {
+    public ArrayList<Gist> getStarredGists(Params queryParams) throws IOException {
         return getStarredGists(queryParams, LIBRARY_OBJECT);
     }
 
@@ -986,7 +985,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list gist commits
      *
      * @param gist: the gist from fetch the list
-     * @return gist commits list as {@link Collection} of {@link GistCommit} custom object
+     * @return gist commits list as {@link ArrayList} of {@link GistCommit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1005,7 +1004,7 @@ public class GitHubGistsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
-    public Collection<GistCommit> getGistCommits(Gist gist) throws IOException {
+    public ArrayList<GistCommit> getGistCommits(Gist gist) throws IOException {
         return getGistCommits(gist.getId(), LIBRARY_OBJECT);
     }
 
@@ -1040,7 +1039,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list gist commits
      *
      * @param gistId: the unique identifier of the gist
-     * @return gist commits list as {@link Collection} of {@link GistCommit} custom object
+     * @return gist commits list as {@link ArrayList} of {@link GistCommit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1058,7 +1057,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
-    public Collection<GistCommit> getGistCommits(String gistId) throws IOException {
+    public ArrayList<GistCommit> getGistCommits(String gistId) throws IOException {
         return getGistCommits(gistId, LIBRARY_OBJECT);
     }
 
@@ -1101,7 +1100,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gist commits list as {@link Collection} of {@link GistCommit} custom object
+     * @return gist commits list as {@link ArrayList} of {@link GistCommit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1120,7 +1119,7 @@ public class GitHubGistsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
-    public Collection<GistCommit> getGistCommits(Gist gist, Params queryParams) throws IOException {
+    public ArrayList<GistCommit> getGistCommits(Gist gist, Params queryParams) throws IOException {
         return getGistCommits(gist.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1173,7 +1172,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gist commits list as {@link Collection} of {@link GistCommit} custom object
+     * @return gist commits list as {@link ArrayList} of {@link GistCommit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1191,7 +1190,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
-    public Collection<GistCommit> getGistCommits(String gistId, Params queryParams) throws IOException {
+    public ArrayList<GistCommit> getGistCommits(String gistId, Params queryParams) throws IOException {
         return getGistCommits(gistId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1258,7 +1257,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list gist forks
      *
      * @param gist: the gist from fetch the list
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1277,7 +1276,7 @@ public class GitHubGistsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
-    public Collection<Gist> getGistForks(Gist gist) throws IOException {
+    public ArrayList<Gist> getGistForks(Gist gist) throws IOException {
         return getGistForks(gist.getId(), LIBRARY_OBJECT);
     }
 
@@ -1312,7 +1311,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list gist forks
      *
      * @param gistId: the unique identifier of the gist
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1330,7 +1329,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
-    public Collection<Gist> getGistForks(String gistId) throws IOException {
+    public ArrayList<Gist> getGistForks(String gistId) throws IOException {
         return getGistForks(gistId, LIBRARY_OBJECT);
     }
 
@@ -1373,7 +1372,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1392,7 +1391,7 @@ public class GitHubGistsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
-    public Collection<Gist> getGistForks(Gist gist, Params queryParams) throws IOException {
+    public ArrayList<Gist> getGistForks(Gist gist, Params queryParams) throws IOException {
         return getGistForks(gist.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1445,7 +1444,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1463,7 +1462,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
-    public Collection<Gist> getGistForks(String gistId, Params queryParams) throws IOException {
+    public ArrayList<Gist> getGistForks(String gistId, Params queryParams) throws IOException {
         return getGistForks(gistId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1857,7 +1856,7 @@ public class GitHubGistsManager extends GitHubManager {
      * Method to get the list of the public gists for the specified user
      *
      * @param username: the handle for the GitHub user account
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1875,7 +1874,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
-    public Collection<Gist> getUserGists(String username) throws IOException {
+    public ArrayList<Gist> getUserGists(String username) throws IOException {
         return getUserGists(username, LIBRARY_OBJECT);
     }
 
@@ -1922,7 +1921,7 @@ public class GitHubGistsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gists list as {@link Collection} of {@link Gist} custom object
+     * @return gists list as {@link ArrayList} of {@link Gist} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1940,7 +1939,7 @@ public class GitHubGistsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
-    public Collection<Gist> getUserGists(String username, Params queryParams) throws IOException {
+    public ArrayList<Gist> getUserGists(String username, Params queryParams) throws IOException {
         return getUserGists(username, queryParams, LIBRARY_OBJECT);
     }
 

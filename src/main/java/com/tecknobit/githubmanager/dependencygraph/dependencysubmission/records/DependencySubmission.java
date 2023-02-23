@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -298,7 +297,7 @@ public class DependencySubmission extends GitHubResponse {
         private final Object metadata;
 
         /**
-         * {@code resolved} a collection of resolved package dependencies
+         * {@code resolved} a ArrayList of resolved package dependencies
          **/
         private final ArrayList<Resolved> resolved;
 
@@ -307,7 +306,7 @@ public class DependencySubmission extends GitHubResponse {
          *
          * @param key:      a user-defined key to represent an item in manifests
          * @param metadata: user-defined metadata to store domain-specific information limited to 8 keys with scalar values
-         * @param resolved: a collection of resolved package dependencies
+         * @param resolved: a ArrayList of resolved package dependencies
          **/
         public Manifests(ManifestsKey key, Object metadata, ArrayList<Resolved> resolved) {
             super(null);
@@ -355,9 +354,9 @@ public class DependencySubmission extends GitHubResponse {
          * Method to get {@link #resolved} instance <br>
          * No-any params required
          *
-         * @return {@link #resolved} instance as {@link Collection} of {@link Resolved}
+         * @return {@link #resolved} instance as {@link ArrayList} of {@link Resolved}
          **/
-        public Collection<Resolved> getResolved() {
+        public ArrayList<Resolved> getResolved() {
             return resolved;
         }
 
@@ -557,9 +556,9 @@ public class DependencySubmission extends GitHubResponse {
              * Method to get {@link #dependencies} instance <br>
              * No-any params required
              *
-             * @return {@link #dependencies} instance as {@link Collection} of {@link String}
+             * @return {@link #dependencies} instance as {@link ArrayList} of {@link String}
              **/
-            public Collection<String> getDependencies() {
+            public ArrayList<String> getDependencies() {
                 return dependencies;
             }
 

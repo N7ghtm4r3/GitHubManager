@@ -17,7 +17,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.PATCH;
@@ -106,7 +105,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      * see "Managing security managers in your organization."
      *
      * @param enterprise: the slug version of the enterprise name. You can also substitute this value with the enterprise id
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -124,7 +123,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/dependabot/alerts")
-    public Collection<DependabotAlert> getEnterpriseDependabotAlerts(String enterprise) throws IOException {
+    public ArrayList<DependabotAlert> getEnterpriseDependabotAlerts(String enterprise) throws IOException {
         return getEnterpriseDependabotAlerts(enterprise, LIBRARY_OBJECT);
     }
 
@@ -209,7 +208,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
      *                        </li>
      *                     </ul>
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -227,7 +226,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/enterprises/{enterprise}/dependabot/alerts")
-    public Collection<DependabotAlert> getEnterpriseDependabotAlerts(String enterprise, Params queryParams) throws IOException {
+    public ArrayList<DependabotAlert> getEnterpriseDependabotAlerts(String enterprise, Params queryParams) throws IOException {
         return getEnterpriseDependabotAlerts(enterprise, queryParams, LIBRARY_OBJECT);
     }
 
@@ -313,7 +312,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      * GitHub Apps must have Dependabot alerts read permission to use this endpoint
      *
      * @param org: the organization from fetch the list
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -332,7 +331,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/dependabot/alerts")
-    public Collection<DependabotAlert> getOrganizationDependabotAlerts(Organization org) throws IOException {
+    public ArrayList<DependabotAlert> getOrganizationDependabotAlerts(Organization org) throws IOException {
         return getOrganizationDependabotAlerts(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -375,7 +374,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      * GitHub Apps must have Dependabot alerts read permission to use this endpoint
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -393,7 +392,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/dependabot/alerts")
-    public Collection<DependabotAlert> getOrganizationDependabotAlerts(String org) throws IOException {
+    public ArrayList<DependabotAlert> getOrganizationDependabotAlerts(String org) throws IOException {
         return getOrganizationDependabotAlerts(org, LIBRARY_OBJECT);
     }
 
@@ -478,7 +477,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
      *                        </li>
      *                     </ul>
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -497,7 +496,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/dependabot/alerts")
-    public Collection<DependabotAlert> getOrganizationDependabotAlerts(Organization org, Params queryParams) throws IOException {
+    public ArrayList<DependabotAlert> getOrganizationDependabotAlerts(Organization org, Params queryParams) throws IOException {
         return getOrganizationDependabotAlerts(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -626,7 +625,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
      *                        </li>
      *                     </ul>
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -644,7 +643,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/dependabot/alerts")
-    public Collection<DependabotAlert> getOrganizationDependabotAlerts(String org, Params queryParams) throws IOException {
+    public ArrayList<DependabotAlert> getOrganizationDependabotAlerts(String org, Params queryParams) throws IOException {
         return getOrganizationDependabotAlerts(org, queryParams, LIBRARY_OBJECT);
     }
 
@@ -729,7 +728,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      * alerts read permission to use this endpoint
      *
      * @param repository: the repository from fetch the list
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -748,7 +747,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependabot/alerts")
-    public Collection<DependabotAlert> getRepositoryDependabotAlerts(Repository repository) throws IOException {
+    public ArrayList<DependabotAlert> getRepositoryDependabotAlerts(Repository repository) throws IOException {
         return getRepositoryDependabotAlerts(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -790,7 +789,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -808,7 +807,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependabot/alerts")
-    public Collection<DependabotAlert> getRepositoryDependabotAlerts(String owner, String repo) throws IOException {
+    public ArrayList<DependabotAlert> getRepositoryDependabotAlerts(String owner, String repo) throws IOException {
         return getRepositoryDependabotAlerts(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -893,7 +892,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
      *                        </li>
      *                     </ul>
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -912,8 +911,8 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependabot/alerts")
-    public Collection<DependabotAlert> getRepositoryDependabotAlerts(Repository repository,
-                                                                     Params queryParams) throws IOException {
+    public ArrayList<DependabotAlert> getRepositoryDependabotAlerts(Repository repository,
+                                                                    Params queryParams) throws IOException {
         return getRepositoryDependabotAlerts(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1043,7 +1042,7 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
      *                        </li>
      *                     </ul>
-     * @return dependabot alerts as {@link Collection} of {@link DependabotAlert} custom object
+     * @return dependabot alerts as {@link ArrayList} of {@link DependabotAlert} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1061,8 +1060,8 @@ public class GitHubDependabotAlertsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/dependabot/alerts")
-    public Collection<DependabotAlert> getRepositoryDependabotAlerts(String owner, String repo,
-                                                                     Params queryParams) throws IOException {
+    public ArrayList<DependabotAlert> getRepositoryDependabotAlerts(String owner, String repo,
+                                                                    Params queryParams) throws IOException {
         return getRepositoryDependabotAlerts(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

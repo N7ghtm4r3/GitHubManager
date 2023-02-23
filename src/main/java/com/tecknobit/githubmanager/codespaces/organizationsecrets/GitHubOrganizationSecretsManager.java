@@ -12,7 +12,7 @@ import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -677,7 +677,7 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
      * @param visibility:    which type of organization repositories have access to the organization secret. {@code "selected"}
      *                       means only the repositories specified by {@code "selected_repository_ids"} can access the secret
      * @param secretValue:   the value for your secret
-     * @param repositoryIds: list of repositories that can access the organization secret as {@link Collection} of {@link Long} format
+     * @param repositoryIds: list of repositories that can access the organization secret as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
@@ -685,7 +685,7 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/secrets/{secret_name}")
     public boolean workWithOrganizationSecret(Organization org, String secretName, Visibility visibility,
-                                              String secretValue, Collection<Long> repositoryIds) throws IOException {
+                                              String secretValue, ArrayList<Long> repositoryIds) throws IOException {
         return workWithOrganizationSecret(org.getLogin(), secretName, visibility, secretValue, repositoryIds);
     }
 
@@ -698,7 +698,7 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
      * @param visibility:    which type of organization repositories have access to the organization secret. {@code "selected"}
      *                       means only the repositories specified by {@code "selected_repository_ids"} can access the secret
      * @param secretValue:   the value for your secret
-     * @param repositoryIds: list of repositories that can access the organization secret as {@link Collection} of {@link Long} format
+     * @param repositoryIds: list of repositories that can access the organization secret as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#create-or-update-an-organization-secret">
      * Create or update an organization secret</a>
@@ -706,7 +706,7 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/secrets/{secret_name}")
     public boolean workWithOrganizationSecret(String org, String secretName, Visibility visibility, String secretValue,
-                                              Collection<Long> repositoryIds) throws IOException {
+                                              ArrayList<Long> repositoryIds) throws IOException {
         return workWithOrganizationSecret(org, secretName, visibility, secretValue, repositoryIds.toArray(new Long[0]));
     }
 
@@ -1474,14 +1474,14 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
      *
      * @param org:           the organization where set the list
      * @param secret:        the secret where set the list
-     * @param repositoryIds: repositories to set as {@link Collection} of {@link Long} format
+     * @param repositoryIds: repositories to set as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/secrets/{secret_name}/repositories")
-    public boolean setSelectedRepositories(Organization org, Secret secret, Collection<Long> repositoryIds) {
+    public boolean setSelectedRepositories(Organization org, Secret secret, ArrayList<Long> repositoryIds) {
         return setSelectedRepositories(org.getLogin(), secret.getName(), repositoryIds);
     }
 
@@ -1492,14 +1492,14 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
      *
      * @param org:           the organization name. The name is not case-sensitive
      * @param secret:        the secret where set the list
-     * @param repositoryIds: repositories to set as {@link Collection} of {@link Long} format
+     * @param repositoryIds: repositories to set as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/secrets/{secret_name}/repositories")
-    public boolean setSelectedRepositories(String org, Secret secret, Collection<Long> repositoryIds) {
+    public boolean setSelectedRepositories(String org, Secret secret, ArrayList<Long> repositoryIds) {
         return setSelectedRepositories(org, secret.getName(), repositoryIds);
     }
 
@@ -1510,14 +1510,14 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
      *
      * @param org:           the organization where set the list
      * @param secretName:    the name of the secret
-     * @param repositoryIds: repositories to set as {@link Collection} of {@link Long} format
+     * @param repositoryIds: repositories to set as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/secrets/{secret_name}/repositories")
-    public boolean setSelectedRepositories(Organization org, String secretName, Collection<Long> repositoryIds) {
+    public boolean setSelectedRepositories(Organization org, String secretName, ArrayList<Long> repositoryIds) {
         return setSelectedRepositories(org.getLogin(), secretName, repositoryIds);
     }
 
@@ -1528,14 +1528,14 @@ public class GitHubOrganizationSecretsManager extends GitHubManager {
      *
      * @param org:           the organization name. The name is not case-sensitive
      * @param secretName:    the name of the secret
-     * @param repositoryIds: repositories to set as {@link Collection} of {@link Long} format
+     * @param repositoryIds: repositories to set as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret">
      * Set selected repositories for an organization secret</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/codespaces/secrets/{secret_name}/repositories")
-    public boolean setSelectedRepositories(String org, String secretName, Collection<Long> repositoryIds) {
+    public boolean setSelectedRepositories(String org, String secretName, ArrayList<Long> repositoryIds) {
         return setSelectedRepositories(org, secretName, repositoryIds.toArray(new Long[0]));
     }
 

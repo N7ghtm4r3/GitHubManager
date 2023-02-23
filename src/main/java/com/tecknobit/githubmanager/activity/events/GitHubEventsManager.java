@@ -12,7 +12,6 @@ import org.json.JSONArray;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -113,7 +112,7 @@ public class GitHubEventsManager extends GitHubManager {
      * API actually occurred at least five minutes ago <br>
      * No-any params required
      *
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -131,7 +130,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/events")
-    public Collection<Event> getPublicEvents() throws IOException {
+    public ArrayList<Event> getPublicEvents() throws IOException {
         return getPublicEvents(LIBRARY_OBJECT);
     }
 
@@ -177,7 +176,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -195,7 +194,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/events")
-    public Collection<Event> getPublicEvents(Params queryParams) throws IOException {
+    public ArrayList<Event> getPublicEvents(Params queryParams) throws IOException {
         return getPublicEvents(queryParams, LIBRARY_OBJECT);
     }
 
@@ -239,7 +238,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list
      *
      * @param repository: repository from fetch the list
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -258,7 +257,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
-    public Collection<Event> getRepositoriesPublicEvents(Repository repository) throws IOException {
+    public ArrayList<Event> getRepositoriesPublicEvents(Repository repository) throws IOException {
         return getRepositoriesPublicEvents(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -294,7 +293,7 @@ public class GitHubEventsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -312,7 +311,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
-    public Collection<Event> getRepositoriesPublicEvents(String owner, String repo) throws IOException {
+    public ArrayList<Event> getRepositoriesPublicEvents(String owner, String repo) throws IOException {
         return getRepositoriesPublicEvents(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -356,7 +355,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -375,7 +374,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
-    public Collection<Event> getRepositoriesPublicEvents(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Event> getRepositoriesPublicEvents(Repository repository, Params queryParams) throws IOException {
         return getRepositoriesPublicEvents(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -431,7 +430,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -449,7 +448,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/networks/{owner}/{repo}/events")
-    public Collection<Event> getRepositoriesPublicEvents(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Event> getRepositoriesPublicEvents(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoriesPublicEvents(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -495,7 +494,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list
      *
      * @param org: organization from fetch the list
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -514,7 +513,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/events")
-    public Collection<Event> getOrganizationPublicEvents(Organization org) throws IOException {
+    public ArrayList<Event> getOrganizationPublicEvents(Organization org) throws IOException {
         return getOrganizationPublicEvents(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -549,7 +548,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list
      *
      * @param org: organization from fetch the list
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -567,7 +566,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/events")
-    public Collection<Event> getOrganizationPublicEvents(String org) throws IOException {
+    public ArrayList<Event> getOrganizationPublicEvents(String org) throws IOException {
         return getOrganizationPublicEvents(org, LIBRARY_OBJECT);
     }
 
@@ -610,7 +609,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -629,7 +628,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/events")
-    public Collection<Event> getOrganizationPublicEvents(Organization org, Params queryParams) throws IOException {
+    public ArrayList<Event> getOrganizationPublicEvents(Organization org, Params queryParams) throws IOException {
         return getOrganizationPublicEvents(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -682,7 +681,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -700,7 +699,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/events")
-    public Collection<Event> getOrganizationPublicEvents(String org, Params queryParams) throws IOException {
+    public ArrayList<Event> getOrganizationPublicEvents(String org, Params queryParams) throws IOException {
         return getOrganizationPublicEvents(org, queryParams, LIBRARY_OBJECT);
     }
 
@@ -744,7 +743,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list
      *
      * @param repository: repository from fetch the list
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -763,7 +762,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
-    public Collection<Event> getRepositoryEvents(Repository repository) throws IOException {
+    public ArrayList<Event> getRepositoryEvents(Repository repository) throws IOException {
         return getRepositoryEvents(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -799,7 +798,7 @@ public class GitHubEventsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -817,7 +816,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
-    public Collection<Event> getRepositoryEvents(String owner, String repo) throws IOException {
+    public ArrayList<Event> getRepositoryEvents(String owner, String repo) throws IOException {
         return getRepositoryEvents(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -861,7 +860,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -880,7 +879,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
-    public Collection<Event> getRepositoryEvents(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Event> getRepositoryEvents(Repository repository, Params queryParams) throws IOException {
         return getRepositoryEvents(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -934,7 +933,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -952,7 +951,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/events")
-    public Collection<Event> getRepositoryEvents(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Event> getRepositoryEvents(String owner, String repo, Params queryParams) throws IOException {
         return getRepositoryEvents(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -999,7 +998,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Otherwise, you'll only see public events
      *
      * @param username: the handle for the GitHub user account
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1017,7 +1016,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/events")
-    public Collection<Event> getAuthenticatedUserEvents(String username) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserEvents(String username) throws IOException {
         return getAuthenticatedUserEvents(username, LIBRARY_OBJECT);
     }
 
@@ -1062,7 +1061,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1080,7 +1079,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/events")
-    public Collection<Event> getAuthenticatedUserEvents(String username, Params queryParams) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserEvents(String username, Params queryParams) throws IOException {
         return getAuthenticatedUserEvents(username, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1127,7 +1126,7 @@ public class GitHubEventsManager extends GitHubManager {
      *
      * @param org:      organization from fetch the list
      * @param username: the handle for the GitHub user account
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1146,7 +1145,7 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
-    public Collection<Event> getAuthenticatedUserOrganizationEvents(Organization org, String username) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserOrganizationEvents(Organization org, String username) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org.getLogin(), username, LIBRARY_OBJECT);
     }
 
@@ -1186,7 +1185,7 @@ public class GitHubEventsManager extends GitHubManager {
      *
      * @param org:      organization from fetch the list
      * @param username: the handle for the GitHub user account
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1204,7 +1203,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
-    public Collection<Event> getAuthenticatedUserOrganizationEvents(String org, String username) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserOrganizationEvents(String org, String username) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org, username, LIBRARY_OBJECT);
     }
 
@@ -1253,7 +1252,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1272,8 +1271,8 @@ public class GitHubEventsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
-    public Collection<Event> getAuthenticatedUserOrganizationEvents(Organization org, String username,
-                                                                    Params queryParams) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserOrganizationEvents(Organization org, String username,
+                                                                   Params queryParams) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org.getLogin(), username, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1331,7 +1330,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1349,8 +1348,8 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/events/orgs/{org}")
-    public Collection<Event> getAuthenticatedUserOrganizationEvents(String org, String username,
-                                                                    Params queryParams) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserOrganizationEvents(String org, String username,
+                                                                   Params queryParams) throws IOException {
         return getAuthenticatedUserOrganizationEvents(org, username, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1397,7 +1396,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list
      *
      * @param username: the handle for the GitHub user account
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1415,7 +1414,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/events/public")
-    public Collection<Event> getUserPublicEvents(String username) throws IOException {
+    public ArrayList<Event> getUserPublicEvents(String username) throws IOException {
         return getUserPublicEvents(username, LIBRARY_OBJECT);
     }
 
@@ -1458,7 +1457,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1476,7 +1475,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/events/public")
-    public Collection<Event> getUserPublicEvents(String username, Params queryParams) throws IOException {
+    public ArrayList<Event> getUserPublicEvents(String username, Params queryParams) throws IOException {
         return getUserPublicEvents(username, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1522,7 +1521,7 @@ public class GitHubEventsManager extends GitHubManager {
      * you will see private events. Otherwise, you'll only see public events
      *
      * @param username: the handle for the GitHub user account
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1540,7 +1539,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/received_events")
-    public Collection<Event> getAuthenticatedUserReceivedEvents(String username) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserReceivedEvents(String username) throws IOException {
         return getAuthenticatedUserReceivedEvents(username, LIBRARY_OBJECT);
     }
 
@@ -1587,7 +1586,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1605,7 +1604,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/received_events")
-    public Collection<Event> getAuthenticatedUserReceivedEvents(String username, Params queryParams) throws IOException {
+    public ArrayList<Event> getAuthenticatedUserReceivedEvents(String username, Params queryParams) throws IOException {
         return getAuthenticatedUserReceivedEvents(username, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1652,7 +1651,7 @@ public class GitHubEventsManager extends GitHubManager {
      * Method to get an events list
      *
      * @param username: the handle for the GitHub user account
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1670,7 +1669,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/received_events/public")
-    public Collection<Event> getUserReceivedPublicEvents(String username) throws IOException {
+    public ArrayList<Event> getUserReceivedPublicEvents(String username) throws IOException {
         return getUserReceivedPublicEvents(username, LIBRARY_OBJECT);
     }
 
@@ -1714,7 +1713,7 @@ public class GitHubEventsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return events list as {@link Collection} of {@link Event} custom object
+     * @return events list as {@link ArrayList} of {@link Event} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1732,7 +1731,7 @@ public class GitHubEventsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/received_events/public")
-    public Collection<Event> getUserReceivedPublicEvents(String username, Params queryParams) throws IOException {
+    public ArrayList<Event> getUserReceivedPublicEvents(String username, Params queryParams) throws IOException {
         return getUserReceivedPublicEvents(username, queryParams, LIBRARY_OBJECT);
     }
 

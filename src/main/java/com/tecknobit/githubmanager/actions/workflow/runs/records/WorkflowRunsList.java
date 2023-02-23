@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code WorkflowRunsList} class is useful to format a GitHub's workflows runs list
@@ -71,9 +70,9 @@ public class WorkflowRunsList extends GitHubList {
      * Method to get {@link #workflowRuns} instance <br>
      * No-any params required
      *
-     * @return {@link #workflowRuns} instance as {@link Collection} of {@link WorkflowRun}
+     * @return {@link #workflowRuns} instance as {@link ArrayList} of {@link WorkflowRun}
      **/
-    public Collection<WorkflowRun> getWorkflowRuns() {
+    public ArrayList<WorkflowRun> getWorkflowRuns() {
         return workflowRuns;
     }
 

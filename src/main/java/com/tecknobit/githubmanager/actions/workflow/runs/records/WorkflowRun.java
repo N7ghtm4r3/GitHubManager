@@ -11,7 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status.valueOf;
@@ -440,9 +439,9 @@ public class WorkflowRun extends BaseResponseDetails {
      * Method to get {@link #pullRequests} instance <br>
      * No-any params required
      *
-     * @return {@link #pullRequests} instance as {@link Collection} of {@link MinimalPullRequest}
+     * @return {@link #pullRequests} instance as {@link ArrayList} of {@link MinimalPullRequest}
      **/
-    public Collection<MinimalPullRequest> getPullRequests() {
+    public ArrayList<MinimalPullRequest> getPullRequests() {
         return pullRequests;
     }
 
@@ -510,9 +509,9 @@ public class WorkflowRun extends BaseResponseDetails {
      * Method to get {@link #referencedWorkflows} instance <br>
      * No-any params required
      *
-     * @return {@link #referencedWorkflows} instance as {@link Collection} of {@link ReferencedWorkflow}
+     * @return {@link #referencedWorkflows} instance as {@link ArrayList} of {@link ReferencedWorkflow}
      **/
-    public Collection<ReferencedWorkflow> getReferencedWorkflows() {
+    public ArrayList<ReferencedWorkflow> getReferencedWorkflows() {
         return referencedWorkflows;
     }
 

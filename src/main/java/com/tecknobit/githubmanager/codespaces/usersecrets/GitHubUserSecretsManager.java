@@ -12,7 +12,7 @@ import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -402,14 +402,14 @@ public class GitHubUserSecretsManager extends GitHubManager {
      *
      * @param secretName:    the name of the secret
      * @param secretValue:   the value for your secret
-     * @param repositoryIds: an array of repository ids that can access the user secret as {@link Collection} of {@link Long} format
+     * @param repositoryIds: an array of repository ids that can access the user secret as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/secrets#create-or-update-a-secret-for-the-authenticated-user">
      * Create or update a secret for the authenticated user</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/user/codespaces/secrets/{secret_name}")
-    public boolean workWithUserSecret(String secretName, String secretValue, Collection<Long> repositoryIds) {
+    public boolean workWithUserSecret(String secretName, String secretValue, ArrayList<Long> repositoryIds) {
         return workWithUserSecret(secretName, secretValue, repositoryIds.toArray(new Long[0]));
     }
 
@@ -663,14 +663,14 @@ public class GitHubUserSecretsManager extends GitHubManager {
      * repository permission on all referenced repositories to use this endpoint
      *
      * @param secret:        the secret where set the list
-     * @param repositoryIds: the repositories to set as {@link Collection} of {@link Long} format
+     * @param repositoryIds: the repositories to set as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret">
      * Set selected repositories for a user secret</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/user/codespaces/secrets/{secret_name}/repositories")
-    public boolean setUserSecretSelectedRepositories(Secret secret, Collection<Long> repositoryIds) {
+    public boolean setUserSecretSelectedRepositories(Secret secret, ArrayList<Long> repositoryIds) {
         return setUserSecretSelectedRepositories(secret.getName(), repositoryIds);
     }
 
@@ -682,14 +682,14 @@ public class GitHubUserSecretsManager extends GitHubManager {
      * repository permission on all referenced repositories to use this endpoint
      *
      * @param secretName:    the name of the secret
-     * @param repositoryIds: the repositories to set as {@link Collection} of {@link Long} format
+     * @param repositoryIds: the repositories to set as {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret">
      * Set selected repositories for a user secret</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/user/codespaces/secrets/{secret_name}/repositories")
-    public boolean setUserSecretSelectedRepositories(String secretName, Collection<Long> repositoryIds) {
+    public boolean setUserSecretSelectedRepositories(String secretName, ArrayList<Long> repositoryIds) {
         return setUserSecretSelectedRepositories(secretName, repositoryIds.toArray(new Long[0]));
     }
 

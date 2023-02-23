@@ -9,7 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -690,9 +689,9 @@ public class Event extends GitHubResponse {
          * Method to get {@link #commits} instance <br>
          * No-any params required
          *
-         * @return {@link #commits} instance as {@link Collection} of {@link Commit}
+         * @return {@link #commits} instance as {@link ArrayList} of {@link Commit}
          **/
-        public Collection<Commit> getCommits() {
+        public ArrayList<Commit> getCommits() {
             return commits;
         }
 

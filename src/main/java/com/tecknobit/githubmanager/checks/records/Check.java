@@ -9,7 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code Check} class is useful to format a GitHub's check base format
@@ -151,9 +150,9 @@ public class Check extends BaseResponseDetails {
      * Method to get {@link #pullRequests} instance <br>
      * No-any params required
      *
-     * @return {@link #pullRequests} instance as {@link Collection} of {@link MinimalPullRequest}
+     * @return {@link #pullRequests} instance as {@link ArrayList} of {@link MinimalPullRequest}
      **/
-    public Collection<MinimalPullRequest> getPullRequests() {
+    public ArrayList<MinimalPullRequest> getPullRequests() {
         return pullRequests;
     }
 

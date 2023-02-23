@@ -9,7 +9,6 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.GitHubManager.SeverityLevel.low;
 
@@ -422,9 +421,9 @@ public class ScanningAlert extends GitHubAlert {
          * Method to get {@link #tags} instance <br>
          * No-any params required
          *
-         * @return {@link #tags} instance as {@link Collection} of {@link String}
+         * @return {@link #tags} instance as {@link ArrayList} of {@link String}
          **/
-        public Collection<String> getTags() {
+        public ArrayList<String> getTags() {
             return tags;
         }
 

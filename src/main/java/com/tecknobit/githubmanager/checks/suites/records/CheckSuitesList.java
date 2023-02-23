@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code CheckSuitesList} class is useful to format a GitHub's check suites list
@@ -62,9 +61,9 @@ public class CheckSuitesList extends GitHubList {
      * Method to get {@link #checkSuites} instance <br>
      * No-any params required
      *
-     * @return {@link #checkSuites} instance as {@link Collection} of {@link CheckSuite}
+     * @return {@link #checkSuites} instance as {@link ArrayList} of {@link CheckSuite}
      **/
-    public Collection<CheckSuite> getCheckSuites() {
+    public ArrayList<CheckSuite> getCheckSuites() {
         return checkSuites;
     }
 

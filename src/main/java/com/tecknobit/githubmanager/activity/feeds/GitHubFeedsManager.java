@@ -111,7 +111,7 @@ public class GitHubFeedsManager extends GitHubManager {
      *         <b>Current user organizations</b>: The private timeline for the organizations the authenticated user is a member of.
      *     </li>
      *     <li>
-     *         <b>Security advisories</b>: A collection of public announcements that provide information about security-related
+     *         <b>Security advisories</b>: A ArrayList of public announcements that provide information about security-related
      *         vulnerabilities in software on GitHub.
      *     </li>
      * </ul>
@@ -164,7 +164,7 @@ public class GitHubFeedsManager extends GitHubManager {
      *         <b>Current user organizations</b>: The private timeline for the organizations the authenticated user is a member of.
      *     </li>
      *     <li>
-     *         <b>Security advisories</b>: A collection of public announcements that provide information about security-related
+     *         <b>Security advisories</b>: A ArrayList of public announcements that provide information about security-related
      *         vulnerabilities in software on GitHub.
      *     </li>
      * </ul>

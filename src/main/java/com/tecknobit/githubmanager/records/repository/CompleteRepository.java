@@ -11,7 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.records.repository.CompleteRepository.RepoVisibility.*;
@@ -558,9 +557,9 @@ public class CompleteRepository extends Repository {
      * Method to get {@link #topics} instance <br>
      * No-any params required
      *
-     * @return {@link #topics} instance as {@link Collection} of {@link String}
+     * @return {@link #topics} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getTopics() {
+    public ArrayList<String> getTopics() {
         return topics;
     }
 

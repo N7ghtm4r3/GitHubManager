@@ -19,7 +19,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.apimanager.apis.APIRequest.downloadFile;
@@ -894,7 +893,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param run:        the workflow run from fetch the list
-     * @return reviews history as {@link Collection} of {@link Review} custom object
+     * @return reviews history as {@link ArrayList} of {@link Review} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -913,7 +912,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/approvals")
-    public Collection<Review> getReviewsHistory(Repository repository, WorkflowRun run) throws IOException {
+    public ArrayList<Review> getReviewsHistory(Repository repository, WorkflowRun run) throws IOException {
         return getReviewsHistory(repository.getOwner().getLogin(), repository.getName(), run.getId(), LIBRARY_OBJECT);
     }
 
@@ -958,7 +957,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param runId:      the unique identifier workflow run
-     * @return reviews history as {@link Collection} of {@link Review} custom object
+     * @return reviews history as {@link ArrayList} of {@link Review} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -977,7 +976,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/approvals")
-    public Collection<Review> getReviewsHistory(Repository repository, long runId) throws IOException {
+    public ArrayList<Review> getReviewsHistory(Repository repository, long runId) throws IOException {
         return getReviewsHistory(repository.getOwner().getLogin(), repository.getName(), runId, LIBRARY_OBJECT);
     }
 
@@ -1023,7 +1022,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param run:   the workflow run from fetch the list
-     * @return reviews history as {@link Collection} of {@link Review} custom object
+     * @return reviews history as {@link ArrayList} of {@link Review} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1042,7 +1041,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/approvals")
-    public Collection<Review> getReviewsHistory(String owner, String repo, WorkflowRun run) throws IOException {
+    public ArrayList<Review> getReviewsHistory(String owner, String repo, WorkflowRun run) throws IOException {
         return getReviewsHistory(owner, repo, run.getId(), LIBRARY_OBJECT);
     }
 
@@ -1089,7 +1088,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param runId: the unique identifier workflow run
-     * @return reviews history as {@link Collection} of {@link Review} custom object
+     * @return reviews history as {@link ArrayList} of {@link Review} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1107,7 +1106,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/approvals")
-    public Collection<Review> getReviewsHistory(String owner, String repo, long runId) throws IOException {
+    public ArrayList<Review> getReviewsHistory(String owner, String repo, long runId) throws IOException {
         return getReviewsHistory(owner, repo, runId, LIBRARY_OBJECT);
     }
 
@@ -2298,7 +2297,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param run:        the workflow run from fetch the list
-     * @return pending deployments as {@link Collection} of {@link Deployment} custom object
+     * @return pending deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2317,8 +2316,8 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<Deployment> getWorkflowRunPendingDeployments(Repository repository,
-                                                                   WorkflowRun run) throws IOException {
+    public ArrayList<Deployment> getWorkflowRunPendingDeployments(Repository repository,
+                                                                  WorkflowRun run) throws IOException {
         return getWorkflowRunPendingDeployments(repository.getOwner().getLogin(), repository.getName(), run.getId(),
                 LIBRARY_OBJECT);
     }
@@ -2366,7 +2365,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param runId:      the unique identifier workflow run
-     * @return pending deployments as {@link Collection} of {@link Deployment} custom object
+     * @return pending deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2385,7 +2384,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<Deployment> getWorkflowRunPendingDeployments(Repository repository, long runId) throws IOException {
+    public ArrayList<Deployment> getWorkflowRunPendingDeployments(Repository repository, long runId) throws IOException {
         return getWorkflowRunPendingDeployments(repository.getOwner().getLogin(), repository.getName(), runId,
                 LIBRARY_OBJECT);
     }
@@ -2433,7 +2432,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param run:   the workflow run from fetch the list
-     * @return pending deployments as {@link Collection} of {@link Deployment} custom object
+     * @return pending deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2452,8 +2451,8 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<Deployment> getWorkflowRunPendingDeployments(String owner, String repo,
-                                                                   WorkflowRun run) throws IOException {
+    public ArrayList<Deployment> getWorkflowRunPendingDeployments(String owner, String repo,
+                                                                  WorkflowRun run) throws IOException {
         return getWorkflowRunPendingDeployments(owner, repo, run.getId(), LIBRARY_OBJECT);
     }
 
@@ -2501,7 +2500,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
      * @param runId: the unique identifier workflow run
-     * @return pending deployments as {@link Collection} of {@link Deployment} custom object
+     * @return pending deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2519,8 +2518,8 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<Deployment> getWorkflowRunPendingDeployments(String owner, String repo,
-                                                                   long runId) throws IOException {
+    public ArrayList<Deployment> getWorkflowRunPendingDeployments(String owner, String repo,
+                                                                  long runId) throws IOException {
         return getWorkflowRunPendingDeployments(owner, repo, runId, LIBRARY_OBJECT);
     }
 
@@ -2584,10 +2583,10 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository:      the repository from approve the deployment
      * @param run:             the workflow run from approve the deployment
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2606,9 +2605,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(Repository repository, WorkflowRun run,
-                                                                 Collection<Long> environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(Repository repository, WorkflowRun run,
+                                                                ArrayList<Long> environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(repository.getOwner().getLogin(), repository.getName(), run.getId(),
                 environmentsIds, state, comment, LIBRARY_OBJECT);
     }
@@ -2621,7 +2620,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository:      the repository from approve the deployment
      * @param run:             the workflow run from approve the deployment
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
      * @param format:          return type formatter -> {@link ReturnFormat}
@@ -2643,7 +2642,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public <T> T reviewPendingDeployments(Repository repository, WorkflowRun run, Collection<Long> environmentsIds,
+    public <T> T reviewPendingDeployments(Repository repository, WorkflowRun run, ArrayList<Long> environmentsIds,
                                           ApprovalState state, String comment, ReturnFormat format) throws IOException {
         return reviewPendingDeployments(repository.getOwner().getLogin(), repository.getName(), run.getId(),
                 environmentsIds, state, comment, format);
@@ -2658,10 +2657,10 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner:           the account owner of the repository. The name is not case-sensitive
      * @param repo:            the name of the repository. The name is not case-sensitive
      * @param run:             the workflow run from approve the deployment
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2680,9 +2679,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(String owner, String repo, WorkflowRun run,
-                                                                 Collection<Long> environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(String owner, String repo, WorkflowRun run,
+                                                                ArrayList<Long> environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(owner, repo, run.getId(), environmentsIds, state, comment, LIBRARY_OBJECT);
     }
 
@@ -2695,7 +2694,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner:           the account owner of the repository. The name is not case-sensitive
      * @param repo:            the name of the repository. The name is not case-sensitive
      * @param run:             the workflow run from approve the deployment
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
      * @param format:          return type formatter -> {@link ReturnFormat}
@@ -2717,7 +2716,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public <T> T reviewPendingDeployments(String owner, String repo, WorkflowRun run, Collection<Long> environmentsIds,
+    public <T> T reviewPendingDeployments(String owner, String repo, WorkflowRun run, ArrayList<Long> environmentsIds,
                                           ApprovalState state, String comment, ReturnFormat format) throws IOException {
         return reviewPendingDeployments(owner, repo, run.getId(), environmentsIds, state, comment, format);
     }
@@ -2730,10 +2729,10 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository:      the repository from approve the deployment
      * @param runId:           the unique identifier workflow run
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2752,9 +2751,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(Repository repository, long runId,
-                                                                 Collection<Long> environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(Repository repository, long runId,
+                                                                ArrayList<Long> environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(repository.getOwner().getLogin(), repository.getName(), runId, environmentsIds,
                 state, comment, LIBRARY_OBJECT);
     }
@@ -2767,7 +2766,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      *
      * @param repository:      the repository from approve the deployment
      * @param runId:           the unique identifier workflow run
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
      * @param format:          return type formatter -> {@link ReturnFormat}
@@ -2789,7 +2788,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public <T> T reviewPendingDeployments(Repository repository, long runId, Collection<Long> environmentsIds,
+    public <T> T reviewPendingDeployments(Repository repository, long runId, ArrayList<Long> environmentsIds,
                                           ApprovalState state, String comment, ReturnFormat format) throws IOException {
         return reviewPendingDeployments(repository.getOwner().getLogin(), repository.getName(), runId, environmentsIds,
                 state, comment, format);
@@ -2804,10 +2803,10 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner:           the account owner of the repository. The name is not case-sensitive
      * @param repo:            the name of the repository. The name is not case-sensitive
      * @param runId:           the unique identifier workflow run
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2825,9 +2824,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(String owner, String repo, long runId,
-                                                                 Collection<Long> environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(String owner, String repo, long runId,
+                                                                ArrayList<Long> environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(owner, repo, runId, environmentsIds, state, comment, LIBRARY_OBJECT);
     }
 
@@ -2840,7 +2839,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param owner:           the account owner of the repository. The name is not case-sensitive
      * @param repo:            the name of the repository. The name is not case-sensitive
      * @param runId:           the unique identifier workflow run
-     * @param environmentsIds: the list of environment ids to approve or reject in {@link Collection} of {@link Long} format
+     * @param environmentsIds: the list of environment ids to approve or reject in {@link ArrayList} of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
      * @param format:          return type formatter -> {@link ReturnFormat}
@@ -2861,7 +2860,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * Review pending deployments for a workflow run</a>
      **/
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public <T> T reviewPendingDeployments(String owner, String repo, long runId, Collection<Long> environmentsIds,
+    public <T> T reviewPendingDeployments(String owner, String repo, long runId, ArrayList<Long> environmentsIds,
                                           ApprovalState state, String comment, ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("environment_ids", environmentsIds.stream().toList());
@@ -2882,7 +2881,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param environmentsIds: the list of environment ids to approve or reject in array of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2901,9 +2900,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(Repository repository, WorkflowRun run,
-                                                                 Long[] environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(Repository repository, WorkflowRun run,
+                                                                Long[] environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(repository.getOwner().getLogin(), repository.getName(), run.getId(),
                 environmentsIds, state, comment, LIBRARY_OBJECT);
     }
@@ -2956,7 +2955,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param environmentsIds: the list of environment ids to approve or reject in array of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -2975,9 +2974,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(String owner, String repo, WorkflowRun run,
-                                                                 Long[] environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(String owner, String repo, WorkflowRun run,
+                                                                Long[] environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(owner, repo, run.getId(), environmentsIds, state, comment, LIBRARY_OBJECT);
     }
 
@@ -3028,7 +3027,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param environmentsIds: the list of environment ids to approve or reject in array of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3047,9 +3046,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(Repository repository, long runId,
-                                                                 Long[] environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(Repository repository, long runId,
+                                                                Long[] environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(repository.getOwner().getLogin(), repository.getName(), runId, environmentsIds,
                 state, comment, LIBRARY_OBJECT);
     }
@@ -3102,7 +3101,7 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      * @param environmentsIds: the list of environment ids to approve or reject in array of {@link Long} format
      * @param state:           whether to approve or reject deployment to the specified environments
      * @param comment:         a comment to accompany the deployment review
-     * @return pending deployments as {@link Collection} of {@link DeploymentReview} custom object
+     * @return pending deployments as {@link ArrayList} of {@link DeploymentReview} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3120,9 +3119,9 @@ public class GitHubWorkflowRunsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments")
-    public Collection<DeploymentReview> reviewPendingDeployments(String owner, String repo, long runId,
-                                                                 Long[] environmentsIds, ApprovalState state,
-                                                                 String comment) throws IOException {
+    public ArrayList<DeploymentReview> reviewPendingDeployments(String owner, String repo, long runId,
+                                                                Long[] environmentsIds, ApprovalState state,
+                                                                String comment) throws IOException {
         return reviewPendingDeployments(owner, repo, runId, environmentsIds, state, comment, LIBRARY_OBJECT);
     }
 

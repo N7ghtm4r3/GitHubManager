@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
@@ -94,9 +93,9 @@ public class RepositoriesList extends GitHubList {
      * Method to get {@link #repositories} instance <br>
      * No-any params required
      *
-     * @return {@link #repositories} instance as {@link Collection} of {@link Repository}
+     * @return {@link #repositories} instance as {@link ArrayList} of {@link Repository}
      **/
-    public Collection<Repository> getRepositories() {
+    public ArrayList<Repository> getRepositories() {
         return repositories;
     }
 
@@ -104,9 +103,9 @@ public class RepositoriesList extends GitHubList {
      * Method to get the ids from the {@link #repositories} instance <br>
      * No-any params required
      *
-     * @return ids from {@link #repositories} instance as {@link Collection} of {@link Long}
+     * @return ids from {@link #repositories} instance as {@link ArrayList} of {@link Long}
      **/
-    public Collection<Long> getIds() {
+    public ArrayList<Long> getIds() {
         ArrayList<Long> ids = new ArrayList<>();
         for (Repository repository : repositories)
             ids.add(repository.getId());

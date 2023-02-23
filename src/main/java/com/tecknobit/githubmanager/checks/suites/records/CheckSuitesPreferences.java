@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code CheckSuitesPreferences} class is useful to format a GitHub's check suites preferences
@@ -112,9 +111,9 @@ public class CheckSuitesPreferences extends GitHubResponse {
          * Method to get {@link #autoTriggerChecks} instance <br>
          * No-any params required
          *
-         * @return {@link #autoTriggerChecks} instance as {@link Collection} of {@link AutoTriggerCheck}
+         * @return {@link #autoTriggerChecks} instance as {@link ArrayList} of {@link AutoTriggerCheck}
          **/
-        public Collection<AutoTriggerCheck> getAutoTriggerChecks() {
+        public ArrayList<AutoTriggerCheck> getAutoTriggerChecks() {
             return autoTriggerChecks;
         }
 

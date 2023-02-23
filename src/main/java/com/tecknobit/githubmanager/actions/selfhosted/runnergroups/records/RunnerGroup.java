@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.vPrivate;
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.valueOf;
@@ -222,9 +221,9 @@ public class RunnerGroup extends GitHubResponse {
      * Method to get {@link #selectedWorkFlows} instance <br>
      * No-any params required
      *
-     * @return {@link #selectedWorkFlows} instance as {@link Collection} of {@link String}
+     * @return {@link #selectedWorkFlows} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getSelectedWorkFlows() {
+    public ArrayList<String> getSelectedWorkFlows() {
         return selectedWorkFlows;
     }
 

@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.Repository;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -105,7 +105,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Method to get the people that have starred the repository
      *
      * @param repository: repository from fetch the list
-     * @return stargazers list as {@link Collection} of {@link User} custom object
+     * @return stargazers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -124,7 +124,7 @@ public class GitHubStarringManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
-    public Collection<User> getStargazers(Repository repository) throws IOException {
+    public ArrayList<User> getStargazers(Repository repository) throws IOException {
         return getStargazers(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -160,7 +160,7 @@ public class GitHubStarringManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return stargazers list as {@link Collection} of {@link User} custom object
+     * @return stargazers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -178,7 +178,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
-    public Collection<User> getStargazers(String owner, String repo) throws IOException {
+    public ArrayList<User> getStargazers(String owner, String repo) throws IOException {
         return getStargazers(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -222,7 +222,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return stargazers list as {@link Collection} of {@link User} custom object
+     * @return stargazers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -241,7 +241,7 @@ public class GitHubStarringManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
-    public Collection<User> getStargazers(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<User> getStargazers(Repository repository, Params queryParams) throws IOException {
         return getStargazers(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -295,7 +295,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return stargazers list as {@link Collection} of {@link User} custom object
+     * @return stargazers list as {@link ArrayList} of {@link User} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -313,7 +313,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/stargazers")
-    public Collection<User> getStargazers(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<User> getStargazers(String owner, String repo, Params queryParams) throws IOException {
         return getStargazers(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -358,7 +358,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Method to get the repositories the authenticated user has starred <br>
      * No-any params required
      *
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -376,7 +376,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/starred")
-    public Collection<CompleteRepository> getAuthenticatedUserStarredRepositories() throws IOException {
+    public ArrayList<CompleteRepository> getAuthenticatedUserStarredRepositories() throws IOException {
         return getAuthenticatedUserStarredRepositories(LIBRARY_OBJECT);
     }
 
@@ -427,7 +427,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -445,7 +445,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/starred")
-    public Collection<CompleteRepository> getAuthenticatedUserStarredRepositories(Params queryParams) throws IOException {
+    public ArrayList<CompleteRepository> getAuthenticatedUserStarredRepositories(Params queryParams) throws IOException {
         return getAuthenticatedUserStarredRepositories(queryParams, LIBRARY_OBJECT);
     }
 
@@ -610,7 +610,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Method to get the list of the repositories starred by a user
      *
      * @param username: the handle for the GitHub user account
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -628,7 +628,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/starred")
-    public Collection<CompleteRepository> getStarredRepositories(String username) throws IOException {
+    public ArrayList<CompleteRepository> getStarredRepositories(String username) throws IOException {
         return getStarredRepositories(username, LIBRARY_OBJECT);
     }
 
@@ -680,7 +680,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories list as {@link Collection} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -698,7 +698,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/starred")
-    public Collection<CompleteRepository> getStarredRepositories(String username, Params queryParams) throws IOException {
+    public ArrayList<CompleteRepository> getStarredRepositories(String username, Params queryParams) throws IOException {
         return getStarredRepositories(username, queryParams, LIBRARY_OBJECT);
     }
 

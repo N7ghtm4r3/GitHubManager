@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code DevContainersList} class is useful to format a GitHub's dev containers list
@@ -72,9 +71,9 @@ public class DevContainersList extends GitHubList {
      * Method to get {@link #devContainers} instance <br>
      * No-any params required
      *
-     * @return {@link #devContainers} instance as {@link Collection} of {@link DevContainer}
+     * @return {@link #devContainers} instance as {@link ArrayList} of {@link DevContainer}
      **/
-    public Collection<DevContainer> getDevContainers() {
+    public ArrayList<DevContainer> getDevContainers() {
         return devContainers;
     }
 

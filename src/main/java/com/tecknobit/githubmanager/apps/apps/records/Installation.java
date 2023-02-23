@@ -6,7 +6,6 @@ import com.tecknobit.githubmanager.records.repository.Repository.RepositorySelec
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection.all;
@@ -349,9 +348,9 @@ public class Installation extends GitHubResponse {
      * Method to get {@link #events} instance <br>
      * No-any params required
      *
-     * @return {@link #events} instance as {@link Collection} of {@link String}
+     * @return {@link #events} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getEvents() {
+    public ArrayList<String> getEvents() {
         return events;
     }
 
@@ -379,9 +378,9 @@ public class Installation extends GitHubResponse {
      * Method to get {@link #singleFilePaths} instance <br>
      * No-any params required
      *
-     * @return {@link #singleFilePaths} instance as {@link Collection} of {@link String}
+     * @return {@link #singleFilePaths} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getSingleFilePaths() {
+    public ArrayList<String> getSingleFilePaths() {
         return singleFilePaths;
     }
 

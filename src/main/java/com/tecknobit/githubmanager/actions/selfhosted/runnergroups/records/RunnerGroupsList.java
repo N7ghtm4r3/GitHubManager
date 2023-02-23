@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code RunnerGroupsList} class is useful to format a GitHub's runner groups list
@@ -71,9 +70,9 @@ public class RunnerGroupsList extends GitHubList {
      * Method to get {@link #runnerGroups} instance <br>
      * No-any params required
      *
-     * @return {@link #runnerGroups} instance as {@link Collection} of {@link RunnerGroup}
+     * @return {@link #runnerGroups} instance as {@link ArrayList} of {@link RunnerGroup}
      **/
-    public Collection<RunnerGroup> getRunnerGroups() {
+    public ArrayList<RunnerGroup> getRunnerGroups() {
         return runnerGroups;
     }
 

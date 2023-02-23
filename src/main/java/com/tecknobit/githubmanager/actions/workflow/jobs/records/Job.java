@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -263,9 +262,9 @@ public class Job extends BaseResponseDetails {
      * Method to get {@link #steps} instance <br>
      * No-any params required
      *
-     * @return {@link #steps} instance as {@link Collection} of {@link Step}
+     * @return {@link #steps} instance as {@link ArrayList} of {@link Step}
      **/
-    public Collection<Step> getSteps() {
+    public ArrayList<Step> getSteps() {
         return steps;
     }
 
@@ -307,9 +306,9 @@ public class Job extends BaseResponseDetails {
      * Method to get {@link #labels} instance <br>
      * No-any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link String}
+     * @return {@link #labels} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getLabels() {
+    public ArrayList<String> getLabels() {
         return labels;
     }
 

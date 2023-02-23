@@ -16,7 +16,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -114,7 +113,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
      * GitHub Apps must have the members organization permission and metadata repository permission to use this endpoint <br>
      *
      * @param repository: the repository from fetch the list
-     * @return collaborators list as {@link Collection} of {@link Collaborator} custom object
+     * @return collaborators list as {@link ArrayList} of {@link Collaborator} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -133,7 +132,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/collaborators")
-    public Collection<Collaborator> getRepositoryCollaborators(Repository repository) throws IOException {
+    public ArrayList<Collaborator> getRepositoryCollaborators(Repository repository) throws IOException {
         return getRepositoryCollaborators(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -185,7 +184,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return collaborators list as {@link Collection} of {@link Collaborator} custom object
+     * @return collaborators list as {@link ArrayList} of {@link Collaborator} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -203,7 +202,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/collaborators")
-    public Collection<Collaborator> getRepositoryCollaborators(String owner, String repo) throws IOException {
+    public ArrayList<Collaborator> getRepositoryCollaborators(String owner, String repo) throws IOException {
         return getRepositoryCollaborators(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -276,7 +275,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return collaborators list as {@link Collection} of {@link Collaborator} custom object
+     * @return collaborators list as {@link ArrayList} of {@link Collaborator} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -295,7 +294,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/collaborators")
-    public Collection<Collaborator> getRepositoryCollaborators(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Collaborator> getRepositoryCollaborators(Repository repository, Params queryParams) throws IOException {
         return getRepositoryCollaborators(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -391,7 +390,7 @@ public class GitHubCollaboratorsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return collaborators list as {@link Collection} of {@link Collaborator} custom object
+     * @return collaborators list as {@link ArrayList} of {@link Collaborator} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -409,8 +408,8 @@ public class GitHubCollaboratorsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/collaborators")
-    public Collection<Collaborator> getRepositoryCollaborators(String owner, String repo,
-                                                               Params queryParams) throws IOException {
+    public ArrayList<Collaborator> getRepositoryCollaborators(String owner, String repo,
+                                                              Params queryParams) throws IOException {
         return getRepositoryCollaborators(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

@@ -5,7 +5,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
@@ -238,9 +237,9 @@ public class Plan extends BaseResponseDetails {
      * Method to get {@link #bullets} instance <br>
      * No-any params required
      *
-     * @return {@link #bullets} instance as {@link Collection} of {@link String}
+     * @return {@link #bullets} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getBullets() {
+    public ArrayList<String> getBullets() {
         return bullets;
     }
 

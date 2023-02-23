@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -96,7 +95,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
      * Method to get the list of the deployment keys
      *
      * @param repository: the repository from fetch the list
-     * @return deployment keys as {@link Collection} of {@link DeployKey} custom object
+     * @return deployment keys as {@link ArrayList} of {@link DeployKey} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -115,7 +114,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/keys")
-    public Collection<DeployKey> getDeployKeys(Repository repository) throws IOException {
+    public ArrayList<DeployKey> getDeployKeys(Repository repository) throws IOException {
         return getDeployKeys(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -151,7 +150,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return deployment keys as {@link Collection} of {@link DeployKey} custom object
+     * @return deployment keys as {@link ArrayList} of {@link DeployKey} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -169,7 +168,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/keys")
-    public Collection<DeployKey> getDeployKeys(String owner, String repo) throws IOException {
+    public ArrayList<DeployKey> getDeployKeys(String owner, String repo) throws IOException {
         return getDeployKeys(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -213,7 +212,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return deployment keys as {@link Collection} of {@link DeployKey} custom object
+     * @return deployment keys as {@link ArrayList} of {@link DeployKey} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -232,7 +231,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/keys")
-    public Collection<DeployKey> getDeployKeys(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<DeployKey> getDeployKeys(Repository repository, Params queryParams) throws IOException {
         return getDeployKeys(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -286,7 +285,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return deployment keys as {@link Collection} of {@link DeployKey} custom object
+     * @return deployment keys as {@link ArrayList} of {@link DeployKey} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -304,7 +303,7 @@ public class GitHubDeployKeysManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/keys")
-    public Collection<DeployKey> getDeployKeys(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<DeployKey> getDeployKeys(String owner, String repo, Params queryParams) throws IOException {
         return getDeployKeys(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 

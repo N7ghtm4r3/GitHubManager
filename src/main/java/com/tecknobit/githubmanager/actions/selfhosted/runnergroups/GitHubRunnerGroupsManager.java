@@ -18,7 +18,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -1087,14 +1086,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param enterprise:       the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerGroup:      the runner group for the list
-     * @param organizationsIds: list of organization IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param organizationsIds: list of organization IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
-    public boolean authorizeOrganizationsList(String enterprise, RunnerGroup runnerGroup, Collection<Long> organizationsIds) {
+    public boolean authorizeOrganizationsList(String enterprise, RunnerGroup runnerGroup, ArrayList<Long> organizationsIds) {
         return authorizeOrganizationsList(enterprise, runnerGroup.getId(), organizationsIds.toArray(new Long[0]));
     }
 
@@ -1123,13 +1122,13 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param enterprise:       the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerGroupId:    unique identifier of the self-hosted runner group
-     * @param organizationsIds: list of organization IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param organizationsIds: list of organization IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-organization-access-for-a-self-hosted-runner-group-in-an-enterprise">
      * Set organization access for a self-hosted runner group in an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
-    public boolean authorizeOrganizationsList(String enterprise, long runnerGroupId, Collection<Long> organizationsIds) {
+    public boolean authorizeOrganizationsList(String enterprise, long runnerGroupId, ArrayList<Long> organizationsIds) {
         return authorizeOrganizationsList(enterprise, runnerGroupId, organizationsIds.toArray(new Long[0]));
     }
 
@@ -1649,14 +1648,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param enterprise:  the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerGroup: the runner group for the list
-     * @param runnersIds:  list of runner IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:  list of runner IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
-    public boolean setEnterpriseRunnersList(String enterprise, RunnerGroup runnerGroup, Collection<Long> runnersIds) {
+    public boolean setEnterpriseRunnersList(String enterprise, RunnerGroup runnerGroup, ArrayList<Long> runnersIds) {
         return setEnterpriseRunnersList(enterprise, runnerGroup.getId(), runnersIds.toArray(new Long[0]));
     }
 
@@ -1685,13 +1684,13 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param enterprise:    the slug version of the enterprise name. You can also substitute this value with the enterprise id
      * @param runnerGroupId: unique identifier of the self-hosted runner group
-     * @param runnersIds:    list of runner IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:    list of runner IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-enterprise">
      * Set self-hosted runners in a group for an enterprise</a>
      **/
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners")
-    public boolean setEnterpriseRunnersList(String enterprise, long runnerGroupId, Collection<Long> runnersIds) {
+    public boolean setEnterpriseRunnersList(String enterprise, long runnerGroupId, ArrayList<Long> runnersIds) {
         return setEnterpriseRunnersList(enterprise, runnerGroupId, runnersIds.toArray(new Long[0]));
     }
 
@@ -3997,14 +3996,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:             the organization to set the list
      * @param runnerGroup:     the runner group to set the list
-     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public boolean authorizeRepositoriesList(Organization org, RunnerGroup runnerGroup, Collection<Long> repositoriesIds) {
+    public boolean authorizeRepositoriesList(Organization org, RunnerGroup runnerGroup, ArrayList<Long> repositoriesIds) {
         return authorizeRepositoriesList(org.getLogin(), runnerGroup.getId(), repositoriesIds.toArray(new Long[0]));
     }
 
@@ -4016,14 +4015,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:             the organization name. The name is not case-sensitive
      * @param runnerGroup:     the runner group to set the list
-     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public boolean authorizeRepositoriesList(String org, RunnerGroup runnerGroup, Collection<Long> repositoriesIds) {
+    public boolean authorizeRepositoriesList(String org, RunnerGroup runnerGroup, ArrayList<Long> repositoriesIds) {
         return authorizeRepositoriesList(org, runnerGroup.getId(), repositoriesIds.toArray(new Long[0]));
     }
 
@@ -4073,14 +4072,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:             the organization to set the list
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
-     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public boolean authorizeRepositoriesList(Organization org, long runnerGroupId, Collection<Long> repositoriesIds) {
+    public boolean authorizeRepositoriesList(Organization org, long runnerGroupId, ArrayList<Long> repositoriesIds) {
         return authorizeRepositoriesList(org.getLogin(), runnerGroupId, repositoriesIds.toArray(new Long[0]));
     }
 
@@ -4111,13 +4110,13 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:             the organization name. The name is not case-sensitive
      * @param runnerGroupId:   unique identifier of the self-hosted runner group
-     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link Collection} of {@link Long} format
+     * @param repositoriesIds: list of repository IDs that can access the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization">
      * Set repository access for a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public boolean authorizeRepositoriesList(String org, long runnerGroupId, Collection<Long> repositoriesIds) {
+    public boolean authorizeRepositoriesList(String org, long runnerGroupId, ArrayList<Long> repositoriesIds) {
         return authorizeRepositoriesList(org, runnerGroupId, repositoriesIds.toArray(new Long[0]));
     }
 
@@ -4991,14 +4990,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:         the organization to set the runners
      * @param runnerGroup: runner group to set the runners
-     * @param runnersIds:  list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:  list of runner IDs to add to the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
-    public boolean setOrganizationRunnersList(Organization org, RunnerGroup runnerGroup, Collection<Long> runnersIds) {
+    public boolean setOrganizationRunnersList(Organization org, RunnerGroup runnerGroup, ArrayList<Long> runnersIds) {
         return setOrganizationRunnersList(org.getLogin(), runnerGroup.getId(), runnersIds.toArray(new Long[0]));
     }
 
@@ -5012,14 +5011,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:         the organization name. The name is not case-sensitive
      * @param runnerGroup: runner group to set the runners
-     * @param runnersIds:  list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:  list of runner IDs to add to the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
-    public boolean setOrganizationRunnersList(String org, RunnerGroup runnerGroup, Collection<Long> runnersIds) {
+    public boolean setOrganizationRunnersList(String org, RunnerGroup runnerGroup, ArrayList<Long> runnersIds) {
         return setOrganizationRunnersList(org, runnerGroup.getId(), runnersIds.toArray(new Long[0]));
     }
 
@@ -5075,14 +5074,14 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:           the organization to set the runners
      * @param runnerGroupId: unique identifier of the self-hosted runner group
-     * @param runnersIds:    list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:    list of runner IDs to add to the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
-    public boolean setOrganizationRunnersList(Organization org, long runnerGroupId, Collection<Long> runnersIds) {
+    public boolean setOrganizationRunnersList(Organization org, long runnerGroupId, ArrayList<Long> runnersIds) {
         return setOrganizationRunnersList(org.getLogin(), runnerGroupId, runnersIds.toArray(new Long[0]));
     }
 
@@ -5096,7 +5095,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:           the organization to set the runners
      * @param runnerGroupId: unique identifier of the self-hosted runner group
-     * @param runnersIds:    list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:    list of runner IDs to add to the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
@@ -5117,13 +5116,13 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:           the organization name. The name is not case-sensitive
      * @param runnerGroupId: unique identifier of the self-hosted runner group
-     * @param runnersIds:    list of runner IDs to add to the runner group in {@link Collection} of {@link Long} format
+     * @param runnersIds:    list of runner IDs to add to the runner group in {@link ArrayList} of {@link Long} format
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization">
      * Set self-hosted runners in a group for an organization</a>
      **/
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners")
-    public boolean setOrganizationRunnersList(String org, long runnerGroupId, Collection<Long> runnersIds) {
+    public boolean setOrganizationRunnersList(String org, long runnerGroupId, ArrayList<Long> runnersIds) {
         return setOrganizationRunnersList(org, runnerGroupId, runnersIds.toArray(new Long[0]));
     }
 

@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code RepositoriesCacheUsagesList} class is useful to format a GitHub's repositories cache usages list
@@ -62,9 +61,9 @@ public class RepositoriesCacheUsagesList extends GitHubList {
      * Method to get {@link #repositoryCacheUsages} instance <br>
      * No-any params required
      *
-     * @return {@link #repositoryCacheUsages} instance as {@link Collection} of {@link RepositoryCacheUsage}
+     * @return {@link #repositoryCacheUsages} instance as {@link ArrayList} of {@link RepositoryCacheUsage}
      **/
-    public Collection<RepositoryCacheUsage> getRepositoryCacheUsages() {
+    public ArrayList<RepositoryCacheUsage> getRepositoryCacheUsages() {
         return repositoryCacheUsages;
     }
 

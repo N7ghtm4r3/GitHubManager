@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code WorkflowsList} class is useful to format a GitHub's workflows list
@@ -62,9 +61,9 @@ public class WorkflowsList extends GitHubList {
      * Method to get {@link #workflows} instance <br>
      * No-any params required
      *
-     * @return {@link #workflows} instance as {@link Collection} of {@link Workflow}
+     * @return {@link #workflows} instance as {@link ArrayList} of {@link Workflow}
      **/
-    public Collection<Workflow> getWorkflows() {
+    public ArrayList<Workflow> getWorkflows() {
         return workflows;
     }
 

@@ -20,7 +20,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -1028,7 +1027,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *
      * @param repository: repository from fetch the list
      * @param checkRun:   check run from fetch the list
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1047,7 +1046,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, CheckRun checkRun) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, CheckRun checkRun) throws IOException {
         return getCheckRunAnnotations(repository.getOwner().getLogin(), repository.getName(), checkRun.getId(),
                 LIBRARY_OBJECT);
     }
@@ -1091,7 +1090,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *
      * @param repository: repository from fetch the list
      * @param checkRunId: the unique identifier of the check run
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1110,7 +1109,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, long checkRunId) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, long checkRunId) throws IOException {
         return getCheckRunAnnotations(repository.getOwner().getLogin(), repository.getName(), checkRunId, LIBRARY_OBJECT);
     }
 
@@ -1154,7 +1153,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      * @param owner:    the account owner of the repository. The name is not case-sensitive
      * @param repo:     the name of the repository. The name is not case-sensitive
      * @param checkRun: check run from fetch the list
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1173,8 +1172,8 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo,
-                                                                 CheckRun checkRun) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo,
+                                                                CheckRun checkRun) throws IOException {
         return getCheckRunAnnotations(owner, repo, checkRun.getId(), LIBRARY_OBJECT);
     }
 
@@ -1220,7 +1219,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      * @param owner:      the account owner of the repository. The name is not case-sensitive
      * @param repo:       the name of the repository. The name is not case-sensitive
      * @param checkRunId: the unique identifier of the check run
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1238,8 +1237,8 @@ public class GitHubCheckRunsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo,
-                                                                 long checkRunId) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo,
+                                                                long checkRunId) throws IOException {
         return getCheckRunAnnotations(owner, repo, checkRunId, LIBRARY_OBJECT);
     }
 
@@ -1292,7 +1291,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1311,8 +1310,8 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, CheckRun checkRun,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, CheckRun checkRun,
+                                                                Params queryParams) throws IOException {
         return getCheckRunAnnotations(repository.getOwner().getLogin(), repository.getName(), checkRun.getId(),
                 queryParams, LIBRARY_OBJECT);
     }
@@ -1376,7 +1375,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1395,8 +1394,8 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, long checkRunId,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(Repository repository, long checkRunId,
+                                                                Params queryParams) throws IOException {
         return getCheckRunAnnotations(repository.getOwner().getLogin(), repository.getName(), checkRunId, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1461,7 +1460,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1480,8 +1479,8 @@ public class GitHubCheckRunsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo, CheckRun checkRun,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo, CheckRun checkRun,
+                                                                Params queryParams) throws IOException {
         return getCheckRunAnnotations(owner, repo, checkRun.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1545,7 +1544,7 @@ public class GitHubCheckRunsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return check run annotations as {@link Collection} of {@link CheckRunAnnotation} custom object
+     * @return check run annotations as {@link ArrayList} of {@link CheckRunAnnotation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1563,8 +1562,8 @@ public class GitHubCheckRunsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations")
-    public Collection<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo, long checkRunId,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<CheckRunAnnotation> getCheckRunAnnotations(String owner, String repo, long checkRunId,
+                                                                Params queryParams) throws IOException {
         return getCheckRunAnnotations(owner, repo, checkRunId, queryParams, LIBRARY_OBJECT);
     }
 

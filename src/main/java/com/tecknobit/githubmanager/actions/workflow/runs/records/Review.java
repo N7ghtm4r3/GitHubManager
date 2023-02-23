@@ -9,7 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.ApprovalState.approved;
@@ -102,9 +101,9 @@ public class Review extends GitHubResponse {
      * Method to get {@link #environments} instance <br>
      * No-any params required
      *
-     * @return {@link #environments} instance as {@link Collection} of {@link Environment}
+     * @return {@link #environments} instance as {@link ArrayList} of {@link Environment}
      **/
-    public Collection<Environment> getEnvironments() {
+    public ArrayList<Environment> getEnvironments() {
         return environments;
     }
 

@@ -16,7 +16,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -249,7 +248,7 @@ public class GitHubAppsManager extends GitHubManager {
      * The permissions the installation has are included under the permissions key <br>
      * No-any params required
      *
-     * @return installations list as {@link Collection} of {@link Installation} custom object
+     * @return installations list as {@link ArrayList} of {@link Installation} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -267,7 +266,7 @@ public class GitHubAppsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/app/installations")
-    public Collection<Installation> getInstallationsList() throws Exception {
+    public ArrayList<Installation> getInstallationsList() throws Exception {
         return getInstallationsList(LIBRARY_OBJECT);
     }
 
@@ -319,7 +318,7 @@ public class GitHubAppsManager extends GitHubManager {
      *                            {@code "outdated"} -> outdated value - [string]
      *                        </li>
      *                     </ul>
-     * @return installations list as {@link Collection} of {@link Installation} custom object
+     * @return installations list as {@link ArrayList} of {@link Installation} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -337,7 +336,7 @@ public class GitHubAppsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/app/installations")
-    public Collection<Installation> getInstallationsList(Params queryParams) throws Exception {
+    public ArrayList<Installation> getInstallationsList(Params queryParams) throws Exception {
         return getInstallationsList(queryParams, LIBRARY_OBJECT);
     }
 

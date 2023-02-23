@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code OIDCSubjectClaim} class is useful to format a GitHub's customization template for an OIDC subject claim
@@ -82,9 +81,9 @@ public class OIDCSubjectClaim extends GitHubResponse {
      * Method to get {@link #includeClaimKeys} instance <br>
      * No-any params required
      *
-     * @return {@link #includeClaimKeys} instance as {@link Collection} of {@link String}
+     * @return {@link #includeClaimKeys} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getIncludeClaimKeys() {
+    public ArrayList<String> getIncludeClaimKeys() {
         return includeClaimKeys;
     }
 

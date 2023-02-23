@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * The {@code MachinesList} class is useful to format a GitHub's machines list
@@ -72,9 +71,9 @@ public class MachinesList extends GitHubList {
      * Method to get {@link #machines} instance <br>
      * No-any params required
      *
-     * @return {@link #machines} instance as {@link Collection} of {@link Machine}
+     * @return {@link #machines} instance as {@link ArrayList} of {@link Machine}
      **/
-    public Collection<Machine> getMachines() {
+    public ArrayList<Machine> getMachines() {
         return machines;
     }
 

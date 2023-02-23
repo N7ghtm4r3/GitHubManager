@@ -10,7 +10,6 @@ import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
@@ -549,9 +548,9 @@ public class Codespace extends BaseResponseDetails {
      * Method to get {@link #recentFolders} instance <br>
      * No-any params required
      *
-     * @return {@link #recentFolders} instance as {@link Collection} of {@link String}
+     * @return {@link #recentFolders} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getRecentFolders() {
+    public ArrayList<String> getRecentFolders() {
         return recentFolders;
     }
 
@@ -559,9 +558,9 @@ public class Codespace extends BaseResponseDetails {
      * Method to get {@link #runtimeConstraints} instance <br>
      * No-any params required
      *
-     * @return {@link #runtimeConstraints} instance as {@link Collection} of {@link String}
+     * @return {@link #runtimeConstraints} instance as {@link ArrayList} of {@link String}
      **/
-    public Collection<String> getRuntimeConstraints() {
+    public ArrayList<String> getRuntimeConstraints() {
         return runtimeConstraints;
     }
 

@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
@@ -85,9 +84,9 @@ public class AdvancedSecurityCommitters extends GitHubList {
      * Method to get {@link #repositories} instance <br>
      * No-any params required
      *
-     * @return {@link #repositories} instance as {@link Collection} of {@link SecurityRepository}
+     * @return {@link #repositories} instance as {@link ArrayList} of {@link SecurityRepository}
      **/
-    public Collection<SecurityRepository> getRepositories() {
+    public ArrayList<SecurityRepository> getRepositories() {
         return repositories;
     }
 
@@ -170,9 +169,9 @@ public class AdvancedSecurityCommitters extends GitHubList {
          * Method to get {@link #advancedSecurityCommittersBreakdown} instance <br>
          * No-any params required
          *
-         * @return {@link #advancedSecurityCommittersBreakdown} instance as {@link Collection} of {@link AdvancedSecurityCommitterBreakdown}
+         * @return {@link #advancedSecurityCommittersBreakdown} instance as {@link ArrayList} of {@link AdvancedSecurityCommitterBreakdown}
          **/
-        public Collection<AdvancedSecurityCommitterBreakdown> getAdvancedSecurityCommittersBreakdown() {
+        public ArrayList<AdvancedSecurityCommitterBreakdown> getAdvancedSecurityCommittersBreakdown() {
             return advancedSecurityCommittersBreakdown;
         }
 

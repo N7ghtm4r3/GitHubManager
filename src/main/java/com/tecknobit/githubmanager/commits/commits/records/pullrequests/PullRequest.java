@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
@@ -473,9 +472,9 @@ public class PullRequest extends GitHubOperation {
      * Method to get {@link #requestedReviewers} instance <br>
      * No-any params required
      *
-     * @return {@link #requestedReviewers} instance as {@link Collection} of {@link User}
+     * @return {@link #requestedReviewers} instance as {@link ArrayList} of {@link User}
      **/
-    public Collection<User> getRequestedReviewers() {
+    public ArrayList<User> getRequestedReviewers() {
         return requestedReviewers;
     }
 
@@ -483,9 +482,9 @@ public class PullRequest extends GitHubOperation {
      * Method to get {@link #requestedTeams} instance <br>
      * No-any params required
      *
-     * @return {@link #requestedTeams} instance as {@link Collection} of {@link Team}
+     * @return {@link #requestedTeams} instance as {@link ArrayList} of {@link Team}
      **/
-    public Collection<Team> getRequestedTeams() {
+    public ArrayList<Team> getRequestedTeams() {
         return requestedTeams;
     }
 

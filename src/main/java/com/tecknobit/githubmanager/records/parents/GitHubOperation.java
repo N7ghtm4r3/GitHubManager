@@ -5,7 +5,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
@@ -174,9 +173,9 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
      * Method to get {@link #labels} instance <br>
      * No-any params required
      *
-     * @return {@link #labels} instance as {@link Collection} of {@link Label}
+     * @return {@link #labels} instance as {@link ArrayList} of {@link Label}
      **/
-    public Collection<Label> getLabels() {
+    public ArrayList<Label> getLabels() {
         return labels;
     }
 
@@ -214,9 +213,9 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
      * Method to get {@link #assignees} instance <br>
      * No-any params required
      *
-     * @return {@link #assignees} instance as {@link Collection} of {@link User}
+     * @return {@link #assignees} instance as {@link ArrayList} of {@link User}
      **/
-    public Collection<User> getAssignees() {
+    public ArrayList<User> getAssignees() {
         return assignees;
     }
 

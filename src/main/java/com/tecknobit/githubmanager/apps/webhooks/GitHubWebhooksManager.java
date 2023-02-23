@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -283,7 +282,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      * You must use a JWT to access this endpoint <br>
      * No-any params required
      *
-     * @return deliveries list as {@link Collection} of {@link Delivery} custom object
+     * @return deliveries list as {@link ArrayList} of {@link Delivery} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -301,7 +300,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/app/hook/deliveries")
-    public Collection<Delivery> getAppWebhookDeliveries() throws IOException {
+    public ArrayList<Delivery> getAppWebhookDeliveries() throws IOException {
         return getAppWebhookDeliveries(LIBRARY_OBJECT);
     }
 
@@ -349,7 +348,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      *                            {@code "redelivery"} -> whether include the redeliveries - [boolean]
      *                        </li>
      *                     </ul>
-     * @return deliveries list as {@link Collection} of {@link Delivery} custom object
+     * @return deliveries list as {@link ArrayList} of {@link Delivery} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -367,7 +366,7 @@ public class GitHubWebhooksManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/app/hook/deliveries")
-    public Collection<Delivery> getAppWebhookDeliveries(Params queryParams) throws IOException {
+    public ArrayList<Delivery> getAppWebhookDeliveries(Params queryParams) throws IOException {
         return getAppWebhookDeliveries(queryParams, LIBRARY_OBJECT);
     }
 

@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -98,7 +97,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      * Method to get the commit comments list
      *
      * @param repository: the repository from fetch the list
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -117,7 +116,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments")
-    public Collection<CommitComment> getRepositoryCommitComments(Repository repository) throws IOException {
+    public ArrayList<CommitComment> getRepositoryCommitComments(Repository repository) throws IOException {
         return getRepositoryCommitComments(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -153,7 +152,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -171,7 +170,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments")
-    public Collection<CommitComment> getRepositoryCommitComments(String owner, String repo) throws IOException {
+    public ArrayList<CommitComment> getRepositoryCommitComments(String owner, String repo) throws IOException {
         return getRepositoryCommitComments(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -215,7 +214,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -234,8 +233,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments")
-    public Collection<CommitComment> getRepositoryCommitComments(Repository repository,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<CommitComment> getRepositoryCommitComments(Repository repository,
+                                                                Params queryParams) throws IOException {
         return getRepositoryCommitComments(repository.getOwner().getLogin(), repository.getName(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -291,7 +290,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -309,8 +308,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments")
-    public Collection<CommitComment> getRepositoryCommitComments(String owner, String repo,
-                                                                 Params queryParams) throws IOException {
+    public ArrayList<CommitComment> getRepositoryCommitComments(String owner, String repo,
+                                                                Params queryParams) throws IOException {
         return getRepositoryCommitComments(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -784,7 +783,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param commit:     the commit from fetch the list
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -803,7 +802,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(Repository repository, Commit commit) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(Repository repository, Commit commit) throws IOException {
         return getCommitComments(repository.getOwner().getLogin(), repository.getName(), commit.getSha(), LIBRARY_OBJECT);
     }
 
@@ -840,7 +839,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param commitSha:  the SHA of the commit
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -859,7 +858,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(Repository repository, String commitSha) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(Repository repository, String commitSha) throws IOException {
         return getCommitComments(repository.getOwner().getLogin(), repository.getName(), commitSha, LIBRARY_OBJECT);
     }
 
@@ -897,7 +896,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param commit: the commit from fetch the list
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -916,7 +915,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(String owner, String repo, Commit commit) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(String owner, String repo, Commit commit) throws IOException {
         return getCommitComments(owner, repo, commit.getSha(), LIBRARY_OBJECT);
     }
 
@@ -955,7 +954,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      * @param owner:     the account owner of the repository. The name is not case-sensitive
      * @param repo:      the name of the repository. The name is not case-sensitive
      * @param commitSha: the SHA of the commit
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -973,7 +972,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(String owner, String repo, String commitSha) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(String owner, String repo, String commitSha) throws IOException {
         return getCommitComments(owner, repo, commitSha, LIBRARY_OBJECT);
     }
 
@@ -1020,7 +1019,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1039,8 +1038,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(Repository repository, Commit commit,
-                                                       Params queryParams) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(Repository repository, Commit commit,
+                                                      Params queryParams) throws IOException {
         return getCommitComments(repository.getOwner().getLogin(), repository.getName(), commit.getSha(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1098,7 +1097,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1117,8 +1116,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(Repository repository, String commitSha,
-                                                       Params queryParams) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(Repository repository, String commitSha,
+                                                      Params queryParams) throws IOException {
         return getCommitComments(repository.getOwner().getLogin(), repository.getName(), commitSha, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1176,7 +1175,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1195,8 +1194,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(String owner, String repo, Commit commit,
-                                                       Params queryParams) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(String owner, String repo, Commit commit,
+                                                      Params queryParams) throws IOException {
         return getCommitComments(owner, repo, commit.getSha(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1254,7 +1253,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commit comments list as {@link Collection} of {@link CommitComment} custom object
+     * @return commit comments list as {@link ArrayList} of {@link CommitComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1272,8 +1271,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/comments")
-    public Collection<CommitComment> getCommitComments(String owner, String repo, String commitSha,
-                                                       Params queryParams) throws IOException {
+    public ArrayList<CommitComment> getCommitComments(String owner, String repo, String commitSha,
+                                                      Params queryParams) throws IOException {
         return getCommitComments(owner, repo, commitSha, queryParams, LIBRARY_OBJECT);
     }
 

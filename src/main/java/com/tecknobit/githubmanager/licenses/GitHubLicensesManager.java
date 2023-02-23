@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -103,7 +102,7 @@ public class GitHubLicensesManager extends GitHubManager {
      * Method to get all commonly used licenses <br>
      * No-any params required
      *
-     * @return commons licenses list as {@link Collection} of {@link CommonLicense} custom object
+     * @return commons licenses list as {@link ArrayList} of {@link CommonLicense} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -121,7 +120,7 @@ public class GitHubLicensesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/licenses")
-    public Collection<CommonLicense> getAllCommonlyUsedLicenses() throws IOException {
+    public ArrayList<CommonLicense> getAllCommonlyUsedLicenses() throws IOException {
         return getAllCommonlyUsedLicenses(LIBRARY_OBJECT);
     }
 
@@ -165,7 +164,7 @@ public class GitHubLicensesManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commons licenses list as {@link Collection} of {@link CommonLicense} custom object
+     * @return commons licenses list as {@link ArrayList} of {@link CommonLicense} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -183,7 +182,7 @@ public class GitHubLicensesManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/licenses")
-    public Collection<CommonLicense> getAllCommonlyUsedLicenses(Params queryParams) throws IOException {
+    public ArrayList<CommonLicense> getAllCommonlyUsedLicenses(Params queryParams) throws IOException {
         return getAllCommonlyUsedLicenses(queryParams, LIBRARY_OBJECT);
     }
 

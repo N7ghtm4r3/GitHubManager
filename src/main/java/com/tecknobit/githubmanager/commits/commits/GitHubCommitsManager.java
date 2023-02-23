@@ -15,7 +15,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -109,7 +108,7 @@ public class GitHubCommitsManager extends GitHubManager {
      * Method to get the commits list
      *
      * @param repository: the repository from fetch the list
-     * @return commits list as {@link Collection} of {@link Commit} custom object
+     * @return commits list as {@link ArrayList} of {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -128,7 +127,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits")
-    public Collection<Commit> getCommits(Repository repository) throws IOException {
+    public ArrayList<Commit> getCommits(Repository repository) throws IOException {
         return getCommits(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -164,7 +163,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return commits list as {@link Collection} of {@link Commit} custom object
+     * @return commits list as {@link ArrayList} of {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -182,7 +181,7 @@ public class GitHubCommitsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits")
-    public Collection<Commit> getCommits(String owner, String repo) throws IOException {
+    public ArrayList<Commit> getCommits(String owner, String repo) throws IOException {
         return getCommits(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -245,7 +244,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commits list as {@link Collection} of {@link Commit} custom object
+     * @return commits list as {@link ArrayList} of {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -264,7 +263,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits")
-    public Collection<Commit> getCommits(Repository repository, Params queryParams) throws IOException {
+    public ArrayList<Commit> getCommits(Repository repository, Params queryParams) throws IOException {
         return getCommits(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -356,7 +355,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return commits list as {@link Collection} of {@link Commit} custom object
+     * @return commits list as {@link ArrayList} of {@link Commit} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -374,7 +373,7 @@ public class GitHubCommitsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits")
-    public Collection<Commit> getCommits(String owner, String repo, Params queryParams) throws IOException {
+    public ArrayList<Commit> getCommits(String owner, String repo, Params queryParams) throws IOException {
         return getCommits(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
@@ -462,7 +461,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param commit:     the commit from fetch the list
-     * @return short branches list as {@link Collection} of {@link ShortBranch} custom object
+     * @return short branches list as {@link ArrayList} of {@link ShortBranch} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -481,7 +480,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head")
-    public Collection<ShortBranch> getHeadCommitBranches(Repository repository, Commit commit) throws IOException {
+    public ArrayList<ShortBranch> getHeadCommitBranches(Repository repository, Commit commit) throws IOException {
         return getHeadCommitBranches(repository.getOwner().getLogin(), repository.getName(), commit.getSha(),
                 LIBRARY_OBJECT);
     }
@@ -520,7 +519,7 @@ public class GitHubCommitsManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param commit: the commit from fetch the list
-     * @return short branches list as {@link Collection} of {@link ShortBranch} custom object
+     * @return short branches list as {@link ArrayList} of {@link ShortBranch} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -539,7 +538,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head")
-    public Collection<ShortBranch> getHeadCommitBranches(String owner, String repo, Commit commit) throws IOException {
+    public ArrayList<ShortBranch> getHeadCommitBranches(String owner, String repo, Commit commit) throws IOException {
         return getHeadCommitBranches(owner, repo, commit.getSha(), LIBRARY_OBJECT);
     }
 
@@ -577,7 +576,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param commitSha:  the SHA of the commit
-     * @return short branches list as {@link Collection} of {@link ShortBranch} custom object
+     * @return short branches list as {@link ArrayList} of {@link ShortBranch} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -596,7 +595,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head")
-    public Collection<ShortBranch> getHeadCommitBranches(Repository repository, String commitSha) throws IOException {
+    public ArrayList<ShortBranch> getHeadCommitBranches(Repository repository, String commitSha) throws IOException {
         return getHeadCommitBranches(repository.getOwner().getLogin(), repository.getName(), commitSha, LIBRARY_OBJECT);
     }
 
@@ -634,7 +633,7 @@ public class GitHubCommitsManager extends GitHubManager {
      * @param owner:     the account owner of the repository. The name is not case-sensitive
      * @param repo:      the name of the repository. The name is not case-sensitive
      * @param commitSha: the SHA of the commit
-     * @return short branches list as {@link Collection} of {@link ShortBranch} custom object
+     * @return short branches list as {@link ArrayList} of {@link ShortBranch} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -652,7 +651,7 @@ public class GitHubCommitsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head")
-    public Collection<ShortBranch> getHeadCommitBranches(String owner, String repo, String commitSha) throws IOException {
+    public ArrayList<ShortBranch> getHeadCommitBranches(String owner, String repo, String commitSha) throws IOException {
         return getHeadCommitBranches(owner, repo, commitSha, LIBRARY_OBJECT);
     }
 
@@ -704,7 +703,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param commit:     the commit from fetch the list
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -723,7 +722,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(Repository repository, Commit commit) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(Repository repository, Commit commit) throws IOException {
         return getCommitPullRequests(repository.getOwner().getLogin(), repository.getName(), commit.getSha(),
                 LIBRARY_OBJECT);
     }
@@ -763,7 +762,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *
      * @param repository: the repository from fetch the list
      * @param commitSha:  the SHA of the commit
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -782,7 +781,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(Repository repository, String commitSha) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(Repository repository, String commitSha) throws IOException {
         return getCommitPullRequests(repository.getOwner().getLogin(), repository.getName(), commitSha, LIBRARY_OBJECT);
     }
 
@@ -822,7 +821,7 @@ public class GitHubCommitsManager extends GitHubManager {
      * @param owner:  the account owner of the repository. The name is not case-sensitive
      * @param repo:   the name of the repository. The name is not case-sensitive
      * @param commit: the commit from fetch the list
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -841,7 +840,7 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(String owner, String repo, Commit commit) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(String owner, String repo, Commit commit) throws IOException {
         return getCommitPullRequests(owner, repo, commit.getSha(), LIBRARY_OBJECT);
     }
 
@@ -882,7 +881,7 @@ public class GitHubCommitsManager extends GitHubManager {
      * @param owner:     the account owner of the repository. The name is not case-sensitive
      * @param repo:      the name of the repository. The name is not case-sensitive
      * @param commitSha: the SHA of the commit
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -900,7 +899,7 @@ public class GitHubCommitsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(String owner, String repo, String commitSha) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(String owner, String repo, String commitSha) throws IOException {
         return getCommitPullRequests(owner, repo, commitSha, LIBRARY_OBJECT);
     }
 
@@ -949,7 +948,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -968,8 +967,8 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(Repository repository, Commit commit,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(Repository repository, Commit commit,
+                                                        Params queryParams) throws IOException {
         return getCommitPullRequests(repository.getOwner().getLogin(), repository.getName(), commit.getSha(), queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1029,7 +1028,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1048,8 +1047,8 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(Repository repository, String commitSha,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(Repository repository, String commitSha,
+                                                        Params queryParams) throws IOException {
         return getCommitPullRequests(repository.getOwner().getLogin(), repository.getName(), commitSha, queryParams,
                 LIBRARY_OBJECT);
     }
@@ -1110,7 +1109,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1129,8 +1128,8 @@ public class GitHubCommitsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(String owner, String repo, Commit commit,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(String owner, String repo, Commit commit,
+                                                        Params queryParams) throws IOException {
         return getCommitPullRequests(owner, repo, commit.getSha(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1190,7 +1189,7 @@ public class GitHubCommitsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return pull requests list as {@link Collection} of {@link PullRequest} custom object
+     * @return pull requests list as {@link ArrayList} of {@link PullRequest} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1208,8 +1207,8 @@ public class GitHubCommitsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/commits/{commit_sha}/pulls")
-    public Collection<PullRequest> getCommitPullRequests(String owner, String repo, String commitSha,
-                                                         Params queryParams) throws IOException {
+    public ArrayList<PullRequest> getCommitPullRequests(String owner, String repo, String commitSha,
+                                                        Params queryParams) throws IOException {
         return getCommitPullRequests(owner, repo, commitSha, queryParams, LIBRARY_OBJECT);
     }
 

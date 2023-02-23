@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
@@ -96,7 +95,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
      * Method to get the list of the deployments
      *
      * @param repository: the repository from fetch the list
-     * @return deployments as {@link Collection} of {@link Deployment} custom object
+     * @return deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -115,7 +114,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments")
-    public Collection<Deployment> getDeployments(Repository repository) throws Exception {
+    public ArrayList<Deployment> getDeployments(Repository repository) throws Exception {
         return getDeployments(repository.getOwner().getLogin(), repository.getName(), LIBRARY_OBJECT);
     }
 
@@ -151,7 +150,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return deployments as {@link Collection} of {@link Deployment} custom object
+     * @return deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -169,7 +168,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments")
-    public Collection<Deployment> getDeployments(String owner, String repo) throws Exception {
+    public ArrayList<Deployment> getDeployments(String owner, String repo) throws Exception {
         return getDeployments(owner, repo, LIBRARY_OBJECT);
     }
 
@@ -227,7 +226,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return deployments as {@link Collection} of {@link Deployment} custom object
+     * @return deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -246,7 +245,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments")
-    public Collection<Deployment> getDeployments(Repository repository, Params queryParams) throws Exception {
+    public ArrayList<Deployment> getDeployments(Repository repository, Params queryParams) throws Exception {
         return getDeployments(repository.getOwner().getLogin(), repository.getName(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -328,7 +327,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return deployments as {@link Collection} of {@link Deployment} custom object
+     * @return deployments as {@link ArrayList} of {@link Deployment} custom object
      * @throws Exception when request has been go wrong -> you can use these methods to get more details about error:
      *                   <ul>
      *                       <li>
@@ -346,7 +345,7 @@ public class GitHubDeploymentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/deployments")
-    public Collection<Deployment> getDeployments(String owner, String repo, Params queryParams) throws Exception {
+    public ArrayList<Deployment> getDeployments(String owner, String repo, Params queryParams) throws Exception {
         return getDeployments(owner, repo, queryParams, LIBRARY_OBJECT);
     }
 
