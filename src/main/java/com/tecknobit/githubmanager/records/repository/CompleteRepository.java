@@ -431,29 +431,6 @@ public class CompleteRepository extends Repository {
     }
 
     /**
-     * Method to create a complete repositories list
-     *
-     * @param repositoriesResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return complete repositories list as {@code "format"} defines
-     **/
-    @Returner
-    public static <T> T returnCompleteRepositoriesList(String repositoriesResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(repositoriesResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<CompleteRepository> repositories = new ArrayList<>();
-                JSONArray jRepositories = new JSONArray(repositoriesResponse);
-                for (int j = 0; j < jRepositories.length(); j++)
-                    repositories.add(new CompleteRepository(jRepositories.getJSONObject(j)));
-                return (T) repositories;
-            default:
-                return (T) repositoriesResponse;
-        }
-    }
-
-    /**
      * Method to get {@link #svnUrl} instance <br>
      * No-any params required
      *
@@ -831,6 +808,40 @@ public class CompleteRepository extends Repository {
      **/
     public int getWatchers() {
         return watchers;
+    }
+
+    /**
+     * Method to create a complete repositories list
+     *
+     * @param repositoriesResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return complete repositories list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnCompleteRepositoriesList(String repositoriesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(repositoriesResponse);
+            case LIBRARY_OBJECT:
+                return (T) returnCompleteRepositoriesList(new JSONArray(repositoriesResponse));
+            default:
+                return (T) repositoriesResponse;
+        }
+    }
+
+    /**
+     * Method to create a complete repositories list
+     *
+     * @param jRepositories: obtained from GitHub's response
+     * @return complete repositories list as {@link ArrayList} of {@link CompleteRepository}
+     **/
+    @Returner
+    public static ArrayList<CompleteRepository> returnCompleteRepositoriesList(JSONArray jRepositories) {
+        ArrayList<CompleteRepository> repositories = new ArrayList<>();
+        if (jRepositories != null)
+            for (int j = 0; j < jRepositories.length(); j++)
+                repositories.add(new CompleteRepository(jRepositories.getJSONObject(j)));
+        return repositories;
     }
 
     /**

@@ -113,6 +113,19 @@ public class RepositoriesList extends GitHubList {
     }
 
     /**
+     * Method to get the names from the {@link #repositories} instance <br>
+     * No-any params required
+     *
+     * @return names from {@link #repositories} instance as {@link ArrayList} of {@link String}
+     **/
+    public ArrayList<String> getNames() {
+        ArrayList<String> names = new ArrayList<>();
+        for (Repository repository : repositories)
+            names.add(repository.getName());
+        return names;
+    }
+
+    /**
      * Method to create a repositories list
      *
      * @param repositoriesResponse: obtained from GitHub's response
