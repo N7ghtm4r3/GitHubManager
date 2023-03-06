@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.billing.records.ActionsBilling;
 import com.tecknobit.githubmanager.billing.records.AdvancedSecurityCommitters;
 import com.tecknobit.githubmanager.billing.records.PackagesBilling;
 import com.tecknobit.githubmanager.billing.records.SharedStorageBilling;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import org.json.JSONObject;
 
 import java.io.IOException;

@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.codescanning.records.*;
 import com.tecknobit.githubmanager.codescanning.records.ScanningAlert.DismissedReason;
 import com.tecknobit.githubmanager.codescanning.records.ScanningAlert.Rule.Severity;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;

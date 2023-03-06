@@ -184,7 +184,7 @@ public class GitHubMarkdownManager extends GitHubManager {
      * Method to render a Markdown document in raw mode
      *
      * @param text:       the Markdown text to render in HTML
-     * @param bodyParams: extra query params not mandatory, keys accepted are:
+     * @param bodyParams: extra body params not mandatory, keys accepted are:
      *                    <ul>
      *                       <li>
      *                           {@code "mode"} -> the rendering mode, constants available {@link RenderingMode}

@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.actions.cache.records.RepositoriesCacheUsages
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCacheUsage;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList.ActionCache;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 

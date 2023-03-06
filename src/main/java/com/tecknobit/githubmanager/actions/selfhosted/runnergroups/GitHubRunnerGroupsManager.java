@@ -9,8 +9,8 @@ import com.tecknobit.githubmanager.actions.selfhosted.records.Runner;
 import com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList;
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroup;
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroupsList;
-import com.tecknobit.githubmanager.records.organization.Organization;
-import com.tecknobit.githubmanager.records.organization.OrganizationsList;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList.returnRunnersList;
-import static com.tecknobit.githubmanager.records.organization.OrganizationsList.returnOrganizationsList;
+import static com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList.returnOrganizationsList;
 import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.returnOrganizationRepositories;
 
 /**
@@ -878,7 +878,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     public <T> T getAuthorizedOrganizationsList(String enterprise, long runnerGroupId,
                                                 ReturnFormat format) throws IOException {
         return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + ORGANIZATIONS_PATH), format);
+                + "/" + runnerGroupId + ORGANIZATIONS_QUERY_PATH), format);
     }
 
     /**
@@ -1037,7 +1037,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     public <T> T getAuthorizedOrganizationsList(String enterprise, long runnerGroupId, Params queryParams,
                                                 ReturnFormat format) throws IOException {
         return returnOrganizationsList(sendGetRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + ORGANIZATIONS_PATH + queryParams.createQueryString()), format);
+                + "/" + runnerGroupId + ORGANIZATIONS_QUERY_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -1147,7 +1147,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @RequestPath(method = PUT, path = "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations")
     public boolean authorizeOrganizationsList(String enterprise, long runnerGroupId, Long[] organizationsIds) {
         return setItems(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                ORGANIZATIONS_PATH, "selected_organization_ids", organizationsIds);
+                ORGANIZATIONS_QUERY_PATH, "selected_organization_ids", organizationsIds);
     }
 
     /**
@@ -1224,7 +1224,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     public boolean authorizeOrganization(String enterprise, long runnerGroupId, long orgId) {
         try {
             sendPutRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                    ORGANIZATIONS_PATH + "/" + orgId, null);
+                    ORGANIZATIONS_QUERY_PATH + "/" + orgId, null);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;
@@ -1310,7 +1310,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     public boolean removeAuthorizedOrganization(String enterprise, long runnerGroupId, long orgId) {
         try {
             sendDeleteRequest(ENTERPRISES_PATH + enterprise + ACTIONS_RUNNER_GROUPS_PATH + "/" + runnerGroupId +
-                    ORGANIZATIONS_PATH + "/" + orgId);
+                    ORGANIZATIONS_QUERY_PATH + "/" + orgId);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();
                 return false;

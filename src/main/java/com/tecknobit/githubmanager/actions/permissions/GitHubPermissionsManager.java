@@ -11,8 +11,8 @@ import com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPe
 import com.tecknobit.githubmanager.actions.permissions.records.actions.EnterpriseActionsPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.OrganizationActionsPermissions;
 import com.tecknobit.githubmanager.actions.permissions.records.actions.RepositoryActionsPermissions;
-import com.tecknobit.githubmanager.records.organization.Organization;
-import com.tecknobit.githubmanager.records.organization.OrganizationsList;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;
 import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
-import static com.tecknobit.githubmanager.records.organization.OrganizationsList.returnOrganizationsList;
+import static com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList.returnOrganizationsList;
 import static com.tecknobit.githubmanager.records.parents.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
 import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.returnOrganizationRepositories;
 

@@ -6,8 +6,8 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.codespaces.records.Codespace;
 import com.tecknobit.githubmanager.codespaces.records.CodespacesList;
-import com.tecknobit.githubmanager.records.organization.Organization;
-import com.tecknobit.githubmanager.records.organization.Organization.OrganizationVisibility;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization.OrganizationVisibility;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,6 +18,7 @@ import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespaces
 import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespacesManager.STOP_PATH;
 import static com.tecknobit.githubmanager.codespaces.records.Codespace.returnCodespace;
 import static com.tecknobit.githubmanager.codespaces.records.CodespacesList.returnCodespacesList;
+import static com.tecknobit.githubmanager.organizations.members.GitHubMembersManager.MEMBERS_PATH;
 
 /**
  * The {@code GithubCodespacesOrganizationsManager} class is useful to manage all GitHub's codespaces organizations endpoints
@@ -35,9 +36,9 @@ public class GithubCodespacesOrganizationsManager extends GitHubManager {
     public static final String BILLING_PATH = "/billing";
 
     /**
-     * {@code MEMBERS_PATH} constant for {@code "/members"} path
+     * {@code MEMBERS_QUERY_PATH} constant for {@code "/members/"} path
      **/
-    public static final String MEMBERS_PATH = "/members/";
+    public static final String MEMBERS_QUERY_PATH = MEMBERS_PATH + "/";
 
     /**
      * Constructor to init a {@link GithubCodespacesOrganizationsManager}
@@ -591,7 +592,7 @@ public class GithubCodespacesOrganizationsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/members/{username}/codespaces")
     public <T> T getOrganizationUserCodespaces(String org, String username, ReturnFormat format) throws IOException {
-        return returnCodespacesList(sendGetRequest(ORGS_PATH + org + MEMBERS_PATH + username + CODESPACES_PATH),
+        return returnCodespacesList(sendGetRequest(ORGS_PATH + org + MEMBERS_QUERY_PATH + username + CODESPACES_PATH),
                 format);
     }
 
@@ -745,7 +746,7 @@ public class GithubCodespacesOrganizationsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/orgs/{org}/members/{username}/codespaces")
     public <T> T getOrganizationUserCodespaces(String org, String username, Params queryParams,
                                                ReturnFormat format) throws IOException {
-        return returnCodespacesList(sendGetRequest(ORGS_PATH + org + MEMBERS_PATH + username + CODESPACES_PATH
+        return returnCodespacesList(sendGetRequest(ORGS_PATH + org + MEMBERS_QUERY_PATH + username + CODESPACES_PATH
                 + queryParams.createQueryString()), format);
     }
 
@@ -814,7 +815,7 @@ public class GithubCodespacesOrganizationsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/orgs/{org}/members/{username}/codespaces/{codespace_name}")
     public boolean deleteOrganizationCodespace(String org, String username, String codespaceName) {
         try {
-            sendDeleteRequest(ORGS_PATH + org + MEMBERS_PATH + username + CODESPACES_PATH + "/" + codespaceName);
+            sendDeleteRequest(ORGS_PATH + org + MEMBERS_QUERY_PATH + username + CODESPACES_PATH + "/" + codespaceName);
             if (apiRequest.getResponseStatusCode() != 202) {
                 printErrorResponse();
                 return false;
@@ -1065,7 +1066,7 @@ public class GithubCodespacesOrganizationsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop")
     public <T> T stopOrganizationUserCodespace(String org, String username, String codespaceName,
                                                ReturnFormat format) throws IOException {
-        return returnCodespace(sendPostRequest(ORGS_PATH + org + MEMBERS_PATH + username + CODESPACES_PATH + "/"
+        return returnCodespace(sendPostRequest(ORGS_PATH + org + MEMBERS_QUERY_PATH + username + CODESPACES_PATH + "/"
                 + codespaceName + STOP_PATH, null), format);
     }
 

@@ -7,7 +7,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.interactions.records.Interaction;
 import com.tecknobit.githubmanager.interactions.records.Interaction.Expiry;
 import com.tecknobit.githubmanager.interactions.records.Interaction.Limit;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 
 import java.io.IOException;
 

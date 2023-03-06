@@ -11,7 +11,7 @@ import com.tecknobit.githubmanager.actions.selfhosted.runners.records.Applicatio
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.GitHubToken;
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.RunnerLabel;
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.RunnerLabelsList;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONException;

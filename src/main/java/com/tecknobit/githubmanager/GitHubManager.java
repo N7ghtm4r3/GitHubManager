@@ -19,6 +19,7 @@ import java.util.Properties;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.codespaces.codespaces.GitHubCodespacesManager.CODESPACES_PATH;
+import static com.tecknobit.githubmanager.organizations.organizations.GitHubOrganizationsManager.ORGANIZATIONS_PATH;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
@@ -63,9 +64,9 @@ public class GitHubManager {
     public static final String RUNNERS_PATH = "/runners";
 
     /**
-     * {@code ORGANIZATIONS_PATH} constant for {@code "/organizations"} path
+     * {@code ORGANIZATIONS_QUERY_PATH} constant for {@code "/organizations"} path
      **/
-    public static final String ORGANIZATIONS_PATH = "/organizations";
+    public static final String ORGANIZATIONS_QUERY_PATH = "/" + ORGANIZATIONS_PATH;
 
     /**
      * {@code REPOSITORIES_PATH} constant for {@code "repositories"} path
@@ -121,6 +122,11 @@ public class GitHubManager {
      * {@code PULLS_PATH} constant for {@code "/pulls"} path
      **/
     public static final String PULLS_PATH = "/pulls";
+
+    /**
+     * {@code TEAMS_PATH} constant for {@code "/teams"} path
+     **/
+    public static final String TEAMS_PATH = "/teams";
 
     /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without

@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
 import com.tecknobit.githubmanager.actions.secrets.records.Secret;
 import com.tecknobit.githubmanager.actions.secrets.records.SecretsList;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
 

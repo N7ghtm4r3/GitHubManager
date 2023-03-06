@@ -1,7 +1,6 @@
 package com.tecknobit.githubmanager.apps.installations;
 
 import com.tecknobit.apimanager.annotations.RequestPath;
-import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
@@ -9,12 +8,12 @@ import com.tecknobit.githubmanager.apps.apps.records.Installation;
 import com.tecknobit.githubmanager.apps.installations.records.InstallationsList;
 import com.tecknobit.githubmanager.records.repository.RepositoriesList;
 import com.tecknobit.githubmanager.records.repository.Repository;
-import org.json.JSONObject;
 
 import java.io.IOException;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.apps.installations.records.InstallationsList.returnInstallationsList;
 import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
 
 /**
@@ -395,25 +394,6 @@ public class GitHubInstallationsManager extends GitHubManager {
     public <T> T getAppInstallationsTokenAccessible(Params queryParams, ReturnFormat format) throws Exception {
         return returnInstallationsList(sendGetRequest(USER_INSTALLATIONS_PATH + queryParams.createQueryString()),
                 format);
-    }
-
-    /**
-     * Method to create an installations list
-     *
-     * @param installationsResponse: obtained from GitHub's response
-     * @param format:                return type formatter -> {@link ReturnFormat}
-     * @return installations list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnInstallationsList(String installationsResponse, ReturnFormat format) throws Exception {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(installationsResponse);
-            case LIBRARY_OBJECT:
-                return (T) new InstallationsList(new JSONObject(installationsResponse));
-            default:
-                return (T) installationsResponse;
-        }
     }
 
     /**

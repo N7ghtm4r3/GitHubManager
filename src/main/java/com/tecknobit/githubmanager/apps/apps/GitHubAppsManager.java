@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.apps.apps.records.AppPermissions;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.apps.apps.records.Installation;
 import com.tecknobit.githubmanager.apps.apps.records.InstallationAccessToken;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,9 +46,14 @@ public class GitHubAppsManager extends GitHubManager {
     public static final String CONVERSIONS_PATH = "/conversions";
 
     /**
+     * {@code INSTALLATIONS_PATH} constant for {@code "/installations"} path
+     **/
+    public static final String INSTALLATIONS_PATH = "/installations";
+
+    /**
      * {@code APP_INSTALLATIONS_PATH} constant for {@code "app/installations"} path
      **/
-    public static final String APP_INSTALLATIONS_PATH = APP_PATH + "/installations";
+    public static final String APP_INSTALLATIONS_PATH = APP_PATH + INSTALLATIONS_PATH;
 
     /**
      * {@code ACCESS_TOKENS_PATH} constant for {@code "/access_tokens"} path

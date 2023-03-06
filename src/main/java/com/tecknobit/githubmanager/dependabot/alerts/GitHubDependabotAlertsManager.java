@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.Dep
 import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.DependabotDismissedReason;
 import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.Dependency.Scope;
 import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.Ecosystem;
-import com.tecknobit.githubmanager.records.organization.Organization;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;

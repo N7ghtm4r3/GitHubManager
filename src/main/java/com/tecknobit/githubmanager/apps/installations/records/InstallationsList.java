@@ -1,5 +1,6 @@
 package com.tecknobit.githubmanager.apps.installations.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.apps.apps.records.Installation;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
@@ -7,6 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
  * The {@code InstallationsList} class is useful to format a GitHub's installations list
@@ -66,6 +69,25 @@ public class InstallationsList extends GitHubList {
      **/
     public ArrayList<Installation> getInstallations() {
         return installations;
+    }
+
+    /**
+     * Method to create an installations list
+     *
+     * @param installationsResponse: obtained from GitHub's response
+     * @param format:                return type formatter -> {@link ReturnFormat}
+     * @return installations list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnInstallationsList(String installationsResponse, ReturnFormat format) throws Exception {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(installationsResponse);
+            case LIBRARY_OBJECT:
+                return (T) new InstallationsList(new JSONObject(installationsResponse));
+            default:
+                return (T) installationsResponse;
+        }
     }
 
 }
