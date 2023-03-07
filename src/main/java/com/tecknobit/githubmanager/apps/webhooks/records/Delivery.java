@@ -1,9 +1,13 @@
 package com.tecknobit.githubmanager.apps.webhooks.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
@@ -22,6 +26,14 @@ import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
  *     <li>
  *         <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-delivery-for-an-app-webhook">
  *             Get a delivery for an app webhook</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/orgs/webhooks#list-deliveries-for-an-organization-webhook">
+ *             List deliveries for an organization webhook</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/orgs/webhooks#get-a-webhook-delivery-for-an-organization-webhook">
+ *             Get a webhook delivery for an organization webhook</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -318,6 +330,48 @@ public class Delivery extends GitHubResponse {
      **/
     public Request getResponse() {
         return response;
+    }
+
+    /**
+     * Method to create a deliveries list
+     *
+     * @param deliveriesResponse: obtained from GitHub's response
+     * @param format:             return type formatter -> {@link ReturnFormat}
+     * @return deliveries list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnDeliveriesList(String deliveriesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(deliveriesResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<Delivery> deliveries = new ArrayList<>();
+                JSONArray jDeliveries = new JSONArray(deliveriesResponse);
+                for (int j = 0; j < jDeliveries.length(); j++)
+                    deliveries.add(new Delivery(jDeliveries.getJSONObject(j)));
+                return (T) deliveries;
+            default:
+                return (T) deliveriesResponse;
+        }
+    }
+
+    /**
+     * Method to create a delivery
+     *
+     * @param deliveryResponse: obtained from GitHub's response
+     * @param format:           return type formatter -> {@link ReturnFormat}
+     * @return delivery as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnDelivery(String deliveryResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(deliveryResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Delivery(new JSONObject(deliveryResponse));
+            default:
+                return (T) deliveryResponse;
+        }
     }
 
     /**

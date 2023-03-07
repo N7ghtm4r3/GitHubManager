@@ -1,14 +1,11 @@
 package com.tecknobit.githubmanager.apps.webhooks;
 
 import com.tecknobit.apimanager.annotations.RequestPath;
-import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.apps.webhooks.records.Delivery;
 import com.tecknobit.githubmanager.apps.webhooks.records.Webhook;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +13,9 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.apps.apps.GitHubAppsManager.APP_PATH;
+import static com.tecknobit.githubmanager.apps.webhooks.records.Delivery.returnDeliveriesList;
+import static com.tecknobit.githubmanager.apps.webhooks.records.Delivery.returnDelivery;
+import static com.tecknobit.githubmanager.apps.webhooks.records.Webhook.returnWebhook;
 
 /**
  * The {@code GitHubWebhooksManager} class is useful to manage all GitHub's webhooks endpoints
@@ -259,25 +259,6 @@ public class GitHubWebhooksManager extends GitHubManager {
     }
 
     /**
-     * Method to create a webhook
-     *
-     * @param webhookResponse: obtained from GitHub's response
-     * @param format:          return type formatter -> {@link ReturnFormat}
-     * @return webhook as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnWebhook(String webhookResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(webhookResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Webhook(new JSONObject(webhookResponse));
-            default:
-                return (T) webhookResponse;
-        }
-    }
-
-    /**
      * Method to return a list of webhook deliveries for the webhook configured for a GitHub App. <br>
      * You must use a JWT to access this endpoint <br>
      * No-any params required
@@ -412,29 +393,6 @@ public class GitHubWebhooksManager extends GitHubManager {
     }
 
     /**
-     * Method to create a deliveries list
-     *
-     * @param deliveriesResponse: obtained from GitHub's response
-     * @param format:             return type formatter -> {@link ReturnFormat}
-     * @return deliveries list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnDeliveriesList(String deliveriesResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(deliveriesResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<Delivery> deliveries = new ArrayList<>();
-                JSONArray jDeliveries = new JSONArray(deliveriesResponse);
-                for (int j = 0; j < jDeliveries.length(); j++)
-                    deliveries.add(new Delivery(jDeliveries.getJSONObject(j)));
-                return (T) deliveries;
-            default:
-                return (T) deliveriesResponse;
-        }
-    }
-
-    /**
      * Method to return a delivery for the webhook configured for a GitHub App <br>
      * You must use a JWT to access this endpoint
      *
@@ -483,18 +441,9 @@ public class GitHubWebhooksManager extends GitHubManager {
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/apps/webhooks#get-a-delivery-for-an-app-webhook">
      * Get a delivery for an app webhook</a>
      **/
-    @Returner
     @RequestPath(method = GET, path = "/app/hook/deliveries/{delivery_id}")
     public <T> T getAppWebhookDelivery(long deliveryId, ReturnFormat format) throws IOException {
-        String deliveryResponse = sendGetRequest(APP_HOOK_DELIVERIES_PATH + "/" + deliveryId);
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(deliveryResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Delivery(new JSONObject(deliveryResponse));
-            default:
-                return (T) deliveryResponse;
-        }
+        return returnDelivery(sendGetRequest(APP_HOOK_DELIVERIES_PATH + "/" + deliveryId), format);
     }
 
     /**
