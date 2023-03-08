@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.selfhosted.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.GitHubManager;
+import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
@@ -82,11 +82,11 @@ public class RunnersList extends GitHubList {
      * Method to create a runners list
      *
      * @param runnersGroupResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link GitHubManager.ReturnFormat}
+     * @param format:               return type formatter -> {@link ReturnFormat}
      * @return runners list as {@code "format"} defines
      **/
     @Returner
-    public static <T> T returnRunnersList(String runnersGroupResponse, GitHubManager.ReturnFormat format) {
+    public static <T> T returnRunnersList(String runnersGroupResponse, ReturnFormat format) {
         switch (format) {
             case JSON:
                 return (T) new JSONObject(runnersGroupResponse);

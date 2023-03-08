@@ -879,6 +879,19 @@ public class CompleteRepository extends Repository {
         }
 
         /**
+         * Method to reach a {@link RepoVisibility} value
+         *
+         * @param target: target of the {@link RepoVisibility} to reach
+         * @return visibility as {@link RepoVisibility} or null if it not exists
+         **/
+        public static RepoVisibility reachEnumConstant(String target) {
+            for (RepoVisibility visibility : RepoVisibility.values())
+                if (visibility.toString().equals(target))
+                    return visibility;
+            return null;
+        }
+
+        /**
          * Method to get {@link #visibility} instance <br>
          * No-any params required
          *
