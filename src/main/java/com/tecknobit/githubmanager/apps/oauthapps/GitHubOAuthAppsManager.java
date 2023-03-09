@@ -455,7 +455,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *
      * @param clientId:    the client ID of the GitHub app
      * @param accessToken: the OAuth access token used to authenticate to the GitHub API
-     * @param bodyParams:  extra query params not mandatory, keys accepted are:
+     * @param bodyParams:  extra body params not mandatory, keys accepted are:
      *                     <ul>
      *                        <li>
      *                            {@code "target"} -> the name of the user or organization to scope the user-to-server access token to. <br>
@@ -511,7 +511,7 @@ public class GitHubOAuthAppsManager extends GitHubManager {
      *
      * @param clientId:    the client ID of the GitHub app
      * @param accessToken: the OAuth access token used to authenticate to the GitHub API
-     * @param bodyParams:  extra query params not mandatory, keys accepted are:
+     * @param bodyParams:  extra body params not mandatory, keys accepted are:
      *                     <ul>
      *                        <li>
      *                            {@code "target"} -> the name of the user or organization to scope the user-to-server access token to. <br>
