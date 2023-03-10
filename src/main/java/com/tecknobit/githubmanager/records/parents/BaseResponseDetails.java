@@ -24,7 +24,7 @@ public class BaseResponseDetails extends GitHubResponse {
     protected final String name;
 
     /**
-     * {@code "url"} value
+     * {@code url} value
      **/
     protected final String url;
 

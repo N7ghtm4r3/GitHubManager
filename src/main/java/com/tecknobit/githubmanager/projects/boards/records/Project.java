@@ -1,12 +1,10 @@
 package com.tecknobit.githubmanager.projects.boards.records;
 
-import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.projects.records.ProjectItem;
 import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure.OperationState;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONObject;
-
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code Project} class is useful to format a GitHub's project
@@ -48,9 +46,9 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  *     </li>
  * </ul>
  * @see GitHubResponse
- * @see BaseResponseDetails
+ * @see ProjectItem
  **/
-public class Project extends BaseResponseDetails {
+public class Project extends ProjectItem {
 
     /**
      * {@code OrganizationPermission} list of available organization permissions
@@ -80,6 +78,11 @@ public class Project extends BaseResponseDetails {
     }
 
     /**
+     * {@code name} of the project
+     **/
+    private final String name;
+
+    /**
      * {@code ownerUrl} owner url of the project
      **/
     private final String ownerUrl;
@@ -93,11 +96,6 @@ public class Project extends BaseResponseDetails {
      * {@code columnsUrl} columns url of the project
      **/
     private final String columnsUrl;
-
-    /**
-     * {@code nodeId} node id of the project
-     **/
-    private final String nodeId;
 
     /**
      * {@code body} of the project
@@ -115,21 +113,6 @@ public class Project extends BaseResponseDetails {
     private final OperationState state;
 
     /**
-     * {@code creator} of the project
-     **/
-    private final User creator;
-
-    /**
-     * {@code createdAt} creation date of the project
-     **/
-    private final String createdAt;
-
-    /**
-     * {@code updatedAt} update date of the project
-     **/
-    private final String updatedAt;
-
-    /**
      * {@code organizationPermission} the baseline permission that all organization members have on this project. Only present if owner is
      * an organization
      **/
@@ -144,36 +127,33 @@ public class Project extends BaseResponseDetails {
      * Constructor to init a {@link Project}
      *
      * @param id                     : identifier value
-     * @param name                   : the name of the item
      * @param url                    : url value
-     * @param ownerUrl               : owner url of the project
-     * @param htmlUrl                : html url of the project
-     * @param columnsUrl             : columns url of the project
      * @param nodeId                 : node id of the project
-     * @param body                   : body of the project
-     * @param number                 : number of the project
-     * @param state                  : state of the project
      * @param creator                : creator of the project
      * @param createdAt              : creation date of the project
      * @param updatedAt              : update date of the project
+     * @param name:                  name of the project
+     * @param ownerUrl               : owner url of the project
+     * @param htmlUrl                : html url of the project
+     * @param columnsUrl             : columns url of the project
+     * @param body                   : body of the project
+     * @param number                 : number of the project
+     * @param state                  : state of the project
      * @param organizationPermission : the baseline permission that all organization members have on this project. Only
      *                               present if owner is an organization
      * @param isPrivate              : whether this project can be seen by everyone. Only present if owner is an organization
      **/
-    public Project(long id, String name, String url, String ownerUrl, String htmlUrl, String columnsUrl, String nodeId,
-                   String body, int number, OperationState state, User creator, String createdAt, String updatedAt,
+    public Project(long id, String url, String nodeId, User creator, String createdAt, String updatedAt, String name,
+                   String ownerUrl, String htmlUrl, String columnsUrl, String body, int number, OperationState state,
                    OrganizationPermission organizationPermission, boolean isPrivate) {
-        super(id, name, url);
+        super(id, url, nodeId, creator, createdAt, updatedAt);
+        this.name = name;
         this.ownerUrl = ownerUrl;
         this.htmlUrl = htmlUrl;
         this.columnsUrl = columnsUrl;
-        this.nodeId = nodeId;
         this.body = body;
         this.number = number;
         this.state = state;
-        this.creator = creator;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
         this.organizationPermission = organizationPermission;
         this.isPrivate = isPrivate;
     }
@@ -185,22 +165,29 @@ public class Project extends BaseResponseDetails {
      **/
     public Project(JSONObject jProject) {
         super(jProject);
+        name = hResponse.getString("name");
         ownerUrl = hResponse.getString("owner_url");
         htmlUrl = hResponse.getString("html_url");
         columnsUrl = hResponse.getString("columns_url");
-        nodeId = hResponse.getString("node_id");
         body = hResponse.getString("body");
         number = hResponse.getInt("number", 0);
         state = OperationState.valueOf(hResponse.getString("state"));
-        creator = new User(hResponse.getJSONObject("creator"));
-        createdAt = hResponse.getString("created_at");
-        updatedAt = hResponse.getString("updated_at");
         String sPermission = hResponse.getString("organization_permission");
         if (sPermission != null)
             organizationPermission = OrganizationPermission.valueOf(sPermission);
         else
             organizationPermission = null;
         isPrivate = hResponse.getBoolean("private");
+    }
+
+    /**
+     * Method to get {@link #name} instance <br>
+     * No-any params required
+     *
+     * @return {@link #name} instance as {@link String}
+     **/
+    public String getName() {
+        return name;
     }
 
     /**
@@ -234,16 +221,6 @@ public class Project extends BaseResponseDetails {
     }
 
     /**
-     * Method to get {@link #nodeId} instance <br>
-     * No-any params required
-     *
-     * @return {@link #nodeId} instance as {@link String}
-     **/
-    public String getNodeId() {
-        return nodeId;
-    }
-
-    /**
      * Method to get {@link #body} instance <br>
      * No-any params required
      *
@@ -271,56 +248,6 @@ public class Project extends BaseResponseDetails {
      **/
     public OperationState getState() {
         return state;
-    }
-
-    /**
-     * Method to get {@link #creator} instance <br>
-     * No-any params required
-     *
-     * @return {@link #creator} instance as {@link User}
-     **/
-    public User getCreator() {
-        return creator;
-    }
-
-    /**
-     * Method to get {@link #createdAt} instance <br>
-     * No-any params required
-     *
-     * @return {@link #createdAt} instance as {@link String}
-     **/
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    /**
-     * Method to get {@link #createdAt} timestamp <br>
-     * No-any params required
-     *
-     * @return {@link #createdAt} timestamp as long
-     **/
-    public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
-    }
-
-    /**
-     * Method to get {@link #updatedAt} instance <br>
-     * No-any params required
-     *
-     * @return {@link #updatedAt} instance as {@link String}
-     **/
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    /**
-     * Method to get {@link #updatedAt} timestamp <br>
-     * No-any params required
-     *
-     * @return {@link #updatedAt} timestamp as long
-     **/
-    public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
     }
 
     /**
