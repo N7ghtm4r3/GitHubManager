@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.branches.branches.records.ShortBranch;
 import com.tecknobit.githubmanager.commits.commits.records.Commit;
 import com.tecknobit.githubmanager.commits.commits.records.CommitsComparison;
-import com.tecknobit.githubmanager.commits.commits.records.pullrequests.PullRequest;
+import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.commits.commits.records.Commit.returnCommitsList;
+import static com.tecknobit.githubmanager.pulls.pulls.records.PullRequest.returnPullRequestsList;
 
 /**
  * The {@code GitHubCommitsManager} class is useful to manage all GitHub's commits endpoints
@@ -431,29 +433,6 @@ public class GitHubCommitsManager extends GitHubManager {
     public <T> T getCommits(String owner, String repo, Params queryParams, ReturnFormat format) throws IOException {
         return returnCommitsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + COMMITS_PATH
                 + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a commits list
-     *
-     * @param commitsListResponse: obtained from GitHub's response
-     * @param format:              return type formatter -> {@link ReturnFormat}
-     * @return commits list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnCommitsList(String commitsListResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(commitsListResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<Commit> commits = new ArrayList<>();
-                JSONArray jCommits = new JSONArray(commitsListResponse);
-                for (int j = 0; j < jCommits.length(); j++)
-                    commits.add(new Commit(jCommits.getJSONObject(j)));
-                return (T) commits;
-            default:
-                return (T) commitsListResponse;
-        }
     }
 
     /**
@@ -1250,29 +1229,6 @@ public class GitHubCommitsManager extends GitHubManager {
                                        ReturnFormat format) throws IOException {
         return returnPullRequestsList(sendGetRequest(REPOS_PATH + owner + "/" + repo + COMMITS_QUERY_PATH
                 + commitSha + PULLS_PATH + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a pull requests list
-     *
-     * @param pullRequestsListResponse: obtained from GitHub's response
-     * @param format:                   return type formatter -> {@link ReturnFormat}
-     * @return pull requests list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnPullRequestsList(String pullRequestsListResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(pullRequestsListResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<PullRequest> pullRequests = new ArrayList<>();
-                JSONArray jPullRequests = new JSONArray(pullRequestsListResponse);
-                for (int j = 0; j < jPullRequests.length(); j++)
-                    pullRequests.add(new PullRequest(jPullRequests.getJSONObject(j)));
-                return (T) pullRequests;
-            default:
-                return (T) pullRequestsListResponse;
-        }
     }
 
     /**

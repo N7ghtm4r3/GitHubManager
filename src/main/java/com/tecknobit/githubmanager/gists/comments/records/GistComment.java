@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.githubmanager.commits.commits.records.pullrequests.PullRequest.AuthorAssociation;
+import static com.tecknobit.githubmanager.pulls.pulls.records.PullRequest.AuthorAssociation;
 
 /**
  * The {@code GistComment} class is useful to format a GitHub's gist comment

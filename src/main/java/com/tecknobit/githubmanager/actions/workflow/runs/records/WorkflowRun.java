@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status;
-import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
+import com.tecknobit.githubmanager.pulls.pulls.records.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;

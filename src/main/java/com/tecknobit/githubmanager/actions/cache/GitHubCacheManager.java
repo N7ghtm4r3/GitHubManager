@@ -894,7 +894,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "direction"} -> the direction to sort the results by
-     *                            - [string, default "desc", constants available at {@link RepositoryCachesList}]
+     *                            - [string, default "desc", constants available at {@link Directions}]
      *                        </li>
      *                     </ul>
      * @return repository caches list as {@link RepositoryCachesList} custom object
@@ -953,7 +953,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "direction"} -> the direction to sort the results by
-     *                            - [string, default "desc", constants available at {@link RepositoryCachesList}]
+     *                            - [string, default "desc", constants available at {@link Directions}]
      *                        </li>
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}
@@ -1012,7 +1012,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "direction"} -> the direction to sort the results by
-     *                            - [string, default "desc", constants available at {@link RepositoryCachesList}]
+     *                            - [string, default "desc", constants available at {@link Directions}]
      *                        </li>
      *                     </ul>
      * @return repository caches list as {@link RepositoryCachesList} custom object
@@ -1070,7 +1070,7 @@ public class GitHubCacheManager extends GitHubManager {
      *                        </li>
      *                        <li>
      *                            {@code "direction"} -> the direction to sort the results by
-     *                            - [string, default "desc", constants available at {@link RepositoryCachesList}]
+     *                            - [string, default "desc", constants available at {@link Directions}]
      *                        </li>
      *                     </ul>
      * @param format:      return type formatter -> {@link ReturnFormat}

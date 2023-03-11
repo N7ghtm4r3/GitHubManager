@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.checks.suites.records;
 
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.checks.records.Check;
-import com.tecknobit.githubmanager.commits.commits.records.pullrequests.MinimalPullRequest;
+import com.tecknobit.githubmanager.pulls.pulls.records.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.repository.CompleteRepository;

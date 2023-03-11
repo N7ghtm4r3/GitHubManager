@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import static com.tecknobit.githubmanager.commits.commits.records.Commit.CommitFile.returnFiles;
 import static com.tecknobit.githubmanager.commits.commits.records.Commit.Parent.returnParentsList;
 
@@ -31,6 +32,10 @@ import static com.tecknobit.githubmanager.commits.commits.records.Commit.Parent.
  *     <li>
  *         <a href="https://docs.github.com/en/rest/commits/commits#get-a-commit">
  *             Get a commit</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/pulls/pulls#list-commits-on-a-pull-request">
+ *             List commits on a pull request</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -158,7 +163,7 @@ public class Commit extends GitHubResponse {
         committer = new User(hResponse.getJSONObject("committer", new JSONObject()));
         parents = returnParentsList(hResponse.getJSONArray("parents"));
         stats = new Stats(hResponse.getJSONObject("stats", new JSONObject()));
-        files = returnFiles(hResponse.getJSONArray("files", new JSONArray()));
+        files = returnFiles(hResponse.getJSONArray("files"));
     }
 
     /**
@@ -269,6 +274,29 @@ public class Commit extends GitHubResponse {
      **/
     public ArrayList<CommitFile> getFiles() {
         return files;
+    }
+
+    /**
+     * Method to create a commits list
+     *
+     * @param commitsListResponse: obtained from GitHub's response
+     * @param format:              return type formatter -> {@link ReturnFormat}
+     * @return commits list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnCommitsList(String commitsListResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(commitsListResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<Commit> commits = new ArrayList<>();
+                JSONArray jCommits = new JSONArray(commitsListResponse);
+                for (int j = 0; j < jCommits.length(); j++)
+                    commits.add(new Commit(jCommits.getJSONObject(j)));
+                return (T) commits;
+            default:
+                return (T) commitsListResponse;
+        }
     }
 
     /**
@@ -475,6 +503,11 @@ public class Commit extends GitHubResponse {
     public static class CommitFile extends InnerClassItem {
 
         /**
+         * {@code sha} of the file
+         **/
+        private final String sha;
+
+        /**
          * {@code fileName} name of the file
          **/
         private final String fileName;
@@ -517,18 +550,20 @@ public class Commit extends GitHubResponse {
         /**
          * Constructor to init a {@link CommitFile}
          *
-         * @param fileName   : name of the file
-         * @param additions  : additions of the file
-         * @param deletions: deletions of the file
-         * @param changes    : changes of the file
-         * @param status     : status of the file
-         * @param rawUrl:    raw url of the file
-         * @param blobUrl    : blob url of the file
-         * @param patch      : patch of the file
+         * @param sha:      sha of the file
+         * @param fileName  : name of the file
+         * @param additions : additions of the file
+         * @param deletions : deletions of the file
+         * @param changes   : changes of the file
+         * @param status    : status of the file
+         * @param rawUrl    :    raw url of the file
+         * @param blobUrl   : blob url of the file
+         * @param patch     : patch of the file
          **/
-        public CommitFile(String fileName, int additions, int deletions, int changes, FileStatus status, String rawUrl,
-                          String blobUrl, String patch) {
+        public CommitFile(String sha, String fileName, int additions, int deletions, int changes, FileStatus status,
+                          String rawUrl, String blobUrl, String patch) {
             super(null);
+            this.sha = sha;
             this.fileName = fileName;
             this.additions = additions;
             this.deletions = deletions;
@@ -546,6 +581,7 @@ public class Commit extends GitHubResponse {
          **/
         public CommitFile(JSONObject jCommitFile) {
             super(jCommitFile);
+            sha = hItem.getString("sha");
             fileName = hItem.getString("filename");
             additions = hItem.getInt("additions", 0);
             deletions = hItem.getInt("deletions", 0);
@@ -569,6 +605,25 @@ public class Commit extends GitHubResponse {
                 for (int j = 0; j < jFiles.length(); j++)
                     files.add(new CommitFile(jFiles.getJSONObject(j)));
             return files;
+        }
+
+        /**
+         * Method to create a files list
+         *
+         * @param filesResponse: obtained from GitHub's response
+         * @param format:        return type formatter -> {@link ReturnFormat}
+         * @return files list as {@code "format"} defines
+         **/
+        @Returner
+        public static <T> T returnFiles(String filesResponse, ReturnFormat format) {
+            switch (format) {
+                case JSON:
+                    return (T) new JSONArray(filesResponse);
+                case LIBRARY_OBJECT:
+                    returnFiles(new JSONArray(filesResponse));
+                default:
+                    return (T) filesResponse;
+            }
         }
 
         /**

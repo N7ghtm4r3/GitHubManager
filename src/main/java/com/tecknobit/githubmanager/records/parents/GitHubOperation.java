@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.records.parents;
 
-import com.tecknobit.githubmanager.commits.commits.records.pullrequests.PullRequest;
+import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
