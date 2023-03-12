@@ -10,7 +10,6 @@ import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest;
 import com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment;
 import com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment.Side;
 import com.tecknobit.githubmanager.records.repository.Repository;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -19,6 +18,7 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.commits.commitcomments.GitHubCommitCommentsManager.COMMENTS_PATH;
+import static com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment.returnReviewComments;
 
 /**
  * The {@code GitHubReviewCommentsManager} class is useful to manage all GitHub's review comments endpoints
@@ -1508,29 +1508,6 @@ public class GitHubReviewCommentsManager extends GitHubManager {
                                               ReturnFormat format) throws IOException {
         return returnReviewComments(sendGetRequest(REPOS_PATH + owner + "/" + repo + PULLS_PATH + "/"
                 + pullNumber + COMMENTS_PATH + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a review comments list
-     *
-     * @param reviewCommentsResponse: obtained from GitHub's response
-     * @param format:                 return type formatter -> {@link ReturnFormat}
-     * @return review comments list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnReviewComments(String reviewCommentsResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(reviewCommentsResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<ReviewComment> reviewComments = new ArrayList<>();
-                JSONArray jReviewComments = new JSONArray(reviewCommentsResponse);
-                for (int j = 0; j < jReviewComments.length(); j++)
-                    reviewComments.add(new ReviewComment(jReviewComments.getJSONObject(j)));
-                return (T) reviewComments;
-            default:
-                return (T) reviewCommentsResponse;
-        }
     }
 
     /**

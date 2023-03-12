@@ -39,6 +39,14 @@ import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
  *         <a href="https://docs.github.com/en/rest/pulls/pulls#update-a-pull-request">
  *             Update a pull request</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/pulls/review-requests#request-reviewers-for-a-pull-request">
+ *             Request reviewers for a pull request</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/pulls/review-requests#remove-requested-reviewers-from-a-pull-request">
+ *             Remove requested reviewers from a pull request</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  * @see GitHubOperationBaseStructure

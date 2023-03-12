@@ -1,12 +1,17 @@
 package com.tecknobit.githubmanager.pulls.reviewcomments.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import static com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment.Reactions;
 
 /**
@@ -38,6 +43,10 @@ import static com.tecknobit.githubmanager.commits.commitcomments.records.CommitC
  *     <li>
  *         <a href="https://docs.github.com/en/rest/pulls/comments#create-a-reply-for-a-review-comment">
  *             Create a reply for a review comment</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/pulls/reviews#list-comments-for-a-pull-request-review">
+ *             List comments for a pull request review</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -190,6 +199,34 @@ public class ReviewComment extends GitHubResponse {
      * {@code bodyText} body text of the review comment
      **/
     private final String bodyText;
+
+    /**
+     * Constructor to init a {@link ReviewComment}
+     *
+     * @param path : the relative path of the file to which the comment applies
+     * @param body : the text of the comment
+     * @apiNote this constructor is useful to create a new review comment
+     **/
+    public ReviewComment(String path, String body) {
+        this(null, -1, -1, null, null, path, null, null, -1, null, body, null, null, null, null, null, null,
+                0, -1, null, 0, -1, null, null, null, null);
+    }
+
+    /**
+     * Constructor to init a {@link ReviewComment}
+     *
+     * @param path      : the relative path of the file to which the comment applies
+     * @param body      : the text of the comment
+     * @param startLine : the first line of the range for a multi-line comment
+     * @param startSide : the side of the first line of the range for a multi-line comment
+     * @param line      : the line of the blob to which the comment applies. The last line of the range for a multi-line comment
+     * @param side      : base of the pull request
+     * @apiNote this constructor is useful to create a new review comment
+     **/
+    public ReviewComment(String path, String body, int startLine, Side startSide, int line, Side side) {
+        this(null, -1, -1, null, null, path, null, null, -1, null, body, null, null, null, null, null, null,
+                startLine, -1, startSide, line, -1, side, null, null, null);
+    }
 
     /**
      * Constructor to init a {@link ReviewComment}
@@ -584,6 +621,29 @@ public class ReviewComment extends GitHubResponse {
     }
 
     /**
+     * Method to create a review comments list
+     *
+     * @param reviewCommentsResponse: obtained from GitHub's response
+     * @param format:                 return type formatter -> {@link ReturnFormat}
+     * @return review comments list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnReviewComments(String reviewCommentsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(reviewCommentsResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<ReviewComment> reviewComments = new ArrayList<>();
+                JSONArray jReviewComments = new JSONArray(reviewCommentsResponse);
+                for (int j = 0; j < jReviewComments.length(); j++)
+                    reviewComments.add(new ReviewComment(jReviewComments.getJSONObject(j)));
+                return (T) reviewComments;
+            default:
+                return (T) reviewCommentsResponse;
+        }
+    }
+
+    /**
      * The {@code ReviewCommentLinks} class is useful to format a GitHub's review comment links
      *
      * @author N7ghtm4r3 - Tecknobit
@@ -627,9 +687,10 @@ public class ReviewComment extends GitHubResponse {
          **/
         public ReviewCommentLinks(JSONObject jReviewCommentLink) {
             super(jReviewCommentLink);
-            self = hItem.getJSONObject("self").getString("href");
             html = hItem.getJSONObject("html").getString("href");
             pullRequest = hItem.getJSONObject("pull_request").getString("href");
+            hItem.setJSONObjectSource(hItem.getJSONObject("self", new JSONObject()));
+            self = hItem.getString("href");
         }
 
         /**
