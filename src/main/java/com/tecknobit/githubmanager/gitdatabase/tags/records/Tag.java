@@ -1,9 +1,9 @@
 package com.tecknobit.githubmanager.gitdatabase.tags.records;
 
 import com.tecknobit.githubmanager.gitdatabase.references.records.GitReference.RefObject;
+import com.tecknobit.githubmanager.records.generic.CommitData.CommitProfile;
+import com.tecknobit.githubmanager.records.generic.CommitData.Verification;
 import com.tecknobit.githubmanager.records.generic.ShaItem;
-import com.tecknobit.githubmanager.records.parents.CommitData.CommitProfile;
-import com.tecknobit.githubmanager.records.parents.CommitData.Verification;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 

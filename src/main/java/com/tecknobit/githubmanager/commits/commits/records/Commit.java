@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.commits.commits.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.records.generic.CommitData;
 import com.tecknobit.githubmanager.records.generic.ShaItem;
-import com.tecknobit.githubmanager.records.parents.CommitData;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;

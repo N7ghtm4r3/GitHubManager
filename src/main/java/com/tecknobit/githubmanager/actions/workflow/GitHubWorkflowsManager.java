@@ -67,7 +67,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
     public static final String TIMING_PATH = "/timing";
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubWorkflowsManager}
      *
      * @param accessToken : personal access token for authentication to {@code "GitHub"}
      **/
@@ -76,7 +76,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubWorkflowsManager}
      *
      * @param accessToken         :         personal access token for authentication to {@code "GitHub"}
      * @param defaultErrorMessage : custom error to show when is not a request error
@@ -86,7 +86,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubWorkflowsManager}
      *
      * @param accessToken    :    personal access token for authentication to {@code "GitHub"}
      * @param requestTimeout : custom timeout for request
@@ -96,7 +96,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubWorkflowsManager}
      *
      * @param accessToken         :         personal access token for authentication to {@code "GitHub"}
      * @param defaultErrorMessage : custom error to show when is not a request error
@@ -107,7 +107,7 @@ public class GitHubWorkflowsManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager} <br>
+     * Constructor to init a {@link GitHubWorkflowsManager} <br>
      * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor

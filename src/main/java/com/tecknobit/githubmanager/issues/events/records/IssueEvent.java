@@ -2,7 +2,8 @@ package com.tecknobit.githubmanager.issues.events.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
-import com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment.Reactions;
+import com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment;
+import com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment.CommitCommentReactions;
 import com.tecknobit.githubmanager.issues.issues.records.Issue;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
@@ -160,7 +161,7 @@ public class IssueEvent extends GitHubResponse {
     /**
      * {@code reactions} reactions of the issue event
      **/
-    private final Reactions reactions;
+    private final CommitComment.CommitCommentReactions reactions;
 
 
     /**
@@ -195,7 +196,7 @@ public class IssueEvent extends GitHubResponse {
                       String createdAt, Issue issue, Label label, User assignee, User assigner, User reviewRequester,
                       User requestedReviewer, Team requestedTeam, DismissedReview dismissedReview, String milestone,
                       ProjectCard projectCard, Rename rename, AuthorAssociation authorAssociation, LockReason lockReason,
-                      GitHubApp performedViaGitHubApp, String body, Reactions reactions) {
+                      GitHubApp performedViaGitHubApp, String body, CommitComment.CommitCommentReactions reactions) {
         super(null);
         this.id = id;
         this.nodeId = nodeId;
@@ -302,7 +303,7 @@ public class IssueEvent extends GitHubResponse {
             lockReason = null;
         jItem = hResponse.getJSONObject("reactions");
         if (jItem != null)
-            reactions = new Reactions(jItem);
+            reactions = new CommitCommentReactions(jItem);
         else
             reactions = null;
         jItem = hResponse.getJSONObject("performed_via_github_app");
@@ -556,9 +557,9 @@ public class IssueEvent extends GitHubResponse {
      * Method to get {@link #reactions} instance <br>
      * No-any params required
      *
-     * @return {@link #reactions} instance as {@link Reactions}
+     * @return {@link #reactions} instance as {@link CommitCommentReactions}
      **/
-    public Reactions getReactions() {
+    public CommitComment.CommitCommentReactions getReactions() {
         return reactions;
     }
 

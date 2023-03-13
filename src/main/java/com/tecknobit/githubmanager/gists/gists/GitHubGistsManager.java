@@ -718,7 +718,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}")
     public Gist updateGist(Gist gist, String key, GistFile gistFile) throws IOException {
-        return updateGist(gist.getId(), key, gistFile, LIBRARY_OBJECT);
+        return updateGist((String) gist.getId(), key, gistFile, LIBRARY_OBJECT);
     }
 
     /**
@@ -748,7 +748,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}")
     public <T> T updateGist(Gist gist, String key, GistFile gistFile, ReturnFormat format) throws IOException {
-        return updateGist(gist.getId(), key, gistFile, format);
+        return updateGist((String) gist.getId(), key, gistFile, format);
     }
 
     /**
@@ -839,7 +839,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}")
     public Gist updateGist(Gist gist, String key, GistFile gistFile, String description) throws IOException {
-        return updateGist(gist.getId(), key, gistFile, description, LIBRARY_OBJECT);
+        return updateGist((String) gist.getId(), key, gistFile, description, LIBRARY_OBJECT);
     }
 
     /**
@@ -871,7 +871,7 @@ public class GitHubGistsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/gists/{gist_id}")
     public <T> T updateGist(Gist gist, String key, GistFile gistFile, String description,
                             ReturnFormat format) throws IOException {
-        return updateGist(gist.getId(), key, gistFile, description, format);
+        return updateGist((String) gist.getId(), key, gistFile, description, format);
     }
 
     /**
@@ -955,7 +955,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}")
     public boolean deleteGist(Gist gist) {
-        return deleteGist(gist.getId());
+        return deleteGist((String) gist.getId());
     }
 
     /**
@@ -1005,7 +1005,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
     public ArrayList<GistCommit> getGistCommits(Gist gist) throws IOException {
-        return getGistCommits(gist.getId(), LIBRARY_OBJECT);
+        return getGistCommits((String) gist.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1032,7 +1032,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
     public <T> T getGistCommits(Gist gist, ReturnFormat format) throws IOException {
-        return getGistCommits(gist.getId(), format);
+        return getGistCommits((String) gist.getId(), format);
     }
 
     /**
@@ -1120,7 +1120,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
     public ArrayList<GistCommit> getGistCommits(Gist gist, Params queryParams) throws IOException {
-        return getGistCommits(gist.getId(), queryParams, LIBRARY_OBJECT);
+        return getGistCommits((String) gist.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1156,7 +1156,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/commits")
     public <T> T getGistCommits(Gist gist, Params queryParams, ReturnFormat format) throws IOException {
-        return getGistCommits(gist.getId(), queryParams, format);
+        return getGistCommits((String) gist.getId(), queryParams, format);
     }
 
     /**
@@ -1277,7 +1277,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
     public ArrayList<Gist> getGistForks(Gist gist) throws IOException {
-        return getGistForks(gist.getId(), LIBRARY_OBJECT);
+        return getGistForks((String) gist.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1304,7 +1304,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
     public <T> T getGistForks(Gist gist, ReturnFormat format) throws IOException {
-        return getGistForks(gist.getId(), format);
+        return getGistForks((String) gist.getId(), format);
     }
 
     /**
@@ -1392,7 +1392,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
     public ArrayList<Gist> getGistForks(Gist gist, Params queryParams) throws IOException {
-        return getGistForks(gist.getId(), queryParams, LIBRARY_OBJECT);
+        return getGistForks((String) gist.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -1428,7 +1428,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/forks")
     public <T> T getGistForks(Gist gist, Params queryParams, ReturnFormat format) throws IOException {
-        return getGistForks(gist.getId(), queryParams, format);
+        return getGistForks((String) gist.getId(), queryParams, format);
     }
 
     /**
@@ -1526,7 +1526,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/gists/{gist_id}/forks")
     public Gist forkGist(Gist gist) throws IOException {
-        return forkGist(gist.getId(), LIBRARY_OBJECT);
+        return forkGist((String) gist.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -1553,7 +1553,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/gists/{gist_id}/forks")
     public <T> T forkGist(Gist gist, ReturnFormat format) throws IOException {
-        return forkGist(gist.getId(), format);
+        return forkGist((String) gist.getId(), format);
     }
 
     /**
@@ -1638,7 +1638,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/star")
     public boolean checkIfGistIsStarred(Gist gist) {
-        return checkIfGistIsStarred(gist.getId());
+        return checkIfGistIsStarred((String) gist.getId());
     }
 
     /**
@@ -1670,7 +1670,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/gists/{gist_id}/star")
     public boolean starGist(Gist gist) {
-        return starGist(gist.getId());
+        return starGist((String) gist.getId());
     }
 
     /**
@@ -1707,7 +1707,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/star")
     public boolean unstarGist(Gist gist) {
-        return unstarGist(gist.getId());
+        return unstarGist((String) gist.getId());
     }
 
     /**
@@ -1758,7 +1758,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/{sha}")
     public GistCommit getGistRevision(Gist gist, String sha) throws IOException {
-        return getGistRevision(gist.getId(), sha, LIBRARY_OBJECT);
+        return getGistRevision((String) gist.getId(), sha, LIBRARY_OBJECT);
     }
 
     /**
@@ -1786,7 +1786,7 @@ public class GitHubGistsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/{sha}")
     public <T> T getGistRevision(Gist gist, String sha, ReturnFormat format) throws IOException {
-        return getGistRevision(gist.getId(), sha, format);
+        return getGistRevision((String) gist.getId(), sha, format);
     }
 
     /**

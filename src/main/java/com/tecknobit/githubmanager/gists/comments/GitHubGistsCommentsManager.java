@@ -5,8 +5,8 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
-import com.tecknobit.githubmanager.gists.comments.records.GistComment;
 import com.tecknobit.githubmanager.gists.gists.records.Gist;
+import com.tecknobit.githubmanager.records.generic.GitHubComment;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -92,7 +92,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * Method to get the list of the gist comments
      *
      * @param gist: the gist from fetch the list
-     * @return gist comments list as {@link ArrayList} of {@link GistComment} custom object
+     * @return gist comments list as {@link ArrayList} of {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -111,8 +111,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
-    public ArrayList<GistComment> getGistComments(Gist gist) throws IOException {
-        return getGistComments(gist.getId(), LIBRARY_OBJECT);
+    public ArrayList<GitHubComment> getGistComments(Gist gist) throws IOException {
+        return getGistComments((String) gist.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -139,14 +139,14 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
     public <T> T getGistComments(Gist gist, ReturnFormat format) throws IOException {
-        return getGistComments(gist.getId(), format);
+        return getGistComments((String) gist.getId(), format);
     }
 
     /**
      * Method to get the list of the gist comments
      *
      * @param gistId: the unique identifier of the gist
-     * @return gist comments list as {@link ArrayList} of {@link GistComment} custom object
+     * @return gist comments list as {@link ArrayList} of {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -164,7 +164,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
-    public ArrayList<GistComment> getGistComments(String gistId) throws IOException {
+    public ArrayList<GitHubComment> getGistComments(String gistId) throws IOException {
         return getGistComments(gistId, LIBRARY_OBJECT);
     }
 
@@ -207,7 +207,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gist comments list as {@link ArrayList} of {@link GistComment} custom object
+     * @return gist comments list as {@link ArrayList} of {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -226,8 +226,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
-    public ArrayList<GistComment> getGistComments(Gist gist, Params queryParams) throws IOException {
-        return getGistComments(gist.getId(), queryParams, LIBRARY_OBJECT);
+    public ArrayList<GitHubComment> getGistComments(Gist gist, Params queryParams) throws IOException {
+        return getGistComments((String) gist.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -263,7 +263,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
     public <T> T getGistComments(Gist gist, Params queryParams, ReturnFormat format) throws IOException {
-        return getGistComments(gist.getId(), queryParams, format);
+        return getGistComments((String) gist.getId(), queryParams, format);
     }
 
     /**
@@ -279,7 +279,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return gist comments list as {@link ArrayList} of {@link GistComment} custom object
+     * @return gist comments list as {@link ArrayList} of {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -297,7 +297,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
-    public ArrayList<GistComment> getGistComments(String gistId, Params queryParams) throws IOException {
+    public ArrayList<GitHubComment> getGistComments(String gistId, Params queryParams) throws IOException {
         return getGistComments(gistId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -350,10 +350,10 @@ public class GitHubGistsCommentsManager extends GitHubManager {
             case JSON:
                 return (T) new JSONArray(gistCommentsResponse);
             case LIBRARY_OBJECT:
-                ArrayList<GistComment> gistComments = new ArrayList<>();
+                ArrayList<GitHubComment> gistComments = new ArrayList<>();
                 JSONArray jGistComments = new JSONArray(gistCommentsResponse);
                 for (int j = 0; j < jGistComments.length(); j++)
-                    gistComments.add(new GistComment(jGistComments.getJSONObject(j)));
+                    gistComments.add(new GitHubComment(jGistComments.getJSONObject(j)));
                 return (T) gistComments;
             default:
                 return (T) gistCommentsResponse;
@@ -365,7 +365,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      *
      * @param gist: the gist where create the comment
      * @param body: the comment text
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -384,8 +384,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
-    public GistComment createGistComment(Gist gist, String body) throws IOException {
-        return createGistComment(gist.getId(), body, LIBRARY_OBJECT);
+    public GitHubComment createGistComment(Gist gist, String body) throws IOException {
+        return createGistComment((String) gist.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -413,7 +413,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
     public <T> T createGistComment(Gist gist, String body, ReturnFormat format) throws IOException {
-        return createGistComment(gist.getId(), body, format);
+        return createGistComment((String) gist.getId(), body, format);
     }
 
     /**
@@ -421,7 +421,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      *
      * @param gistId: the unique identifier of the gist
      * @param body:   the comment text
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -439,7 +439,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
-    public GistComment createGistComment(String gistId, String body) throws IOException {
+    public GitHubComment createGistComment(String gistId, String body) throws IOException {
         return createGistComment(gistId, body, LIBRARY_OBJECT);
     }
 
@@ -477,7 +477,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      *
      * @param gist:      the gist from fetch the comment
      * @param commentId: the unique identifier of the comment
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -496,8 +496,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
-    public GistComment getGistComment(Gist gist, String commentId) throws IOException {
-        return getGistComment(gist.getId(), commentId, LIBRARY_OBJECT);
+    public GitHubComment getGistComment(Gist gist, long commentId) throws IOException {
+        return getGistComment((String) gist.getId(), commentId, LIBRARY_OBJECT);
     }
 
     /**
@@ -524,8 +524,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
-    public <T> T getGistComment(Gist gist, String commentId, ReturnFormat format) throws IOException {
-        return getGistComment(gist.getId(), commentId, format);
+    public <T> T getGistComment(Gist gist, long commentId, ReturnFormat format) throws IOException {
+        return getGistComment((String) gist.getId(), commentId, format);
     }
 
     /**
@@ -533,7 +533,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      *
      * @param gistId:    the unique identifier of the gist
      * @param commentId: the unique identifier of the comment
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -551,7 +551,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
-    public GistComment getGistComment(String gistId, String commentId) throws IOException {
+    public GitHubComment getGistComment(String gistId, long commentId) throws IOException {
         return getGistComment(gistId, commentId, LIBRARY_OBJECT);
     }
 
@@ -578,7 +578,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * Get a gist comment</a>
      **/
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
-    public <T> T getGistComment(String gistId, String commentId, ReturnFormat format) throws IOException {
+    public <T> T getGistComment(String gistId, long commentId, ReturnFormat format) throws IOException {
         return returnGistComment(sendGetRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH + "/" + commentId), format);
     }
 
@@ -588,7 +588,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * @param gist:    the gist where update the comment
      * @param comment: the comment to update
      * @param body:    the comment text
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -607,8 +607,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public GistComment updateGistComment(Gist gist, GistComment comment, String body) throws IOException {
-        return updateGistComment(gist.getId(), comment.getId(), body, LIBRARY_OBJECT);
+    public GitHubComment updateGistComment(Gist gist, GitHubComment comment, String body) throws IOException {
+        return updateGistComment((String) gist.getId(), (long) comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -636,8 +636,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public <T> T updateGistComment(Gist gist, GistComment comment, String body, ReturnFormat format) throws IOException {
-        return updateGistComment(gist.getId(), comment.getId(), body, format);
+    public <T> T updateGistComment(Gist gist, GitHubComment comment, String body, ReturnFormat format) throws IOException {
+        return updateGistComment((String) gist.getId(), (long) comment.getId(), body, format);
     }
 
     /**
@@ -646,7 +646,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * @param gist:      the gist where update the comment
      * @param commentId: the unique identifier of the comment
      * @param body:      the comment text
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -665,8 +665,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public GistComment updateGistComment(Gist gist, String commentId, String body) throws IOException {
-        return updateGistComment(gist.getId(), commentId, body, LIBRARY_OBJECT);
+    public GitHubComment updateGistComment(Gist gist, long commentId, String body) throws IOException {
+        return updateGistComment((String) gist.getId(), commentId, body, LIBRARY_OBJECT);
     }
 
     /**
@@ -694,8 +694,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public <T> T updateGistComment(Gist gist, String commentId, String body, ReturnFormat format) throws IOException {
-        return updateGistComment(gist.getId(), commentId, body, format);
+    public <T> T updateGistComment(Gist gist, long commentId, String body, ReturnFormat format) throws IOException {
+        return updateGistComment((String) gist.getId(), commentId, body, format);
     }
 
     /**
@@ -704,7 +704,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * @param gistId:  the unique identifier of the gist
      * @param comment: the comment to update
      * @param body:    the comment text
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -723,8 +723,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public GistComment updateGistComment(String gistId, GistComment comment, String body) throws IOException {
-        return updateGistComment(gistId, comment.getId(), body, LIBRARY_OBJECT);
+    public GitHubComment updateGistComment(String gistId, GitHubComment comment, String body) throws IOException {
+        return updateGistComment(gistId, (long) comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -752,8 +752,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public <T> T updateGistComment(String gistId, GistComment comment, String body, ReturnFormat format) throws IOException {
-        return updateGistComment(gistId, comment.getId(), body, format);
+    public <T> T updateGistComment(String gistId, GitHubComment comment, String body, ReturnFormat format) throws IOException {
+        return updateGistComment(gistId, (long) comment.getId(), body, format);
     }
 
     /**
@@ -762,7 +762,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * @param gistId:    the unique identifier of the gist
      * @param commentId: the unique identifier of the comment
      * @param body:      the comment text
-     * @return gist comment as {@link GistComment} custom object
+     * @return gist comment as {@link GitHubComment} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -780,7 +780,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public GistComment updateGistComment(String gistId, String commentId, String body) throws IOException {
+    public GitHubComment updateGistComment(String gistId, long commentId, String body) throws IOException {
         return updateGistComment(gistId, commentId, body, LIBRARY_OBJECT);
     }
 
@@ -808,7 +808,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * Update a gist comment</a>
      **/
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
-    public <T> T updateGistComment(String gistId, String commentId, String body, ReturnFormat format) throws IOException {
+    public <T> T updateGistComment(String gistId, long commentId, String body, ReturnFormat format) throws IOException {
         Params payload = new Params();
         payload.addParam("body", body);
         return returnGistComment(sendPatchRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH + "/" + commentId,
@@ -828,7 +828,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
             case JSON:
                 return (T) new JSONObject(gistCommentResponse);
             case LIBRARY_OBJECT:
-                return (T) new GistComment(new JSONObject(gistCommentResponse));
+                return (T) new GitHubComment(new JSONObject(gistCommentResponse));
             default:
                 return (T) gistCommentResponse;
         }
@@ -845,8 +845,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
-    public boolean deleteGistComment(Gist gist, GistComment comment) {
-        return deleteGistComment(gist.getId(), comment.getId());
+    public boolean deleteGistComment(Gist gist, GitHubComment comment) {
+        return deleteGistComment((String) gist.getId(), (long) comment.getId());
     }
 
     /**
@@ -860,8 +860,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
-    public boolean deleteGistComment(String gistId, GistComment comment) {
-        return deleteGistComment(gistId, comment.getId());
+    public boolean deleteGistComment(String gistId, GitHubComment comment) {
+        return deleteGistComment(gistId, (long) comment.getId());
     }
 
     /**
@@ -875,8 +875,8 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
-    public boolean deleteGistComment(Gist gist, String commentId) {
-        return deleteGistComment(gist.getId(), commentId);
+    public boolean deleteGistComment(Gist gist, long commentId) {
+        return deleteGistComment((String) gist.getId(), commentId);
     }
 
     /**
@@ -889,7 +889,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
      * Delete a gist comment</a>
      **/
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
-    public boolean deleteGistComment(String gistId, String commentId) {
+    public boolean deleteGistComment(String gistId, long commentId) {
         try {
             sendDeleteRequest(GISTS_PATH + "/" + gistId + COMMENTS_PATH + "/" + commentId);
             if (apiRequest.getResponseStatusCode() != 204) {

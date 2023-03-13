@@ -490,7 +490,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/comments/{comment_id}")
     public CommitComment updateCommitComment(Repository repository, CommitComment comment, String body) throws IOException {
-        return updateCommitComment(repository.getOwner().getLogin(), repository.getName(), comment.getId(), body,
+        return updateCommitComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(), body,
                 LIBRARY_OBJECT);
     }
 
@@ -521,7 +521,8 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/comments/{comment_id}")
     public <T> T updateCommitComment(Repository repository, CommitComment comment, String body,
                                      ReturnFormat format) throws IOException {
-        return updateCommitComment(repository.getOwner().getLogin(), repository.getName(), comment.getId(), body, format);
+        return updateCommitComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(), body,
+                format);
     }
 
     /**
@@ -611,7 +612,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/comments/{comment_id}")
     public CommitComment updateCommitComment(String owner, String repo, CommitComment comment,
                                              String body) throws IOException {
-        return updateCommitComment(owner, repo, comment.getId(), body, LIBRARY_OBJECT);
+        return updateCommitComment(owner, repo, (long) comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -642,7 +643,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/comments/{comment_id}")
     public <T> T updateCommitComment(String owner, String repo, CommitComment comment, String body,
                                      ReturnFormat format) throws IOException {
-        return updateCommitComment(owner, repo, comment.getId(), body, format);
+        return updateCommitComment(owner, repo, (long) comment.getId(), body, format);
     }
 
     /**
@@ -719,7 +720,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/comments/{comment_id}")
     public boolean deleteCommitComment(Repository repository, CommitComment comment) {
-        return deleteCommitComment(repository.getOwner().getLogin(), repository.getName(), comment.getId());
+        return deleteCommitComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId());
     }
 
     /**
@@ -735,7 +736,7 @@ public class GitHubCommitCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/comments/{comment_id}")
     public boolean deleteCommitComment(String owner, String repo, CommitComment comment) {
-        return deleteCommitComment(owner, repo, comment.getId());
+        return deleteCommitComment(owner, repo, (long) comment.getId());
     }
 
     /**

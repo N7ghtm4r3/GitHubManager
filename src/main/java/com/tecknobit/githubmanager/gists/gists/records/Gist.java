@@ -1,6 +1,6 @@
 package com.tecknobit.githubmanager.gists.gists.records;
 
-import com.tecknobit.githubmanager.gists.records.GistStructure;
+import com.tecknobit.githubmanager.records.parents.BaseItemStructure;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
@@ -44,9 +44,9 @@ import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
  *     </li>
  * </ul>
  * @see GitHubResponse
- * @see GistStructure
+ * @see BaseItemStructure
  **/
-public class Gist extends GistStructure {
+public class Gist extends BaseItemStructure {
 
     /**
      * {@code forksUrl} the forks url of the gist

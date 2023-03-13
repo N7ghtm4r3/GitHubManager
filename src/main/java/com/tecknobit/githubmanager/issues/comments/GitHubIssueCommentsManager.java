@@ -546,7 +546,7 @@ public class GitHubIssueCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}")
     public IssueComment updateIssueComment(Repository repository, IssueComment comment, String body) throws Exception {
-        return updateIssueComment(repository.getOwner().getLogin(), repository.getName(), comment.getId(), body,
+        return updateIssueComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(), body,
                 LIBRARY_OBJECT);
     }
 
@@ -577,7 +577,8 @@ public class GitHubIssueCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}")
     public <T> T updateIssueComment(Repository repository, IssueComment comment, String body,
                                     ReturnFormat format) throws Exception {
-        return updateIssueComment(repository.getOwner().getLogin(), repository.getName(), comment.getId(), body, format);
+        return updateIssueComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(), body,
+                format);
     }
 
     /**
@@ -607,7 +608,7 @@ public class GitHubIssueCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}")
     public IssueComment updateIssueComment(String owner, String repo, IssueComment comment, String body) throws Exception {
-        return updateIssueComment(owner, repo, comment.getId(), body, LIBRARY_OBJECT);
+        return updateIssueComment(owner, repo, (long) comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -638,7 +639,7 @@ public class GitHubIssueCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}")
     public <T> T updateIssueComment(String owner, String repo, IssueComment comment, String body,
                                     ReturnFormat format) throws Exception {
-        return updateIssueComment(owner, repo, comment.getId(), body, format);
+        return updateIssueComment(owner, repo, (long) comment.getId(), body, format);
     }
 
     /**
@@ -790,7 +791,7 @@ public class GitHubIssueCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}")
     public boolean deleteIssueComment(String owner, String repo, IssueComment comment) {
-        return deleteIssueComment(owner, repo, comment.getId());
+        return deleteIssueComment(owner, repo, (long) comment.getId());
     }
 
     /**

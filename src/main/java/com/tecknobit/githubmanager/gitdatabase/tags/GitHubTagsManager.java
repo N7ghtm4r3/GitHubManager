@@ -6,7 +6,7 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.gitdatabase.tags.records.Tag;
-import com.tecknobit.githubmanager.records.parents.CommitData.CommitProfile;
+import com.tecknobit.githubmanager.records.generic.CommitData.CommitProfile;
 import com.tecknobit.githubmanager.records.repository.Repository;
 import org.json.JSONObject;
 

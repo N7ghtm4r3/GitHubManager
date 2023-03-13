@@ -30,7 +30,7 @@ public class GitHubGitignoreManager extends GitHubManager {
     public static final String GITIGNORE_TEMPLATES_PATH = "gitignore/templates";
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubGitignoreManager}
      *
      * @param accessToken : personal access token for authentication to {@code "GitHub"}
      **/
@@ -39,7 +39,7 @@ public class GitHubGitignoreManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubGitignoreManager}
      *
      * @param accessToken         :         personal access token for authentication to {@code "GitHub"}
      * @param defaultErrorMessage : custom error to show when is not a request error
@@ -49,7 +49,7 @@ public class GitHubGitignoreManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubGitignoreManager}
      *
      * @param accessToken    :    personal access token for authentication to {@code "GitHub"}
      * @param requestTimeout : custom timeout for request
@@ -59,7 +59,7 @@ public class GitHubGitignoreManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubGitignoreManager}
      *
      * @param accessToken         :         personal access token for authentication to {@code "GitHub"}
      * @param defaultErrorMessage : custom error to show when is not a request error
@@ -70,7 +70,7 @@ public class GitHubGitignoreManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager} <br>
+     * Constructor to init a {@link GitHubGitignoreManager} <br>
      * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor

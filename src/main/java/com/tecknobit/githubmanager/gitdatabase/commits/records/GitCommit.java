@@ -1,8 +1,8 @@
 package com.tecknobit.githubmanager.gitdatabase.commits.records;
 
 import com.tecknobit.githubmanager.commits.commits.records.Commit.Parent;
+import com.tecknobit.githubmanager.records.generic.CommitData;
 import com.tecknobit.githubmanager.records.generic.ShaItem;
-import com.tecknobit.githubmanager.records.parents.CommitData;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 

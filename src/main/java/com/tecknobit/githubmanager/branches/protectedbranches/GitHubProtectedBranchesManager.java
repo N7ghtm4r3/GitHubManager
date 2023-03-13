@@ -97,7 +97,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     public static final String PROTECTION_RESTRICTIONS_USERS_PATH = PROTECTION_RESTRICTIONS_PATH + "/users";
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubProtectedBranchesManager}
      *
      * @param accessToken : personal access token for authentication to {@code "GitHub"}
      **/
@@ -106,7 +106,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubProtectedBranchesManager}
      *
      * @param accessToken         :         personal access token for authentication to {@code "GitHub"}
      * @param defaultErrorMessage : custom error to show when is not a request error
@@ -116,7 +116,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubProtectedBranchesManager}
      *
      * @param accessToken    :    personal access token for authentication to {@code "GitHub"}
      * @param requestTimeout : custom timeout for request
@@ -126,7 +126,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager}
+     * Constructor to init a {@link GitHubProtectedBranchesManager}
      *
      * @param accessToken         :         personal access token for authentication to {@code "GitHub"}
      * @param defaultErrorMessage : custom error to show when is not a request error
@@ -137,7 +137,7 @@ public class GitHubProtectedBranchesManager extends GitHubManager {
     }
 
     /**
-     * Constructor to init a {@link GitHubManager} <br>
+     * Constructor to init a {@link GitHubProtectedBranchesManager} <br>
      * No-any params required
      *
      * @throws IllegalArgumentException when a parameterized constructor has not been called before this constructor
