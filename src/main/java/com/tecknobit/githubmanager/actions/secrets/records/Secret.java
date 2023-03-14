@@ -165,16 +165,6 @@ public class Secret extends GitHubResponse {
     }
 
     /**
-     * Method to get {@link #updatedAt} timestamp <br>
-     * No-any params required
-     *
-     * @return {@link #updatedAt} timestamp as long
-     **/
-    public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
-    }
-
-    /**
      * Method to get {@link #updatedAt} instance <br>
      * No-any params required
      *
@@ -182,6 +172,16 @@ public class Secret extends GitHubResponse {
      **/
     public String getUpdatedAt() {
         return updatedAt;
+    }
+
+    /**
+     * Method to get {@link #updatedAt} timestamp <br>
+     * No-any params required
+     *
+     * @return {@link #updatedAt} timestamp as long
+     **/
+    public long getUpdatedAtTimestamp() {
+        return getDateTimestamp(updatedAt);
     }
 
     /**

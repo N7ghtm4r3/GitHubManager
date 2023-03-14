@@ -145,7 +145,8 @@ public class GitHubReleasesManager extends GitHubManager {
      * associated with a release. To get a list of Git tags, use the Repository Tags API
      *
      * @param repository: the repository from fetch the list
-     * @return releases list as {@link ArrayList} of {@link Release} custom object
+     * @param format           :              return type formatter -> {@link ReturnFormat}
+     * @return releases list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -201,7 +202,8 @@ public class GitHubReleasesManager extends GitHubManager {
      *
      * @param owner: the account owner of the repository. The name is not case-sensitive
      * @param repo:  the name of the repository. The name is not case-sensitive
-     * @return releases list as {@link ArrayList} of {@link Release} custom object
+     * @param format           :              return type formatter -> {@link ReturnFormat}
+     * @return releases list as {@code "format"} defines
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
