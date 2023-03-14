@@ -14,7 +14,7 @@ import com.tecknobit.githubmanager.reactions.records.Reaction;
 import com.tecknobit.githubmanager.reactions.records.Reaction.ReactionContent;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.repository.Repository;
-import com.tecknobit.githubmanager.releases.Release;
+import com.tecknobit.githubmanager.releases.releases.records.Release;
 import com.tecknobit.githubmanager.teams.Discussion;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,6 +28,7 @@ import static com.tecknobit.githubmanager.commits.commitcomments.GitHubCommitCom
 import static com.tecknobit.githubmanager.issues.comments.GitHubIssueCommentsManager.ISSUES_COMMENTS_PATH;
 import static com.tecknobit.githubmanager.issues.issues.GitHubIssuesManager.ISSUES_PATH;
 import static com.tecknobit.githubmanager.pulls.reviewcomments.GitHubReviewCommentsManager.PULLS_COMMENTS_PATH;
+import static com.tecknobit.githubmanager.releases.releases.GitHubReleasesManager.RELEASES_QUERY_PATH;
 
 /**
  * The {@code GitHubReactionsManager} class is useful to manage all GitHub's reactions endpoints
@@ -48,11 +49,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * {@code DISCUSSIONS_PATH} constant for {@code "/discussions/"} path
      **/
     public static final String DISCUSSIONS_PATH = "/discussions/";
-
-    /**
-     * {@code RELEASES_PATH} constant for {@code "/releases/"} path
-     **/
-    public static final String RELEASES_PATH = "/releases/";
 
     /**
      * Constructor to init a {@link GitHubReactionsManager}
@@ -4287,7 +4283,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getCommitCommentReactions(Repository repository, CommitComment comment) throws IOException {
-        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 LIBRARY_OBJECT);
     }
 
@@ -4317,7 +4313,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public <T> T getCommitCommentReactions(Repository repository, CommitComment comment,
                                            ReturnFormat format) throws IOException {
-        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(), format);
+        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(), format);
     }
 
     /**
@@ -4346,7 +4342,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getCommitCommentReactions(String owner, String repo, CommitComment comment) throws IOException {
-        return getCommitCommentReactions(owner, repo, (long) comment.getId(), LIBRARY_OBJECT);
+        return getCommitCommentReactions(owner, repo, comment.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -4376,7 +4372,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public <T> T getCommitCommentReactions(String owner, String repo, CommitComment comment,
                                            ReturnFormat format) throws IOException {
-        return getCommitCommentReactions(owner, repo, (long) comment.getId(), format);
+        return getCommitCommentReactions(owner, repo, comment.getId(), format);
     }
 
     /**
@@ -4531,7 +4527,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getCommitCommentReactions(Repository repository, CommitComment comment,
                                                          Params queryParams) throws IOException {
-        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 queryParams, LIBRARY_OBJECT);
     }
 
@@ -4574,7 +4570,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public <T> T getCommitCommentReactions(Repository repository, CommitComment comment, Params queryParams,
                                            ReturnFormat format) throws IOException {
-        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getCommitCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 queryParams, format);
     }
 
@@ -4618,7 +4614,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getCommitCommentReactions(String owner, String repo, CommitComment comment,
                                                          Params queryParams) throws IOException {
-        return getCommitCommentReactions(owner, repo, (long) comment.getId(), queryParams, LIBRARY_OBJECT);
+        return getCommitCommentReactions(owner, repo, comment.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -4661,7 +4657,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public <T> T getCommitCommentReactions(String owner, String repo, CommitComment comment, Params queryParams,
                                            ReturnFormat format) throws IOException {
-        return getCommitCommentReactions(owner, repo, (long) comment.getId(), queryParams, format);
+        return getCommitCommentReactions(owner, repo, comment.getId(), queryParams, format);
     }
 
     /**
@@ -4863,7 +4859,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public Reaction createCommitCommentReaction(Repository repository, CommitComment comment,
                                                 ReactionContent content) throws IOException {
-        return createCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return createCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 content, LIBRARY_OBJECT);
     }
 
@@ -4895,7 +4891,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public <T> T createCommitCommentReaction(Repository repository, CommitComment comment, ReactionContent content,
                                              ReturnFormat format) throws IOException {
-        return createCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return createCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 content, format);
     }
 
@@ -4928,7 +4924,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public Reaction createCommitCommentReaction(String owner, String repo, CommitComment comment,
                                                 ReactionContent content) throws IOException {
-        return createCommitCommentReaction(owner, repo, (long) comment.getId(), content, LIBRARY_OBJECT);
+        return createCommitCommentReaction(owner, repo, comment.getId(), content, LIBRARY_OBJECT);
     }
 
     /**
@@ -4960,7 +4956,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions")
     public <T> T createCommitCommentReaction(String owner, String repo, CommitComment comment, ReactionContent content,
                                              ReturnFormat format) throws IOException {
-        return createCommitCommentReaction(owner, repo, (long) comment.getId(), content, format);
+        return createCommitCommentReaction(owner, repo, comment.getId(), content, format);
     }
 
     /**
@@ -5103,7 +5099,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteCommitCommentReaction(Repository repository, CommitComment comment, Reaction reaction) {
-        return deleteCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return deleteCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 reaction.getId());
     }
 
@@ -5155,7 +5151,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteCommitCommentReaction(String owner, String repo, CommitComment comment, Reaction reaction) {
-        return deleteCommitCommentReaction(owner, repo, (long) comment.getId(), reaction.getId());
+        return deleteCommitCommentReaction(owner, repo, comment.getId(), reaction.getId());
     }
 
     /**
@@ -5172,7 +5168,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteCommitCommentReaction(String owner, String repo, CommitComment comment, long reactionId) {
-        return deleteCommitCommentReaction(owner, repo, (long) comment.getId(), reactionId);
+        return deleteCommitCommentReaction(owner, repo, comment.getId(), reactionId);
     }
 
     /**
@@ -5188,7 +5184,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteCommitCommentReaction(Repository repository, CommitComment comment, long reactionId) {
-        return deleteCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return deleteCommitCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 reactionId);
     }
 
@@ -5261,7 +5257,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getIssueCommentReactions(Repository repository, IssueComment comment) throws IOException {
-        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 LIBRARY_OBJECT);
     }
 
@@ -5291,7 +5287,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public <T> T getIssueCommentReactions(Repository repository, IssueComment comment,
                                           ReturnFormat format) throws IOException {
-        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 format);
     }
 
@@ -5321,7 +5317,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getIssueCommentReactions(String owner, String repo, IssueComment comment) throws IOException {
-        return getIssueCommentReactions(owner, repo, (long) comment.getId(), LIBRARY_OBJECT);
+        return getIssueCommentReactions(owner, repo, comment.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -5351,7 +5347,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public <T> T getIssueCommentReactions(String owner, String repo, IssueComment comment,
                                           ReturnFormat format) throws IOException {
-        return getIssueCommentReactions(owner, repo, (long) comment.getId(), format);
+        return getIssueCommentReactions(owner, repo, comment.getId(), format);
     }
 
     /**
@@ -5506,7 +5502,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getIssueCommentReactions(Repository repository, IssueComment comment,
                                                         Params queryParams) throws IOException {
-        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 queryParams, LIBRARY_OBJECT);
     }
 
@@ -5549,7 +5545,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public <T> T getIssueCommentReactions(Repository repository, IssueComment comment, Params queryParams,
                                           ReturnFormat format) throws IOException {
-        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return getIssueCommentReactions(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 queryParams, format);
     }
 
@@ -5593,7 +5589,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getIssueCommentReactions(String owner, String repo, IssueComment comment,
                                                         Params queryParams) throws IOException {
-        return getIssueCommentReactions(owner, repo, (long) comment.getId(), queryParams, LIBRARY_OBJECT);
+        return getIssueCommentReactions(owner, repo, comment.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -5636,7 +5632,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public <T> T getIssueCommentReactions(String owner, String repo, IssueComment comment, Params queryParams,
                                           ReturnFormat format) throws IOException {
-        return getIssueCommentReactions(owner, repo, (long) comment.getId(), queryParams, format);
+        return getIssueCommentReactions(owner, repo, comment.getId(), queryParams, format);
     }
 
     /**
@@ -5838,7 +5834,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public Reaction createIssueCommentReaction(Repository repository, IssueComment comment,
                                                ReactionContent content) throws IOException {
-        return createIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return createIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 content, LIBRARY_OBJECT);
     }
 
@@ -5870,7 +5866,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public <T> T createIssueCommentReaction(Repository repository, IssueComment comment, ReactionContent content,
                                             ReturnFormat format) throws IOException {
-        return createIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return createIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 content, format);
     }
 
@@ -5903,7 +5899,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public Reaction createIssueCommentReaction(String owner, String repo, IssueComment comment,
                                                ReactionContent content) throws IOException {
-        return createIssueCommentReaction(owner, repo, (long) comment.getId(), content, LIBRARY_OBJECT);
+        return createIssueCommentReaction(owner, repo, comment.getId(), content, LIBRARY_OBJECT);
     }
 
     /**
@@ -5935,7 +5931,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions")
     public <T> T createIssueCommentReaction(String owner, String repo, IssueComment comment, ReactionContent content,
                                             ReturnFormat format) throws IOException {
-        return createIssueCommentReaction(owner, repo, (long) comment.getId(), content, format);
+        return createIssueCommentReaction(owner, repo, comment.getId(), content, format);
     }
 
     /**
@@ -6078,7 +6074,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteIssueCommentReaction(Repository repository, IssueComment comment, Reaction reaction) {
-        return deleteIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return deleteIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 reaction.getId());
     }
 
@@ -6130,7 +6126,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteIssueCommentReaction(String owner, String repo, IssueComment comment, Reaction reaction) {
-        return deleteIssueCommentReaction(owner, repo, (long) comment.getId(), reaction.getId());
+        return deleteIssueCommentReaction(owner, repo, comment.getId(), reaction.getId());
     }
 
     /**
@@ -6147,7 +6143,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteIssueCommentReaction(String owner, String repo, IssueComment comment, long reactionId) {
-        return deleteIssueCommentReaction(owner, repo, (long) comment.getId(), reactionId);
+        return deleteIssueCommentReaction(owner, repo, comment.getId(), reactionId);
     }
 
     /**
@@ -6163,7 +6159,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deleteIssueCommentReaction(Repository repository, IssueComment comment, long reactionId) {
-        return deleteIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return deleteIssueCommentReaction(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 reactionId);
     }
 
@@ -7204,7 +7200,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public ArrayList<Reaction> getPullRequestReviewCommentReactions(Repository repository,
                                                                     ReviewComment comment) throws IOException {
         return getPullRequestReviewCommentReactions(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), LIBRARY_OBJECT);
+                comment.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -7234,7 +7230,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T getPullRequestReviewCommentReactions(Repository repository, ReviewComment comment,
                                                       ReturnFormat format) throws IOException {
         return getPullRequestReviewCommentReactions(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), format);
+                comment.getId(), format);
     }
 
     /**
@@ -7264,7 +7260,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getPullRequestReviewCommentReactions(String owner, String repo,
                                                                     ReviewComment comment) throws IOException {
-        return getPullRequestReviewCommentReactions(owner, repo, (long) comment.getId(), LIBRARY_OBJECT);
+        return getPullRequestReviewCommentReactions(owner, repo, comment.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -7294,7 +7290,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions")
     public <T> T getPullRequestReviewCommentReactions(String owner, String repo, ReviewComment comment,
                                                       ReturnFormat format) throws IOException {
-        return getPullRequestReviewCommentReactions(owner, repo, (long) comment.getId(), format);
+        return getPullRequestReviewCommentReactions(owner, repo, comment.getId(), format);
     }
 
     /**
@@ -7455,7 +7451,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public ArrayList<Reaction> getPullRequestReviewCommentReactions(Repository repository, ReviewComment comment,
                                                                     Params queryParams) throws IOException {
         return getPullRequestReviewCommentReactions(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), queryParams, LIBRARY_OBJECT);
+                comment.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -7498,7 +7494,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T getPullRequestReviewCommentReactions(Repository repository, ReviewComment comment, Params queryParams,
                                                       ReturnFormat format) throws IOException {
         return getPullRequestReviewCommentReactions(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), queryParams, format);
+                comment.getId(), queryParams, format);
     }
 
     /**
@@ -7541,7 +7537,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions")
     public ArrayList<Reaction> getPullRequestReviewCommentReactions(String owner, String repo, ReviewComment comment,
                                                                     Params queryParams) throws IOException {
-        return getPullRequestReviewCommentReactions(owner, repo, (long) comment.getId(), queryParams, LIBRARY_OBJECT);
+        return getPullRequestReviewCommentReactions(owner, repo, comment.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -7584,7 +7580,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions")
     public <T> T getPullRequestReviewCommentReactions(String owner, String repo, ReviewComment comment, Params queryParams,
                                                       ReturnFormat format) throws IOException {
-        return getPullRequestReviewCommentReactions(owner, repo, (long) comment.getId(), queryParams, format);
+        return getPullRequestReviewCommentReactions(owner, repo, comment.getId(), queryParams, format);
     }
 
     /**
@@ -7789,7 +7785,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public Reaction createPullRequestReviewCommentReaction(Repository repository, ReviewComment comment,
                                                            ReactionContent content) throws IOException {
         return createPullRequestReviewCommentReaction(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), content, LIBRARY_OBJECT);
+                comment.getId(), content, LIBRARY_OBJECT);
     }
 
     /**
@@ -7821,7 +7817,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T createPullRequestReviewCommentReaction(Repository repository, ReviewComment comment,
                                                         ReactionContent content, ReturnFormat format) throws IOException {
         return createPullRequestReviewCommentReaction(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), content, format);
+                comment.getId(), content, format);
     }
 
     /**
@@ -7853,7 +7849,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions")
     public Reaction createPullRequestReviewCommentReaction(String owner, String repo, ReviewComment comment,
                                                            ReactionContent content) throws IOException {
-        return createPullRequestReviewCommentReaction(owner, repo, (long) comment.getId(), content, LIBRARY_OBJECT);
+        return createPullRequestReviewCommentReaction(owner, repo, comment.getId(), content, LIBRARY_OBJECT);
     }
 
     /**
@@ -7885,7 +7881,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions")
     public <T> T createPullRequestReviewCommentReaction(String owner, String repo, ReviewComment comment,
                                                         ReactionContent content, ReturnFormat format) throws IOException {
-        return createPullRequestReviewCommentReaction(owner, repo, (long) comment.getId(), content, format);
+        return createPullRequestReviewCommentReaction(owner, repo, comment.getId(), content, format);
     }
 
     /**
@@ -8030,7 +8026,7 @@ public class GitHubReactionsManager extends GitHubManager {
     public boolean deletePullRequestReviewCommentReaction(Repository repository, ReviewComment comment,
                                                           Reaction reaction) {
         return deletePullRequestReviewCommentReaction(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), reaction.getId());
+                comment.getId(), reaction.getId());
     }
 
     /**
@@ -8082,7 +8078,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deletePullRequestReviewCommentReaction(String owner, String repo, ReviewComment comment,
                                                           Reaction reaction) {
-        return deletePullRequestReviewCommentReaction(owner, repo, (long) comment.getId(), reaction.getId());
+        return deletePullRequestReviewCommentReaction(owner, repo, comment.getId(), reaction.getId());
     }
 
     /**
@@ -8100,7 +8096,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deletePullRequestReviewCommentReaction(String owner, String repo, ReviewComment comment,
                                                           long reactionId) {
-        return deletePullRequestReviewCommentReaction(owner, repo, (long) comment.getId(), reactionId);
+        return deletePullRequestReviewCommentReaction(owner, repo, comment.getId(), reactionId);
     }
 
     /**
@@ -8117,7 +8113,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}")
     public boolean deletePullRequestReviewCommentReaction(Repository repository, ReviewComment comment, long reactionId) {
         return deletePullRequestReviewCommentReaction(repository.getOwner().getLogin(), repository.getName(),
-                (long) comment.getId(), reactionId);
+                comment.getId(), reactionId);
     }
 
     /**
@@ -8388,7 +8384,7 @@ public class GitHubReactionsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/releases/{release_id}/reactions")
     public <T> T getReleaseReactions(String owner, String repo, long releaseId, ReturnFormat format) throws IOException {
-        return returnReactions(sendGetRequest(REPOS_PATH + owner + "/" + repo + RELEASES_PATH + releaseId
+        return returnReactions(sendGetRequest(REPOS_PATH + owner + "/" + repo + RELEASES_QUERY_PATH + releaseId
                 + REACTIONS_PATH), format);
     }
 
@@ -8731,7 +8727,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/repos/{owner}/{repo}/releases/{release_id}/reactions")
     public <T> T getReleaseReactions(String owner, String repo, long releaseId, Params queryParams,
                                      ReturnFormat format) throws IOException {
-        return returnReactions(sendGetRequest(REPOS_PATH + owner + "/" + repo + RELEASES_PATH + releaseId
+        return returnReactions(sendGetRequest(REPOS_PATH + owner + "/" + repo + RELEASES_QUERY_PATH + releaseId
                 + REACTIONS_PATH + queryParams.createQueryString()), format);
     }
 
@@ -9008,7 +9004,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/reactions")
     public <T> T createReleaseReaction(String owner, String repo, long releaseId, ReactionContent content,
                                        ReturnFormat format) throws IOException {
-        return returnReaction(sendPostRequest(REPOS_PATH + owner + "/" + repo + RELEASES_PATH + releaseId
+        return returnReaction(sendPostRequest(REPOS_PATH + owner + "/" + repo + RELEASES_QUERY_PATH + releaseId
                 + REACTIONS_PATH, createReactionPayload(content)), format);
     }
 
@@ -9174,7 +9170,7 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}")
     public boolean deleteReleaseReaction(String owner, String repo, long releaseId, long reactionId) {
         try {
-            sendDeleteRequest(REPOS_PATH + owner + "/" + repo + RELEASES_PATH + releaseId + REACTIONS_PATH
+            sendDeleteRequest(REPOS_PATH + owner + "/" + repo + RELEASES_QUERY_PATH + releaseId + REACTIONS_PATH
                     + "/" + reactionId);
             if (apiRequest.getResponseStatusCode() != 204) {
                 printErrorResponse();

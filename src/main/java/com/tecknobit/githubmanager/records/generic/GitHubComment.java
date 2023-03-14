@@ -146,6 +146,17 @@ public class GitHubComment extends BaseItemStructure {
     }
 
     /**
+     * Method to get {@link #id} instance <br>
+     * No-any params required
+     *
+     * @return {@link #id} instance as {@link Long}
+     **/
+    @Override
+    public Long getId() {
+        return super.getId();
+    }
+
+    /**
      * Method to get {@link #htmlUrl} instance <br>
      * No-any params required
      *

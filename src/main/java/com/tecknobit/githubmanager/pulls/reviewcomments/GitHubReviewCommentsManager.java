@@ -557,7 +557,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}")
     public ReviewComment updatePullRequestReviewComment(Repository repository, ReviewComment comment,
                                                         String body) throws IOException {
-        return updatePullRequestReviewComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return updatePullRequestReviewComment(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 body, LIBRARY_OBJECT);
     }
 
@@ -588,7 +588,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}")
     public <T> T updatePullRequestReviewComment(Repository repository, ReviewComment comment, String body,
                                                 ReturnFormat format) throws IOException {
-        return updatePullRequestReviewComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId(),
+        return updatePullRequestReviewComment(repository.getOwner().getLogin(), repository.getName(), comment.getId(),
                 body, format);
     }
 
@@ -682,7 +682,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}")
     public ReviewComment updatePullRequestReviewComment(String owner, String repo, ReviewComment comment,
                                                         String body) throws IOException {
-        return updatePullRequestReviewComment(owner, repo, (long) comment.getId(), body, LIBRARY_OBJECT);
+        return updatePullRequestReviewComment(owner, repo, comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -713,7 +713,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = PATCH, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}")
     public <T> T updatePullRequestReviewComment(String owner, String repo, ReviewComment comment, String body,
                                                 ReturnFormat format) throws IOException {
-        return updatePullRequestReviewComment(owner, repo, (long) comment.getId(), body, format);
+        return updatePullRequestReviewComment(owner, repo, comment.getId(), body, format);
     }
 
     /**
@@ -791,7 +791,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}")
     public boolean deletePullRequestReviewComment(Repository repository, ReviewComment comment) {
-        return deletePullRequestReviewComment(repository.getOwner().getLogin(), repository.getName(), (long) comment.getId());
+        return deletePullRequestReviewComment(repository.getOwner().getLogin(), repository.getName(), comment.getId());
     }
 
     /**
@@ -822,7 +822,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/repos/{owner}/{repo}/pulls/comments/{comment_id}")
     public boolean deletePullRequestReviewComment(String owner, String repo, ReviewComment comment) {
-        return deletePullRequestReviewComment(owner, repo, (long) comment.getId());
+        return deletePullRequestReviewComment(owner, repo, comment.getId());
     }
 
     /**
@@ -2478,7 +2478,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     public ReviewComment createReviewCommentReply(Repository repository, PullRequest pullRequest, ReviewComment comment,
                                                   String body) throws IOException {
         return createReviewCommentReply(repository.getOwner().getLogin(), repository.getName(), pullRequest.getNumber(),
-                (long) comment.getId(), body, LIBRARY_OBJECT);
+                comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -2514,7 +2514,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     public <T> T createReviewCommentReply(Repository repository, PullRequest pullRequest, ReviewComment comment,
                                           String body, ReturnFormat format) throws IOException {
         return createReviewCommentReply(repository.getOwner().getLogin(), repository.getName(), pullRequest.getNumber(),
-                (long) comment.getId(), body, format);
+                comment.getId(), body, format);
     }
 
     /**
@@ -2550,7 +2550,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     public ReviewComment createReviewCommentReply(Repository repository, long pullNumber, ReviewComment comment,
                                                   String body) throws IOException {
         return createReviewCommentReply(repository.getOwner().getLogin(), repository.getName(), pullNumber,
-                (long) comment.getId(), body, LIBRARY_OBJECT);
+                comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -2586,7 +2586,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     public <T> T createReviewCommentReply(Repository repository, long pullNumber, ReviewComment comment, String body,
                                           ReturnFormat format) throws IOException {
         return createReviewCommentReply(repository.getOwner().getLogin(), repository.getName(), pullNumber,
-                (long) comment.getId(), body, format);
+                comment.getId(), body, format);
     }
 
     /**
@@ -2766,7 +2766,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies")
     public ReviewComment createReviewCommentReply(String owner, String repo, PullRequest pullRequest, ReviewComment comment,
                                                   String body) throws IOException {
-        return createReviewCommentReply(owner, repo, pullRequest.getNumber(), (long) comment.getId(), body, LIBRARY_OBJECT);
+        return createReviewCommentReply(owner, repo, pullRequest.getNumber(), comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -2802,7 +2802,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies")
     public <T> T createReviewCommentReply(String owner, String repo, PullRequest pullRequest, ReviewComment comment,
                                           String body, ReturnFormat format) throws IOException {
-        return createReviewCommentReply(owner, repo, pullRequest.getNumber(), (long) comment.getId(), body, format);
+        return createReviewCommentReply(owner, repo, pullRequest.getNumber(), comment.getId(), body, format);
     }
 
     /**
@@ -2838,7 +2838,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies")
     public ReviewComment createReviewCommentReply(String owner, String repo, long pullNumber, ReviewComment comment,
                                                   String body) throws IOException {
-        return createReviewCommentReply(owner, repo, pullNumber, (long) comment.getId(), body, LIBRARY_OBJECT);
+        return createReviewCommentReply(owner, repo, pullNumber, comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -2874,7 +2874,7 @@ public class GitHubReviewCommentsManager extends GitHubManager {
     @RequestPath(method = POST, path = "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies")
     public <T> T createReviewCommentReply(String owner, String repo, long pullNumber, ReviewComment comment, String body,
                                           ReturnFormat format) throws IOException {
-        return createReviewCommentReply(owner, repo, pullNumber, (long) comment.getId(), body, format);
+        return createReviewCommentReply(owner, repo, pullNumber, comment.getId(), body, format);
     }
 
     /**

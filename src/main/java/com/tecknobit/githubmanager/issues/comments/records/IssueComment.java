@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.issues.comments.records;
 
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
-import com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment.CommitCommentReactions;
+import com.tecknobit.githubmanager.reactions.records.Reactions;
 import com.tecknobit.githubmanager.records.generic.GitHubComment;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
@@ -63,7 +63,7 @@ public class IssueComment extends GitHubComment {
     /**
      * {@code reactions} reactions attached to the issue comment
      **/
-    private final CommitCommentReactions reactions;
+    private final Reactions reactions;
 
     /**
      * Constructor to init a {@link IssueComment}
@@ -85,7 +85,7 @@ public class IssueComment extends GitHubComment {
      **/
     public IssueComment(long id, String nodeId, String url, String body, String bodyText, String bodyHtml, String htmlUrl,
                         User user, String createdAt, String updatedAt, String issueUrl, AuthorAssociation authorAssociation,
-                        GitHubApp performedViaGitHubApp, CommitCommentReactions reactions) {
+                        GitHubApp performedViaGitHubApp, Reactions reactions) {
         super(htmlUrl, url, id, nodeId, body, user, createdAt, updatedAt, authorAssociation);
         this.bodyText = bodyText;
         this.bodyHtml = bodyHtml;
@@ -111,7 +111,7 @@ public class IssueComment extends GitHubComment {
             performedViaGitHubApp = null;
         jItem = hResponse.getJSONObject("reactions");
         if (jItem != null)
-            reactions = new CommitCommentReactions(jItem);
+            reactions = new Reactions(jItem);
         else
             reactions = null;
     }
@@ -160,9 +160,9 @@ public class IssueComment extends GitHubComment {
      * Method to get {@link #reactions} instance <br>
      * No-any params required
      *
-     * @return {@link #reactions} instance as {@link CommitCommentReactions}
+     * @return {@link #reactions} instance as {@link com.tecknobit.githubmanager.reactions.records.Reactions}
      **/
-    public CommitCommentReactions getReactions() {
+    public Reactions getReactions() {
         return reactions;
     }
 

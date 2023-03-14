@@ -1,7 +1,7 @@
 package com.tecknobit.githubmanager.pulls.reviewcomments.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment;
+import com.tecknobit.githubmanager.reactions.records.Reactions;
 import com.tecknobit.githubmanager.records.generic.GitHubComment;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
@@ -13,7 +13,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
-import static com.tecknobit.githubmanager.commits.commitcomments.records.CommitComment.CommitCommentReactions;
 
 /**
  * The {@code ReviewComment} class is useful to format a GitHub's review comment
@@ -150,7 +149,7 @@ public class ReviewComment extends GitHubComment {
     /**
      * {@code reactions} of the review comment
      **/
-    private final CommitCommentReactions reactions;
+    private final Reactions reactions;
 
     /**
      * {@code bodyHtml} body html of the review comment
@@ -224,7 +223,7 @@ public class ReviewComment extends GitHubComment {
                          String commitId, String originalCommitId, long inReplyToId, User user, String body,
                          String createdAt, String updatedAt, String htmlUrl, String pullRequestUrl,
                          AuthorAssociation authorAssociation, ReviewCommentLinks links, int startLine,
-                         int originalStartLine, Side startSide, int line, int originalLine, Side side, CommitComment.CommitCommentReactions reactions,
+                         int originalStartLine, Side startSide, int line, int originalLine, Side side, Reactions reactions,
                          String bodyHtml, String bodyText) {
         super(htmlUrl, url, id, nodeId, body, user, createdAt, updatedAt, authorAssociation);
         this.pullRequestReviewId = pullRequestReviewId;
@@ -279,7 +278,7 @@ public class ReviewComment extends GitHubComment {
             side = null;
         JSONObject jReactions = hResponse.getJSONObject("reactions");
         if (jReactions != null)
-            reactions = new CommitCommentReactions(jReactions);
+            reactions = new Reactions(jReactions);
         else
             reactions = null;
         bodyHtml = hResponse.getString("body_html");
@@ -432,7 +431,7 @@ public class ReviewComment extends GitHubComment {
      *
      * @return {@link #reactions} instance as {@link String}
      **/
-    public CommitCommentReactions getReactions() {
+    public Reactions getReactions() {
         return reactions;
     }
 

@@ -169,6 +169,17 @@ public class Gist extends BaseItemStructure {
     }
 
     /**
+     * Method to get {@link #id} instance <br>
+     * No-any params required
+     *
+     * @return {@link #id} instance as {@link String}
+     **/
+    @Override
+    public String getId() {
+        return super.getId();
+    }
+
+    /**
      * Method to get {@link #forksUrl} instance <br>
      * No-any params required
      *
