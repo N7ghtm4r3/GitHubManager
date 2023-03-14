@@ -7,7 +7,7 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.gitdatabase.tags.records.Tag;
 import com.tecknobit.githubmanager.records.generic.CommitData.CommitProfile;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ import static com.tecknobit.githubmanager.gitdatabase.blobs.GitHubBlobsManager.G
 import static com.tecknobit.githubmanager.gitdatabase.references.records.GitReference.RefObject.ObjectType;
 
 /**
- * The {@code GitHubTagsManager} class is useful to manage all GitHub's tags endpoints
+ * The {@code GitHubRepositoryTagsManager} class is useful to manage all GitHub's tags endpoints
  *
  * @author N7ghtm4r3 - Tecknobit
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/git/tags">

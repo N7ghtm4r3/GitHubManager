@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.deployments.deployments.records.Deployment;
 import com.tecknobit.githubmanager.deployments.deploymentstatuses.records.DeploymentStatus;
 import com.tecknobit.githubmanager.deployments.deploymentstatuses.records.DeploymentStatus.DeploymentState;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

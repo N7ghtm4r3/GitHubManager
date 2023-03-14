@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.commits.commits.records.Commit;
 import com.tecknobit.githubmanager.dependencygraph.dependencysubmission.records.DependencySubmission;
 import com.tecknobit.githubmanager.dependencygraph.dependencysubmission.records.DependencySubmission.Detector;
 import com.tecknobit.githubmanager.dependencygraph.dependencysubmission.records.DependencySubmission.SubmissionJob;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

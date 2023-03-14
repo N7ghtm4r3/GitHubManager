@@ -7,7 +7,7 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.collaborators.records.Invitation;
 import com.tecknobit.githubmanager.collaborators.records.Invitation.CollaboratorPermission;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 
 import java.io.IOException;

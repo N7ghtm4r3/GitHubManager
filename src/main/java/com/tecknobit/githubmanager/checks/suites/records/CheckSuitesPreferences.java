@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.checks.suites.records;
 
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -2,14 +2,14 @@ package com.tecknobit.githubmanager.apps.apps.records;
 
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.GitHubToken;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
-import com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepositorySelection;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection.all;
+import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepositorySelection.all;
 
 /**
  * The {@code InstallationAccessToken} class is useful to format a GitHub's installation access token

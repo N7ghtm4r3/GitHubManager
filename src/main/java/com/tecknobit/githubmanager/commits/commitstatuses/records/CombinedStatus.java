@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.commits.commitstatuses.records;
 import com.tecknobit.githubmanager.commits.commitstatuses.records.CommitStatus.CommitStatusState;
 import com.tecknobit.githubmanager.records.parents.GitHubList;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

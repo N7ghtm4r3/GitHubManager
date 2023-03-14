@@ -12,7 +12,7 @@ import com.tecknobit.githubmanager.actions.selfhosted.runners.records.GitHubToke
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.RunnerLabel;
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.labels.RunnerLabelsList;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

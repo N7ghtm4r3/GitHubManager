@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.workflow.records.Workflow;
 import com.tecknobit.githubmanager.actions.workflow.records.WorkflowUsage;
 import com.tecknobit.githubmanager.actions.workflow.records.WorkflowsList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

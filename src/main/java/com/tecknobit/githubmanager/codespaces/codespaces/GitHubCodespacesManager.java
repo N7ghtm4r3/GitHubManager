@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.codespaces.codespaces.records.CodespaceExport
 import com.tecknobit.githubmanager.codespaces.codespaces.records.DevContainersList;
 import com.tecknobit.githubmanager.codespaces.records.Codespace;
 import com.tecknobit.githubmanager.codespaces.records.CodespacesList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

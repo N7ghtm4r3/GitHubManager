@@ -11,7 +11,7 @@ import com.tecknobit.githubmanager.actions.cache.records.RepositoryCacheUsage;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList;
 import com.tecknobit.githubmanager.actions.cache.records.RepositoryCachesList.ActionCache;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

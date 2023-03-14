@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.records.repository;
+package com.tecknobit.githubmanager.repositories.repositories.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager;

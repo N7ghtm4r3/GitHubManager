@@ -14,7 +14,7 @@ import com.tecknobit.githubmanager.checks.runs.records.CheckRun.Output;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRunAnnotation;
 import com.tecknobit.githubmanager.checks.runs.records.CheckRunsList;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuite;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

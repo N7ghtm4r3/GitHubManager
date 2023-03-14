@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.records.repository;
+package com.tecknobit.githubmanager.repositories.repositories.records;
 
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;

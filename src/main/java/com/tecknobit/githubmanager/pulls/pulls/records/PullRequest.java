@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.pulls.pulls.records;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.*;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

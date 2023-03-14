@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.migrations.sourceimports.records.Import;
 import com.tecknobit.githubmanager.migrations.sourceimports.records.Import.LFS;
 import com.tecknobit.githubmanager.migrations.sourceimports.records.Import.VCS;
 import com.tecknobit.githubmanager.migrations.sourceimports.records.LargeFile;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -7,7 +7,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.gitdatabase.blobs.records.Blob;
 import com.tecknobit.githubmanager.gitdatabase.blobs.records.Blob.Encoding;
 import com.tecknobit.githubmanager.records.generic.ShaItem;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

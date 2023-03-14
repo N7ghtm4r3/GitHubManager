@@ -6,7 +6,7 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.issues.events.records.IssueEvent;
 import com.tecknobit.githubmanager.issues.issues.records.Issue;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -14,7 +14,7 @@ import com.tecknobit.githubmanager.branches.records.BranchProtection.RequiredSta
 import com.tecknobit.githubmanager.branches.records.BranchProtection.RequiredStatusCheck.Check;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.artifacts.records.Artifact;
 import com.tecknobit.githubmanager.actions.artifacts.records.Artifact.ArtifactWorkflowRun;
 import com.tecknobit.githubmanager.actions.artifacts.records.ArtifactsList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.File;

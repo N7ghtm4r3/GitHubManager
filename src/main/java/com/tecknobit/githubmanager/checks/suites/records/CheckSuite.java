@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.checks.records.Check;
 import com.tecknobit.githubmanager.pulls.pulls.records.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

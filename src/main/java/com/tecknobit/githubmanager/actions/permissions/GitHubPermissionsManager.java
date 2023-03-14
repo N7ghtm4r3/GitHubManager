@@ -13,9 +13,9 @@ import com.tecknobit.githubmanager.actions.permissions.records.actions.Organizat
 import com.tecknobit.githubmanager.actions.permissions.records.actions.RepositoryActionsPermissions;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
-import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -26,7 +26,7 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
 import static com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList.returnOrganizationsList;
 import static com.tecknobit.githubmanager.records.parents.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
-import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.returnOrganizationRepositories;
+import static com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList.returnOrganizationRepositories;
 
 /**
  * The {@code GitHubPermissionsManager} class is useful to manage all GitHub's permissions endpoints

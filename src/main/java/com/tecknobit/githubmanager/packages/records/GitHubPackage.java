@@ -3,8 +3,8 @@ package com.tecknobit.githubmanager.packages.records;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository.RepoVisibility;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.RepoVisibility;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;

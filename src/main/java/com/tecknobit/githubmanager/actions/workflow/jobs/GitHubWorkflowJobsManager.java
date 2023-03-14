@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job;
 import com.tecknobit.githubmanager.actions.workflow.jobs.records.JobsList;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.WorkflowRun;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.File;

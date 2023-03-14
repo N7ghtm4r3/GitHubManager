@@ -7,7 +7,7 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.gitdatabase.commits.records.GitCommit;
 import com.tecknobit.githubmanager.records.generic.CommitData.CommitProfile;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

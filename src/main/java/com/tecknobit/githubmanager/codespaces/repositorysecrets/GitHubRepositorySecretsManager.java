@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
 import com.tecknobit.githubmanager.actions.secrets.records.Secret;
 import com.tecknobit.githubmanager.actions.secrets.records.SecretsList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
 import java.io.IOException;
 

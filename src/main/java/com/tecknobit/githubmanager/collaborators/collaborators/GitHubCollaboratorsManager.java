@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.collaborators.collaborators.records.Collabora
 import com.tecknobit.githubmanager.collaborators.collaborators.records.RepositoryPermissions;
 import com.tecknobit.githubmanager.collaborators.records.Invitation;
 import com.tecknobit.githubmanager.collaborators.records.Invitation.CollaboratorPermission;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

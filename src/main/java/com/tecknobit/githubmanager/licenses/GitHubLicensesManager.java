@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.licenses.records.CommonLicense;
 import com.tecknobit.githubmanager.licenses.records.License;
 import com.tecknobit.githubmanager.licenses.records.RepositoryLicense;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

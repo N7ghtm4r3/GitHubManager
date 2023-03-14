@@ -1,4 +1,4 @@
-package com.tecknobit.githubmanager.records.repository;
+package com.tecknobit.githubmanager.repositories.repositories.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
-import static com.tecknobit.githubmanager.records.repository.CompleteRepository.RepoVisibility.*;
+import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.RepoVisibility.*;
 
 /**
  * The {@code CompleteRepository} class is useful to format a GitHub's completed repository

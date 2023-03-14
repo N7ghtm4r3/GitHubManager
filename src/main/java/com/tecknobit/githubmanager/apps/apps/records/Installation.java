@@ -2,13 +2,13 @@ package com.tecknobit.githubmanager.apps.apps.records;
 
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepositorySelection;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
-import static com.tecknobit.githubmanager.records.repository.Repository.RepositorySelection.all;
+import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepositorySelection.all;
 
 /**
  * The {@code Installation} class is useful to format a GitHub's installation

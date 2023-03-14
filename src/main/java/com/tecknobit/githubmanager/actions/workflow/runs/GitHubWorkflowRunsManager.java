@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.actions.workflow.jobs.records.Job;
 import com.tecknobit.githubmanager.actions.workflow.records.Workflow;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.*;
 import com.tecknobit.githubmanager.actions.workflow.runs.records.WorkflowRun.WorkflowRunStatus;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

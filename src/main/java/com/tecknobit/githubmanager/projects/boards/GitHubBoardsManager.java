@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.organizations.organizations.records.Organizat
 import com.tecknobit.githubmanager.projects.boards.records.Project;
 import com.tecknobit.githubmanager.projects.boards.records.Project.OrganizationPermission;
 import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure.OperationState;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

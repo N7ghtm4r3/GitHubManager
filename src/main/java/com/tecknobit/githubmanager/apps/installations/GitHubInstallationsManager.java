@@ -6,15 +6,15 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.apps.apps.records.Installation;
 import com.tecknobit.githubmanager.apps.installations.records.InstallationsList;
-import com.tecknobit.githubmanager.records.repository.RepositoriesList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
 import java.io.IOException;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.apps.installations.records.InstallationsList.returnInstallationsList;
-import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubInstallationsManager} class is useful to manage all GitHub's installations endpoints

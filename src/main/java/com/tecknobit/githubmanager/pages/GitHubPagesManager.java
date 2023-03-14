@@ -11,7 +11,7 @@ import com.tecknobit.githubmanager.pages.records.PagesHealthCheck;
 import com.tecknobit.githubmanager.pages.records.PagesSite;
 import com.tecknobit.githubmanager.pages.records.PagesSite.BuildType;
 import com.tecknobit.githubmanager.pages.records.PagesSite.Source;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

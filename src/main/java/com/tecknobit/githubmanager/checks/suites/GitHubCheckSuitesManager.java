@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.checks.suites.records.CheckSuite;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuitesList;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuitesPreferences;
 import com.tecknobit.githubmanager.checks.suites.records.CheckSuitesPreferences.SuitesPreferences.AutoTriggerCheck;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

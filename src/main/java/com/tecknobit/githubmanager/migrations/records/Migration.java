@@ -4,14 +4,14 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
-import static com.tecknobit.githubmanager.records.repository.CompleteRepository.returnCompleteRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.returnCompleteRepositoriesList;
 
 /**
  * The {@code Migration} class is useful to format a GitHub's migration

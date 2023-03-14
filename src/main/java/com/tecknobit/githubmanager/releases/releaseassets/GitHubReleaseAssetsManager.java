@@ -5,9 +5,9 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
-import com.tecknobit.githubmanager.records.repository.Repository;
 import com.tecknobit.githubmanager.releases.releaseassets.records.ReleaseAsset;
 import com.tecknobit.githubmanager.releases.releases.records.Release;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -614,159 +614,1031 @@ public class GitHubReleaseAssetsManager extends GitHubManager {
         }
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository: the repository from fetch the list
+     * @param release:    the release from fetch the list
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(Repository repository, Release release) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), release.getId(), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository: the repository from fetch the list
+     * @param release:    the release from fetch the list
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(Repository repository, Release release, ReturnFormat format) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), release.getId(), format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:   the account owner of the repository. The name is not case-sensitive
+     * @param repo:    the name of the repository. The name is not case-sensitive
+     * @param release: the release from fetch the list
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(String owner, String repo, Release release) throws IOException {
         return getReleaseAssets(owner, repo, release.getId(), LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:   the account owner of the repository. The name is not case-sensitive
+     * @param repo:    the name of the repository. The name is not case-sensitive
+     * @param release: the release from fetch the list
+     * @param format   :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(String owner, String repo, Release release, ReturnFormat format) throws IOException {
         return getReleaseAssets(owner, repo, release.getId(), format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository: the repository from fetch the list
+     * @param releaseId:  the unique identifier of the release
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(Repository repository, long releaseId) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), releaseId, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository: the repository from fetch the list
+     * @param releaseId:  the unique identifier of the release
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(Repository repository, long releaseId, ReturnFormat format) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), releaseId, format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:     the account owner of the repository. The name is not case-sensitive
+     * @param repo:      the name of the repository. The name is not case-sensitive
+     * @param releaseId: the unique identifier of the release
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(String owner, String repo, long releaseId) throws IOException {
         return getReleaseAssets(owner, repo, releaseId, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:     the account owner of the repository. The name is not case-sensitive
+     * @param repo:      the name of the repository. The name is not case-sensitive
+     * @param releaseId: the unique identifier of the release
+     * @param format     :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(String owner, String repo, long releaseId, ReturnFormat format) throws IOException {
         return returnReleaseAssets(sendGetRequest(REPOS_PATH + owner + "/" + repo + RELEASES_QUERY_PATH
                 + releaseId + ASSETS_PATH), format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository:  the repository from fetch the list
+     * @param release:     the release from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(Repository repository, Release release,
                                                     Params queryParams) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), release.getId(), queryParams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository:  the repository from fetch the list
+     * @param release:     the release from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(Repository repository, Release release, Params queryParams,
                                   ReturnFormat format) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), release.getId(), queryParams,
                 format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param release:     the release from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(String owner, String repo, Release release,
                                                     Params queryParams) throws IOException {
         return getReleaseAssets(owner, repo, release.getId(), queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param release:     the release from fetch the list
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(String owner, String repo, Release release, Params queryParams,
                                   ReturnFormat format) throws IOException {
         return getReleaseAssets(owner, repo, release.getId(), queryParams, format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository:  the repository from fetch the list
+     * @param releaseId:   the unique identifier of the release
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(Repository repository, long releaseId,
                                                     Params queryParams) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), releaseId, queryParams,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param repository:  the repository from fetch the list
+     * @param releaseId:   the unique identifier of the release
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(Repository repository, long releaseId, Params queryParams,
                                   ReturnFormat format) throws IOException {
         return getReleaseAssets(repository.getOwner().getLogin(), repository.getName(), releaseId, queryParams, format);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param releaseId:   the unique identifier of the release
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @return release assets list as {@link ArrayList} of {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @Wrapper
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public ArrayList<ReleaseAsset> getReleaseAssets(String owner, String repo, long releaseId,
                                                     Params queryParams) throws IOException {
         return getReleaseAssets(owner, repo, releaseId, queryParams, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to get the list of the release assets
+     *
+     * @param owner:       the account owner of the repository. The name is not case-sensitive
+     * @param repo:        the name of the repository. The name is not case-sensitive
+     * @param releaseId:   the unique identifier of the release
+     * @param queryParams: extra query params not mandatory, keys accepted are:
+     *                     <ul>
+     *                        <li>
+     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
+     *                        </li>
+     *                        <li>
+     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
+     *                        </li>
+     *                     </ul>
+     * @param format       :              return type formatter -> {@link ReturnFormat}
+     * @return release assets list as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#list-release-assets">
+     * List release assets</a>
+     **/
+    @RequestPath(method = GET, path = "repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T getReleaseAssets(String owner, String repo, long releaseId, Params queryParams,
                                   ReturnFormat format) throws IOException {
         return returnReleaseAssets(sendGetRequest(REPOS_PATH + owner + "/" + repo + RELEASES_QUERY_PATH
                 + releaseId + ASSETS_PATH + queryParams.createQueryString()), format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param release:    the release where upload the release asset
+     * @param name:       name of the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(Repository repository, Release release, String name) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), release.getId(), name,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param release:    the release where upload the release asset
+     * @param name:       name of the release asset
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(Repository repository, Release release, String name,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), release.getId(), name, format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:   the account owner of the repository. The name is not case-sensitive
+     * @param repo:    the name of the repository. The name is not case-sensitive
+     * @param release: the release where upload the release asset
+     * @param name:    name of the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(String owner, String repo, Release release, String name) throws IOException {
         return uploadReleaseAsset(owner, repo, release.getId(), name, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:   the account owner of the repository. The name is not case-sensitive
+     * @param repo:    the name of the repository. The name is not case-sensitive
+     * @param release: the release where upload the release asset
+     * @param name:    name of the release asset
+     * @param format   :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(String owner, String repo, Release release, String name,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(owner, repo, release.getId(), name, format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param releaseId:  the unique identifier of the release
+     * @param name:       name of the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(Repository repository, long releaseId, String name) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), releaseId, name, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param releaseId:  the unique identifier of the release
+     * @param name:       name of the release asset
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(Repository repository, long releaseId, String name,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), releaseId, name, format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:     the account owner of the repository. The name is not case-sensitive
+     * @param repo:      the name of the repository. The name is not case-sensitive
+     * @param releaseId: the unique identifier of the release
+     * @param name:      name of the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(String owner, String repo, long releaseId, String name) throws IOException {
         return uploadReleaseAsset(owner, repo, releaseId, name, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:     the account owner of the repository. The name is not case-sensitive
+     * @param repo:      the name of the repository. The name is not case-sensitive
+     * @param releaseId: the unique identifier of the release
+     * @param name:      name of the release asset
+     * @param format     :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(String owner, String repo, long releaseId, String name,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(owner, repo, releaseId, name, null, format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param release:    the release where upload the release asset
+     * @param name:       name of the release asset
+     * @param label:      label for the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(Repository repository, Release release, String name,
                                            String label) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), release.getId(), name, label,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param release:    the release where upload the release asset
+     * @param name:       name of the release asset
+     * @param label:      label for the release asset
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(Repository repository, Release release, String name, String label,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), release.getId(), name, label,
                 format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:   the account owner of the repository. The name is not case-sensitive
+     * @param repo:    the name of the repository. The name is not case-sensitive
+     * @param release: the release where upload the release asset
+     * @param name:    name of the release asset
+     * @param label:   label for the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(String owner, String repo, Release release, String name,
                                            String label) throws IOException {
         return uploadReleaseAsset(owner, repo, release.getId(), name, label, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:   the account owner of the repository. The name is not case-sensitive
+     * @param repo:    the name of the repository. The name is not case-sensitive
+     * @param release: the release where upload the release asset
+     * @param name:    name of the release asset
+     * @param label:   label for the release asset
+     * @param format   :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(String owner, String repo, Release release, String name, String label,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(owner, repo, release.getId(), name, label, format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param releaseId:  the unique identifier of the release
+     * @param name:       name of the release asset
+     * @param label:      label for the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(Repository repository, long releaseId, String name,
                                            String label) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), releaseId, name, label,
                 LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param repository: the repository where upload the release asset
+     * @param releaseId:  the unique identifier of the release
+     * @param name:       name of the release asset
+     * @param label:      label for the release asset
+     * @param format      :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @WrappedRequest
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(Repository repository, long releaseId, String name, String label,
                                     ReturnFormat format) throws IOException {
         return uploadReleaseAsset(repository.getOwner().getLogin(), repository.getName(), releaseId, name, label,
                 format);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:     the account owner of the repository. The name is not case-sensitive
+     * @param repo:      the name of the repository. The name is not case-sensitive
+     * @param releaseId: the unique identifier of the release
+     * @param name:      name of the release asset
+     * @param label:     label for the release asset
+     * @return release asset as {@link ReleaseAsset} custom object
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @Wrapper
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public ReleaseAsset uploadReleaseAsset(String owner, String repo, long releaseId, String name,
                                            String label) throws IOException {
         return uploadReleaseAsset(owner, repo, releaseId, name, label, LIBRARY_OBJECT);
     }
 
+    /**
+     * Method to upload a release asset
+     *
+     * @param owner:     the account owner of the repository. The name is not case-sensitive
+     * @param repo:      the name of the repository. The name is not case-sensitive
+     * @param releaseId: the unique identifier of the release
+     * @param name:      name of the release asset
+     * @param label:     label for the release asset
+     * @param format     :              return type formatter -> {@link ReturnFormat}
+     * @return release asset as {@code "format"} defines
+     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
+     *                     <ul>
+     *                         <li>
+     *                             {@link #getErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #getJSONErrorResponse()}
+     *                         </li>
+     *                         <li>
+     *                             {@link #printErrorResponse()}
+     *                         </li>
+     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
+     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/releases/assets#update-a-release-asset">
+     * Upload a release asset</a>
+     **/
+    @RequestPath(method = POST, path = "/repos/{owner}/{repo}/releases/{release_id}/assets")
     public <T> T uploadReleaseAsset(String owner, String repo, long releaseId, String name, String label,
                                     ReturnFormat format) throws IOException {
         Params query = new Params();

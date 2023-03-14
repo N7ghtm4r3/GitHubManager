@@ -11,9 +11,9 @@ import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.Runne
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroupsList;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
-import com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList.returnRunnersList;
 import static com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList.returnOrganizationsList;
-import static com.tecknobit.githubmanager.records.repository.OrganizationRepositoriesList.returnOrganizationRepositories;
+import static com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList.returnOrganizationRepositories;
 
 /**
  * The {@code GitHubRunnerGroupsManager} class is useful to manage all GitHub's runner groups endpoints

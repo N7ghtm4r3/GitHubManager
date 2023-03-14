@@ -6,9 +6,9 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.migrations.records.Migration;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
-import com.tecknobit.githubmanager.records.repository.RepositoriesList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 import static com.tecknobit.githubmanager.issues.issues.GitHubIssuesManager.LOCK_PATH;
 import static com.tecknobit.githubmanager.migrations.records.Migration.returnMigration;
 import static com.tecknobit.githubmanager.migrations.records.Migration.returnMigrations;
-import static com.tecknobit.githubmanager.records.repository.CompleteRepository.returnCompleteRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.returnCompleteRepositoriesList;
 
 /**
  * The {@code GitHubOrganizationsMigrationsManager} class is useful to manage all GitHub's organization migrations endpoints

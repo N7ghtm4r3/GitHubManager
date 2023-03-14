@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.issues.issues.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.parents.*;
-import com.tecknobit.githubmanager.records.repository.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.issues.issues.records.Issue;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.Label;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.Milestone;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -13,7 +13,7 @@ import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest.AutoMerge.Mer
 import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest.PullRequestSort;
 import com.tecknobit.githubmanager.pulls.pulls.records.PullRequestBranch;
 import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure.OperationState;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

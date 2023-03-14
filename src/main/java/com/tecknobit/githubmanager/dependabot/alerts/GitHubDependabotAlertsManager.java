@@ -11,7 +11,7 @@ import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.Dep
 import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.Dependency.Scope;
 import com.tecknobit.githubmanager.dependabot.alerts.records.DependabotAlert.Ecosystem;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

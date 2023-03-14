@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.issues.issues.records.Issue;
 import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest;
 import com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment;
 import com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment.Side;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.io.IOException;

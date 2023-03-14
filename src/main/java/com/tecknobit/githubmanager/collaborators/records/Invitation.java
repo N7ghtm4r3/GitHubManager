@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.collaborators.records;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;

@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.branches.branches.records.ShortBranch;
 import com.tecknobit.githubmanager.commits.commits.records.Commit;
 import com.tecknobit.githubmanager.commits.commits.records.CommitsComparison;
 import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

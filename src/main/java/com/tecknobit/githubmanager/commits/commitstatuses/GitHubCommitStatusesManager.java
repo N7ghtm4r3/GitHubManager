@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.commits.commitstatuses.records.CombinedStatus;
 import com.tecknobit.githubmanager.commits.commitstatuses.records.CommitStatus;
 import com.tecknobit.githubmanager.commits.commitstatuses.records.CommitStatus.CommitStatusState;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

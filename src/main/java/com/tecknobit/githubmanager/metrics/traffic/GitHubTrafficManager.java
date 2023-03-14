@@ -10,7 +10,7 @@ import com.tecknobit.githubmanager.metrics.traffic.records.RepositoryClones;
 import com.tecknobit.githubmanager.metrics.traffic.records.TopReferralPath;
 import com.tecknobit.githubmanager.metrics.traffic.records.TopReferralSource;
 import com.tecknobit.githubmanager.metrics.traffic.records.TrafficItem.TrafficListItem.Per;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

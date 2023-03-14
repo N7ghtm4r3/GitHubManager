@@ -8,8 +8,8 @@ import com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKey;
 import com.tecknobit.githubmanager.actions.secrets.records.Secret;
 import com.tecknobit.githubmanager.actions.secrets.records.SecretsList;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.repository.RepositoriesList;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import static com.tecknobit.githubmanager.actions.secrets.records.GitHubPublicKe
 import static com.tecknobit.githubmanager.actions.secrets.records.Secret.createSecretPayload;
 import static com.tecknobit.githubmanager.actions.secrets.records.Secret.returnSecret;
 import static com.tecknobit.githubmanager.actions.secrets.records.SecretsList.returnSecretsList;
-import static com.tecknobit.githubmanager.records.repository.RepositoriesList.returnRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubOrganizationSecretsManager} class is useful to manage all GitHub's organizations secrets endpoints

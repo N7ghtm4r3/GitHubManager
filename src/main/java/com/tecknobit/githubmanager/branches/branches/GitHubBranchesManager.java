@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.branches.branches.records.Branch;
 import com.tecknobit.githubmanager.branches.branches.records.ForkBranch;
 import com.tecknobit.githubmanager.commits.commits.records.Commit;
-import com.tecknobit.githubmanager.records.repository.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
