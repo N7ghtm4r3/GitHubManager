@@ -49,11 +49,6 @@ public class GitHubSecretsManager extends GitHubManager {
     public static final String ACTIONS_SECRETS_PUBLIC_KEY_PATH = ACTIONS_SECRETS_PATH + PUBLIC_KEY_PATH;
 
     /**
-     * {@code REPOSITORIES_PATH} constant for {@code "/actions/repositories"} path
-     **/
-    public static final String REPOSITORIES_PATH = "/repositories";
-
-    /**
      * {@code REPOSITORIES_QUERY_PATH} constant for {@code "repositories/"} path
      **/
     public static final String REPOSITORIES_QUERY_PATH = "repositories/";

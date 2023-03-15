@@ -3,8 +3,8 @@ package com.tecknobit.githubmanager.packages.records;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.RepoVisibility;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepoVisibility;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
@@ -110,7 +110,7 @@ public class GitHubPackage extends BaseResponseDetails {
     /**
      * {@code repository} of the package
      **/
-    private final CompleteRepository repository;
+    private final Repository repository;
 
     /**
      * {@code createdAt} creation date of the package
@@ -138,7 +138,7 @@ public class GitHubPackage extends BaseResponseDetails {
      * @param updatedAt    : update date of the package
      **/
     public GitHubPackage(long id, String name, String url, PackageType packageType, String htmlUrl, int versionCount,
-                         RepoVisibility visibility, User owner, CompleteRepository repository, String createdAt,
+                         RepoVisibility visibility, User owner, Repository repository, String createdAt,
                          String updatedAt) {
         super(id, name, url);
         this.packageType = packageType;
@@ -169,7 +169,7 @@ public class GitHubPackage extends BaseResponseDetails {
             owner = null;
         jObject = hResponse.getJSONObject("repository");
         if (jObject != null)
-            repository = new CompleteRepository(jObject);
+            repository = new Repository(jObject);
         else
             repository = null;
         createdAt = hResponse.getString("created_at");
@@ -230,9 +230,9 @@ public class GitHubPackage extends BaseResponseDetails {
      * Method to get {@link #repository} instance <br>
      * No-any params required
      *
-     * @return {@link #repository} instance as {@link CompleteRepository}
+     * @return {@link #repository} instance as {@link Repository}
      **/
-    public CompleteRepository getRepository() {
+    public Repository getRepository() {
         return repository;
     }
 

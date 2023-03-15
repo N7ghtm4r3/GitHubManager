@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.pulls.pulls.records;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.*;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -642,7 +642,7 @@ public class PullRequest extends GitHubOperation {
         /**
          * {@code repo} of the pull request part
          **/
-        private final CompleteRepository repo;
+        private final Repository repo;
 
         /**
          * Constructor to init a {@link PullRequestPart}
@@ -653,7 +653,7 @@ public class PullRequest extends GitHubOperation {
          * @param user  : user of the pull request
          * @param repo  : repo the pull request part
          **/
-        public PullRequestPart(String label, String ref, String sha, User user, CompleteRepository repo) {
+        public PullRequestPart(String label, String ref, String sha, User user, Repository repo) {
             super(null);
             this.label = label;
             this.ref = ref;
@@ -673,7 +673,7 @@ public class PullRequest extends GitHubOperation {
             ref = hItem.getString("ref");
             sha = hItem.getString("sha");
             user = new User(hItem.getJSONObject("user", new JSONObject()));
-            repo = new CompleteRepository(hItem.getJSONObject("repo", new JSONObject()));
+            repo = new Repository(hItem.getJSONObject("repo", new JSONObject()));
         }
 
         /**
@@ -720,9 +720,9 @@ public class PullRequest extends GitHubOperation {
          * Method to get {@link #repo} instance <br>
          * No-any params required
          *
-         * @return {@link #repo} instance as {@link CompleteRepository}
+         * @return {@link #repo} instance as {@link Repository}
          **/
-        public CompleteRepository getRepo() {
+        public Repository getRepo() {
             return repo;
         }
 

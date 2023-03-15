@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.meta.GitHubMetaManager.VERSIONS_PATH;
-import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.RepoVisibility;
+import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepoVisibility;
 
 /**
  * The {@code GitHubPackagesManager} class is useful to manage all GitHub's package managers endpoints

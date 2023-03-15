@@ -13,8 +13,7 @@ import com.tecknobit.githubmanager.actions.permissions.records.actions.Organizat
 import com.tecknobit.githubmanager.actions.permissions.records.actions.RepositoryActionsPermissions;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
-import com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
@@ -26,7 +25,7 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 import static com.tecknobit.githubmanager.actions.permissions.records.actions.ActionsPermissions.AllowedActions;
 import static com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList.returnOrganizationsList;
 import static com.tecknobit.githubmanager.records.parents.GitHubResponse.INSTANTIATED_WITH_ERROR_KEY;
-import static com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList.returnOrganizationRepositories;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubPermissionsManager} class is useful to manage all GitHub's permissions endpoints
@@ -1064,7 +1063,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the administration organization permission to use this API
      *
      * @param org: the organization from get repositories
-     * @return enabled repositories list as {@link OrganizationRepositoriesList} custom object
+     * @return enabled repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1083,7 +1082,7 @@ public class GitHubPermissionsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
-    public OrganizationRepositoriesList getEnabledOrganizationRepositories(Organization org) throws IOException {
+    public RepositoriesList getEnabledOrganizationRepositories(Organization org) throws IOException {
         return getEnabledOrganizationRepositories(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -1128,7 +1127,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the administration organization permission to use this API
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return enabled repositories list as {@link OrganizationRepositoriesList} custom object
+     * @return enabled repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1146,7 +1145,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
-    public OrganizationRepositoriesList getEnabledOrganizationRepositories(String org) throws IOException {
+    public RepositoriesList getEnabledOrganizationRepositories(String org) throws IOException {
         return getEnabledOrganizationRepositories(org, LIBRARY_OBJECT);
     }
 
@@ -1178,7 +1177,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public <T> T getEnabledOrganizationRepositories(String org, ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
+        return returnRepositoriesList(sendGetRequest(ORGS_PATH + org +
                 ACTIONS_PERMISSIONS_REPOSITORIES_PATH), format);
     }
 
@@ -1200,7 +1199,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return enabled repositories list as {@link OrganizationRepositoriesList} custom object
+     * @return enabled repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1219,8 +1218,7 @@ public class GitHubPermissionsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
-    public OrganizationRepositoriesList getEnabledOrganizationRepositories(Organization org,
-                                                                           Params queryParams) throws IOException {
+    public RepositoriesList getEnabledOrganizationRepositories(Organization org, Params queryParams) throws IOException {
         return getEnabledOrganizationRepositories(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1284,7 +1282,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return enabled repositories list as {@link OrganizationRepositoriesList} custom object
+     * @return enabled repositories list as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      * <ul>
      *     <li>
@@ -1302,7 +1300,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
-    public OrganizationRepositoriesList getEnabledOrganizationRepositories(String org, Params queryParams) throws IOException {
+    public RepositoriesList getEnabledOrganizationRepositories(String org, Params queryParams) throws IOException {
         return getEnabledOrganizationRepositories(org, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1343,8 +1341,8 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/permissions/repositories")
     public <T> T getEnabledOrganizationRepositories(String org, Params queryParams, ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org +
-                ACTIONS_PERMISSIONS_REPOSITORIES_PATH + queryParams.createQueryString()), format);
+        return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_PERMISSIONS_REPOSITORIES_PATH
+                + queryParams.createQueryString()), format);
     }
 
     /**
@@ -1397,14 +1395,14 @@ public class GitHubPermissionsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the administration organization permission to use this API
      *
      * @param org:                  the organization to set repositories
-     * @param selectedRepositories: list of repository to enable for {@code "GitHub Actions"} in {@link OrganizationRepositoriesList}
+     * @param selectedRepositories: list of repository to enable for {@code "GitHub Actions"} in {@link RepositoriesList}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepositories(Organization org, OrganizationRepositoriesList selectedRepositories) {
+    public boolean enableSelectedOrganizationRepositories(Organization org, RepositoriesList selectedRepositories) {
         return enableSelectedOrganizationRepositories(org.getLogin(), selectedRepositories);
     }
 
@@ -1417,17 +1415,17 @@ public class GitHubPermissionsManager extends GitHubManager {
      * {@code "GitHub Apps"} must have the administration organization permission to use this API
      *
      * @param org:                  the organization name. The name is not case-sensitive
-     * @param selectedRepositories: list of repository to enable for {@code "GitHub Actions"} in {@link OrganizationRepositoriesList}
+     * @param selectedRepositories: list of repository to enable for {@code "GitHub Actions"} in {@link RepositoriesList}
      * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/permissions#set-selected-repositories-enabled-for-github-actions-in-an-organization">
      * Set selected repositories enabled for GitHub Actions in an organization</a>
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepositories(String org, OrganizationRepositoriesList selectedRepositories) {
+    public boolean enableSelectedOrganizationRepositories(String org, RepositoriesList selectedRepositories) {
         ArrayList<Long> ids = new ArrayList<>();
-        for (CompleteRepository completeRepository : selectedRepositories.getRepositories())
-            ids.add(completeRepository.getId());
+        for (Repository Repository : selectedRepositories.getRepositories())
+            ids.add(Repository.getId());
         return enableSelectedOrganizationRepositories(org, ids.toArray(new Long[0]));
     }
 
@@ -1487,7 +1485,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepository(Organization org, CompleteRepository repositoryToEnable) {
+    public boolean enableSelectedOrganizationRepository(Organization org, Repository repositoryToEnable) {
         return enableSelectedOrganizationRepository(org.getLogin(), repositoryToEnable.getId());
     }
 
@@ -1507,7 +1505,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/permissions/repositories")
-    public boolean enableSelectedOrganizationRepository(String org, CompleteRepository repositoryToEnable) {
+    public boolean enableSelectedOrganizationRepository(String org, Repository repositoryToEnable) {
         return enableSelectedOrganizationRepository(org, repositoryToEnable.getId());
     }
 
@@ -1576,7 +1574,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
-    public boolean disableSelectedOrganizationRepositories(Organization org, CompleteRepository repositoryToDisable) {
+    public boolean disableSelectedOrganizationRepositories(Organization org, Repository repositoryToDisable) {
         return disableSelectedOrganizationRepositories(org.getLogin(), repositoryToDisable.getId());
     }
 
@@ -1596,7 +1594,7 @@ public class GitHubPermissionsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/orgs/{org}/actions/permissions/repositories/{repository_id}")
-    public boolean disableSelectedOrganizationRepositories(String org, CompleteRepository repositoryToDisable) {
+    public boolean disableSelectedOrganizationRepositories(String org, Repository repositoryToDisable) {
         return disableSelectedOrganizationRepositories(org, repositoryToDisable.getId());
     }
 

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.GET;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.repositories.repositories.GitHubRepositoriesManager.CONTRIBUTORS_PATH;
 
 /**
  * The {@code GitHubStatisticsManager} class is useful to manage all GitHub's statistics endpoints
@@ -45,7 +46,7 @@ public class GitHubStatisticsManager extends GitHubManager {
     /**
      * {@code STATS_CONTRIBUTORS_PATH} constant for {@code "/stats/contributors"} path
      **/
-    public static final String STATS_CONTRIBUTORS_PATH = STATS_PATH + "/contributors";
+    public static final String STATS_CONTRIBUTORS_PATH = STATS_PATH + CONTRIBUTORS_PATH;
 
     /**
      * {@code STATS_PARTICIPATION_PATH} constant for {@code "/stats/participation"} path

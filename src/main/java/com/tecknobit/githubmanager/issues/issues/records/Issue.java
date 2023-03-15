@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.issues.issues.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.parents.*;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public class Issue extends GitHubOperation {
     /**
      * {@code repository} of the issue
      **/
-    private final CompleteRepository repository;
+    private final Repository repository;
 
     /**
      * {@code stateReason} the reason for the current state
@@ -133,7 +133,7 @@ public class Issue extends GitHubOperation {
                  ArrayList<Label> labels, Milestone milestone, LockReason activeLockReason, User assignee,
                  ArrayList<User> assignees, AuthorAssociation authorAssociation, String repositoryUrl, String labelsUrl,
                  String commentsUrl, String eventsUrl, int comments, IssuePullRequest pullRequest,
-                 CompleteRepository repository, StateReason stateReason, boolean draft, User closedBy) {
+                 Repository repository, StateReason stateReason, boolean draft, User closedBy) {
         super(url, htmlUrl, id, nodeId, number, state, title, createdAt, updatedAt, closedAt, locked, user, body, labels,
                 milestone, activeLockReason, assignee, assignees, authorAssociation, draft);
         this.repositoryUrl = repositoryUrl;
@@ -160,7 +160,7 @@ public class Issue extends GitHubOperation {
         eventsUrl = hResponse.getString("events_url");
         comments = hResponse.getInt("comments", 0);
         pullRequest = new IssuePullRequest(hResponse.getJSONObject("pull_request", new JSONObject()));
-        repository = new CompleteRepository(hResponse.getJSONObject("repository", new JSONObject()));
+        repository = new Repository(hResponse.getJSONObject("repository", new JSONObject()));
         String sStateReason = hResponse.getString("state_reason");
         if (sStateReason != null)
             stateReason = StateReason.valueOf(sStateReason);
@@ -237,9 +237,9 @@ public class Issue extends GitHubOperation {
      * Method to get {@link #repository} instance <br>
      * No-any params required
      *
-     * @return {@link #repository} instance as {@link CompleteRepository}
+     * @return {@link #repository} instance as {@link Repository}
      **/
-    public CompleteRepository getRepository() {
+    public Repository getRepository() {
         return repository;
     }
 

@@ -5,7 +5,6 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.migrations.records.Migration;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
@@ -21,7 +20,7 @@ import static com.tecknobit.githubmanager.migrations.organizations.GitHubOrganiz
 import static com.tecknobit.githubmanager.migrations.organizations.GitHubOrganizationsMigrationsManager.MIGRATIONS_PATH;
 import static com.tecknobit.githubmanager.migrations.records.Migration.returnMigration;
 import static com.tecknobit.githubmanager.migrations.records.Migration.returnMigrations;
-import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.returnCompleteRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubUsersMigrationsManager} class is useful to manage all GitHub's user migrations endpoints
@@ -911,7 +910,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      * Method to get the list of the all the repositories for this user migration
      *
      * @param migration: the migration from fetch the list
-     * @return repositories in a user migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in a user migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -930,7 +929,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/user/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getUserMigrationRepositories(Migration migration) throws IOException {
+    public ArrayList<Repository> getUserMigrationRepositories(Migration migration) throws IOException {
         return getUserMigrationRepositories(migration.getId(), LIBRARY_OBJECT);
     }
 
@@ -965,7 +964,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      * Method to get the list of the all the repositories for this user migration
      *
      * @param migrationId: the unique identifier of the migration
-     * @return repositories in a user migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in a user migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -983,7 +982,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getUserMigrationRepositories(long migrationId) throws IOException {
+    public ArrayList<Repository> getUserMigrationRepositories(long migrationId) throws IOException {
         return getUserMigrationRepositories(migrationId, LIBRARY_OBJECT);
     }
 
@@ -1010,7 +1009,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/user/migrations/{migration_id}/repositories")
     public <T> T getUserMigrationRepositories(long migrationId, ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(USER_MIGRATIONS_PATH + "/" + migrationId
+        return returnRepositoriesList(sendGetRequest(USER_MIGRATIONS_PATH + "/" + migrationId
                 + REPOSITORIES_PATH), format);
     }
 
@@ -1027,7 +1026,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories in a user migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in a user migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1046,8 +1045,8 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/user/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getUserMigrationRepositories(Migration migration,
-                                                                      Params queryParams) throws IOException {
+    public ArrayList<Repository> getUserMigrationRepositories(Migration migration,
+                                                              Params queryParams) throws IOException {
         return getUserMigrationRepositories(migration.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -1101,7 +1100,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories in a user migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in a user migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1119,8 +1118,8 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getUserMigrationRepositories(long migrationId,
-                                                                      Params queryParams) throws IOException {
+    public ArrayList<Repository> getUserMigrationRepositories(long migrationId,
+                                                              Params queryParams) throws IOException {
         return getUserMigrationRepositories(migrationId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -1156,7 +1155,7 @@ public class GitHubUsersMigrationsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/user/migrations/{migration_id}/repositories")
     public <T> T getUserMigrationRepositories(long migrationId, Params queryParams, ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(USER_MIGRATIONS_PATH + "/" + migrationId
+        return returnRepositoriesList(sendGetRequest(USER_MIGRATIONS_PATH + "/" + migrationId
                 + REPOSITORIES_PATH + queryParams.createQueryString()), format);
     }
 

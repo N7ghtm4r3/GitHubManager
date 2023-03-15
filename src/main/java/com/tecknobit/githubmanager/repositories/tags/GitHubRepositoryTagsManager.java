@@ -29,7 +29,7 @@ public class GitHubRepositoryTagsManager extends GitHubManager {
     /**
      * {@code TAGS_PROTECTION_PATH} constant for {@code "/tags/protection"} path
      **/
-    public static final String TAGS_PROTECTION_PATH = "/tags/protection";
+    public static final String TAGS_PROTECTION_PATH = TAGS_PATH + "/protection";
 
     /**
      * Constructor to init a {@link GitHubRepositoryTagsManager}

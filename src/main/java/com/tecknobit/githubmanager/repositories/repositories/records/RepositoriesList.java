@@ -144,4 +144,19 @@ public class RepositoriesList extends GitHubList {
         }
     }
 
+    /**
+     * Method to create a repositories list
+     *
+     * @param jRepositories: obtained from GitHub's response
+     * @return repositories list as {@link ArrayList} of {@link Repository}
+     **/
+    @Returner
+    public static ArrayList<Repository> returnRepositoriesList(JSONArray jRepositories) {
+        ArrayList<Repository> repositories = new ArrayList<>();
+        if (jRepositories != null)
+            for (int j = 0; j < jRepositories.length(); j++)
+                repositories.add(new Repository(jRepositories.getJSONObject(j)));
+        return repositories;
+    }
+
 }

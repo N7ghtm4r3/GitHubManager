@@ -5,7 +5,6 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
 import java.io.IOException;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
-import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.returnCompleteRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubStarringManager} class is useful to manage all GitHub's starring endpoints
@@ -358,7 +357,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Method to get the repositories the authenticated user has starred <br>
      * No-any params required
      *
-     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -376,7 +375,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/starred")
-    public ArrayList<CompleteRepository> getAuthenticatedUserStarredRepositories() throws IOException {
+    public ArrayList<Repository> getAuthenticatedUserStarredRepositories() throws IOException {
         return getAuthenticatedUserStarredRepositories(LIBRARY_OBJECT);
     }
 
@@ -403,7 +402,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/user/starred")
     public <T> T getAuthenticatedUserStarredRepositories(ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(USER_STARRED_PATH), format);
+        return returnRepositoriesList(sendGetRequest(USER_STARRED_PATH), format);
     }
 
     /**
@@ -427,7 +426,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -445,7 +444,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/user/starred")
-    public ArrayList<CompleteRepository> getAuthenticatedUserStarredRepositories(Params queryParams) throws IOException {
+    public ArrayList<Repository> getAuthenticatedUserStarredRepositories(Params queryParams) throws IOException {
         return getAuthenticatedUserStarredRepositories(queryParams, LIBRARY_OBJECT);
     }
 
@@ -489,7 +488,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/user/starred")
     public <T> T getAuthenticatedUserStarredRepositories(Params queryParams, ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(USER_STARRED_PATH + queryParams.createQueryString()), format);
+        return returnRepositoriesList(sendGetRequest(USER_STARRED_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -610,7 +609,7 @@ public class GitHubStarringManager extends GitHubManager {
      * Method to get the list of the repositories starred by a user
      *
      * @param username: the handle for the GitHub user account
-     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -628,7 +627,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/starred")
-    public ArrayList<CompleteRepository> getStarredRepositories(String username) throws IOException {
+    public ArrayList<Repository> getStarredRepositories(String username) throws IOException {
         return getStarredRepositories(username, LIBRARY_OBJECT);
     }
 
@@ -655,7 +654,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/users/{username}/starred")
     public <T> T getStarredRepositories(String username, ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + STARRED_PATH), format);
+        return returnRepositoriesList(sendGetRequest(USERS_PATH + username + STARRED_PATH), format);
     }
 
     /**
@@ -680,7 +679,7 @@ public class GitHubStarringManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return repositories list as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories list as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -698,7 +697,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/users/{username}/starred")
-    public ArrayList<CompleteRepository> getStarredRepositories(String username, Params queryParams) throws IOException {
+    public ArrayList<Repository> getStarredRepositories(String username, Params queryParams) throws IOException {
         return getStarredRepositories(username, queryParams, LIBRARY_OBJECT);
     }
 
@@ -743,7 +742,7 @@ public class GitHubStarringManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/users/{username}/starred")
     public <T> T getStarredRepositories(String username, Params queryParams, ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(USERS_PATH + username + STARRED_PATH +
+        return returnRepositoriesList(sendGetRequest(USERS_PATH + username + STARRED_PATH +
                 queryParams.createQueryString()), format);
     }
 

@@ -4,14 +4,14 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.User;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
-import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.returnCompleteRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code Migration} class is useful to format a GitHub's migration
@@ -121,7 +121,7 @@ public class Migration extends GitHubResponse {
     /**
      * {@code repositories} of the organization migration
      **/
-    private final ArrayList<CompleteRepository> repositories;
+    private final ArrayList<Repository> repositories;
 
     /**
      * {@code url} of the organization migration
@@ -178,7 +178,7 @@ public class Migration extends GitHubResponse {
     public Migration(long id, User owner, String guid, MigrationState state, boolean lockRepositories,
                      boolean excludeMetadata, boolean excludeGitData, boolean excludeAttachments,
                      boolean excludeReleases, boolean excludeOwnerProjects, boolean orgMetadataOnly,
-                     ArrayList<CompleteRepository> repositories, String url, String createdAt,
+                     ArrayList<Repository> repositories, String url, String createdAt,
                      String updatedAt, String nodeId, String archiveUrl, ArrayList<String> exclude) {
         super(null);
         this.id = id;
@@ -219,7 +219,7 @@ public class Migration extends GitHubResponse {
         excludeReleases = hResponse.getBoolean("exclude_releases");
         excludeOwnerProjects = hResponse.getBoolean("exclude_owner_projects");
         orgMetadataOnly = hResponse.getBoolean("org_metadata_only");
-        repositories = returnCompleteRepositoriesList(hResponse.getJSONArray("repositories"));
+        repositories = returnRepositoriesList(hResponse.getJSONArray("repositories"));
         url = hResponse.getString("url");
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");
@@ -342,9 +342,9 @@ public class Migration extends GitHubResponse {
      * Method to get {@link #repositories} instance <br>
      * No-any params required
      *
-     * @return {@link #repositories} instance as {@link ArrayList} of {@link CompleteRepository}
+     * @return {@link #repositories} instance as {@link ArrayList} of {@link Repository}
      **/
-    public ArrayList<CompleteRepository> getRepositories() {
+    public ArrayList<Repository> getRepositories() {
         return repositories;
     }
 

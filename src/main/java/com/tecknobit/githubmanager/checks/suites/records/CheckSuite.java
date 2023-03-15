@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.checks.records.Check;
 import com.tecknobit.githubmanager.pulls.pulls.records.MinimalPullRequest;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -66,7 +66,7 @@ public class CheckSuite extends Check {
     /**
      * {@code repository} of the check suite
      **/
-    private final CompleteRepository repository;
+    private final Repository repository;
 
     /**
      * {@code latestCheckRunsCount} latest check runs count of the check suite
@@ -114,7 +114,7 @@ public class CheckSuite extends Check {
     public CheckSuite(long id, String name, String url, String headSha, String nodeId, CheckStatus status,
                       ArrayList<MinimalPullRequest> pullRequests, GitHubApp app, String headBranch,
                       CheckSuiteConclusion conclusion, String before, String after, String createdAt, String updatedAt,
-                      CompleteRepository repository, int latestCheckRunsCount, String checkRunsUrl, boolean rerequestable,
+                      Repository repository, int latestCheckRunsCount, String checkRunsUrl, boolean rerequestable,
                       boolean runsRerequestable) {
         super(id, name, url, headSha, nodeId, status, pullRequests, app);
         this.headBranch = headBranch;
@@ -147,7 +147,7 @@ public class CheckSuite extends Check {
         after = hResponse.getString("after");
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");
-        repository = new CompleteRepository(hResponse.getJSONObject("repository", new JSONObject()));
+        repository = new Repository(hResponse.getJSONObject("repository", new JSONObject()));
         latestCheckRunsCount = hResponse.getInt("latest_check_runs_count", 0);
         checkRunsUrl = hResponse.getString("check_runs_url");
         rerequestable = hResponse.getBoolean("rerequestable");
@@ -238,9 +238,9 @@ public class CheckSuite extends Check {
      * Method to get {@link #repository} instance <br>
      * No-any params required
      *
-     * @return {@link #repository} instance as {@link CompleteRepository}
+     * @return {@link #repository} instance as {@link Repository}
      **/
-    public CompleteRepository getRepository() {
+    public Repository getRepository() {
         return repository;
     }
 

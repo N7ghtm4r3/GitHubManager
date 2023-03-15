@@ -129,6 +129,11 @@ public class GitHubManager {
     public static final String TEAMS_PATH = "/teams";
 
     /**
+     * {@code TAGS_PATH} constant for {@code "/tags"} path
+     **/
+    public static final String TAGS_PATH = "/tags";
+
+    /**
      * {@code properties} is a local instance used to instantiate a new {@link GitHubManager}'s manager without
      * re-insert credentials
      **/

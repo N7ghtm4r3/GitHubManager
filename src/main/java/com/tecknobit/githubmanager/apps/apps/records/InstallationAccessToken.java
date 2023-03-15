@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.apps.apps.records;
 
 import com.tecknobit.githubmanager.actions.selfhosted.runners.records.GitHubToken;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepositorySelection;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,7 +35,7 @@ public class InstallationAccessToken extends GitHubToken {
     /**
      * {@code repositories} list of the repositories of the installation access token
      **/
-    private final ArrayList<CompleteRepository> repositories;
+    private final ArrayList<Repository> repositories;
 
     /**
      * Constructor to init a {@link InstallationAccessToken}
@@ -44,7 +44,7 @@ public class InstallationAccessToken extends GitHubToken {
      * @param expiresAt :the time this token expires
      **/
     public InstallationAccessToken(String token, String expiresAt, AppPermissions permissions,
-                                   RepositorySelection repositorySelection, ArrayList<CompleteRepository> repositories) {
+                                   RepositorySelection repositorySelection, ArrayList<Repository> repositories) {
         super(token, expiresAt);
         this.permissions = permissions;
         this.repositorySelection = repositorySelection;
@@ -63,7 +63,7 @@ public class InstallationAccessToken extends GitHubToken {
         repositories = new ArrayList<>();
         JSONArray jRepositories = hResponse.getJSONArray("repositories", new JSONArray());
         for (int j = 0; j < jRepositories.length(); j++)
-            repositories.add(new CompleteRepository(jRepositories.getJSONObject(j)));
+            repositories.add(new Repository(jRepositories.getJSONObject(j)));
     }
 
     /**
@@ -90,9 +90,9 @@ public class InstallationAccessToken extends GitHubToken {
      * Method to get {@link #repositories} instance <br>
      * No-any params required
      *
-     * @return {@link #repositories} instance as {@link ArrayList} of {@link CompleteRepository}
+     * @return {@link #repositories} instance as {@link ArrayList} of {@link Repository}
      **/
-    public ArrayList<CompleteRepository> getRepositories() {
+    public ArrayList<Repository> getRepositories() {
         return repositories;
     }
 

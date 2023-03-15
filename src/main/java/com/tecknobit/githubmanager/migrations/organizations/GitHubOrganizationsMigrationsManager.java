@@ -6,7 +6,6 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.migrations.records.Migration;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
 import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 
@@ -20,7 +19,7 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 import static com.tecknobit.githubmanager.issues.issues.GitHubIssuesManager.LOCK_PATH;
 import static com.tecknobit.githubmanager.migrations.records.Migration.returnMigration;
 import static com.tecknobit.githubmanager.migrations.records.Migration.returnMigrations;
-import static com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository.returnCompleteRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubOrganizationsMigrationsManager} class is useful to manage all GitHub's organization migrations endpoints
@@ -1683,7 +1682,7 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
      *
      * @param org:       the organization from fetch the list
      * @param migration: the migration from fetch the list
-     * @return repositories in an organization migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in an organization migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1702,8 +1701,8 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getOrganizationMigrationRepositories(Organization org,
-                                                                              Migration migration) throws IOException {
+    public ArrayList<Repository> getOrganizationMigrationRepositories(Organization org,
+                                                                      Migration migration) throws IOException {
         return getOrganizationMigrationRepositories(org.getLogin(), migration.getId(), LIBRARY_OBJECT);
     }
 
@@ -1741,7 +1740,7 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
      *
      * @param org:       the organization name. The name is not case-sensitive
      * @param migration: the migration from fetch the list
-     * @return repositories in an organization migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in an organization migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1760,8 +1759,8 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getOrganizationMigrationRepositories(String org,
-                                                                              Migration migration) throws IOException {
+    public ArrayList<Repository> getOrganizationMigrationRepositories(String org,
+                                                                      Migration migration) throws IOException {
         return getOrganizationMigrationRepositories(org, migration.getId(), LIBRARY_OBJECT);
     }
 
@@ -1799,7 +1798,7 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
      *
      * @param org:         the organization from fetch the list
      * @param migrationId: the unique identifier of the migration
-     * @return repositories in an organization migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in an organization migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1818,8 +1817,8 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getOrganizationMigrationRepositories(Organization org,
-                                                                              long migrationId) throws IOException {
+    public ArrayList<Repository> getOrganizationMigrationRepositories(Organization org,
+                                                                      long migrationId) throws IOException {
         return getOrganizationMigrationRepositories(org.getLogin(), migrationId, LIBRARY_OBJECT);
     }
 
@@ -1857,7 +1856,7 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
      *
      * @param org:         the organization name. The name is not case-sensitive
      * @param migrationId: the unique identifier of the migration
-     * @return repositories in an organization migration as {@link ArrayList} of {@link CompleteRepository} custom object
+     * @return repositories in an organization migration as {@link ArrayList} of {@link Repository} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -1875,7 +1874,7 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/migrations/{migration_id}/repositories")
-    public ArrayList<CompleteRepository> getOrganizationMigrationRepositories(String org, long migrationId) throws IOException {
+    public ArrayList<Repository> getOrganizationMigrationRepositories(String org, long migrationId) throws IOException {
         return getOrganizationMigrationRepositories(org, migrationId, LIBRARY_OBJECT);
     }
 
@@ -1903,7 +1902,7 @@ public class GitHubOrganizationsMigrationsManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/migrations/{migration_id}/repositories")
     public <T> T getOrganizationMigrationRepositories(String org, long migrationId, ReturnFormat format) throws IOException {
-        return returnCompleteRepositoriesList(sendGetRequest(ORGS_PATH + org + MIGRATIONS_PATH + "/"
+        return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + MIGRATIONS_PATH + "/"
                 + migrationId + REPOSITORIES_PATH), format);
     }
 

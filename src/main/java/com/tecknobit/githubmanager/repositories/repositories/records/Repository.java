@@ -1,9 +1,18 @@
 package com.tecknobit.githubmanager.repositories.repositories.records;
 
-import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.codesofconduct.records.CodeConduct;
+import com.tecknobit.githubmanager.licenses.records.CommonLicense;
+import com.tecknobit.githubmanager.records.generic.Permissions;
+import com.tecknobit.githubmanager.records.parents.BaseItemStructure;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepoVisibility.*;
 
 /**
  * The {@code Repository} class is useful to format a GitHub's repository
@@ -27,246 +36,610 @@ import org.json.JSONObject;
  *         <a href="https://docs.github.com/en/rest/actions/secrets#list-selected-repositories-for-an-organization-secret">
  *             List selected repositories for an organization secret</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#list-organization-repositories">
+ *             List organization repositories</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#create-an-organization-repository">
+ *             Create an organization repository</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#get-a-repository">
+ *             Get a repository</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#update-a-repository">
+ *             Update a repository</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#create-a-repository-using-a-template">
+ *             Create a repository using a template</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#list-public-repositories">
+ *             List public repositories</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#transfer-a-repository">
+ *             Transfer a repository</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#list-repositories-for-the-authenticated-user">
+ *             List repositories for the authenticated user</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#create-a-repository-for-the-authenticated-user">
+ *             Create a repository for the authenticated user</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user">
+ *             List repositories for a user</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
- * @see BaseResponseDetails
+ * @see BaseItemStructure
  **/
-public class Repository extends BaseResponseDetails {
+public class Repository extends BaseItemStructure {
 
     /**
-     * {@code nodeId} identifier of the node value
+     * {@code SquashMergeCommitTitle} list of the available squash merge commit titles
      **/
-    protected final String nodeId;
+    public enum SquashMergeCommitTitle {
+
+        /**
+         * {@code PR_TITLE} squash merge commit title
+         **/
+        PR_TITLE,
+
+        /**
+         * {@code COMMIT_OR_PR_TITLE} squash merge commit title
+         **/
+        COMMIT_OR_PR_TITLE
+
+    }
+
+    /**
+     * {@code SquashMergeCommitMessage} list of the available squash merge commit messages
+     **/
+    public enum SquashMergeCommitMessage {
+
+        /**
+         * {@code PR_BODY} squash merge commit message
+         **/
+        PR_BODY,
+
+        /**
+         * {@code COMMIT_MESSAGES} squash merge commit message
+         **/
+        COMMIT_MESSAGES,
+
+        /**
+         * {@code BLANK} squash merge commit message
+         **/
+        BLANK
+
+    }
+
+    /**
+     * {@code MergeCommitTitle} list of the available merge commit titles
+     **/
+    public enum MergeCommitTitle {
+
+        /**
+         * {@code PR_TITLE} merge commit title
+         **/
+        PR_TITLE,
+
+        /**
+         * {@code MERGE_MESSAGE} merge commit title
+         **/
+        MERGE_MESSAGE
+
+    }
+
+    /**
+     * {@code MergeCommitMessage} list of the available merge commit messages
+     **/
+    public enum MergeCommitMessage {
+
+        /**
+         * {@code PR_BODY} merge commit message
+         **/
+        PR_BODY,
+
+        /**
+         * {@code PR_TITLE} merge commit message
+         **/
+        PR_TITLE,
+
+        /**
+         * {@code BLANK} merge commit message
+         **/
+        BLANK
+
+    }
+
+    /**
+     * {@code name} of the repository
+     **/
+    private final String name;
 
     /**
      * {@code fullName} fullname value
      **/
-    protected final String fullName;
+    private final String fullName;
 
     /**
      * {@code owner} owner value
      **/
-    protected final User owner;
+    private final User owner;
 
     /**
-     * {@code protectedRepo} whether the repository is protected or public
+     * {@code privateRepo} whether the repository is private or public
      **/
-    protected final boolean privateRepo;
+    private final boolean privateRepo;
 
     /**
      * {@code htmlUrl} html url value
      **/
-    protected final String htmlUrl;
+    private final String htmlUrl;
 
     /**
      * {@code description} description value
      **/
-    protected final String description;
+    private final String description;
 
     /**
      * {@code fork} fork value
      **/
-    protected final boolean fork;
+    private final boolean fork;
 
     /**
      * {@code archiveUrl} archive url value
      **/
-    protected final String archiveUrl;
+    private final String archiveUrl;
 
     /**
      * {@code assigneesUrl} assignees url value
      **/
-    protected final String assigneesUrl;
+    private final String assigneesUrl;
 
     /**
      * {@code blobsUrl} identifier blobs url value
      **/
-    protected final String blobsUrl;
+    private final String blobsUrl;
 
     /**
      * {@code branchesUrl} branches url value
      **/
-    protected final String branchesUrl;
+    private final String branchesUrl;
 
     /**
      * {@code collaboratorsUrl} collaborators url value
      **/
-    protected final String collaboratorsUrl;
+    private final String collaboratorsUrl;
 
     /**
      * {@code commentsUrl} comments url value
      **/
-    protected final String commentsUrl;
+    private final String commentsUrl;
 
     /**
      * {@code commitsUrl} commits url value
      **/
-    protected final String commitsUrl;
+    private final String commitsUrl;
 
     /**
      * {@code compareUrl} compare url value
      **/
-    protected final String compareUrl;
+    private final String compareUrl;
 
     /**
      * {@code contentsUrl} contents url value
      **/
-    protected final String contentsUrl;
+    private final String contentsUrl;
 
     /**
      * {@code contributorsUrl} contributors url value
      **/
-    protected final String contributorsUrl;
+    private final String contributorsUrl;
 
     /**
      * {@code deploymentsUrl} deployments url value
      **/
-    protected final String deploymentsUrl;
+    private final String deploymentsUrl;
 
     /**
      * {@code downloadUrl} download url value
      **/
-    protected final String downloadUrl;
+    private final String downloadUrl;
 
     /**
      * {@code eventsUrl} events url value
      **/
-    protected final String eventsUrl;
+    private final String eventsUrl;
 
     /**
      * {@code forksUrl} forks url value
      **/
-    protected final String forksUrl;
+    private final String forksUrl;
 
     /**
      * {@code gitCommitsUrl} git commits url value
      **/
-    protected final String gitCommitsUrl;
+    private final String gitCommitsUrl;
 
     /**
      * {@code gitRefsUrl} git refs url value
      **/
-    protected final String gitRefsUrl;
+    private final String gitRefsUrl;
 
     /**
      * {@code gitTagsUrl} git tags url value
      **/
-    protected final String gitTagsUrl;
+    private final String gitTagsUrl;
 
     /**
      * {@code gitUrl} git url value
      **/
-    protected final String gitUrl;
+    private final String gitUrl;
 
     /**
      * {@code issueCommentUrl} issue comment url value
      **/
-    protected final String issueCommentUrl;
+    private final String issueCommentUrl;
 
     /**
      * {@code issueEventsUrl} issue event url value
      **/
-    protected final String issueEventsUrl;
+    private final String issueEventsUrl;
 
     /**
      * {@code issuesUrl} issues url value
      **/
-    protected final String issuesUrl;
+    private final String issuesUrl;
 
     /**
      * {@code keysUrl} keys url value
      **/
-    protected final String keysUrl;
+    private final String keysUrl;
 
     /**
      * {@code labelsUrl} labels url value
      **/
-    protected final String labelsUrl;
+    private final String labelsUrl;
 
     /**
      * {@code languagesUrl} languages url value
      **/
-    protected final String languagesUrl;
+    private final String languagesUrl;
 
     /**
      * {@code mergesUrl} merges url value
      **/
-    protected final String mergesUrl;
+    private final String mergesUrl;
 
     /**
      * {@code milestonesUrl} milestones url value
      **/
-    protected final String milestonesUrl;
+    private final String milestonesUrl;
 
     /**
      * {@code notificationsUrl} notifications url value
      **/
-    protected final String notificationsUrl;
+    private final String notificationsUrl;
 
     /**
      * {@code pullsUrl} pulls url value
      **/
-    protected final String pullsUrl;
+    private final String pullsUrl;
 
     /**
      * {@code releasesUrl} releases url value
      **/
-    protected final String releasesUrl;
+    private final String releasesUrl;
 
     /**
      * {@code sshUrl} ssh url value
      **/
-    protected final String sshUrl;
+    private final String sshUrl;
 
     /**
      * {@code stargazersUrl} stargazers url value
      **/
-    protected final String stargazersUrl;
+    private final String stargazersUrl;
 
     /**
      * {@code statutesUrl} statuses url value
      **/
-    protected final String statutesUrl;
+    private final String statutesUrl;
 
     /**
      * {@code subscribersUrl} subscribers url value
      **/
-    protected final String subscribersUrl;
+    private final String subscribersUrl;
 
     /**
      * {@code subscriptionUrl} subscription url value
      **/
-    protected final String subscriptionUrl;
+    private final String subscriptionUrl;
 
     /**
      * {@code tagsUrl} tags url value
      **/
-    protected final String tagsUrl;
+    private final String tagsUrl;
 
     /**
      * {@code teamsUrl} teams url value
      **/
-    protected final String teamsUrl;
+    private final String teamsUrl;
 
     /**
      * {@code treesUrl} trees url value
      **/
-    protected final String treesUrl;
+    private final String treesUrl;
 
     /**
      * {@code cloneUrl} clone url value
      **/
-    protected final String cloneUrl;
+    private final String cloneUrl;
 
     /**
      * {@code mirrorUrl} mirror url value
      **/
-    protected final String mirrorUrl;
+    private final String mirrorUrl;
 
     /**
      * {@code hooksUrl} hooks url value
      **/
-    protected final String hooksUrl;
+    private final String hooksUrl;
+
+    /**
+     * {@code svnUrl} svn url value
+     **/
+    private final String svnUrl;
+
+    /**
+     * {@code homePage} homepage value
+     **/
+    private final String homePage;
+
+    /**
+     * {@code forksCount} forks count value
+     **/
+    private final int forksCount;
+
+    /**
+     * {@code stargazersCount} stargazers count value
+     **/
+    private final int stargazersCount;
+
+    /**
+     * {@code watchersCount} watchers count value
+     **/
+    private final int watchersCount;
+
+    /**
+     * {@code size} the size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0
+     **/
+    private final int size;
+
+    /**
+     * {@code defaultBranch} the default branch of the repository
+     **/
+    private final String defaultBranch;
+
+    /**
+     * {@code openIssuesCount} open issues count value
+     **/
+    private final int openIssuesCount;
+
+    /**
+     * {@code isTemplate} whether this repository acts as a template that can be used to generate new repositories
+     **/
+    private final boolean isTemplate;
+
+    /**
+     * {@code template} template that can be used to generate new repositories
+     **/
+    private final Repository template;
+
+    /**
+     * {@code topics} topics list
+     **/
+    private final ArrayList<String> topics;
+
+    /**
+     * {@code hasIssues} whether issues are enabled
+     **/
+    private final boolean hasIssues;
+
+    /**
+     * {@code hasProjects} whether projects are enabled
+     **/
+    private final boolean hasProjects;
+
+    /**
+     * {@code hasWiki} whether the wiki is enabled
+     **/
+    private final boolean hasWiki;
+
+    /**
+     * {@code hasPages} whether the repository has pages
+     **/
+    private final boolean hasPages;
+
+    /**
+     * {@code hasDownloads} whether downloads are enabled
+     **/
+    private final boolean hasDownloads;
+
+    /**
+     * {@code archived} whether the repository is archived
+     **/
+    private final boolean archived;
+
+    /**
+     * {@code disabled} returns whether this repository disabled
+     **/
+    private final boolean disabled;
+
+    /**
+     * {@code visibility} the repository visibility: public, private, or internal
+     **/
+    private final Repository.RepoVisibility visibility;
+
+    /**
+     * {@code pushedAt} pushed at value
+     **/
+    private final String pushedAt;
+
+    /**
+     * {@code permissions} repository permissions
+     **/
+    private final Permissions permissions;
+
+    /**
+     * {@code allowRebaseMerge} whether to allow rebase merges for pull requests
+     **/
+    private final boolean allowRebaseMerge;
+
+    /**
+     * {@code tempCloneToken} temp clone token value
+     **/
+    private final String tempCloneToken;
+
+    /**
+     * {@code allowSquashMerge} whether to allow squash merges for pull requests
+     **/
+    private final boolean allowSquashMerge;
+
+    /**
+     * {@code allowAutoMerge} whether to allow {@code "Auto-merge"} to be used on pull requests
+     **/
+    private final boolean allowAutoMerge;
+
+    /**
+     * {@code deleteBranchOnMerge} whether to delete head branches when pull requests are merged
+     **/
+    private final boolean deleteBranchOnMerge;
+
+    /**
+     * {@code allowMergeCommit} whether a pull request head branch that is behind its base branch can always
+     * be updated even if it is not required to be up-to-date before merging
+     **/
+    private final boolean allowMergeCommit;
+
+    /**
+     * {@code subscribersCount} subscribers count value
+     **/
+    private final int subscribersCount;
+
+    /**
+     * {@code networkCount} network count value
+     **/
+    private final int networkCount;
+
+    /**
+     * {@code license} license value
+     **/
+    private final CommonLicense license;
+
+    /**
+     * {@code forks} forks value
+     **/
+    private final int forks;
+
+    /**
+     * {@code openIssues} open issues value
+     **/
+    private final int openIssues;
+
+    /**
+     * {@code watchers} watchers value
+     **/
+    private final int watchers;
+
+    /**
+     * {@code allowUpdateBranch} whether allow update branch
+     **/
+    private final boolean allowUpdateBranch;
+
+    /**
+     * {@code useSquashPrTitleAsDefault} whether to use squash Pr title as default
+     **/
+    private final boolean useSquashPrTitleAsDefault;
+
+    /**
+     * {@code squashMergeCommitTitle} the default value for a squash merge commit title
+     **/
+    private final SquashMergeCommitTitle squashMergeCommitTitle;
+
+    /**
+     * {@code squashMergeCommitMessage} the default value for a squash merge commit message
+     **/
+    private final SquashMergeCommitMessage squashMergeCommitMessage;
+
+    /**
+     * {@code mergeCommitTitle} the default value for a merge commit title
+     **/
+    private final MergeCommitTitle mergeCommitTitle;
+
+    /**
+     * {@code mergeCommitMessage} the default value for a merge commit message
+     **/
+    private final MergeCommitMessage mergeCommitMessage;
+
+    /**
+     * {@code allowForking} whether allow forking
+     **/
+    private final boolean allowForking;
+
+    /**
+     * {@code webCommitSignOffRequired} whether web commit sign off is required
+     **/
+    private final boolean webCommitSignOffRequired;
+
+    /**
+     * {@code masterBranch} the master branch of the repository
+     **/
+    private final String masterBranch;
+
+    /**
+     * {@code starredAt} when the repository has been starred
+     **/
+    private final String starredAt;
+
+    /**
+     * {@code anonymousAccessEnabled} whether anonymous git access is allowed
+     **/
+    private final boolean anonymousAccessEnabled;
+
+    /**
+     * {@code organization} of the repository
+     **/
+    private final User organization;
+
+    /**
+     * {@code parent} of the repository
+     **/
+    private final Repository parent;
+
+    /**
+     * {@code source} of the repository
+     **/
+    private final Repository source;
+
+    /**
+     * {@code codeOfConduct} code of conduct of the repository
+     **/
+    private final CodeConduct codeOfConduct;
+
+    /**
+     * {@code securityAnalysis} security analysis of the repository
+     **/
+    private final SecurityAnalysis securityAnalysis;
 
     /**
      * Constructor to init a {@link Repository}
@@ -277,10 +650,7 @@ public class Repository extends BaseResponseDetails {
      * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
      */
     public Repository(String name, User owner, boolean privateRepo, boolean fork) {
-        this(0, null, name, null, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
-                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+        this(0, name, owner, privateRepo, fork);
     }
 
     /**
@@ -293,10 +663,13 @@ public class Repository extends BaseResponseDetails {
      * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
      */
     public Repository(long id, String name, User owner, boolean privateRepo, boolean fork) {
-        this(id, null, name, null, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+        this(id, name, null, null, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null, null,
+                null, null);
     }
 
     /**
@@ -309,10 +682,13 @@ public class Repository extends BaseResponseDetails {
      * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
      */
     public Repository(String name, String fullName, User owner, boolean privateRepo, boolean fork) {
-        this(0, null, name, fullName, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+        this(0, name, null, fullName, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null, null,
+                null, null);
     }
 
     /**
@@ -326,10 +702,13 @@ public class Repository extends BaseResponseDetails {
      * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
      */
     public Repository(long id, String name, String fullName, User owner, boolean privateRepo, boolean fork) {
-        this(id, null, name, fullName, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
+        this(id, name, null, fullName, owner, privateRepo, null, null, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null, null,
+                null, null);
     }
 
     /**
@@ -342,10 +721,13 @@ public class Repository extends BaseResponseDetails {
      * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
      */
     public Repository(String name, User owner, boolean privateRepo, String description, boolean fork) {
-        this(0, null, name, null, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+        this(0, name, null, null, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null, null,
+                null, null);
     }
 
     /**
@@ -359,10 +741,13 @@ public class Repository extends BaseResponseDetails {
      * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
      */
     public Repository(long id, String name, User owner, boolean privateRepo, String description, boolean fork) {
-        this(id, null, name, null, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+        this(id, name, null, null, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null,
+                null, null, null);
     }
 
     /**
@@ -377,9 +762,12 @@ public class Repository extends BaseResponseDetails {
      */
     public Repository(String name, String fullName, User owner, boolean privateRepo, String description,
                       boolean fork) {
-        this(0, null, name, fullName, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+        this(0, name, null, fullName, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null, null, null,
                 null);
     }
 
@@ -396,106 +784,122 @@ public class Repository extends BaseResponseDetails {
      */
     public Repository(long id, String name, String fullName, User owner, boolean privateRepo, String description,
                       boolean fork) {
-        this(id, null, name, fullName, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
+        this(id, name, null, fullName, owner, privateRepo, null, description, fork, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
+                null, null, null, 0, 0, 0, 0, null, 0, false, null, null, false, false, false, false, false,
+                false, false, null, null, null, null, null, false, null, false, false, false, false, 0, 0,
+                null, 0, 0, 0, false, false, null, null, null, null, false, false, null, null, false, null, null, null,
+                null, null);
     }
 
     /**
      * Constructor to init a {@link Repository}
      *
-     * @param nodeId:      identifier of the node value
-     * @param name:        the name of the repository
-     * @param fullName:    fullname value
-     * @param owner:       owner value
-     * @param privateRepo: whether the repository is private or public
-     * @param description: description value
-     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
-     */
-    public Repository(String nodeId, String name, String fullName, User owner, boolean privateRepo,
-                      String description, boolean fork, String url) {
-        this(0, nodeId, name, fullName, owner, privateRepo, null, description, fork, url, null, null, null, null, null,
-                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
-    }
-
-    /**
-     * Constructor to init a {@link Repository}
-     *
-     * @param id:          identifier value
-     * @param nodeId:      identifier of the node value
-     * @param name:        the name of the repository
-     * @param fullName:    fullname value
-     * @param owner:       owner value
-     * @param privateRepo: whether the repository is private or public
-     * @param description: description value
-     * @apiNote this constructor is useful to contains only the basics details about a {@link Repository}
-     */
-    public Repository(long id, String nodeId, String name, String fullName, User owner, boolean privateRepo,
-                      String description, boolean fork, String url) {
-        this(id, nodeId, name, fullName, owner, privateRepo, null, description, fork, url, null, null, null, null, null,
-                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-                null);
-    }
-
-    /**
-     * Constructor to init a {@link Repository}
-     *
-     * @param id:                    identifier value
-     * @param nodeId:                identifier of the node value
-     * @param name:                  the name of the repository
-     * @param fullName:              fullname value
-     * @param owner:                 owner value
-     * @param privateRepo:           whether the repository is private or public
-     * @param htmlUrl:               html url value
-     * @param description:           description value
-     * @param fork:                  fork value
-     * @param url:                   url value
-     * @param archiveUrl:            archive url value
-     * @param assigneesUrl:          assignees url value
-     * @param blobsUrl:              blobs url value
-     * @param branchesUrl:           branches url value
-     * @param collaboratorsUrl:      collaborators url value
-     * @param commentsUrl:           comments url value
-     * @param commitsUrl:            commits url value
-     * @param compareUrl:            compare url value
-     * @param contentsUrl:           contents url value
-     * @param contributorsUrl:       contributors url value
-     * @param deploymentsUrl:        deployments url value
-     * @param downloadUrl:           download url value
-     * @param eventsUrl:events       url value
-     * @param forksUrl:              forks url value
-     * @param gitCommitsUrl:         git commits url value
-     * @param gitRefsUrl:            git refs url value
-     * @param gitTagsUrl:            git tags url value
-     * @param gitUrl:                git url value
-     * @param issueCommentUrl:       issues comments url value
-     * @param issueEventsUrl:        issues events url value
-     * @param issuesUrl:             issues url value
-     * @param keysUrl:               keys url value
-     * @param labelsUrl:             labels url value
-     * @param languagesUrl:languages url value
-     * @param mergesUrl:             merges url value
-     * @param milestonesUrl:         milestones url value
-     * @param notificationsUrl:      notifications url value
-     * @param pullsUrl:              pulls url value
-     * @param releasesUrl:           releases url value
-     * @param sshUrl:                ssh url value
-     * @param stargazersUrl:         stargazers url value
-     * @param statutesUrl:           statuses url value
-     * @param subscribersUrl:        subscribers url value
-     * @param subscriptionUrl:       subscription url value
-     * @param tagsUrl:               tags url value
-     * @param teamsUrl:              teams url value
-     * @param treesUrl:              trees url value
-     * @param cloneUrl:              clone url value
-     * @param mirrorUrl:             mirror url value
-     * @param hooksUrl:              hooks url value
-     */
-    public Repository(long id, String nodeId, String name, String fullName, User owner, boolean privateRepo,
+     * @param id                        :                         identifier value
+     * @param nodeId                    :                     identifier of the node value
+     * @param name                      :                       the name of the repository
+     * @param fullName                  :                   fullname value
+     * @param owner                     :                      owner value
+     * @param privateRepo               :                whether the repository is private or public
+     * @param htmlUrl                   :                    html url value
+     * @param description               :                description value
+     * @param fork                      :                       fork value
+     * @param url                       :                        url value
+     * @param archiveUrl                :                 archive url value
+     * @param assigneesUrl              :               assignees url value
+     * @param blobsUrl                  :                   blobs url value
+     * @param branchesUrl               :                branches url value
+     * @param collaboratorsUrl          :           collaborators url value
+     * @param commentsUrl               :                comments url value
+     * @param commitsUrl                :                 commits url value
+     * @param compareUrl                :                 compare url value
+     * @param contentsUrl               :                contents url value
+     * @param contributorsUrl           :            contributors url value
+     * @param deploymentsUrl            :             deployments url value
+     * @param downloadUrl               :                download url value
+     * @param eventsUrl                 :events            url value
+     * @param forksUrl                  :                   forks url value
+     * @param gitCommitsUrl             :              git commits url value
+     * @param gitRefsUrl                :                 git refs url value
+     * @param gitTagsUrl                :                 git tags url value
+     * @param gitUrl                    :                     git url value
+     * @param issueCommentUrl           :            issues comments url value
+     * @param issueEventsUrl            :             issues events url value
+     * @param issuesUrl                 :                  issues url value
+     * @param keysUrl                   :                    keys url value
+     * @param labelsUrl                 :                  labels url value
+     * @param languagesUrl              :languages      url value
+     * @param mergesUrl                 :                  merges url value
+     * @param milestonesUrl             :              milestones url value
+     * @param notificationsUrl          :           notifications url value
+     * @param pullsUrl                  :                   pulls url value
+     * @param releasesUrl               :                releases url value
+     * @param sshUrl                    :                     ssh url value
+     * @param stargazersUrl             :              stargazers url value
+     * @param statutesUrl               :                statuses url value
+     * @param subscribersUrl            :             subscribers url value
+     * @param subscriptionUrl           :            subscription url value
+     * @param tagsUrl                   :                    tags url value
+     * @param teamsUrl                  :                   teams url value
+     * @param treesUrl                  :                   trees url value
+     * @param cloneUrl                  :                   clone url value
+     * @param mirrorUrl                 :                  mirror url value
+     * @param hooksUrl                  :                   hooks url value
+     * @param svnUrl                    :                     svn url value
+     * @param homePage                  :                   homepage value
+     * @param forksCount                :                 forks count value
+     * @param stargazersCount           :            stargazers count value
+     * @param watchersCount             :              watchers count value
+     * @param size                      :                       the size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0
+     * @param defaultBranch             :              the default branch of the repository
+     * @param openIssuesCount           :            open issues count value
+     * @param isTemplate                :                 whether this repository acts as a template that can be used to generate new repositories
+     * @param template:                 template that can be used to generate new repositories
+     * @param topics                    :                     topics list
+     * @param hasIssues                 :                  whether issues are enabled
+     * @param hasProjects               :                whether projects are enabled
+     * @param hasWiki                   :                    whether the wiki is enabled
+     * @param hasPages                  :                   whether the repository has pages
+     * @param hasDownloads              :               whether downloads are enabled
+     * @param archived                  :                   whether the repository is archived
+     * @param disabled                  :                   returns whether this repository disabled
+     * @param visibility                :                 the repository visibility: public, private, or internal
+     * @param pushedAt                  :                   pushed at value
+     * @param createdAt                 :                  created at value
+     * @param updatedAt                 :                  updated at value
+     * @param permissions               :                repository permissions
+     * @param allowRebaseMerge          :           whether to allow rebase merges for pull requests
+     * @param tempCloneToken            :             temp clone token value
+     * @param allowSquashMerge          :           whether to allow squash merges for pull requests
+     * @param allowAutoMerge            :             whether to allow {@code "Auto-merge"} to be used on pull requests
+     * @param deleteBranchOnMerge       :whether to delete head branches when pull requests are merged
+     * @param allowMergeCommit          :           whether a pull request head branch that is behind its base branch can always
+     *                                  be updated even if it is not required to be up-to-date before merging
+     * @param subscribersCount          :           subscribers count value
+     * @param networkCount              :               network count value
+     * @param license                   :                    license value
+     * @param forks                     :                      forks value
+     * @param openIssues                :                 open issues value
+     * @param watchers                  :                   watchers value
+     * @param allowUpdateBranch         :    whether allow update branch
+     * @param useSquashPrTitleAsDefault :  whether to use squash Pr title as default
+     * @param squashMergeCommitTitle    :  the default value for a squash merge commit title
+     * @param squashMergeCommitMessage  :   the default value for a squash merge commit message
+     * @param mergeCommitTitle          :   the default value for a merge commit title
+     * @param mergeCommitMessage        :    the default value for a merge commit message
+     * @param allowForking              :   whether allow forking
+     * @param webCommitSignOffRequired  : whether web commit sign off is required
+     * @param masterBranch              :    the master branch of the repository
+     * @param starredAt                 :   when the repository has been starred
+     * @param anonymousAccessEnabled    : whether anonymous git access is allowed
+     * @param organization              :   organization of the repository
+     * @param parent                    :  parent of the repository
+     * @param source                    :    source of the repository
+     * @param codeOfConduct             :    code of conduct of the repository
+     * @param securityAnalysis          : security analysis of the repository
+     **/
+    public Repository(long id, String name, String nodeId, String fullName, User owner, boolean privateRepo,
                       String htmlUrl, String description, boolean fork, String url, String archiveUrl, String assigneesUrl,
                       String blobsUrl, String branchesUrl, String collaboratorsUrl, String commentsUrl, String commitsUrl,
                       String compareUrl, String contentsUrl, String contributorsUrl, String deploymentsUrl,
@@ -504,9 +908,22 @@ public class Repository extends BaseResponseDetails {
                       String keysUrl, String labelsUrl, String languagesUrl, String mergesUrl, String milestonesUrl,
                       String notificationsUrl, String pullsUrl, String releasesUrl, String sshUrl, String stargazersUrl,
                       String statutesUrl, String subscribersUrl, String subscriptionUrl, String tagsUrl, String teamsUrl,
-                      String treesUrl, String cloneUrl, String mirrorUrl, String hooksUrl) {
-        super(id, name, url);
-        this.nodeId = nodeId;
+                      String treesUrl, String cloneUrl, String mirrorUrl, String hooksUrl, String svnUrl, String homePage,
+                      int forksCount, int stargazersCount, int watchersCount, int size, String defaultBranch,
+                      int openIssuesCount, boolean isTemplate, Repository template, ArrayList<String> topics,
+                      boolean hasIssues, boolean hasProjects, boolean hasWiki, boolean hasPages, boolean hasDownloads,
+                      boolean archived, boolean disabled, RepoVisibility visibility, String pushedAt, String createdAt,
+                      String updatedAt, Permissions permissions, boolean allowRebaseMerge, String tempCloneToken,
+                      boolean allowSquashMerge, boolean allowAutoMerge, boolean deleteBranchOnMerge,
+                      boolean allowMergeCommit, int subscribersCount, int networkCount, CommonLicense license, int forks,
+                      int openIssues, int watchers, boolean allowUpdateBranch, boolean useSquashPrTitleAsDefault,
+                      SquashMergeCommitTitle squashMergeCommitTitle, SquashMergeCommitMessage squashMergeCommitMessage,
+                      MergeCommitTitle mergeCommitTitle, MergeCommitMessage mergeCommitMessage, boolean allowForking,
+                      boolean webCommitSignOffRequired, String masterBranch, String starredAt, boolean anonymousAccessEnabled,
+                      User organization, Repository parent, Repository source, CodeConduct codeOfConduct,
+                      SecurityAnalysis securityAnalysis) {
+        super(url, id, nodeId, createdAt, updatedAt);
+        this.name = name;
         this.fullName = fullName;
         this.owner = owner;
         this.privateRepo = privateRepo;
@@ -553,6 +970,55 @@ public class Repository extends BaseResponseDetails {
         this.cloneUrl = cloneUrl;
         this.mirrorUrl = mirrorUrl;
         this.hooksUrl = hooksUrl;
+        this.svnUrl = svnUrl;
+        this.homePage = homePage;
+        this.forksCount = forksCount;
+        this.stargazersCount = stargazersCount;
+        this.watchersCount = watchersCount;
+        this.size = size;
+        this.defaultBranch = defaultBranch;
+        this.openIssuesCount = openIssuesCount;
+        this.isTemplate = isTemplate;
+        this.template = template;
+        this.topics = topics;
+        this.hasIssues = hasIssues;
+        this.hasProjects = hasProjects;
+        this.hasWiki = hasWiki;
+        this.hasPages = hasPages;
+        this.hasDownloads = hasDownloads;
+        this.archived = archived;
+        this.disabled = disabled;
+        this.visibility = visibility;
+        this.pushedAt = pushedAt;
+        this.permissions = permissions;
+        this.allowRebaseMerge = allowRebaseMerge;
+        this.tempCloneToken = tempCloneToken;
+        this.allowSquashMerge = allowSquashMerge;
+        this.allowAutoMerge = allowAutoMerge;
+        this.deleteBranchOnMerge = deleteBranchOnMerge;
+        this.allowMergeCommit = allowMergeCommit;
+        this.subscribersCount = subscribersCount;
+        this.networkCount = networkCount;
+        this.license = license;
+        this.forks = forks;
+        this.openIssues = openIssues;
+        this.watchers = watchers;
+        this.allowUpdateBranch = allowUpdateBranch;
+        this.useSquashPrTitleAsDefault = useSquashPrTitleAsDefault;
+        this.squashMergeCommitTitle = squashMergeCommitTitle;
+        this.squashMergeCommitMessage = squashMergeCommitMessage;
+        this.mergeCommitTitle = mergeCommitTitle;
+        this.mergeCommitMessage = mergeCommitMessage;
+        this.allowForking = allowForking;
+        this.webCommitSignOffRequired = webCommitSignOffRequired;
+        this.masterBranch = masterBranch;
+        this.starredAt = starredAt;
+        this.anonymousAccessEnabled = anonymousAccessEnabled;
+        this.organization = organization;
+        this.parent = parent;
+        this.source = source;
+        this.codeOfConduct = codeOfConduct;
+        this.securityAnalysis = securityAnalysis;
     }
 
     /**
@@ -562,9 +1028,9 @@ public class Repository extends BaseResponseDetails {
      **/
     public Repository(JSONObject jRepository) {
         super(jRepository);
-        nodeId = hResponse.getString("node_id");
+        name = hResponse.getString("name");
         fullName = hResponse.getString("full_name");
-        owner = new User(hResponse.getJSONObject("owner", new JSONObject()));
+        owner = new User(hResponse.getJSONObject("owner"));
         privateRepo = hResponse.getBoolean("private");
         htmlUrl = hResponse.getString("html_url");
         description = hResponse.getString("description");
@@ -609,16 +1075,126 @@ public class Repository extends BaseResponseDetails {
         cloneUrl = hResponse.getString("clone_url");
         mirrorUrl = hResponse.getString("mirror_url");
         hooksUrl = hResponse.getString("hooks_url");
+        svnUrl = hResponse.getString("svn_url");
+        homePage = hResponse.getString("homepage");
+        forksCount = hResponse.getInt("forks_count", 0);
+        stargazersCount = hResponse.getInt("stargazers_count", 0);
+        watchersCount = hResponse.getInt("watchers_count", 0);
+        size = hResponse.getInt("size", 0);
+        defaultBranch = hResponse.getString("default_branch");
+        openIssuesCount = hResponse.getInt("open_issues_count", 0);
+        isTemplate = hResponse.getBoolean("is_template");
+        JSONObject jItem = hResponse.getJSONObject("template_repository");
+        if (jItem != null)
+            template = new Repository(jItem);
+        else
+            template = null;
+        topics = returnStringsList(hResponse.getJSONArray("topics"));
+        hasIssues = hResponse.getBoolean("has_issues");
+        hasProjects = hResponse.getBoolean("has_projects");
+        hasWiki = hResponse.getBoolean("has_wiki");
+        hasPages = hResponse.getBoolean("has_pages");
+        hasDownloads = hResponse.getBoolean("has_downloads");
+        archived = hResponse.getBoolean("archived");
+        disabled = hResponse.getBoolean("disabled");
+        String visibilityKey = hResponse.getString("visibility", vPrivate.name());
+        if (visibilityKey.equals(vPrivate.toString()))
+            visibility = vPrivate;
+        else if (visibilityKey.equals(vPublic.toString()))
+            visibility = vPublic;
+        else
+            visibility = valueOf(visibilityKey);
+        pushedAt = hResponse.getString("pushed_at");
+        jItem = hResponse.getJSONObject("permissions");
+        if (jItem != null)
+            permissions = new Permissions(jItem);
+        else
+            permissions = null;
+        allowRebaseMerge = hResponse.getBoolean("allow_rebase_merge");
+        tempCloneToken = hResponse.getString("temp_clone_token");
+        allowSquashMerge = hResponse.getBoolean("allow_squash_merge");
+        allowAutoMerge = hResponse.getBoolean("allow_auto_merge");
+        deleteBranchOnMerge = hResponse.getBoolean("delete_branch_on_merge");
+        allowMergeCommit = hResponse.getBoolean("allow_merge_commit");
+        subscribersCount = hResponse.getInt("subscribers_count", 0);
+        networkCount = hResponse.getInt("network_count", 0);
+        license = new CommonLicense(hResponse.getJSONObject("license"));
+        forks = hResponse.getInt("forks", 0);
+        openIssues = hResponse.getInt("open_issues", 0);
+        watchers = hResponse.getInt("watchers", 0);
+        allowUpdateBranch = hResponse.getBoolean("allow_update_branch");
+        useSquashPrTitleAsDefault = hResponse.getBoolean("use_squash_pr_title_as_default");
+        String sEnum = hResponse.getString("squash_merge_commit_title");
+        if (sEnum != null)
+            squashMergeCommitTitle = SquashMergeCommitTitle.valueOf(sEnum);
+        else
+            squashMergeCommitTitle = null;
+        sEnum = hResponse.getString("squash_merge_commit_message");
+        if (sEnum != null)
+            squashMergeCommitMessage = SquashMergeCommitMessage.valueOf(sEnum);
+        else
+            squashMergeCommitMessage = null;
+        sEnum = hResponse.getString("merge_commit_title");
+        if (sEnum != null)
+            mergeCommitTitle = MergeCommitTitle.valueOf(sEnum);
+        else
+            mergeCommitTitle = null;
+        sEnum = hResponse.getString("merge_commit_message");
+        if (sEnum != null)
+            mergeCommitMessage = MergeCommitMessage.valueOf(sEnum);
+        else
+            mergeCommitMessage = null;
+        allowForking = hResponse.getBoolean("allow_forking");
+        webCommitSignOffRequired = hResponse.getBoolean("web_commit_signoff_required");
+        masterBranch = hResponse.getString("master_branch");
+        starredAt = hResponse.getString("starred_at");
+        anonymousAccessEnabled = hResponse.getBoolean("anonymous_access_enabled");
+        jItem = hResponse.getJSONObject("organization");
+        if (jItem != null)
+            organization = new User(jItem);
+        else
+            organization = null;
+        jItem = hResponse.getJSONObject("parent");
+        if (jItem != null)
+            parent = new Repository(jItem);
+        else
+            parent = null;
+        jItem = hResponse.getJSONObject("source");
+        if (jItem != null)
+            source = new Repository(jItem);
+        else
+            source = null;
+        jItem = hResponse.getJSONObject("code_of_conduct");
+        if (jItem != null)
+            codeOfConduct = new CodeConduct(jItem);
+        else
+            codeOfConduct = null;
+        jItem = hResponse.getJSONObject("security_and_analysis");
+        if (jItem != null)
+            securityAnalysis = new SecurityAnalysis(jItem);
+        else
+            securityAnalysis = null;
     }
 
     /**
-     * Method to get {@link #nodeId} instance <br>
+     * Method to get {@link #id} instance <br>
      * No-any params required
      *
-     * @return {@link #nodeId} instance as {@link String}
+     * @return {@link #id} instance as {@link Long}
      **/
-    public String getNodeId() {
-        return nodeId;
+    @Override
+    public Long getId() {
+        return super.getId();
+    }
+
+    /**
+     * Method to get {@link #name} instance <br>
+     * No-any params required
+     *
+     * @return {@link #name} instance as {@link String}
+     **/
+    public String getName() {
+        return name;
     }
 
     /**
@@ -1082,6 +1658,627 @@ public class Repository extends BaseResponseDetails {
     }
 
     /**
+     * Method to get {@link #svnUrl} instance <br>
+     * No-any params required
+     *
+     * @return {@link #svnUrl} instance as {@link String}
+     **/
+    public String getSvnUrl() {
+        return svnUrl;
+    }
+
+    /**
+     * Method to get {@link #homePage} instance <br>
+     * No-any params required
+     *
+     * @return {@link #homePage} instance as {@link String}
+     **/
+    public String getHomePage() {
+        return homePage;
+    }
+
+    /**
+     * Method to get {@link #forksCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #forksCount} instance as int
+     **/
+    public int getForksCount() {
+        return forksCount;
+    }
+
+    /**
+     * Method to get {@link #stargazersCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #stargazersCount} instance as int
+     **/
+    public int getStargazersCount() {
+        return stargazersCount;
+    }
+
+    /**
+     * Method to get {@link #watchersCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #watchersCount} instance as int
+     **/
+    public int getWatchersCount() {
+        return watchersCount;
+    }
+
+    /**
+     * Method to get {@link #size} instance <br>
+     * No-any params required
+     *
+     * @return {@link #size} instance as int
+     **/
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Method to get {@link #defaultBranch} instance <br>
+     * No-any params required
+     *
+     * @return {@link #defaultBranch} instance as {@link String}
+     **/
+    public String getDefaultBranch() {
+        return defaultBranch;
+    }
+
+    /**
+     * Method to get {@link #openIssuesCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #openIssuesCount} instance as int
+     **/
+    public int getOpenIssuesCount() {
+        return openIssuesCount;
+    }
+
+    /**
+     * Method to get {@link #isTemplate} instance <br>
+     * No-any params required
+     *
+     * @return {@link #isTemplate} instance as boolean
+     **/
+    public boolean isTemplate() {
+        return isTemplate;
+    }
+
+    /**
+     * Method to get {@link #template} instance <br>
+     * No-any params required
+     *
+     * @return {@link #template} instance as {@link Repository}
+     **/
+    public Repository getTemplate() {
+        return template;
+    }
+
+    /**
+     * Method to get {@link #topics} instance <br>
+     * No-any params required
+     *
+     * @return {@link #topics} instance as {@link ArrayList} of {@link String}
+     **/
+    public ArrayList<String> getTopics() {
+        return topics;
+    }
+
+    /**
+     * Method to get {@link #hasIssues} instance <br>
+     * No-any params required
+     *
+     * @return {@link #hasIssues} instance as boolean
+     **/
+    public boolean isHasIssues() {
+        return hasIssues;
+    }
+
+    /**
+     * Method to get {@link #hasProjects} instance <br>
+     * No-any params required
+     *
+     * @return {@link #hasProjects} instance as boolean
+     **/
+    public boolean isHasProjects() {
+        return hasProjects;
+    }
+
+    /**
+     * Method to get {@link #hasWiki} instance <br>
+     * No-any params required
+     *
+     * @return {@link #hasWiki} instance as boolean
+     **/
+    public boolean isHasWiki() {
+        return hasWiki;
+    }
+
+    /**
+     * Method to get {@link #hasPages} instance <br>
+     * No-any params required
+     *
+     * @return {@link #hasPages} instance as boolean
+     **/
+    public boolean isHasPages() {
+        return hasPages;
+    }
+
+    /**
+     * Method to get {@link #hasDownloads} instance <br>
+     * No-any params required
+     *
+     * @return {@link #hasDownloads} instance as boolean
+     **/
+    public boolean isHasDownloads() {
+        return hasDownloads;
+    }
+
+    /**
+     * Method to get {@link #archived} instance <br>
+     * No-any params required
+     *
+     * @return {@link #archived} instance as boolean
+     **/
+    public boolean isArchived() {
+        return archived;
+    }
+
+    /**
+     * Method to get {@link #disabled} instance <br>
+     * No-any params required
+     *
+     * @return {@link #disabled} instance as boolean
+     **/
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    /**
+     * Method to get {@link #visibility} instance <br>
+     * No-any params required
+     *
+     * @return {@link #visibility} instance as {@link Repository.RepoVisibility}
+     **/
+    public Repository.RepoVisibility getVisibility() {
+        return visibility;
+    }
+
+    /**
+     * Method to get {@link #pushedAt} instance <br>
+     * No-any params required
+     *
+     * @return {@link #pushedAt} instance as {@link String}
+     **/
+    public String getPushedAt() {
+        return pushedAt;
+    }
+
+    /**
+     * Method to get {@link #pushedAt} timestamp <br>
+     * No-any params required
+     *
+     * @return {@link #pushedAt} timestamp as long
+     **/
+    public long getPushedAtTimestamp() {
+        return getDateTimestamp(pushedAt);
+    }
+
+    /**
+     * Method to get {@link #permissions} instance <br>
+     * No-any params required
+     *
+     * @return {@link #permissions} instance as {@link Permissions}
+     **/
+    public Permissions getPermissions() {
+        return permissions;
+    }
+
+    /**
+     * Method to get {@link #allowRebaseMerge} instance <br>
+     * No-any params required
+     *
+     * @return {@link #allowRebaseMerge} instance as boolean
+     **/
+    public boolean isAllowRebaseMerge() {
+        return allowRebaseMerge;
+    }
+
+    /**
+     * Method to get {@link #tempCloneToken} instance <br>
+     * No-any params required
+     *
+     * @return {@link #tempCloneToken} instance as {@link String}
+     **/
+    public String getTempCloneToken() {
+        return tempCloneToken;
+    }
+
+    /**
+     * Method to get {@link #allowSquashMerge} instance <br>
+     * No-any params required
+     *
+     * @return {@link #allowSquashMerge} instance as boolean
+     **/
+    public boolean isAllowSquashMerge() {
+        return allowSquashMerge;
+    }
+
+    /**
+     * Method to get {@link #allowAutoMerge} instance <br>
+     * No-any params required
+     *
+     * @return {@link #allowAutoMerge} instance as boolean
+     **/
+    public boolean isAllowAutoMerge() {
+        return allowAutoMerge;
+    }
+
+    /**
+     * Method to get {@link #deleteBranchOnMerge} instance <br>
+     * No-any params required
+     *
+     * @return {@link #deleteBranchOnMerge} instance as boolean
+     **/
+    public boolean isDeleteBranchOnMerge() {
+        return deleteBranchOnMerge;
+    }
+
+    /**
+     * Method to get {@link #allowMergeCommit} instance <br>
+     * No-any params required
+     *
+     * @return {@link #allowMergeCommit} instance as boolean
+     **/
+    public boolean isAllowMergeCommit() {
+        return allowMergeCommit;
+    }
+
+    /**
+     * Method to get {@link #subscribersCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #subscribersCount} instance as int
+     **/
+    public int getSubscribersCount() {
+        return subscribersCount;
+    }
+
+    /**
+     * Method to get {@link #networkCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #networkCount} instance as int
+     **/
+    public int getNetworkCount() {
+        return networkCount;
+    }
+
+    /**
+     * Method to get {@link #license} instance <br>
+     * No-any params required
+     *
+     * @return {@link #license} instance as {@link CommonLicense}
+     **/
+    public CommonLicense getLicense() {
+        return license;
+    }
+
+    /**
+     * Method to get {@link #forks} instance <br>
+     * No-any params required
+     *
+     * @return {@link #forks} instance as int
+     **/
+    public int getForks() {
+        return forks;
+    }
+
+    /**
+     * Method to get {@link #openIssues} instance <br>
+     * No-any params required
+     *
+     * @return {@link #openIssues} instance as int
+     **/
+    public int getOpenIssues() {
+        return openIssues;
+    }
+
+    /**
+     * Method to get {@link #watchers} instance <br>
+     * No-any params required
+     *
+     * @return {@link #watchers} instance as int
+     **/
+    public int getWatchers() {
+        return watchers;
+    }
+
+    /**
+     * Method to get {@link #allowUpdateBranch} instance <br>
+     * No-any params required
+     *
+     * @return {@link #allowUpdateBranch} instance as boolean
+     **/
+    public boolean isAllowedUpdateBranch() {
+        return allowUpdateBranch;
+    }
+
+    /**
+     * Method to get {@link #useSquashPrTitleAsDefault} instance <br>
+     * No-any params required
+     *
+     * @return {@link #useSquashPrTitleAsDefault} instance as boolean
+     **/
+    public boolean useSquashPrTitleAsDefault() {
+        return useSquashPrTitleAsDefault;
+    }
+
+    /**
+     * Method to get {@link #squashMergeCommitTitle} instance <br>
+     * No-any params required
+     *
+     * @return {@link #squashMergeCommitTitle} instance as {@link SquashMergeCommitTitle}
+     **/
+    public SquashMergeCommitTitle getSquashMergeCommitTitle() {
+        return squashMergeCommitTitle;
+    }
+
+    /**
+     * Method to get {@link #squashMergeCommitMessage} instance <br>
+     * No-any params required
+     *
+     * @return {@link #squashMergeCommitMessage} instance as {@link SquashMergeCommitMessage}
+     **/
+    public SquashMergeCommitMessage getSquashMergeCommitMessage() {
+        return squashMergeCommitMessage;
+    }
+
+    /**
+     * Method to get {@link #mergeCommitTitle} instance <br>
+     * No-any params required
+     *
+     * @return {@link #mergeCommitTitle} instance as {@link MergeCommitTitle}
+     **/
+    public MergeCommitTitle getMergeCommitTitle() {
+        return mergeCommitTitle;
+    }
+
+    /**
+     * Method to get {@link #mergeCommitMessage} instance <br>
+     * No-any params required
+     *
+     * @return {@link #mergeCommitMessage} instance as {@link MergeCommitMessage}
+     **/
+    public MergeCommitMessage getMergeCommitMessage() {
+        return mergeCommitMessage;
+    }
+
+    /**
+     * Method to get {@link #allowForking} instance <br>
+     * No-any params required
+     *
+     * @return {@link #allowForking} instance as boolean
+     **/
+    public boolean isAllowedForking() {
+        return allowForking;
+    }
+
+    /**
+     * Method to get {@link #webCommitSignOffRequired} instance <br>
+     * No-any params required
+     *
+     * @return {@link #webCommitSignOffRequired} instance as boolean
+     **/
+    public boolean isWebCommitSignOffRequired() {
+        return webCommitSignOffRequired;
+    }
+
+    /**
+     * Method to get {@link #masterBranch} instance <br>
+     * No-any params required
+     *
+     * @return {@link #masterBranch} instance as {@link String}
+     **/
+    public String getMasterBranch() {
+        return masterBranch;
+    }
+
+    /**
+     * Method to get {@link #starredAt} timestamp <br>
+     * No-any params required
+     *
+     * @return {@link #starredAt} timestamp as {@link String}
+     **/
+    public String getStarredAt() {
+        return starredAt;
+    }
+
+    /**
+     * Method to get {@link #starredAt} timestamp <br>
+     * No-any params required
+     *
+     * @return {@link #starredAt} timestamp as long
+     **/
+    public long getStarredAtTimestamp() {
+        return getDateTimestamp(starredAt);
+    }
+
+    /**
+     * Method to get {@link #anonymousAccessEnabled} instance <br>
+     * No-any params required
+     *
+     * @return {@link #anonymousAccessEnabled} instance as boolean
+     **/
+    public boolean isAnonymousAccessEnabled() {
+        return anonymousAccessEnabled;
+    }
+
+    /**
+     * Method to get {@link #organization} instance <br>
+     * No-any params required
+     *
+     * @return {@link #organization} instance as {@link User}
+     **/
+    public User getOrganization() {
+        return organization;
+    }
+
+    /**
+     * Method to get {@link #parent} instance <br>
+     * No-any params required
+     *
+     * @return {@link #parent} instance as {@link Repository}
+     **/
+    public Repository getParent() {
+        return parent;
+    }
+
+    /**
+     * Method to get {@link #source} instance <br>
+     * No-any params required
+     *
+     * @return {@link #source} instance as {@link Repository}
+     **/
+    public Repository getSource() {
+        return source;
+    }
+
+    /**
+     * Method to get {@link #codeOfConduct} instance <br>
+     * No-any params required
+     *
+     * @return {@link #codeOfConduct} instance as {@link CodeConduct}
+     **/
+    public CodeConduct getCodeOfConduct() {
+        return codeOfConduct;
+    }
+
+    /**
+     * Method to get {@link #securityAnalysis} instance <br>
+     * No-any params required
+     *
+     * @return {@link #securityAnalysis} instance as {@link SecurityAnalysis}
+     **/
+    public SecurityAnalysis getSecurityAnalysis() {
+        return securityAnalysis;
+    }
+
+    /**
+     * The {@code SecurityAnalysis} class is useful to format a GitHub's security analysis
+     *
+     * @author N7ghtm4r3 - Tecknobit
+     * @see GitHubResponse
+     * @see InnerClassItem
+     **/
+    public static class SecurityAnalysis extends InnerClassItem {
+
+        /**
+         * {@code Status} list of available statuses
+         **/
+        public enum Status {
+
+            /**
+             * {@code enabled} status
+             **/
+            enabled,
+
+            /**
+             * {@code disabled} status
+             **/
+            disabled
+
+        }
+
+        /**
+         * {@code advancedSecurity} advanced security status
+         **/
+        private final Status advancedSecurity;
+
+        /**
+         * {@code secretScanning} secret scanning status
+         **/
+        private final Status secretScanning;
+
+        /**
+         * {@code secretScanningPushProtection} secret scanning push protection status
+         **/
+        private final Status secretScanningPushProtection;
+
+        /**
+         * Constructor to init a {@link SecurityAnalysis}
+         *
+         * @param advancedSecurity:             advanced security status
+         * @param secretScanning:               secret scanning status
+         * @param secretScanningPushProtection: secret scanning push protection status
+         **/
+        public SecurityAnalysis(Status advancedSecurity, Status secretScanning, Status secretScanningPushProtection) {
+            super(null);
+            this.advancedSecurity = advancedSecurity;
+            this.secretScanning = secretScanning;
+            this.secretScanningPushProtection = secretScanningPushProtection;
+        }
+
+        /**
+         * Constructor to init a {@link SecurityAnalysis}
+         *
+         * @param jSecurityAnalysis: security analysis details as {@link JSONObject}
+         **/
+        public SecurityAnalysis(JSONObject jSecurityAnalysis) {
+            super(jSecurityAnalysis);
+            JSONObject jItem = hItem.getJSONObject("advanced_security");
+            if (jItem != null)
+                advancedSecurity = Status.valueOf(jItem.getString("status"));
+            else
+                advancedSecurity = null;
+            jItem = hItem.getJSONObject("secret_scanning");
+            if (jItem != null)
+                secretScanning = Status.valueOf(jItem.getString("status"));
+            else
+                secretScanning = null;
+            jItem = hItem.getJSONObject("secret_scanning_push_protection");
+            if (jItem != null)
+                secretScanningPushProtection = Status.valueOf(jItem.getString("status"));
+            else
+                secretScanningPushProtection = null;
+        }
+
+        /**
+         * Method to get {@link #advancedSecurity} instance <br>
+         * No-any params required
+         *
+         * @return {@link #advancedSecurity} instance as {@link Status}
+         **/
+        public Status getAdvancedSecurity() {
+            return advancedSecurity;
+        }
+
+        /**
+         * Method to get {@link #secretScanning} instance <br>
+         * No-any params required
+         *
+         * @return {@link #secretScanning} instance as {@link Status}
+         **/
+        public Status getSecretScanning() {
+            return secretScanning;
+        }
+
+        /**
+         * Method to get {@link #secretScanningPushProtection} instance <br>
+         * No-any params required
+         *
+         * @return {@link #secretScanningPushProtection} instance as {@link Status}
+         **/
+        public Status getSecretScanningPushProtection() {
+            return secretScanningPushProtection;
+        }
+
+    }
+
+    /**
      * {@code RepositorySelection} list of available repository selections
      **/
     public enum RepositorySelection {
@@ -1095,6 +2292,66 @@ public class Repository extends BaseResponseDetails {
          * {@code "selected"} repository selection
          **/
         selected
+
+    }
+
+    /**
+     * {@code RepoVisibility} list of available visibilities for a repository
+     **/
+    public enum RepoVisibility {
+
+        /**
+         * {@code "public"} visibility
+         **/
+        vPublic("public"),
+
+        /**
+         * {@code "private"} visibility
+         **/
+        vPrivate("private"),
+
+        /**
+         * {@code "internal"} visibility
+         **/
+        internal("internal");
+
+        /**
+         * {@code "visibility"} value
+         **/
+        private final String visibility;
+
+        /**
+         * Constructor to init a {@link Repository.RepoVisibility}
+         *
+         * @param visibility : {@code "visibility"} value
+         **/
+        RepoVisibility(String visibility) {
+            this.visibility = visibility;
+        }
+
+        /**
+         * Method to reach a {@link Repository.RepoVisibility} value
+         *
+         * @param target: target of the {@link Repository.RepoVisibility} to reach
+         * @return visibility as {@link Repository.RepoVisibility} or null if it not exists
+         **/
+        public static Repository.RepoVisibility reachEnumConstant(String target) {
+            for (Repository.RepoVisibility visibility : Repository.RepoVisibility.values())
+                if (visibility.toString().equals(target))
+                    return visibility;
+            return null;
+        }
+
+        /**
+         * Method to get {@link #visibility} instance <br>
+         * No-any params required
+         *
+         * @return {@link #visibility} instance as {@link String}
+         **/
+        @Override
+        public String toString() {
+            return visibility;
+        }
 
     }
 

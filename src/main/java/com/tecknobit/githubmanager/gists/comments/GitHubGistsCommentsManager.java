@@ -112,7 +112,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
     public ArrayList<GitHubComment> getGistComments(Gist gist) throws IOException {
-        return getGistComments((String) gist.getId(), LIBRARY_OBJECT);
+        return getGistComments(gist.getId(), LIBRARY_OBJECT);
     }
 
     /**
@@ -139,7 +139,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
     public <T> T getGistComments(Gist gist, ReturnFormat format) throws IOException {
-        return getGistComments((String) gist.getId(), format);
+        return getGistComments(gist.getId(), format);
     }
 
     /**
@@ -227,7 +227,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
     public ArrayList<GitHubComment> getGistComments(Gist gist, Params queryParams) throws IOException {
-        return getGistComments((String) gist.getId(), queryParams, LIBRARY_OBJECT);
+        return getGistComments(gist.getId(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
@@ -263,7 +263,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments")
     public <T> T getGistComments(Gist gist, Params queryParams, ReturnFormat format) throws IOException {
-        return getGistComments((String) gist.getId(), queryParams, format);
+        return getGistComments(gist.getId(), queryParams, format);
     }
 
     /**
@@ -385,7 +385,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
     public GitHubComment createGistComment(Gist gist, String body) throws IOException {
-        return createGistComment((String) gist.getId(), body, LIBRARY_OBJECT);
+        return createGistComment(gist.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -413,7 +413,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = POST, path = "/gists/{gist_id}/comments")
     public <T> T createGistComment(Gist gist, String body, ReturnFormat format) throws IOException {
-        return createGistComment((String) gist.getId(), body, format);
+        return createGistComment(gist.getId(), body, format);
     }
 
     /**
@@ -497,7 +497,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
     public GitHubComment getGistComment(Gist gist, long commentId) throws IOException {
-        return getGistComment((String) gist.getId(), commentId, LIBRARY_OBJECT);
+        return getGistComment(gist.getId(), commentId, LIBRARY_OBJECT);
     }
 
     /**
@@ -525,7 +525,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = GET, path = "/gists/{gist_id}/comments/{comment_id}")
     public <T> T getGistComment(Gist gist, long commentId, ReturnFormat format) throws IOException {
-        return getGistComment((String) gist.getId(), commentId, format);
+        return getGistComment(gist.getId(), commentId, format);
     }
 
     /**
@@ -608,7 +608,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
     public GitHubComment updateGistComment(Gist gist, GitHubComment comment, String body) throws IOException {
-        return updateGistComment((String) gist.getId(), (long) comment.getId(), body, LIBRARY_OBJECT);
+        return updateGistComment(gist.getId(), comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -637,7 +637,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
     public <T> T updateGistComment(Gist gist, GitHubComment comment, String body, ReturnFormat format) throws IOException {
-        return updateGistComment((String) gist.getId(), (long) comment.getId(), body, format);
+        return updateGistComment(gist.getId(), comment.getId(), body, format);
     }
 
     /**
@@ -666,7 +666,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
     public GitHubComment updateGistComment(Gist gist, long commentId, String body) throws IOException {
-        return updateGistComment((String) gist.getId(), commentId, body, LIBRARY_OBJECT);
+        return updateGistComment(gist.getId(), commentId, body, LIBRARY_OBJECT);
     }
 
     /**
@@ -695,7 +695,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
     public <T> T updateGistComment(Gist gist, long commentId, String body, ReturnFormat format) throws IOException {
-        return updateGistComment((String) gist.getId(), commentId, body, format);
+        return updateGistComment(gist.getId(), commentId, body, format);
     }
 
     /**
@@ -724,7 +724,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
     public GitHubComment updateGistComment(String gistId, GitHubComment comment, String body) throws IOException {
-        return updateGistComment(gistId, (long) comment.getId(), body, LIBRARY_OBJECT);
+        return updateGistComment(gistId, comment.getId(), body, LIBRARY_OBJECT);
     }
 
     /**
@@ -753,7 +753,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PATCH, path = "/gists/{gist_id}/comments/{comment_id}")
     public <T> T updateGistComment(String gistId, GitHubComment comment, String body, ReturnFormat format) throws IOException {
-        return updateGistComment(gistId, (long) comment.getId(), body, format);
+        return updateGistComment(gistId, comment.getId(), body, format);
     }
 
     /**
@@ -846,7 +846,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
     public boolean deleteGistComment(Gist gist, GitHubComment comment) {
-        return deleteGistComment((String) gist.getId(), (long) comment.getId());
+        return deleteGistComment(gist.getId(), comment.getId());
     }
 
     /**
@@ -861,7 +861,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
     public boolean deleteGistComment(String gistId, GitHubComment comment) {
-        return deleteGistComment(gistId, (long) comment.getId());
+        return deleteGistComment(gistId, comment.getId());
     }
 
     /**
@@ -876,7 +876,7 @@ public class GitHubGistsCommentsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = DELETE, path = "/gists/{gist_id}/comments/{comment_id}")
     public boolean deleteGistComment(Gist gist, long commentId) {
-        return deleteGistComment((String) gist.getId(), commentId);
+        return deleteGistComment(gist.getId(), commentId);
     }
 
     /**

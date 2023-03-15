@@ -11,8 +11,7 @@ import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.Runne
 import com.tecknobit.githubmanager.actions.selfhosted.runnergroups.records.RunnerGroupsList;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
 import com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
-import com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList;
+import com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
@@ -23,7 +22,7 @@ import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.selfhosted.records.RunnersList.returnRunnersList;
 import static com.tecknobit.githubmanager.organizations.organizations.records.OrganizationsList.returnOrganizationsList;
-import static com.tecknobit.githubmanager.repositories.repositories.records.OrganizationRepositoriesList.returnOrganizationRepositories;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 
 /**
  * The {@code GitHubRunnerGroupsManager} class is useful to manage all GitHub's runner groups endpoints
@@ -3302,7 +3301,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:         the organization from fetch the list
      * @param runnerGroup: the runner group from fetch the list
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3321,8 +3320,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org,
-                                                                      RunnerGroup runnerGroup) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(Organization org,
+                                                          RunnerGroup runnerGroup) throws IOException {
         return getAuthorizedRepositoriesList(org.getLogin(), runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
@@ -3366,7 +3365,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:         the organization name. The name is not case-sensitive
      * @param runnerGroup: the runner group from fetch the list
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3385,7 +3384,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup) throws IOException {
         return getAuthorizedRepositoriesList(org, runnerGroup.getId(), LIBRARY_OBJECT);
     }
 
@@ -3429,7 +3428,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:           the organization from fetch the list
      * @param runnerGroupId: unique identifier of the self-hosted runner group
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3448,8 +3447,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org,
-                                                                      long runnerGroupId) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(Organization org, long runnerGroupId) throws IOException {
         return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, LIBRARY_OBJECT);
     }
 
@@ -3480,8 +3478,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public <T> T getAuthorizedRepositoriesList(Organization org, long runnerGroupId,
-                                               ReturnFormat format) throws IOException {
+    public <T> T getAuthorizedRepositoriesList(Organization org, long runnerGroupId, ReturnFormat format) throws IOException {
         return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, format);
     }
 
@@ -3493,7 +3490,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *
      * @param org:           the organization name. The name is not case-sensitive
      * @param runnerGroupId: unique identifier of the self-hosted runner group
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3511,7 +3508,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, long runnerGroupId) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(String org, long runnerGroupId) throws IOException {
         return getAuthorizedRepositoriesList(org, runnerGroupId, LIBRARY_OBJECT);
     }
 
@@ -3541,10 +3538,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      * List repository access to a self-hosted runner group in an organization</a>
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public <T> T getAuthorizedRepositoriesList(String org, long runnerGroupId,
-                                               ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH), format);
+    public <T> T getAuthorizedRepositoriesList(String org, long runnerGroupId, ReturnFormat format) throws IOException {
+        return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/"
+                + runnerGroupId + REPOSITORIES_PATH), format);
     }
 
     /**
@@ -3568,7 +3564,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                            - [boolean]
      *                        </li>
      *                     </ul>
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3587,8 +3583,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org, RunnerGroup runnerGroup,
-                                                                      Params queryParams) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(Organization org, RunnerGroup runnerGroup,
+                                                          Params queryParams) throws IOException {
         return getAuthorizedRepositoriesList(org.getLogin(), runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -3658,7 +3654,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                            - [boolean]
      *                        </li>
      *                     </ul>
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3677,8 +3673,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup,
-                                                                      Params queryParams) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(String org, RunnerGroup runnerGroup,
+                                                          Params queryParams) throws IOException {
         return getAuthorizedRepositoriesList(org, runnerGroup.getId(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -3748,7 +3744,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                              - [boolean]
      *                          </li>
      *                       </ul>
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3767,8 +3763,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(Organization org, long runnerGroupId,
-                                                                      Params queryParams) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(Organization org, long runnerGroupId,
+                                                          Params queryParams) throws IOException {
         return getAuthorizedRepositoriesList(org.getLogin(), runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -3838,7 +3834,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      *                              - [boolean]
      *                          </li>
      *                       </ul>
-     * @return repositories with access to a self-hosted runner group in organization as {@link OrganizationRepositoriesList} custom object
+     * @return repositories with access to a self-hosted runner group in organization as {@link RepositoriesList} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -3856,8 +3852,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public OrganizationRepositoriesList getAuthorizedRepositoriesList(String org, long runnerGroupId,
-                                                                      Params queryParams) throws IOException {
+    public RepositoriesList getAuthorizedRepositoriesList(String org, long runnerGroupId,
+                                                          Params queryParams) throws IOException {
         return getAuthorizedRepositoriesList(org, runnerGroupId, queryParams, LIBRARY_OBJECT);
     }
 
@@ -3902,8 +3898,8 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @RequestPath(method = GET, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public <T> T getAuthorizedRepositoriesList(String org, long runnerGroupId, Params queryParams,
                                                ReturnFormat format) throws IOException {
-        return returnOrganizationRepositories(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH
-                + "/" + runnerGroupId + REPOSITORIES_PATH + queryParams.createQueryString()), format);
+        return returnRepositoriesList(sendGetRequest(ORGS_PATH + org + ACTIONS_RUNNER_GROUPS_PATH + "/"
+                + runnerGroupId + REPOSITORIES_PATH + queryParams.createQueryString()), format);
     }
 
     /**
@@ -3922,7 +3918,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, RunnerGroup runnerGroup,
-                                             OrganizationRepositoriesList repositoriesIds) {
+                                             RepositoriesList repositoriesIds) {
         return authorizeRepositoriesList(org.getLogin(), runnerGroup.getId(), repositoriesIds);
     }
 
@@ -3942,7 +3938,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(String org, RunnerGroup runnerGroup,
-                                             OrganizationRepositoriesList repositoriesIds) {
+                                             RepositoriesList repositoriesIds) {
         return authorizeRepositoriesList(org, runnerGroup.getId(), repositoriesIds);
     }
 
@@ -3962,7 +3958,7 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
     public boolean authorizeRepositoriesList(Organization org, long runnerGroupId,
-                                             OrganizationRepositoriesList repositoriesIds) {
+                                             RepositoriesList repositoriesIds) {
         return authorizeRepositoriesList(org.getLogin(), runnerGroupId, repositoriesIds);
     }
 
@@ -3981,9 +3977,9 @@ public class GitHubRunnerGroupsManager extends GitHubManager {
      **/
     @WrappedRequest
     @RequestPath(method = PUT, path = "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories")
-    public boolean authorizeRepositoriesList(String org, long runnerGroupId, OrganizationRepositoriesList repositoriesIds) {
+    public boolean authorizeRepositoriesList(String org, long runnerGroupId, RepositoriesList repositoriesIds) {
         ArrayList<Long> ids = new ArrayList<>();
-        for (CompleteRepository repository : repositoriesIds.getRepositories())
+        for (Repository repository : repositoriesIds.getRepositories())
             ids.add(repository.getId());
         return authorizeRepositoriesList(org, runnerGroupId, ids.toArray(new Long[0]));
     }

@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.checks.suites.records;
 
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.repositories.repositories.records.CompleteRepository;
+import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,7 +26,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
     /**
      * {@code repository} of the check suite
      **/
-    private final CompleteRepository repository;
+    private final Repository repository;
 
     /**
      * Constructor to init an {@link CheckSuitesPreferences}
@@ -34,7 +34,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
      * @param preferences : preferences of the check suite
      * @param repository: repository of the check suite
      **/
-    public CheckSuitesPreferences(SuitesPreferences preferences, CompleteRepository repository) {
+    public CheckSuitesPreferences(SuitesPreferences preferences, Repository repository) {
         super(null);
         this.preferences = preferences;
         this.repository = repository;
@@ -48,7 +48,7 @@ public class CheckSuitesPreferences extends GitHubResponse {
     public CheckSuitesPreferences(JSONObject jPreferences) {
         super(jPreferences);
         preferences = new SuitesPreferences(hResponse.getJSONObject("preferences", new JSONObject()));
-        repository = new CompleteRepository(hResponse.getJSONObject("repository", new JSONObject()));
+        repository = new Repository(hResponse.getJSONObject("repository", new JSONObject()));
     }
 
     /**
@@ -65,9 +65,9 @@ public class CheckSuitesPreferences extends GitHubResponse {
      * Method to get {@link #repository} instance <br>
      * No-any params required
      *
-     * @return {@link #repository} instance as {@link CompleteRepository}
+     * @return {@link #repository} instance as {@link Repository}
      **/
-    public CompleteRepository getRepository() {
+    public Repository getRepository() {
         return repository;
     }
 
