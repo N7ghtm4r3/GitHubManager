@@ -83,6 +83,95 @@ import static com.tecknobit.githubmanager.repositories.repositories.records.Repo
 public class Repository extends BaseItemStructure {
 
     /**
+     * {@code RepositoryType} list of the available types for repository
+     **/
+    public enum RepositoryType {
+
+        /**
+         * {@code all} repository type
+         **/
+        all("all"),
+
+        /**
+         * {@code public} repository type
+         **/
+        tPublic("public"),
+
+        /**
+         * {@code private} repository type
+         **/
+        tPrivate("private"),
+
+        /**
+         * {@code forks} repository type
+         **/
+        forks("forks"),
+
+        /**
+         * {@code sources} repository type
+         **/
+        sources("sources"),
+
+        /**
+         * {@code member} repository type
+         **/
+        member("member");
+
+        /**
+         * {@code type} value
+         **/
+        private final String type;
+
+        /**
+         * Constructor to init a {@link RepositoryType}
+         *
+         * @param type: type value
+         */
+        RepositoryType(String type) {
+            this.type = type;
+        }
+
+        /**
+         * Method to get {@link #type} instance <br>
+         * No-any params required
+         *
+         * @return {@link #type} instance as {@link String}
+         **/
+        @Override
+        public String toString() {
+            return type;
+        }
+
+    }
+
+    /**
+     * {@code RepositorySort} list of the available sorters for repository
+     **/
+    public enum RepositorySort {
+
+        /**
+         * {@code created} sort
+         **/
+        created,
+
+        /**
+         * {@code updated} sort
+         **/
+        updated,
+
+        /**
+         * {@code pushed} sort
+         **/
+        pushed,
+
+        /**
+         * {@code full_name} sort
+         **/
+        full_name
+
+    }
+
+    /**
      * {@code SquashMergeCommitTitle} list of the available squash merge commit titles
      **/
     public enum SquashMergeCommitTitle {
