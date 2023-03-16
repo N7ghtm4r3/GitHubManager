@@ -27,6 +27,14 @@ import org.json.JSONObject;
  *         <a href="https://docs.github.com/en/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization">
  *             Update a webhook configuration for an organization</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository">
+ *             Get a webhook configuration for a repository</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository">
+ *             Update a webhook configuration for a repository</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/
@@ -44,7 +52,7 @@ public class Webhook extends GitHubResponse {
      * (verification is not performed). The default is {@code "0"}.
      * <strong>Strongly recommendation not setting this to {@code "1"} as you are subject to man-in-the-middle and other attacks </strong>
      **/
-    private final int insecureSsl;
+    private final Object insecureSsl;
 
     /**
      * {@code secret} if provided, the {code "secret"} will be used as the {@code "key"} to generate the HMAC hex digest
@@ -117,7 +125,7 @@ public class Webhook extends GitHubResponse {
     public Webhook(JSONObject jWebhook) {
         super(jWebhook);
         contentType = hResponse.getString("content_type");
-        insecureSsl = hResponse.getInt("insecure_ssl", 0);
+        insecureSsl = hResponse.get("insecure_ssl");
         secret = hResponse.getString("secret");
         url = hResponse.getString("url");
         username = hResponse.getString("username");
@@ -140,8 +148,8 @@ public class Webhook extends GitHubResponse {
      *
      * @return {@link #insecureSsl} instance as int
      **/
-    public int getInsecureSsl() {
-        return insecureSsl;
+    public <T> T getInsecureSsl() {
+        return (T) insecureSsl;
     }
 
     /**

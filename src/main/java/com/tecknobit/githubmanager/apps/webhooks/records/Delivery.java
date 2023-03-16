@@ -35,6 +35,14 @@ import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
  *         <a href="https://docs.github.com/en/rest/orgs/webhooks#get-a-webhook-delivery-for-an-organization-webhook">
  *             Get a webhook delivery for an organization webhook</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/webhooks/repo-deliveries#list-deliveries-for-a-repository-webhook">
+ *             List deliveries for a repository webhook</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/webhooks/repo-deliveries#get-a-delivery-for-a-repository-webhook">
+ *             Get a delivery for a repository webhook</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/

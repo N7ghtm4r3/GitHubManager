@@ -40,42 +40,42 @@ public class OrganizationWebhook extends BaseResponseDetails {
     /**
      * {@code pingUrl} the ping url of the organization webhook
      **/
-    private final String pingUrl;
+    protected final String pingUrl;
 
     /**
      * {@code deliveriesUrl} deliveries url of the organization webhook
      **/
-    private final String deliveriesUrl;
+    protected final String deliveriesUrl;
 
     /**
      * {@code events} of the organization webhook
      **/
-    private final ArrayList<String> events;
+    protected final ArrayList<String> events;
 
     /**
      * {@code active} whether the organization webhook is active
      **/
-    private final boolean active;
+    protected final boolean active;
 
     /**
      * {@code config} of the organization webhook
      **/
-    private final Webhook config;
+    protected final Webhook config;
 
     /**
      * {@code updatedAt} update date of the organization webhook
      **/
-    private final String updatedAt;
+    protected final String updatedAt;
 
     /**
      * {@code createdAt} creation date of the organization webhook
      **/
-    private final String createdAt;
+    protected final String createdAt;
 
     /**
      * {@code type} of the organization webhook
      **/
-    private final String type;
+    protected final String type;
 
     /**
      * Constructor to init a {@link OrganizationWebhook}

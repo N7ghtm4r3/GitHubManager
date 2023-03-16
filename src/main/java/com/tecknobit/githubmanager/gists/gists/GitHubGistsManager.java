@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.activity.starring.GitHubStarringManager.STARRED_PATH;
+import static com.tecknobit.githubmanager.repositories.forks.GitHubForksManager.FORKS_PATH;
 
 /**
  * The {@code GitHubGistsManager} class is useful to manage all GitHub's gists endpoints
@@ -42,11 +43,6 @@ public class GitHubGistsManager extends GitHubManager {
      * {@code GISTS_STARRED_PATH} constant for {@code "gists/starred"} path
      **/
     public static final String GISTS_STARRED_PATH = "gists" + STARRED_PATH;
-
-    /**
-     * {@code FORKS_PATH} constant for {@code "/forks"} path
-     **/
-    public static final String FORKS_PATH = "/forks";
 
     /**
      * {@code STAR_PATH} constant for {@code "/star"} path

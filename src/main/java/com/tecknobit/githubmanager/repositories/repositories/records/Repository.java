@@ -1,5 +1,7 @@
 package com.tecknobit.githubmanager.repositories.repositories.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.codesofconduct.records.CodeConduct;
 import com.tecknobit.githubmanager.licenses.records.CommonLicense;
 import com.tecknobit.githubmanager.records.generic.Permissions;
@@ -7,11 +9,13 @@ import com.tecknobit.githubmanager.records.parents.BaseItemStructure;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.records.parents.User;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepoVisibility.*;
 
 /**
@@ -75,6 +79,14 @@ import static com.tecknobit.githubmanager.repositories.repositories.records.Repo
  *     <li>
  *         <a href="https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user">
  *             List repositories for a user</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/forks#list-forks">
+ *             List forks</a>
+ *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/repos/forks#create-a-fork">
+ *             Create a fork</a>
  *     </li>
  * </ul>
  * @see GitHubResponse
@@ -168,6 +180,33 @@ public class Repository extends BaseItemStructure {
          * {@code full_name} sort
          **/
         full_name
+
+    }
+
+    /**
+     * {@code ForkSort} list of the available sorters for fork
+     **/
+    public enum ForkSort {
+
+        /**
+         * {@code newest} sort
+         **/
+        newest,
+
+        /**
+         * {@code oldest} sort
+         **/
+        oldest,
+
+        /**
+         * {@code stargazers} sort
+         **/
+        stargazers,
+
+        /**
+         * {@code watchers} sort
+         **/
+        watchers
 
     }
 
@@ -2254,6 +2293,44 @@ public class Repository extends BaseItemStructure {
      **/
     public SecurityAnalysis getSecurityAnalysis() {
         return securityAnalysis;
+    }
+
+    /**
+     * Method to create a repository
+     *
+     * @param repositoryResponse: obtained from GitHub's response
+     * @param format:             return type formatter -> {@link ReturnFormat}
+     * @return repository as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnRepository(String repositoryResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(repositoryResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Repository(new JSONObject(repositoryResponse));
+            default:
+                return (T) repositoryResponse;
+        }
+    }
+
+    /**
+     * Method to create a repositories list
+     *
+     * @param repositoriesResponse: obtained from GitHub's response
+     * @param format:               return type formatter -> {@link ReturnFormat}
+     * @return repositories list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnRepositories(String repositoriesResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(repositoriesResponse);
+            case LIBRARY_OBJECT:
+                return (T) returnRepositoriesList(new JSONArray(repositoriesResponse));
+            default:
+                return (T) repositoriesResponse;
+        }
     }
 
     /**

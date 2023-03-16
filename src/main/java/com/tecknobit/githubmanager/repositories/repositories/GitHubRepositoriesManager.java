@@ -29,7 +29,8 @@ import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManage
 import static com.tecknobit.githubmanager.records.organization.Team.returnTeamsList;
 import static com.tecknobit.githubmanager.records.parents.GitHubResponse.returnStringsList;
 import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
-import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
+import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.returnRepositories;
+import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.returnRepository;
 
 /**
  * The {@code GitHubRepositoriesManager} class is useful to manage all GitHub's repositories endpoints
@@ -4888,25 +4889,6 @@ public class GitHubRepositoriesManager extends GitHubManager {
     }
 
     /**
-     * Method to create a repository
-     *
-     * @param repositoryResponse: obtained from GitHub's response
-     * @param format:             return type formatter -> {@link ReturnFormat}
-     * @return repository as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnRepository(String repositoryResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(repositoryResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Repository(new JSONObject(repositoryResponse));
-            default:
-                return (T) repositoryResponse;
-        }
-    }
-
-    /**
      * Method to get the list of the public repositories for the specified user. Note: For GitHub AE, this endpoint will
      * list internal repositories for the specified user
      * @param username: the handle for the GitHub user account
@@ -5055,25 +5037,6 @@ public class GitHubRepositoriesManager extends GitHubManager {
     public <T> T getUserRepositories(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnRepositories(sendGetRequest(USERS_PATH + username + REPOS_QUERY_PATH
                 + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a repositories list
-     *
-     * @param repositoriesResponse: obtained from GitHub's response
-     * @param format:               return type formatter -> {@link ReturnFormat}
-     * @return repositories list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnRepositories(String repositoriesResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(repositoriesResponse);
-            case LIBRARY_OBJECT:
-                return (T) returnRepositoriesList(new JSONArray(repositoriesResponse));
-            default:
-                return (T) repositoriesResponse;
-        }
     }
 
 }

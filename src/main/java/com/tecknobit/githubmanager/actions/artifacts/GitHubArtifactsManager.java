@@ -639,7 +639,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -679,7 +679,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -720,7 +720,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -761,7 +761,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -797,7 +797,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -834,7 +834,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -871,7 +871,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
@@ -908,7 +908,7 @@ public class GitHubArtifactsManager extends GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/actions/artifacts#download-an-artifact">
      * Download an artifact</a>
-     * @apiNote this method could not work properly because need different scenarios attempts to be developed in the correct
+     * @implNote this method could not work properly because need different scenarios attempts to be developed in the correct
      * way, so if you get an error when use it please create a GitHub's ticket <a href="https://github.com/N7ghtm4r3/GitHubManager/issues/new">here</a>
      * with GitHub's API response and write about error that has been thrown. Thank you for help!
      **/
