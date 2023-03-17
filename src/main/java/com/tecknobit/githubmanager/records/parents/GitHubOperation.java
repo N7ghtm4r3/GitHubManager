@@ -128,14 +128,18 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
             milestone = new Milestone(jMilestone);
         else
             milestone = null;
-        String jLockReason = hResponse.getString("active_lock_reason");
-        if (jLockReason != null)
-            activeLockReason = LockReason.valueOf(jLockReason);
+        String sEnum = hResponse.getString("active_lock_reason");
+        if (sEnum != null)
+            activeLockReason = LockReason.valueOf(sEnum);
         else
             activeLockReason = null;
         assignee = new User(hResponse.getJSONObject("assignee", new JSONObject()));
         assignees = returnUsersList(hResponse.getJSONArray("assignees"));
-        authorAssociation = AuthorAssociation.valueOf(hResponse.getString("author_association"));
+        sEnum = hResponse.getString("author_association");
+        if (sEnum != null)
+            authorAssociation = AuthorAssociation.valueOf(sEnum);
+        else
+            authorAssociation = null;
         draft = hResponse.getBoolean("draft");
     }
 

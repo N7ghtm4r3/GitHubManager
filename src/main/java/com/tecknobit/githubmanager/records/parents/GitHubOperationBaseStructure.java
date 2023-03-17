@@ -104,7 +104,11 @@ public abstract class GitHubOperationBaseStructure extends GitHubResponse {
         id = hResponse.getLong("id", 0);
         nodeId = hResponse.getString("node_id");
         number = hResponse.getLong("number", 0);
-        state = OperationState.valueOf(hResponse.getString("state"));
+        String sState = hResponse.getString("state");
+        if (sState != null)
+            state = OperationState.valueOf(sState);
+        else
+            state = null;
         title = hResponse.getString("title");
         createdAt = hResponse.getString("created_at");
         updatedAt = hResponse.getString("updated_at");

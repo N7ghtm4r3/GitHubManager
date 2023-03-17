@@ -1,6 +1,7 @@
 package com.tecknobit.githubmanager.pulls.pulls.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.*;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
@@ -808,14 +809,15 @@ public class PullRequest extends GitHubOperation {
          **/
         public Links(JSONObject jLinks) {
             super(jLinks);
-            self = hItem.getJsonHelper("self").getString("href");
-            html = hItem.getJsonHelper("html").getString("href");
-            issue = hItem.getJsonHelper("issue").getString("href");
-            comments = hItem.getJsonHelper("comments").getString("href");
-            reviewComments = hItem.getJsonHelper("review_comments").getString("href");
-            reviewComment = hItem.getJsonHelper("review_comment").getString("href");
-            commits = hItem.getJsonHelper("commits").getString("href");
-            statuses = hItem.getJsonHelper("statuses").getString("href");
+            JsonHelper hDef = new JsonHelper(new JSONObject());
+            self = hItem.getJsonHelper("self", hDef).getString("href");
+            html = hItem.getJsonHelper("html", hDef).getString("href");
+            issue = hItem.getJsonHelper("issue", hDef).getString("href");
+            comments = hItem.getJsonHelper("comments", hDef).getString("href");
+            reviewComments = hItem.getJsonHelper("review_comments", hDef).getString("href");
+            reviewComment = hItem.getJsonHelper("review_comment", hDef).getString("href");
+            commits = hItem.getJsonHelper("commits", hDef).getString("href");
+            statuses = hItem.getJsonHelper("statuses", hDef).getString("href");
         }
 
         /**

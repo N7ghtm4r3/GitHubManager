@@ -62,7 +62,13 @@ public abstract class BaseItemStructure extends GitHubResponse {
      **/
     public BaseItemStructure(JSONObject jBaseItemStructure) {
         super(jBaseItemStructure);
-        id = hResponse.get("id");
+        Object tmpId;
+        try {
+            tmpId = hResponse.getLong("id");
+        } catch (NumberFormatException e) {
+            tmpId = hResponse.getString("id");
+        }
+        id = tmpId;
         nodeId = hResponse.getString("node_id");
         url = hResponse.getString("url");
         createdAt = hResponse.getString("created_at");

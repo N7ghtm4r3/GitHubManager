@@ -66,11 +66,16 @@ public abstract class CommitData extends GitHubResponse {
      **/
     public CommitData(JSONObject jCommitData) {
         super(jCommitData);
-        author = new CommitProfile(hResponse.getJSONObject("author", new JSONObject()));
-        committer = new CommitProfile(hResponse.getJSONObject("committer", new JSONObject()));
-        tree = new ShaItem(hResponse.getJSONObject("tree", new JSONObject()));
+        tree = new ShaItem(hResponse.getJSONObject("tree"));
         url = hResponse.getString("url");
-        verification = new Verification(hResponse.getJSONObject("verification", new JSONObject()));
+        JSONObject jVerification = hResponse.getJSONObject("verification");
+        if (jVerification != null)
+            verification = new Verification(jVerification);
+        else
+            verification = null;
+        hResponse.setJSONObjectSource(hResponse.getJSONObject("commit"));
+        author = new CommitProfile(hResponse.getJSONObject("author"));
+        committer = new CommitProfile(hResponse.getJSONObject("committer"));
     }
 
     /**
