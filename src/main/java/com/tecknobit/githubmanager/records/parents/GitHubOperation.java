@@ -1,13 +1,14 @@
 package com.tecknobit.githubmanager.records.parents;
 
 import com.tecknobit.githubmanager.pulls.pulls.records.PullRequest;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code GitHubOperation} class is useful to format a GitHub's operation

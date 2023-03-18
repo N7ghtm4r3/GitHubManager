@@ -1,7 +1,6 @@
 package com.tecknobit.githubmanager.projects.boards;
 
 import com.tecknobit.apimanager.annotations.RequestPath;
-import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
@@ -10,14 +9,14 @@ import com.tecknobit.githubmanager.projects.boards.records.Project;
 import com.tecknobit.githubmanager.projects.boards.records.Project.OrganizationPermission;
 import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure.OperationState;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
+import static com.tecknobit.githubmanager.projects.boards.records.Project.returnProject;
+import static com.tecknobit.githubmanager.projects.boards.records.Project.returnProjects;
 
 /**
  * The {@code GitHubBoardsManager} class is useful to manage all GitHub's boards endpoints
@@ -1575,25 +1574,6 @@ public class GitHubBoardsManager extends GitHubManager {
     }
 
     /**
-     * Method to create a project
-     *
-     * @param projectResponse: obtained from GitHub's response
-     * @param format:          return type formatter -> {@link ReturnFormat}
-     * @return project as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnProject(String projectResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONObject(projectResponse);
-            case LIBRARY_OBJECT:
-                return (T) new Project(new JSONObject(projectResponse));
-            default:
-                return (T) projectResponse;
-        }
-    }
-
-    /**
      * Method to get the list of the user projects
      *
      * @param username: the handle for the GitHub user account
@@ -1722,29 +1702,6 @@ public class GitHubBoardsManager extends GitHubManager {
     public <T> T getUserProjects(String username, Params queryParams, ReturnFormat format) throws IOException {
         return returnProjects(sendGetRequest(USERS_PATH + username + PROJECTS_PATH
                 + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create a projects list
-     *
-     * @param projectsResponse: obtained from GitHub's response
-     * @param format:           return type formatter -> {@link ReturnFormat}
-     * @return projects list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnProjects(String projectsResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(projectsResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<Project> projects = new ArrayList<>();
-                JSONArray jProjects = new JSONArray(projectsResponse);
-                for (int j = 0; j < jProjects.length(); j++)
-                    projects.add(new Project(jProjects.getJSONObject(j)));
-                return (T) projects;
-            default:
-                return (T) projectsResponse;
-        }
     }
 
 }

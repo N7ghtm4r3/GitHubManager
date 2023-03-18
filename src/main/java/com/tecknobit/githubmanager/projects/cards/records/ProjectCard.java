@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.projects.cards.records;
 
 import com.tecknobit.githubmanager.projects.records.ProjectItem;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 /**

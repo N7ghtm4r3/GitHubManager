@@ -9,7 +9,7 @@ import com.tecknobit.githubmanager.collaborators.collaborators.records.Collabora
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization.RepositoryPermission;
 import com.tecknobit.githubmanager.projects.boards.records.Project;
 import com.tecknobit.githubmanager.projects.collaborators.records.ProjectPermission;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJ
 import static com.tecknobit.githubmanager.collaborators.collaborators.GitHubCollaboratorsManager.COLLABORATORS_PATH;
 import static com.tecknobit.githubmanager.collaborators.collaborators.GitHubCollaboratorsManager.PERMISSION_PATH;
 import static com.tecknobit.githubmanager.projects.boards.GitHubBoardsManager.ROOT_PROJECTS_PATH;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code GitHubProjectsCollaboratorsManager} class is useful to manage all GitHub's pages managers endpoints

@@ -7,8 +7,6 @@ import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.collaborators.collaborators.records.Collaborator.Affiliation;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.organization.Team;
-import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.repositories.repositories.records.CodeOwnersError;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepoVisibility;
@@ -17,6 +15,8 @@ import com.tecknobit.githubmanager.repositories.repositories.records.Repository.
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository.SecurityAnalysis;
 import com.tecknobit.githubmanager.repositories.repositories.records.RepositoryLanguages;
 import com.tecknobit.githubmanager.repositories.repositories.records.RepositoryTag;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,11 +26,11 @@ import java.util.ArrayList;
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.DISPATCHES_PATH;
-import static com.tecknobit.githubmanager.records.organization.Team.returnTeamsList;
 import static com.tecknobit.githubmanager.records.parents.GitHubResponse.returnStringsList;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
 import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.returnRepositories;
 import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.returnRepository;
+import static com.tecknobit.githubmanager.teams.teams.records.Team.returnTeamsList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code GitHubRepositoriesManager} class is useful to manage all GitHub's repositories endpoints

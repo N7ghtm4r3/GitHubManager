@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.deployments.deploymentstatuses.records;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.deployments.records.DeploymentStructure;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 /**

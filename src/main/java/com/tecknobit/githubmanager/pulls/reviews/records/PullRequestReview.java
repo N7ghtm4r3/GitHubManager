@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.pulls.reviews.records;
 import com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment.ReviewCommentLinks;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;

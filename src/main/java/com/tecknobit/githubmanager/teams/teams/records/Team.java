@@ -1,8 +1,9 @@
-package com.tecknobit.githubmanager.records.organization;
+package com.tecknobit.githubmanager.teams.teams.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
-import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
+import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
+import com.tecknobit.githubmanager.records.parents.BaseItemStructure;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,17 +15,34 @@ import java.util.ArrayList;
  *
  * @author N7ghtm4r3 - Tecknobit
  * @see GitHubResponse
- * @see BaseResponseDetails
+ * @see BaseItemStructure
  **/
-public class Team extends BaseResponseDetails {
+public class Team extends BaseItemStructure {
 
     /**
-     * {@code nodeId} identifier of the node value
+     * {@code Privacy} list of available privacy
      **/
-    private final String nodeId;
+    public enum Privacy {
+
+        /**
+         * {@code secret} privacy
+         **/
+        secret,
+
+        /**
+         * {@code closed} privacy
+         **/
+        closed
+
+    }
 
     /**
-     * {@code htmlUrl} html url value
+     * {@code name} of the team
+     **/
+    private final String name;
+
+    /**
+     * {@code htmlUrl} html url of the team
      **/
     private final String htmlUrl;
 
@@ -64,25 +82,53 @@ public class Team extends BaseResponseDetails {
     private final Team parent;
 
     /**
+     * {@code membersCount} members count of the team
+     **/
+    private final int membersCount;
+
+    /**
+     * {@code reposCount} repost count of the team
+     **/
+    private final int reposCount;
+
+    /**
+     * {@code organization} of the team
+     **/
+    private final Organization organization;
+
+    /**
+     * {@code ldapDn} distinguished Name (DN) that team maps to within LDAP environment
+     **/
+    private final String ldapDn;
+
+    /**
      * Constructor to init a {@link Team}
      *
-     * @param id   : identifier value
-     * @param name : the name of the team
-     * @param url: url value
-     * @param nodeId   : identifier of the node value
-     * @param htmlUrl : html url value
-     * @param slug: slug value
-     * @param description   : description value
-     * @param privacy : privacy value
-     * @param permission: permission value
-     * @param membersUrl   : members url value
+     * @param url:            url value
+     * @param id              : identifier value
+     * @param nodeId          : identifier of the node value
+     * @param htmlUrl         : html url value
+     * @param createdAt       : the creation time of the team
+     * @param updatedAt       : the updated time of the team
+     * @param name            : the name of the team
+     * @param slug:           slug value
+     * @param description     : description value
+     * @param privacy         : privacy value
+     * @param permission:     permission value
+     * @param membersUrl      : members url value
      * @param repositoriesUrl : repositories url value
-     * @param parent: groups of organization members that gives permissions on specified repositories
+     * @param parent:         groups of organization members that gives permissions on specified repositories
+     * @param membersCount:   members count of the team
+     * @param reposCount      : repost count of the team
+     * @param organization    : organization of the team
+     * @param ldapDn:         distinguished Name (DN) that team maps to within LDAP environment
      **/
-    public Team(long id, String name, String url, String nodeId, String htmlUrl, String slug, String description,
-                String privacy, String permission, String membersUrl, String repositoriesUrl, Team parent) {
-        super(id, name, url);
-        this.nodeId = nodeId;
+    public Team(String url, long id, String nodeId, String htmlUrl, String createdAt, String updatedAt, String name,
+                String slug, String description, String privacy, String permission, String membersUrl,
+                String repositoriesUrl, Team parent, int membersCount, int reposCount, Organization organization,
+                String ldapDn) {
+        super(url, id, nodeId, createdAt, updatedAt);
+        this.name = name;
         this.htmlUrl = htmlUrl;
         this.slug = slug;
         this.description = description;
@@ -91,6 +137,10 @@ public class Team extends BaseResponseDetails {
         this.membersUrl = membersUrl;
         this.repositoriesUrl = repositoriesUrl;
         this.parent = parent;
+        this.membersCount = membersCount;
+        this.reposCount = reposCount;
+        this.organization = organization;
+        this.ldapDn = ldapDn;
     }
 
     /**
@@ -100,29 +150,48 @@ public class Team extends BaseResponseDetails {
      **/
     public Team(JSONObject jTeam) {
         super(jTeam);
-        nodeId = hResponse.getString("node_id");
-        htmlUrl = hResponse.getString("html_url");
+        name = hResponse.getString("name");
         slug = hResponse.getString("slug");
+        htmlUrl = hResponse.getString("html_url");
         description = hResponse.getString("description");
         privacy = hResponse.getString("privacy");
         permission = hResponse.getString("permission");
         membersUrl = hResponse.getString("members_url");
         repositoriesUrl = hResponse.getString("repositories_url");
-        JSONObject jParent = hResponse.getJSONObject("parent");
-        if (jParent != null)
-            parent = new Team(jParent);
+        JSONObject jItem = hResponse.getJSONObject("parent");
+        if (jItem != null)
+            parent = new Team(jItem);
         else
             parent = null;
+        membersCount = hResponse.getInt("members_count", 0);
+        reposCount = hResponse.getInt("repos_count", 0);
+        jItem = hResponse.getJSONObject("organization");
+        if (jItem != null)
+            organization = new Organization(jItem);
+        else
+            organization = null;
+        ldapDn = hResponse.getString("ldap_dn");
     }
 
     /**
-     * Method to get {@link #nodeId} instance <br>
+     * Method to get {@link #id} instance <br>
      * No-any params required
      *
-     * @return {@link #nodeId} instance as {@link String}
+     * @return {@link #id} instance as {@link Long}
      **/
-    public String getNodeId() {
-        return nodeId;
+    @Override
+    public Long getId() {
+        return super.getId();
+    }
+
+    /**
+     * Method to get {@link #name} instance <br>
+     * No-any params required
+     *
+     * @return {@link #name} instance as {@link String}
+     **/
+    public String getName() {
+        return name;
     }
 
     /**
@@ -203,6 +272,46 @@ public class Team extends BaseResponseDetails {
      **/
     public Team getParent() {
         return parent;
+    }
+
+    /**
+     * Method to get {@link #membersCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #membersCount} instance as int
+     **/
+    public int getMembersCount() {
+        return membersCount;
+    }
+
+    /**
+     * Method to get {@link #reposCount} instance <br>
+     * No-any params required
+     *
+     * @return {@link #reposCount} instance as int
+     **/
+    public int getReposCount() {
+        return reposCount;
+    }
+
+    /**
+     * Method to get {@link #organization} instance <br>
+     * No-any params required
+     *
+     * @return {@link #organization} instance as {@link Organization}
+     **/
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    /**
+     * Method to get {@link #ldapDn} instance <br>
+     * No-any params required
+     *
+     * @return {@link #ldapDn} instance as {@link String}
+     **/
+    public String getLdapDn() {
+        return ldapDn;
     }
 
     /**

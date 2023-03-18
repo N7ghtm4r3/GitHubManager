@@ -4,7 +4,7 @@ import com.tecknobit.githubmanager.actions.workflow.GitHubWorkflowsManager.Appro
 import com.tecknobit.githubmanager.actions.workflow.records.Workflow;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

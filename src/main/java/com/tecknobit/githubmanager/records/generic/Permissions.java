@@ -11,6 +11,38 @@ import org.json.JSONObject;
 public class Permissions {
 
     /**
+     * {@code Permission} list of available permissions
+     **/
+    public enum Permission {
+
+        /**
+         * {@code pull} permission
+         **/
+        pull,
+
+        /**
+         * {@code triage} permission
+         **/
+        triage,
+
+        /**
+         * {@code push} permission
+         **/
+        push,
+
+        /**
+         * {@code maintain} permission
+         **/
+        maintain,
+
+        /**
+         * {@code admin} permission
+         **/
+        admin
+
+    }
+
+    /**
      * {@code "pull"} flag
      **/
     private final boolean pull;

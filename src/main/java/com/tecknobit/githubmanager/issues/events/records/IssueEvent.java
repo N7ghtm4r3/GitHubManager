@@ -4,13 +4,13 @@ import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
 import com.tecknobit.githubmanager.issues.issues.records.Issue;
 import com.tecknobit.githubmanager.reactions.records.Reactions;
-import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.AuthorAssociation;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.Label;
 import com.tecknobit.githubmanager.records.parents.GitHubOperation.LockReason;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

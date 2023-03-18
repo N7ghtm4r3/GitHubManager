@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.collaborators.collaborators.records;
 
 import com.tecknobit.githubmanager.records.generic.Permissions;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 /**

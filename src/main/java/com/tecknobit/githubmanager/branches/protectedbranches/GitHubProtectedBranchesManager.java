@@ -12,9 +12,9 @@ import com.tecknobit.githubmanager.branches.records.BranchProtection.ProtectionI
 import com.tecknobit.githubmanager.branches.records.BranchProtection.RequiredPullRequestReviews;
 import com.tecknobit.githubmanager.branches.records.BranchProtection.RequiredStatusCheck;
 import com.tecknobit.githubmanager.branches.records.BranchProtection.RequiredStatusCheck.Check;
-import com.tecknobit.githubmanager.records.organization.Team;
-import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,9 +26,9 @@ import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.apps.apps.records.GitHubApp.returnAppsList;
 import static com.tecknobit.githubmanager.branches.records.BranchProtection.Restrictions;
-import static com.tecknobit.githubmanager.records.organization.Team.returnTeamsList;
 import static com.tecknobit.githubmanager.records.parents.GitHubResponse.returnStringsList;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
+import static com.tecknobit.githubmanager.teams.teams.records.Team.returnTeamsList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code GitHubProtectedBranchesManager} class is useful to manage all GitHub's protected branches endpoints

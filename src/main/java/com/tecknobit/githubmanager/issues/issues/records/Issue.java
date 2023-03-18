@@ -1,8 +1,12 @@
 package com.tecknobit.githubmanager.issues.issues.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
-import com.tecknobit.githubmanager.records.parents.*;
+import com.tecknobit.githubmanager.records.parents.GitHubOperation;
+import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

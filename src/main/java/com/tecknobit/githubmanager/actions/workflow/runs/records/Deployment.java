@@ -1,10 +1,10 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.githubmanager.actions.workflow.runs.records.Review.Environment;
-import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

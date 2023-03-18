@@ -3,8 +3,8 @@ package com.tecknobit.githubmanager.releases.releases.records;
 import com.tecknobit.githubmanager.reactions.records.Reactions;
 import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
 import com.tecknobit.githubmanager.releases.releaseassets.records.ReleaseAsset;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 import java.util.ArrayList;

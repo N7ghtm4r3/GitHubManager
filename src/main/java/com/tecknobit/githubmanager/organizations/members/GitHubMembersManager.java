@@ -6,16 +6,16 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.collaborators.records.Invitation;
-import com.tecknobit.githubmanager.organizations.members.records.OrganizationInvitation;
-import com.tecknobit.githubmanager.organizations.members.records.OrganizationInvitation.InvitationSource;
-import com.tecknobit.githubmanager.organizations.members.records.OrganizationInvitation.Role;
 import com.tecknobit.githubmanager.organizations.members.records.OrganizationMembership;
 import com.tecknobit.githubmanager.organizations.members.records.OrganizationMembership.MemberFilter;
 import com.tecknobit.githubmanager.organizations.members.records.OrganizationMembership.MembershipRole;
 import com.tecknobit.githubmanager.organizations.members.records.OrganizationMembership.MembershipState;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.organization.Team;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.records.generic.EntityInvitation;
+import com.tecknobit.githubmanager.records.generic.EntityInvitation.InvitationSource;
+import com.tecknobit.githubmanager.records.generic.EntityInvitation.Role;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,8 +26,9 @@ import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.codespaces.organizations.GithubCodespacesOrganizationsManager.MEMBERS_QUERY_PATH;
 import static com.tecknobit.githubmanager.collaborators.invitations.GitHubInvitationsManager.INVITATIONS_PATH;
-import static com.tecknobit.githubmanager.records.organization.Team.returnTeamsList;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
+import static com.tecknobit.githubmanager.records.generic.EntityInvitation.returnEntityInvitations;
+import static com.tecknobit.githubmanager.teams.teams.records.Team.returnTeamsList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code GitHubMembersManager} class is useful to manage all GitHub's organization members endpoints
@@ -125,11 +126,10 @@ public class GitHubMembersManager extends GitHubManager {
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org: the organization from fetch the list
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -148,13 +148,12 @@ public class GitHubMembersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/failed_invitations")
-    public ArrayList<OrganizationInvitation> getFailedOrganizationInvitations(Organization org) throws IOException {
+    public ArrayList<EntityInvitation> getFailedOrganizationInvitations(Organization org) throws IOException {
         return getFailedOrganizationInvitations(org.getLogin(), LIBRARY_OBJECT);
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org:    the organization from fetch the list
      * @param format: return type formatter -> {@link ReturnFormat}
@@ -181,11 +180,10 @@ public class GitHubMembersManager extends GitHubManager {
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -203,13 +201,12 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/failed_invitations")
-    public ArrayList<OrganizationInvitation> getFailedOrganizationInvitations(String org) throws IOException {
+    public ArrayList<EntityInvitation> getFailedOrganizationInvitations(String org) throws IOException {
         return getFailedOrganizationInvitations(org, LIBRARY_OBJECT);
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org:    the organization name. The name is not case-sensitive
      * @param format: return type formatter -> {@link ReturnFormat}
@@ -231,12 +228,11 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/failed_invitations")
     public <T> T getFailedOrganizationInvitations(String org, ReturnFormat format) throws IOException {
-        return returnOrganizationInvitations(sendGetRequest(ORGS_PATH + org + FAILED_INVITATIONS_PATH), format);
+        return returnEntityInvitations(sendGetRequest(ORGS_PATH + org + FAILED_INVITATIONS_PATH), format);
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org:         the organization from fetch the list
      * @param queryParams: extra query params not mandatory, keys accepted are:
@@ -248,7 +244,7 @@ public class GitHubMembersManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -267,14 +263,13 @@ public class GitHubMembersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/failed_invitations")
-    public ArrayList<OrganizationInvitation> getFailedOrganizationInvitations(Organization org,
-                                                                              Params queryParams) throws IOException {
+    public ArrayList<EntityInvitation> getFailedOrganizationInvitations(Organization org,
+                                                                        Params queryParams) throws IOException {
         return getFailedOrganizationInvitations(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org:         the organization from fetch the list
      * @param queryParams: extra query params not mandatory, keys accepted are:
@@ -311,8 +306,7 @@ public class GitHubMembersManager extends GitHubManager {
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org:         the organization name. The name is not case-sensitive
      * @param queryParams: extra query params not mandatory, keys accepted are:
@@ -324,7 +318,7 @@ public class GitHubMembersManager extends GitHubManager {
      *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
      *                        </li>
      *                     </ul>
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -342,14 +336,13 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/failed_invitations")
-    public ArrayList<OrganizationInvitation> getFailedOrganizationInvitations(String org,
-                                                                              Params queryParams) throws IOException {
+    public ArrayList<EntityInvitation> getFailedOrganizationInvitations(String org,
+                                                                        Params queryParams) throws IOException {
         return getFailedOrganizationInvitations(org, queryParams, LIBRARY_OBJECT);
     }
 
     /**
-     * Method to get the return hash contains failed_at and failed_reason fields which represent the time at which the
-     * invitation failed and the reason for the failure
+     * Method to get the list of the pending organization invitations
      *
      * @param org:         the organization name. The name is not case-sensitive
      * @param queryParams: extra query params not mandatory, keys accepted are:
@@ -380,7 +373,7 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/failed_invitations")
     public <T> T getFailedOrganizationInvitations(String org, Params queryParams, ReturnFormat format) throws IOException {
-        return returnOrganizationInvitations(sendGetRequest(ORGS_PATH + org + FAILED_INVITATIONS_PATH
+        return returnEntityInvitations(sendGetRequest(ORGS_PATH + org + FAILED_INVITATIONS_PATH
                 + queryParams.createQueryString()), format);
     }
 
@@ -390,7 +383,7 @@ public class GitHubMembersManager extends GitHubManager {
      * {@code "hiring_manager"}. If the invitee is not a GitHub member, the login field in the return hash will be null
      *
      * @param org: the organization from fetch the list
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -409,7 +402,7 @@ public class GitHubMembersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/invitations")
-    public ArrayList<OrganizationInvitation> getPendingOrganizationInvitations(Organization org) throws IOException {
+    public ArrayList<EntityInvitation> getPendingOrganizationInvitations(Organization org) throws IOException {
         return getPendingOrganizationInvitations(org.getLogin(), LIBRARY_OBJECT);
     }
 
@@ -448,7 +441,7 @@ public class GitHubMembersManager extends GitHubManager {
      * {@code "hiring_manager"}. If the invitee is not a GitHub member, the login field in the return hash will be null
      *
      * @param org: the organization name. The name is not case-sensitive
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -466,7 +459,7 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/invitations")
-    public ArrayList<OrganizationInvitation> getPendingOrganizationInvitations(String org) throws IOException {
+    public ArrayList<EntityInvitation> getPendingOrganizationInvitations(String org) throws IOException {
         return getPendingOrganizationInvitations(org, LIBRARY_OBJECT);
     }
 
@@ -495,7 +488,7 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/invitations")
     public <T> T getPendingOrganizationInvitations(String org, ReturnFormat format) throws IOException {
-        return returnOrganizationInvitations(sendGetRequest(ORGS_PATH + org + INVITATIONS_PATH), format);
+        return returnEntityInvitations(sendGetRequest(ORGS_PATH + org + INVITATIONS_PATH), format);
     }
 
     /**
@@ -521,7 +514,7 @@ public class GitHubMembersManager extends GitHubManager {
      *                            constants available {@link InvitationSource} - [string, default all]
      *                        </li>
      *                     </ul>
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -540,8 +533,8 @@ public class GitHubMembersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/invitations")
-    public ArrayList<OrganizationInvitation> getPendingOrganizationInvitations(Organization org,
-                                                                               Params queryParams) throws IOException {
+    public ArrayList<EntityInvitation> getPendingOrganizationInvitations(Organization org,
+                                                                         Params queryParams) throws IOException {
         return getPendingOrganizationInvitations(org.getLogin(), queryParams, LIBRARY_OBJECT);
     }
 
@@ -615,7 +608,7 @@ public class GitHubMembersManager extends GitHubManager {
      *                            constants available {@link InvitationSource} - [string, default all]
      *                        </li>
      *                     </ul>
-     * @return organization invitations list as {@link ArrayList} of {@link OrganizationInvitation} custom object
+     * @return organization invitations list as {@link ArrayList} of {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -633,8 +626,8 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = GET, path = "/orgs/{org}/invitations")
-    public ArrayList<OrganizationInvitation> getPendingOrganizationInvitations(String org,
-                                                                               Params queryParams) throws IOException {
+    public ArrayList<EntityInvitation> getPendingOrganizationInvitations(String org,
+                                                                         Params queryParams) throws IOException {
         return getPendingOrganizationInvitations(org, queryParams, LIBRARY_OBJECT);
     }
 
@@ -680,31 +673,8 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @RequestPath(method = GET, path = "/orgs/{org}/invitations")
     public <T> T getPendingOrganizationInvitations(String org, Params queryParams, ReturnFormat format) throws IOException {
-        return returnOrganizationInvitations(sendGetRequest(ORGS_PATH + org + INVITATIONS_PATH
+        return returnEntityInvitations(sendGetRequest(ORGS_PATH + org + INVITATIONS_PATH
                 + queryParams.createQueryString()), format);
-    }
-
-    /**
-     * Method to create an organization invitations list
-     *
-     * @param organizationInvitationsResponse: obtained from GitHub's response
-     * @param format:                          return type formatter -> {@link ReturnFormat}
-     * @return organization invitations list as {@code "format"} defines
-     **/
-    @Returner
-    private <T> T returnOrganizationInvitations(String organizationInvitationsResponse, ReturnFormat format) {
-        switch (format) {
-            case JSON:
-                return (T) new JSONArray(organizationInvitationsResponse);
-            case LIBRARY_OBJECT:
-                ArrayList<OrganizationInvitation> organizationInvitations = new ArrayList<>();
-                JSONArray jOrganizationInvitations = new JSONArray(organizationInvitationsResponse);
-                for (int j = 0; j < jOrganizationInvitations.length(); j++)
-                    organizationInvitations.add(new OrganizationInvitation(jOrganizationInvitations.getJSONObject(j)));
-                return (T) organizationInvitations;
-            default:
-                return (T) organizationInvitationsResponse;
-        }
     }
 
     /**
@@ -745,7 +715,7 @@ public class GitHubMembersManager extends GitHubManager {
      *                           {@code "team_ids"} -> whether the notification has been read - [string]
      *                       </li>
      *                    </ul>
-     * @return organization invitation as {@link OrganizationInvitation} custom object
+     * @return organization invitation as {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -764,7 +734,7 @@ public class GitHubMembersManager extends GitHubManager {
     @Wrapper
     @WrappedRequest
     @RequestPath(method = POST, path = "/orgs/{org}/invitations")
-    public OrganizationInvitation createOrganizationInvitation(Organization org, Params bodyParams) throws IOException {
+    public EntityInvitation createOrganizationInvitation(Organization org, Params bodyParams) throws IOException {
         return createOrganizationInvitation(org.getLogin(), bodyParams, LIBRARY_OBJECT);
     }
 
@@ -867,7 +837,7 @@ public class GitHubMembersManager extends GitHubManager {
      *                           {@code "team_ids"} -> whether the notification has been read - [string]
      *                       </li>
      *                    </ul>
-     * @return organization invitation as {@link OrganizationInvitation} custom object
+     * @return organization invitation as {@link EntityInvitation} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
      *                         <li>
@@ -885,7 +855,7 @@ public class GitHubMembersManager extends GitHubManager {
      **/
     @Wrapper
     @RequestPath(method = POST, path = "/orgs/{org}/invitations")
-    public OrganizationInvitation createOrganizationInvitation(String org, Params bodyParams) throws IOException {
+    public EntityInvitation createOrganizationInvitation(String org, Params bodyParams) throws IOException {
         return createOrganizationInvitation(org, bodyParams, LIBRARY_OBJECT);
     }
 
@@ -963,7 +933,7 @@ public class GitHubMembersManager extends GitHubManager {
             case JSON:
                 return (T) new JSONObject(organizationInvitationResponse);
             case LIBRARY_OBJECT:
-                return (T) new OrganizationInvitation(new JSONObject(organizationInvitationResponse));
+                return (T) new EntityInvitation(new JSONObject(organizationInvitationResponse));
             default:
                 return (T) organizationInvitationResponse;
         }

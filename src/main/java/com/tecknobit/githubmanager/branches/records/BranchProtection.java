@@ -2,10 +2,10 @@ package com.tecknobit.githubmanager.branches.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
 import com.tecknobit.githubmanager.apps.apps.records.GitHubApp;
-import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -13,8 +13,8 @@ import java.util.ArrayList;
 
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
 import static com.tecknobit.githubmanager.apps.apps.records.GitHubApp.returnAppsList;
-import static com.tecknobit.githubmanager.records.organization.Team.returnTeamsList;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
+import static com.tecknobit.githubmanager.teams.teams.records.Team.returnTeamsList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code Branch} class is useful to format a GitHub's branch protection

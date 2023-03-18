@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.gists.gists.records;
 
 import com.tecknobit.githubmanager.commits.commits.records.Commit.Stats;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;

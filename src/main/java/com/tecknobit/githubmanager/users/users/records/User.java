@@ -1,6 +1,7 @@
-package com.tecknobit.githubmanager.records.parents;
+package com.tecknobit.githubmanager.users.users.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

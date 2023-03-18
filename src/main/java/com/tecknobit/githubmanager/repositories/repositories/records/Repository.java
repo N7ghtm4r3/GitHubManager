@@ -8,7 +8,7 @@ import com.tecknobit.githubmanager.records.generic.Permissions;
 import com.tecknobit.githubmanager.records.parents.BaseItemStructure;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -12,10 +12,9 @@ import com.tecknobit.githubmanager.organizations.organizations.records.Organizat
 import com.tecknobit.githubmanager.pulls.reviewcomments.records.ReviewComment;
 import com.tecknobit.githubmanager.reactions.records.Reaction;
 import com.tecknobit.githubmanager.reactions.records.Reaction.ReactionContent;
-import com.tecknobit.githubmanager.records.organization.Team;
 import com.tecknobit.githubmanager.releases.releases.records.Release;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
-import com.tecknobit.githubmanager.teams.Discussion;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -114,72 +113,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion comment.
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:           the organization from fetch the list
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(Organization org, Team team, Discussion discussion,
-                                                                 long commentNumber) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization from fetch the list
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(Organization org, Team team, Discussion discussion, long commentNumber,
-                                                   ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization from fetch the list
      * @param team:             the team from fetch the list
      * @param discussionNumber: the number that identifies the discussion
@@ -239,71 +172,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T getTeamDiscussionCommentReactions(Organization org, Team team, long discussionNumber, long commentNumber,
                                                    ReturnFormat format) throws IOException {
         return getTeamDiscussionCommentReactions(org.getLogin(), team.getSlug(), discussionNumber, commentNumber, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(String org, Team team, Discussion discussion,
-                                                                 long commentNumber) throws IOException {
-        return getTeamDiscussionCommentReactions(org, team.getSlug(), discussion.getNumber(), commentNumber,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(String org, Team team, Discussion discussion, long commentNumber,
-                                                   ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org, team.getSlug(), discussion.getNumber(), commentNumber, format);
     }
 
     /**
@@ -374,71 +242,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion comment.
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:           the organization from fetch the list
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(Organization org, String teamSlug, Discussion discussion,
-                                                                 long commentNumber) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization from fetch the list
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(Organization org, String teamSlug, Discussion discussion,
-                                                   long commentNumber, ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization from fetch the list
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -503,70 +306,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion comment.
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(String org, String teamSlug, Discussion discussion,
-                                                                 long commentNumber) throws IOException {
-        return getTeamDiscussionCommentReactions(org, teamSlug, discussion.getNumber(), commentNumber, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(String org, String teamSlug, Discussion discussion, long commentNumber,
-                                                   ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org, teamSlug, discussion.getNumber(), commentNumber, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -602,51 +341,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
      * @param commentNumber:    the number that identifies the comment
-     * @param format:           return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(String org, String teamSlug, long discussionNumber, long commentNumber,
-                                                   ReturnFormat format) throws IOException {
-        return returnReactions(sendGetRequest(ORGS_PATH + org + TEAMS_PATH + "/" + teamSlug + DISCUSSIONS_PATH
-                + discussionNumber + COMMENTS_PATH + "/" + commentNumber + REACTIONS_PATH), format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization from fetch the list
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
      * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
      * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
      *                     <ul>
@@ -664,58 +358,11 @@ public class GitHubReactionsManager extends GitHubManager {
      * List reactions for a team discussion comment</a>
      **/
     @Wrapper
-    @WrappedRequest
     @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(Organization org, Team team, Discussion discussion,
-                                                                 long commentNumber, Params queryParams) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                queryParams, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization from fetch the list
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(Organization org, Team team, Discussion discussion, long commentNumber,
-                                                   Params queryParams, ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                queryParams, format);
+    public <T> T getTeamDiscussionCommentReactions(String org, String teamSlug, long discussionNumber, long commentNumber,
+                                                   ReturnFormat format) throws IOException {
+        return returnReactions(sendGetRequest(ORGS_PATH + org + TEAMS_PATH + "/" + teamSlug + DISCUSSIONS_PATH
+                + discussionNumber + COMMENTS_PATH + "/" + commentNumber + REACTIONS_PATH), format);
     }
 
     /**
@@ -814,98 +461,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion comment.
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(String org, Team team, Discussion discussion,
-                                                                 long commentNumber, Params queryParams) throws IOException {
-        return getTeamDiscussionCommentReactions(org, team.getSlug(), discussion.getNumber(), commentNumber, queryParams,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team from fetch the list
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(String org, Team team, Discussion discussion, long commentNumber,
-                                                   Params queryParams, ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org, team.getSlug(), discussion.getNumber(), commentNumber, queryParams,
-                format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param team:             the team from fetch the list
      * @param discussionNumber: the number that identifies the discussion
@@ -998,99 +553,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion comment.
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:           the organization from fetch the list
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(Organization org, String teamSlug, Discussion discussion,
-                                                                 long commentNumber, Params queryParams) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
-                queryParams, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization from fetch the list
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(Organization org, String teamSlug, Discussion discussion,
-                                                   long commentNumber, Params queryParams,
-                                                   ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
-                queryParams, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization from fetch the list
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -1177,98 +639,6 @@ public class GitHubReactionsManager extends GitHubManager {
                                                    long commentNumber, Params queryParams,
                                                    ReturnFormat format) throws IOException {
         return getTeamDiscussionCommentReactions(org.getLogin(), teamSlug, discussionNumber, commentNumber, queryParams,
-                format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionCommentReactions(String org, String teamSlug, Discussion discussion,
-                                                                 long commentNumber, Params queryParams) throws IOException {
-        return getTeamDiscussionCommentReactions(org, teamSlug, discussion.getNumber(), commentNumber, queryParams,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion comment.
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion from fetch the list
-     * @param commentNumber: the number that identifies the comment
-     * @param queryParams:   extra query params not mandatory, keys accepted are:
-     *                       <ul>
-     *                          <li>
-     *                              {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                              reactions, constants available {@link ReactionContent} - [string]
-     *                          </li>
-     *                          <li>
-     *                              {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                          </li>
-     *                          <li>
-     *                              {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                          </li>
-     *                       </ul>
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion-comment">
-     * List reactions for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T getTeamDiscussionCommentReactions(String org, String teamSlug, Discussion discussion, long commentNumber,
-                                                   Params queryParams, ReturnFormat format) throws IOException {
-        return getTeamDiscussionCommentReactions(org, teamSlug, discussion.getNumber(), commentNumber, queryParams,
                 format);
     }
 
@@ -1367,74 +737,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
      * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
      *
-     * @param org:           the organization where create the reaction
-     * @param team:          the team where create the reaction
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public Reaction createTeamDiscussionCommentReaction(Organization org, Team team, Discussion discussion,
-                                                        long commentNumber, ReactionContent content) throws IOException {
-        return createTeamDiscussionCommentReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                content, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:           the organization where create the reaction
-     * @param team:          the team where create the reaction
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T createTeamDiscussionCommentReaction(Organization org, Team team, Discussion discussion, long commentNumber,
-                                                     ReactionContent content, ReturnFormat format) throws IOException {
-        return createTeamDiscussionCommentReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                content, format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
      * @param org:              the organization where create the reaction
      * @param team:             the team where create the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -1503,74 +805,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
      * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
      *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team where create the reaction
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public Reaction createTeamDiscussionCommentReaction(String org, Team team, Discussion discussion, long commentNumber,
-                                                        ReactionContent content) throws IOException {
-        return createTeamDiscussionCommentReaction(org, team.getSlug(), discussion.getNumber(), commentNumber, content,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team where create the reaction
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T createTeamDiscussionCommentReaction(String org, Team team, Discussion discussion, long commentNumber,
-                                                     ReactionContent content, ReturnFormat format) throws IOException {
-        return createTeamDiscussionCommentReaction(org, team.getSlug(), discussion.getNumber(), commentNumber, content,
-                format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param team:             the team where create the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -1632,75 +866,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T createTeamDiscussionCommentReaction(String org, Team team, long discussionNumber, long commentNumber,
                                                      ReactionContent content, ReturnFormat format) throws IOException {
         return createTeamDiscussionCommentReaction(org, team.getSlug(), discussionNumber, commentNumber, content, format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:           the organization where create the reaction
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public Reaction createTeamDiscussionCommentReaction(Organization org, String teamSlug, Discussion discussion,
-                                                        long commentNumber, ReactionContent content) throws IOException {
-        return createTeamDiscussionCommentReaction(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
-                content, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:           the organization where create the reaction
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T createTeamDiscussionCommentReaction(Organization org, String teamSlug, Discussion discussion,
-                                                     long commentNumber, ReactionContent content,
-                                                     ReturnFormat format) throws IOException {
-        return createTeamDiscussionCommentReaction(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
-                content, format);
     }
 
     /**
@@ -1776,75 +941,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
      * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
      *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public Reaction createTeamDiscussionCommentReaction(String org, String teamSlug, Discussion discussion,
-                                                        long commentNumber, ReactionContent content) throws IOException {
-        return createTeamDiscussionCommentReaction(org, teamSlug, discussion.getNumber(), commentNumber, content,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where create the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param content:       the reaction type to add to the team discussion comment
-     * @param format:        return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion-comment">
-     * Create reaction for a team discussion comment</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions")
-    public <T> T createTeamDiscussionCommentReaction(String org, String teamSlug, Discussion discussion,
-                                                     long commentNumber, ReactionContent content,
-                                                     ReturnFormat format) throws IOException {
-        return createTeamDiscussionCommentReaction(org, teamSlug, discussion.getNumber(), commentNumber, content,
-                format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion comment. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -1913,27 +1009,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:           the organization where delete the reaction
-     * @param team:          the team where delete the reaction
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reaction:      the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(Organization org, Team team, Discussion discussion,
-                                                       long commentNumber, Reaction reaction) {
-        return deleteTeamDiscussionCommentReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization where delete the reaction
      * @param team:             the team where delete the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -1948,27 +1023,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public boolean deleteTeamDiscussionCommentReaction(Organization org, Team team, long discussionNumber,
                                                        long commentNumber, Reaction reaction) {
         return deleteTeamDiscussionCommentReaction(org.getLogin(), team.getSlug(), discussionNumber, commentNumber,
-                reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:           the organization where delete the reaction
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reaction:      the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(Organization org, String teamSlug, Discussion discussion,
-                                                       long commentNumber, Reaction reaction) {
-        return deleteTeamDiscussionCommentReaction(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
                 reaction.getId());
     }
 
@@ -1997,26 +1051,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reaction:      the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(String org, String teamSlug, Discussion discussion,
-                                                       long commentNumber, Reaction reaction) {
-        return deleteTeamDiscussionCommentReaction(org, teamSlug, discussion.getNumber(), commentNumber, reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -2031,27 +1065,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public boolean deleteTeamDiscussionCommentReaction(String org, String teamSlug, long discussionNumber,
                                                        long commentNumber, Reaction reaction) {
         return deleteTeamDiscussionCommentReaction(org, teamSlug, discussionNumber, commentNumber, reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team where delete the reaction
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reaction:      the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(String org, Team team, Discussion discussion, long commentNumber,
-                                                       Reaction reaction) {
-        return deleteTeamDiscussionCommentReaction(org, team.getSlug(), discussion.getNumber(), commentNumber,
-                reaction.getId());
     }
 
     /**
@@ -2078,26 +1091,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param team:          the team where delete the reaction
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reactionId:    the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(String org, Team team, Discussion discussion,
-                                                       long commentNumber, long reactionId) {
-        return deleteTeamDiscussionCommentReaction(org, team.getSlug(), discussion.getNumber(), commentNumber, reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param team:             the team where delete the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -2112,27 +1105,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public boolean deleteTeamDiscussionCommentReaction(String org, Team team, long discussionNumber,
                                                        long commentNumber, long reactionId) {
         return deleteTeamDiscussionCommentReaction(org, team.getSlug(), discussionNumber, commentNumber, reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:           the organization where delete the reaction
-     * @param team:          the team where delete the reaction
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reactionId:    the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(Organization org, Team team, Discussion discussion,
-                                                       long commentNumber, long reactionId) {
-        return deleteTeamDiscussionCommentReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), commentNumber,
-                reactionId);
     }
 
     /**
@@ -2160,27 +1132,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:           the organization where delete the reaction
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reactionId:    the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(Organization org, String teamSlug, Discussion discussion,
-                                                       long commentNumber, long reactionId) {
-        return deleteTeamDiscussionCommentReaction(org.getLogin(), teamSlug, discussion.getNumber(), commentNumber,
-                reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization where delete the reaction
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -2195,26 +1146,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public boolean deleteTeamDiscussionCommentReaction(Organization org, String teamSlug, long discussionNumber,
                                                        long commentNumber, long reactionId) {
         return deleteTeamDiscussionCommentReaction(org.getLogin(), teamSlug, discussionNumber, commentNumber, reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion comment. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:           the organization name. The name is not case-sensitive
-     * @param teamSlug:      the slug of the team name
-     * @param discussion:    the discussion where delete the reaction
-     * @param commentNumber: the number that identifies the comment
-     * @param reactionId:    the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-comment-reaction">
-     * Delete team discussion comment reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionCommentReaction(String org, String teamSlug, Discussion discussion,
-                                                       long commentNumber, long reactionId) {
-        return deleteTeamDiscussionCommentReaction(org, teamSlug, discussion.getNumber(), commentNumber, reactionId);
     }
 
     /**
@@ -2245,68 +1176,6 @@ public class GitHubReactionsManager extends GitHubManager {
             printErrorResponse();
             return false;
         }
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:        the organization from fetch the list
-     * @param team:       the team from fetch the list
-     * @param discussion: the discussion from fetch the list
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(Organization org, Team team,
-                                                          Discussion discussion) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:        the organization from fetch the list
-     * @param team:       the team from fetch the list
-     * @param discussion: the discussion from fetch the list
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(Organization org, Team team, Discussion discussion,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), LIBRARY_OBJECT);
     }
 
     /**
@@ -2375,67 +1244,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion. <br>
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param team:       the team from fetch the list
-     * @param discussion: the discussion from fetch the list
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(String org, Team team, Discussion discussion) throws IOException {
-        return getTeamDiscussionReactions(org, team.getSlug(), discussion.getNumber(), LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param team:       the team from fetch the list
-     * @param discussion: the discussion from fetch the list
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(String org, Team team, Discussion discussion,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org, team.getSlug(), discussion.getNumber(), format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param team:             the team from fetch the list
      * @param discussionNumber: the number that identifies the discussion
@@ -2491,68 +1299,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T getTeamDiscussionReactions(String org, Team team, long discussionNumber,
                                             ReturnFormat format) throws IOException {
         return getTeamDiscussionReactions(org, team.getSlug(), discussionNumber, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:        the organization from fetch the list
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion from fetch the list
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(Organization org, String teamSlug,
-                                                          Discussion discussion) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), teamSlug, discussion.getNumber(), LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:        the organization from fetch the list
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion from fetch the list
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(Organization org, String teamSlug, Discussion discussion,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), teamSlug, discussion.getNumber(), LIBRARY_OBJECT);
     }
 
     /**
@@ -2621,68 +1367,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion. <br>
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion from fetch the list
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(String org, String teamSlug,
-                                                          Discussion discussion) throws IOException {
-        return getTeamDiscussionReactions(org, teamSlug, discussion.getNumber(), LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion from fetch the list
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(String org, String teamSlug, Discussion discussion,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org, teamSlug, discussion.getNumber(), LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -2738,95 +1422,6 @@ public class GitHubReactionsManager extends GitHubManager {
                                             ReturnFormat format) throws IOException {
         return returnReactions(sendGetRequest(ORGS_PATH + org + TEAMS_PATH + "/" + teamSlug + DISCUSSIONS_PATH
                 + discussionNumber + REACTIONS_PATH), format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:         the organization from fetch the list
-     * @param team:        the team from fetch the list
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(Organization org, Team team, Discussion discussion,
-                                                          Params queryParams) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), queryParams,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:         the organization from fetch the list
-     * @param team:        the team from fetch the list
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @param format:      return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(Organization org, Team team, Discussion discussion, Params queryParams,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), team.getSlug(), discussion.getNumber(), queryParams, format);
     }
 
     /**
@@ -2921,94 +1516,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion. <br>
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:         the organization name. The name is not case-sensitive
-     * @param team:        the team from fetch the list
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(String org, Team team, Discussion discussion,
-                                                          Params queryParams) throws IOException {
-        return getTeamDiscussionReactions(org, team.getSlug(), discussion.getNumber(), queryParams, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:         the organization name. The name is not case-sensitive
-     * @param team:        the team from fetch the list
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @param format:      return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(String org, Team team, Discussion discussion, Params queryParams,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org, team.getSlug(), discussion.getNumber(), queryParams, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param team:             the team from fetch the list
      * @param discussionNumber: the number that identifies the discussion
@@ -3091,94 +1598,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T getTeamDiscussionReactions(String org, Team team, long discussionNumber, Params queryParams,
                                             ReturnFormat format) throws IOException {
         return getTeamDiscussionReactions(org, team.getSlug(), discussionNumber, queryParams, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:         the organization from fetch the list
-     * @param teamSlug:    the slug of the team name
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(Organization org, String teamSlug, Discussion discussion,
-                                                          Params queryParams) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), teamSlug, discussion.getNumber(), queryParams, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:         the organization from fetch the list
-     * @param teamSlug:    the slug of the team name
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @param format:      return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(Organization org, String teamSlug, Discussion discussion, Params queryParams,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org.getLogin(), teamSlug, discussion.getNumber(), queryParams, format);
     }
 
     /**
@@ -3273,94 +1692,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to get the list of the reactions to a team discussion. <br>
      * OAuth access tokens require the {@code "read:discussion"} scope.
      *
-     * @param org:         the organization name. The name is not case-sensitive
-     * @param teamSlug:    the slug of the team name
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @return reactions list as {@link ArrayList} of {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public ArrayList<Reaction> getTeamDiscussionReactions(String org, String teamSlug, Discussion discussion,
-                                                          Params queryParams) throws IOException {
-        return getTeamDiscussionReactions(org, teamSlug, discussion.getNumber(), queryParams, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
-     * @param org:         the organization name. The name is not case-sensitive
-     * @param teamSlug:    the slug of the team name
-     * @param discussion:  the discussion from fetch the list
-     * @param queryParams: extra query params not mandatory, keys accepted are:
-     *                     <ul>
-     *                        <li>
-     *                            {@code "content"} -> returns a single reaction type. Omit this parameter to list all
-     *                            reactions, constants available {@link ReactionContent} - [string]
-     *                        </li>
-     *                        <li>
-     *                            {@code "per_page"} -> the number of results per page (max 100) - [integer, default 30]
-     *                        </li>
-     *                        <li>
-     *                            {@code "page"} -> page number of the results to fetch - [integer, default 1]
-     *                        </li>
-     *                     </ul>
-     * @param format:      return type formatter -> {@link ReturnFormat}
-     * @return reactions list as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#list-reactions-for-a-team-discussion">
-     * List reactions for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = GET, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T getTeamDiscussionReactions(String org, String teamSlug, Discussion discussion, Params queryParams,
-                                            ReturnFormat format) throws IOException {
-        return getTeamDiscussionReactions(org, teamSlug, discussion.getNumber(), queryParams, format);
-    }
-
-    /**
-     * Method to get the list of the reactions to a team discussion. <br>
-     * OAuth access tokens require the {@code "read:discussion"} scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -3448,71 +1779,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
      * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
      *
-     * @param org:        the organization where create the reaction
-     * @param team:       the team where create the reaction
-     * @param discussion: the discussion where create the reaction
-     * @param content:    the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public Reaction createTeamDiscussionReaction(Organization org, Team team, Discussion discussion,
-                                                 ReactionContent content) throws IOException {
-        return createTeamDiscussionReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), content,
-                LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:        the organization where create the reaction
-     * @param team:       the team where create the reaction
-     * @param discussion: the discussion where create the reaction
-     * @param content:    the reaction type to add to the team discussion comment
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T createTeamDiscussionReaction(Organization org, Team team, Discussion discussion, ReactionContent content,
-                                              ReturnFormat format) throws IOException {
-        return createTeamDiscussionReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), content, format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
      * @param org:              the organization where create the reaction
      * @param team:             the team where create the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -3571,70 +1837,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T createTeamDiscussionReaction(Organization org, Team team, long discussionNumber, ReactionContent content,
                                               ReturnFormat format) throws IOException {
         return createTeamDiscussionReaction(org.getLogin(), team.getSlug(), discussionNumber, content, format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param team:       the team where create the reaction
-     * @param discussion: the discussion where create the reaction
-     * @param content:    the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public Reaction createTeamDiscussionReaction(String org, Team team, Discussion discussion,
-                                                 ReactionContent content) throws IOException {
-        return createTeamDiscussionReaction(org, team.getSlug(), discussion.getNumber(), content, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param team:       the team where create the reaction
-     * @param discussion: the discussion where create the reaction
-     * @param content:    the reaction type to add to the team discussion comment
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T createTeamDiscussionReaction(String org, Team team, Discussion discussion, ReactionContent content,
-                                              ReturnFormat format) throws IOException {
-        return createTeamDiscussionReaction(org, team.getSlug(), discussion.getNumber(), content, format);
     }
 
     /**
@@ -3705,70 +1907,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
      * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
      *
-     * @param org:        the organization where create the reaction
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion where create the reaction
-     * @param content:    the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public Reaction createTeamDiscussionReaction(Organization org, String teamSlug, Discussion discussion,
-                                                 ReactionContent content) throws IOException {
-        return createTeamDiscussionReaction(org.getLogin(), teamSlug, discussion.getNumber(), content, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:        the organization where create the reaction
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion where create the reaction
-     * @param content:    the reaction type to add to the team discussion comment
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T createTeamDiscussionReaction(Organization org, String teamSlug, Discussion discussion,
-                                              ReactionContent content, ReturnFormat format) throws IOException {
-        return createTeamDiscussionReaction(org.getLogin(), teamSlug, discussion.getNumber(), content, format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
      * @param org:              the organization where create the reaction
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -3827,70 +1965,6 @@ public class GitHubReactionsManager extends GitHubManager {
     public <T> T createTeamDiscussionReaction(Organization org, String teamSlug, long discussionNumber,
                                               ReactionContent content, ReturnFormat format) throws IOException {
         return createTeamDiscussionReaction(org.getLogin(), teamSlug, discussionNumber, content, format);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion from fetch the list
-     * @param content:    the reaction type to add to the team discussion comment
-     * @return reaction as {@link Reaction} custom object
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @Wrapper
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public Reaction createTeamDiscussionReaction(String org, String teamSlug, Discussion discussion,
-                                                 ReactionContent content) throws IOException {
-        return createTeamDiscussionReaction(org, teamSlug, discussion.getNumber(), content, LIBRARY_OBJECT);
-    }
-
-    /**
-     * Method to create a reaction to a team discussion. OAuth access tokens require {@code "the write:discussion"}
-     * scope. A response with an HTTP 200 status means that you already added the reaction type to this team discussion comment
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion from fetch the list
-     * @param content:    the reaction type to add to the team discussion comment
-     * @param format:     return type formatter -> {@link ReturnFormat}
-     * @return reaction as {@code "format"} defines
-     * @throws IOException when request has been go wrong -> you can use these methods to get more details about error:
-     *                     <ul>
-     *                         <li>
-     *                             {@link #getErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #getJSONErrorResponse()}
-     *                         </li>
-     *                         <li>
-     *                             {@link #printErrorResponse()}
-     *                         </li>
-     *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#create-reaction-for-a-team-discussion">
-     * Create reaction for a team discussion</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = POST, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions")
-    public <T> T createTeamDiscussionReaction(String org, String teamSlug, Discussion discussion, ReactionContent content,
-                                              ReturnFormat format) throws IOException {
-        return createTeamDiscussionReaction(org, teamSlug, discussion.getNumber(), content, format);
     }
 
     /**
@@ -3960,24 +2034,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:        the organization where delete the reaction
-     * @param team:       the team where delete the reaction
-     * @param discussion: the discussion where delete the reaction
-     * @param reaction:   the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(Organization org, Team team, Discussion discussion, Reaction reaction) {
-        return deleteTeamDiscussionReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization where delete the reaction
      * @param team:             the team where delete the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -3990,25 +2046,6 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
     public boolean deleteTeamDiscussionReaction(Organization org, Team team, long discussionNumber, Reaction reaction) {
         return deleteTeamDiscussionReaction(org.getLogin(), team.getSlug(), discussionNumber, reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:        the organization where delete the reaction
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion where delete the reaction
-     * @param reaction:   the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(Organization org, String teamSlug, Discussion discussion,
-                                                Reaction reaction) {
-        return deleteTeamDiscussionReaction(org.getLogin(), teamSlug, discussion.getNumber(), reaction.getId());
     }
 
     /**
@@ -4034,24 +2071,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion where delete the reaction
-     * @param reaction:   the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(String org, String teamSlug, Discussion discussion, Reaction reaction) {
-        return deleteTeamDiscussionReaction(org, teamSlug, discussion.getNumber(), reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -4064,24 +2083,6 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
     public boolean deleteTeamDiscussionReaction(String org, String teamSlug, long discussionNumber, Reaction reaction) {
         return deleteTeamDiscussionReaction(org, teamSlug, discussionNumber, reaction.getId());
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param team:       the team where delete the reaction
-     * @param discussion: the discussion where delete the reaction
-     * @param reaction:   the reaction to delete
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(String org, Team team, Discussion discussion, Reaction reaction) {
-        return deleteTeamDiscussionReaction(org, team.getSlug(), discussion.getNumber(), reaction.getId());
     }
 
     /**
@@ -4106,24 +2107,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param team:       the team where delete the reaction
-     * @param discussion: the discussion where delete the reaction
-     * @param reactionId: the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(String org, Team team, Discussion discussion, long reactionId) {
-        return deleteTeamDiscussionReaction(org, team.getSlug(), discussion.getNumber(), reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization name. The name is not case-sensitive
      * @param team:             the team where delete the reaction
      * @param discussionNumber: the number that identifies the discussion
@@ -4136,25 +2119,6 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
     public boolean deleteTeamDiscussionReaction(String org, Team team, long discussionNumber, long reactionId) {
         return deleteTeamDiscussionReaction(org, team.getSlug(), discussionNumber, reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:        the organization where delete the reaction
-     * @param team:       the team where delete the reaction
-     * @param discussion: the discussion where delete the reaction
-     * @param reactionId: the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(Organization org, Team team, Discussion discussion, long reactionId) {
-        return deleteTeamDiscussionReaction(org.getLogin(), team.getSlug(), discussion.getNumber(), reactionId);
-
     }
 
     /**
@@ -4180,24 +2144,6 @@ public class GitHubReactionsManager extends GitHubManager {
      * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
      * scope.
      *
-     * @param org:        the organization where delete the reaction
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion where delete the reaction
-     * @param reactionId: the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(Organization org, String teamSlug, Discussion discussion, long reactionId) {
-        return deleteTeamDiscussionReaction(org.getLogin(), teamSlug, discussion.getNumber(), reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
      * @param org:              the organization where delete the reaction
      * @param teamSlug:         the slug of the team name
      * @param discussionNumber: the number that identifies the discussion
@@ -4210,24 +2156,6 @@ public class GitHubReactionsManager extends GitHubManager {
     @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
     public boolean deleteTeamDiscussionReaction(Organization org, String teamSlug, long discussionNumber, long reactionId) {
         return deleteTeamDiscussionReaction(org.getLogin(), teamSlug, discussionNumber, reactionId);
-    }
-
-    /**
-     * Method to delete a reaction to a team discussion. OAuth access tokens require the {@code "write:discussion"}
-     * scope.
-     *
-     * @param org:        the organization name. The name is not case-sensitive
-     * @param teamSlug:   the slug of the team name
-     * @param discussion: the discussion where delete the reaction
-     * @param reactionId: the unique identifier of the reaction
-     * @return result of the operation -> {@code "true"} is successful, {@code "false"} and error printed with {@link #printErrorResponse()} method if not successful
-     * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/reactions#delete-team-discussion-reaction">
-     * Delete team discussion reaction</a>
-     **/
-    @WrappedRequest
-    @RequestPath(method = DELETE, path = "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}")
-    public boolean deleteTeamDiscussionReaction(String org, String teamSlug, Discussion discussion, long reactionId) {
-        return deleteTeamDiscussionReaction(org, teamSlug, discussion.getNumber(), reactionId);
     }
 
     /**

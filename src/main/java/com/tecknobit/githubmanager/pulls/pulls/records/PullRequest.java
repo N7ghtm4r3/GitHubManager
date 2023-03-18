@@ -2,9 +2,13 @@ package com.tecknobit.githubmanager.pulls.pulls.records;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;
-import com.tecknobit.githubmanager.records.organization.Team;
-import com.tecknobit.githubmanager.records.parents.*;
+import com.tecknobit.githubmanager.records.parents.GitHubOperation;
+import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure;
+import com.tecknobit.githubmanager.records.parents.GitHubResponse;
+import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
+import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -12,7 +16,7 @@ import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
-import static com.tecknobit.githubmanager.records.parents.User.returnUsersList;
+import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
  * The {@code PullRequest} class is useful to format a GitHub's pull request

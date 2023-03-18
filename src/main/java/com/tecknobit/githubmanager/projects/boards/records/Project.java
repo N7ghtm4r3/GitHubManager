@@ -1,10 +1,15 @@
 package com.tecknobit.githubmanager.projects.boards.records;
 
+import com.tecknobit.apimanager.annotations.Returner;
+import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.projects.records.ProjectItem;
 import com.tecknobit.githubmanager.records.parents.GitHubOperationBaseStructure.OperationState;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * The {@code Project} class is useful to format a GitHub's project
@@ -268,6 +273,48 @@ public class Project extends ProjectItem {
      **/
     public boolean isPrivate() {
         return isPrivate;
+    }
+
+    /**
+     * Method to create a project
+     *
+     * @param projectResponse: obtained from GitHub's response
+     * @param format:          return type formatter -> {@link ReturnFormat}
+     * @return project as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnProject(String projectResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONObject(projectResponse);
+            case LIBRARY_OBJECT:
+                return (T) new Project(new JSONObject(projectResponse));
+            default:
+                return (T) projectResponse;
+        }
+    }
+
+    /**
+     * Method to create a projects list
+     *
+     * @param projectsResponse: obtained from GitHub's response
+     * @param format:           return type formatter -> {@link ReturnFormat}
+     * @return projects list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnProjects(String projectsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(projectsResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<Project> projects = new ArrayList<>();
+                JSONArray jProjects = new JSONArray(projectsResponse);
+                for (int j = 0; j < jProjects.length(); j++)
+                    projects.add(new Project(jProjects.getJSONObject(j)));
+                return (T) projects;
+            default:
+                return (T) projectsResponse;
+        }
     }
 
 }

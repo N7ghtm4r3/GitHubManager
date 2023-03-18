@@ -1,13 +1,18 @@
-package com.tecknobit.githubmanager.organizations.members.records;
+package com.tecknobit.githubmanager.records.generic;
 
+import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
-import com.tecknobit.githubmanager.records.parents.User;
+import com.tecknobit.githubmanager.users.users.records.User;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
- * The {@code OrganizationInvitation} class is useful to format a GitHub's organization invitation
+ * The {@code EntityInvitation} class is useful to format a GitHub's entity invitation
  *
  * @author N7ghtm4r3 - Tecknobit
  * @apiNote see the official documentation at:
@@ -24,10 +29,14 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  *         <a href="https://docs.github.com/en/rest/orgs/members#create-an-organization-invitation">
  *             Create an organization invitation</a>
  *     </li>
+ *     <li>
+ *         <a href="https://docs.github.com/en/rest/teams/members#list-pending-team-invitations">
+ *             List pending team invitations</a>
+ *     </li>
  * </ul>
  * @see GitHubResponse
  **/
-public class OrganizationInvitation extends GitHubResponse {
+public class EntityInvitation extends GitHubResponse {
 
     /**
      * {@code Role} list of available roles
@@ -139,7 +148,7 @@ public class OrganizationInvitation extends GitHubResponse {
     private final String invitationSource;
 
     /**
-     * Constructor to init a {@link OrganizationInvitation}
+     * Constructor to init a {@link EntityInvitation}
      *
      * @param id:                 id of the invitation
      * @param login:              login of the invitation
@@ -154,9 +163,9 @@ public class OrganizationInvitation extends GitHubResponse {
      * @param invitationTeamsUrl: invitation teams url of the invitation
      * @param invitationSource:   the source of the invitation
      **/
-    public OrganizationInvitation(long id, String login, String email, Role role, String createdAt, String failedAt,
-                                  String failedReason, User inviter, int teamCount, String nodeId, String invitationTeamsUrl,
-                                  String invitationSource) {
+    public EntityInvitation(long id, String login, String email, Role role, String createdAt, String failedAt,
+                            String failedReason, User inviter, int teamCount, String nodeId, String invitationTeamsUrl,
+                            String invitationSource) {
         super(null);
         this.id = id;
         this.login = login;
@@ -173,12 +182,12 @@ public class OrganizationInvitation extends GitHubResponse {
     }
 
     /**
-     * Constructor to init a {@link OrganizationInvitation}
+     * Constructor to init a {@link EntityInvitation}
      *
-     * @param jOrganizationInvitation: organization invitation details as {@link JSONObject}
+     * @param jEntityInvitation: entity invitation details as {@link JSONObject}
      **/
-    public OrganizationInvitation(JSONObject jOrganizationInvitation) {
-        super(jOrganizationInvitation);
+    public EntityInvitation(JSONObject jEntityInvitation) {
+        super(jEntityInvitation);
         id = hResponse.getLong("id", 0);
         login = hResponse.getString("login");
         email = hResponse.getString("email");
@@ -331,6 +340,29 @@ public class OrganizationInvitation extends GitHubResponse {
      **/
     public String getInvitationSource() {
         return invitationSource;
+    }
+
+    /**
+     * Method to create an entity invitations list
+     *
+     * @param entityInvitationsResponse: obtained from GitHub's response
+     * @param format:                    return type formatter -> {@link ReturnFormat}
+     * @return entity invitations list as {@code "format"} defines
+     **/
+    @Returner
+    public static <T> T returnEntityInvitations(String entityInvitationsResponse, ReturnFormat format) {
+        switch (format) {
+            case JSON:
+                return (T) new JSONArray(entityInvitationsResponse);
+            case LIBRARY_OBJECT:
+                ArrayList<EntityInvitation> entityInvitations = new ArrayList<>();
+                JSONArray jEntityInvitations = new JSONArray(entityInvitationsResponse);
+                for (int j = 0; j < jEntityInvitations.length(); j++)
+                    entityInvitations.add(new EntityInvitation(jEntityInvitations.getJSONObject(j)));
+                return (T) entityInvitations;
+            default:
+                return (T) entityInvitationsResponse;
+        }
     }
 
 }

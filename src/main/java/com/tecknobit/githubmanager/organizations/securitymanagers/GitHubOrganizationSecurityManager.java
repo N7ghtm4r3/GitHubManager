@@ -5,14 +5,14 @@ import com.tecknobit.apimanager.annotations.WrappedRequest;
 import com.tecknobit.apimanager.annotations.Wrapper;
 import com.tecknobit.githubmanager.GitHubManager;
 import com.tecknobit.githubmanager.organizations.organizations.records.Organization;
-import com.tecknobit.githubmanager.records.organization.Team;
+import com.tecknobit.githubmanager.teams.teams.records.Team;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.tecknobit.apimanager.apis.APIRequest.RequestMethod.*;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat.LIBRARY_OBJECT;
-import static com.tecknobit.githubmanager.records.organization.Team.returnTeamsList;
+import static com.tecknobit.githubmanager.teams.teams.records.Team.returnTeamsList;
 
 /**
  * The {@code GitHubOrganizationSecurityManager} class is useful to manage all GitHub's security managers endpoints
