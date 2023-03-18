@@ -98,7 +98,7 @@ To avoid re-entering credentials for each manager, you can instantiate managers 
 
 ```java
 // choose the manager (for signed and no-signed managers same procedure), for example: GitHubUsersManager, GitHubRepositoriesManager, etc 
-GitHubManager firstManager = new GitHubManager(/* params of the constructor chosen */,"apiKey","secretKey");
+GitHubManager firstManager = new GitHubManager(/* params of the constructor chosen */, "accessToken");
 // and then use it 
 firstManager.makeSomething();
 // you don't need to insert all credentials to make manager work
