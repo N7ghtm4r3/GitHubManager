@@ -30,7 +30,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * @apiNote see the official documentation at: <a href="https://docs.github.com/en/rest/overview/resources-in-the-rest-api">
  * Overview</a>
  **/
-// TODO: 30/10/2022 DELETE TEST URL PRINT IN REQUESTS
 public class GitHubManager {
 
     /**
@@ -367,7 +366,6 @@ public class GitHubManager {
      * </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequest(String endpoint, RequestMethod method) throws IOException {
-        System.out.println(BASE_ENDPOINT + endpoint);
         apiRequest.sendAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders);
         return apiRequest.getResponse();
     }
@@ -457,9 +455,6 @@ public class GitHubManager {
      *                     </ul> using a {@code "try and catch statement"} during runtime, see how to do in {@code "README"} file
      **/
     private String sendRequestWithBody(String endpoint, RequestMethod method, Params payload) throws IOException {
-        System.out.println(BASE_ENDPOINT + endpoint);
-        if (payload != null)
-            System.out.println(payload.createJSONPayload());
         apiRequest.sendJSONPayloadedAPIRequest(BASE_ENDPOINT + endpoint, method, mainHeaders, payload);
         return apiRequest.getResponse();
     }
