@@ -39,7 +39,7 @@ public class GitHubTeamsManager extends GitHubManager {
     /**
      * {@code USER_TEAMS_PATH} constant for {@code "user/teams"} path
      **/
-    public static final String USER_TEAMS_PATH = "user/teams";
+    public static final String USER_TEAMS_PATH = USER_PATH + "/teams";
 
     /**
      * Constructor to init a {@link GitHubTeamsManager}

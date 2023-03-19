@@ -52,12 +52,12 @@ public class GitHubPublicKey extends GitHubResponse {
     /**
      * {@code keyId} the identifier for the key
      **/
-    private final long keyId;
+    protected final long keyId;
 
     /**
      * {@code key} the {@code "Base64"} encoded public key
      **/
-    private final String key;
+    protected final String key;
 
     /**
      * Constructor to init a {@link GitHubPublicKey}
