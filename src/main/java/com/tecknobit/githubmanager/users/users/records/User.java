@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
@@ -743,7 +742,7 @@ public class User extends BaseItemStructure {
      * @return {@link #suspendedAt} timestamp as long
      **/
     public long getSuspendedAtTimestamp() {
-        return getDateTimestamp(suspendedAt);
+        return timeFormatter.formatAsTimestamp(suspendedAt);
     }
 
     /**

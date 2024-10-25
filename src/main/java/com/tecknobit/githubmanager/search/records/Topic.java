@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Topic} class is useful to format a GitHub's topic
@@ -243,7 +243,7 @@ public class Topic extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -263,7 +263,7 @@ public class Topic extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**

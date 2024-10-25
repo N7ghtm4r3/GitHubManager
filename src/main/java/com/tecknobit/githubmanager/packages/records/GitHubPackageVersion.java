@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GitHubPackageVersion} class is useful to format a GitHub's package version
@@ -174,7 +174,7 @@ public class GitHubPackageVersion extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -194,7 +194,7 @@ public class GitHubPackageVersion extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -214,7 +214,7 @@ public class GitHubPackageVersion extends BaseResponseDetails {
      * @return {@link #deletedAt} timestamp as long
      **/
     public long getDeletedAtTimestamp() {
-        return getDateTimestamp(deletedAt);
+        return timeFormatter.formatAsTimestamp(deletedAt);
     }
 
     /**

@@ -2,6 +2,7 @@ package com.tecknobit.githubmanager.records.parents;
 
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,6 +16,11 @@ import java.util.ArrayList;
  * @author N7ghtm4r3 - Tecknobit
  **/
 public abstract class GitHubResponse {
+
+    /**
+     * {@code timeFormatter} timeFormatter the formatter used to format the timestamp values
+     */
+    protected final TimeFormatter timeFormatter = TimeFormatter.getInstance("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
      * {@code INSTANTIATED_WITH_ERROR_KEY} constant for {@link #instantiatedWithError} key

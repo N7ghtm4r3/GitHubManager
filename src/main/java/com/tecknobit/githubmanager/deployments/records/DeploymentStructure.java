@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code DeploymentStructure} class is useful to format a GitHub's deployment item structure
@@ -221,7 +221,7 @@ public class DeploymentStructure extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -241,7 +241,7 @@ public class DeploymentStructure extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**

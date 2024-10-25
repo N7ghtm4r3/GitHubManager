@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.records.parents.BaseResponseDetails;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code ProjectColumn} class is useful to format a GitHub's project column
@@ -143,7 +143,7 @@ public class ProjectColumn extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -163,7 +163,7 @@ public class ProjectColumn extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
 }

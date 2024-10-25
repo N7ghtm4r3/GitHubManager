@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Job} class is useful to format a GitHub's job
@@ -275,7 +275,7 @@ public class Job extends BaseResponseDetails {
      * @return {@link #startedAt} timestamp as long
      **/
     public long getStartedAtTimestamp() {
-        return getDateTimestamp(startedAt);
+        return timeFormatter.formatAsTimestamp(startedAt);
     }
 
     public String getCompletedAt() {
@@ -289,7 +289,7 @@ public class Job extends BaseResponseDetails {
      * @return {@link #completedAt} timestamp as long
      **/
     public long getCompletedAtTimestamp() {
-        return getDateTimestamp(completedAt);
+        return timeFormatter.formatAsTimestamp(completedAt);
     }
 
     /**
@@ -549,7 +549,7 @@ public class Job extends BaseResponseDetails {
          * @return {@link #startedAt} timestamp as long
          **/
         public long getStartedAtTimestamp() {
-            return getDateTimestamp(startedAt);
+            return timeFormatter.formatAsTimestamp(startedAt);
         }
 
         /**
@@ -569,7 +569,7 @@ public class Job extends BaseResponseDetails {
          * @return {@link #completedAt} timestamp as long
          **/
         public long getCompletedAtTimestamp() {
-            return getDateTimestamp(completedAt);
+            return timeFormatter.formatAsTimestamp(completedAt);
         }
 
     }

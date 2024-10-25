@@ -10,7 +10,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Deployment} class is useful to format a GitHub's deployment
@@ -126,7 +126,7 @@ public class Deployment extends GitHubResponse {
      * @return {@link #waitTimerStartedAt} timestamp as long
      **/
     public long getWaitTimerStartedAtTimestamp() {
-        return getDateTimestamp(waitTimerStartedAt);
+        return timeFormatter.formatAsTimestamp(waitTimerStartedAt);
     }
 
     /**

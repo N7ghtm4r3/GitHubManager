@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GitHubGPGKey} class is useful to format a GitHub's GPG key
@@ -309,7 +309,7 @@ public class GitHubGPGKey extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -329,7 +329,7 @@ public class GitHubGPGKey extends GitHubResponse {
      * @return {@link #expiresAt} timestamp as long
      **/
     public long getExpiresAtTimestamp() {
-        return getDateTimestamp(expiresAt);
+        return timeFormatter.formatAsTimestamp(expiresAt);
     }
 
     /**

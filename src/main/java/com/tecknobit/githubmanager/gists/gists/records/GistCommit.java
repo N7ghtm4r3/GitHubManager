@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GistComment} class is useful to format a GitHub's gist commit
@@ -144,7 +144,7 @@ public class GistCommit extends GitHubResponse {
      * @return {@link #committedAt} timestamp as long
      **/
     public long getCommittedAtTimestamp() {
-        return getDateTimestamp(committedAt);
+        return timeFormatter.formatAsTimestamp(committedAt);
     }
 
 }

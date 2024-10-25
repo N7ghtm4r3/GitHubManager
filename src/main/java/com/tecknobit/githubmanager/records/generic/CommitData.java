@@ -214,7 +214,7 @@ public abstract class CommitData extends GitHubResponse {
          * @return {@link #date} timestamp as long
          **/
         public long getDateTimestamp() {
-            return TimeFormatter.getDateTimestamp(date);
+            return TimeFormatter.getInstance().formatAsTimestamp(date);
         }
 
     }

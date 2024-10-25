@@ -5,8 +5,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getStringDate;
-
 /**
  * The {@code CommitActivity} class is useful to format a GitHub's commit activity
  *
@@ -95,7 +93,7 @@ public class CommitActivity extends GitHubResponse {
      * @return {@link #week} instance as {@link String}
      **/
     public String getWeekDate() {
-        return getStringDate(week);
+        return timeFormatter.formatAsString(week);
     }
 
 }

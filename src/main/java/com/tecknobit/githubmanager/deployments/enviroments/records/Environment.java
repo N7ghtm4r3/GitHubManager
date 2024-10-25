@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Environment} class is useful to format a GitHub's environment
@@ -146,7 +146,7 @@ public class Environment extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -166,7 +166,7 @@ public class Environment extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**

@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.repositories.repositories.records.RepositoriesList.returnRepositoriesList;
 import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepoVisibility.*;
 
@@ -1992,7 +1991,7 @@ public class Repository extends BaseItemStructure {
      * @return {@link #pushedAt} timestamp as long
      **/
     public long getPushedAtTimestamp() {
-        return getDateTimestamp(pushedAt);
+        return timeFormatter.formatAsTimestamp(pushedAt);
     }
 
     /**
@@ -2232,7 +2231,7 @@ public class Repository extends BaseItemStructure {
      * @return {@link #starredAt} timestamp as long
      **/
     public long getStarredAtTimestamp() {
-        return getDateTimestamp(starredAt);
+        return timeFormatter.formatAsTimestamp(starredAt);
     }
 
     /**

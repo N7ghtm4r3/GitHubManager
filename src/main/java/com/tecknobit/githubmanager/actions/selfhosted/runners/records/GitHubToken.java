@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.actions.selfhosted.runners.records;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GitHubToken} class is useful to format a GitHub's token
@@ -100,7 +100,7 @@ public class GitHubToken extends GitHubResponse {
      * @return {@link #expiresAt} timestamp as long
      **/
     public long getExpiresAtTimestamp() {
-        return getDateTimestamp(expiresAt);
+        return timeFormatter.formatAsTimestamp(expiresAt);
     }
 
 }

@@ -8,8 +8,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getStringDate;
-
 /**
  * The {@code ContributorActivity} class is useful to format a GitHub's contributor activity
  *
@@ -168,7 +166,7 @@ public class ContributorActivity extends GitHubResponse {
          * @return {@link #w} instance as {@link String}
          **/
         public String getWDate() {
-            return getStringDate(w);
+            return timeFormatter.formatAsString(w);
         }
 
         /**

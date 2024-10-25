@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code ScopedAccessToken} class is useful to format a GitHub's scoped access token
@@ -255,7 +255,7 @@ public class ScopedAccessToken extends GitHubToken {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -275,7 +275,7 @@ public class ScopedAccessToken extends GitHubToken {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**

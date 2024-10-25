@@ -7,7 +7,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
 /**
@@ -585,7 +584,7 @@ public abstract class GitHubOperation extends GitHubOperationBaseStructure {
          * @return {@link #dueOn} timestamp as long
          **/
         public long getDueOnTimestamp() {
-            return getDateTimestamp(dueOn);
+            return timeFormatter.formatAsTimestamp(dueOn);
         }
 
         /**

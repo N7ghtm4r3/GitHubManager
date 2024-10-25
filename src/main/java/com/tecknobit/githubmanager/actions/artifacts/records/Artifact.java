@@ -9,8 +9,6 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
-
 /**
  * The {@code Artifact} class is useful to format a GitHub's artifact
  *
@@ -201,7 +199,7 @@ public class Artifact extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -221,7 +219,7 @@ public class Artifact extends BaseResponseDetails {
      * @return {@link #expiresAt} timestamp as long
      **/
     public long getExpiresAtTimestamp() {
-        return getDateTimestamp(expiresAt);
+        return timeFormatter.formatAsTimestamp(expiresAt);
     }
 
     /**
@@ -241,7 +239,7 @@ public class Artifact extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**

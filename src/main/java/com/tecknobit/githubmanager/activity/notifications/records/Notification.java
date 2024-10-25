@@ -4,7 +4,7 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Notification} class is useful to format a GitHub's notification
@@ -186,7 +186,7 @@ public class Notification extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -206,7 +206,7 @@ public class Notification extends GitHubResponse {
      * @return {@link #lastReadAt} timestamp as long
      **/
     public long getLastReadAtTimestamp() {
-        return getDateTimestamp(lastReadAt);
+        return timeFormatter.formatAsTimestamp(lastReadAt);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.tecknobit.githubmanager.records.parents;
 
+import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.GitHubManager;
 import org.json.JSONObject;
 
@@ -12,6 +13,11 @@ import org.json.JSONObject;
  * @see GitHubResponse
  **/
 public class BaseResponseDetails extends GitHubResponse {
+
+    /**
+     * {@code timeFormatter} timeFormatter the formatter used to format the timestamp values
+     */
+    protected final TimeFormatter timeFormatter = TimeFormatter.getInstance("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
      * {@code id} identifier value

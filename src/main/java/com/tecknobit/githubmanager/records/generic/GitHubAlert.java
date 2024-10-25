@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GitHubAlert} class is useful to format a GitHub's alert
@@ -184,7 +184,7 @@ public class GitHubAlert extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -204,7 +204,7 @@ public class GitHubAlert extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -244,7 +244,7 @@ public class GitHubAlert extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getFixedAtTimestamp() {
-        return getDateTimestamp(fixedAt);
+        return timeFormatter.formatAsTimestamp(fixedAt);
     }
 
     /**
@@ -274,7 +274,7 @@ public class GitHubAlert extends GitHubResponse {
      * @return {@link #dismissedAt} timestamp as long
      **/
     public long getDismissedAtTimestamp() {
-        return getDateTimestamp(dismissedAt);
+        return timeFormatter.formatAsTimestamp(dismissedAt);
     }
 
     /**

@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.codespaces.codespaces.records;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Codespace} class is useful to format a GitHub's codespace
@@ -125,7 +125,7 @@ public class CodespaceExportDetails extends GitHubResponse {
      * @return {@link #completedAt} timestamp as long
      **/
     public long getCompletedAtTimestamp() {
-        return getDateTimestamp(completedAt);
+        return timeFormatter.formatAsTimestamp(completedAt);
     }
 
     /**

@@ -4,7 +4,7 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code SecretScanningAlert} class is useful to format a GitHub's secret scanning alert
@@ -289,7 +289,7 @@ public class SecretScanningAlert extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -309,7 +309,7 @@ public class SecretScanningAlert extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -379,7 +379,7 @@ public class SecretScanningAlert extends GitHubResponse {
      * @return {@link #resolvedAt} timestamp as long
      **/
     public long getResolvedAtTimestamp() {
-        return getDateTimestamp(resolvedAt);
+        return timeFormatter.formatAsTimestamp(resolvedAt);
     }
 
     /**

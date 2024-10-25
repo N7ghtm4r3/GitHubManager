@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.releases.releaseassets.records.ReleaseAsset.returnReleaseAssets;
 
 /**
@@ -362,7 +361,7 @@ public class Release extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -382,7 +381,7 @@ public class Release extends BaseResponseDetails {
      * @return {@link #publishedAt} timestamp as long
      **/
     public long getPublishedAtTimestamp() {
-        return getDateTimestamp(publishedAt);
+        return timeFormatter.formatAsTimestamp(publishedAt);
     }
 
     /**

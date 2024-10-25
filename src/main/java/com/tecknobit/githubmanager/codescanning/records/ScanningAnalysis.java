@@ -4,7 +4,7 @@ import com.tecknobit.githubmanager.codescanning.records.ScanningAlert.Tool;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code ScanningAnalysis} class is useful to format a GitHub's scanning analysis
@@ -158,7 +158,7 @@ public class ScanningAnalysis extends ScanningItem {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**

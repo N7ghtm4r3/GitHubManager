@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.metrics.traffic.records;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code TrafficItem} class is useful to format a GitHub's traffic item
@@ -155,7 +155,7 @@ public abstract class TrafficItem extends GitHubResponse {
          * @return {@link #timestamp} timestamp as long
          **/
         public long getLongTimestamp() {
-            return getDateTimestamp(timestamp);
+            return timeFormatter.formatAsTimestamp(timestamp);
         }
 
     }

@@ -5,7 +5,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
 /**
@@ -152,7 +151,7 @@ public class CommunityProfile extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**

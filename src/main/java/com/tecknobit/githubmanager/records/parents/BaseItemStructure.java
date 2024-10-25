@@ -1,8 +1,7 @@
 package com.tecknobit.githubmanager.records.parents;
 
+import com.tecknobit.apimanager.formatters.TimeFormatter;
 import org.json.JSONObject;
-
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 
 /**
  * The {@code BaseItemStructure} class is useful to format a GitHub's base item structure
@@ -11,6 +10,11 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  * @see GitHubResponse
  **/
 public abstract class BaseItemStructure extends GitHubResponse {
+
+    /**
+     * {@code timeFormatter} timeFormatter the formatter used to format the timestamp values
+     */
+    protected final TimeFormatter timeFormatter = TimeFormatter.getInstance("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
      * {@code id} the id of the item
@@ -122,7 +126,7 @@ public abstract class BaseItemStructure extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -142,7 +146,7 @@ public abstract class BaseItemStructure extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
 }

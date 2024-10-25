@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.deploykeys.records;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code DeployKey} class is useful to format a GitHub's deployment key
@@ -185,7 +185,7 @@ public class DeployKey extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -225,7 +225,7 @@ public class DeployKey extends GitHubResponse {
      * @return {@link #lastUsed} timestamp as long
      **/
     public long getLastUsedTimestamp() {
-        return getDateTimestamp(lastUsed);
+        return timeFormatter.formatAsTimestamp(lastUsed);
     }
 
 }

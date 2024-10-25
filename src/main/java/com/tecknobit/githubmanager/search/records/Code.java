@@ -7,7 +7,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
 /**
@@ -209,7 +208,7 @@ public class Code extends ShaItem {
      * @return {@link #lastModifiedAt} timestamp as long
      **/
     public long getLastModifiedAtTimestamp() {
-        return getDateTimestamp(lastModifiedAt);
+        return timeFormatter.formatAsTimestamp(lastModifiedAt);
     }
 
     /**

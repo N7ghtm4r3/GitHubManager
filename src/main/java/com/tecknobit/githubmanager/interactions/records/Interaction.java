@@ -5,7 +5,7 @@ import com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code Interaction} class is useful to format a GitHub's interaction
@@ -186,7 +186,7 @@ public class Interaction extends GitHubResponse {
      * @return {@link #expiresAt} timestamp as long
      **/
     public long getExpiresAtTimestamp() {
-        return getDateTimestamp(expiresAt);
+        return timeFormatter.formatAsTimestamp(expiresAt);
     }
 
     /**

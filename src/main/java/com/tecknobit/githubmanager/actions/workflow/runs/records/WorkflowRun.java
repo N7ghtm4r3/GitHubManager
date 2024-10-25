@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.actions.workflow.jobs.records.Job.Status.valueOf;
 
 /**
@@ -462,7 +461,7 @@ public class WorkflowRun extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -482,7 +481,7 @@ public class WorkflowRun extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -918,7 +917,7 @@ public class WorkflowRun extends BaseResponseDetails {
          * @return {@link #timestamp} timestamp as long
          **/
         public long getLongTimestamp() {
-            return getDateTimestamp(timestamp);
+            return timeFormatter.formatAsTimestamp(timestamp);
         }
 
         /**

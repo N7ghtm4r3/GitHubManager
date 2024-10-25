@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code RepositoryCachesList} class is useful to format a GitHub's repository caches list
@@ -254,7 +254,7 @@ public class RepositoryCachesList extends GitHubList {
          * @return {@link #lastAccessedAt} timestamp as long
          **/
         public long getLastAccessedAtTimestamp() {
-            return getDateTimestamp(lastAccessedAt);
+            return timeFormatter.formatAsTimestamp(lastAccessedAt);
         }
 
         /**
@@ -274,7 +274,7 @@ public class RepositoryCachesList extends GitHubList {
          * @return {@link #createdAt} timestamp as long
          **/
         public long getCreatedAtTimestamp() {
-            return getDateTimestamp(createdAt);
+            return timeFormatter.formatAsTimestamp(createdAt);
         }
 
         /**

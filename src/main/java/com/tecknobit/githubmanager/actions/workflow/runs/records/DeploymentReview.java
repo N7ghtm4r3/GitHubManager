@@ -1,11 +1,12 @@
 package com.tecknobit.githubmanager.actions.workflow.runs.records;
 
 import com.tecknobit.apimanager.formatters.JsonHelper;
+import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code DeploymentReview} class is useful to format a GitHub's deployment review
@@ -17,6 +18,11 @@ import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp
  * @see Review.Environment
  **/
 public class DeploymentReview {
+
+    /**
+     * {@code timeFormatter} timeFormatter the formatter used to format the timestamp values
+     */
+    protected final TimeFormatter timeFormatter = TimeFormatter.getInstance("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
      * {@code "url"} value
@@ -290,7 +296,7 @@ public class DeploymentReview {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -310,7 +316,7 @@ public class DeploymentReview {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**

@@ -4,8 +4,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getStringDate;
-
 /**
  * The {@code WeeklyCommitActivity} class is useful to format a GitHub's weekly commit activity
  *
@@ -75,7 +73,7 @@ public class WeeklyCommitActivity extends GitHubResponse {
      * @return {@link #pushedAt} instance as {@link String}
      **/
     public String getPushedAtDate() {
-        return getStringDate(pushedAt);
+        return timeFormatter.formatAsString(pushedAt);
     }
 
     /**

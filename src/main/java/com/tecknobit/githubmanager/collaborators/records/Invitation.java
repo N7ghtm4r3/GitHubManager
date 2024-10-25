@@ -6,7 +6,6 @@ import com.tecknobit.githubmanager.repositories.repositories.records.Repository;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 
 /**
@@ -203,7 +202,7 @@ public class Invitation extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**

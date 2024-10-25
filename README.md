@@ -1,7 +1,7 @@
 
 # GitHubManager
 
-**v1.0.0**
+**v1.0.1**
 
                MMM.           .MMM
                MMMMMMMMMMMMMMMMMMM
@@ -58,7 +58,7 @@ Add the JitPack repository to your build file
          
     ```gradle
     dependencies {
-        implementation 'com.github.N7ghtm4r3:GitHubManager:1.0.0'
+        implementation 'com.github.N7ghtm4r3:GitHubManager:1.0.1'
     }
     ```
 
@@ -66,7 +66,7 @@ Add the JitPack repository to your build file
          
     ```gradle
     dependencies {
-        implementation("com.github.N7ghtm4r3:GitHubManager:1.0.0")
+        implementation("com.github.N7ghtm4r3:GitHubManager:1.0.1")
     }
     ```
 
@@ -88,7 +88,7 @@ Add the JitPack repository to your build file
 <dependency>
     <groupId>com.github.N7ghtm4r3</groupId>
     <artifactId>GitHubManager</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 

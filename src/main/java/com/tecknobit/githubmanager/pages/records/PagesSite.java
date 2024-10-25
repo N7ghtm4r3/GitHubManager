@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code PagesSite} class is useful to format a GitHub's pages site
@@ -278,7 +278,7 @@ public class PagesSite extends GitHubResponse {
      * @return {@link #pendingDomainUnverifiedAt} timestamp as long
      **/
     public long getPendingDomainUnverifiedAtTimestamp() {
-        return getDateTimestamp(pendingDomainUnverifiedAt);
+        return timeFormatter.formatAsTimestamp(pendingDomainUnverifiedAt);
     }
 
     /**
@@ -621,7 +621,7 @@ public class PagesSite extends GitHubResponse {
          * @return {@link #expiresAt} timestamp as long
          **/
         public long getExpiresAtTimestamp() {
-            return getDateTimestamp(expiresAt);
+            return timeFormatter.formatAsTimestamp(expiresAt);
         }
 
     }

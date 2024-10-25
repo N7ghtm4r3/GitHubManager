@@ -6,7 +6,7 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.users.users.records.User;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code PullRequestReview} class is useful to format a GitHub's pull request review
@@ -291,7 +291,7 @@ public class PullRequestReview extends GitHubResponse {
      * @return {@link #submittedAt} timestamp as long
      **/
     public long getSubmittedAtTimestamp() {
-        return getDateTimestamp(submittedAt);
+        return timeFormatter.formatAsTimestamp(submittedAt);
     }
 
     /**

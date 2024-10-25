@@ -11,7 +11,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
 /**
@@ -411,7 +410,7 @@ public class Codespace extends BaseResponseDetails {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -431,7 +430,7 @@ public class Codespace extends BaseResponseDetails {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -451,7 +450,7 @@ public class Codespace extends BaseResponseDetails {
      * @return {@link #lastUsedAt} timestamp as long
      **/
     public long getLastUsedAtTimestamp() {
-        return getDateTimestamp(lastUsedAt);
+        return timeFormatter.formatAsTimestamp(lastUsedAt);
     }
 
     /**
@@ -621,7 +620,7 @@ public class Codespace extends BaseResponseDetails {
      * @return {@link #retentionExpiresAt} timestamp as long
      **/
     public long getRetentionExpiresAtTimestamp() {
-        return getDateTimestamp(retentionExpiresAt);
+        return timeFormatter.formatAsTimestamp(retentionExpiresAt);
     }
 
     /**

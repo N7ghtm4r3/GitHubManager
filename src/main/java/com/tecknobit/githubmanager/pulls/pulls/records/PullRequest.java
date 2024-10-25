@@ -14,7 +14,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import static com.tecknobit.githubmanager.users.users.records.User.returnUsersList;
 
@@ -543,7 +542,7 @@ public class PullRequest extends GitHubOperation {
      * @return {@link #mergedAt} timestamp as long
      **/
     public long getMergedAtTimestamp() {
-        return getDateTimestamp(mergedAt);
+        return timeFormatter.formatAsTimestamp(mergedAt);
     }
 
     /**

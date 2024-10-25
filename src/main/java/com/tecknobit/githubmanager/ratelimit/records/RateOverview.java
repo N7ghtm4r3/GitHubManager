@@ -4,8 +4,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getStringDate;
-
 /**
  * The {@code RateLimit} class is useful to format a GitHub's rate limit
  *
@@ -382,7 +380,7 @@ public class RateOverview extends GitHubResponse {
          * @return {@link #reset} instance as {@link String}
          **/
         public String getResetDate() {
-            return getStringDate(reset * 1000);
+            return timeFormatter.formatAsString(reset * 1000);
         }
 
         /**

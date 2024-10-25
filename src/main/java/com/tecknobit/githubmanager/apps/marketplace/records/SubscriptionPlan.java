@@ -1,10 +1,10 @@
 package com.tecknobit.githubmanager.apps.marketplace.records;
 
+import com.tecknobit.apimanager.formatters.TimeFormatter;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import com.tecknobit.githubmanager.records.parents.InnerClassItem;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
 /**
@@ -199,6 +199,11 @@ public class SubscriptionPlan extends GitHubResponse {
     public static class MarketplacePendingChange {
 
         /**
+         * {@code timeFormatter} timeFormatter the formatter used to format the timestamp values
+         */
+        protected final TimeFormatter timeFormatter = TimeFormatter.getInstance("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+        /**
          * {@code effectiveDate} the effective date of the marketplace pending change
          **/
         private final String effectiveDate;
@@ -253,7 +258,7 @@ public class SubscriptionPlan extends GitHubResponse {
          * @return {@link #effectiveDate} timestamp as long
          **/
         public long getEffectiveDateTimestamp() {
-            return getDateTimestamp(effectiveDate);
+            return timeFormatter.formatAsTimestamp(effectiveDate);
         }
 
         /**
@@ -407,7 +412,7 @@ public class SubscriptionPlan extends GitHubResponse {
          * @return {@link #nextBillingDate} timestamp as long
          **/
         public long getNextBillingDateTimestamp() {
-            return getDateTimestamp(nextBillingDate);
+            return timeFormatter.formatAsTimestamp(nextBillingDate);
         }
 
         /**
@@ -458,7 +463,7 @@ public class SubscriptionPlan extends GitHubResponse {
          * @return {@link #freeTrialEndsOn} timestamp as long
          **/
         public long getFreeTrialEndsOnTimestamp() {
-            return getDateTimestamp(freeTrialEndsOn);
+            return timeFormatter.formatAsTimestamp(freeTrialEndsOn);
         }
 
         /**
@@ -478,7 +483,7 @@ public class SubscriptionPlan extends GitHubResponse {
          * @return {@link #updatedAt} timestamp as long
          **/
         public long getUpdatedAtTimestamp() {
-            return getDateTimestamp(updatedAt);
+            return timeFormatter.formatAsTimestamp(updatedAt);
         }
 
         /**

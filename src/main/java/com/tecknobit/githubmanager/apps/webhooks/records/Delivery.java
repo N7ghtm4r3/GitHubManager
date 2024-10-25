@@ -10,7 +10,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
 /**
@@ -216,7 +215,7 @@ public class Delivery extends GitHubResponse {
      * @return {@link #deliveredAt} timestamp as long
      **/
     public long getDeliveredAtTimestamp() {
-        return getDateTimestamp(deliveredAt);
+        return timeFormatter.formatAsTimestamp(deliveredAt);
     }
 
     /**

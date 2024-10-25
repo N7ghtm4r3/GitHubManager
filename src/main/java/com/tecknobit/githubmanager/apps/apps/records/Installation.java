@@ -7,7 +7,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.repositories.repositories.records.Repository.RepositorySelection.all;
 
 /**
@@ -411,7 +410,7 @@ public class Installation extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -431,7 +430,7 @@ public class Installation extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -461,7 +460,7 @@ public class Installation extends GitHubResponse {
      * @return {@link #suspendedAt} timestamp as long
      **/
     public long getSuspendedAtTimestamp() {
-        return getDateTimestamp(suspendedAt);
+        return timeFormatter.formatAsTimestamp(suspendedAt);
     }
 
     /**

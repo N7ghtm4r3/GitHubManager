@@ -11,7 +11,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.apimanager.trading.TradingTools.roundValue;
 
 /**
@@ -644,7 +643,7 @@ public class DependabotAlert extends GitHubAlert {
          * @return {@link #publishedAt} timestamp as long
          **/
         public long getPublishedAtTimestamp() {
-            return getDateTimestamp(publishedAt);
+            return timeFormatter.formatAsTimestamp(publishedAt);
         }
 
         /**
@@ -664,7 +663,7 @@ public class DependabotAlert extends GitHubAlert {
          * @return {@link #updatedAt} timestamp as long
          **/
         public long getUpdatedAtTimestamp() {
-            return getDateTimestamp(updatedAt);
+            return timeFormatter.formatAsTimestamp(updatedAt);
         }
 
         /**
@@ -684,7 +683,7 @@ public class DependabotAlert extends GitHubAlert {
          * @return {@link #withdrawnAt} timestamp as long
          **/
         public long getWithdrawnTimestamp() {
-            return getDateTimestamp(withdrawnAt);
+            return timeFormatter.formatAsTimestamp(withdrawnAt);
         }
 
         /**

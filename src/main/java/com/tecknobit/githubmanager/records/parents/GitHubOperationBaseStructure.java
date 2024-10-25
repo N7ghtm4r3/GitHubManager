@@ -2,7 +2,7 @@ package com.tecknobit.githubmanager.records.parents;
 
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GitHubOperationBaseStructure} class is useful to format a GitHub's operation base structure
@@ -202,7 +202,7 @@ public abstract class GitHubOperationBaseStructure extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -222,7 +222,7 @@ public abstract class GitHubOperationBaseStructure extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
@@ -242,7 +242,7 @@ public abstract class GitHubOperationBaseStructure extends GitHubResponse {
      * @return {@link #closedAt} timestamp as long
      **/
     public long getClosedAtTimestamp() {
-        return getDateTimestamp(closedAt);
+        return timeFormatter.formatAsTimestamp(closedAt);
     }
 
     /**

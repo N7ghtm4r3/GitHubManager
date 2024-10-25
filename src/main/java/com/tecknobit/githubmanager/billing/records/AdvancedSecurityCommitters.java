@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code AdvancedSecurityCommitters} class is useful to format a GitHub's advanced security committers
@@ -244,7 +244,7 @@ public class AdvancedSecurityCommitters extends GitHubList {
              * @return {@link #lastPushedDate} timestamp as long
              **/
             public long getLastPushedDateTimestamp() {
-                return getDateTimestamp(lastPushedDate, "yyyy-MM-dd");
+                return timeFormatter.formatAsTimestamp(lastPushedDate, "yyyy-MM-dd");
             }
 
         }

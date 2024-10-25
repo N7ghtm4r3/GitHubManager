@@ -3,7 +3,6 @@ package com.tecknobit.githubmanager;
 import com.tecknobit.apimanager.annotations.Returner;
 import com.tecknobit.apimanager.apis.APIRequest;
 import com.tecknobit.apimanager.apis.APIRequest.Headers;
-import com.tecknobit.apimanager.formatters.TimeFormatter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -152,10 +151,6 @@ public class GitHubManager {
      * {@code apiRequest} is instance to make the API requests
      **/
     protected final APIRequest apiRequest;
-
-    static {
-        TimeFormatter.changeDefaultPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
-    }
 
     /**
      * Constructor to init a {@link GitHubManager}

@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code CheckRun} class is useful to format a GitHub's check run
@@ -191,7 +191,7 @@ public class CheckRun extends Check {
      * @return {@link #startedAt} timestamp as long
      **/
     public long getStartedAtTimestamp() {
-        return getDateTimestamp(startedAt);
+        return timeFormatter.formatAsTimestamp(startedAt);
     }
 
     /**
@@ -211,7 +211,7 @@ public class CheckRun extends Check {
      * @return {@link #completedAt} timestamp as long
      **/
     public long getCompletedAtTimestamp() {
-        return getDateTimestamp(completedAt);
+        return timeFormatter.formatAsTimestamp(completedAt);
     }
 
     /**

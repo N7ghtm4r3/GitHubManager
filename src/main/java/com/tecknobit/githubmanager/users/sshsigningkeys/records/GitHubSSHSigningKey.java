@@ -3,7 +3,7 @@ package com.tecknobit.githubmanager.users.sshsigningkeys.records;
 import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
+
 
 /**
  * The {@code GitHubSSHSigningKey} class is useful to format a GitHub's SSH signing key
@@ -128,7 +128,7 @@ public class GitHubSSHSigningKey extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
 }

@@ -10,7 +10,6 @@ import com.tecknobit.githubmanager.records.parents.GitHubResponse;
 import org.json.JSONObject;
 
 import static com.goterl.lazysodium.utils.Key.fromBase64String;
-import static com.tecknobit.apimanager.formatters.TimeFormatter.getDateTimestamp;
 import static com.tecknobit.githubmanager.GitHubManager.ReturnFormat;
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.vPrivate;
 import static com.tecknobit.githubmanager.GitHubManager.Visibility.valueOf;
@@ -161,7 +160,7 @@ public class Secret extends GitHubResponse {
      * @return {@link #createdAt} timestamp as long
      **/
     public long getCreatedAtTimestamp() {
-        return getDateTimestamp(createdAt);
+        return timeFormatter.formatAsTimestamp(createdAt);
     }
 
     /**
@@ -181,7 +180,7 @@ public class Secret extends GitHubResponse {
      * @return {@link #updatedAt} timestamp as long
      **/
     public long getUpdatedAtTimestamp() {
-        return getDateTimestamp(updatedAt);
+        return timeFormatter.formatAsTimestamp(updatedAt);
     }
 
     /**
